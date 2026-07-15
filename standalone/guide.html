@@ -349,6 +349,11 @@ table td, table th, table tr { color: #333 !important; }
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
+        <b>🔥 涨停联动</b>：位于一眼结论正下方，10日滚动热力矩阵展示涨停个股所属概念板块的日频热度。用于回答"涨停效应集中在哪些板块"。<br>
+        <b>分析口径</b>：🔥持续热点(≥7日有涨停且近3日连续) → ⚡新启动(今日≥2家涨停但前2日=0) → 💤消退(前5日活跃但近3日<2)。数据盘后更新。
+      </div>
+
+      <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
         <b>🎯 精选预判信号</b>：判断逻辑：52周新高数量 + 分析师转向数量 交叉分析。<br>
         <table style="width:100%;margin-top:6px;border-collapse:collapse;font-size:11px;">
           <tr style="background:#eee;"><th style="padding:4px 8px;border:1px solid #ddd;">场景</th><th style="padding:4px 8px;border:1px solid #ddd;">条件</th><th style="padding:4px 8px;border:1px solid #ddd;">判断</th><th style="padding:4px 8px;border:1px solid #ddd;">操作含义</th></tr>
@@ -365,6 +370,11 @@ table td, table th, table tr { color: #333 !important; }
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
         <b>🐉 机游共振·龙虎榜</b>：三色块布局——左🏦机构净买入 / 中⚡机游共振 / 右🔥游资净买入，按金额降序，支持连续上榜标注 连X日。8000万门槛约0.8亿，低于不显示。席位全部统计：机构专用/深股通沪股通/游资/量化/未识别，逐笔明细如实分类，知名游资标注别名 章盟主/孙哥等。数据盘后更新。<br>
         <b>判定标准</b>：当机构和游资两类资金同时净买入某只股票时，标记为「纯共振」（最强信号）；仅机构净买入而游资净卖出时标记为「标X」（需观察）；当两类资金合计净买入超过0.8亿元时升级为「强烈共振」。T+1盘后更新。
+      </div>
+
+      <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
+        <b>💰 三方资金流向对比</b>：位于机游共振·龙虎榜正下方，横向对比南向资金、机构/主力、游资三个维度的当日方向、偏好风格、共同买入/卖出个股及关键信号。用于判断多路资金是否同向共振或分歧。<br>
+        <b>口径说明</b>：南向资金以龙虎榜北向席位为主（港交所2024年5月起停止披露北向净买额）；机构/主力取龙虎榜机构专用席位；游资取知名游资+量化+未识别席位合计。无数据时卡片自动隐藏。
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
@@ -399,8 +409,9 @@ table td, table th, table tr { color: #333 !important; }
         <table style="width:100%;margin-top:6px;border-collapse:collapse;font-size:11px;">
           <tr style="background:#eee;"><th style="padding:4px 8px;border:1px solid #ddd;">位置</th><th style="padding:4px 8px;border:1px solid #ddd;">卡片名</th><th style="padding:4px 8px;border:1px solid #ddd;">回答什么</th><th style="padding:4px 8px;border:1px solid #ddd;">内容</th></tr>
           <tr><td style="padding:4px 8px;border:1px solid #ddd;">首页</td><td style="padding:4px 8px;border:1px solid #ddd;">🚀 主力板块</td><td style="padding:4px 8px;border:1px solid #ddd;">今天钱进出多少？</td><td style="padding:4px 8px;border:1px solid #ddd;">净额大数 + 流入TOP5 + 流出TOP5（简洁）</td></tr>
-          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">📊 板块资金轮动</td><td style="padding:4px 8px;border:1px solid #ddd;">钱从哪来→到哪去？</td><td style="padding:4px 8px;border:1px solid #ddd;">轮动路线表 + 真流出/假流出(轮动)/真流入/超跌反弹分类 + 持续方向</td></tr>
           <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">🔥 涨停联动</td><td style="padding:4px 8px;border:1px solid #ddd;">涨停效应在哪？</td><td style="padding:4px 8px;border:1px solid #ddd;">10日热力矩阵 + 持续热点/新启动/消退/全局情绪</td></tr>
+          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">📊 板块资金轮动</td><td style="padding:4px 8px;border:1px solid #ddd;">钱从哪来→到哪去？</td><td style="padding:4px 8px;border:1px solid #ddd;">轮动路线表 + 真流出/假流出(轮动)/真流入/超跌反弹分类 + 持续方向</td></tr>
+          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">💰 三方资金流向对比</td><td style="padding:4px 8px;border:1px solid #ddd;">三股资金同向还是分歧？</td><td style="padding:4px 8px;border:1px solid #ddd;">南向/机构/游资方向 + 偏好风格 + 共同买入/卖出 + 关键信号</td></tr>
         </table><br>
         <b>三者关系</b>：① 首页主力板块 = 看一眼今天的资金净额和方向；② 预判资金轮动 = 追问资金到底在板块间怎么转移（资金逻辑）；③ 预判涨停联动 = 追问涨停效应集中在哪些板块（价格逻辑）。同是板块数据但维度独立——资金轮动看净流入金额，涨停联动看涨停家数，不重复不冲突。<br><br>
         <!-- 💡 资金数据·三张卡片怎么读？ -->

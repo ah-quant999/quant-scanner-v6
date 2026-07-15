@@ -853,6 +853,13 @@ tr:hover td { background: #fafbfc; }
         <div id="summaryOverviewAdvice" style="display:none;padding:10px 16px;background:#fff8e1;border-top:1px solid #ffe082;"></div>
       </div>
 
+      <!-- 🔥 涨停联动 -->
+      <div class="predict-card" id="limitUpHeatCard" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="background:linear-gradient(135deg,#fff3e0,#ffe082);color:#e65100;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">🔥 涨停联动<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">短线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="limitUpHeatTime" class="card-time"></span></div>
+        <div id="limitUpHeatAnalysis" style="display:none;margin:6px 14px 2px;padding:8px 12px;border-left:3px solid #e65100;background:#fafafa;border-radius:0 6px 6px 0;font-size:12px;line-height:1.8;color:#555;"></div>
+        <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;" id="limitUpHeatContent"></div>
+      </div>
+
       <!-- 🎯 精选预判信号（52周新高 / 分析师转向 / 政策密度）-->
       <div id="selectedSignalsCard" style="display:none;background:#fff;border-radius:10px;overflow:hidden;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
         <div style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);padding:12px 18px;font-size:15px;font-weight:700;color:#283593;text-align:center;">
@@ -902,6 +909,26 @@ tr:hover td { background: #fafbfc; }
       <div class="predict-card" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
         <div style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb);color:#004d40;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">🐉 机游共振·龙虎榜<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">次日参考</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="lhbPredictTime" class="card-time"></span></div>
         <div style="padding:14px 18px;font-size:13px;line-height:1.8;background:#fafbfc;" id="lhbPredictContent"></div>
+      </div>
+
+      <!-- 💰 三方资金流向对比 -->
+      <div id="capitalFlowCard" class="predict-card" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 三方资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
+        <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+            <thead>
+              <tr style="background:#3C3489;color:#fff;">
+                <th style="text-align:left;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">维度</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">7月15日方向</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同买入<br><span style="font-size:10px;color:#aaa;">(三方同为正)</span></th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同卖出<br><span style="font-size:10px;color:#aaa;">(三方向为负)</span></th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
+              </tr>
+            </thead>
+            <tbody id="capFlowBody"></tbody>
+          </table>
+        </div>
       </div>
 
       <!-- 卡片2: 主力资金抱团监控 — 已并入板块资金联动面板 -->
@@ -1287,27 +1314,6 @@ tr:hover td { background: #fafbfc; }
         <div id="crdsHistory" style="font-size:11px;color:#999;"></div>
       </div>
       <!-- 通达信公式（CRDS）已移至「逻辑详解」独立页（guide.html 第八节） -->
-
-      <!-- 💰 三方资金流向对比 — 暂未上架 -->
-      <div id="capitalFlowCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
-          💰 <span style="font-weight:700;font-size:14px;color:#333;">三方资金流向对比</span>
-          <span id="capFlowTime" style="font-size:11px;color:#999;font-weight:400;"></span>
-        </div>
-        <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
-          <thead>
-            <tr style="background:#3C3489;color:#fff;">
-              <th style="text-align:left;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">维度</th>
-              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">7月15日方向</th>
-              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
-              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同买入<br><span style="font-size:10px;color:#aaa;">(三方同为正)</span></th>
-              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同卖出<br><span style="font-size:10px;color:#aaa;">(三方向为负)</span></th>
-              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
-            </tr>
-          </thead>
-          <tbody id="capFlowBody"></tbody>
-        </table>
-      </div>
 
       <!-- 📡 观测候选股池（可点击展开明细） — 暂未上架面板底部（CRDS 之后） -->
       <div id="candidatePoolCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
@@ -450732,6 +450738,7 @@ var PAGE_CARDS = [
   {page:'🔮 预判信号', card:'🔥 涨停联动',        check:function(){var el=document.getElementById('limitUpHeatCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'📊 板块资金三合一', check:function(){var el=document.getElementById('sectorRotationContent'); return el && el.innerHTML.length > 100;}},
   {page:'🔮 预判信号', card:'🐉 龙虎榜监控',      check:function(){return !!(window.LHB_DATA&&window.LHB_DATA.update_time);}},
+  {page:'🔮 预判信号', card:'💰 三方资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'🌏 南向资金',        check:function(){return !!(window.NORTH_FUND_DATA&&window.NORTH_FUND_DATA.update_time);}},
   // ===== 金股观测页 =====
   {page:'⭐ 金股观测', card:'🌟 个股强烈关注',    check:function(){var el=document.getElementById('goldTable'); return el && el.innerHTML.length > 50;}},
@@ -451004,7 +451011,7 @@ function renderCapitalFlowCard() {
 function moveCardsToShelf() {
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
-  var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard', 'capitalFlowCard'];
+  var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard'];
   // candidatePoolCard 作为锚点：F窗口等搬入时插到它前面，保证顺序 CRDS → F窗口 → 观测候选股池
   var anchor = document.getElementById('candidatePoolCard');
   cardIds.forEach(function(id) {
@@ -451204,6 +451211,7 @@ try { renderSectorRS(); } catch(e) { console.log('renderSectorRS error:', e.mess
 try { renderSectorRotation(); } catch(e) { console.log('renderSectorRotation error:', e.message); }
 try { renderTop10Daily(); } catch(e) { console.log('renderTop10Daily error:', e.message); }
 try { renderLimitUpHeatmap(); } catch(e) { console.log('renderLimitUpHeatmap error:', e.message); }
+try { renderCapitalFlowCard(); } catch(e) { console.log('renderCapitalFlowCard error:', e.message); }
 // ⚠️ 以下渲染必须在 renderHealthDashboard 之前，否则健康检查时卡片仍 display:none
 // 危机雷达入口：预显示（完整渲染IIFE在后继script块中会再执行一次）
 (function(){ var cd=window.CRISIS_DATA||{}, inds=cd&&cd.indicators; if(inds && Object.keys(inds).length){ var el=document.getElementById('crisisRadarEntry'); if(el) el.style.display=''; }})();

@@ -107,7 +107,7 @@ window.addEventListener('load',function(){{
     ['renderUnlistedDataCards',0],['renderCffex',0],['renderConceptRanking',0],
     ['renderMacro',0],['renderUpdateSchedule',0],['renderCalendar',0],
     ['renderHealthDashboard',0],['renderWorldcup',0],['renderLottery',0],
-    ['renderLimitUpHeatmap',0],['renderTop10Daily',0],['renderSectorRotation',0],
+    ['renderLimitUpHeatmap',0],['renderCapitalFlowCard',0],['renderTop10Daily',0],['renderSectorRotation',0],
     ['renderSuspensionAlert',0],['renderIpoScore',0],
     ['renderPredictSummary',0],['renderSelectedSignals',0],
     ['renderTrendFlow',0],['renderSectorRS',0],['renderMacroOverview',0]
