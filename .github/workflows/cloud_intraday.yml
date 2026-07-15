@@ -44,6 +44,7 @@ jobs:
         env:
           TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
           NEODATA_TOKEN_JSON: ${{ secrets.NEODATA_TOKEN }}
+        continue-on-error: true
         run: |
           mkdir -p data
           if [ -n "$TOKEN_JSON" ]; then

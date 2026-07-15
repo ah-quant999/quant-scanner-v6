@@ -16,12 +16,14 @@ body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:#f5f7f
 .header-brand { font-size:18px; font-weight:700; }
 .header-sub { font-size:11px; opacity:0.7; margin-top:4px; }
 .container { max-width:960px; margin:24px auto; padding:0 16px; }
-.footer { text-align:center; padding:16px; font-size:11px; color:#aaa; margin-top:24px; }
+.footer { text-align:center; padding:16px; font-size:11px; color:#888; margin-top:24px; }
 a { color:#1565c0; text-decoration:none; }
 a:hover { text-decoration:underline; }
 table { border-collapse:collapse; width:100%; font-size:11px; }
 th { background:#eee; padding:3px 6px; border:1px solid #ddd; text-align:left; }
 td { padding:3px 6px; border:1px solid #ddd; }
+/* 保护：所有表格内文字在浅色背景上保持深色（防止被任何覆盖规则改白） */
+table td, table th, table tr { color: #333 !important; }
 </style>
 </head>
 <body>
@@ -31,103 +33,93 @@ td { padding:3px 6px; border:1px solid #ddd; }
 </div>
 <div class="container">
   <div style="background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
-    <h3 style="margin-bottom:12px;font-size:16px;">📊 云端主链 × 前端卡片完整映射表</h3>
+    <h3 style="margin-bottom:12px;font-size:16px;">☁️ 云端主链 × 双机旁听 三道防线完整映射表</h3>
 
     <!-- 更新时间细表 -->
     <div id="updateScheduleSection" style="margin-bottom:20px;padding:14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;">
-      <div style="font-size:11px;color:#888;margin-bottom:10px;"><b>运行模式</b>：全部任务由 GitHub Actions 云端自动执行，工作日 10 个时点全覆盖。本机仅保留监控和 PAUSED 兜底。</div>
+      <div style="font-size:11px;color:#555;margin-bottom:10px;line-height:1.7;"><b>运行模式</b>：本系统采用<strong>「云端主力 + 双机旁听兜底」</strong>三道防线 ——<b style="color:#1a237e;">☁️ 云端</b>（GitHub Actions）负责所有定时数据抓取/扫描/构建/部署，工作日 10 个时点全覆盖；<b style="color:#0F6E56;">💻 小九（单位机）</b>在交易日 08:00-17:30 负责白班旁听与兜底；<b style="color:#993C1D;">🏠 阿狸咪（家用机）</b>在 17:30-08:00 及周末/假期负责晚班兜底与全时段旁听（机器常在线时）。三道防线互补绝不重复：云端看数据新鲜度、双机看兜底时间戳、紧急通信走 URGENT 文件。</div>
       <!-- 总表头 -->
       <table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px;">
         <tr style="background:#cfd8dc;color:#1a237e !important;">
-          <th style="padding:7px 10px;text-align:left;width:12%;">⏰ 时点</th>
-          <th style="padding:7px 10px;text-align:left;width:18%;">☁️ 云端 Workflow</th>
-          <th style="padding:7px 10px;text-align:left;width:14%;">📱 前端卡片</th>
-          <th style="padding:7px 10px;text-align:left;">📝 数据脚本 & 部署</th>
-          <th style="padding:7px 10px;text-align:left;width:14%;">🛟 本机兜底</th>
+          <th style="padding:7px 10px;text-align:left;width:10%;">⏰ 时点</th>
+          <th style="padding:7px 10px;text-align:left;width:18%;">☁️ 云端任务</th>
+          <th style="padding:7px 10px;text-align:left;width:18%;">📱 前端卡片</th>
+          <th style="padding:7px 10px;text-align:left;width:54%;">🛟 旁听 / 兜底</th>
         </tr>
       </table>
 
       <!-- 09:20→14:31 盘中 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#1565c0;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>cloud_intraday.yml</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">09:20 → 10:31 → 11:46 → 13:31 → 14:31 · 每轮全量抓取+构建+部署 · 40min超时</span></div>
+        <div style="background:#1565c0;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>☁️ 盘中云端任务</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">09:20 → 10:31 → 11:46 → 13:31 → 14:31 · 盘中 5 轮</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#e3f2fd;"><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:12%;">09:20</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:18%;">盘前全景</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:14%;">总览: 宏观/异动<br>金股: 研报/候选<br>数据: 指数/成交</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;color:#444;line-height:1.7;">guanlan_extractor + fetch_mahoro_signals + build_candidate_pool + fetch_macro/fetch_fomc/fetch_overnight + 24脚本全量抓取 → run_intraday_scan → <b style="color:#1565c0;">update_data_v2 + deploy gh-pages</b></td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;color:#888;font-size:11px;">09:14 盘前(PAUSED)</td></tr>
-          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">10:31<br>11:46<br>13:31<br>14:31</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">盘中×4轮</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">总览: AI速览/板块/ETF/概念<br>预判: 一眼结论/板块三合一<br>数据: F窗口/两融/期货</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;color:#444;line-height:1.7;">run_intraday_scan + 24脚本全量抓取 → <b style="color:#1565c0;">update_data_v2 + deploy gh-pages</b></td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;color:#888;font-size:11px;">10:29/11:44/13:29/14:29/15:29/16:29 盘中(PAUSED)</td></tr>
+          <tr style="background:#e3f2fd;"><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:10%;">09:20</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:18%;">盘前全景</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;width:18%;">总览: 宏观 / 异动<br>金股: 研报 / 候选池<br>数据: 指数 / 成交</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;line-height:1.7;color:#333;width:54%;">💻 小九白班旁听：safety-net 09:15 检查站点 + 数据新鲜度<br>🏠 阿狸咪 08:00 旁听：读云端数据时间戳</td></tr>
+          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">10:31<br>11:46<br>13:31<br>14:31</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">盘中 ×4 轮</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;font-weight:500;">总览: AI 速览 / 板块 / ETF / 概念<br>预判: 一眼结论 / 板块三合一<br>数据: F 窗口 / 两融 / 期货</td><td style="padding:6px 12px;border-bottom:1px solid #bbdefb;line-height:1.7;color:#333;">💻 小九白班旁听：safety-net 10:00 / 11:45 / 14:30 数据过 6h 自动重跑<br>🏠 阿狸咪 10/12/14/16/18 每 2h 读云端时间戳（>3h 告警）</td></tr>
         </table>
       </div>
 
       <!-- 15:30→16:30 收盘 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#7b1fa2;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>cloud_post_close.yml</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">15:30 → 16:15 → 16:30 · 收盘分步全量</span></div>
+        <div style="background:#7b1fa2;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>☁️ 收盘云端任务</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">15:30 → 16:15 → 16:30 · 收盘分步全量</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#f3e5f5;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:12%;">15:30</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:18%;">A+H扫描</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:14%;">金股: 全量扫描/候选池</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#444;line-height:1.7;">scanner full + scanner watch + build_candidate_pool → <span style="color:#888;">(不部署)</span></td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#888;font-size:11px;">17:30/18:30(PAUSED)</td></tr>
-          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">16:15</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">预判产出</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">预判: 龙虎榜/CRDS/共振/抱团/五维</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#444;line-height:1.7;"><b>calc_crds.py</b> + fetch_lhb + update_triple_resonance + generate_recommend/top10/one_look → <span style="color:#888;">(不部署)</span></td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#888;font-size:11px;">—</td></tr>
-          <tr style="background:#f3e5f5;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">16:30</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">全模块部署</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">全站卡片</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#444;line-height:1.7;">三卡片刷新(fetch_sector_fund_flow/nt_data/market_alerts) → <b style="color:#7b1fa2;">update_data_v2 + deploy gh-pages</b></td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;color:#888;font-size:11px;">19:30 部署(PAUSED)</td></tr>
+          <tr style="background:#f3e5f5;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:10%;">15:30</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:18%;">A+H 全量扫描</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;width:18%;">金股: 全量扫描 / 候选池</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;line-height:1.7;color:#333;width:54%;">💻 小九白班最后一次旁听（17:30 下班前）</td></tr>
+          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">16:15</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">预判信号产出</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">预判: 龙虎榜 / CRDS / 共振 / 抱团 / 五维</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;line-height:1.7;color:#333;">—</td></tr>
+          <tr style="background:#f3e5f5;"><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">16:30</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">全模块三卡部署</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;font-weight:500;">全站卡片刷新</td><td style="padding:6px 12px;border-bottom:1px solid #e1bee7;line-height:1.7;color:#333;">🏠 阿狸咪接棒：17:30 主人到家，全责时段开始</td></tr>
         </table>
       </div>
 
       <!-- 17:31 数据抓取 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#5d4037;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>cloud_data_fetch.yml</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">17:31 · 24脚本纯抓取（不做构建部署）</span></div>
+        <div style="background:#5d4037;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>☁️ 收盘数据抓取</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">17:31 · 纯抓取不做构建部署</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#efebe9;"><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:12%;">17:31</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:18%;">收盘抓取</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:14%;">所有数据模块</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;color:#444;line-height:1.7;">24个 fetch_* 并行(行情/板块/宏观/龙虎榜/研报/52w高/分析师/政策密度等)</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;color:#888;font-size:11px;">17:30 收盘抓取(PAUSED)</td></tr>
+          <tr style="background:#efebe9;"><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:10%;">17:31</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:18%;">收盘抓取</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;font-weight:500;width:18%;">所有数据模块</td><td style="padding:6px 12px;border-bottom:1px solid #d7ccc8;line-height:1.7;color:#333;width:54%;">🏠 阿狸咪 17:45 兜底：云端没跑→本地补（家用机限流时只扫 51 只）</td></tr>
         </table>
       </div>
 
       <!-- 18:31 扫描+部署 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#1b5e20;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>cloud_scanner.yml</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">18:31 · 扫描+三重选股+构建+部署</span></div>
+        <div style="background:#1b5e20;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>☁️ 收盘扫描 + 部署</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">18:31 · 扫描 + 构建 + 部署</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#e8f5e9;"><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:12%;">18:31</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:18%;">收盘扫描</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:14%;">金股: 全量/信号池<br>预判: 生成
-</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;color:#444;line-height:1.7;">scanner full + <b>triple_select_scan.py</b> + 后台数据抓取并行 + 龙虎榜/研报 + generate_recommend/top10/triple_resonance → <b style="color:#1b5e20;">update_data_v2 + deploy gh-pages</b></td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;color:#888;font-size:11px;">18:30 扫描(PAUSED)<br>18:30 三重选股(PAUSED)</td></tr>
+          <tr style="background:#e8f5e9;"><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:10%;">18:31</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:18%;">收盘扫描</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;font-weight:500;width:18%;">金股: 全量 / 信号池<br>预判: 生成</td><td style="padding:6px 12px;border-bottom:1px solid #c8e6c9;line-height:1.7;color:#333;width:54%;">🏠 阿狸咪 19:05 兜底：云端没跑→本地补扫描+部署<br>🏠 阿狸咪 19:31 部署兜底：gh-pages 没更新→补部署</td></tr>
         </table>
       </div>
 
       <!-- 周末任务 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#4527a0;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>📅 cloud_weekly / cloud_worldcup / cloud_backup</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">周末/备份/世界杯</span></div>
+        <div style="background:#4527a0;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>☁️ 周末 / 备份 / 周期任务</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">非交易日</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#ede7f6;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:12%;">周日06:30</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:18%;">cloud_weekly</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:14%;">行业/名称/T+1</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#444;line-height:1.7;">行业映射 + 股票名称 + T+1数据刷新</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#888;font-size:11px;">周一06:29/周六07:30(PAUSED)</td></tr>
-          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">周五六日07:30</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">cloud_worldcup</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">⚽ 竞彩</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#444;line-height:1.7;">比赛比分+晋级概率+效率分析 → worldcup.html + <b style="color:#4527a0;">deploy gh-pages</b></td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#888;font-size:11px;">07:29 世界杯(PAUSED)</td></tr>
-          <tr style="background:#ede7f6;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">21:00</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">cloud_backup</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">💾 备份</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#444;line-height:1.7;">关键数据文件自动备份</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;color:#888;font-size:11px;">21:00(PAUSED)</td></tr>
+          <tr style="background:#ede7f6;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:10%;">周日 06:30</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:18%;">行业 / 名称 / T+1</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;width:18%;">基础数据刷新</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;line-height:1.7;color:#333;width:54%;">🏠 阿狸咪全责（周末小九不在单位）</td></tr>
+          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">周五-日 07:30</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">竞彩娱乐</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">⚽ 世界杯</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;line-height:1.7;color:#333;">🏠 阿狸咪全责</td></tr>
+          <tr style="background:#ede7f6;"><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">21:00</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">自动备份</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;font-weight:500;">💾 关键数据备份</td><td style="padding:6px 12px;border-bottom:1px solid #d1c4e9;line-height:1.7;color:#333;">🏠 阿狸咪 21:10 兜底：云端没跑→本地补备份</td></tr>
         </table>
       </div>
 
       <!-- 安全网 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#c62828;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>🛡️ safety-net.yml（兜底监控）</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">6轮检查 · 数据过旧自动重跑</span></div>
+        <div style="background:#c62828;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>🛡️ 兜底监控（云端自动重跑）</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">6 轮检查 · 数据过旧自动重跑</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#ffebee;"><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;font-weight:500;width:12%;">09:15 / 10:00 / 11:45 / 14:30 / 19:30 / 21:00</td><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;color:#444;line-height:1.7;" colspan="4">检查站点可访问性 → 检测数据新鲜度(超过6h未更新→触发警告) → 自动兜底(gh workflow run cloud_intraday.yml 重跑)</td></tr>
+          <tr style="background:#ffebee;"><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;font-weight:500;width:10%;">09:15 / 10:00 / 11:45 / 14:30 / 19:30 / 21:00</td><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;font-weight:500;width:18%;">☁️ 云端 6 轮</td><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;font-weight:500;width:18%;">所有卡片数据新鲜度</td><td style="padding:6px 12px;border-bottom:1px solid #ffcdd2;line-height:1.7;color:#333;width:54%;">☁️ 云端自检：站点可访问 + 数据 > 6h 未更新→自动触发重跑</td></tr>
         </table>
       </div>
 
-      <!-- 本机专属 -->
+      <!-- 阿狸咪旁听通道 -->
       <div style="background:#fff;border-radius:6px;overflow:hidden;margin-bottom:0;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="background:#37474f;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>🖥️ 本机专属（云端无 token / 架构限制无法覆盖）</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">仅为占位 · 云端失败时激活对应的PAUSED兜底</span></div>
+        <div style="background:#37474f;padding:8px 14px;color:#fff;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px;"><span>🏠 阿狸咪旁听通道（机器常在线时）</span><span style="font-size:11px;font-weight:400;opacity:0.85;background:rgba(255,255,255,0.15);padding:2px 8px;border-radius:4px;">只读不写 · 机器关机则跳过</span></div>
         <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
-          <tr style="background:#eceff1;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;width:12%;">17:25</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;width:18%;">🔄 neodata token刷新</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;color:#444;line-height:1.7;" colspan="3">connect_cloud_service → 取 tempToken → 写 .neodata_token。云端无桌面会话，无法获取该凭证，须本机每日刷新。</td></tr>
-          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">17:31</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">📊 neodata数据抓取</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;color:#444;line-height:1.7;" colspan="3">fetch_52w_high / fetch_sector_fund_flow / fetch_sector_rs（云端无 token 跑不了）</td></tr>
-          <tr style="background:#eceff1;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">08:00 / 19:30</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">📋 交接检查</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;color:#444;line-height:1.7;" colspan="3">自动化交接阅读 + 写报告，本机互传。</td></tr>
-          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">全天</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">🩺 监控类</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;color:#444;line-height:1.7;" colspan="3">云端存活心跳(08:00-21:00 每60分) + 网络健康(09-15 每30分) + C盘预警(09:00) + 全时段云端健康监控(09-16 每30分)</td></tr>
+          <tr style="background:#eceff1;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;width:10%;">08:00 / 19:30</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;width:18%;">📋 交接汇报</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;width:18%;">每天向主人汇报</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;line-height:1.7;color:#333;width:54%;">🏠 阿狸咪读交接文档 + 监控日志 + 写报告</td></tr>
+          <tr style="background:#fff;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">08 / 10 / 12 / 14 / 16 / 18 点</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">每 2h 健康检查</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">云端数据新鲜度</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;line-height:1.7;color:#333;">🏠 阿狸咪读云端时间戳，>3h 未更新→告警（与云端 safety-net 互补：阿狸咪只读不写，机器关机则跳过）</td></tr>
+          <tr style="background:#eceff1;"><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">紧急</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">📨 紧急通信</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;font-weight:500;">小九 → 阿狸咪</td><td style="padding:6px 12px;border-bottom:1px solid #cfd8dc;line-height:1.7;color:#333;">🏠 阿狸咪监听 URGENT 文件，2h 内读取</td></tr>
         </table>
       </div>
     </div>
 
     <!-- 架构说明 -->
     <div style="margin-bottom:16px;">
-      <h3 style="margin-bottom:12px;font-size:16px;">☁️ 云端主链架构（替代旧双机分工）</h3>
+      <h3 style="margin-bottom:12px;font-size:16px;">☁️ 三道防线架构说明</h3>
       <div style="margin-bottom:8px;padding:10px 14px;background:#e8f5e9;border-radius:8px;font-size:12px;line-height:1.8;">
-        <b>2026-07-15 架构升级</b>：原双机（阿狸咪/小九互相兜底）已全面上云，所有 fetch/scan/build/deploy 由 GitHub Actions 7 个 workflow 覆盖 10 个时点。本机 WorkBuddy 自动化从"主力执行"转为"仅监控"——<span style="color:#c62828;">ACTIVE 任务仅保留监控/心跳/交接/neodata 本机专属项</span>，其余全部 PAUSED 原地等待云端失效时激活接管。
+        <b>2026-07-15 架构升级</b>：系统由<strong>「云端主力 + 双机旁听兜底」</strong>三道防线共同保障。<b style="color:#1a237e;">云端</b>负责所有定时数据抓取、扫描、构建和部署，工作日 10 个时点全覆盖。<b style="color:#0F6E56;">小九（单位机）</b>在交易日 08:00-17:30 负责白班旁听与兜底。<b style="color:#993C1D;">阿狸咪（家用机）</b>在 17:30-08:00 及周末/假期负责晚班兜底与全时段旁听（机器常在线时）。双机各看各的（云端看数据新鲜度、URGENT 看紧急文件、兜底看时间戳），谁死了另一个能发现，绝不重复。
       </div>
-      <table style="width:100%;border-collapse:collapse;font-size:11.5px;background:#fff;color:#333;">
-        <tr style="background:#cfd8dc;"><th style="padding:5px 10px;text-align:left;border:1px solid #b0bec5;">层级</th><th style="padding:5px 10px;text-align:left;border:1px solid #b0bec5;">组成</th><th style="padding:5px 10px;text-align:left;border:1px solid #b0bec5;">职责</th></tr>
-        <tr><td style="padding:4px 10px;border:1px solid #ddd;font-weight:500;background:#f5f5f5;">🥇 主链路</td><td style="padding:4px 10px;border:1px solid #ddd;">cloud_intraday.yml<br>cloud_post_close.yml<br>cloud_data_fetch.yml<br>cloud_scanner.yml</td><td style="padding:4px 10px;border:1px solid #ddd;">日常所有数据抓取、扫描、构建、部署。工作日 10 个时点全覆盖(09:20~18:31)，全自动串行，无本机依赖。</td></tr>
-        <tr><td style="padding:4px 10px;border:1px solid #ddd;font-weight:500;background:#f5f5f5;">🥈 兜底监控</td><td style="padding:4px 10px;border:1px solid #ddd;">safety-net.yml (云端)<br>云端存活心跳(本机)<br>网络健康(本机)</td><td style="padding:4px 10px;border:1px solid #ddd;">安全网 6 轮/天检查数据新鲜度，过旧时自动重跑 cloud_intraday。本机每小时检查云端最后部署时间是否超过 20h，超时告警。</td></tr>
-        <tr><td style="padding:4px 10px;border:1px solid #ddd;font-weight:500;background:#f5f5f5;">🥉 救援船</td><td style="padding:4px 10px;border:1px solid #ddd;">16 条 PAUSED 自动化<br>(全部保留未删)</td><td style="padding:4px 10px;border:1px solid #ddd;">09:14 盘前 / 09-16 盘中 / 17:30 / 18:30 / 19:30 / 19:35 / 21:00 原双机任务全部 PAUSED。云端主链若连续失效，手动激活对应 PAUSED 任务即刻接管。</td></tr>
-        <tr><td style="padding:4px 10px;border:1px solid #ddd;font-weight:500;background:#f5f5f5;">本机专属</td><td style="padding:4px 10px;border:1px solid #ddd;">neodata token 刷新(17:25)<br>neodata 数据抓取(17:31)<br>交接检查(08:00/19:30)</td><td style="padding:4px 10px;border:1px solid #ddd;">neodata 凭证依赖桌面会话，云端无法获取，须本机每日刷新。捕获 52w新高/板块资金流/sector_rs 三表。</td></tr>
-      </table>
       <div style="margin-top:8px;padding:8px 12px;background:#fff3e0;border-radius:6px;font-size:11px;color:#e65100;line-height:1.7;">
-        <b>📌 故障接力规则</b>：①云端主链某时点未成功部署 → safety-net 19:30 检测数据过旧 → 自动重跑 cloud_intraday；②若云端多轮连续失效 > 20h → 本机心跳监控告警 → 手动激活 PAUSED 离线兜底；③neodata 三表云端无法跑，本机是唯一数据源，本机离线时卡片降级显示旧数据。
+        <b>📌 故障接力规则</b>：①云端某时点未成功部署 → 云端兜底监控检测数据过旧 → 自动重跑；②若云端多轮连续失效 → 阿狸咪 16:00/18:00 旁听必然发现 → 告警；③小九发现紧急问题 → 写紧急通信文件 → 阿狸咪 2h 内读到 → 通知主人。
       </div>
     </div>
 
@@ -824,7 +816,7 @@ td { padding:3px 6px; border:1px solid #ddd; }
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:11.5px;line-height:1.7;">
-        <b>数据流</b>：scanner.py watch → watch_result.json → <code>calc_crds.py</code>（BaoStock 拉取10日K线+上证指数）→ crds_result.json → update_data_v2.py 注入 <code>window.CRDS_CARD_DATA</code> → 暂未上架区卡片渲染。<br>
+        <b>数据流</b>：盘中扫描模块识别涨停股 → 行情数据源拉取近 10 日 K 线和上证指数 → 计算 CRDS 评分 → 注入前端卡片 → 在「暂未上架」区显示。<br>
         <b>通达信公式（合并版）</b>：复制下方代码到公式管理器 → 条件选股，盘中可直接跑选股/副图：<br>
         <div style="background:#f2f2f2;border-radius:6px;padding:8px 10px;margin-top:6px;font-family:monospace;line-height:1.6;color:#555;font-size:11px;white-space:pre-wrap;">ZT:=C/REF(C,1)>=1.095 AND C=H;
 IDN:=(INDEXC-REF(INDEXC,1))/REF(INDEXC,1)*100<=-1.5;

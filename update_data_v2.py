@@ -1101,6 +1101,7 @@ def main():
             experiment["history"] = load_json(_hist_file, {})
     except Exception as e:
         print(f"[warn] load experiment data failed: {e}")
+    capital_flow = load_json(os.path.join(DATA_DIR, "capital_flow_summary.json"), {})
     limit_up_heatmap = load_json(os.path.join(DATA_DIR, "limit_up_heatmap.json"), {})
     top10_daily = load_json(os.path.join(DATA_DIR, "top10_daily.json"), {"update_time": "", "top10": []})
     # 多维共振最新一日TOP10
@@ -1460,6 +1461,7 @@ def main():
         ("CANDIDATE_POOL", "window.CANDIDATE_POOL = ", "{", "}"),
         ("CRDS_CARD_DATA", "window.CRDS_CARD_DATA = ", "{", "}"),
         ("EXPERIMENT_DATA", "window.EXPERIMENT_DATA = ", "{", "}"),
+        ("CAPITAL_FLOW_DATA", "window.CAPITAL_FLOW_DATA = ", "{", "}"),
         ("OPS_STATUS",      "window.OPS_STATUS = ",      "{", "}"),
     ]
     # 本机运维状态（兜底结论 + neodata 有效期），供前端运维卡片读取
@@ -1472,7 +1474,7 @@ def main():
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
-                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, ops_status]
+                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, capital_flow, ops_status]
     replacements = []
 
     for (name, marker, open_ch, close_ch), data in zip(markers, data_objs):

@@ -114,6 +114,14 @@ jobs:
           python update_multi_resonance_daily.py || echo "[跳过]"
           echo "✅ 生成完成"
 
+      # ─── CRDS 逆势龙头（依赖 scanner 产出的 watch_result.json） ───
+      - name: "📊 CRDS 逆势龙头评分"
+        continue-on-error: true
+        run: |
+          echo "📊 计算 CRDS 逆势龙头评分..."
+          python calc_crds.py || echo "⚠️ CRDS 跳过"
+          echo "✅ CRDS 已写入 data/crds_result.json"
+
       # ─── 三重选股实验（金钻起涨/波段多头/主力） ───
       - name: "🧪 三重选股(暂未上架实验)"
         continue-on-error: true

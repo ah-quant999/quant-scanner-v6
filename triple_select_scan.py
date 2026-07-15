@@ -271,9 +271,9 @@ def main():
         signals=sig, hits=hits, lists=lists,
         generated_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     )
-    # 输出目录: repo-temp/data/experiment/
+    # 输出目录: data/experiment/（云端和本地一致）
     here = os.path.dirname(os.path.abspath(__file__))
-    exp_dir = os.path.normpath(os.path.join(here, "..", "..", "data", "experiment"))
+    exp_dir = os.path.normpath(os.path.join(here, "data", "experiment"))
     os.makedirs(exp_dir, exist_ok=True)
     f1 = os.path.join(exp_dir, f"triple_select_{args.date.replace('-', '')}.json")
     json.dump(out, open(f1, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
