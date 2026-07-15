@@ -114,6 +114,14 @@ jobs:
           python update_multi_resonance_daily.py || echo "[跳过]"
           echo "✅ 生成完成"
 
+      # ─── 三重选股实验（金钻起涨/波段多头/主力） ───
+      - name: "🧪 三重选股(暂未上架实验)"
+        continue-on-error: true
+        run: |
+          echo "🧪 三重选股实验扫描..."
+          python triple_select_scan.py || echo "⚠️ 三重选股跳过"
+          echo "✅ 实验数据已写入 data/experiment/"
+
       # ─── 构建前端 ───
       - name: "🏗️ 构建前端"
         run: |
