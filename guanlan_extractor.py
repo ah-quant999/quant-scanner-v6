@@ -29,6 +29,7 @@ import re
 import sys
 import time
 import urllib.request
+import requests as _requests
 from datetime import datetime, timedelta
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -143,6 +144,101 @@ def build_name_index():
     return _NAME_INDEX
 
 
+# ── 干净名字解析(根治: 研报句子绝不信任, 名字一律按 code 反查权威源) ──
+_CODE_NAME_MAP = None
+_EM_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Referer": "https://quote.eastmoney.com/",
+}
+_EM_NAME_CACHE = {}
+_GARBAGE_KW = ['我们', '看好', '完成', '通过', '闪电', '带动', '新增', '包括',
+               '给予', '推荐', '关注', '建议', '认为', '预计', '有望', '中标',
+               '签订', '取得', '获得', '基石', '其中', '以及', '此外', '例如',
+               '如下', '对于', '关于', '除了', '根据', '也']
+
+
+def _build_code_name_map():
+    """A股 code→name (来自 stock_names.json, 干净)。"""
+    global _CODE_NAME_MAP
+    if _CODE_NAME_MAP is not None:
+        return _CODE_NAME_MAP
+    _CODE_NAME_MAP = {}
+    try:
+        with open(STOCK_NAMES_FILE, "r", encoding="utf-8") as f:
+            for s in json.load(f):
+                c = (s.get("code") or "").strip()
+                n = (s.get("name") or "").strip()
+                if c and n:
+                    _CODE_NAME_MAP[c.zfill(6)] = n
+    except Exception:
+        pass
+    return _CODE_NAME_MAP
+
+
+def _em_name(code, exchange):
+    key = f"{exchange}_{code}"
+    if key in _EM_NAME_CACHE:
+        return _EM_NAME_CACHE[key]
+    _EM_NAME_CACHE[key] = None
+    if exchange == "HK":
+        secid = "116." + str(code).zfill(5)
+    elif exchange in ("SH", "SZ"):
+        secid = ("1." if exchange == "SH" else "0.") + str(code).zfill(6)
+    else:
+        return None
+    try:
+        r = _requests.get("https://push2.eastmoney.com/api/qt/stock/get",
+                          params={"secid": secid, "fields": "f57,f58"},
+                          headers=_EM_HEADERS, timeout=8)
+        if r.status_code == 200:
+            d = r.json().get("data") or {}
+            nm = (d.get("f58") or "").strip()
+            if nm and not re.fullmatch(r'[0-9A-Za-z]+', nm):
+                _EM_NAME_CACHE[key] = nm
+    except Exception:
+        pass
+    return _EM_NAME_CACHE[key]
+
+
+def _norm_name(n):
+    s = str(n).strip()
+    s = re.sub(r'^(XD|XR|DR|N)', '', s)
+    s = s.replace('Ａ', 'A').replace('Ｂ', 'B')
+    s = re.sub(r'(股份)?有限公司$', '', s)
+    s = re.sub(r'[（(].*?[)）]$', '', s)
+    return s.strip()
+
+
+def _looks_clean(n):
+    s = str(n).strip()
+    if not s or re.fullmatch(r'[0-9A-Za-z]+', s):
+        return False
+    if s in ('A', 'B', '股', '20', 'ETF', '基金'):
+        return False
+    if any(k in s for k in _GARBAGE_KW):
+        return False
+    if '债' in s or '指数' in s or 'ETF' in s or '基金' in s:
+        return False
+    t = re.sub(r'(股份)?有限公司$', '', s)
+    return 2 <= len(t) <= 8 and re.fullmatch(r'[一-鿿]+', t)
+
+
+def resolve_guanlan_name(code, exchange, hint_name):
+    """研报股票名字: 一律按 code 反查权威源, 绝不信任研报句子。
+    优先级: 东财 f58(云端权威) > stock_names.json(A股) > 干净 hint > 代码兜底。
+    """
+    em = _em_name(code, exchange)
+    if em:
+        return _norm_name(em)
+    if exchange in ("SH", "SZ"):
+        snm = _build_code_name_map().get(str(code).zfill(6))
+        if snm:
+            return _norm_name(snm)
+    if _looks_clean(hint_name):
+        return _norm_name(hint_name)
+    return str(code).strip()
+
+
 def detect_exchange_hint(text, pos):
     """在 text 的 pos 位置附近检测 'H股'/'A股' 提示，返回 'HK'/'A'/'?'"""
     window = text[pos:pos + 20]
@@ -233,7 +329,7 @@ def parse_stock_codes(text, name_index=None):
             seen_codes.add(full)
             seen_names.add(name)
             results.append({
-                "name": name,
+                "name": resolve_guanlan_name(code, exchange, name),
                 "code": code,
                 "full_code": full,
                 "exchange": exchange,
@@ -324,7 +420,7 @@ def parse_stock_codes(text, name_index=None):
                 seen_codes.add(full)
                 seen_names.add(name)
                 results.append({
-                    "name": name,
+                    "name": resolve_guanlan_name(code, exchange, name),
                     "code": code,
                     "full_code": full,
                     "exchange": exchange,

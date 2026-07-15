@@ -2114,7 +2114,7 @@ def check_stock_signals(code, name, market="sh", board_label="", volume_amount=0
 
         return {
             "code": code,
-            "name": name,
+            "name": resolve_clean_name_s(code, market, name),
             "market": market,
             "market_label": "港股" if market == "hk" else ("沪" if code.startswith("6") else "深"),
             "board_label": board_label or ("港股" if market == "hk" else ("科创板" if code.startswith("688") else ("创业板" if code.startswith("300") else "主板"))),
@@ -2232,8 +2232,105 @@ _GUANLAN_NAME_WHITELIST = {'和林微纳', '和而泰', '和顺石油', '和晶�
                            '和辉光电', '和佳医疗', '和金科技', '和元生物'}
 
 
+# ── 干净名字解析(根治观澜台研报把新闻稿当股票名) ──
+# 优先级: 东财 f58(权威, 本机/云端均可达) > stock_names.json(A股本地)
+#        > 干净原值 > 代码兜底(绝不输出新闻稿/指数垃圾)
+_EM_NAME_CACHE_S = {}
+_SN_MAP_S = None
+_EM_HEADERS_S = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Referer": "https://quote.eastmoney.com/",
+}
+_GARBAGE_KW_S = ['我们', '看好', '完成', '通过', '闪电', '带动', '新增', '包括',
+                 '给予', '推荐', '关注', '建议', '认为', '预计', '有望', '中标',
+                 '签订', '取得', '获得', '基石', '其中', '以及', '此外', '例如',
+                 '如下', '对于', '关于', '除了', '根据', '也']
+
+
+def _stock_names_map_s():
+    global _SN_MAP_S
+    if _SN_MAP_S is not None:
+        return _SN_MAP_S
+    _SN_MAP_S = {}
+    try:
+        with open(os.path.join(DATA_DIR, "stock_names.json"), "r", encoding="utf-8") as f:
+            for s in json.load(f):
+                c = (s.get("code") or "").strip()
+                n = (s.get("name") or "").strip()
+                if c and n:
+                    _SN_MAP_S[c.zfill(6)] = n
+    except Exception:
+        pass
+    return _SN_MAP_S
+
+
+def _em_name_s(code, market):
+    key = f"{market}_{code}"
+    if key in _EM_NAME_CACHE_S:
+        return _EM_NAME_CACHE_S[key]
+    _EM_NAME_CACHE_S[key] = None
+    c = str(code)
+    if market == "hk" or (c.isdigit() and len(c) <= 5):
+        secid = "116." + c.zfill(5)
+    elif c.startswith(("6", "9")):
+        secid = "1." + c.zfill(6)
+    elif c.startswith(("0", "3", "2", "8")):
+        secid = "0." + c.zfill(6)
+    else:
+        return None
+    try:
+        r = requests.get("https://push2.eastmoney.com/api/qt/stock/get",
+                         params={"secid": secid, "fields": "f57,f58"},
+                         headers=_EM_HEADERS_S, timeout=8)
+        if r.status_code == 200:
+            d = r.json().get("data") or {}
+            nm = (d.get("f58") or "").strip()
+            if nm and not re.fullmatch(r'[0-9A-Za-z]+', nm):
+                _EM_NAME_CACHE_S[key] = nm
+    except Exception:
+        pass
+    return _EM_NAME_CACHE_S[key]
+
+
+def _norm_name_s(n):
+    s = str(n).strip()
+    s = re.sub(r'^(XD|XR|DR|N)', '', s)
+    s = s.replace('Ａ', 'A').replace('Ｂ', 'B')
+    s = re.sub(r'(股份)?有限公司$', '', s)
+    s = re.sub(r'[（(].*?[)）]$', '', s)
+    return s.strip()
+
+
+def _looks_clean_s(n):
+    s = str(n).strip()
+    if not s or re.fullmatch(r'[0-9A-Za-z]+', s):
+        return False
+    if s in ('A', 'B', '股', '20', 'ETF', '基金'):
+        return False
+    if any(k in s for k in _GARBAGE_KW_S):
+        return False
+    if '债' in s or '指数' in s or 'ETF' in s or '基金' in s:
+        return False
+    t = re.sub(r'(股份)?有限公司$', '', s)
+    return 2 <= len(t) <= 8 and re.fullmatch(r'[一-鿿]+', t)
+
+
+def resolve_clean_name_s(code, market, raw_name):
+    """返回干净股票名(见上方优先级说明)。"""
+    em = _em_name_s(code, market)
+    if em:
+        return _norm_name_s(em)
+    c = str(code).zfill(6)
+    snm = _stock_names_map_s().get(c)
+    if market != "hk" and snm:
+        return _norm_name_s(snm)
+    if _looks_clean_s(raw_name):
+        return _norm_name_s(raw_name)
+    return str(code).strip()
+
+
 def _repair_guanlan_name(name: str) -> str:
-    """修复 guanlan 提取的垃圾股票名称"""
+    """修复 guanlan 提取的垃圾股票名称(二次安全网; 主修复在 resolve_clean_name_s)"""
     if not name or len(name) < 2:
         return name
 
@@ -2241,9 +2338,15 @@ def _repair_guanlan_name(name: str) -> str:
     if name in _GUANLAN_NAME_WHITELIST:
         return name
 
-    # 1. 去掉句子前缀
-    garbage_prefixes = ['我们给予', '新客户包括', '但随着', '其次是',
-                        '新增', '带动', '包括', '给予', '及', '和']
+    # 0. 去权/新股前缀
+    name = re.sub(r'^(XD|XR|DR|N)', '', name)
+
+    # 1. 去掉句子前缀(扩展开, 覆盖"我们也看好/通过与/闪电式完成"等)
+    garbage_prefixes = ['我们也看好', '我们看好', '我们给予', '我们推荐', '我们建议',
+                        '强烈推荐', '建议关注', '可以关注', '今日关注', '短线关注', '中线关注',
+                        '新客户包括', '但随着', '其次是', '通过与', '闪电式完成', '闪电式',
+                        '新增', '带动', '包括', '给予', '及', '和', '其中', '以及',
+                        '此外', '例如', '如下', '对于', '关于', '除了', '根据']
     for p in sorted(garbage_prefixes, key=len, reverse=True):
         if name.startswith(p) and len(name) > len(p) + 1:
             candidate = name[len(p):]
@@ -2253,8 +2356,9 @@ def _repair_guanlan_name(name: str) -> str:
                 name = candidate
                 break
 
-    # 2. 截断描述性后缀
-    tail_markers = ['主要依靠', '近期与', '的风险', '首选']
+    # 2. 截断描述性后缀(扩展开)
+    tail_markers = ['主要依靠', '近期与', '的风险', '首选', '股份有限公司', '有限公司',
+                    '标杆企业', '的电力', '的数字能源', '的龙头', '板块', '概念']
     for m in tail_markers:
         idx = name.find(m)
         if idx >= 2:
@@ -2266,6 +2370,9 @@ def _repair_guanlan_name(name: str) -> str:
 
     # 4. 去末尾「X有限公司」
     name = re.sub(r'(科技|股份|有限|投资|控股|集团|实业|证券)有限公司$', '', name)
+
+    # 5. 全角→半角
+    name = name.replace('Ａ', 'A').replace('Ｂ', 'B')
 
     return name.strip('，,。.、；;：:（）()·')
 
@@ -2283,8 +2390,9 @@ def _convert_guanlan_to_pool_entry(gl_stock, today):
     else:
         code = code.zfill(6)
 
-    # 名称清洗：修复 guanlan 解析错误
-    name = _repair_guanlan_name(raw_name)
+    # 名称清洗：修复 guanlan 解析错误(主解析走 resolve_clean_name_s, 东财/stock_names 权威)
+    mkt_arg = "hk" if market_raw == "港股" else ("sh" if code.startswith("6") else "sz")
+    name = resolve_clean_name_s(code, mkt_arg, raw_name)
 
     # 如果修复后名称仍然含垃圾关键词，跳过
     bad_keywords = ['我们的', '首选', '给予', '带动', '新增', '包括', '主要依靠',

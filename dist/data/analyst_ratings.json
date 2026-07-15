@@ -1,26 +1,30 @@
 {
-  "update_time": "2026-07-13 17:52",
+  "update_time": "2026-07-14 17:34",
   "upgrades": [],
   "downgrades": [],
   "new_coverage": [],
   "hot_stocks": [
     {
-      "code": "600999",
-      "name": "招商证券",
-      "rating": "增持",
-      "institution": "国信证券",
-      "report_count_1m": 2,
-      "date": "2026-07-10"
-    },
-    {
-      "code": "600030",
-      "name": "中信证券",
+      "code": "300607",
+      "name": "拓斯达",
       "rating": "买入",
-      "institution": "东吴证券",
+      "institution": "东莞证券",
       "report_count_1m": 1,
-      "date": "2026-07-10"
+      "date": "2026-07-14"
     }
   ],
-  "latest_reports": [],
-  "note": "数据源: akshare(TOP40个股), 近3日新增推荐2只（买入/增持） (当日研报0条, 盘后T+1发布)"
+  "latest_reports": [
+    {
+      "code": "300607",
+      "name": "拓斯达",
+      "title": "2026半年报业绩预告点评：机器人业务持续放量，26H1利润延续同比高增",
+      "rating": "买入",
+      "institution": "东莞证券",
+      "date": "2026-07-14"
+    }
+  ],
+  "note": "数据源: akshare(TOP40个股), 近3日新增推荐1只（买入/增持）",
+  "rating_summary": {
+    "买入": 1
+  }
 }

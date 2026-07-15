@@ -1,25 +1,31 @@
 {
-  "timestamp": "2026-07-07T18:02:43.940243",
-  "errors": 0,
-  "warnings": 4,
-  "ok": 43,
+  "timestamp": "2026-07-14T10:01:11.478740",
+  "errors": 2,
+  "warnings": 3,
+  "ok": 40,
   "details": {
-    "errors": [],
+    "errors": [
+      {
+        "dashboard": "观澜台",
+        "check": "recommend.json 新鲜度",
+        "message": "文件不存在: recommend.json"
+      },
+      {
+        "dashboard": "观澜台",
+        "check": "recommend.json 格式",
+        "message": "文件不存在: recommend.json"
+      }
+    ],
     "warnings": [
       {
         "dashboard": "选股观测台",
-        "check": "signal_backtest.json(部署)",
-        "message": "dist/data/ 中缺少 signal_backtest.json"
+        "check": "signal_backtest.json 新鲜度",
+        "message": "文件已老化 160.0h（阈值 72h）"
       },
       {
         "dashboard": "部署",
         "check": "dist/data完整性",
         "message": "data/ 有但 dist/data/ 缺少: mahoro_signals.json"
-      },
-      {
-        "dashboard": "部署",
-        "check": "dist/data完整性",
-        "message": "data/ 有但 dist/data/ 缺少: signal_backtest.json"
       },
       {
         "dashboard": "部署",

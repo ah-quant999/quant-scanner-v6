@@ -14,11 +14,126 @@
 """
 import os
 import json
+import re
 import time
 import akshare as ak
+import requests as _requests
 
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 OUT = os.path.join(DATA, "candidate_pool.json")
+
+# ════════════════════════════════════════════════════════════════
+# 干净名字解析（根治观澜台研报把新闻稿当股票名的污染）
+# 优先级: 东财 f58(云端权威, 可纠正 stock_names/mootdx 错名)
+#        > stock_names.json(A股本地权威, 含个别校正)
+#        > 原始名(若看起来干净) > 代码兜底(绝不输出新闻稿/指数垃圾)
+# ════════════════════════════════════════════════════════════════
+STOCK_NAMES_FILE = os.path.join(DATA, "stock_names.json")
+
+_EM_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Referer": "https://quote.eastmoney.com/",
+}
+_EM_NAME_CACHE = {}
+_SN_MAP = None
+# 注: 不在此硬编码个别校正——股票名以 东财 f58(云端/本机均可达) 为权威,
+#      stock_names.json 作为本地兜底。任何"疑似错名"须联网核实后再动, 严禁凭记忆改。
+
+_GARBAGE_KW = ['我们', '看好', '完成', '通过', '闪电', '带动', '新增', '包括',
+               '给予', '推荐', '关注', '建议', '认为', '预计', '有望', '中标',
+               '签订', '取得', '获得', '基石', '其中', '以及', '此外', '例如',
+               '如下', '对于', '关于', '除了', '根据', '也']
+# 注: '有限公司'/'股份有限' 不作垃圾词——合法名常带此后缀, 由 _norm_name 剥离;
+#     真正污染是新闻句式(我们/看好/完成/闪电...), 已被 _GARBAGE_KW 覆盖。
+
+
+def _stock_names_map():
+    global _SN_MAP
+    if _SN_MAP is not None:
+        return _SN_MAP
+    _SN_MAP = {}
+    try:
+        with open(STOCK_NAMES_FILE, "r", encoding="utf-8") as f:
+            for s in json.load(f):
+                c = (s.get("code") or "").strip()
+                n = (s.get("name") or "").strip()
+                if c and n:
+                    _SN_MAP[c.zfill(6)] = n
+    except Exception:
+        pass
+    return _SN_MAP
+
+
+def _em_secid(code, market):
+    c = str(code)
+    if market == "hk" or (c.isdigit() and len(c) <= 5):
+        return "116." + c.zfill(5)
+    if c.startswith(("6", "9")):
+        return "1." + c.zfill(6)
+    if c.startswith(("0", "3", "2", "8")):
+        return "0." + c.zfill(6)
+    return None
+
+
+def _em_name(code, market):
+    """云端东财取权威名(f58)。本机网络层拦截东财时返回 None。"""
+    key = f"{market}_{code}"
+    if key in _EM_NAME_CACHE:
+        return _EM_NAME_CACHE[key]
+    _EM_NAME_CACHE[key] = None
+    secid = _em_secid(code, market)
+    if not secid:
+        return None
+    try:
+        r = _requests.get("https://push2.eastmoney.com/api/qt/stock/get",
+                          params={"secid": secid, "fields": "f57,f58"},
+                          headers=_EM_HEADERS, timeout=8)
+        if r.status_code == 200:
+            d = r.json().get("data") or {}
+            nm = (d.get("f58") or "").strip()
+            if nm and not re.fullmatch(r'[0-9A-Za-z]+', nm):
+                _EM_NAME_CACHE[key] = nm
+    except Exception:
+        pass
+    return _EM_NAME_CACHE[key]
+
+
+def _norm_name(n):
+    """去除权/新股前缀、全角字母、有限公司/括号后缀。"""
+    s = str(n).strip()
+    s = re.sub(r'^(XD|XR|DR|N)', '', s)
+    s = s.replace('Ａ', 'A').replace('Ｂ', 'B')
+    s = re.sub(r'(股份)?有限公司$', '', s)
+    s = re.sub(r'[（(].*?[)）]$', '', s)
+    return s.strip()
+
+
+def _looks_clean(n):
+    s = str(n).strip()
+    if not s or re.fullmatch(r'[0-9A-Za-z]+', s):
+        return False
+    if s in ('A', 'B', '股', '20', 'ETF', '基金'):
+        return False
+    if any(k in s for k in _GARBAGE_KW):
+        return False
+    if '债' in s or '指数' in s or 'ETF' in s or '基金' in s:
+        return False
+    t = re.sub(r'(股份)?有限公司$', '', s)
+    return 2 <= len(t) <= 8 and re.fullmatch(r'[一-鿿]+', t)
+
+
+def resolve_clean_name(code, market, raw_name):
+    """返回干净股票名(见文件头优先级说明)。"""
+    em = _em_name(code, market)          # 云端权威
+    if em:
+        return _norm_name(em)
+    c = str(code).zfill(6)
+    snm = _stock_names_map().get(c)
+    if market != "hk" and snm:           # A股本地权威
+        return _norm_name(snm)
+    if _looks_clean(raw_name):           # 原始名若干净则采用
+        return _norm_name(raw_name)
+    return str(code).strip()             # 兜底代码(不出垃圾)
 
 TOP_PER_BOARD = 100   # 主板/创业板/科创板 各取成交额前 N
 HK_TOP = 50           # 港股取成交额前 N
@@ -192,12 +307,18 @@ def build():
     def add(key, code, name, market, board, source):
         if not key or not code:
             return
+        # ★ 干净名字解析: 无论哪层(raw/研报/行情)传入的 name 都强制校正,
+        #   杜绝观澜台研报把新闻稿当股票名污染候选池(根治点)
+        clean = resolve_clean_name(code, market, name)
         if key in pool:
             if source not in pool[key]["sources"]:
                 pool[key]["sources"].append(source)
+            # 名字以更权威来源刷新(东财/stock_names 已在校正内统一)
+            if clean and clean != pool[key]["code"]:
+                pool[key]["name"] = clean
         else:
             pool[key] = {
-                "code": code, "name": name, "market": market,
+                "code": code, "name": clean, "market": market,
                 "board_label": board, "sources": [source],
             }
 
