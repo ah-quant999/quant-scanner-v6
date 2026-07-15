@@ -37,6 +37,7 @@ __pycache__/
 !fetch_worldcup.py
 !inject_weekend_run.py
 !diag_parallel.py
+!refresh_neodata_token.py
 !EVENING_FAILOVER.md
 *.bat
 .wrangler/
