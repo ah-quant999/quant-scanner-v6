@@ -1084,6 +1084,7 @@ def main():
     ipo_score    = load_json(os.path.join(DATA_DIR, "ipo_score.json"), {"update_time": "", "eligible_count": 0, "summary": "", "stocks": []})
     # 给前端 IPO 分组用：区分今日申购 vs 待申购
     ipo_score["today"] = datetime.now().strftime("%Y%m%d")
+    print(f"  [DEBUG] ipo_score today={ipo_score.get('today')}, keys={list(ipo_score.keys())[:5]}")
     cffex_holdings = load_json(os.path.join(DATA_DIR, "cffex_holdings.json"), {})
     inst_trade = load_json(os.path.join(DATA_DIR, "inst_trade.json"), {})
     overnight_brief = load_json(os.path.join(DATA_DIR, "overnight_timeline.json"), [])
