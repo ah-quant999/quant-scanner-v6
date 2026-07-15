@@ -61,37 +61,39 @@ jobs:
         if: github.event.schedule == '30 7 * * 1-5'
         continue-on-error: true
         run: |
-          python scanner.py full || echo "[跳过] scanner"
-          python build_candidate_pool.py || echo "[跳过] build_candidate"
-          python generate_recommend.py || echo "[跳过] recommend"
-          python generate_top10.py || echo "[跳过] top10"
+          echo ">>> scanner.py start $(date -Iseconds)"
+          timeout 600 python scanner.py full 2>&1 | tail -10 || echo "[超时/失败] scanner"
+          echo "<<< scanner.py end"
+          echo ">>> build_candidate_pool.py start"
+          timeout 120 python build_candidate_pool.py 2>&1 | tail -3 || echo "[超时/失败] build_candidate"
+          echo "<<< build_candidate_pool.py end"
+          timeout 60 python generate_recommend.py 2>&1 | tail -3 || echo "[超时] recommend"
+          timeout 60 python generate_top10.py 2>&1 | tail -3 || echo "[超时] top10"
 
       # ─── 16:15 龙虎榜公布后 ───
       - name: "🐉 16:15 — 龙虎榜+机器共振+抱团+板块轮动+五维"
         if: github.event.schedule == '15 8 * * 1-5'
         continue-on-error: true
         run: |
-          python fetch_lhb.py || echo "[跳过] lhb"
-          python update_triple_resonance_daily.py || echo "[跳过] triple_resonance"
-          python update_multi_resonance_daily.py || echo "[跳过] multi_resonance"
-          python calc_crds.py 2>/dev/null || echo "[跳过] crds"
-          python generate_recommend.py || echo "[跳过] recommend"
-          python generate_top10.py || echo "[跳过] top10"
-          python generate_one_look.py 2>/dev/null || echo "[跳过] one_look"
+          for s in fetch_lhb.py update_triple_resonance_daily.py update_multi_resonance_daily.py calc_crds.py generate_recommend.py generate_top10.py generate_one_look.py; do
+            echo ">>> $s start $(date -Iseconds)"
+            timeout 90 python "$s" 2>/dev/null | tail -3 || echo "[超时/失败] $s"
+            echo "<<< $s end"
+          done
 
       # ─── 16:30 全模块（三卡片刷新） ───
       - name: "🧩 16:30 — 全模块三卡片刷新"
         if: github.event.schedule == '30 8 * * 1-5'
         continue-on-error: true
         run: |
-          # 板块+ETF+AI速览 三卡片
-          python fetch_sector_fund_flow.py || echo "[跳过] sector_fund"
-          python fetch_nt_data.py || echo "[跳过] nt_data"
-          python fetch_market_alerts.py || echo "[跳过] market_alerts"
-          python generate_recommend.py || echo "[跳过] recommend"
-          python generate_top10.py || echo "[跳过] top10"
-          python update_data_v2.py || echo "[跳过] update_data_v2"
-          # 推送到 gh-pages（不完整版，给用户早看）
+          for s in fetch_sector_fund_flow.py fetch_nt_data.py fetch_market_alerts.py generate_recommend.py generate_top10.py; do
+            echo ">>> $s start $(date -Iseconds)"
+            timeout 90 python "$s" 2>/dev/null | tail -3 || echo "[超时/失败] $s"
+            echo "<<< $s end"
+          done
+          echo ">>> update_data_v2.py start"
+          timeout 120 python update_data_v2.py 2>&1 | tail -5 || echo "[超时/失败] update_data_v2"
+          echo "<<< update_data_v2.py end"
           echo "✅ 16:30 三卡片刷新完成"
 
       - name: "🚀 16:30 — 部署三卡片版"

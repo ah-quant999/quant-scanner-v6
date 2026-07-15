@@ -93,7 +93,9 @@ jobs:
             fetch_macro_data.py fetch_sh_sz_history.py \
             fetch_up_down_stats.py fetch_sh_index_fib.py fetch_sz_index_fib.py \
             fetch_crisis_data.py; do
-            python "$script" || echo "[跳过] $script"
+            echo ">>> $script start $(date -Iseconds)"
+            timeout 90 python "$script" 2>&1 | tail -3 || echo "[超时/失败] $script"
+            echo "<<< $script end"
           done
 
       # ─── 盘中扫描（每时间点：scanner watch + 盘中切片） ───
