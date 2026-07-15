@@ -32,7 +32,7 @@ if not _os.path.exists(_NODE_PATH):
   update_schedule.json  → 手动创建 (不更新)
   guanlan_watchlist.json → guanlan_extractor.py (每日09:25/17:00)
 """
-import os, sys, json, time, re, subprocess
+import os, sys, json, time, re, subprocess, glob
 
 # 拼音首字母（Python端预计算，替代JS端脆弱硬编码字典）
 try:
@@ -1090,6 +1090,17 @@ def main():
     worldcup = load_json(os.path.join(DATA_DIR, "worldcup.json"), {})
     lottery_data = load_json(os.path.join(DATA_DIR, "lottery_data.json"), {})
     crds_data    = load_json(os.path.join(DATA_DIR, "crds_result.json"), {})
+    # 暂未上架 · 三重选股 / 金钻起涨（实验盯盘）
+    experiment = {"today": {}, "history": {}}
+    try:
+        _exp_files = sorted(glob.glob(os.path.join(DATA_DIR, "experiment", "triple_select_2*.json")))
+        if _exp_files:
+            experiment["today"] = load_json(_exp_files[-1], {})
+        _hist_file = os.path.join(DATA_DIR, "experiment", "triple_select_history.json")
+        if os.path.exists(_hist_file):
+            experiment["history"] = load_json(_hist_file, {})
+    except Exception as e:
+        print(f"[warn] load experiment data failed: {e}")
     limit_up_heatmap = load_json(os.path.join(DATA_DIR, "limit_up_heatmap.json"), {})
     top10_daily = load_json(os.path.join(DATA_DIR, "top10_daily.json"), {"update_time": "", "top10": []})
     # 多维共振最新一日TOP10
@@ -1448,6 +1459,7 @@ def main():
         ("GUANLAN_REPORTS", "window.GUANLAN_REPORTS = ", "{", "}"),
         ("CANDIDATE_POOL", "window.CANDIDATE_POOL = ", "{", "}"),
         ("CRDS_CARD_DATA", "window.CRDS_CARD_DATA = ", "{", "}"),
+        ("EXPERIMENT_DATA", "window.EXPERIMENT_DATA = ", "{", "}"),
         ("OPS_STATUS",      "window.OPS_STATUS = ",      "{", "}"),
     ]
     # 本机运维状态（兜底结论 + neodata 有效期），供前端运维卡片读取
@@ -1460,7 +1472,7 @@ def main():
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
-                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, ops_status]
+                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, ops_status]
     replacements = []
 
     for (name, marker, open_ch, close_ch), data in zip(markers, data_objs):

@@ -1187,6 +1187,19 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
         </div>
       </div>
 
+      <!-- 🧪 三重选股 · 金钻起涨（实验盯盘） — 暂未上架 -->
+      <div id="tripleSelectCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          🧪 <span style="font-weight:700;font-size:14px;color:#333;">三重选股 · 金钻起涨</span>
+          <span id="tripleSelectTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+          <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">实验盯盘</span>
+        </div>
+        <div id="tripleSelectCoverage" style="font-size:11px;color:#888;margin-bottom:8px;"></div>
+        <div id="tripleSelectSignals" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;"></div>
+        <div id="tripleSelectHits" style="font-size:12px;color:#444;line-height:1.9;margin-bottom:8px;"></div>
+        <div id="tripleSelectHistory" style="font-size:11px;color:#999;"></div>
+      </div>
+
       <!-- 📡 观测候选股池（可点击展开明细） — 暂未上架面板底部（CRDS 之后） -->
       <div id="candidatePoolCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;">📡 <span style="font-weight:700;font-size:14px;color:#333;">观测候选股池</span><span id="candidatePoolTime" style="font-size:11px;color:#999;font-weight:400;"></span> <span id="candidatePoolCount" style="font-size:11px;color:#888;font-weight:400;"></span></div>
@@ -1218,6 +1231,7 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
 window.CANDIDATE_POOL = {};
 window.CRDS_CARD_DATA = {};
+window.EXPERIMENT_DATA = {};
 window.SCAN_DATA = {
 "scan_mode": "full",
 "scan_time": "2026-07-01 16:20:10",
@@ -450652,11 +450666,88 @@ function renderCrdsCard() {
 }
 
 var _unlistedCardsMoved = false;
+
+function renderTripleSelectCard() {
+  var d = window.EXPERIMENT_DATA || {};
+  var today = d.today || {};
+  var card = document.getElementById('tripleSelectCard');
+  if (!card) return;
+  card.style.display = 'block';
+  var tEl = document.getElementById('tripleSelectTime');
+  if (tEl) tEl.textContent = '更新 ' + (today.generated_at || today.date || '');
+  var covEl = document.getElementById('tripleSelectCoverage');
+  if (covEl) {
+    var cov = '扫描 A股 ' + (today.scanned||0) + '/' + (today.total||0) + ' 只' + (today.failed ? ('，失败 ' + today.failed) : '');
+    covEl.textContent = cov;
+  }
+  var sigEl = document.getElementById('tripleSelectSignals');
+  if (sigEl) {
+    var sig = today.signals || {};
+    var defs = [
+      {k:'金钻起涨', c:'#c62828'},
+      {k:'波段多头', c:'#1565c0'},
+      {k:'主力进场', c:'#2e7d32'},
+      {k:'主力出货', c:'#ef6c00'},
+      {k:'三重选股', c:'#6a1b9a'}
+    ];
+    var sh = '';
+    defs.forEach(function(x){
+      var n = (sig[x.k]||0);
+      sh += '<div style="display:inline-flex;align-items:center;gap:5px;background:#f7f7f9;border:1px solid #eee;border-radius:8px;padding:4px 10px;box-sizing:border-box;">';
+      sh += '<span style="width:8px;height:8px;border-radius:50%;background:'+x.c+';display:inline-block;"></span>';
+      sh += '<span style="font-size:12px;color:#555;">'+x.k+'</span>';
+      sh += '<span style="font-size:13px;font-weight:700;color:'+x.c+';">'+n+'</span><span style="font-size:10px;color:#999;">只</span>';
+      sh += '</div>';
+    });
+    sigEl.innerHTML = sh;
+  }
+  var hitEl = document.getElementById('tripleSelectHits');
+  if (hitEl) {
+    var hits = today.hits || [];
+    var lists = today.lists || {};
+    if (hits.length) {
+      var hh = '<div style="font-weight:600;color:#6a1b9a;margin-bottom:4px;">🌟 三重选股命中（金钻+波段+主力进场，且非出货）</div>';
+      hh += hits.map(function(h){ return '· '+ (h.name||h.code) + ' (' + h.code + ') ¥' + (h.close||''); }).join('　');
+      hitEl.innerHTML = hh;
+    } else {
+      var anyList = false;
+      for (var _k in lists) { if (lists[_k] && lists[_k].length) { anyList=true; break; } }
+      if (anyList) {
+        var lh = '';
+        ['金钻起涨','波段多头','主力进场','主力出货'].forEach(function(k){
+          var arr = lists[k]||[];
+          if (!arr.length) return;
+          lh += '<div style="font-weight:600;color:#444;margin:6px 0 2px;">'+k+'（'+arr.length+'只）</div>';
+          lh += arr.slice(0, 50).map(function(s){ return '· '+ (s.name||s.code) + ' ' + (s.code||''); }).join('　');
+          if (arr.length > 50) lh += ' …';
+          lh += '<br>';
+        });
+        hitEl.innerHTML = lh;
+      } else {
+        hitEl.innerHTML = '<span style="color:#999;">今日无命中。金钻起涨 0 只（XMA重绘信号，今日无触发）。</span>';
+      }
+    }
+  }
+  var hisEl = document.getElementById('tripleSelectHistory');
+  if (hisEl) {
+    var hist = d.history || {};
+    var keys = Object.keys(hist).sort().reverse().slice(0, 7);
+    if (keys.length) {
+      var hh2 = '<div style="font-weight:600;margin-bottom:3px;">📅 历史扫描（近 '+keys.length+' 天）</div>';
+      hh2 += keys.map(function(k){
+        var s = hist[k].signals || {};
+        return '· ' + k + '：金钻'+(s['金钻起涨']||0)+' 波段'+(s['波段多头']||0)+' 主力'+(s['主力进场']||0)+'/'+(s['主力出货']||0)+' 三重'+(s['三重选股']||0)+' | 扫描'+(hist[k].scanned||0);
+      }).join('<br>');
+      hisEl.innerHTML = hh2;
+    }
+  }
+}
+
 function moveCardsToShelf() {
   if (_unlistedCardsMoved) return;
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
-  var cardIds = ['herdingCard', 'shFibChanlunSection', 'crdsCard'];
+  var cardIds = ['herdingCard', 'shFibChanlunSection', 'crdsCard', 'tripleSelectCard'];
   // candidatePoolCard 作为锚点：F窗口等搬入时插到它前面，保证顺序 CRDS → F窗口 → 观测候选股池
   var anchor = document.getElementById('candidatePoolCard');
   cardIds.forEach(function(id) {
@@ -450681,9 +450772,13 @@ function moveCardsToShelf() {
   if (typeof renderShMonitor === 'function') {
     try { renderShMonitor(); } catch(e) { console.warn('renderShMonitor relaunch fail:', e); }
   }
-  // 重新渲染暂未上架面板里的三卡（F窗口内容已由 renderShMonitor 注入）
+  // 重新渲染暂未上架面板里的四卡（F窗口内容已由 renderShMonitor 注入）
   if (typeof renderCrdsCard === 'function') {
     try { renderCrdsCard(); } catch(e) { console.warn('renderCrdsCard fail:', e); }
+  }
+  // 🧪 三重选股 · 金钻起涨（实验盯盘）
+  if (typeof renderTripleSelectCard === 'function') {
+    try { renderTripleSelectCard(); } catch(e) { console.warn('renderTripleSelectCard fail:', e); }
   }
 }
 
