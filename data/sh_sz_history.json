@@ -1,12 +1,6 @@
 {
-  "update_time": "2026-07-15 15:20",
+  "update_time": "2026-07-15 10:29",
   "amount_history": [
-    {
-      "date": "4/16",
-      "sh_amount": 11617.4,
-      "sz_amount": 13391.3,
-      "total": 25008.7
-    },
     {
       "date": "4/17",
       "sh_amount": 11679.5,
@@ -370,13 +364,6 @@
   ],
   "up_down": {},
   "daily_stats": [
-    {
-      "date": "4/16",
-      "up": 2844,
-      "down": 2055,
-      "flat": 101,
-      "_note": "reconstructed from index data"
-    },
     {
       "date": "4/17",
       "up": 2562,
@@ -783,6 +770,12 @@
       "up": 4210,
       "down": 1247,
       "flat": 70
+    },
+    {
+      "date": "7/15",
+      "up": 3350,
+      "down": 2098,
+      "flat": 79
     }
   ]
 }
