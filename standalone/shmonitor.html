@@ -1204,7 +1204,74 @@ window.addEventListener('load',function(){
 
         <!-- 热点追踪（摘星阁）— 2026-07-13 删除：摘星阁4个月无数据，render 无内容 -->
 
-      <!-- 📊 CRDS逆势龙头评分卡 — 暂未上架 -->
+      <!-- 🧪 三重选股 · 金钻起涨（实验盯盘） — 暂未上架 -->
+      <div id="tripleSelectCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;display:block;">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          🧪 <span style="font-weight:700;font-size:14px;color:#333;">三重选股 · 金钻起涨</span>
+          <span id="tripleSelectTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+          <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">实验盯盘</span>
+          <span style="font-size:10px;color:#fff;background:#c62828;padding:1px 7px;border-radius:8px;">短线</span>
+          <span style="font-size:10px;color:#fff;background:#1565c0;padding:1px 7px;border-radius:8px;">盘后</span>
+          <span style="font-size:10px;color:#fff;background:#607d8b;padding:1px 7px;border-radius:8px;">日频</span>
+        </div>
+        <div id="tripleSelectCoverage" style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.6;"></div>
+        <!-- 双列下拉：起涨/趋势 (左) + 资金/选股 (右) -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <!-- 列1: 起涨 + 趋势 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB1','tsA1')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#c62828;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">金钻起涨</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#c62828;"><span id="tsCnt1">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA1" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB1" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB2','tsA2')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#1565c0;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">波段多头</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#1565c0;"><span id="tsCnt2">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA2" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB2" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:280px;overflow-y:auto;"></div>
+            </div>
+          </div>
+          <!-- 列2: 资金进出 + 三重选股 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB3','tsA3')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#2e7d32;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">主力进场</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#2e7d32;"><span id="tsCnt3">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA3" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB3" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB4','tsA4')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#ef6c00;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">主力出货</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#ef6c00;"><span id="tsCnt4">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA4" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB4" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB5','tsA5')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#6a1b9a;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">三重选股</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#6a1b9a;"><span id="tsCnt5">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA5" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB5" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:120px;overflow-y:auto;"></div>
+            </div>
+          </div>
+        </div>
+        <div id="tripleSelectHistory" style="font-size:11px;color:#999;"></div>
+      </div>
+
       <div id="crdsCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;display:block;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
           📊 <span style="font-weight:700;font-size:14px;color:#333;">CRDS · 逆势龙头</span>
@@ -1299,71 +1366,7 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
       </div>
 
       <!-- 🧪 三重选股 · 金钻起涨（实验盯盘） — 暂未上架 -->
-      <div id="tripleSelectCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;display:block;">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
-          🧪 <span style="font-weight:700;font-size:14px;color:#333;">三重选股 · 金钻起涨</span>
-          <span id="tripleSelectTime" style="font-size:11px;color:#999;font-weight:400;"></span>
-          <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">实验盯盘</span>
-          <span style="font-size:10px;color:#fff;background:#c62828;padding:1px 7px;border-radius:8px;">短线</span>
-          <span style="font-size:10px;color:#fff;background:#1565c0;padding:1px 7px;border-radius:8px;">盘后</span>
-          <span style="font-size:10px;color:#fff;background:#607d8b;padding:1px 7px;border-radius:8px;">日频</span>
-        </div>
-        <div id="tripleSelectCoverage" style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.6;"></div>
-        <!-- 双列下拉：起涨/趋势 (左) + 资金/选股 (右) -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
-          <!-- 列1: 起涨 + 趋势 -->
-          <div>
-            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
-              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB1','tsA1')">
-                <span style="width:10px;height:10px;border-radius:50%;background:#c62828;"></span>
-                <span style="font-size:12px;font-weight:600;color:#333;">金钻起涨</span>
-                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#c62828;"><span id="tsCnt1">0</span><span style="font-size:10px;color:#999;">只</span></span>
-                <span id="tsA1" style="font-size:10px;color:#999;">▾</span>
-              </div>
-              <div id="tsB1" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
-            </div>
-            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
-              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB2','tsA2')">
-                <span style="width:10px;height:10px;border-radius:50%;background:#1565c0;"></span>
-                <span style="font-size:12px;font-weight:600;color:#333;">波段多头</span>
-                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#1565c0;"><span id="tsCnt2">0</span><span style="font-size:10px;color:#999;">只</span></span>
-                <span id="tsA2" style="font-size:10px;color:#999;">▾</span>
-              </div>
-              <div id="tsB2" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:280px;overflow-y:auto;"></div>
-            </div>
-          </div>
-          <!-- 列2: 资金进出 + 三重选股 -->
-          <div>
-            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
-              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB3','tsA3')">
-                <span style="width:10px;height:10px;border-radius:50%;background:#2e7d32;"></span>
-                <span style="font-size:12px;font-weight:600;color:#333;">主力进场</span>
-                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#2e7d32;"><span id="tsCnt3">0</span><span style="font-size:10px;color:#999;">只</span></span>
-                <span id="tsA3" style="font-size:10px;color:#999;">▾</span>
-              </div>
-              <div id="tsB3" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
-            </div>
-            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
-              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB4','tsA4')">
-                <span style="width:10px;height:10px;border-radius:50%;background:#ef6c00;"></span>
-                <span style="font-size:12px;font-weight:600;color:#333;">主力出货</span>
-                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#ef6c00;"><span id="tsCnt4">0</span><span style="font-size:10px;color:#999;">只</span></span>
-                <span id="tsA4" style="font-size:10px;color:#999;">▾</span>
-              </div>
-              <div id="tsB4" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
-            </div>
-            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
-              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB5','tsA5')">
-                <span style="width:10px;height:10px;border-radius:50%;background:#6a1b9a;"></span>
-                <span style="font-size:12px;font-weight:600;color:#333;">三重选股</span>
-                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#6a1b9a;"><span id="tsCnt5">0</span><span style="font-size:10px;color:#999;">只</span></span>
-                <span id="tsA5" style="font-size:10px;color:#999;">▾</span>
-              </div>
-              <div id="tsB5" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:120px;overflow-y:auto;"></div>
-            </div>
-          </div>
-        </div>
-        <div id="tripleSelectHistory" style="font-size:11px;color:#999;"></div>
+</div>
       </div>
 
       <!-- 📡 观测候选股池（可点击展开明细） — 暂未上架面板底部（CRDS 之后） -->
@@ -38961,7 +38964,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 17:33:49",
+"update_time": "2026-07-15 17:45:32",
 "stocks": {
 "sh_600172": {
 "code": "600172",
