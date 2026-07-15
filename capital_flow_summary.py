@@ -5,7 +5,7 @@
 ========================
 从 north_fund/lhb_result/inst_trade/sector_fund_flow 四数据源聚合，
 生成 北向/机构/游资 三方的「7月15日方向 + 偏好风格 + 共同买卖 + 关键信号」。
-输出: data/capital_flow_summary.json → 由 update_data_v2.py 注入到暂未上架卡片
+输出: data/capital_flow_summary.json → 由 update_data_v2.py 注入到 预判信号页 机游共振正下方卡片
 
 依赖: north_fund.json, lhb_result.json, inst_trade.json, sector_fund_flow.json, industry_map.json
 """
