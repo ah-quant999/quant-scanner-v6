@@ -38,6 +38,7 @@ jobs:
       - name: 注入凭据
         env:
           TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
+          NEODATA_TOKEN_JSON: ${{ secrets.NEODATA_TOKEN }}
         run: |
           mkdir -p data
           if [ -n "$TOKEN_JSON" ]; then
@@ -46,6 +47,14 @@ jobs:
           else
             echo "⚠️ 无 ZSXQ_TOKEN secret（知识星球数据跳过）"
           fi
+          if [ -n "$NEODATA_TOKEN_JSON" ]; then
+            printf '%s\n' "$NEODATA_TOKEN_JSON" > data/.neodata_token
+            echo "✅ neodata_token 已注入（云端 scanner 启用）"
+          else
+            echo "⚠️ 无 NEODATA_TOKEN secret（neodata 跳过）"
+          fi
+      - name: 设置云端运行模式
+        run: echo "CLOUD_RUNNER=true" >> $GITHUB_ENV
 
       # ─── 15:30 A+H全量扫描 → 候选池 → 金股池 ───
       - name: "📊 15:30 — A+H全量扫描+候选池+金股池"
