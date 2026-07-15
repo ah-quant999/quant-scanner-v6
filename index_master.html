@@ -451357,5 +451357,32 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
   else v("g-usdcnh", "暂无数据", "#666");
 })();
 </script>
+<script>window.OPS_STATUS = {};</script>
+<script>
+(function(){
+  function fmt(t){ return t ? t : '未知'; }
+  function renderOps(){
+    var s = window.OPS_STATUS || {};
+    var box = document.getElementById('opsStatusBox');
+    if(!box){
+      box = document.createElement('div');
+      box.id = 'opsStatusBox';
+      box.style.cssText = 'position:fixed;right:12px;bottom:12px;z-index:9999;max-width:260px;background:rgba(20,20,28,0.92);color:#e8e8e8;font:12px/1.6 -apple-system,sans-serif;padding:10px 12px;border-radius:10px;border:1px solid #444;box-shadow:0 4px 16px rgba(0,0,0,.4)';
+      document.body.appendChild(box);
+    }
+    var st = s.failover_status || '未知';
+    var stColor = st==='OK'?'#4caf50':(st==='RECOVERED'?'#ff9800':(st==='FAILED'?'#f44336':'#9e9e9e'));
+    var neo = s.neodata_status==='ok'?'正常':'异常';
+    var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
+    box.innerHTML = '<div style="font-weight:600;margin-bottom:6px;color:#fff">运维状态</div>'+
+      '<div>最后部署：'+fmt(s.cloud_deploy_time)+'</div>'+
+      '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
+      '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
+      '<div style="color:#999">令牌有效至：'+fmt(s.neodata_valid_until)+'</div>';
+  }
+  if(document.readyState!=='loading') renderOps();
+  else document.addEventListener('DOMContentLoaded', renderOps);
+})();
+</script>
 </body>
 </html>

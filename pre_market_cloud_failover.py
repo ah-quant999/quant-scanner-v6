@@ -112,6 +112,22 @@ def check_trading_day():
     return True
 
 
+def update_ops_status(updates):
+    """本机运维状态合并写入 data/.ops_status.json（供前端运维卡片读取）。"""
+    p = os.path.join(ROOT, "data", ".ops_status.json")
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    cur = {}
+    if os.path.exists(p):
+        try:
+            cur = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            cur = {}
+    cur.update(updates)
+    cur["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(cur, f, ensure_ascii=False, indent=2)
+
+
 def write_log(status: str, reason: str, details: dict):
     os.makedirs(DIST_DATA, exist_ok=True)
     entry = {
@@ -123,6 +139,11 @@ def write_log(status: str, reason: str, details: dict):
     with open(LOG_FILE, "w", encoding="utf-8") as f:
         json.dump(entry, f, ensure_ascii=False, indent=2)
     print(json.dumps(entry, ensure_ascii=False, indent=2))
+    update_ops_status({
+        "cloud_deploy_time": details.get("build_stamp") or details.get("update_time"),
+        "failover_status": status,
+        "failover_time": entry["time"],
+    })
 
 
 def main():

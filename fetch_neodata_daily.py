@@ -17,6 +17,7 @@ fetch_neodata_daily.py
 import os
 import subprocess
 import sys
+import datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PY = r"C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\python.exe"
@@ -47,6 +48,21 @@ def run(cmd, timeout=300):
         return -1
 
 
+def update_ops_status(updates):
+    p = os.path.join(ROOT, "data", ".ops_status.json")
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    cur = {}
+    if os.path.exists(p):
+        try:
+            cur = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            cur = {}
+    cur.update(updates)
+    cur["updated_at"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(cur, f, ensure_ascii=False, indent=2)
+
+
 def main():
     # 前置检查：token 必须存在，否则三个 fetch 会 401
     if not os.path.exists(TOKEN_FILE):
@@ -54,10 +70,12 @@ def main():
         return 2
 
     # 1) 抓取三张表
+    fetch_ok = True
     for name in NEO_FILES:
         script = name.replace(".json", "")
         ec = run(f"{PY} fetch_{script}.py", timeout=180)
         if ec != 0:
+            fetch_ok = False
             print(f"WARN: fetch_{script}.py 返回 {ec}，该表可能未更新")
 
     # 2) 重建 dist
@@ -71,6 +89,21 @@ def main():
         print(f"WARN: deploy_now.py 返回 {ec}")
         return 1
 
+    # 更新运维状态（neodata 令牌有效期 + 数据新鲜度）
+    valid_until = None
+    if os.path.exists(TOKEN_FILE):
+        try:
+            tk = json.load(open(TOKEN_FILE, encoding="utf-8"))
+            sa = tk.get("saved_at")
+            if sa:
+                valid_until = datetime.datetime.fromtimestamp(sa) + datetime.timedelta(hours=23)
+        except Exception:
+            pass
+    update_ops_status({
+        "neodata_status": "ok" if fetch_ok else "fail",
+        "neodata_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "neodata_valid_until": valid_until.strftime("%Y-%m-%d %H:%M:%S") if valid_until else None,
+    })
     print("neodata 每日抓取 + 部署完成")
     return 0
 

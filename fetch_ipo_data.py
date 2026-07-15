@@ -131,61 +131,70 @@ def _bond_classify_status(apply_date, listing_date, today_int):
 
 
 def calculate_bond_scores(bonds):
-    """可转债评分：简化版，基于转股价值+规模"""
+    """可转债评分：双维度分列（套利分+基本面分），与股票评分口径一致"""
     results = []
     for b in bonds:
         transfer_price = b.get("transfer_price", 0)
         scale = b.get("bond_scale", 0)
 
-        # 基础分
-        score = 50
+        # ── 套利分：规模溢价 + 转股价合理性（转股价越低越容易转股套利）
+        arbitrage = 50
+        if scale >= 20:      arbitrage += 15
+        elif scale >= 10:  arbitrage += 10
+        elif scale >= 5:   arbitrage += 5
+        if transfer_price > 0 and transfer_price < 50:   arbitrage += 10
+        elif transfer_price > 0 and transfer_price < 100: arbitrage += 5
+        arbitrage = min(arbitrage, 80)
 
-        # 规模加分（越大越好，流动性好）
-        if scale >= 20:
-            score += 15
-        elif scale >= 10:
-            score += 10
-        elif scale >= 5:
-            score += 5
+        # ── 基本面分：债底安全（规模大 + 转股价合理 → 债底更厚）
+        fundamental = 35
+        if scale >= 20:      fundamental += 20
+        elif scale >= 10:   fundamental += 15
+        elif scale >= 5:    fundamental += 10
+        if transfer_price > 0 and transfer_price < 100:  fundamental += 10
+        elif transfer_price > 0 and transfer_price < 150: fundamental += 5
+        fundamental = min(fundamental, 70)
 
-        # 转股价合理性（转股价越低越好，表示更容易转股）
-        # 暂无法实时查正股价，给基准分
-        if transfer_price > 0 and transfer_price < 50:
-            score += 10
-        elif transfer_price > 0 and transfer_price < 100:
-            score += 5
+        # 总分与股票口径一致：套利*0.6 + 基本面*0.4
+        score = int(round(arbitrage * 0.6 + fundamental * 0.4))
 
-        # 确定性等级
+        # 建议等级
         if score >= 70:
-            recommend = "建议申购"
-            tag_color = "#0d7d4a"
-            bg_color = "#e8f5e9"
+            recommend, tag_color, bg_color = "建议申购", "#0d7d4a", "#e8f5e9"
         elif score >= 55:
-            recommend = "谨慎参与"
-            tag_color = "#f57f17"
-            bg_color = "#fffde7"
+            recommend, tag_color, bg_color = "谨慎参与", "#f57f17", "#fffde7"
         else:
-            recommend = "不建议申购"
-            tag_color = "#c62828"
-            bg_color = "#ffebee"
+            recommend, tag_color, bg_color = "不建议申购", "#c62828", "#ffebee"
 
         b["score"] = score
+        b["arbitrage_score"] = arbitrage
+        b["fundamental_score"] = fundamental
         b["recommend"] = recommend
         b["tag_color"] = tag_color
         b["bg_color"] = bg_color
         b["board"] = "可转债"
-        b["highlights"] = [f"转股价 ¥{transfer_price:.2f}" if transfer_price > 0 else "",
-                          f"规模 {scale:.1f}亿" if scale > 0 else ""]
+        b["fundamentals"] = {
+            "track": "可转债",
+            "scale": round(scale, 2),
+            "transfer_price": round(transfer_price, 2) if transfer_price > 0 else 0,
+            "bond_safety": "高" if fundamental >= 55 else "中" if fundamental >= 45 else "低",
+        }
+        b["highlights"] = [
+            (f"转股价 ¥{transfer_price:.2f}" if transfer_price > 0 else ""),
+            (f"规模 {scale:.1f}亿" if scale > 0 else ""),
+            f"债底安全 {b['fundamentals']['bond_safety']}",
+        ]
         b["highlights"] = [h for h in b["highlights"] if h]
         results.append(b)
     return results
 
 
 def process_bond_listed(bonds):
-    """处理可转债上市首日/追踪 — 获取实时行情"""
+    """处理可转债上市首日/追踪 —— 基于实时行情给双维度分"""
     results = []
     for b in bonds:
-        # 模拟行情（可转债行情可通过行情API获取）
+        issue_price = 100.0  # 可转债面值
+        # 获取实时行情
         quote = fetch_realtime_quote(b["code"], b.get("market_code", "SH"))
         if quote:
             latest = quote["latest"]
@@ -193,20 +202,41 @@ def process_bond_listed(bonds):
             prev_close = quote["prev_close"]
             change_pct = quote["change_pct"]
             turnover = quote["turnover"]
-
-            total_return = (latest - 100) / 100 * 100 if latest > 0 else 0
-            open_return = (open_p - 100) / 100 * 100 if open_p > 0 else 0
+            total_return = (latest - issue_price) / issue_price * 100 if latest > 0 else 0
+            open_return = (open_p - issue_price) / issue_price * 100 if open_p > 0 else 0
         else:
-            latest = 100
-            open_p = 100
+            latest = issue_price
+            open_p = issue_price
             change_pct = 0
             turnover = 0
             total_return = 0
             open_return = 0
 
+        # ── 套利分：上市涨幅/热度（越高越好）
+        arbitrage = 50
+        if total_return > 10:      arbitrage += 30
+        elif total_return > 5:     arbitrage += 25
+        elif total_return > 2:     arbitrage += 15
+        elif total_return > 0:     arbitrage += 5
+        elif total_return < -5:    arbitrage -= 20
+        elif total_return < 0:     arbitrage -= 10
+        arbitrage = max(0, min(arbitrage, 85))
+
+        # ── 基本面分：流动性/成交额 + 债底安全
+        fundamental = 40
+        # turnover 单位可能是万元级，按常见行情接口口径处理
+        turnover_wan = turnover / 10000 if turnover > 1000 else turnover
+        if turnover_wan > 1000:       fundamental += 20
+        elif turnover_wan > 500:      fundamental += 15
+        elif turnover_wan > 100:      fundamental += 10
+        elif turnover_wan > 10:       fundamental += 5
+        fundamental = min(fundamental, 75)
+
+        score = int(round(arbitrage * 0.6 + fundamental * 0.4))
+
         # 追踪建议
         if b["status"] == "tracking":
-            advice, tcol, bg = tracking_advice(100, latest, change_pct, turnover)
+            advice, tcol, bg = tracking_advice(issue_price, latest, change_pct, turnover)
         else:
             advice = "上市首日"
             tcol = "#0d7d4a"
@@ -218,10 +248,23 @@ def process_bond_listed(bonds):
         b["turnover"] = round(turnover, 2)
         b["total_return"] = round(total_return, 1)
         b["open_return"] = round(open_return, 1)
+        b["score"] = score
+        b["arbitrage_score"] = arbitrage
+        b["fundamental_score"] = fundamental
         b["recommend"] = advice
         b["tag_color"] = tcol
         b["bg_color"] = bg
-        b["score"] = 0
+        b["fundamentals"] = {
+            "track": "可转债",
+            "total_return": round(total_return, 1),
+            "turnover": round(turnover, 2),
+        }
+        b["highlights"] = [
+            f"较发行 {total_return:+.1f}%",
+            f"现价 ¥{latest:.2f}",
+        ]
+        if b["status"] == "tracking":
+            b["highlights"].append(advice)
         results.append(b)
     return results
 

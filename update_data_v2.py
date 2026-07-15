@@ -1445,11 +1445,19 @@ def main():
         ("GUANLAN_REPORTS", "window.GUANLAN_REPORTS = ", "{", "}"),
         ("CANDIDATE_POOL", "window.CANDIDATE_POOL = ", "{", "}"),
         ("CRDS_CARD_DATA", "window.CRDS_CARD_DATA = ", "{", "}"),
+        ("OPS_STATUS",      "window.OPS_STATUS = ",      "{", "}"),
     ]
+    # 本机运维状态（兜底结论 + neodata 有效期），供前端运维卡片读取
+    try:
+        with open(os.path.join(BASE_DIR, "data", ".ops_status.json"), encoding="utf-8") as _f:
+            ops_status = json.load(_f)
+    except Exception:
+        ops_status = {}
+
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
-                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data]
+                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, ops_status]
     replacements = []
 
     for (name, marker, open_ch, close_ch), data in zip(markers, data_objs):
