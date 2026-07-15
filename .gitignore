@@ -39,6 +39,7 @@ __pycache__/
 !diag_parallel.py
 !refresh_neodata_token.py
 !pre_market_cloud_failover.py
+!triple_select_scan.py
 !fetch_neodata_daily.py
 !EVENING_FAILOVER.md
 *.bat
