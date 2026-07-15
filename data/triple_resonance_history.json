@@ -142,6 +142,7 @@
   ],
   "2026-07-14": [],
   "2026-07-15": [],
+  "2026-07-16": [],
   "_stock_price_history": {
     "sh_600172": [
       [
@@ -177,40 +178,6 @@
         14.58
       ]
     ],
-    "sh_688123": [
-      [
-        "2026-07-06",
-        214.99
-      ],
-      [
-        "2026-07-07",
-        193.9
-      ],
-      [
-        "2026-07-08",
-        212.54
-      ],
-      [
-        "2026-07-09",
-        191.69
-      ],
-      [
-        "2026-07-10",
-        217.12
-      ],
-      [
-        "2026-07-13",
-        204.01
-      ],
-      [
-        "2026-07-14",
-        197.93
-      ],
-      [
-        "2026-07-15",
-        178.59
-      ]
-    ],
     "sz_002353": [
       [
         "2026-07-06",
@@ -244,6 +211,40 @@
         "2026-07-15",
         134.71
       ]
+    ],
+    "sh_688123": [
+      [
+        "2026-07-06",
+        214.99
+      ],
+      [
+        "2026-07-07",
+        193.9
+      ],
+      [
+        "2026-07-08",
+        212.54
+      ],
+      [
+        "2026-07-09",
+        191.69
+      ],
+      [
+        "2026-07-10",
+        217.12
+      ],
+      [
+        "2026-07-13",
+        204.01
+      ],
+      [
+        "2026-07-14",
+        197.93
+      ],
+      [
+        "2026-07-15",
+        178.59
+      ]
     ]
   },
   "_tracking_latest": {
@@ -252,7 +253,7 @@
       "close": 14.58,
       "pct_chg": -4.27,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688689": {
@@ -260,7 +261,7 @@
       "close": 48.93,
       "pct_chg": -8.03,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300607": {
@@ -268,7 +269,7 @@
       "close": 37.4,
       "pct_chg": 2.58,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688372": {
@@ -276,7 +277,7 @@
       "close": 149.79,
       "pct_chg": -8.68,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688702": {
@@ -284,7 +285,7 @@
       "close": 355.2,
       "pct_chg": -5.68,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002056": {
@@ -292,7 +293,7 @@
       "close": 26.48,
       "pct_chg": 2.99,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300145": {
@@ -300,7 +301,7 @@
       "close": 5.44,
       "pct_chg": -1.27,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01024": {
@@ -308,7 +309,7 @@
       "close": 44.7,
       "pct_chg": 2.05,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688141": {
@@ -316,7 +317,7 @@
       "close": 136.44,
       "pct_chg": -7.25,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300602": {
@@ -324,7 +325,7 @@
       "close": 40.93,
       "pct_chg": -4.15,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002353": {
@@ -332,7 +333,7 @@
       "close": 134.71,
       "pct_chg": -6.93,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002536": {
@@ -340,7 +341,7 @@
       "close": 56.4,
       "pct_chg": 4.31,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688123": {
@@ -348,7 +349,7 @@
       "close": 178.59,
       "pct_chg": -9.77,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02628": {
@@ -356,7 +357,7 @@
       "close": 28.0,
       "pct_chg": -2.17,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300199": {
@@ -364,7 +365,7 @@
       "close": 26.37,
       "pct_chg": 11.64,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688396": {
@@ -372,7 +373,7 @@
       "close": 71.56,
       "pct_chg": -5.69,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002747": {
@@ -380,7 +381,7 @@
       "close": 41.48,
       "pct_chg": 8.02,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "000333": {
@@ -388,7 +389,7 @@
       "close": 82.22,
       "pct_chg": 1.28,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "603078": {
@@ -396,7 +397,7 @@
       "close": 40.75,
       "pct_chg": -2.42,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00175": {
@@ -404,7 +405,7 @@
       "close": 18.46,
       "pct_chg": 0.82,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "09999": {
@@ -412,7 +413,7 @@
       "close": 202.6,
       "pct_chg": 0.4,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00762": {
@@ -420,7 +421,7 @@
       "close": 6.42,
       "pct_chg": 0.16,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00941": {
@@ -428,7 +429,7 @@
       "close": 79.2,
       "pct_chg": 0.13,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03328": {
@@ -436,7 +437,7 @@
       "close": 6.92,
       "pct_chg": -0.29,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688266": {
@@ -444,7 +445,7 @@
       "close": 154.02,
       "pct_chg": 4.49,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00005": {
@@ -452,7 +453,7 @@
       "close": 155.3,
       "pct_chg": 1.77,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01288": {
@@ -460,7 +461,7 @@
       "close": 5.53,
       "pct_chg": -0.18,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02359": {
@@ -468,7 +469,7 @@
       "close": 165.1,
       "pct_chg": 4.43,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "600601": {
@@ -476,7 +477,7 @@
       "close": 11.93,
       "pct_chg": -5.54,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002850": {
@@ -484,7 +485,7 @@
       "close": 193.36,
       "pct_chg": 0.7,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300503": {
@@ -492,7 +493,7 @@
       "close": 85.75,
       "pct_chg": 1.01,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02015": {
@@ -500,7 +501,7 @@
       "close": 49.36,
       "pct_chg": 1.65,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300223": {
@@ -508,7 +509,7 @@
       "close": 197.22,
       "pct_chg": -5.04,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300558": {
@@ -516,7 +517,7 @@
       "close": 74.89,
       "pct_chg": 7.29,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300420": {
@@ -524,7 +525,7 @@
       "close": 8.1,
       "pct_chg": 8.58,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "688596": {
@@ -532,7 +533,7 @@
       "close": 60.67,
       "pct_chg": -3.88,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "600641": {
@@ -540,7 +541,7 @@
       "close": 40.33,
       "pct_chg": 0.47,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300821": {
@@ -548,7 +549,7 @@
       "close": 19.85,
       "pct_chg": -14.55,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03988": {
@@ -556,7 +557,7 @@
       "close": 5.08,
       "pct_chg": 0.2,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02331": {
@@ -564,7 +565,7 @@
       "close": 15.06,
       "pct_chg": 1.07,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00700": {
@@ -572,7 +573,7 @@
       "close": 474.0,
       "pct_chg": 3.9,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00981": {
@@ -580,7 +581,7 @@
       "close": 77.3,
       "pct_chg": -1.34,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01801": {
@@ -588,7 +589,7 @@
       "close": 97.95,
       "pct_chg": 8.77,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02269": {
@@ -596,7 +597,7 @@
       "close": 39.54,
       "pct_chg": 3.51,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "601288": {
@@ -604,7 +605,7 @@
       "close": 6.32,
       "pct_chg": -0.78,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02577": {
@@ -612,7 +613,7 @@
       "close": 49.78,
       "pct_chg": -1.03,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00817": {
@@ -620,7 +621,7 @@
       "close": 1.36,
       "pct_chg": 5.43,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "06030": {
@@ -628,7 +629,7 @@
       "close": 27.1,
       "pct_chg": 2.11,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03908": {
@@ -636,7 +637,7 @@
       "close": 21.9,
       "pct_chg": 3.69,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02268": {
@@ -644,7 +645,7 @@
       "close": 63.4,
       "pct_chg": 8.38,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03759": {
@@ -652,7 +653,7 @@
       "close": 25.78,
       "pct_chg": 9.24,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03347": {
@@ -660,7 +661,7 @@
       "close": 40.4,
       "pct_chg": 7.28,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "601872": {
@@ -668,7 +669,7 @@
       "close": 15.5,
       "pct_chg": 3.06,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01093": {
@@ -676,7 +677,7 @@
       "close": 8.43,
       "pct_chg": 3.95,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "09660": {
@@ -684,7 +685,7 @@
       "close": 4.46,
       "pct_chg": 0.9,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "09988": {
@@ -692,7 +693,7 @@
       "close": 113.4,
       "pct_chg": 2.35,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01177": {
@@ -700,7 +701,7 @@
       "close": 5.4,
       "pct_chg": 5.68,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01888": {
@@ -708,7 +709,7 @@
       "close": 55.9,
       "pct_chg": -4.12,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00148": {
@@ -716,7 +717,7 @@
       "close": 62.4,
       "pct_chg": -3.48,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "09696": {
@@ -724,7 +725,7 @@
       "close": 33.36,
       "pct_chg": -2.34,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00358": {
@@ -732,7 +733,7 @@
       "close": 32.16,
       "pct_chg": -0.06,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01989": {
@@ -740,7 +741,7 @@
       "close": 140.7,
       "pct_chg": 0.07,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00968": {
@@ -748,7 +749,7 @@
       "close": 1.97,
       "pct_chg": 0.0,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03800": {
@@ -756,7 +757,7 @@
       "close": 0.6,
       "pct_chg": 1.69,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02865": {
@@ -764,7 +765,7 @@
       "close": 17.49,
       "pct_chg": -2.02,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01385": {
@@ -772,7 +773,7 @@
       "close": 27.98,
       "pct_chg": -1.48,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03750": {
@@ -780,7 +781,7 @@
       "close": 618.5,
       "pct_chg": 2.15,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "00669": {
@@ -788,7 +789,7 @@
       "close": 127.4,
       "pct_chg": 1.51,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "02600": {
@@ -796,7 +797,7 @@
       "close": 8.1,
       "pct_chg": -1.58,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01378": {
@@ -804,7 +805,7 @@
       "close": 22.82,
       "pct_chg": -0.78,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "03677": {
@@ -812,7 +813,7 @@
       "close": 5.79,
       "pct_chg": 1.58,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "600362": {
@@ -820,7 +821,7 @@
       "close": 42.63,
       "pct_chg": -2.78,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002460": {
@@ -828,7 +829,7 @@
       "close": 51.74,
       "pct_chg": -1.54,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002364": {
@@ -841,10 +842,10 @@
     },
     "300408": {
       "name": "三环集团",
-      "close": 116.03,
-      "pct_chg": -4.8,
+      "close": 114.6,
+      "pct_chg": -5.97,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300502": {
@@ -852,7 +853,7 @@
       "close": 524.17,
       "pct_chg": 2.28,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300750": {
@@ -860,7 +861,7 @@
       "close": 356.85,
       "pct_chg": -0.62,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "300285": {
@@ -868,7 +869,7 @@
       "close": 68.91,
       "pct_chg": -1.57,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "01299": {
@@ -876,7 +877,7 @@
       "close": 76.2,
       "pct_chg": 2.83,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002466": {
@@ -884,7 +885,7 @@
       "close": 47.67,
       "pct_chg": 0.68,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "002472": {
@@ -892,7 +893,7 @@
       "close": 42.49,
       "pct_chg": 0.24,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "001389": {
@@ -900,7 +901,7 @@
       "close": 197.44,
       "pct_chg": 6.14,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "603268": {
@@ -908,7 +909,7 @@
       "close": 160.3,
       "pct_chg": -1.8,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     },
     "09626": {
@@ -916,7 +917,23 @@
       "close": 140.5,
       "pct_chg": 1.96,
       "pct_chg_20d": 0,
-      "update_time": "2026-07-15",
+      "update_time": "2026-07-16",
+      "_source": "gold_pool"
+    },
+    "300759": {
+      "name": "康龙化成",
+      "close": 40.3,
+      "pct_chg": 9.13,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-16",
+      "_source": "gold_pool"
+    },
+    "300274": {
+      "name": "阳光电源",
+      "close": 108.95,
+      "pct_chg": 0.61,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-16",
       "_source": "gold_pool"
     }
   }
