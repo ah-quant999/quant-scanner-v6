@@ -61,20 +61,25 @@ jobs:
       - name: "📡 全量数据抓取"
         continue-on-error: true
         run: |
-          for script in \
-            fetch_nt_data.py fetch_margin.py fetch_margin_etf.py \
-            fetch_etf_subscription.py fetch_suspension_alert.py \
-            fetch_stock_deviation.py fetch_sector_fund_flow.py \
-            fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py \
-            fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py \
-            fetch_south_individual.py fetch_herding_data.py \
-            fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
-            fetch_macro_data.py fetch_fomc.py fetch_sh_sz_history.py \
-            fetch_up_down_stats.py fetch_sh_index_fib.py; do
+          SCRIPTS="fetch_nt_data.py fetch_margin.py fetch_margin_etf.py fetch_etf_subscription.py fetch_suspension_alert.py fetch_stock_deviation.py fetch_sector_fund_flow.py fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py fetch_south_individual.py fetch_herding_data.py fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py fetch_macro_data.py fetch_fomc.py fetch_sh_sz_history.py fetch_up_down_stats.py fetch_sh_index_fib.py"
+          # 并行执行：所有脚本同时启动，wait 等全部完成（wall-time 60s+10s SIGKILL max）
+          PIDS=""
+          for script in $SCRIPTS; do
             echo ">>> $script start $(date -Iseconds)"
-            # 不用管道（避免 tail 等 EOF 卡死），用 timeout --kill-after 强杀兜底
-            timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
-            echo "<<< $script end $(date -Iseconds)"
+            timeout --kill-after=10 60 python "$script" > /tmp/log_$script.log 2>&1 &
+            PIDS="$PIDS $!"
+          done
+          # 等所有子进程
+          for pid in $PIDS; do
+            wait $pid
+            rc=$?
+            [ $rc -ne 0 ] && echo "  pid $pid exit $rc"
+          done
+          echo "=== 全量抓取完成 $(date -Iseconds) ==="
+          # 简要汇总：每个脚本最后一行
+          for script in $SCRIPTS; do
+            tail -1 /tmp/log_$script.log 2>/dev/null | head -c 200 | sed "s/^/  $script: /"
+            echo
           done
 
       - name: "📡 危机雷达"
