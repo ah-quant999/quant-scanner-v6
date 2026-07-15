@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta name="build-stamp" content="20260715093309">
+<meta name="build-stamp" content="20260715132827">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>九宝量化 V6.0 - 逻辑详解</title>
@@ -732,6 +732,46 @@ td { padding:3px 6px; border:1px solid #ddd; }
         <b>VR</b> = 量价比（涨停日成交额 / 20日均成交额，封顶3倍）<br>
         <b>逆势板占比</b> = 大跌日涨停数 / 10日内总涨停数<br>
         归一化后 <b>CRDS 评分范围 0~100</b>，三项条件全满足的进入"精选级"。
+      </div>
+
+      <div style="padding:0;margin-bottom:10px;">
+        <b style="font-size:12px;display:block;margin-bottom:6px;">CRDS 大盘有效性判断</b>
+        <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+          <thead>
+            <tr style="background:#3C3489;color:#fff;">
+              <th style="text-align:left;padding:6px 10px;border:1px solid #2A2470;font-weight:500;">上证今日</th>
+              <th style="text-align:center;padding:6px 10px;border:1px solid #2A2470;font-weight:500;">有效性</th>
+              <th style="text-align:left;padding:6px 10px;border:1px solid #2A2470;font-weight:500;">含义</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#fff5f5;">
+              <td style="padding:6px 10px;border:1px solid #ddd;"><b>≥ +2%</b></td>
+              <td style="text-align:center;padding:6px 10px;border:1px solid #ddd;color:#C62828;font-weight:500;">失效</td>
+              <td style="padding:6px 10px;border:1px solid #ddd;">大涨，逆势龙头无需看</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 10px;border:1px solid #ddd;"><b>+1% ~ +2%</b></td>
+              <td style="text-align:center;padding:6px 10px;border:1px solid #ddd;color:#F57C00;font-weight:500;">低效</td>
+              <td style="padding:6px 10px;border:1px solid #ddd;">市场偏强，有效性降低</td>
+            </tr>
+            <tr style="background:#f5fff5;">
+              <td style="padding:6px 10px;border:1px solid #ddd;"><b>-0.5% ~ +1%</b></td>
+              <td style="text-align:center;padding:6px 10px;border:1px solid #ddd;color:#2E7D32;font-weight:500;">有效</td>
+              <td style="padding:6px 10px;border:1px solid #ddd;">震荡市，可正常参考</td>
+            </tr>
+            <tr>
+              <td style="padding:6px 10px;border:1px solid #ddd;"><b>-2% ~ -0.5%</b></td>
+              <td style="text-align:center;padding:6px 10px;border:1px solid #ddd;color:#1B5E20;font-weight:500;">较有效</td>
+              <td style="padding:6px 10px;border:1px solid #ddd;">偏弱市，较有价值</td>
+            </tr>
+            <tr style="background:#e8f5e9;">
+              <td style="padding:6px 10px;border:1px solid #ddd;"><b>&lt; -2%</b></td>
+              <td style="text-align:center;padding:6px 10px;border:1px solid #ddd;color:#1B5E20;font-weight:500;">高有效</td>
+              <td style="padding:6px 10px;border:1px solid #ddd;">大跌恐慌市，信号最强但需防系统性风险</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div style="padding:0;margin-bottom:10px;">
