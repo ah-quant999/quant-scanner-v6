@@ -5381,21 +5381,35 @@ try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.mess
 // ===== ☁️ 统一云端更新时间（独立页版：读 build-stamp meta 标签） =====
 (function applyCloudUpdateTime() {
   function sweep(){
-    if (window._cloudTimeApplied) return;
     try {
       var stamp = document.querySelector('meta[name="build-stamp"]');
       var ct = stamp ? stamp.getAttribute('content') : '';
       if (!ct || ct.length < 12) return;
-      // "20260716065148" → "07-16 06:51"
       var formatted = ct.slice(4,6) + '-' + ct.slice(6,8) + ' ' + ct.slice(8,10) + ':' + ct.slice(10,12);
       var text = '☁ 云端更新 · ' + formatted;
-      document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
-      document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
-      document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
-      window._cloudTimeApplied = true;
+      document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; });
+      document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; });
+      document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; });
+      // 兜底：扫描所有含 "更新于" 的文字节点（处理 innerHTML 动态生成没有 id 的时间）
+      try {
+        if (typeof NodeFilter !== 'undefined' && document.createTreeWalker) {
+          var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+          var tn;
+          while ((tn = tw.nextNode())) {
+            if (tn.textContent && tn.textContent.indexOf('更新于') >= 0 && tn.parentNode) {
+              tn.textContent = text;
+            }
+          }
+        }
+      } catch(e2){}
     } catch(ex){}
   }
-  // 主站由 index_master.html 内联 sweep 处理；独立页通过 load 事件延迟 sweep
-  if (document.readyState === 'complete') { setTimeout(sweep, 800); }
-  else { window.addEventListener('load', function(){ setTimeout(sweep, 800); }); }
+  function multiSweep() {
+    sweep();
+    setTimeout(sweep, 300);
+    setTimeout(sweep, 800);
+    setTimeout(sweep, 2000);
+  }
+  if (document.readyState === 'complete') { multiSweep(); }
+  else { window.addEventListener('load', function(){ setTimeout(multiSweep, 200); }); }
 })();
