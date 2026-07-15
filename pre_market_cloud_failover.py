@@ -3,8 +3,8 @@
 pre_market_cloud_failover.py
 全时段云端健康监控 + 兜底。
 原为"盘前 09:20 兜底检查"（已废弃），现改为全时段轮询：
-- 每 30-60 分钟由 automation 调用
-- 检查云端最近一次成功部署距今是否超过 90 分钟（交易时段内）
+- 每 30 分钟由 automation 调用（09:00~16:30）
+- 检查云端最近一次成功部署距今是否超过 75 分钟（上限 71 分钟无事后判断）
 - 超时则触发本机补跑 + 强制部署
 
 产出：
@@ -28,8 +28,8 @@ BUILD_STAMP_PATTERN = re.compile(r"build\s*[:=]\s*(\d{14})", re.IGNORECASE)
 PY = r"C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\python.exe"
 
 # 阈值（分钟）
-GRACE_PERIOD_MIN = 45        # 宽限期：距上次部署在 45 分钟内 → OK
-FAILOVER_THRESHOLD_MIN = 90  # 兜底阈值：距上次部署超过 90 分钟 → 触发兜底
+GRACE_PERIOD_MIN = 30        # 宽限期：距上次部署 ≤ 30 分钟 → OK
+FAILOVER_THRESHOLD_MIN = 75  # 兜底阈值：> 75 分钟无部署 → 触发（略大于云端最大间隔 71 分钟）
 MORNING_GRACE_HOUR = 10      # 早于 10:00 且今天无部署 → 给云端 09:20 留窗口
 
 
