@@ -1,0 +1,789 @@
+{
+  "update_time": "2026-07-14 09:25",
+  "amount_history": [
+    {
+      "date": "4/15",
+      "sh_amount": 0.0,
+      "sz_amount": 12010.9,
+      "total": 12010.9
+    },
+    {
+      "date": "4/16",
+      "sh_amount": 0.0,
+      "sz_amount": 11822.4,
+      "total": 11822.4
+    },
+    {
+      "date": "4/17",
+      "sh_amount": 0.0,
+      "sz_amount": 11986.6,
+      "total": 11986.6
+    },
+    {
+      "date": "4/20",
+      "sh_amount": 0.0,
+      "sz_amount": 12457.2,
+      "total": 12457.2
+    },
+    {
+      "date": "4/21",
+      "sh_amount": 0.0,
+      "sz_amount": 12070.3,
+      "total": 12070.3
+    },
+    {
+      "date": "4/22",
+      "sh_amount": 0.0,
+      "sz_amount": 12045.9,
+      "total": 12045.9
+    },
+    {
+      "date": "4/23",
+      "sh_amount": 0.0,
+      "sz_amount": 13115.5,
+      "total": 13115.5
+    },
+    {
+      "date": "4/24",
+      "sh_amount": 0.0,
+      "sz_amount": 12231.5,
+      "total": 12231.5
+    },
+    {
+      "date": "4/27",
+      "sh_amount": 0.0,
+      "sz_amount": 12235.0,
+      "total": 12235.0
+    },
+    {
+      "date": "4/28",
+      "sh_amount": 0.0,
+      "sz_amount": 12472.8,
+      "total": 12472.8
+    },
+    {
+      "date": "4/29",
+      "sh_amount": 0.0,
+      "sz_amount": 12690.9,
+      "total": 12690.9
+    },
+    {
+      "date": "4/30",
+      "sh_amount": 0.0,
+      "sz_amount": 12713.7,
+      "total": 12713.7
+    },
+    {
+      "date": "5/6",
+      "sh_amount": 0.0,
+      "sz_amount": 14239.6,
+      "total": 14239.6
+    },
+    {
+      "date": "5/7",
+      "sh_amount": 0.0,
+      "sz_amount": 14554.0,
+      "total": 14554.0
+    },
+    {
+      "date": "5/8",
+      "sh_amount": 0.0,
+      "sz_amount": 14239.1,
+      "total": 14239.1
+    },
+    {
+      "date": "5/11",
+      "sh_amount": 0.0,
+      "sz_amount": 15711.2,
+      "total": 15711.2
+    },
+    {
+      "date": "5/12",
+      "sh_amount": 0.0,
+      "sz_amount": 14611.4,
+      "total": 14611.4
+    },
+    {
+      "date": "5/13",
+      "sh_amount": 0.0,
+      "sz_amount": 14258.5,
+      "total": 14258.5
+    },
+    {
+      "date": "5/14",
+      "sh_amount": 0.0,
+      "sz_amount": 15054.4,
+      "total": 15054.4
+    },
+    {
+      "date": "5/15",
+      "sh_amount": 0.0,
+      "sz_amount": 14643.7,
+      "total": 14643.7
+    },
+    {
+      "date": "5/18",
+      "sh_amount": 0.0,
+      "sz_amount": 12724.0,
+      "total": 12724.0
+    },
+    {
+      "date": "5/19",
+      "sh_amount": 0.0,
+      "sz_amount": 12601.9,
+      "total": 12601.9
+    },
+    {
+      "date": "5/20",
+      "sh_amount": 0.0,
+      "sz_amount": 12515.7,
+      "total": 12515.7
+    },
+    {
+      "date": "5/21",
+      "sh_amount": 0.0,
+      "sz_amount": 15148.5,
+      "total": 15148.5
+    },
+    {
+      "date": "5/22",
+      "sh_amount": 0.0,
+      "sz_amount": 13150.8,
+      "total": 13150.8
+    },
+    {
+      "date": "5/25",
+      "sh_amount": 0.0,
+      "sz_amount": 13463.7,
+      "total": 13463.7
+    },
+    {
+      "date": "5/26",
+      "sh_amount": 0.0,
+      "sz_amount": 14188.4,
+      "total": 14188.4
+    },
+    {
+      "date": "5/27",
+      "sh_amount": 0.0,
+      "sz_amount": 14060.8,
+      "total": 14060.8
+    },
+    {
+      "date": "5/28",
+      "sh_amount": 0.0,
+      "sz_amount": 12888.5,
+      "total": 12888.5
+    },
+    {
+      "date": "5/29",
+      "sh_amount": 0.0,
+      "sz_amount": 14629.7,
+      "total": 14629.7
+    },
+    {
+      "date": "6/1",
+      "sh_amount": 0.0,
+      "sz_amount": 13104.7,
+      "total": 13104.7
+    },
+    {
+      "date": "6/2",
+      "sh_amount": 0.0,
+      "sz_amount": 12707.6,
+      "total": 12707.6
+    },
+    {
+      "date": "6/3",
+      "sh_amount": 0.0,
+      "sz_amount": 13662.1,
+      "total": 13662.1
+    },
+    {
+      "date": "6/4",
+      "sh_amount": 0.0,
+      "sz_amount": 12390.3,
+      "total": 12390.3
+    },
+    {
+      "date": "6/5",
+      "sh_amount": 0.0,
+      "sz_amount": 14101.8,
+      "total": 14101.8
+    },
+    {
+      "date": "6/8",
+      "sh_amount": 0.0,
+      "sz_amount": 13591.5,
+      "total": 13591.5
+    },
+    {
+      "date": "6/9",
+      "sh_amount": 0.0,
+      "sz_amount": 12375.0,
+      "total": 12375.0
+    },
+    {
+      "date": "6/10",
+      "sh_amount": 0.0,
+      "sz_amount": 12244.2,
+      "total": 12244.2
+    },
+    {
+      "date": "6/11",
+      "sh_amount": 0.0,
+      "sz_amount": 11543.7,
+      "total": 11543.7
+    },
+    {
+      "date": "6/12",
+      "sh_amount": 0.0,
+      "sz_amount": 13655.2,
+      "total": 13655.2
+    },
+    {
+      "date": "6/15",
+      "sh_amount": 0.0,
+      "sz_amount": 13047.2,
+      "total": 13047.2
+    },
+    {
+      "date": "6/16",
+      "sh_amount": 0.0,
+      "sz_amount": 13008.8,
+      "total": 13008.8
+    },
+    {
+      "date": "6/17",
+      "sh_amount": 0.0,
+      "sz_amount": 12855.2,
+      "total": 12855.2
+    },
+    {
+      "date": "6/18",
+      "sh_amount": 0.0,
+      "sz_amount": 13168.7,
+      "total": 13168.7
+    },
+    {
+      "date": "6/22",
+      "sh_amount": 0.0,
+      "sz_amount": 15103.6,
+      "total": 15103.6
+    },
+    {
+      "date": "6/23",
+      "sh_amount": 0.0,
+      "sz_amount": 13915.8,
+      "total": 13915.8
+    },
+    {
+      "date": "6/24",
+      "sh_amount": 0.0,
+      "sz_amount": 13617.2,
+      "total": 13617.2
+    },
+    {
+      "date": "6/25",
+      "sh_amount": 0.0,
+      "sz_amount": 14313.4,
+      "total": 14313.4
+    },
+    {
+      "date": "6/26",
+      "sh_amount": 0.0,
+      "sz_amount": 14416.5,
+      "total": 14416.5
+    },
+    {
+      "date": "6/29",
+      "sh_amount": 0.0,
+      "sz_amount": 13925.8,
+      "total": 13925.8
+    },
+    {
+      "date": "6/30",
+      "sh_amount": 0.0,
+      "sz_amount": 12832.1,
+      "total": 12832.1
+    },
+    {
+      "date": "7/1",
+      "sh_amount": 0.0,
+      "sz_amount": 15047.8,
+      "total": 15047.8
+    },
+    {
+      "date": "7/2",
+      "sh_amount": 0.0,
+      "sz_amount": 14763.2,
+      "total": 14763.2
+    },
+    {
+      "date": "7/3",
+      "sh_amount": 0.0,
+      "sz_amount": 13537.1,
+      "total": 13537.1
+    },
+    {
+      "date": "7/6",
+      "sh_amount": 0.0,
+      "sz_amount": 13229.4,
+      "total": 13229.4
+    },
+    {
+      "date": "7/7",
+      "sh_amount": 0.0,
+      "sz_amount": 11686.6,
+      "total": 11686.6
+    },
+    {
+      "date": "7/8",
+      "sh_amount": 0.0,
+      "sz_amount": 11278.6,
+      "total": 11278.6
+    },
+    {
+      "date": "7/9",
+      "sh_amount": 0.0,
+      "sz_amount": 12343.0,
+      "total": 12343.0
+    },
+    {
+      "date": "7/10",
+      "sh_amount": 0.0,
+      "sz_amount": 14280.3,
+      "total": 14280.3
+    },
+    {
+      "date": "7/13",
+      "sh_amount": 0.0,
+      "sz_amount": 12642.2,
+      "total": 12642.2
+    },
+    {
+      "date": "7/14",
+      "sh_amount": 0.0,
+      "sz_amount": 96.0,
+      "total": 96.0
+    }
+  ],
+  "up_down": {},
+  "daily_stats": [
+    {
+      "date": "4/15",
+      "up": 2380,
+      "down": 2519,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/16",
+      "up": 2844,
+      "down": 2055,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/17",
+      "up": 2562,
+      "down": 2337,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/20",
+      "up": 2663,
+      "down": 2236,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/21",
+      "up": 2521,
+      "down": 2378,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/22",
+      "up": 2727,
+      "down": 2172,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/23",
+      "up": 2350,
+      "down": 2549,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/24",
+      "up": 2373,
+      "down": 2526,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/27",
+      "up": 2566,
+      "down": 2333,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/28",
+      "up": 2338,
+      "down": 2561,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/29",
+      "up": 2833,
+      "down": 2066,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/30",
+      "up": 2503,
+      "down": 2396,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/6",
+      "up": 2937,
+      "down": 1962,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/7",
+      "up": 2707,
+      "down": 2192,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/8",
+      "up": 2437,
+      "down": 2462,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/11",
+      "up": 2904,
+      "down": 1995,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/12",
+      "up": 2410,
+      "down": 2489,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/13",
+      "up": 2792,
+      "down": 2107,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/14",
+      "up": 2042,
+      "down": 2857,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/15",
+      "up": 2226,
+      "down": 2673,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/18",
+      "up": 2463,
+      "down": 2436,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/19",
+      "up": 2646,
+      "down": 2253,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/20",
+      "up": 2478,
+      "down": 2421,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/21",
+      "up": 1985,
+      "down": 2914,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/22",
+      "up": 2896,
+      "down": 2003,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/25",
+      "up": 2828,
+      "down": 2071,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/26",
+      "up": 2493,
+      "down": 2406,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/27",
+      "up": 2234,
+      "down": 2665,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/28",
+      "up": 2614,
+      "down": 2285,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/29",
+      "up": 2182,
+      "down": 2717,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/1",
+      "up": 2278,
+      "down": 2621,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/2",
+      "up": 2757,
+      "down": 2142,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/3",
+      "up": 2618,
+      "down": 2281,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/4",
+      "up": 2385,
+      "down": 2514,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/5",
+      "up": 2130,
+      "down": 2769,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/8",
+      "up": 1884,
+      "down": 3015,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/9",
+      "up": 3037,
+      "down": 1862,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/10",
+      "up": 2190,
+      "down": 2709,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/11",
+      "up": 2395,
+      "down": 2504,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/12",
+      "up": 2733,
+      "down": 2166,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/15",
+      "up": 3175,
+      "down": 1724,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/16",
+      "up": 2602,
+      "down": 2297,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/17",
+      "up": 2713,
+      "down": 2186,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/18",
+      "up": 2564,
+      "down": 2335,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/22",
+      "up": 2988,
+      "down": 1911,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/23",
+      "up": 1933,
+      "down": 2966,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/24",
+      "up": 2669,
+      "down": 2230,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/25",
+      "up": 2756,
+      "down": 2143,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/26",
+      "up": 1788,
+      "down": 3111,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/29",
+      "up": 2669,
+      "down": 2230,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/30",
+      "up": 2873,
+      "down": 2026,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/1",
+      "up": 2488,
+      "down": 2411,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/2",
+      "up": 1765,
+      "down": 3134,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/3",
+      "up": 2625,
+      "down": 2274,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/6",
+      "up": 2347,
+      "down": 2552,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/7",
+      "up": 693,
+      "down": 4796,
+      "flat": 37
+    },
+    {
+      "date": "7/8",
+      "up": 1592,
+      "down": 3790,
+      "flat": 145
+    },
+    {
+      "date": "7/9",
+      "up": 2485,
+      "down": 2888,
+      "flat": 155
+    },
+    {
+      "date": "7/10",
+      "up": 3772,
+      "down": 1677,
+      "flat": 80
+    },
+    {
+      "date": "7/13",
+      "up": 801,
+      "down": 4682,
+      "flat": 46
+    }
+  ]
+}

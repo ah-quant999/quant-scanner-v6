@@ -1,0 +1,93 @@
+# 九宝量化 v6.0 — 收盘全景分阶段（15:30/16:15/16:30）
+# 15:30 A+H全量扫描；16:15 龙虎榜后共振；16:30 全模块刷新
+
+name: "☁️ 收盘全景分阶段"
+
+on:
+  schedule:
+    - cron: '30 7 * * 1-5'   # 15:30 CST — A+H全量扫描
+    - cron: '15 8 * * 1-5'   # 16:15 CST — 龙虎榜后处理
+    - cron: '30 8 * * 1-5'   # 16:30 CST — 全模块
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-post-close-${{ github.event.schedule }}
+  cancel-in-progress: false
+
+jobs:
+  post-close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt 2>/dev/null
+
+      - name: 注入凭据
+        run: |
+          mkdir -p data
+          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+
+      # ─── 15:30 A+H全量扫描 → 候选池 → 金股池 ───
+      - name: "📊 15:30 — A+H全量扫描+候选池+金股池"
+        if: github.event.schedule == '30 7 * * 1-5'
+        continue-on-error: true
+        run: |
+          python scanner.py full || echo "[跳过] scanner"
+          python build_candidate_pool.py || echo "[跳过] build_candidate"
+          python generate_recommend.py || echo "[跳过] recommend"
+          python generate_top10.py || echo "[跳过] top10"
+
+      # ─── 16:15 龙虎榜公布后 ───
+      - name: "🐉 16:15 — 龙虎榜+机器共振+抱团+板块轮动+五维"
+        if: github.event.schedule == '15 8 * * 1-5'
+        continue-on-error: true
+        run: |
+          python fetch_lhb.py || echo "[跳过] lhb"
+          python update_triple_resonance_daily.py || echo "[跳过] triple_resonance"
+          python update_multi_resonance_daily.py || echo "[跳过] multi_resonance"
+          python calc_crds.py 2>/dev/null || echo "[跳过] crds"
+          python generate_recommend.py || echo "[跳过] recommend"
+          python generate_top10.py || echo "[跳过] top10"
+          python generate_one_look.py 2>/dev/null || echo "[跳过] one_look"
+
+      # ─── 16:30 全模块（三卡片刷新） ───
+      - name: "🧩 16:30 — 全模块三卡片刷新"
+        if: github.event.schedule == '30 8 * * 1-5'
+        continue-on-error: true
+        run: |
+          # 板块+ETF+AI速览 三卡片
+          python fetch_sector_fund_flow.py || echo "[跳过] sector_fund"
+          python fetch_nt_data.py || echo "[跳过] nt_data"
+          python fetch_market_alerts.py || echo "[跳过] market_alerts"
+          python generate_recommend.py || echo "[跳过] recommend"
+          python generate_top10.py || echo "[跳过] top10"
+          python update_data_v2.py || echo "[跳过] update_data_v2"
+          # 推送到 gh-pages（不完整版，给用户早看）
+          echo "✅ 16:30 三卡片刷新完成"
+
+      - name: "🚀 16:30 — 部署三卡片版"
+        if: github.event.schedule == '30 8 * * 1-5'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_post_close\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 任务完成"

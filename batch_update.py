@@ -1,0 +1,829 @@
+#!/usr/bin/env python3
+# DO NOT DELETE: 核心调度脚本，所有定时任务的入口 (see DO_NOT_DELETE.md)
+"""
+batch_update.py — 九宝量化统一调度脚本
+每个步骤独立超时 → 失败自动重试一次 → 汇总报告
+
+流程：... → update_data_v2 → enhance_dist → deploy → ...
+enhance_dist 负责注入 MAHORO_COVERAGE、同步 getScore()、同步逻辑详解页 HTML
+
+用法：
+  python batch_update.py pre_brief      07:30 晨间速报（仅世界杯，股票无关）
+  python batch_update.py pre_market     09:15 盘前（研报+mahoro→全量扫描→增强→部署）
+  python batch_update.py morning_scan   09:45 盘中快速扫描
+  python batch_update.py morning_plus   10:30 扫描+三卡刷新（板块/ETF/AI速览）
+  python batch_update.py morning_report 11:45 午间（研报+mahoro→扫描→增强→部署）
+  python batch_update.py afternoon      13:30/14:30/15:30/16:30 午后
+  python batch_update.py close          周二07:30 T+1全量（研报+mahoro→全量fetch→扫描→增强→部署）
+  python batch_update.py close_p1       17:30 收盘抓取第一批（研报+全量数据，龙虎榜除外）
+  python batch_update.py close_p2       18:30 收盘扫描+生成（龙虎榜+scanner全量+生成）
+  python batch_update.py close_deploy   19:30 收盘最终部署（注入+部署，数据已由p1/p2就绪）
+  python batch_update.py backup         21:00 备份
+"""
+
+import subprocess
+import sys
+import time
+import os
+import concurrent.futures
+
+WORKSPACE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, WORKSPACE)
+
+# 非交易日判断（周末 + A股法定假日 + 调休补班），用于休市日跳过抓行情
+try:
+    from is_trading_day import is_trading_day as _is_trading_day
+    from is_trading_day import is_holiday as _is_holiday
+except Exception:
+    _is_trading_day = None
+    _is_holiday = None
+
+# 所有数据源每日执行，不再有每周限制
+WEEKLY_ONLY_COMMANDS = set()
+WEEKLY_RUN_WEEKDAY = 0  # 已废弃，所有任务每日执行
+
+# 查找系统 Python 3.14（避免 managed Python 的 py_mini_racer 崩溃）
+def _find_system_python():
+    # 尝试 py launcher
+    try:
+        r = subprocess.run(
+            ["py", "-3.14", "-c", "import sys; print(sys.executable)"],
+            capture_output=True, text=True, timeout=5
+        )
+        if r.returncode == 0:
+            p = r.stdout.strip()
+            if p and "workbuddy" not in p.lower():
+                return p
+    except Exception:
+        pass
+    # 常见路径兜底
+    for c in [
+        r"C:\Users\HH20210606\AppData\Local\Programs\Python\Python314\python.exe",
+        r"C:\Python314\python.exe",
+    ]:
+        if os.path.exists(c):
+            return c
+    return sys.executable   # 找不到就用自己的
+
+SYSTEM_PYTHON = _find_system_python()
+
+# ──────────────────────────────────────────────────────────
+# 模式定义：每个步骤 (命令, 超时秒数)
+# ──────────────────────────────────────────────────────────
+MODES = {
+    "pre_brief": {
+        "desc": "晨间速报 (07:30) — 仅世界杯，不干扰股票流程",
+        "steps": [
+            ("fetch_worldcup.py --auto", 120),
+            ("update_worldcup_standalone.py", 120),   # 渲染独立页竞彩(手机+g/本地 file://)
+        ],
+    },
+    "pre_market": {
+        "desc": "盘前全量 (09:15)",
+        "steps": [
+            ("guanlan_extractor.py", 300),
+            ("fetch_mahoro_signals.py --non-interactive", 120),
+            ("build_candidate_pool.py", 120),
+            ("scanner.py full", 600),
+            ("generate_recommend.py", 120),
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查（防旧版覆盖）
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "morning_scan": {
+        "desc": "盘中快速扫描 (09:45)",
+        "steps": [
+            ("fetch_overnight_brief.py --news-only", 90),
+            ("scanner.py", 300),
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "morning_plus": {
+        "desc": "盘中扫描+三卡刷新 (10:30)",
+        "steps": [
+            ("fetch_overnight_brief.py --news-only", 90),
+            ("fetch_sector_fund_flow.py", 120),
+            ("fetch_etf_subscription.py", 120),
+            ("fetch_market_alerts.py", 120),
+            ("fetch_concept_ranking.py", 120),
+            ("fetch_sector_rs.py", 90),
+            # 10:30 补充成交历史，避免午间金额曲线断崖
+            ("fetch_sh_sz_history.py", 120),
+            ("scanner.py", 300),
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "morning_report": {
+        "desc": "午间研报+扫描 (11:45)",
+        "steps": [
+            ("fetch_overnight_brief.py --news-only", 90),
+            ("guanlan_extractor.py", 300),
+            ("fetch_mahoro_signals.py --non-interactive", 120),
+            ("scanner.py", 300),
+            # 大盘资金/两融/成交历史需在午间刷新，避免盘中卡片显示0或 stale
+            ("fetch_sh_sz_history.py", 120),
+            ("fetch_margin.py", 120),
+            ("fetch_concept_ranking.py", 180),
+            ("fetch_market_alerts.py", 180),
+            ("fetch_sector_fund_flow.py", 180),
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "afternoon": {
+        "desc": "午后扫描 (13:30/14:30/16:30)",
+        "steps": [
+            ("fetch_overnight_brief.py --news-only", 90),
+            ("scanner.py", 300),
+            ("fetch_sh_sz_history.py", 120),
+            ("fetch_margin.py", 120),
+            ("fetch_concept_ranking.py", 180),
+            ("fetch_market_alerts.py", 180),
+            ("fetch_sector_fund_flow.py", 180),
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "post_close": {
+        "desc": "收盘后快速更新 (15:20)",
+        "steps": [
+            ("scanner.py", 300),
+            ("fetch_sector_fund_flow.py", 180),
+            ("fetch_concept_ranking.py", 180),
+            ("fetch_market_alerts.py", 180),
+            ("fetch_sh_sz_history.py", 120),
+            ("fetch_up_down_stats.py", 120),
+            ("update_data_v2.py", 300),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("sync_check.py", 30),      # 坚果云同步检查
+            ("deploy_now.py --force", 180),
+        ],
+    },
+    "close": {
+        "desc": "收盘后全量 (19:30) — 并行优化",
+        "steps": [
+            # ══ Group 1: 研报+投行信号（并行） ══
+            [
+                ("guanlan_extractor.py", 300),
+                ("fetch_mahoro_signals.py --non-interactive", 120),
+            ],
+            # ══ Group 2: 全量数据抓取（并行） ══
+            [
+                ("fetch_nt_data.py", 120),
+                ("fetch_margin.py", 120),
+                ("fetch_margin_etf.py", 120),
+                ("fetch_etf_subscription.py", 120),
+                ("fetch_suspension_alert.py", 120),
+                ("fetch_stock_deviation.py", 180),
+                ("fetch_sector_fund_flow.py", 180),
+                ("fetch_sector_rs.py", 90),
+                ("fetch_main_week.py", 120),
+                ("fetch_market_alerts.py", 180),
+                ("fetch_concept_ranking.py", 180),
+                ("fetch_lhb.py", 300),
+                ("fetch_main_stock.py", 300),
+                ("fetch_north_fund.py", 300),
+                ("fetch_south_individual.py", 300),
+                ("fetch_herding_data.py", 180),
+                ("fetch_cffex_holdings.py", 120),
+                ("fetch_inst_trade.py", 120),
+                ("fetch_ipo_data.py", 120),
+                ("fetch_macro_data.py", 180),
+                ("fetch_fomc.py", 60),
+                ("fetch_sh_sz_history.py", 120),
+                ("fetch_up_down_stats.py", 120),
+                ("fetch_sh_index_fib.py", 60),
+            ],
+            # ══ 危机雷达数据（串行，依赖 macro_data.json 兜底 DXY，须在 Group2 后） ══
+            ("fetch_crisis_data.py", 180),
+            # ══ Group 3: 全量扫描（串行） ══
+            ("build_candidate_pool.py", 120),
+            ("scanner.py full", 600),
+            # ══ Group 4: 生成脚本（并行） ══
+            [
+                ("fetch_overnight_brief.py", 120),
+                ("generate_recommend.py", 120),
+                ("generate_top10.py", 60),
+                ("fetch_industry_map.py", 3600),
+                ("fetch_limit_up_heatmap.py", 120),
+                ("fetch_52w_high.py", 120),
+                ("fetch_analyst_ratings.py", 180),
+                ("fetch_policy_density.py", 120),
+                ("update_triple_resonance_daily.py", 120),
+                ("update_multi_resonance_daily.py", 60),
+            ],
+            # ══ Group 5: 注入+部署（串行） ══
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("check_syntax.py", 30),
+            ("sync_check.py", 30),
+            ("deploy_now.py", 180),
+            ("push_notify.py", 30),
+        ],
+        "max_parallel": 6,
+    },
+    # ── 收盘分段（19:30 过载拆分，按数据时效编排） ──
+    "close_p1": {
+        "desc": "收盘数据抓取第一批 (17:30) — 研报+全量数据(龙虎榜除外，龙虎榜17点后出)",
+        "steps": [
+            # ══ Group 1: 研报+投行信号（并行） ══
+            [
+                ("guanlan_extractor.py", 300),
+                ("fetch_mahoro_signals.py --non-interactive", 120),
+            ],
+            # ══ Group 2: 全量数据抓取（并行，龙虎榜除外，因17点后才发布） ══
+            [
+                ("fetch_nt_data.py", 120),
+                ("fetch_margin.py", 120),
+                ("fetch_margin_etf.py", 120),
+                ("fetch_etf_subscription.py", 120),
+                ("fetch_suspension_alert.py", 120),
+                ("fetch_stock_deviation.py", 180),
+                ("fetch_sector_fund_flow.py", 180),
+                ("fetch_sector_rs.py", 90),
+                ("fetch_main_week.py", 120),
+                ("fetch_market_alerts.py", 180),
+                ("fetch_concept_ranking.py", 180),
+                ("fetch_main_stock.py", 300),
+                ("fetch_north_fund.py", 300),
+                ("fetch_south_individual.py", 300),
+                ("fetch_herding_data.py", 180),
+                ("fetch_cffex_holdings.py", 120),
+                ("fetch_inst_trade.py", 120),
+                ("fetch_ipo_data.py", 120),
+                ("fetch_macro_data.py", 180),
+                ("fetch_fomc.py", 60),
+                ("fetch_sh_sz_history.py", 120),
+                ("fetch_up_down_stats.py", 120),
+                ("fetch_sh_index_fib.py", 60),
+            ],
+            # ══ 危机雷达数据（串行，依赖 macro_data.json 兜底 DXY，须在 Group2 后） ══
+            ("fetch_crisis_data.py", 180),
+        ],
+        "max_parallel": 6,
+    },
+    "close_p2": {
+        "desc": "收盘扫描+生成 (18:30) — 龙虎榜(已出)+scanner全量+各类生成",
+        "steps": [
+            # ══ 龙虎榜（17点后交易所才发布，置于18:30确保已出） ══
+            ("fetch_lhb.py", 300),
+            # ══ Group 3: scanner 全量（串行） ══
+            ("build_candidate_pool.py", 120),
+            ("scanner.py full", 600),
+            # ══ Group 4: 生成脚本（并行） ══
+            [
+                ("fetch_overnight_brief.py", 120),
+                ("generate_recommend.py", 120),
+                ("generate_top10.py", 60),
+                ("fetch_industry_map.py", 3600),
+                ("fetch_limit_up_heatmap.py", 120),
+                ("fetch_52w_high.py", 120),
+                ("fetch_analyst_ratings.py", 180),
+                ("fetch_policy_density.py", 120),
+                ("update_triple_resonance_daily.py", 120),
+                ("update_multi_resonance_daily.py", 60),
+            ],
+        ],
+        "max_parallel": 6,
+    },
+    "close_deploy": {
+        "desc": "收盘最终部署 (19:30) — 注入+部署（数据已由 close_p1/close_p2 就绪）",
+        "steps": [
+            ("update_data_v2.py", 300),
+            ("enhance_dist.py", 30),
+            ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
+            ("check_syntax.py", 30),
+            ("sync_check.py", 30),
+            ("deploy_now.py", 180),
+            ("push_notify.py", 30),
+        ],
+    },
+    "backup": {
+        "desc": "审核+自动备份 (21:00)",
+        "steps": [
+            ("enhanced_backup.py", 600),
+        ],
+    },
+    "weekend_light": {
+        "desc": "周末轻量维护 (SA/SU 19:30) — 仅部署+读交接+注入周末标注，跳过行情fetch与update_data_v2",
+        "steps": [
+            ("auto_handoff_read.py", 120),
+            ("inject_weekend_run.py", 30),
+            ("sync_check.py", 30),
+            ("deploy_now.py --force", 180),
+        ],
+    },
+}
+
+
+def run_step(command, timeout):
+    """Run a single step with subprocess timeout.
+    Returns (ok, elapsed, detail).
+    """
+    start = time.time()
+    parts = command.split()
+    # scanner.py 路由: 实测系统 Python 3.12.8 的 py_mini_racer(V8) 在多次初始化时会
+    # FATAL 崩溃(选股观测台全扫进程被杀); 托管 Python 3.13.12 的 py_mini_racer 容许多次
+    # 初始化, 配合 scanner.py 专用单线程执行器可稳定运行 → scanner 走 sys.executable(托管3.13.12)。
+    exe = sys.executable if parts[0] == "scanner.py" else sys.executable
+    try:
+        proc = subprocess.run(
+            [exe] + parts,
+            cwd=WORKSPACE,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+        elapsed = time.time() - start
+        ok = proc.returncode == 0
+        detail = ""
+        if not ok:
+            detail = f"exit={proc.returncode}"
+            if proc.stderr:
+                tail = proc.stderr.strip()[-150:]
+                if tail:
+                    detail += " | " + tail
+        return ok, elapsed, detail
+    except subprocess.TimeoutExpired:
+        elapsed = time.time() - start
+        return False, elapsed, "TIMEOUT"
+    except FileNotFoundError:
+        elapsed = time.time() - start
+        return False, elapsed, "NOT_FOUND"
+    except Exception as e:
+        elapsed = time.time() - start
+        return False, elapsed, str(e)[:150]
+
+
+def run_parallel_group(group_steps, max_workers=6):
+    """Run a group of steps in parallel.
+    
+    group_steps: list of (command, timeout)
+    Returns: (group_ok, group_elapsed, group_detail)
+        - group_ok: bool, True if all tasks succeeded
+        - group_elapsed: float, total elapsed time in seconds
+        - group_detail: dict, {index: (command, ok, elapsed, detail)}
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    
+    start = time.time()
+    
+    def _run_one(cmd_timeout):
+        cmd, timeout = cmd_timeout
+        ok, elapsed, detail = run_step(cmd, timeout)
+        return (cmd, ok, elapsed, detail)
+    
+    results = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(_run_one, ct) for ct in group_steps]
+        for f in as_completed(futures):
+            results.append(f.result())
+    
+    # Return in original order (for consistent output)
+    order = {ct[0]: i for i, ct in enumerate(group_steps)}
+    results.sort(key=lambda r: order.get(r[0], 999))
+    
+    # Calculate return values
+    group_ok = all(ok for _, ok, _, _ in results)
+    group_elapsed = time.time() - start
+    group_detail = {i: r for i, r in enumerate(results)}
+    
+    return group_ok, group_elapsed, group_detail
+
+
+def _sync_dual_machine_code(workspace):
+    """双机代码同步：阿狸咪↔小九，每次任务执行前拉取对方最新代码。
+    
+    v3（强制拉取，防止覆盖旧版）：
+      - 代码（py/html/js/css）走 Git 同步
+      - 数据（data/*.json）走坚果云实时同步，不进 Git
+      - 只需 git pull 拉取代码变更，不再 commit/push 数据
+      - 失败时重试1次，仍失败则明确告警
+    """
+    print("  [0/1] 🔄 双机代码同步（强制拉取最新代码）...", end="", flush=True)
+    start = time.time()
+
+    # 拉取对端最新代码（自动 stash 本地未提交改动）
+    for attempt in range(2):
+        r = subprocess.run(
+            "git pull --autostash --no-rebase origin main",
+            shell=True, cwd=workspace, capture_output=True, text=True, timeout=120
+        )
+
+        if r.returncode == 0:
+            elapsed = time.time() - start
+            print(f"✓  {elapsed:.1f}s")
+            break
+        elif attempt == 0:
+            # 第一次失败，等5秒重试
+            time.sleep(5)
+        else:
+            # 第二次仍失败，严重告警！
+            elapsed = time.time() - start
+            err = r.stderr.strip()[-200:] if r.stderr else "未知错误"
+            out = r.stdout.strip()[-100:] if r.stdout else ""
+            print(f"\n  ❌ Git Pull 失败（已重试1次）！可能使用旧版代码！")
+            print(f"     错误: {err[:150]}")
+            if out:
+                print(f"     输出: {out[:80]}")
+            print(f"     ⚠️  请立即检查网络或手动执行: cd {workspace} && git pull")
+            print(f"     继续使用本地代码... ({elapsed:.1f}s)")
+
+    # 恢复 stash（如果有未跟踪文件也被 stash 了）
+    subprocess.run(
+        "git stash pop", shell=True, cwd=workspace,
+        capture_output=True, timeout=30
+    )
+
+
+def _check_code_version(workspace):
+    """检查关键文件是否包含最新版本的代码标记。
+    如果没有，说明坚果云可能还没同步完成，当前用的可能是旧版代码。
+    """
+    # 关键代码标记（不匹配 = 旧版）
+    import glob as _glob
+    
+    SAFETY_MARKERS = {
+        "index_master.html": [
+            ("typeof CLOSED_SET !== 'undefined'", "CLOSED_SET防御检查"),
+        ],
+        "fetch_sector_fund_flow.py": [
+            ("neodata流入+流出完整", "neodata双查询修复"),
+        ],
+    }
+    
+    issues = []
+    for fname, markers in SAFETY_MARKERS.items():
+        fpath = os.path.join(workspace, fname)
+        if not os.path.exists(fpath):
+            continue
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                content = f.read()
+            for marker, desc in markers:
+                if marker not in content:
+                    issues.append(f"{fname} 缺少 {desc}")
+        except Exception:
+            pass
+    
+    if issues:
+        print(f"\n  ⚠️ 坚果云版本检查异常（可能是同步延迟导致使用旧版代码）:")
+        for issue in issues:
+            print(f"     ❌ {issue}")
+        print(f"     风险：部署旧版代码可能导致网站崩溃或数据异常")
+        print(f"     建议：检查坚果云是否正在同步，等待完成后再部署")
+    
+    # 清理坚果云冲突文件
+    # 仅限会双机写的同步目录 + 根目录非递归层，避免递归全 workspace 误删源码/.git/backup_
+    # 典型冲突副本：scan_result(冲突).json / xxx.conflict.json / HANDOVER_LOG(冲突).jsonl
+    # 注意：os.remove 的删除会被坚果云记入其回收站（坚果云机制，代码无法阻止）；
+    #       若想根治回收站堆积，请在坚果云客户端设置「回收站保留 N 天自动清理」。
+    CONFLICT_PATTERNS = ["*冲突*", "*conflict*", "*.conflict.*"]
+    CONFLICT_SUBDIRS = ["data", "dist/data", "standalone", "dist/standalone"]
+    cleaned = 0
+    # 1) 已知会冲突的子目录（递归）
+    for d in CONFLICT_SUBDIRS:
+        base = os.path.join(workspace, d)
+        if not os.path.isdir(base):
+            continue
+        for pat in CONFLICT_PATTERNS:
+            for f in _glob.glob(os.path.join(base, "**", pat), recursive=True):
+                try:
+                    os.remove(f)
+                    cleaned += 1
+                    print(f"  🧹 清理坚果云冲突文件: {os.path.relpath(f, workspace)}")
+                except Exception:
+                    pass
+    # 2) 根目录层（非递归）冲突副本，如 HANDOVER_LOG(冲突).jsonl
+    for pat in CONFLICT_PATTERNS:
+        for f in _glob.glob(os.path.join(workspace, pat)):
+            try:
+                os.remove(f)
+                cleaned += 1
+                print(f"  🧹 清理坚果云冲突文件: {os.path.relpath(f, workspace)}")
+            except Exception:
+                pass
+    if cleaned:
+        print(f"  ✓ 共清理 {cleaned} 个坚果云冲突副本")
+
+
+def _write_handover_log(workspace, mode, my_host, results, still_failed):
+    """每次任务结束后写交接日志，坚果云同步给另一台电脑。
+    日志文件：HANDOVER_LOG.jsonl（每行一个JSON，方便追加）
+    """
+    import json as _j
+    from datetime import datetime as _dt
+
+    log_file = os.path.join(workspace, "HANDOVER_LOG.jsonl")
+    now = _dt.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # 收集关键数据的时间戳
+    data_times = {}
+    key_files = [
+        ("data/scan_result.json", "scan_time"),
+        ("data/gold_pool.json", "update_time"),
+        ("data/north_fund.json", "update_time"),
+        ("data/lhb_result.json", "update_time"),
+    ]
+    for fpath, time_key in key_files:
+        full = os.path.join(workspace, fpath)
+        if os.path.exists(full):
+            try:
+                with open(full, "r", encoding="utf-8") as f:
+                    d = _j.load(f)
+                if isinstance(d, dict):
+                    t = d.get(time_key, "")
+                    if t:
+                        data_times[fpath] = t
+            except Exception:
+                pass
+
+    entry = {
+        "time": now,
+        "mode": mode,
+        "host": my_host,
+        "success": len(still_failed) == 0,
+        "failed_steps": still_failed,
+        "data_times": data_times,
+    }
+
+    try:
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(_j.dumps(entry, ensure_ascii=False) + "\n")
+        print(f"  📝 交接日志已写: {my_host} {mode} {'✓' if len(still_failed)==0 else '✗'}")
+    except Exception as e:
+        print(f"  ⚠️ 交接日志写入失败: {e}")
+
+
+def print_header(title):
+    print(f"\n{'=' * 60}")
+    print(f"  {title}  —  {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"{'=' * 60}\n")
+
+
+def print_summary(results, still_failed):
+    total = len(results)
+    ok_count = sum(1 for _, ok, _, _ in results if ok)
+    fail_count = total - ok_count
+    print(f"\n{'=' * 60}")
+    print(f"  总计: {total}  成功: {ok_count}  失败: {fail_count}")
+    if not still_failed:
+        print(f"  ✓ 全部通过")
+    else:
+        print(f"  ✗ 以下步骤重试后仍未通过:")
+        for name in still_failed:
+            print(f"    - {name}")
+    print(f"{'=' * 60}\n")
+    return 0 if not still_failed else 1
+
+
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] in ("--help", "-h"):
+        print("batch_update.py — 九宝量化统一调度脚本")
+        print("\n可用模式:")
+        for k, v in MODES.items():
+            print(f"  {k:<18s} {v['desc']}")
+        print("\n用法: python batch_update.py <模式>")
+        return
+
+    mode = sys.argv[1]
+    if mode not in MODES:
+        print(f"✗ 未知模式: {mode}")
+        print(f"  可用: {', '.join(MODES.keys())}")
+        sys.exit(2)
+
+    # ── Step 0.2: 非交易日跳过（周末 + A股法定假日）──
+    # 避免双机在休市日空跑抓行情（浪费 token / 报错 / 部署陈旧数据）。
+    # 规则：行情类模式在休市日跳过；weekend_light / backup / pre_brief 等始终运行；
+    # 周六 close 仍跑（T+1 全量刷新）。模块缺失则 fail-safe 照跑不误伤。
+    ALWAYS_RUN_MODES = {"weekend_light", "backup", "pre_brief"}
+    MARKET_MODES = {"pre_market", "morning_scan", "morning_plus", "morning_report",
+                    "afternoon", "post_close", "close_p1", "close_p2", "close"}
+    if mode in ALWAYS_RUN_MODES or mode not in MARKET_MODES:
+        _skip_reason = None
+    else:
+        import datetime as _dt
+        _today = _dt.date.today()
+        if mode == "close" and _today.weekday() == 5 and not _is_holiday(_today):
+            _skip_reason = None  # 周六且非法定假日 → T+1 全量刷新照跑
+        elif _is_trading_day is None:
+            _skip_reason = None  # 模块缺失不放行跳过，fail-safe 照跑
+        elif _is_trading_day(_today):
+            _skip_reason = None
+        else:
+            if _today.weekday() >= 5 and _is_holiday is not None and _is_holiday(_today):
+                _skip_reason = "法定假日(周末)"
+            elif _today.weekday() >= 5:
+                _skip_reason = "周末"
+            else:
+                _skip_reason = "法定假日"
+    if _skip_reason:
+        print(f"⏭️ 非交易日（{_skip_reason}），模式 [{mode}] 跳过，不抓行情")
+        sys.exit(0)
+
+    cfg = MODES[mode]
+    print_header(f"📊 {cfg['desc']}")
+
+    # ── Step 0: 双机代码同步（阿狸咪 ↔ 小九互相识别对方最新版） ──
+    _sync_dual_machine_code(WORKSPACE)
+
+    # ── Step 0.5: 双机心跳互备（一台掉线另一台自动接棒） ──
+    import json as _json
+    HEARTBEAT_FILE = os.path.join(WORKSPACE, ".batch_heartbeat.json")
+    HEARTBEAT_TIMEOUT = 120  # 2分钟无心跳视为掉线
+
+    # 机器标识：优先读 .machine_role（ALIMI / XIAOJIU），否则回退 COMPUTERNAME。
+    # 两台机器 COMPUTERNAME 都叫 CAT，必须用 .machine_role 区分谁是谁，否则日志无法分辨。
+    def _get_host_name():
+        role_file = os.path.join(WORKSPACE, ".machine_role")
+        try:
+            if os.path.exists(role_file):
+                with open(role_file, "r", encoding="utf-8") as _f:
+                    _role = _f.read().strip()
+                if _role:
+                    return _role
+        except Exception:
+            pass
+        return os.environ.get("COMPUTERNAME", "unknown")
+
+    my_host = _get_host_name()
+    resume_from = 0  # 接棒时的断点步骤索引
+
+    try:
+        if os.path.exists(HEARTBEAT_FILE):
+            with open(HEARTBEAT_FILE, "r") as f:
+                hb = _json.load(f)
+            hb_age = time.time() - hb.get("last_beat", 0)
+            hb_mode = hb.get("mode", "")
+            hb_host = hb.get("host", "?")
+            hb_done = hb.get("steps_done", 0)
+            hb_total = hb.get("total_steps", len(cfg["steps"]))
+
+            if hb_age < HEARTBEAT_TIMEOUT and hb_mode == mode:
+                print(f"  ❤️ {hb_host} 正在执行 {hb_mode} (心跳 {hb_age:.0f}秒前, 已完成 {hb_done}/{hb_total})")
+                print(f"     本机({my_host})跳过")
+                sys.exit(0)
+
+            if hb_age >= HEARTBEAT_TIMEOUT and hb_mode == mode and hb_done < hb_total:
+                print(f"  💔 {hb_host} 心跳超时 ({hb_age:.0f}秒), 掉线于步骤 {hb_done}/{hb_total}")
+                print(f"     {my_host} 接棒，从步骤 {hb_done + 1} 继续!")
+                resume_from = hb_done
+                # 继续执行：不退出，resume_from 跳过已完成步骤
+
+            if hb_mode != mode:
+                print(f"  🔄 模式不同 ({hb_mode} vs {mode})，正常启动")
+    except Exception:
+        pass
+
+    # 初始化心跳
+    def _write_heartbeat(steps_done, total, started=None):
+        try:
+            hb = {
+                "mode": mode,
+                "host": my_host,
+                "started": started or time.time(),
+                "last_beat": time.time(),
+                "steps_done": steps_done,
+                "total_steps": total,
+            }
+            with open(HEARTBEAT_FILE, "w") as f:
+                _json.dump(hb, f)
+        except Exception:
+            pass
+
+    start_ts = time.time()
+    _write_heartbeat(0, len(cfg["steps"]), start_ts)
+    if resume_from > 0:
+        print(f"  🔁 接棒执行: 已完成 {resume_from}/{len(cfg['steps'])} 步")
+    else:
+        print(f"  ▶️ 正常启动 ({my_host}, {mode})")
+
+    results = {}
+    failed_indices = []
+
+    # ── Phase 1: 首轮执行 ──
+    start_idx = resume_from
+    for i in range(start_idx, len(cfg["steps"])):
+        step = cfg["steps"][i]
+
+        # ═══ 并行组：列表中包含多个 (cmd, tmo) ═══
+        if isinstance(step, list):
+            label = f"[{i + 1}/{len(cfg['steps'])}]"
+            max_workers = cfg.get("max_parallel", 6)
+            print(f"  {label} 🔀 并行组 ({len(step)}个任务, 最多{max_workers}并发)")
+            group_ok, group_elapsed, group_detail = run_parallel_group(step, max_workers)
+            # 存储组内每个结果
+            for j, (cmd_j, tmo_j) in enumerate(step):
+                results[(i, j)] = group_detail.get(j, (cmd_j, False, 0, "NOT_RUN"))
+            # 用组摘要作为 i 的结果
+            results[i] = (f"PARALLEL_GROUP_{len(step)}", group_ok, group_elapsed, "")
+            _write_heartbeat(i + 1, len(cfg["steps"]), start_ts)
+            if not group_ok:
+                failed_sub = [
+                    cmd_j for j, (cmd_j, tmo_j) in enumerate(step)
+                    if not results.get((i, j), (cmd_j, True, 0, ""))[1]
+                ]
+                print(f"    ⚠ 组内失败子任务: {', '.join(failed_sub)}")
+                failed_indices.append(i)
+            continue
+
+        # ═══ 单步执行 ═══
+        cmd, tmo = step
+        cmd_name = cmd.split()[0]
+
+        label = f"[{i + 1}/{len(cfg['steps'])}]"
+        print(f"  {label} {cmd:<35s} ", end="", flush=True)
+        ok, elapsed, detail = run_step(cmd, tmo)
+        results[i] = (cmd, ok, elapsed, detail)
+
+        icon = "✓" if ok else "✗"
+        extra = f"  {detail}" if detail else ""
+        print(f"{icon}  {elapsed:.1f}s{extra}")
+
+        # 💓 每步更新心跳
+        _write_heartbeat(i + 1, len(cfg["steps"]), start_ts)
+
+        if not ok:
+            failed_indices.append(i)
+
+    # ── Phase 2: 失败步骤重试（仅一次） ──
+    still_failed = []
+    if failed_indices:
+        print(f"\n  ── 重试 {len(failed_indices)} 个失败步骤 ──")
+        for idx in failed_indices:
+            step = cfg["steps"][idx]
+
+            # 并行组：重试组内失败的任务
+            if isinstance(step, list):
+                max_workers = cfg.get("max_parallel", 6)
+                print(f"  [R] 🔀 并行组重试 ({len(step)}个任务)")
+                group_ok, group_elapsed, group_detail = run_parallel_group(step, max_workers)
+                for j, (cmd_j, tmo_j) in enumerate(step):
+                    results[(idx, j)] = group_detail.get(j, (cmd_j, False, 0, "NOT_RUN"))
+                if not group_ok:
+                    # 记录具体失败的子任务（含错误详情），避免只写 PARALLEL_GROUP_N 盲区
+                    failed_sub = []
+                    for j, (cmd_j, tmo_j) in enumerate(step):
+                        r = group_detail.get(j)
+                        if r is None or not r[1]:
+                            detail_msg = (r[3] if r else "NOT_RUN")
+                            failed_sub.append(f"{cmd_j} [{detail_msg}]")
+                    still_failed.append(
+                        f"PARALLEL_GROUP_{len(step)}: " + " | ".join(failed_sub)
+                    )
+                continue
+
+            # 单步重试
+            cmd, tmo = step
+            label = "[R]"
+            print(f"  {label} {cmd:<35s} ", end="", flush=True)
+            ok, elapsed, detail = run_step(cmd, tmo)
+            results[idx] = (cmd, ok, elapsed, detail)
+
+            icon = "✓" if ok else "✗"
+            extra = f"  {detail}" if detail else ""
+            print(f"{icon}  {elapsed:.1f}s{extra}")
+
+            if not ok:
+                still_failed.append(cmd)
+
+        if still_failed:
+            names = ", ".join(still_failed)
+            print(f"\n  ⚠ 重试后仍然超时/失败: {names}")
+
+    exit_code = print_summary(list(results.values()), still_failed)
+    # 写交接日志（坚果云同步，另一台电脑可读取）
+    _write_handover_log(WORKSPACE, mode, my_host, results, still_failed)
+    # 清理心跳（全部完成）
+    try:
+        if os.path.exists(HEARTBEAT_FILE):
+            with open(HEARTBEAT_FILE, "r") as f:
+                hb = _json.load(f)
+            if hb.get("host") == my_host and hb.get("mode") == mode:
+                os.remove(HEARTBEAT_FILE)
+                print(f"  ✅ 清理心跳 ({my_host}, {mode})")
+    except Exception:
+        pass
+    sys.exit(exit_code)
+
+
+if __name__ == "__main__":
+    main()

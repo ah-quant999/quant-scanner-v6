@@ -1,0 +1,70 @@
+# 九宝量化 v6.0 — 云端收盘数据抓取 (17:31)
+# 替换本地 close_p1，在 18:31 全量扫描前把数据准备好。
+
+name: "☁️ 收盘数据抓取 (17:31)"
+
+on:
+  schedule:
+    - cron: '31 9 * * 1-5'   # 17:31 CST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-data-fetch
+  cancel-in-progress: true
+
+jobs:
+  data-fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt 2>/dev/null
+
+      - name: 注入凭据
+        run: |
+          mkdir -p data
+          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+
+      - name: "📡 研报+投行信号"
+        continue-on-error: true
+        run: |
+          python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
+          python guanlan_extractor.py || echo "[跳过] guanlan"
+
+      - name: "📡 全量数据抓取"
+        continue-on-error: true
+        run: |
+          for script in \
+            fetch_nt_data.py fetch_margin.py fetch_margin_etf.py \
+            fetch_etf_subscription.py fetch_suspension_alert.py \
+            fetch_stock_deviation.py fetch_sector_fund_flow.py \
+            fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py \
+            fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py \
+            fetch_south_individual.py fetch_herding_data.py \
+            fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
+            fetch_macro_data.py fetch_fomc.py fetch_sh_sz_history.py \
+            fetch_up_down_stats.py fetch_sh_index_fib.py; do
+            python "$script" || echo "[跳过] $script"
+          done
+
+      - name: "📡 危机雷达"
+        continue-on-error: true
+        run: python fetch_crisis_data.py || echo "[跳过] crisis"
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_data_fetch\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 17:31 数据抓取完成"

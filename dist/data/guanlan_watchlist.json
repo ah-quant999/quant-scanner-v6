@@ -1,0 +1,220 @@
+{
+  "version": "2.0",
+  "updated": "2026-07-14 09:25:58",
+  "sources": [
+    "guanlan",
+    "zhaixingge"
+  ],
+  "total": 19,
+  "stocks": [
+    {
+      "name": "20",
+      "code": "9988",
+      "full_code": "9988.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "摘星阁",
+      "added_date": "2026-01-19"
+    },
+    {
+      "name": "海螺创业",
+      "code": "0586",
+      "full_code": "0586.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "花旗",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "海螺水泥",
+      "code": "600585",
+      "full_code": "sh600585",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "花旗",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "康龙化成",
+      "code": "300759",
+      "full_code": "300759.SZ",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "花旗",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "深南电路",
+      "code": "002916",
+      "full_code": "002916.SZ",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "高盛",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "思源电气",
+      "code": "002028",
+      "full_code": "002028.SH",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "高盛",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "华明装备",
+      "code": "002270",
+      "full_code": "002270.SH",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "高盛",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "中国铝业",
+      "code": "601600",
+      "full_code": "sh601600",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "花旗",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "沪电股份",
+      "code": "002463",
+      "full_code": "002463.SZ",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "花旗",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "福斯特",
+      "code": "603806",
+      "full_code": "603806.SH",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "花旗",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "万辰集团",
+      "code": "300972",
+      "full_code": "sz300972",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "杰富瑞",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "长江电力",
+      "code": "600900",
+      "full_code": "sh600900",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "东方电缆",
+      "code": "603606",
+      "full_code": "sh603606",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "德业股份",
+      "code": "605117",
+      "full_code": "sh605117",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "金风科技",
+      "code": "002202",
+      "full_code": "sz002202",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "阳光电源",
+      "code": "300274",
+      "full_code": "sz300274",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "特锐德",
+      "code": "300001",
+      "full_code": "sz300001",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "未知机构",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "联想集团",
+      "code": "0992",
+      "full_code": "0992.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    },
+    {
+      "name": "中信证券",
+      "code": "600030",
+      "full_code": "sh600030",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "高盛",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-14"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "last_scan": "2026-07-10 10:21:02",
+  "errors": [
+    {
+      "step": "ETF资金",
+      "time": "2026-07-10 10:21:02",
+      "error": "python: can't open file 'E:\\\\workspace\\\\stock-scanner\\\\repo-temp\\\\fetch_etf_flow.py': [Errno 2] No such file or directory"
+    }
+  ]
+}

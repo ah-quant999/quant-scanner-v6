@@ -1,0 +1,65 @@
+name: "Safety Net - 定时任务兜底监控"
+
+on:
+  schedule:
+    # 盘中关键时间点检查（UTC+8 → UTC）
+    - cron: "15 1 * * 1-5"   # 09:15 盘前
+    - cron: "0  2 * * 1-5"   # 10:00 盘中
+    - cron: "45 3 * * 1-5"   # 11:45 午间
+    - cron: "30 6 * * 1-5"   # 14:30 尾盘
+    - cron: "30 11 * * *"    # 19:30 收盘（每天）
+    - cron: "0  13 * * *"    # 21:00 备份检查（每天）
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 检查站点可访问性
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://ah-quant999.github.io/quant-scanner-v6/ || echo "000")
+          echo "::notice::站点状态码: $STATUS"
+          if [ "$STATUS" != "200" ]; then
+            echo "::error::站点不可访问！状态码: $STATUS"
+          fi
+
+      - name: 检测数据新鲜度
+        id: fresh
+        run: |
+          HTML=$(curl -sL https://ah-quant999.github.io/quant-scanner-v6/ 2>/dev/null)
+          
+          # 提取 SCAN_DATA.scan_time
+          SCAN_TIME=$(echo "$HTML" | grep -oP '"scan_time":\s*"\K[^"]+' | head -1)
+          echo "SCAN_DATA时间: $SCAN_TIME"
+          
+          if [ -z "$SCAN_TIME" ]; then
+            echo "::warning::无法提取 SCAN_DATA 时间，可能需要人工检查"
+            exit 0
+          fi
+          
+          # 计算时间差（秒）
+          SCAN_TS=$(date -d "${SCAN_TIME:0:19}" +%s 2>/dev/null || date -d "${SCAN_TIME:0:10}" +%s 2>/dev/null || echo "0")
+          NOW_TS=$(date +%s)
+          DIFF_HOURS=$(( ($NOW_TS - $SCAN_TS) / 3600 ))
+          
+          echo "::notice::数据年龄: ${DIFF_HOURS}小时"
+          
+          if [ $DIFF_HOURS -gt 6 ]; then
+            echo "::warning::数据已超过6小时未更新（${DIFF_HOURS}h），定时任务可能中断！"
+          elif [ $DIFF_HOURS -gt 12 ]; then
+            echo "::error::数据已超过12小时未更新（${DIFF_HOURS}h），定时任务中断！请立即检查双机状态。"
+          fi
+          
+          # 输出状态徽章用
+          echo "age_hours=${DIFF_HOURS}" >> $GITHUB_OUTPUT
+          echo "scan_time=${SCAN_TIME:0:19}" >> $GITHUB_OUTPUT
+
+      - name: 汇总报告
+        run: |
+          echo "═══════════════════════════════════════"
+          echo "  🛡️ 九宝量化兜底监控"
+          echo "  检查时间: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+          echo "  数据年龄: ${{ steps.fresh.outputs.age_hours }}小时"
+          echo "  最新扫描: ${{ steps.fresh.outputs.scan_time }}"
+          echo "═══════════════════════════════════════"

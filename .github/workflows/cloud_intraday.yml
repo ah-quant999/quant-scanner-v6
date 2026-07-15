@@ -1,0 +1,91 @@
+# 九宝量化 v6.0 — 盘前+盘中云端任务
+# 覆盖 09:20/10:31/11:46/13:31/14:31 五个时间点
+
+name: "☁️ 盘前+盘中任务"
+
+on:
+  schedule:
+    # 全部转 UTC（CST - 8）
+    - cron: '20 1 * * 1-5'   # 09:20 CST — 盘前全景（3模块）
+    - cron: '31 2 * * 1-5'   # 10:31 CST — 盘中扫描
+    - cron: '46 3 * * 1-5'   # 11:46 CST — 盘中扫描
+    - cron: '31 5 * * 1-5'   # 13:31 CST — 盘中扫描
+    - cron: '31 6 * * 1-5'   # 14:31 CST — 盘中扫描
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-intraday
+  cancel-in-progress: false
+
+jobs:
+  intraday:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt 2>/dev/null
+
+      - name: 注入凭据
+        run: |
+          mkdir -p data
+          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+
+      # ─── 09:20 盘前全景（3模块） ───
+      - name: "🌅 09:20 — 金股观测 (机构研报+投行+全量扫描)"
+        if: github.event.schedule == '20 1 * * 1-5'
+        continue-on-error: true
+        run: |
+          python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
+          python guanlan_extractor.py || echo "[跳过] guanlan"
+          python build_candidate_pool.py || echo "[跳过] build_candidate_pool"
+          python scanner.py watch || echo "[跳过] scanner watch"
+
+      - name: "🌅 09:20 — 总览页 (国际投行+大盘指数+宏观)"
+        if: github.event.schedule == '20 1 * * 1-5'
+        continue-on-error: true
+        run: |
+          python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
+          python fetch_macro_data.py || echo "[跳过] macro"
+          python fetch_sh_index_fib.py || echo "[跳过] sh_fib"
+          python fetch_sz_index_fib.py || echo "[跳过] sz_fib"
+          python fetch_fomc.py || echo "[跳过] fomc"
+          python fetch_overnight_timeline.py 2>/dev/null || echo "[跳过] overnight"
+
+      - name: "🌅 09:20 — 数据监控 (SH_FIB+成交金额+两融/ETF)"
+        if: github.event.schedule == '20 1 * * 1-5'
+        continue-on-error: true
+        run: |
+          python fetch_sh_index_fib.py || echo "[跳过] sh_fib"
+          python fetch_sh_sz_history.py || echo "[跳过] sh_sz_history"
+          python fetch_up_down_stats.py || echo "[跳过] up_down"
+          python fetch_margin.py || echo "[跳过] margin"
+          python fetch_margin_etf.py || echo "[跳过] margin_etf"
+
+      # ─── 10:31/11:46/13:31/14:31 盘中扫描（4轮） ───
+      - name: "🔬 盘中扫描 (总览+预判)"
+        if: github.event.schedule != '20 1 * * 1-5'
+        continue-on-error: true
+        run: python run_intraday_scan.py --skip-standalone
+
+      - name: "🔬 09:20 也跑一次 (盘前预热)"
+        if: github.event.schedule == '20 1 * * 1-5'
+        continue-on-error: true
+        run: python run_intraday_scan.py --skip-standalone || echo "[跳过] intraday_scan"
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_intraday\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 任务完成"

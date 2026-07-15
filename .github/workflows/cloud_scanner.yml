@@ -1,0 +1,138 @@
+# 九宝量化 v6.0 — 云端收盘扫描+部署
+# 扫描和数据抓取并行跑，不互相阻塞
+
+name: "☁️ 云端收盘扫描+部署"
+
+on:
+  schedule:
+    - cron: '31 10 * * 1-5'   # 18:31 CST（交易日）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-scanner-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  scan-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      CLOUD_RUNNER: "true"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 注入凭据
+        env:
+          TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
+        run: |
+          mkdir -p data
+          if [ -n "$TOKEN_JSON" ]; then
+            printf '%s\n' "$TOKEN_JSON" > data/zsxq_token.json
+            echo "✅ zsxq_token 已注入"
+          else
+            echo "⚠️ 无 ZSXQ_TOKEN secret（知识星球数据跳过）"
+          fi
+
+      # ─── 后台：数据抓取（不阻塞扫描） ───
+      - name: "🔄 后台数据抓取"
+        continue-on-error: true
+        shell: bash
+        run: |
+          (
+          for entry in \
+            "120:fetch_nt_data.py" "120:fetch_margin.py" "120:fetch_margin_etf.py" \
+            "120:fetch_etf_subscription.py" "120:fetch_suspension_alert.py" \
+            "180:fetch_stock_deviation.py" "180:fetch_sector_fund_flow.py" \
+            "90:fetch_sector_rs.py" "120:fetch_main_week.py" "180:fetch_market_alerts.py" \
+            "180:fetch_concept_ranking.py" "300:fetch_north_fund.py" \
+            "300:fetch_south_individual.py" "180:fetch_herding_data.py" \
+            "120:fetch_cffex_holdings.py" "120:fetch_inst_trade.py" \
+            "180:fetch_macro_data.py" "60:fetch_fomc.py" "120:fetch_sh_sz_history.py" \
+            "120:fetch_up_down_stats.py" "60:fetch_sh_index_fib.py" \
+            "180:fetch_crisis_data.py"; do
+            to=$(echo "$entry" | cut -d: -f1)
+            sf=$(echo "$entry" | cut -d: -f2-)
+            (timeout "$to" python "$sf" 2>/dev/null || echo "[跳过] $sf") &
+          done
+          wait
+          echo "✅ 数据抓取完成"
+          ) &
+          echo "后台数据抓取已启动，PID=$!"
+
+      # ─── 核心扫描（与数据抓取并行） ───
+      - name: "🔬 核心扫描（并行于数据抓取）"
+        run: |
+          python build_candidate_pool.py || echo "⚠️ 候选池跳过"
+          python scanner.py full || echo "⚠️ 扫描跳过"
+          echo "✅ 扫描完成"
+
+      # ─── 等待后台数据抓取完成 ───
+      - name: "⏳ 等待数据抓取完成"
+        continue-on-error: true
+        shell: bash
+        run: |
+          wait
+          echo "✅ 所有后台任务完成"
+
+      # ─── 龙虎榜+研报（与扫描结果合并） ───
+      - name: "📡 龙虎榜+研报"
+        continue-on-error: true
+        shell: bash
+        run: |
+          for entry in "300:fetch_lhb.py" "120:fetch_mahoro_signals.py --non-interactive" \
+            "120:fetch_limit_up_heatmap.py" "120:fetch_52w_high.py" \
+            "180:fetch_analyst_ratings.py" "120:fetch_policy_density.py" \
+            "300:guanlan_extractor.py"; do
+            to=$(echo "$entry" | cut -d: -f1)
+            sf=$(echo "$entry" | cut -d: -f2-)
+            (timeout "$to" python $sf 2>/dev/null || echo "[跳过] $sf") &
+          done
+          wait
+          echo "✅ 龙虎榜+研报完成"
+
+      # ─── 生成脚本 ───
+      - name: "⚙️ 生成"
+        continue-on-error: true
+        run: |
+          python generate_recommend.py || echo "[跳过]"
+          python generate_top10.py || echo "[跳过]"
+          python update_triple_resonance_daily.py || echo "[跳过]"
+          python update_multi_resonance_daily.py || echo "[跳过]"
+          echo "✅ 生成完成"
+
+      # ─── 构建前端 ───
+      - name: "🏗️ 构建前端"
+        run: |
+          python update_data_v2.py
+          echo "✅ 构建完成"
+
+      # ─── 部署 ───
+      - name: "🚀 部署到 GitHub Pages"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(date -u '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_close\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+
+      - name: "⛔ 失败通知"
+        if: failure()
+        run: echo "::error::☁️ 云端扫描工作流执行失败！"

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>机游共振数据口径核查 · 2026-07-10</title>
+<style>
+  body { font-family: -apple-system, "Microsoft YaHei", sans-serif; background:#fff; color:#333; margin:24px; line-height:1.7; }
+  h1 { font-size:20px; color:#1a237e; border-bottom:2px solid #1a237e; padding-bottom:8px; }
+  h2 { font-size:15px; color:#333; margin-top:24px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:10px 0; }
+  th,td { border:1px solid #ddd; padding:6px 10px; text-align:left; }
+  th { background:#e8eaf6; color:#1a237e; }
+  .ok { color:#1b5e20; font-weight:700; }
+  .warn { color:#d84315; font-weight:700; }
+  .evi { background:#f1f8e9; border-left:3px solid #1b5e20; padding:10px 14px; margin:12px 0; font-size:13px; }
+  code { background:#f5f5f5; padding:1px 5px; border-radius:3px; font-size:12px; }
+</style>
+</head>
+<body>
+<h1>机游共振数据口径核查（2026-07-10 周五）</h1>
+
+<h2>结论</h2>
+<p><b class="ok">我的站（东财逐笔席位口径）数据正确。</b> 外部网站（新浪口径）在金风科技上机构净买入偏低约 0.7 亿——它错误地把北向（深股通）卖出计入了"机构卖出"，而东财逐笔席位明细证明金风科技当日机构专用席位<strong>只有买入、卖出为 0</strong>。</p>
+
+<h2>铁证：金风科技（002202）东财逐笔席位明细</h2>
+<div class="evi">
+  <b>买入侧</b>：深股通专用 51229万 ｜ 机构专用 20100万 ｜ 机构专用 11824万 ｜ 机构专用 10047万 ｜ 其他游资…<br>
+  → 机构专用买入合计 <b>41971.8万</b>，机构专用卖出合计 <b>0.0万</b><br>
+  <b>卖出侧</b>：深股通专用 8437万 ｜ 申万宏源 5511万 ｜ 东方财富席位…（无机构专用）<br>
+  → 机构专用卖出合计 <b>0.0万</b><br><br>
+  因此机构净买入 = 41971.8 − 0 = <b>4.20亿</b>（与我的 lhb_result.json 完全一致）
+</div>
+
+<h2>三方数据对比（单位：亿）</h2>
+<table>
+  <tr><th>股票</th><th>东财逐笔复算<br>(机构净买)</th><th>我的 lhb_result</th><th>外部网站<br>(新浪口径)</th><th>判定</th></tr>
+  <tr><td>金风科技</td><td>4.20</td><td>4.20</td><td class="warn">3.50</td><td>外部偏低（误扣机构卖出）</td></tr>
+  <tr><td>中鼎股份</td><td>1.44</td><td>1.44</td><td>—</td><td>一致</td></tr>
+  <tr><td>深科达</td><td>4.67</td><td>4.67</td><td>4.67</td><td class="ok">完全一致</td></tr>
+  <tr><td>常山药业</td><td>1.22</td><td>1.22</td><td>—</td><td>一致</td></tr>
+  <tr><td>航天发展</td><td>0.88</td><td>0.88</td><td>—</td><td>一致</td></tr>
+</table>
+
+<h2>差异根因</h2>
+<ul>
+  <li><b>数据源口径不同</b>：我的站用东方财富 <code>stock_lhb_stock_detail_em</code> 逐笔席位（最贴近交易所原始披露），机构 = "机构专用"席位，北向（深股通）单列；外部网站用新浪 <code>stock_lhb_jgmx_sina</code>。</li>
+  <li><b>金风科技的 7006万差异</b>：新浪接口返回"机构席位卖出 7006万"，但东财逐笔明细显示机构专用席位当天卖出为 0，该卖出实际来自深股通（北向）。新浪把北向卖出并入机构，压低了机构净买。</li>
+  <li><b>只影响金风一只</b>：其余 4 只两边机构净买一致，正因它们没有大额北向进出，新浪的口径偏差未暴露。</li>
+</ul>
+
+<h2>为什么名单也差很多（排序逻辑不同，非对错）</h2>
+<table>
+  <tr><th>维度</th><th>我的站（纯共振）</th><th>外部网站（机构净买 TOP5）</th></tr>
+  <tr><td>筛选</td><td>机构净买&gt;8000万 <b>且</b> 游资净买&gt;8000万</td><td>仅按机构净买单排</td></tr>
+  <tr><td>排序</td><td>机构+游资合计降序</td><td>机构净买降序</td></tr>
+  <tr><td>中鼎股份</td><td>排第1（游资6.11亿拉高合计7.55亿）</td><td>不进 TOP5（机构仅1.44亿）</td></tr>
+  <tr><td>"共撞"数量</td><td>纯共振5只 + 标X13只</td><td>定义不同（机构+游资都出现即计）</td></tr>
+</table>
+
+<h2>验证方法</h2>
+<p>用 akshare 1.18.64 直接拉取 2026-07-10 东方财富逐笔席位（<code>stock_lhb_stock_detail_em</code>）与新浪机构席位（<code>stock_lhb_jgmx_sina</code>），逐只复算机构净买入，与 <code>data/lhb_result.json</code>（update_time 2026-07-11 12:41:54）比对，5 只全部吻合。</p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+# 九宝量化 v6.0 — 周末竞彩娱乐 (07:30)
+# 比赛比分 + 晋级概率(Monte Carlo) + 进攻防守效率 + 小组积分榜
+# → 重送 worldcup.html + 部署 gh-pages（仅赛事期间）
+
+name: "☁️ 周末竞彩 (07:30)"
+
+on:
+  schedule:
+    - cron: '30 23 * * 5,6'  # 07:30 CST — 周五/周六（注：周五晚也是赛事）
+    # 周六/周日改为比赛日
+    - cron: '30 23 * * 0'    # 周日 07:30
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-worldcup
+  cancel-in-progress: false
+
+jobs:
+  worldcup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt 2>/dev/null
+
+      - name: 抓取世界杯数据
+        continue-on-error: true
+        run: |
+          if [ -f fetch_worldcup.py ]; then
+            python fetch_worldcup.py || echo "[跳过] worldcup"
+          fi
+
+      - name: 构建独立页
+        continue-on-error: true
+        run: |
+          if [ -f update_data_v2.py ]; then
+            python update_data_v2.py || echo "[跳过] update_data_v2"
+          fi
+
+      - name: 部署 worldcup.html + gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_worldcup\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 世界杯更新完成"

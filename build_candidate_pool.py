@@ -1,0 +1,330 @@
+# -*- coding: utf-8 -*-
+"""
+构建「候选股池」(candidate_pool.json)
+====================================
+股池 = 主板成交前100 + 创业板成交前100 + 科创板成交前100 + 港股成交前50
+      + 观澜台(自选+研报) + mahoro研报
+后续金股池 = 股池 ∩ (信号共振≥2 或 研报来源)，见 scanner.py。
+
+数据源（生产健壮）：
+  A股：stock_zh_a_spot_em(东财) → stock_zh_a_spot(新浪) 回退
+  港股：stock_hk_spot_em(东财) → stock_hk_spot(新浪) 回退
+  观澜台 / mahoro：直接读 data/*.json（已每日更新）
+任一行情源失败不致命，其余层继续构建。
+"""
+import os
+import json
+import time
+import akshare as ak
+
+DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+OUT = os.path.join(DATA, "candidate_pool.json")
+
+TOP_PER_BOARD = 100   # 主板/创业板/科创板 各取成交额前 N
+HK_TOP = 50           # 港股取成交额前 N
+
+
+# ---------- 行情抓取（带回退） ----------
+def _a_share_spot_mootdx():
+    """mootdx(通达信直连) 取全市场A股实时行情，按成交额排序。
+
+    东方财富A股行情API持续被封禁(RemoteDisconnected)，故A股候选池改用
+    mootdx 直连通达信行情服务器（与 scanner.py 同一数据源，稳定不受限）。
+    返回 DataFrame(代码/名称/成交额) 或 None。
+
+    注意: client.quotes() 不含 name 列，名称需从 client.stocks() 结果取；
+          client.stocks(market) 返回全市场(含指数/债券/基金)，须按前缀+名称过滤。
+    """
+    try:
+        from mootdx.quotes import Quotes
+        import pandas as pd
+        t = time.time()
+        client = Quotes.factory(market='std')
+        # 板块前缀: 上海(market=1)=主板60x+科创688; 深圳(market=0)=主板00x+创业30x
+        BOARD_PREFIXES = ('600', '601', '603', '605', '688',
+                          '000', '001', '002', '003', '300', '301')
+        NAME_EXCLUDE = ('指数', 'Ａ股', 'Ｂ股', '基金', 'ETF', '债券', '转债', '回购')
+        rows = []
+        for market_id in (1, 0):
+            all_stocks = client.stocks(market=market_id)
+            if all_stocks is None or len(all_stocks) == 0:
+                continue
+            target_codes, target_names = [], {}
+            for _, r in all_stocks.iterrows():
+                code = str(r['code']).zfill(6)
+                name = str(r.get('name', '')).replace('\x00', '').strip()
+                if not any(code.startswith(p) for p in BOARD_PREFIXES):
+                    continue
+                if name and name.startswith(('N', 'ST', '*ST', '退')):
+                    continue
+                if any(x in name for x in NAME_EXCLUDE):
+                    continue
+                target_codes.append(code)
+                target_names[code] = name
+            # 批量获取实时行情(每批≤80只, 通达信协议上限)
+            qparts = []
+            for i in range(0, len(target_codes), 80):
+                batch = target_codes[i:i + 80]
+                try:
+                    q = client.quotes(symbol=batch)
+                    if q is not None and len(q) > 0:
+                        qparts.append(q)
+                except Exception:
+                    continue
+                time.sleep(0.05)
+            if not qparts:
+                continue
+            qdf = pd.concat(qparts, ignore_index=True)
+            qdf = qdf[qdf['price'] > 0].copy()  # 过滤停牌
+            for _, r in qdf.iterrows():
+                code = str(r['code']).zfill(6)
+                name = target_names.get(code, '')
+                if not name or name == code:
+                    continue
+                rows.append({'代码': code, '名称': name,
+                             '成交额': float(r.get('amount', 0) or 0)})
+        if not rows:
+            return None
+        df = pd.DataFrame(rows)
+        print(f"  [A股-mootdx] OK 行数={len(df)} {time.time() - t:.1f}s")
+        return df
+    except Exception as e:
+        print(f"  [A股-mootdx] 失败: {type(e).__name__} {str(e)[:60]}")
+        return None
+
+
+def _a_share_spot():
+    """A股行情获取：mootdx优先 → akshare(东财/新浪)回退。"""
+    df = _a_share_spot_mootdx()
+    if df is not None and len(df):
+        return df
+    for fn in (ak.stock_zh_a_spot_em, ak.stock_zh_a_spot):
+        try:
+            t = time.time()
+            df = fn()
+            if df is not None and len(df):
+                print(f"  [A股] {fn.__name__} OK 行数={len(df)} {time.time()-t:.1f}s")
+                return df
+        except Exception as e:
+            print(f"  [A股] {fn.__name__} 失败: {type(e).__name__} {str(e)[:60]}")
+            time.sleep(2)
+    return None
+
+
+def _hk_spot():
+    for fn in (ak.stock_hk_spot_em, ak.stock_hk_spot):
+        try:
+            t = time.time()
+            df = fn()
+            if df is not None and len(df):
+                print(f"  [港股] {fn.__name__} OK 行数={len(df)} {time.time()-t:.1f}s")
+                return df
+        except Exception as e:
+            print(f"  [港股] {fn.__name__} 失败: {type(e).__name__} {str(e)[:60]}")
+            time.sleep(2)
+    return None
+
+
+# ---------- 工具 ----------
+def _board_of_a(code):
+    """A股代码 → 上市板（兼容 sh600000 / 600000.SH / 600000 等格式）"""
+    c = str(code).strip().upper()
+    c = c.split(".")[0]                      # 去掉 .SH/.SZ 后缀
+    c = "".join(ch for ch in c if ch.isdigit())  # 去掉 sh/sz 等前缀，仅留数字
+    if not c:
+        return None
+    if c.startswith(("600", "601", "603", "605")):
+        return "主板"
+    if c.startswith(("000", "001", "002", "003")):
+        return "主板"
+    if c.startswith(("300", "301")):
+        return "创业板"
+    if c.startswith(("688", "689")):
+        return "科创板"
+    if c.startswith(("8", "4", "92")):
+        return "北交所"
+    return None
+
+
+def _norm(code, name, market_raw, full_code):
+    """统一成 (code6/5位, name, market, board_label)"""
+    code = str(code).strip()
+    fc = str(full_code or "")
+    if market_raw == "港股" or ".HK" in fc.upper() or (code.isdigit() and len(code) <= 5 and market_raw != "A股"):
+        code = code.zfill(5)
+        return code, name, "hk", "港股"
+    code = code.zfill(6)
+    if code.startswith("6"):
+        market, board = "sh", ("科创板" if code.startswith("688") else "主板")
+    elif code.startswith("3"):
+        market, board = "sz", "创业板"
+    elif code.startswith(("0", "2")):
+        market, board = "sz", "主板"
+    else:
+        market, board = "sh", ""
+    return code, name, market, board
+
+
+def _mahoro_ticker(ticker):
+    """'2359.HK' → ('02359','hk','港股'); '601872.SS' → ('601872','sh','主板')"""
+    if not ticker:
+        return None
+    t = str(ticker).strip().upper()
+    if ".HK" in t:
+        code = t.split(".HK")[0].zfill(5)
+        return code, "hk", "港股"
+    if ".SS" in t:
+        return t.split(".SS")[0].zfill(6), "sh", "主板"
+    if ".SZ" in t:
+        return t.split(".SZ")[0].zfill(6), "sz", "创业板" if t.startswith("3") else "主板"
+    # 纯数字
+    if t.isdigit():
+        if len(t) <= 5:
+            return t.zfill(5), "hk", "港股"
+        return t.zfill(6), ("sh" if t.startswith("6") else "sz"), ""
+    return None
+
+
+# ---------- 主构建 ----------
+def build():
+    pool = {}  # key -> {code,name,market,board_label,sources:[]}
+
+    def add(key, code, name, market, board, source):
+        if not key or not code:
+            return
+        if key in pool:
+            if source not in pool[key]["sources"]:
+                pool[key]["sources"].append(source)
+        else:
+            pool[key] = {
+                "code": code, "name": name, "market": market,
+                "board_label": board, "sources": [source],
+            }
+
+    # 1) A股 主板/创业板/科创板 各前100（按成交额）
+    df = _a_share_spot()
+    if df is not None:
+        code_col = "代码" if "代码" in df.columns else df.columns[0]
+        name_col = "名称" if "名称" in df.columns else df.columns[1]
+        amt_cols = [c for c in df.columns if "成交额" in c or "amount" in c.lower()]
+        if amt_cols:
+            amt = amt_cols[0]
+            df = df.copy()
+            df["_b"] = df[code_col].astype(str).map(_board_of_a)
+            for b in ("主板", "创业板", "科创板"):
+                sub = df[df["_b"] == b].sort_values(amt, ascending=False).head(TOP_PER_BOARD)
+                for _, r in sub.iterrows():
+                    raw = str(r[code_col]).strip().upper().split(".")[0]
+                    raw = "".join(ch for ch in raw if ch.isdigit())
+                    if not raw:
+                        continue
+                    c = raw.zfill(6)
+                    mkt = "sh" if c.startswith("6") else "sz"
+                    add(f"{mkt}_{c}", c, r[name_col], mkt, b, f"{b}成交前{TOP_PER_BOARD}")
+            print(f"  [A股] 主板/创业板/科创板 各前{TOP_PER_BOARD} 已并入")
+        else:
+            print("  [A股] 未找到成交额列，跳过")
+    else:
+        print("  [A股] 行情获取失败，跳过该层")
+
+    # 2) 港股 前50（按成交额）
+    hk = _hk_spot()
+    if hk is not None:
+        code_col = "代码" if "代码" in hk.columns else hk.columns[0]
+        name_col = "名称" if "名称" in hk.columns else hk.columns[1]
+        amt_cols = [c for c in hk.columns if "成交额" in c or "amount" in c.lower()]
+        if amt_cols:
+            amt = amt_cols[0]
+            sub = hk.sort_values(amt, ascending=False).head(HK_TOP)
+            for _, r in sub.iterrows():
+                raw = str(r[code_col]).strip().upper().split(".")[0]
+                raw = "".join(ch for ch in raw if ch.isdigit()).zfill(5)
+                if not raw:
+                    continue
+                add(f"hk_{raw}", raw, r[name_col], "hk", "港股", f"港股成交前{HK_TOP}")
+            print(f"  [港股] 前{HK_TOP} 已并入")
+        else:
+            print("  [港股] 未找到成交额列，跳过")
+    else:
+        print("  [港股] 行情获取失败，跳过该层（生产机将正常拉取）")
+
+    # 3) 观澜台 自选
+    try:
+        wl = json.load(open(os.path.join(DATA, "guanlan_watchlist.json"), encoding="utf-8"))
+        for st in wl.get("stocks", []):
+            code, name, mkt, board = _norm(st.get("code", ""), st.get("name", ""),
+                                           st.get("market", ""), st.get("full_code", ""))
+            if code:
+                add(f"{mkt}_{code}", code, name, mkt, board, "观澜台")
+        print(f"  [观澜台] 自选 {len(wl.get('stocks', []))} 只已并入")
+    except Exception as e:
+        print(f"  [观澜台] 自选读取失败: {e}")
+
+    # 4) 观澜台 研报
+    try:
+        rp = json.load(open(os.path.join(DATA, "guanlan_reports.json"), encoding="utf-8"))
+        n = 0
+        for item in rp:
+            for st in item.get("stocks", []):
+                code, name, mkt, board = _norm(st.get("code", ""), st.get("name", ""),
+                                               st.get("market", ""), st.get("full_code", ""))
+                if code:
+                    add(f"{mkt}_{code}", code, name, mkt, board, "观澜台研报")
+                    n += 1
+        print(f"  [观澜台] 研报个股 {n} 只已并入")
+    except Exception as e:
+        print(f"  [观澜台] 研报读取失败: {e}")
+
+    # 5) mahoro 研报
+    try:
+        mh = json.load(open(os.path.join(DATA, "mahoro_signals.json"), encoding="utf-8"))
+        n = 0
+        seen = set()
+        for sig in mh.get("raw_signals", []):
+            for co in sig.get("companies", []):
+                t = _mahoro_ticker(co.get("ticker", ""))
+                if not t:
+                    continue
+                code, mkt, board = t
+                key = f"{mkt}_{code}"
+                if key in seen:
+                    continue
+                seen.add(key)
+                add(key, code, co.get("name", ""), mkt, board, "maharo研报")
+                n += 1
+        for gm in mh.get("gold_pool_matches", []):
+            t = _mahoro_ticker(gm.get("code", ""))
+            if not t:
+                continue
+            code, mkt, board = t
+            key = f"{mkt}_{code}"
+            if key in seen:
+                continue
+            seen.add(key)
+            add(key, code, gm.get("name", ""), mkt, board, "maharo研报")
+            n += 1
+        print(f"  [maharo] 研报个股 {n} 只已并入")
+    except Exception as e:
+        print(f"  [maharo] 读取失败: {e}")
+
+    # 汇总来源分布
+    from collections import Counter
+    dist = Counter()
+    for v in pool.values():
+        for s in v["sources"]:
+            dist[s] += 1
+    out = {
+        "update_time": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "total": len(pool),
+        "source_dist": dict(dist),
+        "stocks": pool,
+    }
+    with open(OUT, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    print(f"\n✅ 候选股池构建完成：{len(pool)} 只")
+    print("   来源分布:", dict(dist))
+    return out
+
+
+if __name__ == "__main__":
+    build()

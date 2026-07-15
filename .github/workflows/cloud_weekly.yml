@@ -1,0 +1,87 @@
+# 九宝量化 v6.0 — 周期任务
+# 周一 06:30 — industry_map.json 重建（云端跑，绕过家用机限流）
+# 周五 19:30 — 股票名称映射更新
+# 周六 07:30 — T+1 数据补全
+
+name: "☁️ 周期任务"
+
+on:
+  schedule:
+    - cron: '30 22 * * 0'   # 周日 06:30 CST — 周一industry_map（提前准备）
+    - cron: '30 11 * * 5'   # 周五 19:30 CST — 股票名称
+    - cron: '30 23 * * 5'   # 周六 07:30 CST — T+1
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-weekly-${{ github.event.schedule }}
+  cancel-in-progress: false
+
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt 2>/dev/null
+
+      - name: 注入凭据
+        run: |
+          mkdir -p data
+          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+
+      # ─── 周一 industry_map.json 重建（云端网络好，约1h） ───
+      - name: "🏭 周一 — industry_map.json 重建（云端，绕开限流）"
+        if: github.event.schedule == '30 22 * * 0'
+        continue-on-error: true
+        run: |
+          python fetch_industry_map.py || echo "[跳过] industry_map"
+          if [ -f data/industry_map.json ]; then
+            git add -f data/industry_map.json
+            git commit -m "data: industry_map 周重建 $(TZ=Asia/Shanghai date '+%Y-%m-%d')" || echo "无变更"
+            git push origin main || echo "推送跳过"
+          fi
+
+      # ─── 周五 19:30 股票名称映射更新 ───
+      - name: "📝 周五 — 股票名称映射更新（收盘部署附带）"
+        if: github.event.schedule == '30 11 * * 5'
+        continue-on-error: true
+        run: |
+          python batch_update.py close_deploy || echo "[跳过] close_deploy"
+          python update_data_v2.py || echo "[跳过] update_data_v2"
+          python build_market_signal.py 2>/dev/null || echo "[跳过] market_signal"
+          python refresh_standalone_and_deploy.py 2>/dev/null || echo "[跳过] refresh_standalone"
+
+      # ─── 周六 07:30 T+1 数据补全 ───
+      - name: "💰 周六 — T+1 数据补全"
+        if: github.event.schedule == '30 23 * * 5'
+        continue-on-error: true
+        run: |
+          python update_data_v2.py || echo "[跳过] update_data_v2"
+          python batch_update.py weekend_light || echo "[跳过] weekend_light"
+
+      - name: "🚀 部署"
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+
+      - name: "📝 写日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_weekly\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 周期任务完成"

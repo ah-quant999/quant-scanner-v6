@@ -1,0 +1,238 @@
+{
+  "update_time": "2026-07-14 08:42:58",
+  "current_clusters": [
+    {
+      "rank": 1,
+      "medal": "🥇",
+      "sector": "银行",
+      "amount": 40.32,
+      "unit": "亿",
+      "direction": "流入",
+      "leader": "苏州银行",
+      "pct": 2.07
+    },
+    {
+      "rank": 2,
+      "medal": "🥈",
+      "sector": "中药",
+      "amount": 6.33,
+      "unit": "亿",
+      "direction": "流入",
+      "leader": "陇神戎发",
+      "pct": 2.88
+    },
+    {
+      "rank": 3,
+      "medal": "🥉",
+      "sector": "石油加工贸易",
+      "amount": 3.4,
+      "unit": "亿",
+      "direction": "流入",
+      "leader": "华锦股份",
+      "pct": -2.65
+    }
+  ],
+  "high_prob": [
+    {
+      "sector": "高股息精选",
+      "net": 54.7,
+      "unit": "亿",
+      "leader": "九芝堂",
+      "pct": -0.22
+    },
+    {
+      "sector": "跨境支付(CIPS)",
+      "net": 10.57,
+      "unit": "亿",
+      "leader": "四川长虹",
+      "pct": -2.79
+    },
+    {
+      "sector": "PVDF概念",
+      "net": 4.82,
+      "unit": "亿",
+      "leader": "天壕能源",
+      "pct": -4.84
+    },
+    {
+      "sector": "禽流感",
+      "net": 2.43,
+      "unit": "亿",
+      "leader": "上海凯宝",
+      "pct": 1.49
+    },
+    {
+      "sector": "猪肉",
+      "net": 2.26,
+      "unit": "亿",
+      "leader": "ST龙大",
+      "pct": -0.5
+    }
+  ],
+  "cautious": [
+    {
+      "sector": "通信设备",
+      "reason": "主力净流出-95.87亿"
+    },
+    {
+      "sector": "光学光电子",
+      "reason": "主力净流出-88.12亿"
+    },
+    {
+      "sector": "半导体",
+      "reason": "主力净流出-77.73亿"
+    }
+  ],
+  "catalysts": [],
+  "broker_views": [],
+  "industry_flow": {
+    "inflow": [
+      {
+        "name": "银行",
+        "net": 40.32,
+        "pct": 2.07,
+        "leader": "苏州银行"
+      },
+      {
+        "name": "中药",
+        "net": 6.33,
+        "pct": 2.88,
+        "leader": "陇神戎发"
+      },
+      {
+        "name": "石油加工贸易",
+        "net": 3.4,
+        "pct": -2.65,
+        "leader": "华锦股份"
+      },
+      {
+        "name": "养殖业",
+        "net": 2.13,
+        "pct": -0.92,
+        "leader": "仙坛股份"
+      },
+      {
+        "name": "食品加工制造",
+        "net": 1.9,
+        "pct": -0.74,
+        "leader": "ST龙大"
+      }
+    ],
+    "outflow": [
+      {
+        "name": "通信设备",
+        "net": -95.87,
+        "pct": -6.46,
+        "leader": "星网锐捷"
+      },
+      {
+        "name": "光学光电子",
+        "net": -88.12,
+        "pct": -6.75,
+        "leader": "天山电子"
+      },
+      {
+        "name": "半导体",
+        "net": -77.73,
+        "pct": -5.5,
+        "leader": "恒玄科技"
+      },
+      {
+        "name": "消费电子",
+        "net": -59.96,
+        "pct": -6.7,
+        "leader": "泓禧科技"
+      },
+      {
+        "name": "通用设备",
+        "net": -50.79,
+        "pct": -6.43,
+        "leader": "优机股份"
+      }
+    ]
+  },
+  "concept_flow": {
+    "inflow": [
+      {
+        "name": "高股息精选",
+        "net": 54.7,
+        "pct": -0.22,
+        "leader": "九芝堂"
+      },
+      {
+        "name": "跨境支付(CIPS)",
+        "net": 10.57,
+        "pct": -2.79,
+        "leader": "四川长虹"
+      },
+      {
+        "name": "PVDF概念",
+        "net": 4.82,
+        "pct": -4.84,
+        "leader": "天壕能源"
+      },
+      {
+        "name": "禽流感",
+        "net": 2.43,
+        "pct": 1.49,
+        "leader": "上海凯宝"
+      },
+      {
+        "name": "猪肉",
+        "net": 2.26,
+        "pct": -0.5,
+        "leader": "ST龙大"
+      },
+      {
+        "name": "页岩气",
+        "net": 1.35,
+        "pct": -2.07,
+        "leader": "天壕能源"
+      },
+      {
+        "name": "中韩自贸区",
+        "net": 1.33,
+        "pct": -1.36,
+        "leader": "日照港"
+      },
+      {
+        "name": "净水概念",
+        "net": 1.32,
+        "pct": -3.16,
+        "leader": "争光股份"
+      }
+    ],
+    "outflow": [
+      {
+        "name": "融资融券",
+        "net": -1073.2,
+        "pct": -4.18,
+        "leader": "万邦医药"
+      },
+      {
+        "name": "深股通",
+        "net": -679.95,
+        "pct": -4.51,
+        "leader": "鑫宏业"
+      },
+      {
+        "name": "芯片概念",
+        "net": -521.27,
+        "pct": -6.11,
+        "leader": "争光股份"
+      },
+      {
+        "name": "华为概念",
+        "net": -470.89,
+        "pct": -5.42,
+        "leader": "信通电子"
+      },
+      {
+        "name": "机器人概念",
+        "net": -445.89,
+        "pct": -5.4,
+        "leader": "鑫宏业"
+      }
+    ]
+  }
+}

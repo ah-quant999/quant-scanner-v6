@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-07-07T18:02:43.940243",
+  "errors": 0,
+  "warnings": 4,
+  "ok": 43,
+  "details": {
+    "errors": [],
+    "warnings": [
+      {
+        "dashboard": "选股观测台",
+        "check": "signal_backtest.json(部署)",
+        "message": "dist/data/ 中缺少 signal_backtest.json"
+      },
+      {
+        "dashboard": "部署",
+        "check": "dist/data完整性",
+        "message": "data/ 有但 dist/data/ 缺少: mahoro_signals.json"
+      },
+      {
+        "dashboard": "部署",
+        "check": "dist/data完整性",
+        "message": "data/ 有但 dist/data/ 缺少: signal_backtest.json"
+      },
+      {
+        "dashboard": "部署",
+        "check": "dist/data完整性",
+        "message": "data/ 有但 dist/data/ 缺少: zsxq_token.json"
+      }
+    ]
+  }
+}

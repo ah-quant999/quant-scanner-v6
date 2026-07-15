@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="build-stamp" content="20260714093155">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三线共振历史追踪 - 九宝量化 v6.0</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Microsoft YaHei','微软雅黑',sans-serif; background:#f5f7fa; color:#333; }
+.header { background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color:#fff; padding:15px 30px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 10px rgba(0,0,0,0.3); }
+.header h1 { font-size:20px; font-weight:600; }
+.header .subtitle { font-size:12px; color:#40e0d0; margin-top:3px; }
+.nav-back { color:#40e0d0; text-decoration:none; font-size:14px; padding:8px 15px; border:1px solid #40e0d0; border-radius:5px; transition:all 0.3s; }
+.nav-back:hover { background:#40e0d0; color:#1a1a2e; }
+.controls { background:#fff; padding:15px 30px; display:flex; align-items:center; gap:20px; box-shadow:0 2px 5px rgba(0,0,0,0.05); flex-wrap:wrap; }
+.control-group { display:flex; align-items:center; gap:8px; }
+.control-group label { font-size:13px; color:#666; font-weight:500; }
+.control-group input[type="date"] { padding:8px 12px; border:1px solid #ddd; border-radius:5px; font-size:13px; color:#333; }
+.btn { padding:8px 20px; border:none; border-radius:5px; font-size:13px; cursor:pointer; transition:all 0.3s; }
+.btn-primary { background:#40e0d0; color:#fff; }
+.btn-primary:hover { background:#35c4b5; }
+.btn-secondary { background:#6c757d; color:#fff; }
+.btn-secondary:hover { background:#5a6268; }
+.stats { display:flex; gap:20px; padding:15px 30px; background:#fff; margin:10px 30px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.05); flex-wrap:wrap; }
+.stat-item { display:flex; align-items:center; gap:8px; }
+.stat-label { font-size:12px; color:#999; }
+.stat-value { font-size:18px; font-weight:700; color:#40e0d0; }
+.stat-value.down { color:#f44; }
+.update-time { font-size:11px; color:#999; margin-left:auto; }
+.tabs { display:flex; padding:0 30px; background:#fff; border-bottom:2px solid #eee; }
+.tab { padding:12px 20px; cursor:pointer; font-size:16px; color:#666; border-bottom:2px solid transparent; transition:all 0.3s; }
+.tab.active { color:#42a5f5; border-bottom-color:#42a5f5; font-weight:600; }
+.content { padding:20px 30px; }
+.card { background:#fff; border-radius:8px; padding:20px; margin-bottom:15px; box-shadow:0 2px 5px rgba(0,0,0,0.05); }
+.card-title { font-size:15px; font-weight:600; color:#333; margin-bottom:15px; display:flex; align-items:center; gap:8px; }
+.card-title .icon { font-size:18px; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { background:#40e0d0; color:#fff; padding:10px 12px; text-align:left; font-weight:600; position:sticky; top:0; }
+td { padding:8px 12px; border-bottom:1px solid #eee; }
+tr:hover { background:#f5f7fa; }
+.badge { display:inline-block; padding:3px 8px; border-radius:3px; font-size:11px; font-weight:600; margin:2px; }
+.badge-signal { background:#e0f7fa; color:#006064; }
+.badge-up { background:#ffebee; color:#c62828; }
+.badge-down { background:#e8f5e9; color:#2e7d32; }
+.chart-container { height:300px; margin:20px 0; }
+.empty-state { text-align:center; padding:60px 20px; color:#999; }
+.calendar-table { width:100%; border-collapse:collapse; font-size:12px; }
+.calendar-table th { background:#f5f7fa; color:#666; padding:8px 4px; text-align:center; font-size:11px; min-width:40px; position:sticky; top:0; }
+.calendar-table td { padding:8px 4px; text-align:center; border-bottom:1px solid #eee; }
+.calendar-table .stock-name { text-align:left; font-weight:600; color:#333; padding-left:12px; position:sticky; left:0; background:#fff; }
+.calendar-table .has-signal { background:#40e0d0; border-radius:50%; width:8px; height:8px; display:inline-block; }
+.calendar-table .stock-row:hover { background:#f5f7fa; }
+.empty-state .icon { font-size:48px; margin-bottom:15px; }
+.empty-state .text { font-size:14px; }
+.timeline { position:relative; padding-left:30px; }
+.timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:#40e0d0; }
+.timeline-item { position:relative; margin-bottom:20px; cursor:pointer; }
+.timeline-item:hover .timeline-content { box-shadow:0 3px 12px rgba(0,0,0,0.15); transform:translateY(-1px); }
+.timeline-item.today { margin-bottom:20px; }
+.timeline-item::before { content:''; position:absolute; left:-24px; top:5px; width:12px; height:12px; border-radius:50%; background:#40e0d0; border:2px solid #fff; box-shadow:0 0 0 2px #40e0d0; transition:all 0.2s; }
+.timeline-item:hover::before { background:#ff8a65; box-shadow:0 0 0 3px #ff8a65, 0 0 8px rgba(255,138,101,0.3); }
+.timeline-item.today::before { width:14px; height:14px; left:-25px; top:5px; background:#6ba3d8; box-shadow:0 0 0 2px #6ba3d8, 0 0 4px rgba(107,163,216,0.25); }
+.timeline-item.today:hover::before { background:#5ec3ff; box-shadow:0 0 0 3px #5ec3ff, 0 0 8px rgba(94,195,255,0.35); }
+.timeline-date { font-size:13px; color:#999; margin-bottom:5px; }
+.timeline-item.today .timeline-date { font-size:15px; font-weight:600; color:#5ec3ff; }
+.timeline-content { background:#fff; padding:12px 15px; border-radius:5px; box-shadow:0 1px 3px rgba(0,0,0,0.1); transition:all 0.2s; }
+.timeline-item.today .timeline-content { background:linear-gradient(135deg,#f0f6fc 0%,#f5f9fd 100%); padding:12px 16px; border-left:3px solid #6ba3d8; }
+/* 移动端适配 */
+@media (max-width:768px) {
+  .header { padding:12px 15px; flex-direction:column; align-items:flex-start; gap:8px; }
+  .header h1 { font-size:17px; }
+  .nav-back { font-size:12px; padding:6px 10px; }
+  .controls { padding:10px 15px; gap:8px; }
+  .controls .control-group { width:100%; justify-content:space-between; }
+  .controls .btn { flex:1; min-width:60px; padding:6px 12px; font-size:12px; }
+  .stats { padding:10px 15px; gap:10px; }
+  .stat-item { font-size:12px; }
+  .stat-value { font-size:15px; }
+  .tabs { padding:0 10px; overflow-x:auto; gap:0; }
+  .tab { padding:8px 12px; font-size:12px; white-space:nowrap; }
+  .content { padding:10px; }
+  .card { padding:12px; }
+  .table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table { font-size:11px; }
+  th, td { padding:6px 8px; white-space:nowrap; }
+  .calendar-table .stock-name { min-width:80px; }
+  .timeline { padding-left:20px; }
+  .timeline-item::before { left:-18px; width:10px; height:10px; }
+  .timeline-item.today::before { left:-19px; width:12px; height:12px; }
+}
+</style>
+
+
+
+
+
+<script>
+var EMBEDDED_HISTORY_DATA = {"2026-06-01": [], "2026-06-02": [], "2026-06-03": [], "2026-06-04": [], "2026-06-05": [], "2026-06-08": [], "2026-06-09": [], "2026-06-10": [], "2026-06-11": [], "2026-06-12": [], "2026-06-15": [], "2026-06-16": [], "2026-06-17": [], "2026-06-18": [], "2026-06-19": [], "2026-06-22": [], "2026-06-23": [], "2026-06-24": [], "2026-06-25": [], "2026-06-26": [], "2026-06-29": [], "2026-06-30": [], "2026-07-01": [], "2026-07-02": [], "2026-07-03": [], "2026-07-06": [{"code": "sh_600172", "name": "黄河旋风", "close": 18.55, "pct_chg": 10.02, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 1, "enter_date": "", "duration_days": 0}], "2026-07-07": [{"code": "sh_600172", "name": "黄河旋风", "close": 19.29, "pct_chg": 3.99, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 2, "enter_date": "", "duration_days": 0}, {"code": "sz_002353", "name": "杰瑞股份", "close": 168.88, "pct_chg": -1.3, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 1, "enter_date": "", "duration_days": 0}], "2026-07-08": [{"code": "sh_600172", "name": "黄河旋风", "close": 18.36, "pct_chg": -1.02, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 3, "enter_date": "", "duration_days": 0}, {"code": "sz_002353", "name": "杰瑞股份", "close": 168.81, "pct_chg": -1.34, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 2, "enter_date": "", "duration_days": 0}], "2026-07-09": [], "2026-07-10": [{"code": "sh_688123", "name": "聚辰股份", "close": 217.12, "pct_chg": 13.27, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 1, "enter_date": "", "duration_days": 0}], "2026-07-13": [{"code": "sh_688123", "name": "聚辰股份", "close": 204.01, "pct_chg": -6.04, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 2, "enter_date": "", "duration_days": 0}], "2026-07-14": [{"code": "688123", "name": "聚辰股份", "close": 204.01, "pct_chg": -6.04, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 1, "enter_date": "", "duration_days": 0}, {"code": "002364", "name": "闪电式完成了对中国领先的电力电子与数字能源标杆企业中恒电气", "close": 56.05, "pct_chg": 3.0, "缠论买_日K": true, "金钻_起涨": false, "四量图_机构变红": true, "上涨趋势": true, "signal_count": 3, "score": 9, "days_in_resonance": 1, "enter_date": "", "duration_days": 0}], "_stock_price_history": {"sh_600172": [["2026-07-06", 18.55], ["2026-07-07", 19.29], ["2026-07-08", 18.36], ["2026-07-09", 17.59], ["2026-07-10", 18.7], ["2026-07-13", 17.0]], "688123": [["2026-07-14", 204.01]], "sz_002353": [["2026-07-06", 171.11], ["2026-07-07", 168.88], ["2026-07-08", 168.81], ["2026-07-09", 157.99], ["2026-07-10", 168.0], ["2026-07-13", 151.2]], "sh_688123": [["2026-07-06", 214.99], ["2026-07-07", 193.9], ["2026-07-08", 212.54], ["2026-07-09", 191.69], ["2026-07-10", 217.12], ["2026-07-13", 204.01]], "002364": [["2026-07-14", 56.05]]}, "_tracking_latest": {"600172": {"name": "黄河旋风", "close": 17.0, "pct_chg": -9.09, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688689": {"name": "银河微电", "close": 53.18, "pct_chg": -8.8, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300607": {"name": "拓斯达", "close": 38.57, "pct_chg": -0.64, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688372": {"name": "伟测科技", "close": 173.69, "pct_chg": -8.04, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688702": {"name": "盛科通信", "close": 378.68, "pct_chg": -10.27, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002056": {"name": "横店东磁", "close": 26.75, "pct_chg": -4.16, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300145": {"name": "南方泵业", "close": 6.2, "pct_chg": -2.52, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01024": {"name": "快手-W", "close": 43.6, "pct_chg": 1.3, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688141": {"name": "杰华特", "close": 152.65, "pct_chg": -12.39, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300602": {"name": "飞荣达", "close": 45.82, "pct_chg": -2.24, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002353": {"name": "杰瑞股份", "close": 151.2, "pct_chg": -10.0, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002536": {"name": "飞龙股份", "close": 52.84, "pct_chg": 0.28, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688123": {"name": "聚辰股份", "close": 204.01, "pct_chg": -6.04, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02628": {"name": "中国人寿", "close": 27.52, "pct_chg": -3.17, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300199": {"name": "翰宇药业", "close": 25.44, "pct_chg": -1.32, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688396": {"name": "华润微", "close": 79.1, "pct_chg": -14.67, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002747": {"name": "埃斯顿", "close": 42.78, "pct_chg": 3.01, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "000333": {"name": "美的集团", "close": 78.99, "pct_chg": -0.43, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "603078": {"name": "江化微", "close": 41.92, "pct_chg": -10.0, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00175": {"name": "吉利汽车", "close": 18.17, "pct_chg": -2.52, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "09999": {"name": "网易-S", "close": 207.0, "pct_chg": 0.1, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00762": {"name": "中国联通", "close": 6.48, "pct_chg": 1.25, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00941": {"name": "中国移动", "close": 79.25, "pct_chg": 0.63, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03328": {"name": "交通银行", "close": 6.92, "pct_chg": 1.32, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688266": {"name": "泽璟制药", "close": 145.0, "pct_chg": 5.95, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00005": {"name": "汇丰控股", "close": 153.8, "pct_chg": 0.2, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01288": {"name": "农业银行", "close": 5.54, "pct_chg": 0.91, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02359": {"name": "药明康德", "close": 151.6, "pct_chg": -2.26, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "600601": {"name": "方正科技", "close": 13.18, "pct_chg": -5.04, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002850": {"name": "科达利", "close": 200.45, "pct_chg": 0.08, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300503": {"name": "昊志机电", "close": 91.57, "pct_chg": 1.12, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02015": {"name": "理想汽车-W", "close": 47.2, "pct_chg": -0.46, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300223": {"name": "北京君正", "close": 219.9, "pct_chg": -6.83, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300558": {"name": "贝达药业", "close": 65.86, "pct_chg": 1.6, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300420": {"name": "五洋自控", "close": 8.35, "pct_chg": 0.6, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "688596": {"name": "正帆科技", "close": 68.03, "pct_chg": -15.31, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "600641": {"name": "先导基电", "close": 42.7, "pct_chg": -1.25, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "300821": {"name": "东岳硅材", "close": 26.96, "pct_chg": -11.11, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03988": {"name": "中国银行", "close": 5.1, "pct_chg": 0.2, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02331": {"name": "李宁", "close": 14.72, "pct_chg": 0.34, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00700": {"name": "腾讯控股", "close": 457.6, "pct_chg": -0.56, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00981": {"name": "00981", "close": 78.35, "pct_chg": -1.63, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01801": {"name": "01801", "close": 89.1, "pct_chg": -0.67, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02269": {"name": "药明生物", "close": 37.32, "pct_chg": -1.69, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "601288": {"name": "农业银行", "close": 6.23, "pct_chg": 1.96, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02577": {"name": "英诺赛科", "close": 49.38, "pct_chg": -6.39, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00817": {"name": "金茂", "close": 1.29, "pct_chg": 0.0, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "06030": {"name": "中信证券", "close": 26.72, "pct_chg": -2.12, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03908": {"name": "中国中金公司", "close": 21.12, "pct_chg": -2.13, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02268": {"name": "药明合联", "close": 57.45, "pct_chg": -4.73, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03759": {"name": "康龙化成", "close": 22.2, "pct_chg": -1.77, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03347": {"name": "泰格医药", "close": 36.28, "pct_chg": -1.04, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "601872": {"name": "招商轮船", "close": 15.47, "pct_chg": -2.4, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01093": {"name": "石药集团", "close": 8.16, "pct_chg": 0.62, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "09660": {"name": "地平线", "close": 4.42, "pct_chg": 0.0, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "09988": {"name": "阿里巴巴-W", "close": 110.7, "pct_chg": 0.45, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01177": {"name": "中国生物制药", "close": 5.16, "pct_chg": -0.58, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01888": {"name": "01888", "close": 51.05, "pct_chg": -18.71, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00148": {"name": "00148", "close": 59.4, "pct_chg": -19.18, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "09696": {"name": "天齐锂业股份有限公司", "close": 33.08, "pct_chg": -1.96, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00358": {"name": "江西铜业", "close": 30.22, "pct_chg": -3.2, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01989": {"name": "广合科技", "close": 126.3, "pct_chg": -7.13, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00968": {"name": "信义光能", "close": 1.94, "pct_chg": -2.51, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03800": {"name": "20", "close": 0.63, "pct_chg": -1.56, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02865": {"name": "20", "close": 18.9, "pct_chg": -18.53, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01385": {"name": "上海复旦微电子", "close": 29.38, "pct_chg": -7.14, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03750": {"name": "03750", "close": 603.0, "pct_chg": 2.73, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "00669": {"name": "创科实业", "close": 123.9, "pct_chg": -1.43, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "02600": {"name": "中国铝业", "close": 7.51, "pct_chg": -1.44, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "01378": {"name": "中国宏桥", "close": 21.48, "pct_chg": 3.57, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "03677": {"name": "正力新能", "close": 5.67, "pct_chg": 2.35, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "600362": {"name": "江西铜业", "close": 42.89, "pct_chg": 5.28, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002460": {"name": "赣锋锂业", "close": 53.63, "pct_chg": -4.21, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}, "002364": {"name": "闪电式完成了对中国领先的电力电子与数字能源标杆企业中恒电气", "close": 56.05, "pct_chg": 3.0, "pct_chg_20d": 0, "update_time": "2026-07-13", "_source": "snapshot"}, "300408": {"name": "三环集团", "close": 111.8, "pct_chg": -12.0, "pct_chg_20d": 0, "update_time": "2026-07-14", "_source": "gold_pool"}}};
+</script>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>⚡ 三线共振历史追踪</h1>
+    <div class="subtitle">追踪上述四个信号中满足任意三个（信号强度≥3）的标的</div>
+  </div>
+  <a id="navBack" href="index.html" class="nav-back">← 返回主页面</a>
+</div>
+<script>
+(function(){
+  var from = new URLSearchParams(window.location.search).get('from');
+  var nb = document.getElementById('navBack');
+  if (!nb) return;
+  if (from === 'gold') { nb.textContent = '← 返回主站'; }
+  if (history.length > 1) {
+    nb.onclick = function(){ history.back(); return false; };
+  } else {
+    var isStandalone = location.pathname.indexOf('/standalone/') !== -1;
+    if (from === 'gold') {
+      nb.href = isStandalone ? 'gold.html' : 'index.html';
+    } else {
+      nb.href = isStandalone ? 'index.html' : 'index.html';
+    }
+  }
+})();
+</script>
+
+<div class="controls">
+  <div class="control-group">
+    <label>选择日期：</label>
+    <input type="date" id="dateSelector" min="2026-06-01" max="" value="">
+  </div>
+  <button class="btn btn-primary" onclick="loadData()">查询</button>
+  <div class="control-group">
+    <label>快速跳转：</label>
+    <button class="btn btn-secondary" onclick="jumpToDate(-1)">前一天</button>
+    <button class="btn btn-secondary" onclick="jumpToDate(1)">后一天</button>
+    <button class="btn btn-secondary" onclick="jumpToToday()">今天</button>
+  </div>
+  <button class="btn btn-primary" onclick="loadData()">🔄 刷新</button>
+</div>
+
+<div class="stats" id="statsBar">
+  <div class="stat-item">
+    <span class="stat-label">当日三线共振数量：</span>
+    <span class="stat-value" id="statCount">-</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">新增：</span>
+    <span class="stat-value" id="statNew">-</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">退出：</span>
+    <span class="stat-value down" id="statExit">-</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-label">持续天数（平均）：</span>
+    <span class="stat-value" id="statAvgDays">-</span>
+  </div>
+  <div class="update-time" id="updateTime">最后更新：-</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('list', event)">📋 股票列表</div>
+  <div class="tab" onclick="switchTab('timeline', event)">📅 时间轴</div>
+  <div class="tab" onclick="switchTab('calendar', event)">📅 持续日历</div>
+  <div class="tab" onclick="switchTab('rank', event)">📊 涨幅排名</div>
+</div>
+
+<div class="content">
+  <div id="tabList" class="tab-content">
+    <div class="card">
+      <div class="card-title"><span class="icon">⚡</span> <span id="listTitle">三线共振股票列表</span></div>
+      <div class="table-wrap">
+      <table id="stockTable">
+        <thead>
+          <tr>
+            <th>代码</th>
+            <th>名称</th>
+            <th>最新价</th>
+            <th>涨跌幅</th>
+            <th>缠论买点</th>
+            <th>金钻信号</th>
+            <th>机构变红</th>
+            <th>上涨趋势</th>
+            <th>满足信号</th>
+            <th>持续天数</th>
+            <th>进入日期</th>
+          </tr>
+        </thead>
+        <tbody id="stockTableBody"></tbody>
+      </table>
+      </div>
+      <div class="empty-state" id="emptyList" style="display:none;">
+        <div class="icon">📭</div>
+        <div class="text">该日期无三线共振股票</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tabTimeline" class="tab-content" style="display:none;">
+    <div class="card">
+      <div class="card-title"><span class="icon">📅</span> 三线共振时间轴</div>
+      <div class="timeline" id="timelineContent"></div>
+      <div class="empty-state" id="emptyTimeline" style="display:none;">
+        <div class="icon">📭</div>
+        <div class="text">暂无时间轴数据</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tabCalendar" class="tab-content" style="display:none;">
+    <div class="card">
+      <div class="card-title"><span class="icon">📅</span> 持续出现日历（仅显示出现≥2天的标的） <span style="color:#999;font-size:11px;font-weight:400;">假期周末无数据不显示</span></div>
+      <div id="calendarContent" style="overflow-x:auto;"></div>
+      <div class="empty-state" id="emptyCalendar" style="display:none;">
+        <div class="icon">📭</div>
+        <div class="text">暂无持续出现的标的</div>
+      </div>
+    </div>
+  </div>
+  <div id="tabRank" class="tab-content" style="display:none;">
+    <div class="card">
+      <div class="card-title"><span class="icon">📊</span> 三线共振信号触发后入榜跟踪 <span style="color:#999;font-size:11px;font-weight:400;">追踪中按5日排名 · 满21日看短线爆发 · 满60日看中期趋势延续 · 超90日自动归档</span></div>
+      <div id="rankContent"></div>
+      <div class="empty-state" id="emptyRank" style="display:none;">暂无足够历史数据计算涨幅</div>
+    </div>
+  </div>
+</div>
+
+<script>
+var currentTab = 'list';
+var historyData = {};
+var currentDate = '';
+
+// A股休市日（周末自动排除，这里只列调休假期）
+var HOLIDAYS_2026 = [
+  '2026-01-01','2026-01-02',  // 元旦 1/1-1/2（1/3周六自动排除）
+  '2026-01-28','2026-01-29','2026-01-30','2026-02-02','2026-02-03','2026-02-04',  // 春节 1/28-2/4 共8天（1/31周六、2/1周日自动排除）
+  '2026-04-06',  // 清明 4/6（4/5周日自动排除）
+  '2026-05-01','2026-05-04','2026-05-05',  // 劳动节 5/1-5/5（5/2周六、5/3周日自动排除）
+  '2026-06-19',  // 端午 6/19（6/20周六、6/21周日自动排除；不含6/18周三、6/22周一）
+  '2026-10-01','2026-10-02','2026-10-05','2026-10-06','2026-10-07',  // 国庆 10/1-10/7（10/3周六、10/4周日自动排除；10/5周一调休）
+];
+var HOLIDAY_SET = {};
+HOLIDAYS_2026.forEach(function(d) { HOLIDAY_SET[d] = true; });
+
+function isTradingDay(dateStr) {
+  if (!dateStr) return false;
+  if (dateStr.startsWith('_')) return false;  // 排除元数据key（如_tracking_latest）
+  if (HOLIDAY_SET[dateStr]) return false;
+  var d = new Date(dateStr + 'T00:00:00');
+  var day = d.getDay();
+  return day !== 0 && day !== 6;  // 排除周六(6)、周日(0)
+}
+
+function getTradingDates(allDates) {
+  return allDates.filter(function(d) { return isTradingDay(d); });
+}
+
+// 找到最近的交易日（往前找）
+function findLastTradingDay(dateStr) {
+  var d = new Date(dateStr + 'T00:00:00');
+  for (var i = 0; i < 15; i++) {
+    var s = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    if (isTradingDay(s)) return s;
+    d.setDate(d.getDate() - 1);
+  }
+  return dateStr;
+}
+
+// 股票价格历史映射表: code -> {date: close}
+var STOCK_PRICE_MAP = {};
+// 在数据加载后解析 _stock_price_history
+function initStockPriceMap() {
+  STOCK_PRICE_MAP = {};
+  var sph = historyData._stock_price_history || {};
+  for (var code in sph) {
+    var entries = sph[code];
+    var map = {};
+    for (var i = 0; i < entries.length; i++) {
+      map[entries[i][0]] = entries[i][1];
+    }
+    STOCK_PRICE_MAP[code] = map;
+  }
+}
+
+// 获取股票在指定日期的收盘价
+function getCloseAtDate(code, dateStr) {
+  // 尝试所有前缀匹配
+  var map = STOCK_PRICE_MAP[code] || STOCK_PRICE_MAP['sz_' + code] || STOCK_PRICE_MAP['sh_' + code] || STOCK_PRICE_MAP['hk_' + code];
+  if (map && map[dateStr] !== undefined) return map[dateStr];
+  // 前缀匹配
+  var prefixes = ['sz_', 'sh_', 'bj_', 'hk_'];
+  for (var p = 0; p < prefixes.length; p++) {
+    var fullCode = prefixes[p] + code;
+    if (STOCK_PRICE_MAP[fullCode] && STOCK_PRICE_MAP[fullCode][dateStr] !== undefined) {
+      return STOCK_PRICE_MAP[fullCode][dateStr];
+    }
+  }
+  return null;
+}
+
+// 获取起始日期后第N个交易日
+function getTradingDayOffset(dateStr, offsetDays) {
+  var d = new Date(dateStr + 'T00:00:00');
+  var count = 0;
+  var maxLoop = 365;
+  while (count < offsetDays && maxLoop > 0) {
+    d.setDate(d.getDate() + 1);
+    var s = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    if (isTradingDay(s)) count++;
+    maxLoop--;
+  }
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+// 从 _tracking_latest 获取股票的最新收盘价
+function getLatestPrice(code) {
+  var tl = historyData._tracking_latest || {};
+  // 去掉前缀匹配
+  var norm = code.replace(/^(sh|sz|bj|hk)_/, '');
+  // 精确匹配
+  if (tl[norm]) return tl[norm];
+  // 前缀匹配
+  for (var k in tl) {
+    if (k.replace(/^(sh|sz|bj|hk)_/, '') === norm) return tl[k];
+  }
+  return null;
+}
+
+// 涨幅排名：5日爆发力 + 21日最终成绩
+function renderRank() {
+  var content = document.getElementById('rankContent');
+  var emptyEl = document.getElementById('emptyRank');
+  if (!content) return;
+
+  var dates = Object.keys(historyData).sort();
+  var tradingDates = getTradingDates(dates);
+  var today = new Date().toISOString().split('T')[0];
+  var rankList = [];
+  var seen = {};
+
+  for (var di = 0; di < tradingDates.length; di++) {
+    var d = tradingDates[di];
+    var stocks = historyData[d] || [];
+    for (var si = 0; si < stocks.length; si++) {
+      var s = stocks[si];
+      var key = s.code;
+      if (seen[key]) continue;
+      seen[key] = true;
+
+      // 5日回报 — 从触发价到最新价的累计涨幅
+      var ret5 = null, ret21 = null;
+      var rawCode = s.code.replace(/^(sh|sz|bj|hk)_/, '');
+      var latestInfo = getLatestPrice(rawCode);
+      var latestClose = (latestInfo && latestInfo.close) ? latestInfo.close : s.close;
+      // 计算从触发价到最新价的涨幅
+      ret5 = ((latestClose - s.close) / s.close * 100);
+      ret21 = ret5;  // 21日同样使用累计涨幅
+
+      // 三阶段状态判断：追踪中(0~20d) → 21日短评(21~59d) → 60日中期验证(60~89d) → 过期(≥90d)
+      var triggerDs = new Date(d + 'T00:00:00').getTime();
+      var daysSinceEntry = Math.floor((Date.now() - triggerDs) / 86400000);
+      var status = daysSinceEntry >= 60 ? 'midterm' : (daysSinceEntry >= 21 ? 'done' : 'tracking');
+
+      // 已完成/中期股票：计算退出价和窗口内最高涨幅
+      var exitPrice = null, maxGainPct = null, exitDate = null;
+      // 中期数据（60日窗口）
+      var midExitPrice = null, midMaxGainPct = null, midExitDate = null;
+
+      if (status === 'done' || status === 'midterm') {
+        // 共同代码：获取窗口内最高价
+        function getMaxInWindow(fromDateStr, daysOffset) {
+          var endDate = getTradingDayOffset(fromDateStr, daysOffset);
+          var fromMs = new Date(fromDateStr + 'T00:00:00').getTime();
+          var endMs = new Date(endDate + 'T00:00:00').getTime();
+          var maxC = s.close;
+          var prefixes = ['', 'sz_', 'sh_', 'bj_', 'hk_'];
+          var fullCodes = [rawCode];
+          for (var pf = 0; pf < prefixes.length; pf++) {
+            if (prefixes[pf] && STOCK_PRICE_MAP[prefixes[pf] + rawCode]) {
+              fullCodes.push(prefixes[pf] + rawCode);
+            }
+          }
+          for (var fc = 0; fc < fullCodes.length; fc++) {
+            var pmap = STOCK_PRICE_MAP[fullCodes[fc]];
+            if (pmap) {
+              for (var dt in pmap) {
+                var dtMs = new Date(dt + 'T00:00:00').getTime();
+                if (dtMs >= fromMs && dtMs <= endMs) {
+                  if (pmap[dt] > maxC) maxC = pmap[dt];
+                }
+              }
+            }
+          }
+          return {max: maxC, endDate: endDate};
+        }
+
+        // 21日窗口
+        var w21 = getMaxInWindow(d, 21);
+        exitDate = w21.endDate;
+        exitPrice = getCloseAtDate(rawCode, exitDate);
+        maxGainPct = ((w21.max - s.close) / s.close * 100);
+        if (exitPrice === null) exitPrice = w21.max !== s.close ? w21.max : null;
+
+        // 60日窗口（仅 midterm 且实际已满60日时计算）
+        if (status === 'midterm') {
+          var w60 = getMaxInWindow(d, 60);
+          midExitDate = w60.endDate;
+          midExitPrice = getCloseAtDate(rawCode, midExitDate);
+          midMaxGainPct = ((w60.max - s.close) / s.close * 100);
+          if (midExitPrice === null) midExitPrice = w60.max !== s.close ? w60.max : null;
+        }
+      }
+
+      // 满90天标记过期
+      var expired = false;
+      if (daysSinceEntry >= 90) expired = true;
+
+      var rawCode2 = s.code.replace(/^(sh|sz|bj|hk)_/, '');
+      var latestInfo2 = getLatestPrice(rawCode2);
+      rankList.push({
+        code: rawCode2,
+        name: s.name,
+        triggerDate: d,
+        triggerPrice: s.close,
+        ret5: ret5,
+        ret21: ret21,
+        signalCount: s.signal_count || 3,
+        latest: latestInfo2 ? latestInfo2.close : s.close,
+        latestPct: latestInfo2 ? latestInfo2.pct_chg : s.pct_chg,
+        latestPct20: latestInfo2 ? latestInfo2.pct_chg_20d : 0,
+        status: status,
+        expired: expired,
+        noData: false,
+        exitPrice: exitPrice,
+        exitDate: exitDate,
+        maxGainPct: maxGainPct,
+        midExitPrice: midExitPrice,
+        midExitDate: midExitDate,
+        midMaxGainPct: midMaxGainPct
+      });
+    }
+  }
+
+  if (rankList.length === 0) {
+    content.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = 'block';
+    return;
+  }
+
+  // 分组：追踪中 / 21日短评 / 60日中期验证 / 已过期
+  var trackingList = rankList.filter(function(r){ return (r.status === 'tracking' || r.noData) && !r.expired; });
+  var doneList = rankList.filter(function(r){ return r.status === 'done' && !r.expired; });
+  var midList = rankList.filter(function(r){ return r.status === 'midterm' && !r.expired; });
+  var expiredList = rankList.filter(function(r){ return r.expired; });
+  trackingList.sort(function(a, b){
+    // 有 ret5 数据的排前面，都没数据按入榜日期倒序
+    if (a.noData && !b.noData) return 1;
+    if (!a.noData && b.noData) return -1;
+    if (a.noData && b.noData) return b.triggerDate.localeCompare(a.triggerDate);
+    return b.ret5 - a.ret5;
+  });
+  doneList.sort(function(a, b){ return (b.maxGainPct || 0) - (a.maxGainPct || 0); });
+  midList.sort(function(a, b){ return (b.midMaxGainPct || 0) - (a.midMaxGainPct || 0); });
+  // 无数据的排在各自组末尾
+
+  function renderGroup(list, title, isDone, isMid) {
+    if (!list.length) return '';
+    var titleColor = isMid ? '#6a1b9a' : (isDone ? '#999' : '#333');
+    var h = '<div style="font-size:13px;font-weight:700;color:' + titleColor + ';padding:8px 0 4px;">' + title + ' (' + list.length + '只)</div>';
+    h += '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;">';
+    h += '<thead><tr>';
+    h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">排名</th>';
+    h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">代码</th>';
+    h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">名称</th>';
+    h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">触发日</th>';
+    h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">触发价</th>';
+    if (isDone || isMid) {
+      var exitLabel = isMid ? '60日退出价' : '退出价';
+      var gainLabel = isMid ? '60日最高涨幅' : '最高涨幅';
+      var exitBg = isMid ? '#6a1b9a' : '#42a5f5';
+      h += '<th style="background:' + exitBg + ';color:#fff;padding:6px 8px;text-align:left;font-size:11px;">' + exitLabel + '</th>';
+      h += '<th style="background:#c62828;color:#fff;padding:6px 8px;text-align:left;font-size:11px;">' + gainLabel + '</th>';
+      h += '<th style="background:#ff9800;color:#fff;padding:6px 8px;text-align:left;font-size:11px;">当前累计</th>';
+    } else {
+      h += '<th style="background:#c62828;color:#fff;padding:6px 8px;text-align:left;font-size:11px;">累计涨幅</th>';
+      h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">最新价</th>';
+      h += '<th style="background:#f5f7fa;color:#666;padding:6px 8px;text-align:left;font-size:11px;">当日涨跌</th>';
+    }
+    h += '</tr></thead><tbody>';
+    for (var ri = 0; ri < list.length; ri++) {
+      var r = list[ri];
+      var rankBadge = r.noData ? '🆕' : (ri === 0 ? '🥇' : ri === 1 ? '🥈' : ri === 2 ? '🥉' : (ri + 1));
+      var rowStyle = isDone ? 'color:#999;' : (r.expired ? 'color:#bbb;' : '');
+      var ret5Str = r.ret5 !== null ? ((r.ret5 >= 0 ? '+' : '') + r.ret5.toFixed(1) + '%') : (r.noData ? '<span style="color:#999;">—</span>' : '<span style="color:#999;">—</span>');
+      var ret5Color = r.ret5 !== null ? (r.ret5 >= 0 ? '#c62828' : '#2e7d32') : '#999';
+      var latestPct = r.latestPct || 0;
+      var latestPctStr = (latestPct >= 0 ? '+' : '') + latestPct.toFixed(2) + '%';
+      var latestPctColor = latestPct >= 0 ? '#c62828' : '#2e7d32';
+      // 计算入榜天数
+      var enterMs = new Date(r.triggerDate + 'T00:00:00').getTime();
+      var daysIn = Math.max(0, Math.floor((Date.now() - enterMs) / 86400000));
+      h += '<tr style="' + rowStyle + '">';
+      h += '<td style="font-weight:700;padding:6px 8px;">' + rankBadge + '</td>';
+      h += '<td style="font-family:monospace;padding:6px 8px;">' + r.code + '</td>';
+      h += '<td style="padding:6px 8px;"><b>' + r.name + '</b>' + (r.noData ? ' <span style="font-size:10px;color:#e65100;">已入榜' + daysIn + '天</span>' : ' <span style="font-size:10px;color:#888;">' + daysIn + '天</span>') + '</td>';
+      h += '<td style="padding:6px 8px;">' + r.triggerDate + '</td>';
+      h += '<td style="padding:6px 8px;">¥' + r.triggerPrice.toFixed(2) + '</td>';
+      if (isDone || isMid) {
+        var eP = isMid ? r.midExitPrice : r.exitPrice;
+        var mP = isMid ? r.midMaxGainPct : r.maxGainPct;
+        var exitStr = eP ? '¥' + eP.toFixed(2) : '<span style="color:#999;">—<small style="font-size:9px;color:#bbb;"> 停牌/退市</small></span>';
+        var maxStr = mP !== null ? ((mP >= 0 ? '+' : '') + mP.toFixed(1) + '%') : '<span style="color:#999;">—</span>';
+        var maxColor = mP !== null ? (mP >= 0 ? '#c62828' : '#2e7d32') : '#999';
+        h += '<td style="padding:6px 8px;font-weight:600;">' + exitStr + '</td>';
+        h += '<td style="color:' + maxColor + ';font-weight:700;padding:6px 8px;">' + maxStr + '</td>';
+        // 当前累计（从触发价到现在）
+        var nowGain = r.ret21;
+        // 如果最新价等于触发价且窗口内有涨幅，说明价格数据没更新
+        var priceStale = (Math.abs(r.latest - r.triggerPrice) < 0.001 && r.maxGainPct !== null && Math.abs(r.maxGainPct) > 0.5);
+        if (priceStale) {
+          // 价格过期时，退而显示21日窗口最终回报（附⚠标记）
+          var staleGain = r.maxGainPct !== null ? r.maxGainPct : (r.ret21 !== null ? r.ret21 : 0);
+          var staleStr = (staleGain >= 0 ? '+' : '') + staleGain.toFixed(1) + '%<span style="font-size:9px;color:#999;">⚠</span>';
+          h += '<td style="color:' + (staleGain >= 0 ? '#ff9800' : '#2e7d32') + ';font-weight:700;padding:6px 8px;">' + staleStr + '</td>';
+        } else {
+          var nowStr = nowGain !== null ? ((nowGain >= 0 ? '+' : '') + nowGain.toFixed(1) + '%') : '<span style="color:#999;">—<small style="font-size:9px;color:#bbb;"> 停牌/退市</small></span>';
+          var nowColor = nowGain !== null ? (nowGain >= 0 ? '#ff9800' : '#2e7d32') : '#999';
+          h += '<td style="color:' + nowColor + ';font-weight:700;padding:6px 8px;">' + nowStr + '</td>';
+        }
+      } else {
+        h += '<td style="color:' + ret5Color + ';font-weight:600;padding:6px 8px;">' + ret5Str + '</td>';
+        h += '<td style="padding:6px 8px;font-weight:600;">¥' + r.latest.toFixed(2) + '</td>';
+        h += '<td style="color:' + latestPctColor + ';font-weight:600;padding:6px 8px;">' + latestPctStr + '</td>';
+      }
+      h += '</tr>';
+    }
+    h += '</tbody></table>';
+    return h;
+  }
+
+  var html = '';
+  html += renderGroup(trackingList, '📊 追踪中（按累计涨幅排序）', false, false);
+  html += renderGroup(doneList, '📋 已完成21日 · 短线爆发力验证', true, false);
+  html += renderGroup(midList, '⚗️ 已满60日 · 中期趋势延续验证', true, true);
+  html += renderGroup(expiredList, '🗄️ 已过期 · 入榜超90天', true, false);
+
+  content.innerHTML = html;
+  if (emptyEl) emptyEl.style.display = 'none';
+}
+
+// 初始化
+document.addEventListener('DOMContentLoaded', function() {
+  var today = new Date().toISOString().split('T')[0];
+  document.getElementById('dateSelector').max = today;
+  var lastTrading = findLastTradingDay(today);
+  document.getElementById('dateSelector').value = lastTrading;
+  currentDate = lastTrading;
+
+  // 优先使用嵌入数据，如果为null则从json文件加载
+  if (EMBEDDED_HISTORY_DATA && Object.keys(EMBEDDED_HISTORY_DATA).length > 0) {
+    historyData = EMBEDDED_HISTORY_DATA;
+    initStockPriceMap();
+    updateCurrentTab();
+    updateStats();
+    document.getElementById('updateTime').textContent = '最后更新：嵌入数据';
+  } else {
+    loadData();
+  }
+});
+
+// 加载数据
+async function loadData() {
+  var selectedDate = document.getElementById('dateSelector').value;
+  if (!selectedDate) return;
+  currentDate = selectedDate;
+
+  try {
+    var data;
+    var resp = await fetch('data/triple_resonance_history.json?_=' + Date.now());
+    data = await resp.json();
+    historyData = data;
+    initStockPriceMap();
+    updateCurrentTab();
+    updateStats();
+    document.getElementById('updateTime').textContent = '最后更新：' + new Date().toLocaleString('zh-CN');
+  } catch (e) {
+    console.error('加载外部数据失败:', e);
+    // 尝试使用嵌入数据
+    if (EMBEDDED_HISTORY_DATA && Object.keys(EMBEDDED_HISTORY_DATA).length > 0) {
+      historyData = EMBEDDED_HISTORY_DATA;
+      initStockPriceMap();
+      updateCurrentTab();
+      updateStats();
+      document.getElementById('updateTime').textContent = '最后更新：嵌入数据（加载外部失败）';
+    } else {
+      var emptyState = document.getElementById('emptyList');
+      if (emptyState) {
+        emptyState.innerHTML = '<div class="icon">⚠️</div><div class="text">加载数据失败</div>';
+        emptyState.style.display = 'block';
+      }
+      document.getElementById('stockTable').style.display = 'none';
+    }
+  }
+}
+
+// 更新当前标签页
+function updateCurrentTab() {
+  if (currentTab === 'list') {
+    renderList();
+  } else if (currentTab === 'timeline') {
+    renderTimeline();
+  } else if (currentTab === 'calendar') {
+    renderCalendar();
+  } else if (currentTab === 'rank') {
+    renderRank();
+  }
+}
+
+// 渲染列表
+function renderList() {
+  var data = historyData[currentDate] || [];
+  var tbody = document.getElementById('stockTableBody');
+  var emptyState = document.getElementById('emptyList');
+
+  if (data.length === 0) {
+    tbody.innerHTML = '';
+    document.getElementById('stockTable').style.display = 'none';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  document.getElementById('stockTable').style.display = 'table';
+  emptyState.style.display = 'none';
+
+  var html = '';
+  data.forEach(function(stock) {
+    var jinzuan = stock['金钻_起涨'] || stock['金钻_黄柱'] || false;
+    var signals = [stock['缠论买_日K'], jinzuan, stock['四量图_机构变红'], stock['上涨趋势']];
+    var signalCount = signals.filter(Boolean).length;
+    var rawCode = (stock.code || '').replace(/^(sh|sz|bj|hk)_/, '');
+    var latestInfo = getLatestPrice(rawCode);
+    var latestClose = latestInfo ? latestInfo.close : stock.close;
+    var latestPct = latestInfo ? latestInfo.pct_chg : stock.pct_chg;
+    html += '<tr>';
+    html += '<td><strong>' + stock.code + '</strong></td>';
+    html += '<td>' + stock.name + '</td>';
+    html += '<td>¥' + latestClose.toFixed(2) + '</td>';
+    html += '<td style="color:' + (latestPct >= 0 ? '#c62828' : '#2e7d32') + ';">' + (latestPct >= 0 ? '+' : '') + latestPct.toFixed(2) + '%</td>';
+    html += '<td><span class="badge ' + (stock['缠论买_日K'] ? 'badge-signal' : '') + '">' + (stock['缠论买_日K'] ? '✓' : '✗') + '</span></td>';
+    html += '<td><span class="badge ' + (jinzuan ? 'badge-signal' : '') + '">' + (jinzuan ? '✓' : '✗') + '</span></td>';
+    html += '<td><span class="badge ' + (stock['四量图_机构变红'] ? 'badge-signal' : '') + '">' + (stock['四量图_机构变红'] ? '✓' : '✗') + '</span></td>';
+    html += '<td><span class="badge ' + (stock['上涨趋势'] ? 'badge-signal' : '') + '">' + (stock['上涨趋势'] ? '✓' : '✗') + '</span></td>';
+    html += '<td><strong>' + signalCount + '/4</strong></td>';
+    html += '<td>' + (stock.duration_days || '-') + '天</td>';
+    html += '<td>' + (stock.enter_date || '-') + '</td>';
+    html += '</tr>';
+  });
+
+  tbody.innerHTML = html;
+  document.getElementById('listTitle').textContent = currentDate + ' 三线共振股票列表（' + data.length + '只）';
+}
+
+// 计算股票评分
+function calcStockScore(s) {
+  var signalCount = s.signal_count || 0;
+  var pctChg = s.pct_chg || 0;
+  var pctChg20d = s.pct_chg_20d || 0;
+  return signalCount * 3 + pctChg * 0.5 + pctChg20d * 0.2;  // 数字类型，显示时再 toFixed
+}
+
+// 时间轴点击：跳转到股票列表并选中该日期
+function clickTimelineDate(date) {
+  document.getElementById('dateSelector').value = date;
+  currentDate = date;
+  // 切换到列表Tab（switchTab 内部已调用 updateCurrentTab → renderList + updateStats）
+  switchTab('list', null);
+}
+
+// 渲染时间轴
+function renderTimeline() {
+  var timelineContent = document.getElementById('timelineContent');
+  var emptyState = document.getElementById('emptyTimeline');
+
+  var allDates = getTradingDates(Object.keys(historyData).sort()).slice(-31);
+  var todayStr = new Date().toISOString().split('T')[0];
+
+  if (allDates.length === 0) {
+    timelineContent.innerHTML = '';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  emptyState.style.display = 'none';
+
+  // 1) 按时间顺序计算每个日期的 stocks / newStocks / exitStocks
+  var dateData = [];
+  var prevCodes = [];
+  for (var i = 0; i < allDates.length; i++) {
+    var d = allDates[i];
+    var stocks = (historyData[d] || []).slice().sort(function(a, b) {
+      return calcStockScore(b) - calcStockScore(a);
+    });
+    var codes = stocks.map(function(s) { return s.code; });
+
+    var newS = stocks.filter(function(s) { return prevCodes.indexOf(s.code) < 0; });
+    var exitS = []; // exitStocks: need previous day's name list
+    // Build exitSet: names of stocks in prevCodes but not in today's codes
+    for (var pi = 0; pi < prevCodes.length; pi++) {
+      if (codes.indexOf(prevCodes[pi]) < 0) {
+        // Find name from historyData[prevDate]
+        var pDate = allDates[i - 1];
+        var pStocks = historyData[pDate] || [];
+        for (var psi = 0; psi < pStocks.length; psi++) {
+          if (pStocks[psi].code === prevCodes[pi]) {
+            exitS.push(pStocks[psi]);
+            break;
+          }
+        }
+      }
+    }
+
+    dateData.push({
+      date: d,
+      stocks: stocks,
+      newStocks: newS,
+      exitStocks: exitS
+    });
+
+    prevCodes = codes;
+  }
+
+  // 2) 从新到旧渲染（最新在上）
+  var html = '';
+  for (var j = dateData.length - 1; j >= 0; j--) {
+    var item = dateData[j];
+    var isToday = (item.date === todayStr);
+
+    html += '<div class="timeline-item' + (isToday ? ' today' : '') + '" onclick="clickTimelineDate(\'' + item.date + '\')">';
+    html += '<div class="timeline-date">' + item.date + '（' + item.stocks.length + '只）</div>';
+    if (isToday) { html += '<div style="font-size:11px;color:#5ec3ff;margin-bottom:6px;font-weight:600;">📌 今日最新</div>'; }
+    html += '<div class="timeline-content">';
+
+    var currentList = item.stocks.map(function(s) {
+      return s.name + ' <span style="color:#999;font-size:11px;">(' + calcStockScore(s).toFixed(1) + '分)</span>';
+    }).join('、');
+    html += '<div style="margin-bottom:8px;font-size:' + (isToday ? '15px' : '13px') + ';color:#5ec3ff;font-weight:' + (isToday ? '600' : '500') + ';line-height:1.6;">📍 当前：' + currentList + '</div>';
+
+    if (item.newStocks.length > 0) {
+      html += '<div style="color:#c62828;margin-bottom:4px;font-size:' + (isToday ? '13px' : '12px') + ';font-weight:' + (isToday ? '600' : '400') + ';padding-left:4px;">➕ 新增：' + item.newStocks.map(function(s) { return s.name; }).join('、') + '</div>';
+    }
+
+    if (item.exitStocks.length > 0) {
+      html += '<div style="color:#2e7d32;margin-bottom:4px;font-size:' + (isToday ? '13px' : '12px') + ';font-weight:' + (isToday ? '600' : '400') + ';padding-left:4px;">➖ 退出：' + item.exitStocks.map(function(s) { return s.name; }).join('、') + '</div>';
+    }
+
+    if (item.newStocks.length === 0 && item.exitStocks.length === 0 && j < dateData.length - 1) {
+      html += '<div style="color:#999;font-size:12px;">→ 无变化</div>';
+    }
+
+    html += '</div></div>';
+  }
+
+  timelineContent.innerHTML = html;
+}
+
+// 渲染日历
+function renderCalendar() {
+  var container = document.getElementById('calendarContent');
+  var emptyState = document.getElementById('emptyCalendar');
+
+  var dates = getTradingDates(Object.keys(historyData).sort());
+
+  // 额外过滤：排除无任何信号数据的日期（休市/假期可能仍在数据键中）
+  dates = dates.filter(function(date) {
+    return (historyData[date] || []).length > 0;
+  });
+
+  if (dates.length === 0) {
+    container.innerHTML = '';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  var stockDays = {};
+  dates.forEach(function(date) {
+    (historyData[date] || []).forEach(function(s) {
+      if (!stockDays[s.code]) {
+        stockDays[s.code] = { name: s.name, code: s.code, dates: [], pctMap: {} };
+      }
+      stockDays[s.code].dates.push(date);
+      stockDays[s.code].pctMap[date] = s.pct_chg;
+    });
+  });
+
+  var persistentStocks = [];
+  for (var key in stockDays) {
+    if (stockDays[key].dates.length >= 2) {
+      persistentStocks.push(stockDays[key]);
+    }
+  }
+
+  if (persistentStocks.length === 0) {
+    container.innerHTML = '';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  persistentStocks.sort(function(a, b) { return b.dates.length - a.dates.length; });
+
+  var html = '<table class="calendar-table">';
+  html += '<thead><tr><th style="min-width:120px;">股票</th>';
+  dates.forEach(function(date) {
+    html += '<th>' + date.slice(5) + '</th>';
+  });
+  html += '</tr></thead><tbody>';
+
+  persistentStocks.forEach(function(stock) {
+    html += '<tr class="stock-row">';
+    html += '<td class="stock-name">' + stock.name + '<br><span style="font-size:10px;color:#999;">' + stock.code + '</span></td>';
+    dates.forEach(function(date) {
+      var hasSignal = stock.dates.indexOf(date) >= 0;
+      var pct = stock.pctMap[date];
+      if (hasSignal && pct != null && !isNaN(pct)) {
+        var color = pct >= 0 ? '#c62828' : '#2e7d32';
+        var sign = pct >= 0 ? '+' : '';
+        html += '<td><span class="has-signal"></span><br><span style="font-size:9px;color:' + color + ';white-space:nowrap;">' + sign + pct.toFixed(2) + '%</span></td>';
+      } else if (hasSignal) {
+        html += '<td><span class="has-signal"></span></td>';
+      } else {
+        html += '<td></td>';
+      }
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+  emptyState.style.display = 'none';
+}
+
+// 更新统计栏
+function updateStats() {
+  var data = historyData[currentDate] || [];
+  var dates = getTradingDates(Object.keys(historyData).sort());
+  var currentIndex = dates.indexOf(currentDate);
+
+  document.getElementById('statCount').textContent = data.length;
+
+  if (currentIndex > 0) {
+    var prevData = historyData[dates[currentIndex - 1]] || [];
+    var prevCodes = prevData.map(function(s) { return s.code; });
+    var currentCodes = data.map(function(s) { return s.code; });
+
+    var newCount = data.filter(function(s) { return prevCodes.indexOf(s.code) < 0; }).length;
+    var exitCount = prevData.filter(function(s) { return currentCodes.indexOf(s.code) < 0; }).length;
+
+    document.getElementById('statNew').textContent = '+' + newCount;
+    document.getElementById('statExit').textContent = '-' + exitCount;
+  } else {
+    document.getElementById('statNew').textContent = data.length;
+    document.getElementById('statExit').textContent = '-';
+  }
+
+  if (data.length > 0) {
+    var avgDays = Math.round(data.reduce(function(sum, s) { return sum + (s.duration_days || 0); }, 0) / data.length);
+    document.getElementById('statAvgDays').textContent = avgDays + '天';
+  } else {
+    document.getElementById('statAvgDays').textContent = '-';
+  }
+}
+
+// 切换标签页
+function switchTab(tab, e) {
+  currentTab = tab;
+
+  var tabs = document.querySelectorAll('.tab');
+  for (var i = 0; i < tabs.length; i++) { tabs[i].classList.remove('active'); }
+  if (e && e.target) e.target.classList.add('active');
+  else {
+    // 无事件时，根据 tab 名激活对应标签
+    var targetTab = document.querySelector('.tab[onclick*="' + tab + '"]');
+    if (targetTab) targetTab.classList.add('active');
+  }
+
+  var tabContents = document.querySelectorAll('.tab-content');
+  for (var i = 0; i < tabContents.length; i++) { tabContents[i].style.display = 'none'; }
+  var tabId = tab === 'calendar' ? 'tabCalendar' : 'tab' + tab.charAt(0).toUpperCase() + tab.slice(1);
+  document.getElementById(tabId).style.display = 'block';
+
+  updateCurrentTab();
+}
+
+// 跳转日期
+function jumpToDate(days) {
+  // 读取日期选择器当前值，而非依赖可能过时的全局 currentDate
+  var selectorVal = document.getElementById('dateSelector').value;
+  if (selectorVal) currentDate = selectorVal;
+  var current = new Date(currentDate + 'T00:00:00');
+  var maxDate = new Date().toISOString().split('T')[0];
+  var minDate = '2026-06-01';
+
+  var newDate = '';
+  // 逐日跳过休市日
+  for (var i = 0; i < 20; i++) {
+    current.setDate(current.getDate() + days);
+    newDate = current.getFullYear() + '-' + String(current.getMonth() + 1).padStart(2, '0') + '-' + String(current.getDate()).padStart(2, '0');
+    if (isTradingDay(newDate)) break;
+  }
+
+  if (newDate >= minDate && newDate <= maxDate) {
+    document.getElementById('dateSelector').value = newDate;
+    loadData();
+  }
+}
+
+// 跳转到今天（或最近交易日）
+function jumpToToday() {
+  var today = new Date().toISOString().split('T')[0];
+  var target = findLastTradingDay(today);
+  document.getElementById('dateSelector').value = target;
+  loadData();
+}
+</script>
+
+</body>
+</html>
