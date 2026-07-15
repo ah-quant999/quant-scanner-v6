@@ -39,6 +39,7 @@ __pycache__/
 !diag_parallel.py
 !refresh_neodata_token.py
 !pre_market_cloud_failover.py
+!fetch_neodata_daily.py
 !EVENING_FAILOVER.md
 *.bat
 .wrangler/
@@ -51,6 +52,10 @@ data/
 # 否则 data/ 被忽略→跨机/部署 git reset 清空→永远到不了20点→危险分恒为阈值假值
 !data/dxy_hist.json
 !data/usdcnh_hist.json
+# 例外：neodata 三表由本机每日 17:31 抓取(云端无 token 跑不了)，须进 Git 让云端构建也保留
+!data/52w_high.json
+!data/sector_fund_flow.json
+!data/sector_rs.json
 # 敏感文件：显式忽略，防止被 git add -A / -f 重新纳入版本控制（泄露风险）
 data/zsxq_token.json
 data/mahoro_signals.json
