@@ -47,10 +47,20 @@ jobs:
           NOW_TS=$(date +%s)
           DIFF_HOURS=$(( ($NOW_TS - $SCAN_TS) / 3600 ))
           
-          echo "::notice::数据年龄: ${DIFF_HOURS}小时"
+          # 盘中 09:00-15:00 阈值 2h（云端 5 轮间隔 60-105min，正常 1h 内必更新）
+          # 盘后 15:00-09:00 阈值 3h（收盘后不再密集刷新）
+          HOUR=$(TZ=Asia/Shanghai date +%H)
+          if [ "$HOUR" -ge 9 ] && [ "$HOUR" -lt 15 ]; then
+            THRESHOLD=2
+            PHASE="盘中"
+          else
+            THRESHOLD=3
+            PHASE="盘后"
+          fi
+          echo "::notice::当前阶段: ${PHASE} (阈值 ${THRESHOLD}h), 数据年龄: ${DIFF_HOURS}小时"
           
-          if [ $DIFF_HOURS -gt 6 ]; then
-            echo "::warning::数据已超过6小时未更新（${DIFF_HOURS}h），定时任务可能中断！"
+          if [ $DIFF_HOURS -gt $THRESHOLD ]; then
+            echo "::warning::数据已超过${THRESHOLD}小时未更新（${DIFF_HOURS}h），${PHASE}定时任务可能中断！"
           elif [ $DIFF_HOURS -gt 12 ]; then
             echo "::error::数据已超过12小时未更新（${DIFF_HOURS}h），定时任务中断！请立即检查双机状态。"
           fi
@@ -58,12 +68,15 @@ jobs:
           # 输出状态徽章用
           echo "age_hours=${DIFF_HOURS}" >> $GITHUB_OUTPUT
           echo "scan_time=${SCAN_TIME:0:19}" >> $GITHUB_OUTPUT
+          echo "phase=${PHASE}" >> $GITHUB_OUTPUT
+          echo "threshold=${THRESHOLD}" >> $GITHUB_OUTPUT
 
       - name: 汇总报告
         run: |
           echo "═══════════════════════════════════════"
           echo "  🛡️ 九宝量化兜底监控"
           echo "  检查时间: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+          echo "  阶段: ${{ steps.fresh.outputs.phase }} (阈值 ${{ steps.fresh.outputs.threshold }}h)"
           echo "  数据年龄: ${{ steps.fresh.outputs.age_hours }}小时"
           echo "  最新扫描: ${{ steps.fresh.outputs.scan_time }}"
           echo "═══════════════════════════════════════"
@@ -73,10 +86,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AGE: ${{ steps.fresh.outputs.age_hours }}
+          THRESHOLD: ${{ steps.fresh.outputs.threshold }}
+          PHASE: ${{ steps.fresh.outputs.phase }}
         run: |
-          if [ "${AGE:-0}" -gt 6 ]; then
-            echo "::error::数据已 ${AGE} 小时未更新，自动触发 cloud_intraday 重跑"
+          if [ "${AGE:-0}" -gt "${THRESHOLD:-2}" ]; then
+            echo "::error::数据已 ${AGE} 小时未更新（${PHASE}阈值 ${THRESHOLD}h），自动触发 cloud_intraday 重跑"
             gh workflow run cloud_intraday.yml
           else
-            echo "✅ 数据新鲜（${AGE}h），无需兜底"
+            echo "✅ 数据新鲜（${AGE}h ≤ ${PHASE}阈值 ${THRESHOLD}h），无需兜底"
           fi
