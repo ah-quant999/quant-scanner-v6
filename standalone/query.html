@@ -1255,6 +1255,12 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
         <div id="candidatePoolContent" style="font-size:12px;line-height:1.9;cursor:pointer;"></div>
       </div>
 
+      <!-- ⚙️ 运维状态 — 暂未上架（admin-only） -->
+      <div id="opsStatusCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;">⚙️ <span style="font-weight:700;font-size:14px;color:#333;">运维状态</span></div>
+        <div id="opsStatusContent" style="font-size:12px;color:#555;line-height:1.8;"></div>
+      </div>
+
       </div>
 
   <!-- 机游共振 -->
@@ -38432,7 +38438,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 15:39:39",
+"update_time": "2026-07-15 15:41:10",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120815,18 +120821,15 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     // 兜底回退到 .ops_status.json 的 cloud_deploy_time（旧部署/本地预览无 meta 时）。
     var _meta = document.querySelector('meta[name="build-stamp"]');
     var deployTime = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
-    var box = document.getElementById('opsStatusBox');
-    if(!box){
-      box = document.createElement('div');
-      box.id = 'opsStatusBox';
-      box.style.cssText = 'position:fixed;right:12px;bottom:12px;z-index:9999;max-width:260px;background:rgba(20,20,28,0.92);color:#e8e8e8;font:12px/1.6 -apple-system,sans-serif;padding:10px 12px;border-radius:10px;border:1px solid #444;box-shadow:0 4px 16px rgba(0,0,0,.4)';
-      document.body.appendChild(box);
-    }
+    var card = document.getElementById('opsStatusCard');
+    var content = document.getElementById('opsStatusContent');
+    if(!card || !content) return;
+    card.style.display = 'block';
     var st = s.failover_status || '未知';
     var stColor = st==='OK'?'#4caf50':(st==='RECOVERED'?'#ff9800':(st==='FAILED'?'#f44336':'#9e9e9e'));
     var neo = s.neodata_status==='ok'?'正常':'异常';
     var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
-    box.innerHTML = '<div style="font-weight:600;margin-bottom:6px;color:#fff">运维状态</div>'+
+    content.innerHTML =
       '<div>最后部署：'+fmt(deployTime)+'</div>'+
       '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
       '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
