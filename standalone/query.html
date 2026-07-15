@@ -1249,6 +1249,19 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
         </div>
       </div>
 
+      <!-- 🧪 三重选股 · 金钻起涨（实验盯盘） — 暂未上架 -->
+      <div id="tripleSelectCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          🧪 <span style="font-weight:700;font-size:14px;color:#333;">三重选股 · 金钻起涨</span>
+          <span id="tripleSelectTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+          <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">实验盯盘</span>
+        </div>
+        <div id="tripleSelectCoverage" style="font-size:11px;color:#888;margin-bottom:8px;"></div>
+        <div id="tripleSelectSignals" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;"></div>
+        <div id="tripleSelectHits" style="font-size:12px;color:#444;line-height:1.9;margin-bottom:8px;"></div>
+        <div id="tripleSelectHistory" style="font-size:11px;color:#999;"></div>
+      </div>
+
       <!-- 📡 观测候选股池（可点击展开明细） — 暂未上架面板底部（CRDS 之后） -->
       <div id="candidatePoolCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;">📡 <span style="font-weight:700;font-size:14px;color:#333;">观测候选股池</span><span id="candidatePoolTime" style="font-size:11px;color:#999;font-weight:400;"></span> <span id="candidatePoolCount" style="font-size:11px;color:#888;font-weight:400;"></span></div>
@@ -7664,6 +7677,418 @@ window.CANDIDATE_POOL = {
 "ts_peak": 0,
 "market_label": "深",
 "board_label": "创业板"
+}
+}
+};window.EXPERIMENT_DATA = {
+"today": {
+"date": "2026-07-15",
+"total": 331,
+"scanned": 328,
+"failed": 3,
+"signals": {
+"金钻起涨": 0,
+"波段多头": 75,
+"主力进场": 0,
+"主力出货": 0,
+"三重选股": 0
+},
+"hits": [],
+"lists": {
+"金钻起涨": [],
+"波段多头": [
+{
+"code": "002384",
+"name": "东山精密",
+"close": 262.49
+},
+{
+"code": "002156",
+"name": "通富微电",
+"close": 78.71
+},
+{
+"code": "002185",
+"name": "华天科技",
+"close": 23.11
+},
+{
+"code": "603259",
+"name": "药明康德",
+"close": 131.5
+},
+{
+"code": "002463",
+"name": "沪电股份",
+"close": 137.23
+},
+{
+"code": "000938",
+"name": "紫光股份",
+"close": 35.53
+},
+{
+"code": "600276",
+"name": "恒瑞医药",
+"close": 57.5
+},
+{
+"code": "000063",
+"name": "中兴通讯",
+"close": 39.45
+},
+{
+"code": "601899",
+"name": "紫金矿业",
+"close": 28.83
+},
+{
+"code": "002851",
+"name": "麦格米特",
+"close": 168.63
+},
+{
+"code": "002636",
+"name": "金安国纪",
+"close": 94.79
+},
+{
+"code": "603501",
+"name": "豪威集团",
+"close": 111.12
+},
+{
+"code": "002594",
+"name": "比亚迪",
+"close": 91.76
+},
+{
+"code": "002821",
+"name": "凯莱英",
+"close": 195.75
+},
+{
+"code": "002938",
+"name": "鹏鼎控股",
+"close": 103.03
+},
+{
+"code": "002422",
+"name": "科伦药业",
+"close": 49.07
+},
+{
+"code": "601628",
+"name": "中国人寿",
+"close": 40.42
+},
+{
+"code": "600030",
+"name": "中信证券",
+"close": 28.6
+},
+{
+"code": "002714",
+"name": "牧原股份",
+"close": 39.65
+},
+{
+"code": "603127",
+"name": "昭衍新药",
+"close": 50.62
+},
+{
+"code": "603893",
+"name": "瑞芯微",
+"close": 210.5
+},
+{
+"code": "002536",
+"name": "飞龙股份",
+"close": 55.9
+},
+{
+"code": "600900",
+"name": "长江电力",
+"close": 28.68
+},
+{
+"code": "002317",
+"name": "众生药业",
+"close": 33.29
+},
+{
+"code": "600988",
+"name": "赤峰黄金",
+"close": 33.4
+},
+{
+"code": "000807",
+"name": "云铝股份",
+"close": 26.1
+},
+{
+"code": "605090",
+"name": "九丰能源",
+"close": 41.6
+},
+{
+"code": "601398",
+"name": "工商银行",
+"close": 7.51
+},
+{
+"code": "300308",
+"name": "中际旭创",
+"close": 1169.31
+},
+{
+"code": "300759",
+"name": "康龙化成",
+"close": 40.3
+},
+{
+"code": "301526",
+"name": "国际复材",
+"close": 37.0
+},
+{
+"code": "300209",
+"name": "行云科技",
+"close": 28.69
+},
+{
+"code": "300164",
+"name": "通源石油",
+"close": 10.83
+},
+{
+"code": "301377",
+"name": "鼎泰高科",
+"close": 467.88
+},
+{
+"code": "300347",
+"name": "泰格医药",
+"close": 51.9
+},
+{
+"code": "300558",
+"name": "贝达药业",
+"close": 67.14
+},
+{
+"code": "300204",
+"name": "舒泰神",
+"close": 26.26
+},
+{
+"code": "300454",
+"name": "深信服",
+"close": 108.8
+},
+{
+"code": "300142",
+"name": "沃森生物",
+"close": 13.79
+},
+{
+"code": "300990",
+"name": "同飞股份",
+"close": 113.82
+},
+{
+"code": "301379",
+"name": "天山电子",
+"close": 36.42
+},
+{
+"code": "300765",
+"name": "石药创新",
+"close": 42.0
+},
+{
+"code": "300725",
+"name": "药石科技",
+"close": 41.0
+},
+{
+"code": "300436",
+"name": "广生堂",
+"close": 103.97
+},
+{
+"code": "300487",
+"name": "蓝晓科技",
+"close": 72.84
+},
+{
+"code": "300149",
+"name": "睿智医药",
+"close": 10.39
+},
+{
+"code": "300534",
+"name": "陇神戎发",
+"close": 10.8
+},
+{
+"code": "300363",
+"name": "博腾股份",
+"close": 18.86
+},
+{
+"code": "300369",
+"name": "绿盟科技",
+"close": 7.48
+},
+{
+"code": "301520",
+"name": "万邦医药",
+"close": 58.79
+},
+{
+"code": "300244",
+"name": "迪安诊断",
+"close": 20.53
+},
+{
+"code": "300723",
+"name": "一品红",
+"close": 40.92
+},
+{
+"code": "688498",
+"name": "源杰科技",
+"close": 1809.0
+},
+{
+"code": "688048",
+"name": "长光华芯",
+"close": 447.0
+},
+{
+"code": "688333",
+"name": "铂力特",
+"close": 116.2
+},
+{
+"code": "688519",
+"name": "南亚新材",
+"close": 353.0
+},
+{
+"code": "688111",
+"name": "金山办公",
+"close": 236.71
+},
+{
+"code": "688235",
+"name": "百济神州",
+"close": 274.51
+},
+{
+"code": "688106",
+"name": "金宏气体",
+"close": 37.88
+},
+{
+"code": "688183",
+"name": "生益电子",
+"close": 128.87
+},
+{
+"code": "688578",
+"name": "艾力斯",
+"close": 125.42
+},
+{
+"code": "688331",
+"name": "荣昌生物",
+"close": 142.0
+},
+{
+"code": "688266",
+"name": "泽璟制药-U",
+"close": 132.73
+},
+{
+"code": "688222",
+"name": "成都先导",
+"close": 36.58
+},
+{
+"code": "688025",
+"name": "杰普特",
+"close": 407.03
+},
+{
+"code": "688202",
+"name": "美迪西",
+"close": 87.35
+},
+{
+"code": "688220",
+"name": "翱捷科技",
+"close": 123.71
+},
+{
+"code": "688506",
+"name": "百利天恒",
+"close": 333.58
+},
+{
+"code": "688180",
+"name": "君实生物-U",
+"close": 38.55
+},
+{
+"code": "688068",
+"name": "热景生物",
+"close": 139.0
+},
+{
+"code": "688584",
+"name": "上海合晶",
+"close": 39.38
+},
+{
+"code": "688382",
+"name": "益方生物-U",
+"close": 25.3
+},
+{
+"code": "688328",
+"name": "深科达",
+"close": 98.59
+},
+{
+"code": "688271",
+"name": "联影医疗",
+"close": 109.0
+},
+{
+"code": "688192",
+"name": "迪哲医药-U",
+"close": 67.6
+}
+],
+"主力进场": [],
+"主力出货": []
+},
+"generated_at": "2026-07-15 15:52:42"
+},
+"history": {
+"2026-07-15": {
+"scanned": 328,
+"failed": 3,
+"signals": {
+"金钻起涨": 0,
+"波段多头": 75,
+"主力进场": 0,
+"主力出货": 0,
+"三重选股": 0
+},
+"hits": 0
 }
 }
 };window.SCAN_DATA = {
@@ -38438,7 +38863,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 15:41:10",
+"update_time": "2026-07-15 16:13:35",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120056,11 +120481,88 @@ function renderCrdsCard() {
 }
 
 var _unlistedCardsMoved = false;
+
+function renderTripleSelectCard() {
+  var d = window.EXPERIMENT_DATA || {};
+  var today = d.today || {};
+  var card = document.getElementById('tripleSelectCard');
+  if (!card) return;
+  card.style.display = 'block';
+  var tEl = document.getElementById('tripleSelectTime');
+  if (tEl) tEl.textContent = '更新 ' + (today.generated_at || today.date || '');
+  var covEl = document.getElementById('tripleSelectCoverage');
+  if (covEl) {
+    var cov = '扫描 A股 ' + (today.scanned||0) + '/' + (today.total||0) + ' 只' + (today.failed ? ('，失败 ' + today.failed) : '');
+    covEl.textContent = cov;
+  }
+  var sigEl = document.getElementById('tripleSelectSignals');
+  if (sigEl) {
+    var sig = today.signals || {};
+    var defs = [
+      {k:'金钻起涨', c:'#c62828'},
+      {k:'波段多头', c:'#1565c0'},
+      {k:'主力进场', c:'#2e7d32'},
+      {k:'主力出货', c:'#ef6c00'},
+      {k:'三重选股', c:'#6a1b9a'}
+    ];
+    var sh = '';
+    defs.forEach(function(x){
+      var n = (sig[x.k]||0);
+      sh += '<div style="display:inline-flex;align-items:center;gap:5px;background:#f7f7f9;border:1px solid #eee;border-radius:8px;padding:4px 10px;box-sizing:border-box;">';
+      sh += '<span style="width:8px;height:8px;border-radius:50%;background:'+x.c+';display:inline-block;"></span>';
+      sh += '<span style="font-size:12px;color:#555;">'+x.k+'</span>';
+      sh += '<span style="font-size:13px;font-weight:700;color:'+x.c+';">'+n+'</span><span style="font-size:10px;color:#999;">只</span>';
+      sh += '</div>';
+    });
+    sigEl.innerHTML = sh;
+  }
+  var hitEl = document.getElementById('tripleSelectHits');
+  if (hitEl) {
+    var hits = today.hits || [];
+    var lists = today.lists || {};
+    if (hits.length) {
+      var hh = '<div style="font-weight:600;color:#6a1b9a;margin-bottom:4px;">🌟 三重选股命中（金钻+波段+主力进场，且非出货）</div>';
+      hh += hits.map(function(h){ return '· '+ (h.name||h.code) + ' (' + h.code + ') ¥' + (h.close||''); }).join('　');
+      hitEl.innerHTML = hh;
+    } else {
+      var anyList = false;
+      for (var _k in lists) { if (lists[_k] && lists[_k].length) { anyList=true; break; } }
+      if (anyList) {
+        var lh = '';
+        ['金钻起涨','波段多头','主力进场','主力出货'].forEach(function(k){
+          var arr = lists[k]||[];
+          if (!arr.length) return;
+          lh += '<div style="font-weight:600;color:#444;margin:6px 0 2px;">'+k+'（'+arr.length+'只）</div>';
+          lh += arr.slice(0, 50).map(function(s){ return '· '+ (s.name||s.code) + ' ' + (s.code||''); }).join('　');
+          if (arr.length > 50) lh += ' …';
+          lh += '<br>';
+        });
+        hitEl.innerHTML = lh;
+      } else {
+        hitEl.innerHTML = '<span style="color:#999;">今日无命中。金钻起涨 0 只（XMA重绘信号，今日无触发）。</span>';
+      }
+    }
+  }
+  var hisEl = document.getElementById('tripleSelectHistory');
+  if (hisEl) {
+    var hist = d.history || {};
+    var keys = Object.keys(hist).sort().reverse().slice(0, 7);
+    if (keys.length) {
+      var hh2 = '<div style="font-weight:600;margin-bottom:3px;">📅 历史扫描（近 '+keys.length+' 天）</div>';
+      hh2 += keys.map(function(k){
+        var s = hist[k].signals || {};
+        return '· ' + k + '：金钻'+(s['金钻起涨']||0)+' 波段'+(s['波段多头']||0)+' 主力'+(s['主力进场']||0)+'/'+(s['主力出货']||0)+' 三重'+(s['三重选股']||0)+' | 扫描'+(hist[k].scanned||0);
+      }).join('<br>');
+      hisEl.innerHTML = hh2;
+    }
+  }
+}
+
 function moveCardsToShelf() {
   if (_unlistedCardsMoved) return;
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
-  var cardIds = ['herdingCard', 'shFibChanlunSection', 'crdsCard'];
+  var cardIds = ['herdingCard', 'shFibChanlunSection', 'crdsCard', 'tripleSelectCard'];
   // candidatePoolCard 作为锚点：F窗口等搬入时插到它前面，保证顺序 CRDS → F窗口 → 观测候选股池
   var anchor = document.getElementById('candidatePoolCard');
   cardIds.forEach(function(id) {
@@ -120085,9 +120587,13 @@ function moveCardsToShelf() {
   if (typeof renderShMonitor === 'function') {
     try { renderShMonitor(); } catch(e) { console.warn('renderShMonitor relaunch fail:', e); }
   }
-  // 重新渲染暂未上架面板里的三卡（F窗口内容已由 renderShMonitor 注入）
+  // 重新渲染暂未上架面板里的四卡（F窗口内容已由 renderShMonitor 注入）
   if (typeof renderCrdsCard === 'function') {
     try { renderCrdsCard(); } catch(e) { console.warn('renderCrdsCard fail:', e); }
+  }
+  // 🧪 三重选股 · 金钻起涨（实验盯盘）
+  if (typeof renderTripleSelectCard === 'function') {
+    try { renderTripleSelectCard(); } catch(e) { console.warn('renderTripleSelectCard fail:', e); }
   }
 }
 
@@ -120804,13 +121310,13 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 })();
 </script>
 <script>window.OPS_STATUS = {
-"cloud_deploy_time": "20260715114205",
+"cloud_deploy_time": "20260715154149",
 "failover_status": "OK",
-"failover_time": "2026-07-15 11:11:24",
+"failover_time": "2026-07-15 16:12:24",
 "neodata_status": "ok",
 "neodata_updated": "2026-07-15 11:41",
 "neodata_valid_until": "2026-07-16 10:01:53",
-"updated_at": "2026-07-15 11:51:51"
+"updated_at": "2026-07-15 16:12:24"
 };</script>
 <script>
 (function(){
