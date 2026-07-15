@@ -52,6 +52,7 @@ data/
 # 敏感文件：显式忽略，防止被 git add -A / -f 重新纳入版本控制（泄露风险）
 data/zsxq_token.json
 data/mahoro_signals.json
+.neodata_token
 dist/data/
 # 生成产物：由 update_data_v2.py 生成，不进 Git
 dist/index.html
