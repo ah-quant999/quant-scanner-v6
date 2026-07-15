@@ -38,6 +38,7 @@ __pycache__/
 !inject_weekend_run.py
 !diag_parallel.py
 !refresh_neodata_token.py
+!pre_market_cloud_failover.py
 !EVENING_FAILOVER.md
 *.bat
 .wrangler/
