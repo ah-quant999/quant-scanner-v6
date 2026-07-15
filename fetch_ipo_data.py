@@ -386,6 +386,15 @@ def _parse_date(raw):
     s = str(raw)[:10].replace("-", "")
     return s if len(s) == 8 else ""
 
+def _to_float(v):
+    """安全转 float，失败/None/空返回 0.0"""
+    if v is None or v == "":
+        return 0.0
+    try:
+        return float(v)
+    except (ValueError, TypeError):
+        return 0.0
+
 def fetch_ipo_list():
     """从东方财富 datacenter API 获取新股列表（push2 API 经常被 ban，改用 datacenter）"""
     candidates = []
@@ -393,7 +402,9 @@ def fetch_ipo_list():
     today_int = int(today_str)
 
     # datacenter API: 按申购日期降序，取最近 60 条
-    fields = "SECURITY_CODE,SECURITY_NAME,TRADE_MARKET_CODE,APPLY_DATE,LISTING_DATE,ISSUE_PRICE,INDUSTRY_PE_NEW,AFTER_ISSUE_PE,DEC_SUMFINA,ISSUE_NUM,MARKET_TYPE,IS_REGISTRATION"
+    fields = ("SECURITY_CODE,SECURITY_NAME,TRADE_MARKET_CODE,APPLY_DATE,LISTING_DATE,ISSUE_PRICE,"
+              "INDUSTRY_PE_NEW,AFTER_ISSUE_PE,DEC_SUMFINA,ISSUE_NUM,MARKET_TYPE,IS_REGISTRATION,"
+              "MAIN_BUSINESS,INDUSTRY_NAME,BVPS,PROFIT,IS_PROFIT,PREDICT_RAISE_FUNDS")
     url = (f"https://datacenter-web.eastmoney.com/api/data/v1/get?"
            f"sortColumns=APPLY_DATE&sortTypes=-1&pageSize=60&pageNumber=1"
            f"&reportName=RPTA_APP_IPOAPPLY&columns={fields}")
@@ -484,6 +495,13 @@ def fetch_ipo_list():
             "listing_date": listing_date,
             "status": status,
             "dec_sumfina": dec_sumfina,  # 募集资金（亿）
+            # ── 基本面维度字段（来自 RPTA_APP_IPOAPPLY 通用字段，对所有 IPO 可得）──
+            "main_business": (row.get("MAIN_BUSINESS", "") or "").strip(),
+            "industry_name": (row.get("INDUSTRY_NAME", "") or "").strip(),
+            "bvps": _to_float(row.get("BVPS")),             # 每股净资产
+            "profit": _to_float(row.get("PROFIT")),         # 最近一年净利润（万元，多为空）
+            "is_profit": row.get("IS_PROFIT"),              # 是否盈利标记（1/0/None）
+            "predict_raise_funds": _to_float(row.get("PREDICT_RAISE_FUNDS")),  # 计划募资（亿）
         })
 
     applying = [c for c in candidates if c["status"] == "applying"]
@@ -525,8 +543,90 @@ def classify_status_v2(apply_date, listing_date, today_int):
 
     return "applying"  # 默认兜底
 
+def score_track(industry, main_business):
+    """赛道热度评分(0-40)：基于行业/主营关键词映射，命中高景气赛道给高分"""
+    text = f"{industry} {main_business}".lower()
+    hot = ["半导体", "芯片", "集成电路", "dram", "存储", "ai", "人工智能", "算力", "机器人",
+           "新能源", "储能", "光伏", "创新药", "生物", "疫苗", "医药", "航天",
+           "军工", "新材料", "高端装备", "光模块", "cpo", "云计算", "数据",
+           "自动驾驶", "锂电池", "固态电池", "无人机", "传感器", "激光", "面板", "光刻"]
+    if any(k in text for k in hot):
+        return 38, "高景气赛道"
+    mid = ["设备", "制造", "电子", "软件", "通信", "医疗", "化工", "汽车",
+           "机械", "电气", "计算机", "仪器"]
+    if any(k in text for k in mid):
+        return 28, "制造/科技赛道"
+    return 18, "传统/其他赛道"
+
+
+def calc_fundamental(c):
+    """计算基本面维度评分(0-100)与明细，基于发行披露可得信号。
+    说明：未上市新股无统一营收/毛利/研发 API，故用可得信号构建——
+    赛道热度(0-40) + 超募比例(0-20) + 估值安全PB(0-20) + 盈利(0-20)。
+    字段缺失时给基础分(不罚)，前端标注'基于发行披露'。
+    """
+    # 1) 赛道热度 0-40
+    track_score, track_label = score_track(c.get("industry_name", ""), c.get("main_business", ""))
+    # 2) 超募比例 0-20（实际募资/计划募资，反映市场认可度）
+    raise_f = c.get("dec_sumfina", 0) or 0
+    pred_f = c.get("predict_raise_funds", 0) or 0
+    if raise_f and pred_f and pred_f > 0:
+        ratio = raise_f / pred_f
+        if ratio >= 1.5:
+            over, over_label = 20, f"超募{ratio:.1f}倍"
+        elif ratio >= 1.2:
+            over, over_label = 15, f"超募{ratio:.1f}倍"
+        elif ratio >= 1.0:
+            over, over_label = 10, "足额募资"
+        else:
+            over, over_label = 5, f"募资{ratio:.1f}倍计划"
+        over_ratio = round(ratio, 2)
+    else:
+        over, over_label, over_ratio = 10, "募资待定", None  # 无数据不罚
+    # 3) 估值安全 PB 0-20（发行价/每股净资产）
+    price = c.get("issue_price", 0) or 0
+    bvps = c.get("bvps", 0) or 0
+    if price > 0 and bvps > 0:
+        pb = price / bvps
+        if pb < 1:
+            pbs, pb_label = 20, f"破净PB{pb:.1f}"
+        elif pb < 2:
+            pbs, pb_label = 16, f"低PB{pb:.1f}"
+        elif pb < 3:
+            pbs, pb_label = 12, f"PB{pb:.1f}"
+        elif pb < 5:
+            pbs, pb_label = 8, f"PB{pb:.1f}"
+        else:
+            pbs, pb_label = 4, f"高PB{pb:.1f}"
+        pb_val = round(pb, 2)
+    else:
+        pbs, pb_label, pb_val = 10, "PB待定", None
+    # 4) 盈利 0-20
+    is_profit = c.get("is_profit")
+    profit = c.get("profit", 0) or 0
+    if is_profit == 1 or profit > 0:
+        ps, profit_label = 20, "已盈利"
+    elif is_profit == 0 and profit < 0:
+        ps, profit_label = 4, "亏损"
+    else:
+        ps, profit_label = 10, "盈利待披露"  # 无数据不罚
+    score = track_score + over + pbs + ps
+    return score, {
+        "track_label": track_label,
+        "main_business": c.get("main_business", ""),
+        "industry": c.get("industry_name", ""),
+        "over_subscription": over_ratio,
+        "over_label": over_label,
+        "pb": pb_val,
+        "pb_label": pb_label,
+        "profitable": (ps == 20),
+        "profit_label": profit_label,
+        "data_source": "发行披露(营收/毛利/研发需上市后F10补充)",
+    }
+
+
 def calculate_scores(candidates, status_filter=None):
-    """计算申购/待上市新股的评分
+    """计算申购/待上市新股的评分（双维度：套利分 + 基本面分）
     status_filter: None=全部, 或指定列表如 ["applying", "pre_listing"]
     """
     results = []
@@ -558,7 +658,15 @@ def calculate_scores(candidates, status_filter=None):
         # 行业热度（默认中等）
         heat_score = 15
 
-        total = round(pe_score + heat_score + price_score + board_bonus)
+        # ── 套利维度（原打新评分逻辑）──
+        arbitrage_raw = pe_score + heat_score + price_score + board_bonus
+        arbitrage_score = round(min(arbitrage_raw, 90) / 90 * 100)
+
+        # ── 基本面维度（对所有 IPO 生效，基于发行披露可得信号）──
+        fundamental_score, fund_detail = calc_fundamental(c)
+
+        # 总分：套利 60% + 基本面 40%
+        total = round(arbitrage_score * 0.6 + fundamental_score * 0.4)
 
         if total >= 80:
             recommend, tag_color, bg_color = "强烈推荐申购", "#2e7d32", "#e8f5e9"
@@ -575,16 +683,20 @@ def calculate_scores(candidates, status_filter=None):
             tag_color = "#888"
             bg_color = "#f5f5f5"
 
-        # ── highlights 只存 dims(结构化字段)未覆盖的独特信息 ──
-        # 前端 renderIpoScore() 的 dims 行已渲染: issue_price / board / pe_discount / issue_pe / industry_pe / apply_date
-        # 所以这里不再重复发行价、PE折价，只保留独特亮点
+        # ── highlights：dims 已渲染发行价/板块/PE折价/PE/行业PE/申购日，这里补独特亮点 ──
         highlights = []
+        if c["listing_date"]:
+            highlights.append(f"预计{c['listing_date'][4:6]}.{c['listing_date'][6:]}上市")
+        if fund_detail.get("track_label") == "高景气赛道":
+            highlights.append("高景气赛道")
+        if fund_detail.get("over_label", "").startswith("超募"):
+            highlights.append(fund_detail["over_label"])
+        if fund_detail.get("profit_label") == "已盈利":
+            highlights.append("已盈利")
         if c.get("dec_sumfina", 0) >= 1:
             highlights.append(f"募资{c['dec_sumfina']:.0f}亿")
         if board in ("沪市主板", "深市主板"):
             highlights.append(f"{board}流动性溢价")
-        if c["listing_date"]:
-            highlights.insert(0, f"预计{c['listing_date'][4:6]}.{c['listing_date'][6:]}上市")
 
         actual_status = "pre_listing" if c["status"] == "pre_listing" else "applying"
         results.append({
@@ -595,7 +707,11 @@ def calculate_scores(candidates, status_filter=None):
             "listing_date": c["listing_date"],
             "score": total, "recommend": recommend,
             "tag_color": tag_color, "bg_color": bg_color,
-            "highlights": highlights[:3],
+            # ── 双维度分列：套利分 + 基本面分 + 结构化基本面 ──
+            "arbitrage_score": arbitrage_score,
+            "fundamental_score": fundamental_score,
+            "fundamentals": fund_detail,
+            "highlights": highlights[:5],
             "status": actual_status,
         })
     results.sort(key=lambda x: -x["score"])

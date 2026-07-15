@@ -76,7 +76,7 @@ def _em_secid(code, market):
 
 
 def _em_name(code, market):
-    """云端东财取权威名(f58)。本机网络层拦截东财时返回 None。"""
+    """云端东财取权威名(f58)。本机网络层偶尔丢连接, 内置重试; 仍失败返回 None。"""
     key = f"{market}_{code}"
     if key in _EM_NAME_CACHE:
         return _EM_NAME_CACHE[key]
@@ -84,17 +84,22 @@ def _em_name(code, market):
     secid = _em_secid(code, market)
     if not secid:
         return None
-    try:
-        r = _requests.get("https://push2.eastmoney.com/api/qt/stock/get",
-                          params={"secid": secid, "fields": "f57,f58"},
-                          headers=_EM_HEADERS, timeout=8)
-        if r.status_code == 200:
-            d = r.json().get("data") or {}
-            nm = (d.get("f58") or "").strip()
-            if nm and not re.fullmatch(r'[0-9A-Za-z]+', nm):
-                _EM_NAME_CACHE[key] = nm
-    except Exception:
-        pass
+    for attempt in range(3):
+        try:
+            r = _requests.get("https://push2.eastmoney.com/api/qt/stock/get",
+                              params={"secid": secid, "fields": "f57,f58"},
+                              headers=_EM_HEADERS, timeout=8)
+            if r.status_code == 200:
+                d = r.json().get("data") or {}
+                nm = (d.get("f58") or "").strip()
+                if nm and not re.fullmatch(r'[0-9A-Za-z]+', nm):
+                    _EM_NAME_CACHE[key] = nm
+                    break
+            elif r.status_code != 200:
+                pass
+        except Exception:
+            if attempt < 2:
+                time.sleep(0.8)  # 东财偶发丢连接, 退避重试
     return _EM_NAME_CACHE[key]
 
 
@@ -119,6 +124,7 @@ def _looks_clean(n):
     if '债' in s or '指数' in s or 'ETF' in s or '基金' in s:
         return False
     t = re.sub(r'(股份)?有限公司$', '', s)
+    t = re.sub(r'[-‐][WSR]$', '', t)  # 容忍港股 -W/-S/-R 双重上市后缀
     return 2 <= len(t) <= 8 and re.fullmatch(r'[一-鿿]+', t)
 
 

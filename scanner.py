@@ -2312,6 +2312,7 @@ def _looks_clean_s(n):
     if '债' in s or '指数' in s or 'ETF' in s or '基金' in s:
         return False
     t = re.sub(r'(股份)?有限公司$', '', s)
+    t = re.sub(r'[-‐][WSR]$', '', t)  # 容忍港股 -W/-S/-R 双重上市后缀
     return 2 <= len(t) <= 8 and re.fullmatch(r'[一-鿿]+', t)
 
 
