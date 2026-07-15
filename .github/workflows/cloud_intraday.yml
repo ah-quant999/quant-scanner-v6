@@ -107,6 +107,21 @@ jobs:
       - name: "🏗️ 构建前端"
         run: python update_data_v2.py
 
+      # ─── 提交 data 回 main（让后续 workflow 也能用到） ───
+      - name: "📤 提交 data 回 main"
+        continue-on-error: true
+        run: |
+          git config user.name "cloud-bot"
+          git config user.email "cloud-bot@users.noreply.github.com"
+          git add -A data/ || true
+          if git diff --cached --quiet; then
+            echo "无变化"
+          else
+            git commit -m "auto: cloud intraday data $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+            git push origin main
+            echo "✅ data 已推 main"
+          fi
+
       # ─── 部署到 GitHub Pages ───
       - name: "🚀 部署到 GitHub Pages"
         uses: peaceiris/actions-gh-pages@v3

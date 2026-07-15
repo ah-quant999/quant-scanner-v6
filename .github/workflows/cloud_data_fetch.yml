@@ -86,6 +86,21 @@ jobs:
         continue-on-error: true
         run: python fetch_crisis_data.py || echo "[跳过] crisis"
 
+      # ─── 把 data/*.json 提交回 main（让 18:30 / 19:30 / 隔日 09:20 都能用到新鲜数据）───
+      - name: "📤 提交 data 回 main"
+        continue-on-error: true
+        run: |
+          git config user.name "cloud-bot"
+          git config user.email "cloud-bot@users.noreply.github.com"
+          git add -A data/ || true
+          if git diff --cached --quiet; then
+            echo "无变化，跳过提交"
+          else
+            git commit -m "auto: cloud data fetch $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M')"
+            git push origin main
+            echo "✅ 已推 data 到 main"
+          fi
+
       - name: "📝 写日志"
         run: |
           echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_data_fetch\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
