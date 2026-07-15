@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-15 11:12:23",
+  "update_time": "2026-07-15 11:24:09",
   "stocks": {
     "sh_600172": {
       "code": "600172",
@@ -150,10 +150,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 15.19,
-          "pct_chg": -0.26,
-          "pct_chg_20d": 17.75,
-          "rsi_14": 38.4,
+          "close": 14.58,
+          "pct_chg": -4.27,
+          "pct_chg_20d": 13.02,
+          "rsi_14": 36.7,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -170,11 +170,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 15.19,
-        "pct_chg": -0.26,
-        "pct_chg_5d": -13.64,
-        "pct_chg_20d": 17.75,
-        "rsi_14": 38.4,
+        "close": 14.58,
+        "pct_chg": -4.27,
+        "pct_chg_5d": -17.11,
+        "pct_chg_20d": 13.02,
+        "rsi_14": 36.7,
         "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -347,10 +347,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 50.8,
-          "pct_chg": -4.51,
-          "pct_chg_20d": 8.5,
-          "rsi_14": 54.3,
+          "close": 48.93,
+          "pct_chg": -8.03,
+          "pct_chg_20d": 4.51,
+          "rsi_14": 53.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -367,12 +367,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 50.8,
-        "pct_chg": -4.51,
-        "pct_chg_5d": -23.95,
-        "pct_chg_20d": 8.5,
-        "rsi_14": 54.3,
-        "signal_score": 0.5,
+        "close": 48.93,
+        "pct_chg": -8.03,
+        "pct_chg_5d": -26.75,
+        "pct_chg_20d": 4.51,
+        "rsi_14": 53.2,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -562,10 +562,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 37.72,
-          "pct_chg": 3.46,
-          "pct_chg_20d": 3.77,
-          "rsi_14": 47.1,
+          "close": 37.4,
+          "pct_chg": 2.58,
+          "pct_chg_20d": 2.89,
+          "rsi_14": 46.7,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -582,11 +582,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 37.72,
-        "pct_chg": 3.46,
-        "pct_chg_5d": -1.31,
-        "pct_chg_20d": 3.77,
-        "rsi_14": 47.1,
+        "close": 37.4,
+        "pct_chg": 2.58,
+        "pct_chg_5d": -2.15,
+        "pct_chg_20d": 2.89,
+        "rsi_14": 46.7,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -610,7 +610,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "📈高开"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -777,10 +777,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 155.8,
-          "pct_chg": -5.01,
-          "pct_chg_20d": -2.59,
-          "rsi_14": 42.5,
+          "close": 149.79,
+          "pct_chg": -8.68,
+          "pct_chg_20d": -6.35,
+          "rsi_14": 40.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -797,11 +797,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 155.8,
-        "pct_chg": -5.01,
-        "pct_chg_5d": -17.39,
-        "pct_chg_20d": -2.59,
-        "rsi_14": 42.5,
+        "close": 149.79,
+        "pct_chg": -8.68,
+        "pct_chg_5d": -20.58,
+        "pct_chg_20d": -6.35,
+        "rsi_14": 40.2,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -991,15 +991,15 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 1,
-          "close": 371.52,
-          "pct_chg": -1.35,
-          "pct_chg_20d": 23.9,
-          "rsi_14": 56.4,
+          "signal_count": 0,
+          "close": 355.2,
+          "pct_chg": -5.68,
+          "pct_chg_20d": 18.46,
+          "rsi_14": 53.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -1012,12 +1012,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 371.52,
-        "pct_chg": -1.35,
-        "pct_chg_5d": -7.47,
-        "pct_chg_20d": 23.9,
-        "rsi_14": 56.4,
-        "signal_score": 4.0,
+        "close": 355.2,
+        "pct_chg": -5.68,
+        "pct_chg_5d": -11.53,
+        "pct_chg_20d": 18.46,
+        "rsi_14": 53.6,
+        "signal_score": 1.0,
         "ema_up": 4,
         "ema_dirs": [
           false,
@@ -1034,11 +1034,11 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -1207,10 +1207,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 26.74,
-          "pct_chg": 4.01,
-          "pct_chg_20d": 1.87,
-          "rsi_14": 40.4,
+          "close": 26.48,
+          "pct_chg": 2.99,
+          "pct_chg_20d": 0.88,
+          "rsi_14": 39.5,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1227,11 +1227,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 26.74,
-        "pct_chg": 4.01,
-        "pct_chg_5d": -10.69,
-        "pct_chg_20d": 1.87,
-        "rsi_14": 40.4,
+        "close": 26.48,
+        "pct_chg": 2.99,
+        "pct_chg_5d": -11.56,
+        "pct_chg_20d": 0.88,
+        "rsi_14": 39.5,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -1422,10 +1422,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 5.51,
-          "pct_chg": 0.0,
-          "pct_chg_20d": -2.48,
-          "rsi_14": 48.5,
+          "close": 5.44,
+          "pct_chg": -1.27,
+          "pct_chg_20d": -3.72,
+          "rsi_14": 47.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1442,11 +1442,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 5.51,
-        "pct_chg": 0.0,
-        "pct_chg_5d": -13.09,
-        "pct_chg_20d": -2.48,
-        "rsi_14": 48.5,
+        "close": 5.44,
+        "pct_chg": -1.27,
+        "pct_chg_5d": -14.2,
+        "pct_chg_20d": -3.72,
+        "rsi_14": 47.3,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -1470,7 +1470,7 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -1657,10 +1657,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 44.14,
-          "pct_chg": 0.78,
-          "pct_chg_20d": 0.89,
-          "rsi_14": 54.6,
+          "close": 45.3,
+          "pct_chg": 3.42,
+          "pct_chg_20d": 3.54,
+          "rsi_14": 57.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1678,11 +1678,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 44.14,
-        "pct_chg": 0.78,
-        "pct_chg_5d": 0.36,
-        "pct_chg_20d": 0.89,
-        "rsi_14": 54.6,
+        "close": 45.3,
+        "pct_chg": 3.42,
+        "pct_chg_5d": 3.0,
+        "pct_chg_20d": 3.54,
+        "rsi_14": 57.0,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -1706,7 +1706,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "ema_up": 7,
       "ema_dirs": [
@@ -1870,10 +1870,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 142.21,
-          "pct_chg": -3.32,
-          "pct_chg_20d": 4.17,
-          "rsi_14": 48.1,
+          "close": 136.44,
+          "pct_chg": -7.25,
+          "pct_chg_20d": -0.06,
+          "rsi_14": 45.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1890,13 +1890,13 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 142.21,
-        "pct_chg": -3.32,
-        "pct_chg_5d": -19.66,
-        "pct_chg_20d": 4.17,
-        "rsi_14": 48.1,
+        "close": 136.44,
+        "pct_chg": -7.25,
+        "pct_chg_5d": -22.92,
+        "pct_chg_20d": -0.06,
+        "rsi_14": 45.9,
         "signal_score": 3,
-        "ema_up": 1,
+        "ema_up": 0,
         "ema_dirs": [
           false,
           false,
@@ -1904,9 +1904,9 @@
           false,
           false,
           false,
-          true
+          false
         ],
-        "ema_score": 1,
+        "ema_score": 0,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 1,
@@ -1920,7 +1920,7 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 1,
+      "ema_up": 0,
       "ema_dirs": [
         false,
         false,
@@ -1928,9 +1928,9 @@
         false,
         false,
         false,
-        true
+        false
       ],
-      "ema_score": 1,
+      "ema_score": 0,
       "sectors": [
         "软件和信息技术服务业"
       ],
@@ -2085,10 +2085,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 42.15,
-          "pct_chg": -1.29,
-          "pct_chg_20d": -12.91,
-          "rsi_14": 38.1,
+          "close": 40.93,
+          "pct_chg": -4.15,
+          "pct_chg_20d": -15.43,
+          "rsi_14": 36.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2105,11 +2105,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 42.15,
-        "pct_chg": -1.29,
-        "pct_chg_5d": -4.57,
-        "pct_chg_20d": -12.91,
-        "rsi_14": 38.1,
+        "close": 40.93,
+        "pct_chg": -4.15,
+        "pct_chg_5d": -7.34,
+        "pct_chg_20d": -15.43,
+        "rsi_14": 36.6,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -2299,12 +2299,12 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 1,
-          "close": 139.71,
-          "pct_chg": -3.48,
-          "pct_chg_20d": -8.39,
-          "rsi_14": 39.4,
-          "缠论买_日K": true,
+          "signal_count": 0,
+          "close": 134.71,
+          "pct_chg": -6.93,
+          "pct_chg_20d": -11.67,
+          "rsi_14": 37.7,
+          "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": false,
@@ -2321,12 +2321,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 139.71,
-        "pct_chg": -3.48,
-        "pct_chg_5d": -11.57,
-        "pct_chg_20d": -8.39,
-        "rsi_14": 39.4,
-        "signal_score": 3,
+        "close": 134.71,
+        "pct_chg": -6.93,
+        "pct_chg_5d": -14.74,
+        "pct_chg_20d": -11.67,
+        "rsi_14": 37.7,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -2339,15 +2339,15 @@
         ],
         "ema_score": 0,
         "turnover_rate": 0,
-        "缠论买_日K": true,
-        "缠论买_次数": 1,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
         "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
@@ -2516,10 +2516,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 57.36,
-          "pct_chg": 6.08,
-          "pct_chg_20d": 26.54,
-          "rsi_14": 56.9,
+          "close": 56.4,
+          "pct_chg": 4.31,
+          "pct_chg_20d": 24.42,
+          "rsi_14": 55.8,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2536,11 +2536,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 57.36,
-        "pct_chg": 6.08,
-        "pct_chg_5d": 15.18,
-        "pct_chg_20d": 26.54,
-        "rsi_14": 56.9,
+        "close": 56.4,
+        "pct_chg": 4.31,
+        "pct_chg_5d": 13.25,
+        "pct_chg_20d": 24.42,
+        "rsi_14": 55.8,
         "signal_score": 7.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -2731,10 +2731,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 188.33,
-          "pct_chg": -4.85,
-          "pct_chg_20d": 42.71,
-          "rsi_14": 50.2,
+          "close": 178.59,
+          "pct_chg": -9.77,
+          "pct_chg_20d": 35.33,
+          "rsi_14": 47.4,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2751,23 +2751,23 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 188.33,
-        "pct_chg": -4.85,
-        "pct_chg_5d": -1.75,
-        "pct_chg_20d": 42.71,
-        "rsi_14": 50.2,
+        "close": 178.59,
+        "pct_chg": -9.77,
+        "pct_chg_5d": -6.83,
+        "pct_chg_20d": 35.33,
+        "rsi_14": 47.4,
         "signal_score": 2.5,
-        "ema_up": 4,
+        "ema_up": 3,
         "ema_dirs": [
           false,
           false,
           false,
-          true,
+          false,
           true,
           true,
           true
         ],
-        "ema_score": 4,
+        "ema_score": 3,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 2,
@@ -2781,17 +2781,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 4,
+      "ema_up": 3,
       "ema_dirs": [
         false,
         false,
         false,
-        true,
+        false,
         true,
         true,
         true
       ],
-      "ema_score": 4,
+      "ema_score": 3,
       "sectors": [
         "计算机、通信和其他电子设备制造业"
       ],
@@ -2966,10 +2966,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 27.78,
-          "pct_chg": -2.94,
-          "pct_chg_20d": -6.43,
-          "rsi_14": 50.8,
+          "close": 28.14,
+          "pct_chg": -1.68,
+          "pct_chg_20d": -7.43,
+          "rsi_14": 49.2,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2987,23 +2987,23 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 27.78,
-        "pct_chg": -2.94,
-        "pct_chg_5d": -4.4,
-        "pct_chg_20d": -6.43,
-        "rsi_14": 50.8,
+        "close": 28.14,
+        "pct_chg": -1.68,
+        "pct_chg_5d": -3.17,
+        "pct_chg_20d": -7.43,
+        "rsi_14": 49.2,
         "signal_score": 3,
-        "ema_up": 2,
+        "ema_up": 0,
         "ema_dirs": [
           false,
           false,
           false,
           false,
           false,
-          true,
-          true
+          false,
+          false
         ],
-        "ema_score": 2,
+        "ema_score": 0,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 1,
@@ -3017,17 +3017,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 2,
+      "ema_up": 0,
       "ema_dirs": [
         false,
         false,
         false,
         false,
         false,
-        true,
-        true
+        false,
+        false
       ],
-      "ema_score": 2,
+      "ema_score": 0,
       "sectors": []
     },
     "sz_300199": {
@@ -3179,10 +3179,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 26.19,
-          "pct_chg": 10.88,
-          "pct_chg_20d": 13.97,
-          "rsi_14": 62.3,
+          "close": 26.37,
+          "pct_chg": 11.64,
+          "pct_chg_20d": 14.75,
+          "rsi_14": 62.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3199,23 +3199,23 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 26.19,
-        "pct_chg": 10.88,
-        "pct_chg_5d": 5.73,
-        "pct_chg_20d": 13.97,
-        "rsi_14": 62.3,
+        "close": 26.37,
+        "pct_chg": 11.64,
+        "pct_chg_5d": 6.46,
+        "pct_chg_20d": 14.75,
+        "rsi_14": 62.7,
         "signal_score": 7.0,
-        "ema_up": 4,
+        "ema_up": 5,
         "ema_dirs": [
           false,
           false,
-          false,
+          true,
           true,
           true,
           true,
           true
         ],
-        "ema_score": 4,
+        "ema_score": 5,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -3229,17 +3229,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
-      "ema_up": 4,
+      "ema_up": 5,
       "ema_dirs": [
         false,
         false,
-        false,
+        true,
         true,
         true,
         true,
         true
       ],
-      "ema_score": 4,
+      "ema_score": 5,
       "sectors": [
         "医药制造业"
       ],
@@ -3394,10 +3394,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 73.11,
-          "pct_chg": -3.65,
-          "pct_chg_20d": 1.9,
-          "rsi_14": 40.3,
+          "close": 71.56,
+          "pct_chg": -5.69,
+          "pct_chg_20d": -0.26,
+          "rsi_14": 39.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3414,11 +3414,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 73.11,
-        "pct_chg": -3.65,
-        "pct_chg_5d": -13.99,
-        "pct_chg_20d": 1.9,
-        "rsi_14": 40.3,
+        "close": 71.56,
+        "pct_chg": -5.69,
+        "pct_chg_5d": -15.81,
+        "pct_chg_20d": -0.26,
+        "rsi_14": 39.3,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -3608,15 +3608,15 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 1,
-          "close": 40.54,
-          "pct_chg": 5.57,
-          "pct_chg_20d": 19.59,
-          "rsi_14": 55.4,
+          "signal_count": 2,
+          "close": 41.48,
+          "pct_chg": 8.02,
+          "pct_chg_20d": 22.36,
+          "rsi_14": 56.6,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": false,
+          "四量图_机构变红": true,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -3633,12 +3633,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 40.54,
-        "pct_chg": 5.57,
-        "pct_chg_5d": -8.07,
-        "pct_chg_20d": 19.59,
-        "rsi_14": 55.4,
-        "signal_score": 4.0,
+        "close": 41.48,
+        "pct_chg": 8.02,
+        "pct_chg_5d": -5.94,
+        "pct_chg_20d": 22.36,
+        "rsi_14": 56.6,
+        "signal_score": 7.0,
         "ema_up": 1,
         "ema_dirs": [
           false,
@@ -3655,11 +3655,11 @@
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 2,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
@@ -3828,10 +3828,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 81.27,
-          "pct_chg": 0.11,
-          "pct_chg_20d": 2.93,
-          "rsi_14": 66.8,
+          "close": 82.22,
+          "pct_chg": 1.28,
+          "pct_chg_20d": 4.13,
+          "rsi_14": 68.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3848,11 +3848,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 81.27,
-        "pct_chg": 0.11,
-        "pct_chg_5d": 2.34,
-        "pct_chg_20d": 2.93,
-        "rsi_14": 66.8,
+        "close": 82.22,
+        "pct_chg": 1.28,
+        "pct_chg_5d": 3.54,
+        "pct_chg_20d": 4.13,
+        "rsi_14": 68.9,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -3989,10 +3989,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 41.44,
-          "pct_chg": -0.77,
-          "pct_chg_20d": -11.9,
-          "rsi_14": 44.6,
+          "close": 40.75,
+          "pct_chg": -2.42,
+          "pct_chg_20d": -13.37,
+          "rsi_14": 43.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4009,11 +4009,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 41.44,
-        "pct_chg": -0.77,
-        "pct_chg_5d": -13.58,
-        "pct_chg_20d": -11.9,
-        "rsi_14": 44.6,
+        "close": 40.75,
+        "pct_chg": -2.42,
+        "pct_chg_5d": -15.02,
+        "pct_chg_20d": -13.37,
+        "rsi_14": 43.9,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -4224,10 +4224,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 18.23,
-          "pct_chg": -0.44,
-          "pct_chg_20d": -6.89,
-          "rsi_14": 56.3,
+          "close": 18.46,
+          "pct_chg": 0.82,
+          "pct_chg_20d": -5.72,
+          "rsi_14": 58.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4245,11 +4245,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 18.23,
-        "pct_chg": -0.44,
-        "pct_chg_5d": -4.0,
-        "pct_chg_20d": -6.89,
-        "rsi_14": 56.3,
+        "close": 18.46,
+        "pct_chg": 0.82,
+        "pct_chg_5d": -2.79,
+        "pct_chg_20d": -5.72,
+        "rsi_14": 58.3,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -4273,7 +4273,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -4457,10 +4457,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 207.2,
-          "pct_chg": 2.68,
-          "pct_chg_20d": 5.93,
-          "rsi_14": 66.7,
+          "close": 205.8,
+          "pct_chg": 1.98,
+          "pct_chg_20d": 5.21,
+          "rsi_14": 65.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4478,11 +4478,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 207.2,
-        "pct_chg": 2.68,
-        "pct_chg_5d": -3.09,
-        "pct_chg_20d": 5.93,
-        "rsi_14": 66.7,
+        "close": 205.8,
+        "pct_chg": 1.98,
+        "pct_chg_5d": -3.74,
+        "pct_chg_20d": 5.21,
+        "rsi_14": 65.9,
         "signal_score": 3.5,
         "ema_up": 4,
         "ema_dirs": [
@@ -4680,10 +4680,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 6.4,
-          "pct_chg": -0.16,
-          "pct_chg_20d": -11.36,
-          "rsi_14": 42.2,
+          "close": 6.42,
+          "pct_chg": 0.16,
+          "pct_chg_20d": -11.08,
+          "rsi_14": 43.1,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4700,11 +4700,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 6.4,
-        "pct_chg": -0.16,
-        "pct_chg_5d": 0.63,
-        "pct_chg_20d": -11.36,
-        "rsi_14": 42.2,
+        "close": 6.42,
+        "pct_chg": 0.16,
+        "pct_chg_5d": 0.94,
+        "pct_chg_20d": -11.08,
+        "rsi_14": 43.1,
         "signal_score": 3,
         "ema_up": 2,
         "ema_dirs": [
@@ -4912,10 +4912,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 79.1,
-          "pct_chg": 0.0,
-          "pct_chg_20d": -2.71,
-          "rsi_14": 60.0,
+          "close": 79.2,
+          "pct_chg": 0.13,
+          "pct_chg_20d": -2.58,
+          "rsi_14": 60.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4933,11 +4933,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 79.1,
-        "pct_chg": 0.0,
-        "pct_chg_5d": 0.76,
-        "pct_chg_20d": -2.71,
-        "rsi_14": 60.0,
+        "close": 79.2,
+        "pct_chg": 0.13,
+        "pct_chg_5d": 0.89,
+        "pct_chg_20d": -2.58,
+        "rsi_14": 60.7,
         "signal_score": 3,
         "ema_up": 6,
         "ema_dirs": [
@@ -5135,10 +5135,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 6.88,
-          "pct_chg": -0.86,
-          "pct_chg_20d": -9.83,
-          "rsi_14": 42.0,
+          "close": 6.92,
+          "pct_chg": -0.29,
+          "pct_chg_20d": -9.31,
+          "rsi_14": 43.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5155,11 +5155,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 6.88,
-        "pct_chg": -0.86,
-        "pct_chg_5d": -0.15,
-        "pct_chg_20d": -9.83,
-        "rsi_14": 42.0,
+        "close": 6.92,
+        "pct_chg": -0.29,
+        "pct_chg_5d": 0.44,
+        "pct_chg_20d": -9.31,
+        "rsi_14": 43.3,
         "signal_score": 3,
         "ema_up": 5,
         "ema_dirs": [
@@ -5183,7 +5183,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "📉低开低走"
+        "开盘_标签": "⚡低开高走"
       },
       "ema_up": 5,
       "ema_dirs": [
@@ -5347,10 +5347,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 156.08,
-          "pct_chg": 5.89,
-          "pct_chg_20d": 72.54,
-          "rsi_14": 80.5,
+          "close": 154.02,
+          "pct_chg": 4.49,
+          "pct_chg_20d": 70.26,
+          "rsi_14": 80.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5367,11 +5367,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 156.08,
-        "pct_chg": 5.89,
-        "pct_chg_5d": 20.07,
-        "pct_chg_20d": 72.54,
-        "rsi_14": 80.5,
+        "close": 154.02,
+        "pct_chg": 4.49,
+        "pct_chg_5d": 18.49,
+        "pct_chg_20d": 70.26,
+        "rsi_14": 80.0,
         "signal_score": 2.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -5805,10 +5805,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 5.48,
-          "pct_chg": -1.08,
-          "pct_chg_20d": -9.12,
-          "rsi_14": 44.7,
+          "close": 5.53,
+          "pct_chg": -0.18,
+          "pct_chg_20d": -8.29,
+          "rsi_14": 47.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5826,23 +5826,23 @@
         "投行研报"
       ],
       "latest": {
-        "close": 5.48,
-        "pct_chg": -1.08,
-        "pct_chg_5d": -3.01,
-        "pct_chg_20d": -9.12,
-        "rsi_14": 44.7,
+        "close": 5.53,
+        "pct_chg": -0.18,
+        "pct_chg_5d": -2.12,
+        "pct_chg_20d": -8.29,
+        "rsi_14": 47.2,
         "signal_score": 3,
-        "ema_up": 3,
+        "ema_up": 4,
         "ema_dirs": [
           true,
           true,
           true,
-          false,
+          true,
           false,
           false,
           false
         ],
-        "ema_score": 3,
+        "ema_score": 4,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -5856,17 +5856,17 @@
         "当日涨停": false,
         "开盘_标签": "⚠️高开低走"
       },
-      "ema_up": 3,
+      "ema_up": 4,
       "ema_dirs": [
         true,
         true,
         true,
-        false,
+        true,
         false,
         false,
         false
       ],
-      "ema_score": 3,
+      "ema_score": 4,
       "sectors": []
     },
     "hk_02359": {
@@ -6038,10 +6038,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 164.9,
-          "pct_chg": 4.3,
-          "pct_chg_20d": 32.66,
-          "rsi_14": 72.6,
+          "close": 166.7,
+          "pct_chg": 5.44,
+          "pct_chg_20d": 34.11,
+          "rsi_14": 73.5,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6061,11 +6061,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 164.9,
-        "pct_chg": 4.3,
-        "pct_chg_5d": 12.64,
-        "pct_chg_20d": 32.66,
-        "rsi_14": 72.6,
+        "close": 166.7,
+        "pct_chg": 5.44,
+        "pct_chg_5d": 13.87,
+        "pct_chg_20d": 34.11,
+        "rsi_14": 73.5,
         "signal_score": 4.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -6253,10 +6253,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 12.45,
-          "pct_chg": -1.43,
-          "pct_chg_20d": -11.7,
-          "rsi_14": 40.3,
+          "close": 11.93,
+          "pct_chg": -5.54,
+          "pct_chg_20d": -15.39,
+          "rsi_14": 38.1,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6274,11 +6274,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 12.45,
-        "pct_chg": -1.43,
-        "pct_chg_5d": -6.39,
-        "pct_chg_20d": -11.7,
-        "rsi_14": 40.3,
+        "close": 11.93,
+        "pct_chg": -5.54,
+        "pct_chg_5d": -10.3,
+        "pct_chg_20d": -15.39,
+        "rsi_14": 38.1,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -6469,10 +6469,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 195.75,
-          "pct_chg": 1.95,
-          "pct_chg_20d": -3.6,
-          "rsi_14": 55.8,
+          "close": 193.36,
+          "pct_chg": 0.7,
+          "pct_chg_20d": -4.77,
+          "rsi_14": 54.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6492,11 +6492,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 195.75,
-        "pct_chg": 1.95,
-        "pct_chg_5d": -0.62,
-        "pct_chg_20d": -3.6,
-        "rsi_14": 55.8,
+        "close": 193.36,
+        "pct_chg": 0.7,
+        "pct_chg_5d": -1.83,
+        "pct_chg_20d": -4.77,
+        "rsi_14": 54.9,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -6520,7 +6520,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -6687,10 +6687,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 87.74,
-          "pct_chg": 3.36,
-          "pct_chg_20d": 5.85,
-          "rsi_14": 54.4,
+          "close": 85.75,
+          "pct_chg": 1.01,
+          "pct_chg_20d": 3.45,
+          "rsi_14": 53.4,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6707,12 +6707,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 87.74,
-        "pct_chg": 3.36,
-        "pct_chg_5d": -0.01,
-        "pct_chg_20d": 5.85,
-        "rsi_14": 54.4,
-        "signal_score": 3.5,
+        "close": 85.75,
+        "pct_chg": 1.01,
+        "pct_chg_5d": -2.28,
+        "pct_chg_20d": 3.45,
+        "rsi_14": 53.4,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -6735,7 +6735,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -6912,10 +6912,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 48.98,
-          "pct_chg": 0.86,
-          "pct_chg_20d": -12.54,
-          "rsi_14": 48.2,
+          "close": 49.36,
+          "pct_chg": 1.65,
+          "pct_chg_20d": -11.86,
+          "rsi_14": 49.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6932,11 +6932,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 48.98,
-        "pct_chg": 0.86,
-        "pct_chg_5d": 0.95,
-        "pct_chg_20d": -12.54,
-        "rsi_14": 48.2,
+        "close": 49.36,
+        "pct_chg": 1.65,
+        "pct_chg_5d": 1.73,
+        "pct_chg_20d": -11.86,
+        "rsi_14": 49.7,
         "signal_score": 3,
         "ema_up": 2,
         "ema_dirs": [
@@ -7124,10 +7124,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 204.76,
-          "pct_chg": -1.41,
-          "pct_chg_20d": 26.38,
-          "rsi_14": 42.3,
+          "close": 197.22,
+          "pct_chg": -5.04,
+          "pct_chg_20d": 21.73,
+          "rsi_14": 40.8,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7145,13 +7145,13 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 204.76,
-        "pct_chg": -1.41,
-        "pct_chg_5d": -4.93,
-        "pct_chg_20d": 26.38,
-        "rsi_14": 42.3,
+        "close": 197.22,
+        "pct_chg": -5.04,
+        "pct_chg_5d": -8.43,
+        "pct_chg_20d": 21.73,
+        "rsi_14": 40.8,
         "signal_score": 4.0,
-        "ema_up": 1,
+        "ema_up": 0,
         "ema_dirs": [
           false,
           false,
@@ -7159,9 +7159,9 @@
           false,
           false,
           false,
-          true
+          false
         ],
-        "ema_score": 1,
+        "ema_score": 0,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 2,
@@ -7175,7 +7175,7 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 1,
+      "ema_up": 0,
       "ema_dirs": [
         false,
         false,
@@ -7183,9 +7183,9 @@
         false,
         false,
         false,
-        true
+        false
       ],
-      "ema_score": 1,
+      "ema_score": 0,
       "sectors": [
         "计算机、通信和其他电子设备制造业"
       ],
@@ -7340,10 +7340,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 72.58,
-          "pct_chg": 3.98,
-          "pct_chg_20d": 43.61,
-          "rsi_14": 62.0,
+          "close": 74.89,
+          "pct_chg": 7.29,
+          "pct_chg_20d": 48.18,
+          "rsi_14": 63.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7360,11 +7360,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 72.58,
-        "pct_chg": 3.98,
-        "pct_chg_5d": 17.06,
-        "pct_chg_20d": 43.61,
-        "rsi_14": 62.0,
+        "close": 74.89,
+        "pct_chg": 7.29,
+        "pct_chg_5d": 20.79,
+        "pct_chg_20d": 48.18,
+        "rsi_14": 63.9,
         "signal_score": 5.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -7555,10 +7555,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 8.11,
-          "pct_chg": 8.71,
-          "pct_chg_20d": 28.12,
-          "rsi_14": 43.0,
+          "close": 8.1,
+          "pct_chg": 8.58,
+          "pct_chg_20d": 27.96,
+          "rsi_14": 42.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7575,11 +7575,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 8.11,
-        "pct_chg": 8.71,
-        "pct_chg_5d": -5.7,
-        "pct_chg_20d": 28.12,
-        "rsi_14": 43.0,
+        "close": 8.1,
+        "pct_chg": 8.58,
+        "pct_chg_5d": -5.81,
+        "pct_chg_20d": 27.96,
+        "rsi_14": 42.9,
         "signal_score": 4.0,
         "ema_up": 1,
         "ema_dirs": [
@@ -7770,10 +7770,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 63.49,
-          "pct_chg": 0.59,
-          "pct_chg_20d": 41.88,
-          "rsi_14": 60.1,
+          "close": 60.67,
+          "pct_chg": -3.88,
+          "pct_chg_20d": 35.58,
+          "rsi_14": 58.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7790,11 +7790,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 63.49,
-        "pct_chg": 0.59,
-        "pct_chg_5d": -16.11,
-        "pct_chg_20d": 41.88,
-        "rsi_14": 60.1,
+        "close": 60.67,
+        "pct_chg": -3.88,
+        "pct_chg_5d": -19.83,
+        "pct_chg_20d": 35.58,
+        "rsi_14": 58.2,
         "signal_score": 0,
         "ema_up": 1,
         "ema_dirs": [
@@ -7985,10 +7985,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 40.67,
-          "pct_chg": 1.32,
-          "pct_chg_20d": 23.47,
-          "rsi_14": 55.7,
+          "close": 40.33,
+          "pct_chg": 0.47,
+          "pct_chg_20d": 22.43,
+          "rsi_14": 55.2,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8005,11 +8005,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 40.67,
-        "pct_chg": 1.32,
-        "pct_chg_5d": -2.19,
-        "pct_chg_20d": 23.47,
-        "rsi_14": 55.7,
+        "close": 40.33,
+        "pct_chg": 0.47,
+        "pct_chg_5d": -3.01,
+        "pct_chg_20d": 22.43,
+        "rsi_14": 55.2,
         "signal_score": 4.0,
         "ema_up": 2,
         "ema_dirs": [
@@ -8033,7 +8033,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 2,
       "ema_dirs": [
@@ -8200,10 +8200,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 20.34,
-          "pct_chg": -12.44,
-          "pct_chg_20d": 7.96,
-          "rsi_14": 52.9,
+          "close": 19.85,
+          "pct_chg": -14.55,
+          "pct_chg_20d": 5.36,
+          "rsi_14": 52.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8221,11 +8221,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 20.34,
-        "pct_chg": -12.44,
-        "pct_chg_5d": -23.07,
-        "pct_chg_20d": 7.96,
-        "rsi_14": 52.9,
+        "close": 19.85,
+        "pct_chg": -14.55,
+        "pct_chg_5d": -24.92,
+        "pct_chg_20d": 5.36,
+        "rsi_14": 52.0,
         "signal_score": 0.5,
         "ema_up": 1,
         "ema_dirs": [
@@ -8408,10 +8408,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 5.03,
-          "pct_chg": -0.79,
-          "pct_chg_20d": -8.04,
-          "rsi_14": 39.8,
+          "close": 5.08,
+          "pct_chg": 0.2,
+          "pct_chg_20d": -7.13,
+          "rsi_14": 41.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8429,13 +8429,13 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 5.03,
-        "pct_chg": -0.79,
-        "pct_chg_5d": -1.18,
-        "pct_chg_20d": -8.04,
-        "rsi_14": 39.8,
+        "close": 5.08,
+        "pct_chg": 0.2,
+        "pct_chg_5d": -0.2,
+        "pct_chg_20d": -7.13,
+        "rsi_14": 41.7,
         "signal_score": 3,
-        "ema_up": 6,
+        "ema_up": 7,
         "ema_dirs": [
           true,
           true,
@@ -8443,9 +8443,9 @@
           true,
           true,
           true,
-          false
+          true
         ],
-        "ema_score": 6,
+        "ema_score": 7,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -8459,7 +8459,7 @@
         "当日涨停": false,
         "开盘_标签": "➖平开"
       },
-      "ema_up": 6,
+      "ema_up": 7,
       "ema_dirs": [
         true,
         true,
@@ -8467,9 +8467,9 @@
         true,
         true,
         true,
-        false
+        true
       ],
-      "ema_score": 6,
+      "ema_score": 7,
       "sectors": []
     },
     "hk_02331": {
@@ -8574,15 +8574,15 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 0,
-          "close": 14.92,
-          "pct_chg": 0.13,
-          "pct_chg_20d": -10.39,
-          "rsi_14": 50.2,
+          "signal_count": 1,
+          "close": 15.06,
+          "pct_chg": 1.07,
+          "pct_chg_20d": -9.55,
+          "rsi_14": 52.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": false,
+          "四量图_机构变红": true,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -8595,47 +8595,47 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 14.92,
-        "pct_chg": 0.13,
-        "pct_chg_5d": 0.34,
-        "pct_chg_20d": -10.39,
-        "rsi_14": 50.2,
-        "signal_score": 0,
-        "ema_up": 1,
+        "close": 15.06,
+        "pct_chg": 1.07,
+        "pct_chg_5d": 1.28,
+        "pct_chg_20d": -9.55,
+        "rsi_14": 52.3,
+        "signal_score": 3,
+        "ema_up": 2,
         "ema_dirs": [
           true,
-          false,
+          true,
           false,
           false,
           false,
           false,
           false
         ],
-        "ema_score": 1,
+        "ema_score": 2,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 0,
+        "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🔥高开高走"
       },
-      "ema_up": 1,
+      "ema_up": 2,
       "ema_dirs": [
         true,
-        false,
+        true,
         false,
         false,
         false,
         false,
         false
       ],
-      "ema_score": 1
+      "ema_score": 2
     },
     "sz_000591": {
       "code": "000591",
@@ -8716,23 +8716,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 28.18,
-        "pct_chg": 0.64,
-        "pct_chg_5d": 0.64,
-        "pct_chg_20d": 3.41,
-        "rsi_14": 44.4,
+        "close": 28.3,
+        "pct_chg": 1.07,
+        "pct_chg_5d": 1.07,
+        "pct_chg_20d": 3.85,
+        "rsi_14": 45.4,
         "signal_score": 3,
-        "ema_up": 1,
+        "ema_up": 2,
         "ema_dirs": [
           false,
           false,
           false,
           false,
           false,
-          false,
+          true,
           true
         ],
-        "ema_score": 1,
+        "ema_score": 2,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 2,
@@ -8748,17 +8748,17 @@
       },
       "institution": "摩根大通",
       "rating": "增持",
-      "ema_up": 1,
+      "ema_up": 2,
       "ema_dirs": [
         false,
         false,
         false,
         false,
         false,
-        false,
+        true,
         true
       ],
-      "ema_score": 1,
+      "ema_score": 2,
       "industry": "资本市场服务",
       "sectors": [
         "资本市场服务"
@@ -8779,11 +8779,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 20.68,
-        "pct_chg": 1.37,
-        "pct_chg_5d": 1.72,
-        "pct_chg_20d": 9.24,
-        "rsi_14": 49.5,
+        "close": 20.77,
+        "pct_chg": 1.81,
+        "pct_chg_5d": 2.16,
+        "pct_chg_20d": 9.72,
+        "rsi_14": 50.0,
         "signal_score": 0.5,
         "ema_up": 3,
         "ema_dirs": [
@@ -8842,23 +8842,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 37.25,
-        "pct_chg": 5.11,
-        "pct_chg_5d": 3.85,
-        "pct_chg_20d": 8.66,
-        "rsi_14": 55.0,
+        "close": 37.56,
+        "pct_chg": 5.98,
+        "pct_chg_5d": 4.71,
+        "pct_chg_20d": 9.57,
+        "rsi_14": 56.2,
         "signal_score": 6.5,
-        "ema_up": 4,
+        "ema_up": 5,
         "ema_dirs": [
           false,
           false,
-          false,
+          true,
           true,
           true,
           true,
           true
         ],
-        "ema_score": 4,
+        "ema_score": 5,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 2,
@@ -8878,17 +8878,17 @@
       "sectors": [
         "资本市场服务"
       ],
-      "ema_up": 4,
+      "ema_up": 5,
       "ema_dirs": [
         false,
         false,
-        false,
+        true,
         true,
         true,
         true,
         true
       ],
-      "ema_score": 4
+      "ema_score": 5
     },
     "sz_000776": {
       "code": "000776",
@@ -8905,11 +8905,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 22.5,
-        "pct_chg": 1.81,
-        "pct_chg_5d": 2.46,
-        "pct_chg_20d": 4.65,
-        "rsi_14": 46.7,
+        "close": 22.54,
+        "pct_chg": 1.99,
+        "pct_chg_5d": 2.64,
+        "pct_chg_20d": 4.84,
+        "rsi_14": 46.9,
         "signal_score": 0,
         "ema_up": 1,
         "ema_dirs": [
@@ -8968,11 +8968,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 9.93,
-        "pct_chg": -1.1,
-        "pct_chg_5d": -1.39,
-        "pct_chg_20d": -2.36,
-        "rsi_14": 53.4,
+        "close": 9.94,
+        "pct_chg": -1.0,
+        "pct_chg_5d": -1.29,
+        "pct_chg_20d": -2.26,
+        "rsi_14": 53.7,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -9077,11 +9077,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 15.22,
-        "pct_chg": 0.07,
-        "pct_chg_5d": -4.4,
-        "pct_chg_20d": -15.26,
-        "rsi_14": 47.2,
+        "close": 15.03,
+        "pct_chg": -1.18,
+        "pct_chg_5d": -5.59,
+        "pct_chg_20d": -16.31,
+        "rsi_14": 46.5,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -9105,7 +9105,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "高盛",
       "rating": "买入",
@@ -9263,11 +9263,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 570.28,
-        "pct_chg": 0.26,
-        "pct_chg_5d": 11.64,
-        "pct_chg_20d": 3.88,
-        "rsi_14": 44.5,
+        "close": 563.25,
+        "pct_chg": -0.98,
+        "pct_chg_5d": 10.26,
+        "pct_chg_20d": 2.6,
+        "rsi_14": 43.6,
         "signal_score": 3,
         "ema_up": 6,
         "ema_dirs": [
@@ -9291,7 +9291,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "花旗",
       "rating": "买入",
@@ -9327,11 +9327,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 5.84,
-        "pct_chg": 1.57,
-        "pct_chg_5d": 4.85,
-        "pct_chg_20d": -2.01,
-        "rsi_14": 76.1,
+        "close": 5.85,
+        "pct_chg": 1.74,
+        "pct_chg_5d": 5.03,
+        "pct_chg_20d": -1.85,
+        "rsi_14": 76.3,
         "signal_score": 2.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -9391,13 +9391,13 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 1395.0,
-        "pct_chg": -1.13,
-        "pct_chg_5d": -1.31,
-        "pct_chg_20d": 6.73,
-        "rsi_14": 43.0,
-        "signal_score": 0.5,
-        "ema_up": 1,
+        "close": 1346.1,
+        "pct_chg": -4.6,
+        "pct_chg_5d": -4.77,
+        "pct_chg_20d": 2.99,
+        "rsi_14": 40.5,
+        "signal_score": 0,
+        "ema_up": 0,
         "ema_dirs": [
           false,
           false,
@@ -9405,9 +9405,9 @@
           false,
           false,
           false,
-          true
+          false
         ],
-        "ema_score": 1,
+        "ema_score": 0,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -9423,7 +9423,7 @@
       },
       "institution": "摩根士丹利",
       "rating": "推荐",
-      "ema_up": 1,
+      "ema_up": 0,
       "ema_dirs": [
         false,
         false,
@@ -9431,9 +9431,9 @@
         false,
         false,
         false,
-        true
+        false
       ],
-      "ema_score": 1,
+      "ema_score": 0,
       "industry": "软件和信息技术服务业",
       "sectors": [
         "软件和信息技术服务业"
@@ -9454,11 +9454,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 44.12,
-        "pct_chg": 1.31,
-        "pct_chg_5d": 6.88,
-        "pct_chg_20d": 2.2,
-        "rsi_14": 55.1,
+        "close": 44.14,
+        "pct_chg": 1.35,
+        "pct_chg_5d": 6.93,
+        "pct_chg_20d": 2.25,
+        "rsi_14": 55.2,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -9517,10 +9517,10 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 52.79,
-        "pct_chg": 8.4,
-        "pct_chg_5d": 22.43,
-        "pct_chg_20d": 34.12,
+        "close": 52.83,
+        "pct_chg": 8.48,
+        "pct_chg_5d": 22.52,
+        "pct_chg_20d": 34.22,
         "rsi_14": 64.6,
         "signal_score": 2.5,
         "ema_up": 7,
@@ -9581,11 +9581,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 39.92,
-        "pct_chg": 8.1,
-        "pct_chg_5d": 31.71,
-        "pct_chg_20d": 81.54,
-        "rsi_14": 92.2,
+        "close": 40.92,
+        "pct_chg": 10.8,
+        "pct_chg_5d": 35.0,
+        "pct_chg_20d": 86.08,
+        "rsi_14": 92.6,
         "signal_score": 2.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -9742,10 +9742,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 466.8,
-          "pct_chg": 2.32,
-          "pct_chg_20d": 4.34,
-          "rsi_14": 66.2,
+          "close": 473.2,
+          "pct_chg": 3.73,
+          "pct_chg_20d": 5.77,
+          "rsi_14": 68.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9767,23 +9767,23 @@
         "投行研报"
       ],
       "latest": {
-        "close": 466.8,
-        "pct_chg": 2.32,
-        "pct_chg_5d": -2.51,
-        "pct_chg_20d": 4.34,
-        "rsi_14": 66.2,
-        "signal_score": 3,
-        "ema_up": 5,
+        "close": 473.2,
+        "pct_chg": 3.73,
+        "pct_chg_5d": -1.17,
+        "pct_chg_20d": 5.77,
+        "rsi_14": 68.0,
+        "signal_score": 3.5,
+        "ema_up": 6,
         "ema_dirs": [
           false,
-          false,
+          true,
           true,
           true,
           true,
           true,
           true
         ],
-        "ema_score": 5,
+        "ema_score": 6,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -9795,19 +9795,19 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
-      "ema_up": 5,
+      "ema_up": 6,
       "ema_dirs": [
         false,
-        false,
+        true,
         true,
         true,
         true,
         true,
         true
       ],
-      "ema_score": 5
+      "ema_score": 6
     },
     "hk_00981": {
       "code": "00981",
@@ -9912,10 +9912,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 78.1,
-          "pct_chg": -0.32,
-          "pct_chg_20d": 5.54,
-          "rsi_14": 43.0,
+          "close": 77.3,
+          "pct_chg": -1.34,
+          "pct_chg_20d": 4.46,
+          "rsi_14": 42.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9934,23 +9934,23 @@
         "投行研报"
       ],
       "latest": {
-        "close": 78.1,
-        "pct_chg": -0.32,
-        "pct_chg_5d": 3.03,
-        "pct_chg_20d": 5.54,
-        "rsi_14": 43.0,
-        "signal_score": 0.5,
-        "ema_up": 5,
+        "close": 77.3,
+        "pct_chg": -1.34,
+        "pct_chg_5d": 1.98,
+        "pct_chg_20d": 4.46,
+        "rsi_14": 42.3,
+        "signal_score": 0,
+        "ema_up": 4,
         "ema_dirs": [
           false,
           false,
-          true,
+          false,
           true,
           true,
           true,
           true
         ],
-        "ema_score": 5,
+        "ema_score": 4,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -9964,17 +9964,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 5,
+      "ema_up": 4,
       "ema_dirs": [
         false,
         false,
-        true,
+        false,
         true,
         true,
         true,
         true
       ],
-      "ema_score": 5
+      "ema_score": 4
     },
     "hk_01801": {
       "code": "01801",
@@ -10079,10 +10079,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 96.95,
-          "pct_chg": 7.66,
-          "pct_chg_20d": 26.9,
-          "rsi_14": 76.9,
+          "close": 97.95,
+          "pct_chg": 8.77,
+          "pct_chg_20d": 28.21,
+          "rsi_14": 77.5,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10100,11 +10100,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 96.95,
-        "pct_chg": 7.66,
-        "pct_chg_5d": 12.47,
-        "pct_chg_20d": 26.9,
-        "rsi_14": 76.9,
+        "close": 97.95,
+        "pct_chg": 8.77,
+        "pct_chg_5d": 13.63,
+        "pct_chg_20d": 28.21,
+        "rsi_14": 77.5,
         "signal_score": 3.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -10255,10 +10255,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 39.38,
-          "pct_chg": 3.09,
-          "pct_chg_20d": 31.18,
-          "rsi_14": 74.8,
+          "close": 40.0,
+          "pct_chg": 4.71,
+          "pct_chg_20d": 33.24,
+          "rsi_14": 75.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10278,11 +10278,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 39.38,
-        "pct_chg": 3.09,
-        "pct_chg_5d": 10.43,
-        "pct_chg_20d": 31.18,
-        "rsi_14": 74.8,
+        "close": 40.0,
+        "pct_chg": 4.71,
+        "pct_chg_5d": 12.17,
+        "pct_chg_20d": 33.24,
+        "rsi_14": 75.9,
         "signal_score": 4.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -10423,10 +10423,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 6.29,
-          "pct_chg": -1.26,
-          "pct_chg_20d": -4.84,
-          "rsi_14": 51.8,
+          "close": 6.32,
+          "pct_chg": -0.78,
+          "pct_chg_20d": -4.39,
+          "rsi_14": 53.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10444,11 +10444,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 6.29,
-        "pct_chg": -1.26,
-        "pct_chg_5d": 2.11,
-        "pct_chg_20d": -4.84,
-        "rsi_14": 51.8,
+        "close": 6.32,
+        "pct_chg": -0.78,
+        "pct_chg_5d": 2.6,
+        "pct_chg_20d": -4.39,
+        "rsi_14": 53.3,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -10472,7 +10472,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "📉低开"
+        "开盘_标签": "⚡低开高走"
       },
       "ema_up": 7,
       "ema_dirs": [
@@ -10593,10 +10593,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 49.62,
-          "pct_chg": -1.35,
-          "pct_chg_20d": -19.71,
-          "rsi_14": 20.0,
+          "close": 49.78,
+          "pct_chg": -1.03,
+          "pct_chg_20d": -19.45,
+          "rsi_14": 20.1,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10614,11 +10614,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 49.62,
-        "pct_chg": -1.35,
-        "pct_chg_5d": -10.59,
-        "pct_chg_20d": -19.71,
-        "rsi_14": 20.0,
+        "close": 49.78,
+        "pct_chg": -1.03,
+        "pct_chg_5d": -10.31,
+        "pct_chg_20d": -19.45,
+        "rsi_14": 20.1,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -10664,7 +10664,7 @@
       "fund_type": "混合",
       "first_date": "2026-07-08",
       "first_signal": 0,
-      "max_signal": 1,
+      "max_signal": 2,
       "history": [
         {
           "date": "2026-07-08",
@@ -10758,15 +10758,15 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 1,
-          "close": 1.3,
-          "pct_chg": 0.78,
-          "pct_chg_20d": -12.16,
-          "rsi_14": 48.5,
+          "signal_count": 2,
+          "close": 1.36,
+          "pct_chg": 5.43,
+          "pct_chg_20d": -8.11,
+          "rsi_14": 56.4,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": false,
+          "四量图_机构变红": true,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -10781,12 +10781,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 1.3,
-        "pct_chg": 0.78,
-        "pct_chg_5d": -2.99,
-        "pct_chg_20d": -12.16,
-        "rsi_14": 48.5,
-        "signal_score": 3,
+        "close": 1.36,
+        "pct_chg": 5.43,
+        "pct_chg_5d": 1.49,
+        "pct_chg_20d": -8.11,
+        "rsi_14": 56.4,
+        "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -10803,11 +10803,11 @@
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 2,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 ➖平开"
       },
@@ -10926,10 +10926,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 26.68,
-          "pct_chg": 0.53,
-          "pct_chg_20d": -5.92,
-          "rsi_14": 43.6,
+          "close": 27.1,
+          "pct_chg": 2.11,
+          "pct_chg_20d": -4.44,
+          "rsi_14": 47.3,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10948,11 +10948,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 26.68,
-        "pct_chg": 0.53,
-        "pct_chg_5d": -2.77,
-        "pct_chg_20d": -5.92,
-        "rsi_14": 43.6,
+        "close": 27.1,
+        "pct_chg": 2.11,
+        "pct_chg_5d": -1.24,
+        "pct_chg_20d": -4.44,
+        "rsi_14": 47.3,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -10976,7 +10976,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -11093,10 +11093,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 21.6,
-          "pct_chg": 2.27,
-          "pct_chg_20d": 2.27,
-          "rsi_14": 58.4,
+          "close": 21.9,
+          "pct_chg": 3.69,
+          "pct_chg_20d": 3.69,
+          "rsi_14": 60.3,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -11117,23 +11117,23 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 21.6,
-        "pct_chg": 2.27,
-        "pct_chg_5d": -0.92,
-        "pct_chg_20d": 2.27,
-        "rsi_14": 58.4,
+        "close": 21.9,
+        "pct_chg": 3.69,
+        "pct_chg_5d": 0.46,
+        "pct_chg_20d": 3.69,
+        "rsi_14": 60.3,
         "signal_score": 6,
-        "ema_up": 1,
+        "ema_up": 2,
         "ema_dirs": [
           false,
           false,
           false,
           false,
           false,
-          false,
+          true,
           true
         ],
-        "ema_score": 1,
+        "ema_score": 2,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 1,
@@ -11145,19 +11145,19 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
-      "ema_up": 1,
+      "ema_up": 2,
       "ema_dirs": [
         false,
         false,
         false,
         false,
         false,
-        false,
+        true,
         true
       ],
-      "ema_score": 1
+      "ema_score": 2
     },
     "hk_02268": {
       "code": "02268",
@@ -11262,10 +11262,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 63.2,
-          "pct_chg": 8.03,
-          "pct_chg_20d": 36.44,
-          "rsi_14": 65.5,
+          "close": 63.4,
+          "pct_chg": 8.38,
+          "pct_chg_20d": 36.87,
+          "rsi_14": 65.7,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -11283,11 +11283,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 63.2,
-        "pct_chg": 8.03,
-        "pct_chg_5d": 8.4,
-        "pct_chg_20d": 36.44,
-        "rsi_14": 65.5,
+        "close": 63.4,
+        "pct_chg": 8.38,
+        "pct_chg_5d": 8.75,
+        "pct_chg_20d": 36.87,
+        "rsi_14": 65.7,
         "signal_score": 5.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -11428,17 +11428,17 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 25.28,
-          "pct_chg": 7.12,
-          "pct_chg_20d": 66.53,
-          "rsi_14": 92.6,
+          "close": 25.78,
+          "pct_chg": 9.24,
+          "pct_chg_20d": 69.83,
+          "rsi_14": 92.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": true,
           "上涨趋势_条件1": true,
           "上涨趋势_条件2": false,
-          "上涨趋势_条件3": false,
+          "上涨趋势_条件3": true,
           "上涨趋势_条件4": true,
           "上涨趋势": true,
           "三线共振": false
@@ -11449,11 +11449,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 25.28,
-        "pct_chg": 7.12,
-        "pct_chg_5d": 25.02,
-        "pct_chg_20d": 66.53,
-        "rsi_14": 92.6,
+        "close": 25.78,
+        "pct_chg": 9.24,
+        "pct_chg_5d": 27.5,
+        "pct_chg_20d": 69.83,
+        "rsi_14": 92.9,
         "signal_score": 2.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -11594,10 +11594,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 40.08,
-          "pct_chg": 6.43,
-          "pct_chg_20d": 27.16,
-          "rsi_14": 70.9,
+          "close": 40.4,
+          "pct_chg": 7.28,
+          "pct_chg_20d": 28.17,
+          "rsi_14": 71.5,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -11614,11 +11614,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 40.08,
-        "pct_chg": 6.43,
-        "pct_chg_5d": 15.97,
-        "pct_chg_20d": 27.16,
-        "rsi_14": 70.9,
+        "close": 40.4,
+        "pct_chg": 7.28,
+        "pct_chg_5d": 16.9,
+        "pct_chg_20d": 28.17,
+        "rsi_14": 71.5,
         "signal_score": 3.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -11759,10 +11759,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 15.68,
-          "pct_chg": 4.26,
-          "pct_chg_20d": -4.27,
-          "rsi_14": 23.1,
+          "close": 15.5,
+          "pct_chg": 3.06,
+          "pct_chg_20d": -5.37,
+          "rsi_14": 21.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -11779,11 +11779,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 15.68,
-        "pct_chg": 4.26,
-        "pct_chg_5d": 0.84,
-        "pct_chg_20d": -4.27,
-        "rsi_14": 23.1,
+        "close": 15.5,
+        "pct_chg": 3.06,
+        "pct_chg_5d": -0.32,
+        "pct_chg_20d": -5.37,
+        "rsi_14": 21.9,
         "signal_score": 3.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -11938,10 +11938,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 8.39,
-          "pct_chg": 3.45,
-          "pct_chg_20d": 18.5,
-          "rsi_14": 75.6,
+          "close": 8.49,
+          "pct_chg": 4.69,
+          "pct_chg_20d": 19.92,
+          "rsi_14": 76.4,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -11960,11 +11960,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 8.39,
-        "pct_chg": 3.45,
-        "pct_chg_5d": 7.02,
-        "pct_chg_20d": 18.5,
-        "rsi_14": 75.6,
+        "close": 8.49,
+        "pct_chg": 4.69,
+        "pct_chg_5d": 8.29,
+        "pct_chg_20d": 19.92,
+        "rsi_14": 76.4,
         "signal_score": 3.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -12150,10 +12150,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 4.43,
-          "pct_chg": 0.23,
-          "pct_chg_20d": -1.77,
-          "rsi_14": 60.3,
+          "close": 4.46,
+          "pct_chg": 0.9,
+          "pct_chg_20d": -1.11,
+          "rsi_14": 60.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -12171,23 +12171,23 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 4.43,
-        "pct_chg": 0.23,
-        "pct_chg_5d": 0.45,
-        "pct_chg_20d": -1.77,
-        "rsi_14": 60.3,
+        "close": 4.46,
+        "pct_chg": 0.9,
+        "pct_chg_5d": 1.13,
+        "pct_chg_20d": -1.11,
+        "rsi_14": 60.9,
         "signal_score": 3,
-        "ema_up": 2,
+        "ema_up": 3,
         "ema_dirs": [
           true,
           true,
-          false,
+          true,
           false,
           false,
           false,
           false
         ],
-        "ema_score": 2,
+        "ema_score": 3,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -12201,17 +12201,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 2,
+      "ema_up": 3,
       "ema_dirs": [
         true,
         true,
-        false,
+        true,
         false,
         false,
         false,
         false
       ],
-      "ema_score": 2
+      "ema_score": 3
     },
     "sh_605117": {
       "code": "605117",
@@ -12228,11 +12228,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 87.95,
-        "pct_chg": 2.63,
-        "pct_chg_5d": -1.81,
-        "pct_chg_20d": -14.13,
-        "rsi_14": 36.8,
+        "close": 85.73,
+        "pct_chg": 0.04,
+        "pct_chg_5d": -4.29,
+        "pct_chg_20d": -16.3,
+        "rsi_14": 33.3,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -12256,7 +12256,7 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "花旗",
       "rating": "买入",
@@ -12383,11 +12383,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 71.9,
-        "pct_chg": 2.71,
-        "pct_chg_5d": 14.4,
-        "pct_chg_20d": 31.13,
-        "rsi_14": 71.5,
+        "close": 74.0,
+        "pct_chg": 5.71,
+        "pct_chg_5d": 17.74,
+        "pct_chg_20d": 34.96,
+        "rsi_14": 73.1,
         "signal_score": 4.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -12494,12 +12494,12 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 403.02,
-        "pct_chg": 4.17,
-        "pct_chg_5d": 3.07,
-        "pct_chg_20d": 7.12,
-        "rsi_14": 51.6,
-        "signal_score": 0.5,
+        "close": 392.0,
+        "pct_chg": 1.33,
+        "pct_chg_5d": 0.26,
+        "pct_chg_20d": 4.19,
+        "rsi_14": 50.1,
+        "signal_score": 0,
         "ema_up": 1,
         "ema_dirs": [
           false,
@@ -12522,7 +12522,7 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "花旗",
       "rating": "买入",
@@ -12604,11 +12604,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 112.5,
-        "pct_chg": 4.46,
-        "pct_chg_5d": 3.62,
-        "pct_chg_20d": -3.43,
-        "rsi_14": 50.9,
+        "close": 112.26,
+        "pct_chg": 4.23,
+        "pct_chg_5d": 3.4,
+        "pct_chg_20d": -3.64,
+        "rsi_14": 50.6,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -12759,12 +12759,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 187.89,
-        "pct_chg": 3.77,
-        "pct_chg_5d": -1.63,
-        "pct_chg_20d": -18.94,
-        "rsi_14": 41.0,
-        "signal_score": 3,
+        "close": 181.34,
+        "pct_chg": 0.15,
+        "pct_chg_5d": -5.06,
+        "pct_chg_20d": -21.77,
+        "rsi_14": 39.4,
+        "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -12787,7 +12787,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "花旗",
       "rating": "未评级",
@@ -12823,23 +12823,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 128.33,
-        "pct_chg": 1.22,
-        "pct_chg_5d": 8.75,
-        "pct_chg_20d": -7.65,
-        "rsi_14": 44.8,
+        "close": 126.83,
+        "pct_chg": 0.04,
+        "pct_chg_5d": 7.48,
+        "pct_chg_20d": -8.73,
+        "rsi_14": 43.9,
         "signal_score": 3,
-        "ema_up": 7,
+        "ema_up": 6,
         "ema_dirs": [
           true,
           true,
           true,
           true,
           true,
-          true,
+          false,
           true
         ],
-        "ema_score": 7,
+        "ema_score": 6,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -12855,17 +12855,17 @@
       },
       "institution": "花旗",
       "rating": "未评级",
-      "ema_up": 7,
+      "ema_up": 6,
       "ema_dirs": [
         true,
         true,
         true,
         true,
         true,
-        true,
+        false,
         true
       ],
-      "ema_score": 7,
+      "ema_score": 6,
       "industry": "计算机、通信和其他电子设备制造业",
       "sectors": [
         "计算机、通信和其他电子设备制造业"
@@ -12886,15 +12886,15 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 15.85,
-        "pct_chg": -5.93,
-        "pct_chg_5d": 1.67,
-        "pct_chg_20d": -18.09,
-        "rsi_14": 38.7,
+        "close": 15.32,
+        "pct_chg": -9.08,
+        "pct_chg_5d": -1.73,
+        "pct_chg_20d": -20.83,
+        "rsi_14": 37.2,
         "signal_score": 0,
-        "ema_up": 7,
+        "ema_up": 6,
         "ema_dirs": [
-          true,
+          false,
           true,
           true,
           true,
@@ -12902,7 +12902,7 @@
           true,
           true
         ],
-        "ema_score": 7,
+        "ema_score": 6,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -12918,9 +12918,9 @@
       },
       "institution": "花旗",
       "rating": "未评级",
-      "ema_up": 7,
+      "ema_up": 6,
       "ema_dirs": [
-        true,
+        false,
         true,
         true,
         true,
@@ -12928,7 +12928,7 @@
         true,
         true
       ],
-      "ema_score": 7,
+      "ema_score": 6,
       "industry": "计算机、通信和其他电子设备制造业",
       "sectors": [
         "计算机、通信和其他电子设备制造业"
@@ -13058,11 +13058,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 47.9,
-        "pct_chg": 0.5,
-        "pct_chg_5d": -4.96,
-        "pct_chg_20d": -29.26,
-        "rsi_14": 33.7,
+        "close": 47.3,
+        "pct_chg": -0.76,
+        "pct_chg_5d": -6.15,
+        "pct_chg_20d": -30.14,
+        "rsi_14": 32.8,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -13121,11 +13121,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 13.59,
-        "pct_chg": 2.72,
-        "pct_chg_5d": -5.69,
-        "pct_chg_20d": -22.3,
-        "rsi_14": 26.6,
+        "close": 13.61,
+        "pct_chg": 2.87,
+        "pct_chg_5d": -5.55,
+        "pct_chg_20d": -22.18,
+        "rsi_14": 26.9,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -13375,12 +13375,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 27.55,
-        "pct_chg": 2.53,
-        "pct_chg_5d": -1.61,
-        "pct_chg_20d": 13.47,
-        "rsi_14": 49.1,
-        "signal_score": 1.0,
+        "close": 28.51,
+        "pct_chg": 6.1,
+        "pct_chg_5d": 1.82,
+        "pct_chg_20d": 17.42,
+        "rsi_14": 53.5,
+        "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -13397,11 +13397,11 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 0,
+        "signal_count": 1,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
@@ -13454,10 +13454,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 48.41,
-          "pct_chg": 2.24,
-          "pct_chg_20d": -24.35,
-          "rsi_14": 22.6,
+          "close": 47.67,
+          "pct_chg": 0.68,
+          "pct_chg_20d": -25.5,
+          "rsi_14": 20.6,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13476,11 +13476,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 48.41,
-        "pct_chg": 2.24,
-        "pct_chg_5d": -9.12,
-        "pct_chg_20d": -24.35,
-        "rsi_14": 22.6,
+        "close": 47.67,
+        "pct_chg": 0.68,
+        "pct_chg_5d": -10.51,
+        "pct_chg_20d": -25.5,
+        "rsi_14": 20.6,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -13504,7 +13504,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "industry": "有色金属冶炼和压延加工业",
       "sectors": [
@@ -13589,10 +13589,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 112.6,
-          "pct_chg": 1.62,
-          "pct_chg_20d": 5.23,
-          "rsi_14": 69.2,
+          "close": 114.2,
+          "pct_chg": 3.07,
+          "pct_chg_20d": 6.73,
+          "rsi_14": 70.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -13613,12 +13613,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 112.6,
-        "pct_chg": 1.62,
-        "pct_chg_5d": 4.74,
-        "pct_chg_20d": 5.23,
-        "rsi_14": 69.2,
-        "signal_score": 3.5,
+        "close": 114.2,
+        "pct_chg": 3.07,
+        "pct_chg_5d": 6.23,
+        "pct_chg_20d": 6.73,
+        "rsi_14": 70.6,
+        "signal_score": 2.5,
         "ema_up": 7,
         "ema_dirs": [
           true,
@@ -13722,10 +13722,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 58.3,
-          "pct_chg": 0.0,
-          "pct_chg_20d": -32.13,
-          "rsi_14": 28.0,
+          "close": 55.9,
+          "pct_chg": -4.12,
+          "pct_chg_20d": -34.92,
+          "rsi_14": 27.1,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13745,11 +13745,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 58.3,
-        "pct_chg": 0.0,
-        "pct_chg_5d": -12.66,
-        "pct_chg_20d": -32.13,
-        "rsi_14": 28.0,
+        "close": 55.9,
+        "pct_chg": -4.12,
+        "pct_chg_5d": -16.25,
+        "pct_chg_20d": -34.92,
+        "rsi_14": 27.1,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -13854,10 +13854,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 65.1,
-          "pct_chg": 0.7,
-          "pct_chg_20d": -34.24,
-          "rsi_14": 13.0,
+          "close": 62.4,
+          "pct_chg": -3.48,
+          "pct_chg_20d": -36.97,
+          "rsi_14": 12.2,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13876,11 +13876,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 65.1,
-        "pct_chg": 0.7,
-        "pct_chg_5d": -12.32,
-        "pct_chg_20d": -34.24,
-        "rsi_14": 13.0,
+        "close": 62.4,
+        "pct_chg": -3.48,
+        "pct_chg_5d": -15.96,
+        "pct_chg_20d": -36.97,
+        "rsi_14": 12.2,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -13985,10 +13985,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 33.7,
-          "pct_chg": -1.35,
-          "pct_chg_20d": -28.21,
-          "rsi_14": 22.1,
+          "close": 33.36,
+          "pct_chg": -2.34,
+          "pct_chg_20d": -28.93,
+          "rsi_14": 21.7,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -14007,11 +14007,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 33.7,
-        "pct_chg": -1.35,
-        "pct_chg_5d": -7.32,
-        "pct_chg_20d": -28.21,
-        "rsi_14": 22.1,
+        "close": 33.36,
+        "pct_chg": -2.34,
+        "pct_chg_5d": -8.25,
+        "pct_chg_20d": -28.93,
+        "rsi_14": 21.7,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -14116,10 +14116,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 32.06,
-          "pct_chg": -0.37,
-          "pct_chg_20d": -12.98,
-          "rsi_14": 39.5,
+          "close": 32.16,
+          "pct_chg": -0.06,
+          "pct_chg_20d": -12.7,
+          "rsi_14": 39.8,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14137,11 +14137,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 32.06,
-        "pct_chg": -0.37,
-        "pct_chg_5d": 8.46,
-        "pct_chg_20d": -12.98,
-        "rsi_14": 39.5,
+        "close": 32.16,
+        "pct_chg": -0.06,
+        "pct_chg_5d": 8.8,
+        "pct_chg_20d": -12.7,
+        "rsi_14": 39.8,
         "signal_score": 3,
         "ema_up": 4,
         "ema_dirs": [
@@ -14255,15 +14255,15 @@
         },
         {
           "date": "2026-07-15",
-          "signal_count": 1,
-          "close": 42.94,
-          "pct_chg": 1.3,
-          "pct_chg_20d": 1.49,
-          "rsi_14": 58.7,
+          "signal_count": 0,
+          "close": 42.49,
+          "pct_chg": 0.24,
+          "pct_chg_20d": 0.43,
+          "rsi_14": 57.8,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -14277,12 +14277,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 42.94,
-        "pct_chg": 1.3,
-        "pct_chg_5d": 1.42,
-        "pct_chg_20d": 1.49,
-        "rsi_14": 58.7,
-        "signal_score": 3,
+        "close": 42.49,
+        "pct_chg": 0.24,
+        "pct_chg_5d": 0.35,
+        "pct_chg_20d": 0.43,
+        "rsi_14": 57.8,
+        "signal_score": 0,
         "ema_up": 1,
         "ema_dirs": [
           false,
@@ -14299,13 +14299,13 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 1,
       "ema_dirs": [
@@ -14390,10 +14390,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 5.3,
-          "pct_chg": 3.72,
-          "pct_chg_20d": 13.01,
-          "rsi_14": 72.6,
+          "close": 5.4,
+          "pct_chg": 5.68,
+          "pct_chg_20d": 15.14,
+          "rsi_14": 73.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14413,11 +14413,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 5.3,
-        "pct_chg": 3.72,
-        "pct_chg_5d": 9.96,
-        "pct_chg_20d": 13.01,
-        "rsi_14": 72.6,
+        "close": 5.4,
+        "pct_chg": 5.68,
+        "pct_chg_5d": 12.03,
+        "pct_chg_20d": 15.14,
+        "rsi_14": 73.9,
         "signal_score": 3.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -14522,10 +14522,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 146.2,
-          "pct_chg": 3.98,
-          "pct_chg_20d": -14.9,
-          "rsi_14": 43.8,
+          "close": 140.7,
+          "pct_chg": 0.07,
+          "pct_chg_20d": -18.1,
+          "rsi_14": 42.1,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14543,11 +14543,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 146.2,
-        "pct_chg": 3.98,
-        "pct_chg_5d": 3.03,
-        "pct_chg_20d": -14.9,
-        "rsi_14": 43.8,
+        "close": 140.7,
+        "pct_chg": 0.07,
+        "pct_chg_5d": -0.85,
+        "pct_chg_20d": -18.1,
+        "rsi_14": 42.1,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -14571,7 +14571,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -14616,10 +14616,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 202.71,
-          "pct_chg": 8.98,
-          "pct_chg_20d": 3.98,
-          "rsi_14": 50.6,
+          "close": 197.44,
+          "pct_chg": 6.14,
+          "pct_chg_20d": 1.28,
+          "rsi_14": 48.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14638,11 +14638,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 202.71,
-        "pct_chg": 8.98,
-        "pct_chg_5d": 11.69,
-        "pct_chg_20d": 3.98,
-        "rsi_14": 50.6,
+        "close": 197.44,
+        "pct_chg": 6.14,
+        "pct_chg_5d": 8.78,
+        "pct_chg_20d": 1.28,
+        "rsi_14": 48.9,
         "signal_score": 3,
         "ema_up": 2,
         "ema_dirs": [
@@ -14751,10 +14751,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 1.96,
-          "pct_chg": -0.51,
-          "pct_chg_20d": -18.33,
-          "rsi_14": 45.5,
+          "close": 1.97,
+          "pct_chg": 0.0,
+          "pct_chg_20d": -17.92,
+          "rsi_14": 46.5,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14772,11 +14772,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 1.96,
-        "pct_chg": -0.51,
-        "pct_chg_5d": -1.01,
-        "pct_chg_20d": -18.33,
-        "rsi_14": 45.5,
+        "close": 1.97,
+        "pct_chg": 0.0,
+        "pct_chg_5d": -0.51,
+        "pct_chg_20d": -17.92,
+        "rsi_14": 46.5,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -15011,10 +15011,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 17.87,
-          "pct_chg": 0.11,
-          "pct_chg_20d": -39.55,
-          "rsi_14": 37.7,
+          "close": 17.49,
+          "pct_chg": -2.02,
+          "pct_chg_20d": -40.83,
+          "rsi_14": 36.9,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15032,11 +15032,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 17.87,
-        "pct_chg": 0.11,
-        "pct_chg_5d": -4.79,
-        "pct_chg_20d": -39.55,
-        "rsi_14": 37.7,
+        "close": 17.49,
+        "pct_chg": -2.02,
+        "pct_chg_5d": -6.82,
+        "pct_chg_20d": -40.83,
+        "rsi_14": 36.9,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -15060,7 +15060,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -15141,10 +15141,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 28.76,
-          "pct_chg": 1.27,
-          "pct_chg_20d": 1.84,
-          "rsi_14": 52.2,
+          "close": 27.98,
+          "pct_chg": -1.48,
+          "pct_chg_20d": -0.92,
+          "rsi_14": 49.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -15162,11 +15162,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 28.76,
-        "pct_chg": 1.27,
-        "pct_chg_5d": -10.96,
-        "pct_chg_20d": 1.84,
-        "rsi_14": 52.2,
+        "close": 27.98,
+        "pct_chg": -1.48,
+        "pct_chg_5d": -13.37,
+        "pct_chg_20d": -0.92,
+        "rsi_14": 49.6,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -15219,23 +15219,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 19.22,
-        "pct_chg": -0.05,
-        "pct_chg_5d": 6.42,
-        "pct_chg_20d": -7.68,
-        "rsi_14": 59.7,
+        "close": 19.38,
+        "pct_chg": 0.78,
+        "pct_chg_5d": 7.31,
+        "pct_chg_20d": -6.92,
+        "rsi_14": 60.9,
         "signal_score": 3,
-        "ema_up": 4,
+        "ema_up": 5,
         "ema_dirs": [
           true,
           true,
           true,
           true,
-          false,
+          true,
           false,
           false
         ],
-        "ema_score": 4,
+        "ema_score": 5,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -15247,7 +15247,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚡低开高走"
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "institution": "摩根大通",
       "rating": "中性",
@@ -15255,17 +15255,17 @@
       "sectors": [
         "煤炭开采和洗选业"
       ],
-      "ema_up": 4,
+      "ema_up": 5,
       "ema_dirs": [
         true,
         true,
         true,
         true,
-        false,
+        true,
         false,
         false
       ],
-      "ema_score": 4
+      "ema_score": 5
     },
     "sh_600547": {
       "code": "600547",
@@ -15282,12 +15282,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 24.48,
-        "pct_chg": -3.09,
-        "pct_chg_5d": -0.69,
-        "pct_chg_20d": -13.35,
-        "rsi_14": 52.6,
-        "signal_score": 3,
+        "close": 24.62,
+        "pct_chg": -2.53,
+        "pct_chg_5d": -0.12,
+        "pct_chg_20d": -12.85,
+        "rsi_14": 53.3,
+        "signal_score": 6,
         "ema_up": 1,
         "ema_dirs": [
           true,
@@ -15304,11 +15304,11 @@
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 2,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -15345,11 +15345,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 33.63,
-        "pct_chg": -3.78,
-        "pct_chg_5d": 7.38,
-        "pct_chg_20d": 5.16,
-        "rsi_14": 71.7,
+        "close": 33.82,
+        "pct_chg": -3.23,
+        "pct_chg_5d": 7.98,
+        "pct_chg_20d": 5.75,
+        "rsi_14": 72.6,
         "signal_score": 2.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -15410,11 +15410,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 28.67,
-        "pct_chg": -1.34,
-        "pct_chg_5d": 4.79,
-        "pct_chg_20d": -5.35,
-        "rsi_14": 65.1,
+        "close": 28.83,
+        "pct_chg": -0.79,
+        "pct_chg_5d": 5.37,
+        "pct_chg_20d": -4.82,
+        "rsi_14": 66.3,
         "signal_score": 3,
         "ema_up": 7,
         "ema_dirs": [
@@ -15474,11 +15474,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 17.89,
-        "pct_chg": -1.76,
-        "pct_chg_5d": 2.05,
-        "pct_chg_20d": -10.68,
-        "rsi_14": 48.7,
+        "close": 17.86,
+        "pct_chg": -1.92,
+        "pct_chg_5d": 1.88,
+        "pct_chg_20d": -10.83,
+        "rsi_14": 48.5,
         "signal_score": 0,
         "ema_up": 2,
         "ema_dirs": [
@@ -15537,11 +15537,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 20.32,
-        "pct_chg": 1.2,
-        "pct_chg_5d": 1.45,
-        "pct_chg_20d": -0.64,
-        "rsi_14": 41.5,
+        "close": 20.5,
+        "pct_chg": 2.09,
+        "pct_chg_5d": 2.35,
+        "pct_chg_20d": 0.24,
+        "rsi_14": 43.1,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -15601,11 +15601,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 42.1,
-        "pct_chg": 0.38,
-        "pct_chg_5d": 0.21,
-        "pct_chg_20d": -6.69,
-        "rsi_14": 45.5,
+        "close": 41.83,
+        "pct_chg": -0.26,
+        "pct_chg_5d": -0.43,
+        "pct_chg_20d": -7.29,
+        "rsi_14": 44.9,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -15629,7 +15629,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🔥高开高走"
+        "开盘_标签": "⚠️高开低走"
       },
       "institution": "德银",
       "rating": "持有",
@@ -15666,11 +15666,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 65.2,
-        "pct_chg": -0.61,
-        "pct_chg_5d": -1.23,
-        "pct_chg_20d": -10.56,
-        "rsi_14": 33.2,
+        "close": 64.54,
+        "pct_chg": -1.62,
+        "pct_chg_5d": -2.23,
+        "pct_chg_20d": -11.47,
+        "rsi_14": 32.6,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -15731,11 +15731,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 6.67,
-        "pct_chg": -4.99,
-        "pct_chg_5d": -12.58,
-        "pct_chg_20d": 9.34,
-        "rsi_14": 42.3,
+        "close": 6.43,
+        "pct_chg": -8.4,
+        "pct_chg_5d": -15.73,
+        "pct_chg_20d": 5.41,
+        "rsi_14": 40.6,
         "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -15795,12 +15795,12 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 9.34,
-        "pct_chg": 2.52,
-        "pct_chg_5d": -2.2,
-        "pct_chg_20d": -20.1,
-        "rsi_14": 30.3,
-        "signal_score": 4.0,
+        "close": 9.27,
+        "pct_chg": 1.76,
+        "pct_chg_5d": -2.93,
+        "pct_chg_20d": -20.7,
+        "rsi_14": 28.7,
+        "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -15859,12 +15859,12 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 26.55,
-        "pct_chg": 5.99,
-        "pct_chg_5d": 3.67,
-        "pct_chg_20d": -12.35,
-        "rsi_14": 37.2,
-        "signal_score": 6,
+        "close": 26.4,
+        "pct_chg": 5.39,
+        "pct_chg_5d": 3.08,
+        "pct_chg_20d": -12.84,
+        "rsi_14": 36.0,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -15881,11 +15881,11 @@
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 2,
+        "signal_count": 1,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
@@ -15954,11 +15954,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 376.82,
-        "pct_chg": 3.52,
-        "pct_chg_5d": 4.38,
-        "pct_chg_20d": -6.62,
-        "rsi_14": 40.7,
+        "close": 376.73,
+        "pct_chg": 3.49,
+        "pct_chg_5d": 4.36,
+        "pct_chg_20d": -6.64,
+        "rsi_14": 40.6,
         "signal_score": 6,
         "ema_up": 1,
         "ema_dirs": [
@@ -16018,11 +16018,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 21.54,
-        "pct_chg": 3.96,
-        "pct_chg_5d": -9.69,
-        "pct_chg_20d": -12.19,
-        "rsi_14": 46.4,
+        "close": 21.19,
+        "pct_chg": 2.27,
+        "pct_chg_5d": -11.15,
+        "pct_chg_20d": -13.62,
+        "rsi_14": 45.3,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -16129,11 +16129,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 400.25,
-        "pct_chg": -1.25,
-        "pct_chg_5d": -5.38,
-        "pct_chg_20d": 25.47,
-        "rsi_14": 50.2,
+        "close": 389.92,
+        "pct_chg": -3.79,
+        "pct_chg_5d": -7.82,
+        "pct_chg_20d": 22.23,
+        "rsi_14": 48.3,
         "signal_score": 1.0,
         "ema_up": 1,
         "ema_dirs": [
@@ -16193,12 +16193,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 53.08,
-        "pct_chg": -2.8,
-        "pct_chg_5d": -11.21,
-        "pct_chg_20d": 12.6,
-        "rsi_14": 37.1,
-        "signal_score": 1.0,
+        "close": 50.39,
+        "pct_chg": -7.73,
+        "pct_chg_5d": -15.71,
+        "pct_chg_20d": 6.89,
+        "rsi_14": 34.3,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -16256,15 +16256,15 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 155.83,
-        "pct_chg": -3.21,
-        "pct_chg_5d": 2.45,
-        "pct_chg_20d": 19.74,
-        "rsi_14": 49.4,
-        "signal_score": 7.0,
-        "ema_up": 7,
+        "close": 153.24,
+        "pct_chg": -4.81,
+        "pct_chg_5d": 0.75,
+        "pct_chg_20d": 17.75,
+        "rsi_14": 48.0,
+        "signal_score": 1.0,
+        "ema_up": 6,
         "ema_dirs": [
-          true,
+          false,
           true,
           true,
           true,
@@ -16272,17 +16272,17 @@
           true,
           true
         ],
-        "ema_score": 7,
+        "ema_score": 6,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
-        "上涨趋势": true,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 2,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -16292,9 +16292,9 @@
       "sectors": [
         "计算机、通信和其他电子设备制造业"
       ],
-      "ema_up": 7,
+      "ema_up": 6,
       "ema_dirs": [
-        true,
+        false,
         true,
         true,
         true,
@@ -16302,7 +16302,7 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 6
     },
     "sz_300274": {
       "code": "300274",
@@ -16321,11 +16321,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 109.7,
-        "pct_chg": 1.3,
-        "pct_chg_5d": -11.88,
-        "pct_chg_20d": -28.06,
-        "rsi_14": 17.6,
+        "close": 107.96,
+        "pct_chg": -0.3,
+        "pct_chg_5d": -13.28,
+        "pct_chg_20d": -29.2,
+        "rsi_14": 15.8,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -16349,7 +16349,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "花旗",
       "rating": "未评级",
@@ -16385,12 +16385,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 289.96,
-        "pct_chg": -0.11,
-        "pct_chg_5d": 3.68,
-        "pct_chg_20d": -18.43,
-        "rsi_14": 34.7,
-        "signal_score": 3,
+        "close": 280.75,
+        "pct_chg": -3.28,
+        "pct_chg_5d": 0.39,
+        "pct_chg_20d": -21.02,
+        "rsi_14": 33.2,
+        "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -16448,11 +16448,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 26.78,
-        "pct_chg": -2.19,
-        "pct_chg_5d": -3.36,
-        "pct_chg_20d": -13.81,
-        "rsi_14": 33.5,
+        "close": 26.42,
+        "pct_chg": -3.51,
+        "pct_chg_5d": -4.66,
+        "pct_chg_20d": -14.97,
+        "rsi_14": 32.4,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -16511,23 +16511,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 21.39,
-        "pct_chg": 2.39,
-        "pct_chg_5d": 7.54,
-        "pct_chg_20d": 1.95,
-        "rsi_14": 51.0,
+        "close": 20.73,
+        "pct_chg": -0.77,
+        "pct_chg_5d": 4.22,
+        "pct_chg_20d": -1.19,
+        "rsi_14": 48.5,
         "signal_score": 3,
-        "ema_up": 4,
+        "ema_up": 3,
         "ema_dirs": [
           true,
           true,
           true,
-          true,
+          false,
           false,
           false,
           false
         ],
-        "ema_score": 4,
+        "ema_score": 3,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -16539,7 +16539,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
       "rating": "未评级",
@@ -16547,17 +16547,17 @@
       "sectors": [
         "电气机械和器材制造业"
       ],
-      "ema_up": 4,
+      "ema_up": 3,
       "ema_dirs": [
         true,
         true,
         true,
-        true,
+        false,
         false,
         false,
         false
       ],
-      "ema_score": 4
+      "ema_score": 3
     },
     "sz_300014": {
       "code": "300014",
@@ -16575,11 +16575,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 53.24,
-        "pct_chg": 1.88,
-        "pct_chg_5d": -5.06,
-        "pct_chg_20d": -20.39,
-        "rsi_14": 21.5,
+        "close": 52.65,
+        "pct_chg": 0.75,
+        "pct_chg_5d": -6.12,
+        "pct_chg_20d": -21.28,
+        "rsi_14": 19.5,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -16639,10 +16639,10 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 92.38,
-        "pct_chg": 2.44,
-        "pct_chg_5d": 5.22,
-        "pct_chg_20d": 3.06,
+        "close": 92.35,
+        "pct_chg": 2.41,
+        "pct_chg_5d": 5.18,
+        "pct_chg_20d": 3.02,
         "rsi_14": 66.7,
         "signal_score": 3,
         "ema_up": 7,
@@ -16702,11 +16702,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 16.92,
-        "pct_chg": 1.44,
-        "pct_chg_5d": -1.86,
-        "pct_chg_20d": -20.19,
-        "rsi_14": 24.3,
+        "close": 16.77,
+        "pct_chg": 0.54,
+        "pct_chg_5d": -2.73,
+        "pct_chg_20d": -20.9,
+        "rsi_14": 22.2,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -16763,12 +16763,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 7.83,
-        "pct_chg": 6.24,
-        "pct_chg_5d": 4.54,
-        "pct_chg_20d": -10.31,
-        "rsi_14": 44.7,
-        "signal_score": 6,
+        "close": 7.66,
+        "pct_chg": 3.93,
+        "pct_chg_5d": 2.27,
+        "pct_chg_20d": -12.26,
+        "rsi_14": 40.5,
+        "signal_score": 3,
         "ema_up": 1,
         "ema_dirs": [
           true,
@@ -16785,13 +16785,13 @@
         "缠论买_次数": 2,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 2,
+        "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
       "rating": "未评级",
@@ -16827,23 +16827,23 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 50.9,
-        "pct_chg": -5.04,
-        "pct_chg_5d": 2.89,
-        "pct_chg_20d": -2.57,
-        "rsi_14": 40.9,
+        "close": 49.6,
+        "pct_chg": -7.46,
+        "pct_chg_5d": 0.26,
+        "pct_chg_20d": -5.05,
+        "rsi_14": 39.2,
         "signal_score": 0,
-        "ema_up": 3,
+        "ema_up": 2,
         "ema_dirs": [
           false,
           false,
           false,
           false,
-          true,
+          false,
           true,
           true
         ],
-        "ema_score": 3,
+        "ema_score": 2,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 1,
@@ -16863,17 +16863,17 @@
       "sectors": [
         "电气机械和器材制造业"
       ],
-      "ema_up": 3,
+      "ema_up": 2,
       "ema_dirs": [
         false,
         false,
         false,
         false,
-        true,
+        false,
         true,
         true
       ],
-      "ema_score": 3
+      "ema_score": 2
     },
     "sh_600131": {
       "code": "600131",
@@ -16890,12 +16890,12 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 14.52,
-        "pct_chg": 2.33,
-        "pct_chg_5d": 3.86,
-        "pct_chg_20d": -4.85,
-        "rsi_14": 35.6,
-        "signal_score": 3,
+        "close": 14.44,
+        "pct_chg": 1.76,
+        "pct_chg_5d": 3.29,
+        "pct_chg_20d": -5.37,
+        "rsi_14": 34.2,
+        "signal_score": 0,
         "ema_up": 1,
         "ema_dirs": [
           true,
@@ -16912,11 +16912,11 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
@@ -16953,11 +16953,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 39.51,
-        "pct_chg": 2.36,
-        "pct_chg_5d": -4.06,
-        "pct_chg_20d": -22.3,
-        "rsi_14": 25.8,
+        "close": 38.54,
+        "pct_chg": -0.16,
+        "pct_chg_5d": -6.41,
+        "pct_chg_20d": -24.21,
+        "rsi_14": 23.5,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -16981,7 +16981,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ➖平开"
+        "开盘_标签": "🦵长腿收阴 ➖平开"
       },
       "institution": "高盛",
       "rating": "买入",
@@ -17050,10 +17050,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 619.0,
-          "pct_chg": 2.23,
-          "pct_chg_20d": -13.55,
-          "rsi_14": 27.6,
+          "close": 618.5,
+          "pct_chg": 2.15,
+          "pct_chg_20d": -13.62,
+          "rsi_14": 27.4,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17073,11 +17073,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 619.0,
-        "pct_chg": 2.23,
-        "pct_chg_5d": -1.43,
-        "pct_chg_20d": -13.55,
-        "rsi_14": 27.6,
+        "close": 618.5,
+        "pct_chg": 2.15,
+        "pct_chg_5d": -1.51,
+        "pct_chg_20d": -13.62,
+        "rsi_14": 27.4,
         "signal_score": 3.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -17164,9 +17164,9 @@
         {
           "date": "2026-07-15",
           "signal_count": 0,
-          "close": 42.59,
-          "pct_chg": -2.87,
-          "pct_chg_20d": -8.41,
+          "close": 42.63,
+          "pct_chg": -2.78,
+          "pct_chg_20d": -8.32,
           "rsi_14": 44.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
@@ -17185,10 +17185,10 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 42.59,
-        "pct_chg": -2.87,
-        "pct_chg_5d": 6.88,
-        "pct_chg_20d": -8.41,
+        "close": 42.63,
+        "pct_chg": -2.78,
+        "pct_chg_5d": 6.98,
+        "pct_chg_20d": -8.32,
         "rsi_14": 44.0,
         "signal_score": 0,
         "ema_up": 4,
@@ -17280,10 +17280,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 126.5,
-          "pct_chg": 0.8,
-          "pct_chg_20d": 2.35,
-          "rsi_14": 60.3,
+          "close": 127.4,
+          "pct_chg": 1.51,
+          "pct_chg_20d": 3.07,
+          "rsi_14": 61.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17303,11 +17303,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 126.5,
-        "pct_chg": 0.8,
-        "pct_chg_5d": 0.32,
-        "pct_chg_20d": 2.35,
-        "rsi_14": 60.3,
+        "close": 127.4,
+        "pct_chg": 1.51,
+        "pct_chg_5d": 1.03,
+        "pct_chg_20d": 3.07,
+        "rsi_14": 61.7,
         "signal_score": 3,
         "ema_up": 1,
         "ema_dirs": [
@@ -17331,7 +17331,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🔥高开高走"
       },
       "ema_up": 1,
       "ema_dirs": [
@@ -17376,10 +17376,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 161.4,
-          "pct_chg": -1.13,
-          "pct_chg_20d": 7.06,
-          "rsi_14": 64.3,
+          "close": 160.3,
+          "pct_chg": -1.8,
+          "pct_chg_20d": 6.33,
+          "rsi_14": 63.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17397,11 +17397,11 @@
         "观澜台研报"
       ],
       "latest": {
-        "close": 161.4,
-        "pct_chg": -1.13,
-        "pct_chg_5d": -3.8,
-        "pct_chg_20d": 7.06,
-        "rsi_14": 64.3,
+        "close": 160.3,
+        "pct_chg": -1.8,
+        "pct_chg_5d": -4.45,
+        "pct_chg_20d": 6.33,
+        "rsi_14": 63.2,
         "signal_score": 3.5,
         "ema_up": 7,
         "ema_dirs": [
@@ -17492,10 +17492,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 52.33,
-          "pct_chg": -0.42,
-          "pct_chg_20d": -26.76,
-          "rsi_14": 16.5,
+          "close": 51.74,
+          "pct_chg": -1.54,
+          "pct_chg_20d": -27.59,
+          "rsi_14": 16.1,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -17512,11 +17512,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 52.33,
-        "pct_chg": -0.42,
-        "pct_chg_5d": -6.84,
-        "pct_chg_20d": -26.76,
-        "rsi_14": 16.5,
+        "close": 51.74,
+        "pct_chg": -1.54,
+        "pct_chg_5d": -7.89,
+        "pct_chg_20d": -27.59,
+        "rsi_14": 16.1,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -17607,10 +17607,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 8.04,
-          "pct_chg": -2.31,
-          "pct_chg_20d": -10.96,
-          "rsi_14": 50.0,
+          "close": 8.1,
+          "pct_chg": -1.58,
+          "pct_chg_20d": -10.3,
+          "rsi_14": 51.1,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17628,11 +17628,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 8.04,
-        "pct_chg": -2.31,
-        "pct_chg_5d": 5.37,
-        "pct_chg_20d": -10.96,
-        "rsi_14": 50.0,
+        "close": 8.1,
+        "pct_chg": -1.58,
+        "pct_chg_5d": 6.16,
+        "pct_chg_20d": -10.3,
+        "rsi_14": 51.1,
         "signal_score": 3,
         "ema_up": 4,
         "ema_dirs": [
@@ -17719,10 +17719,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 22.52,
-          "pct_chg": -2.09,
-          "pct_chg_20d": -7.1,
-          "rsi_14": 54.0,
+          "close": 22.82,
+          "pct_chg": -0.78,
+          "pct_chg_20d": -5.86,
+          "rsi_14": 55.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17740,11 +17740,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 22.52,
-        "pct_chg": -2.09,
-        "pct_chg_5d": 7.24,
-        "pct_chg_20d": -7.1,
-        "rsi_14": 54.0,
+        "close": 22.82,
+        "pct_chg": -0.78,
+        "pct_chg_5d": 8.67,
+        "pct_chg_20d": -5.86,
+        "rsi_14": 55.9,
         "signal_score": 3,
         "ema_up": 5,
         "ema_dirs": [
@@ -17831,10 +17831,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 5.77,
-          "pct_chg": 1.23,
-          "pct_chg_20d": -12.71,
-          "rsi_14": 47.8,
+          "close": 5.79,
+          "pct_chg": 1.58,
+          "pct_chg_20d": -12.41,
+          "rsi_14": 48.4,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17851,23 +17851,23 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 5.77,
-        "pct_chg": 1.23,
-        "pct_chg_5d": 5.87,
-        "pct_chg_20d": -12.71,
-        "rsi_14": 47.8,
+        "close": 5.79,
+        "pct_chg": 1.58,
+        "pct_chg_5d": 6.24,
+        "pct_chg_20d": -12.41,
+        "rsi_14": 48.4,
         "signal_score": 3,
-        "ema_up": 2,
+        "ema_up": 3,
         "ema_dirs": [
           true,
           true,
-          false,
+          true,
           false,
           false,
           false,
           false
         ],
-        "ema_score": 2,
+        "ema_score": 3,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 1,
@@ -17881,17 +17881,17 @@
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
-      "ema_up": 2,
+      "ema_up": 3,
       "ema_dirs": [
         true,
         true,
-        false,
+        true,
         false,
         false,
         false,
         false
       ],
-      "ema_score": 2
+      "ema_score": 3
     },
     "sz_301049": {
       "code": "301049",
@@ -17906,11 +17906,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 18.51,
-        "pct_chg": 1.93,
-        "pct_chg_5d": 4.34,
-        "pct_chg_20d": -7.03,
-        "rsi_14": 52.1,
+        "close": 18.5,
+        "pct_chg": 1.87,
+        "pct_chg_5d": 4.28,
+        "pct_chg_20d": -7.08,
+        "rsi_14": 52.0,
         "signal_score": 3,
         "ema_up": 1,
         "ema_dirs": [
@@ -17967,12 +17967,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 99.66,
-        "pct_chg": -2.2,
-        "pct_chg_5d": 1.54,
-        "pct_chg_20d": 17.98,
-        "rsi_14": 51.8,
-        "signal_score": 4.0,
+        "close": 96.69,
+        "pct_chg": -5.11,
+        "pct_chg_5d": -1.49,
+        "pct_chg_20d": 14.47,
+        "rsi_14": 49.0,
+        "signal_score": 1.0,
         "ema_up": 6,
         "ema_dirs": [
           false,
@@ -17989,13 +17989,13 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "摩根士丹利",
       "rating": "未评级",
@@ -18028,23 +18028,23 @@
         "投行研报"
       ],
       "latest": {
-        "close": 336.47,
-        "pct_chg": -1.29,
-        "pct_chg_5d": -1.9,
-        "pct_chg_20d": 14.33,
-        "rsi_14": 42.4,
+        "close": 324.99,
+        "pct_chg": -4.65,
+        "pct_chg_5d": -5.25,
+        "pct_chg_20d": 10.42,
+        "rsi_14": 39.5,
         "signal_score": 1.0,
-        "ema_up": 3,
+        "ema_up": 2,
         "ema_dirs": [
           false,
           false,
           false,
           false,
-          true,
+          false,
           true,
           true
         ],
-        "ema_score": 3,
+        "ema_score": 2,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -18064,17 +18064,17 @@
       "sectors": [
         "计算机、通信和其他电子设备制造业"
       ],
-      "ema_up": 3,
+      "ema_up": 2,
       "ema_dirs": [
         false,
         false,
         false,
         false,
-        true,
+        false,
         true,
         true
       ],
-      "ema_score": 3
+      "ema_score": 2
     },
     "sz_002230": {
       "code": "002230",
@@ -18089,23 +18089,23 @@
         "投行研报"
       ],
       "latest": {
-        "close": 41.56,
-        "pct_chg": 0.92,
-        "pct_chg_5d": 1.51,
-        "pct_chg_20d": 0.68,
-        "rsi_14": 49.5,
+        "close": 41.45,
+        "pct_chg": 0.66,
+        "pct_chg_5d": 1.25,
+        "pct_chg_20d": 0.41,
+        "rsi_14": 49.0,
         "signal_score": 3,
-        "ema_up": 2,
+        "ema_up": 1,
         "ema_dirs": [
           false,
           true,
-          true,
+          false,
           false,
           false,
           false,
           false
         ],
-        "ema_score": 2,
+        "ema_score": 1,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -18121,17 +18121,17 @@
       },
       "institution": "摩根士丹利",
       "rating": "未评级",
-      "ema_up": 2,
+      "ema_up": 1,
       "ema_dirs": [
         false,
         true,
-        true,
+        false,
         false,
         false,
         false,
         false
       ],
-      "ema_score": 2,
+      "ema_score": 1,
       "industry": "软件和信息技术服务业",
       "sectors": [
         "软件和信息技术服务业"
@@ -18150,11 +18150,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 3.42,
-        "pct_chg": 0.59,
-        "pct_chg_5d": 0.88,
-        "pct_chg_20d": 2.4,
-        "rsi_14": 41.5,
+        "close": 3.43,
+        "pct_chg": 0.88,
+        "pct_chg_5d": 1.18,
+        "pct_chg_20d": 2.69,
+        "rsi_14": 42.4,
         "signal_score": 6,
         "ema_up": 1,
         "ema_dirs": [
@@ -18211,11 +18211,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 26.11,
-        "pct_chg": -5.57,
-        "pct_chg_5d": -6.45,
-        "pct_chg_20d": -7.11,
-        "rsi_14": 40.4,
+        "close": 26.42,
+        "pct_chg": -4.45,
+        "pct_chg_5d": -5.34,
+        "pct_chg_20d": -6.01,
+        "rsi_14": 41.2,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -18272,11 +18272,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 23.07,
-        "pct_chg": 1.81,
-        "pct_chg_5d": 2.08,
-        "pct_chg_20d": -9.39,
-        "rsi_14": 45.0,
+        "close": 22.59,
+        "pct_chg": -0.31,
+        "pct_chg_5d": -0.04,
+        "pct_chg_20d": -11.27,
+        "rsi_14": 42.3,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -18333,11 +18333,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 8.63,
-        "pct_chg": 0.35,
-        "pct_chg_5d": -8.29,
-        "pct_chg_20d": -10.57,
-        "rsi_14": 36.6,
+        "close": 8.44,
+        "pct_chg": -1.86,
+        "pct_chg_5d": -10.31,
+        "pct_chg_20d": -12.54,
+        "rsi_14": 34.7,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -18361,7 +18361,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
       "rating": "买入",
@@ -18532,11 +18532,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 15.04,
-        "pct_chg": 0.87,
-        "pct_chg_5d": 6.29,
-        "pct_chg_20d": -13.51,
-        "rsi_14": 43.3,
+        "close": 14.84,
+        "pct_chg": -0.47,
+        "pct_chg_5d": 4.88,
+        "pct_chg_20d": -14.66,
+        "rsi_14": 41.8,
         "signal_score": 3,
         "ema_up": 2,
         "ema_dirs": [
@@ -18593,11 +18593,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 206.68,
-        "pct_chg": 5.64,
-        "pct_chg_5d": 2.55,
-        "pct_chg_20d": 15.21,
-        "rsi_14": 72.9,
+        "close": 208.0,
+        "pct_chg": 6.32,
+        "pct_chg_5d": 3.2,
+        "pct_chg_20d": 15.94,
+        "rsi_14": 73.3,
         "signal_score": 6.0,
         "ema_up": 7,
         "ema_dirs": [
@@ -18718,10 +18718,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 120.23,
-          "pct_chg": -1.35,
-          "pct_chg_20d": -19.96,
-          "rsi_14": 26.2,
+          "close": 116.03,
+          "pct_chg": -4.8,
+          "pct_chg_20d": -22.76,
+          "rsi_14": 25.0,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -18739,12 +18739,12 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 120.23,
-        "pct_chg": -1.35,
-        "pct_chg_5d": -7.82,
-        "pct_chg_20d": -19.96,
-        "rsi_14": 26.2,
-        "signal_score": 3.5,
+        "close": 116.03,
+        "pct_chg": -4.8,
+        "pct_chg_5d": -11.04,
+        "pct_chg_20d": -22.76,
+        "rsi_14": 25.0,
+        "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -18844,15 +18844,15 @@
         "投行研报"
       ],
       "latest": {
-        "close": 17.09,
-        "pct_chg": 1.3,
-        "pct_chg_5d": 0.41,
-        "pct_chg_20d": -6.25,
-        "rsi_14": 39.8,
+        "close": 17.33,
+        "pct_chg": 2.73,
+        "pct_chg_5d": 1.82,
+        "pct_chg_20d": -4.94,
+        "rsi_14": 44.0,
         "signal_score": 3,
-        "ema_up": 0,
+        "ema_up": 1,
         "ema_dirs": [
-          false,
+          true,
           false,
           false,
           false,
@@ -18860,7 +18860,7 @@
           false,
           false
         ],
-        "ema_score": 0,
+        "ema_score": 1,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -18872,13 +18872,13 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "⚡低开高走"
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "institution": "花旗",
       "rating": "买入",
-      "ema_up": 0,
+      "ema_up": 1,
       "ema_dirs": [
-        false,
+        true,
         false,
         false,
         false,
@@ -18886,7 +18886,7 @@
         false,
         false
       ],
-      "ema_score": 0,
+      "ema_score": 1,
       "industry": "非金属矿物制品业",
       "sectors": [
         "非金属矿物制品业"
@@ -18905,12 +18905,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 394.73,
-        "pct_chg": -3.49,
-        "pct_chg_5d": -1.89,
-        "pct_chg_20d": -2.27,
-        "rsi_14": 39.4,
-        "signal_score": 3,
+        "close": 376.15,
+        "pct_chg": -8.03,
+        "pct_chg_5d": -6.51,
+        "pct_chg_20d": -6.87,
+        "rsi_14": 36.9,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -18923,15 +18923,15 @@
         ],
         "ema_score": 0,
         "turnover_rate": 0,
-        "缠论买_日K": true,
-        "缠论买_次数": 1,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
         "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
@@ -18966,10 +18966,10 @@
         "投行研报"
       ],
       "latest": {
-        "close": 155.78,
-        "pct_chg": -3.84,
-        "pct_chg_5d": -0.68,
-        "pct_chg_20d": -10.72,
+        "close": 155.75,
+        "pct_chg": -3.86,
+        "pct_chg_5d": -0.69,
+        "pct_chg_20d": -10.73,
         "rsi_14": 32.9,
         "signal_score": 3,
         "ema_up": 0,
@@ -19027,11 +19027,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 17.95,
-        "pct_chg": 0.28,
-        "pct_chg_5d": -1.37,
-        "pct_chg_20d": -14.73,
-        "rsi_14": 36.3,
+        "close": 17.84,
+        "pct_chg": -0.34,
+        "pct_chg_5d": -1.98,
+        "pct_chg_20d": -15.25,
+        "rsi_14": 35.4,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -19106,10 +19106,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 1,
-          "close": 71.51,
-          "pct_chg": 2.14,
-          "pct_chg_20d": 6.05,
-          "rsi_14": 27.9,
+          "close": 68.91,
+          "pct_chg": -1.57,
+          "pct_chg_20d": 2.19,
+          "rsi_14": 25.6,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19127,12 +19127,12 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 71.51,
-        "pct_chg": 2.14,
-        "pct_chg_5d": -8.89,
-        "pct_chg_20d": 6.05,
-        "rsi_14": 27.9,
-        "signal_score": 4.0,
+        "close": 68.91,
+        "pct_chg": -1.57,
+        "pct_chg_5d": -12.21,
+        "pct_chg_20d": 2.19,
+        "rsi_14": 25.6,
+        "signal_score": 3.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -19204,10 +19204,10 @@
         {
           "date": "2026-07-15",
           "signal_count": 2,
-          "close": 75.0,
-          "pct_chg": 1.21,
-          "pct_chg_20d": -0.27,
-          "rsi_14": 54.6,
+          "close": 75.55,
+          "pct_chg": 1.96,
+          "pct_chg_20d": 0.47,
+          "rsi_14": 56.2,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -19226,11 +19226,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 75.0,
-        "pct_chg": 1.21,
-        "pct_chg_5d": 1.76,
-        "pct_chg_20d": -0.27,
-        "rsi_14": 54.6,
+        "close": 75.55,
+        "pct_chg": 1.96,
+        "pct_chg_5d": 2.51,
+        "pct_chg_20d": 0.47,
+        "rsi_14": 56.2,
         "signal_score": 6,
         "ema_up": 6,
         "ema_dirs": [
@@ -19281,15 +19281,15 @@
         "投行研报"
       ],
       "latest": {
-        "close": 159.95,
-        "pct_chg": 8.15,
-        "pct_chg_5d": 9.96,
-        "pct_chg_20d": -10.84,
-        "rsi_14": 39.0,
-        "signal_score": 6,
-        "ema_up": 2,
+        "close": 153.21,
+        "pct_chg": 3.59,
+        "pct_chg_5d": 5.33,
+        "pct_chg_20d": -14.6,
+        "rsi_14": 35.5,
+        "signal_score": 3,
+        "ema_up": 1,
         "ema_dirs": [
-          true,
+          false,
           false,
           false,
           false,
@@ -19297,25 +19297,25 @@
           false,
           true
         ],
-        "ema_score": 2,
+        "ema_score": 1,
         "turnover_rate": 0,
         "缠论买_日K": true,
         "缠论买_次数": 2,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 2,
+        "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
       "rating": "未评级",
-      "ema_up": 2,
+      "ema_up": 1,
       "ema_dirs": [
-        true,
+        false,
         false,
         false,
         false,
@@ -19323,7 +19323,7 @@
         false,
         true
       ],
-      "ema_score": 2,
+      "ema_score": 1,
       "industry": "计算机、通信和其他电子设备制造业",
       "sectors": [
         "计算机、通信和其他电子设备制造业"
@@ -19342,11 +19342,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 178.85,
-        "pct_chg": 1.04,
-        "pct_chg_5d": 0.56,
-        "pct_chg_20d": -13.2,
-        "rsi_14": 21.9,
+        "close": 174.3,
+        "pct_chg": -1.53,
+        "pct_chg_5d": -2.0,
+        "pct_chg_20d": -15.41,
+        "rsi_14": 20.6,
         "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -19403,49 +19403,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 68.99,
-        "pct_chg": -0.19,
-        "pct_chg_5d": 10.38,
-        "pct_chg_20d": -11.72,
-        "rsi_14": 41.4,
-        "signal_score": 3,
-        "ema_up": 4,
+        "close": 66.04,
+        "pct_chg": -4.46,
+        "pct_chg_5d": 5.66,
+        "pct_chg_20d": -15.5,
+        "rsi_14": 39.0,
+        "signal_score": 0,
+        "ema_up": 3,
         "ema_dirs": [
           true,
           true,
           true,
-          true,
+          false,
           false,
           false,
           false
         ],
-        "ema_score": 4,
+        "ema_score": 3,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 1,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
       "rating": "未评级",
-      "ema_up": 4,
+      "ema_up": 3,
       "ema_dirs": [
         true,
         true,
         true,
-        true,
+        false,
         false,
         false,
         false
       ],
-      "ema_score": 4,
+      "ema_score": 3,
       "industry": "计算机、通信和其他电子设备制造业",
       "sectors": [
         "计算机、通信和其他电子设备制造业"
@@ -19464,11 +19464,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 9.95,
-        "pct_chg": -3.86,
-        "pct_chg_5d": -9.13,
-        "pct_chg_20d": -30.85,
-        "rsi_14": 19.3,
+        "close": 9.74,
+        "pct_chg": -5.89,
+        "pct_chg_5d": -11.05,
+        "pct_chg_20d": -32.31,
+        "rsi_14": 18.7,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -19525,12 +19525,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 14.41,
-        "pct_chg": -0.76,
-        "pct_chg_5d": -7.57,
-        "pct_chg_20d": -19.14,
-        "rsi_14": 19.9,
-        "signal_score": 6.5,
+        "close": 14.09,
+        "pct_chg": -2.96,
+        "pct_chg_5d": -9.62,
+        "pct_chg_20d": -20.93,
+        "rsi_14": 19.2,
+        "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -19586,12 +19586,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 40.58,
-        "pct_chg": -0.17,
-        "pct_chg_5d": 2.29,
-        "pct_chg_20d": -31.22,
-        "rsi_14": 30.9,
-        "signal_score": 4.0,
+        "close": 39.64,
+        "pct_chg": -2.48,
+        "pct_chg_5d": -0.08,
+        "pct_chg_20d": -32.81,
+        "rsi_14": 29.9,
+        "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -19647,11 +19647,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 17.52,
-        "pct_chg": -1.13,
-        "pct_chg_5d": -8.42,
-        "pct_chg_20d": -30.94,
-        "rsi_14": 17.7,
+        "close": 16.93,
+        "pct_chg": -4.46,
+        "pct_chg_5d": -11.5,
+        "pct_chg_20d": -33.27,
+        "rsi_14": 16.9,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -19708,11 +19708,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 27.2,
-        "pct_chg": -1.66,
-        "pct_chg_5d": -5.72,
-        "pct_chg_20d": -33.15,
-        "rsi_14": 20.7,
+        "close": 26.51,
+        "pct_chg": -4.16,
+        "pct_chg_5d": -8.11,
+        "pct_chg_20d": -34.85,
+        "rsi_14": 20.0,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -19769,11 +19769,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 26.46,
-        "pct_chg": -0.68,
-        "pct_chg_5d": -0.26,
-        "pct_chg_20d": -27.57,
-        "rsi_14": 24.9,
+        "close": 25.88,
+        "pct_chg": -2.85,
+        "pct_chg_5d": -2.45,
+        "pct_chg_20d": -29.15,
+        "rsi_14": 24.1,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -19830,12 +19830,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 353.99,
-        "pct_chg": -3.52,
-        "pct_chg_5d": 10.79,
-        "pct_chg_20d": -0.69,
-        "rsi_14": 45.8,
-        "signal_score": 3,
+        "close": 345.0,
+        "pct_chg": -5.97,
+        "pct_chg_5d": 7.98,
+        "pct_chg_20d": -3.21,
+        "rsi_14": 44.5,
+        "signal_score": 0,
         "ema_up": 7,
         "ema_dirs": [
           true,
@@ -19852,11 +19852,11 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
+        "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -19891,12 +19891,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 16.69,
-        "pct_chg": -1.53,
-        "pct_chg_5d": -9.69,
-        "pct_chg_20d": -16.97,
-        "rsi_14": 24.3,
-        "signal_score": 6.5,
+        "close": 16.07,
+        "pct_chg": -5.19,
+        "pct_chg_5d": -13.04,
+        "pct_chg_20d": -20.05,
+        "rsi_14": 23.5,
+        "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -19952,12 +19952,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 25.45,
-        "pct_chg": -1.89,
-        "pct_chg_5d": -7.82,
-        "pct_chg_20d": -12.18,
-        "rsi_14": 31.3,
-        "signal_score": 0,
+        "close": 24.66,
+        "pct_chg": -4.93,
+        "pct_chg_5d": -10.68,
+        "pct_chg_20d": -14.91,
+        "rsi_14": 29.2,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -20013,12 +20013,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 279.5,
-        "pct_chg": 7.35,
-        "pct_chg_5d": 17.65,
-        "pct_chg_20d": 12.22,
-        "rsi_14": 50.9,
-        "signal_score": 4.0,
+        "close": 267.66,
+        "pct_chg": 2.8,
+        "pct_chg_5d": 12.67,
+        "pct_chg_20d": 7.47,
+        "rsi_14": 47.9,
+        "signal_score": 3.5,
         "ema_up": 7,
         "ema_dirs": [
           true,
@@ -20074,11 +20074,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 40.46,
-        "pct_chg": -0.95,
-        "pct_chg_5d": 0.12,
-        "pct_chg_20d": -8.25,
-        "rsi_14": 29.4,
+        "close": 38.98,
+        "pct_chg": -4.58,
+        "pct_chg_5d": -3.54,
+        "pct_chg_20d": -11.61,
+        "rsi_14": 28.1,
         "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20135,11 +20135,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 56.51,
-        "pct_chg": -2.9,
-        "pct_chg_5d": -3.68,
-        "pct_chg_20d": -20.33,
-        "rsi_14": 34.4,
+        "close": 54.88,
+        "pct_chg": -5.7,
+        "pct_chg_5d": -6.46,
+        "pct_chg_20d": -22.63,
+        "rsi_14": 33.4,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -20196,12 +20196,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 15.31,
-        "pct_chg": -5.84,
-        "pct_chg_5d": -6.76,
-        "pct_chg_20d": -8.81,
-        "rsi_14": 30.3,
-        "signal_score": 3,
+        "close": 14.79,
+        "pct_chg": -9.04,
+        "pct_chg_5d": -9.93,
+        "pct_chg_20d": -11.91,
+        "rsi_14": 29.3,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -20216,13 +20216,13 @@
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 1,
-        "金钻_黄柱": true,
+        "金钻_黄柱": false,
         "金钻_起涨": false,
         "四量图_机构变红": false,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -20257,11 +20257,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 99.48,
-        "pct_chg": 3.97,
-        "pct_chg_5d": 6.16,
-        "pct_chg_20d": -1.98,
-        "rsi_14": 40.7,
+        "close": 97.93,
+        "pct_chg": 2.35,
+        "pct_chg_5d": 4.5,
+        "pct_chg_20d": -3.51,
+        "rsi_14": 39.4,
         "signal_score": 3,
         "ema_up": 1,
         "ema_dirs": [
@@ -20318,12 +20318,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 25.49,
-        "pct_chg": -2.26,
-        "pct_chg_5d": -11.34,
-        "pct_chg_20d": -16.45,
-        "rsi_14": 30.3,
-        "signal_score": 6,
+        "close": 24.82,
+        "pct_chg": -4.83,
+        "pct_chg_5d": -13.67,
+        "pct_chg_20d": -18.65,
+        "rsi_14": 29.4,
+        "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -20379,11 +20379,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 162.77,
-        "pct_chg": -1.77,
-        "pct_chg_5d": 1.06,
-        "pct_chg_20d": -10.26,
-        "rsi_14": 33.5,
+        "close": 156.41,
+        "pct_chg": -5.61,
+        "pct_chg_5d": -2.89,
+        "pct_chg_20d": -13.76,
+        "rsi_14": 32.0,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -20440,11 +20440,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 50.1,
-        "pct_chg": -2.11,
-        "pct_chg_5d": -13.19,
-        "pct_chg_20d": -15.91,
-        "rsi_14": 43.3,
+        "close": 48.11,
+        "pct_chg": -6.0,
+        "pct_chg_5d": -16.63,
+        "pct_chg_20d": -19.25,
+        "rsi_14": 42.1,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -20501,11 +20501,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 63.61,
-        "pct_chg": -1.07,
-        "pct_chg_5d": -11.86,
-        "pct_chg_20d": -43.74,
-        "rsi_14": 34.0,
+        "close": 60.98,
+        "pct_chg": -5.16,
+        "pct_chg_5d": -15.51,
+        "pct_chg_20d": -46.06,
+        "rsi_14": 32.6,
         "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -20562,11 +20562,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 37.96,
-        "pct_chg": -0.11,
-        "pct_chg_5d": -9.06,
-        "pct_chg_20d": -13.83,
-        "rsi_14": 18.6,
+        "close": 36.78,
+        "pct_chg": -3.21,
+        "pct_chg_5d": -11.88,
+        "pct_chg_20d": -16.5,
+        "rsi_14": 17.9,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20623,12 +20623,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 21.92,
-        "pct_chg": -1.79,
-        "pct_chg_5d": -17.99,
-        "pct_chg_20d": -23.44,
-        "rsi_14": 30.3,
-        "signal_score": 1.0,
+        "close": 21.64,
+        "pct_chg": -3.05,
+        "pct_chg_5d": -19.04,
+        "pct_chg_20d": -24.41,
+        "rsi_14": 29.9,
+        "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -20684,11 +20684,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 48.0,
-        "pct_chg": -1.28,
-        "pct_chg_5d": -10.73,
-        "pct_chg_20d": -1.03,
-        "rsi_14": 29.9,
+        "close": 45.96,
+        "pct_chg": -5.47,
+        "pct_chg_5d": -14.52,
+        "pct_chg_20d": -5.24,
+        "rsi_14": 28.2,
         "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20745,11 +20745,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 83.41,
-        "pct_chg": -1.3,
-        "pct_chg_5d": -4.26,
-        "pct_chg_20d": -28.86,
-        "rsi_14": 23.7,
+        "close": 81.65,
+        "pct_chg": -3.38,
+        "pct_chg_5d": -6.28,
+        "pct_chg_20d": -30.36,
+        "rsi_14": 23.0,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20806,11 +20806,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 36.83,
-        "pct_chg": 0.19,
-        "pct_chg_5d": -1.02,
-        "pct_chg_20d": -28.73,
-        "rsi_14": 26.7,
+        "close": 35.59,
+        "pct_chg": -3.18,
+        "pct_chg_5d": -4.35,
+        "pct_chg_20d": -31.13,
+        "rsi_14": 25.8,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20867,11 +20867,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 50.24,
-        "pct_chg": -3.99,
-        "pct_chg_5d": -6.44,
-        "pct_chg_20d": -23.64,
-        "rsi_14": 23.7,
+        "close": 48.59,
+        "pct_chg": -7.15,
+        "pct_chg_5d": -9.52,
+        "pct_chg_20d": -26.14,
+        "rsi_14": 22.5,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -20928,11 +20928,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 25.65,
-        "pct_chg": -1.99,
-        "pct_chg_5d": -6.63,
-        "pct_chg_20d": -27.13,
-        "rsi_14": 23.5,
+        "close": 25.0,
+        "pct_chg": -4.47,
+        "pct_chg_5d": -8.99,
+        "pct_chg_20d": -28.98,
+        "rsi_14": 22.8,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -20989,11 +20989,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 47.02,
-        "pct_chg": -2.69,
-        "pct_chg_5d": -22.82,
-        "pct_chg_20d": -10.68,
-        "rsi_14": 42.4,
+        "close": 45.15,
+        "pct_chg": -6.56,
+        "pct_chg_5d": -25.89,
+        "pct_chg_20d": -14.23,
+        "rsi_14": 41.0,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -21050,12 +21050,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 69.63,
-        "pct_chg": 0.55,
-        "pct_chg_5d": -10.07,
-        "pct_chg_20d": -13.4,
-        "rsi_14": 31.2,
-        "signal_score": 6,
+        "close": 67.32,
+        "pct_chg": -2.79,
+        "pct_chg_5d": -13.06,
+        "pct_chg_20d": -16.27,
+        "rsi_14": 29.7,
+        "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -21111,11 +21111,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 20.37,
-        "pct_chg": -2.11,
-        "pct_chg_5d": -25.52,
-        "pct_chg_20d": -20.86,
-        "rsi_14": 28.9,
+        "close": 20.0,
+        "pct_chg": -3.89,
+        "pct_chg_5d": -26.87,
+        "pct_chg_20d": -22.3,
+        "rsi_14": 28.4,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -21168,11 +21168,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 38.78,
-        "pct_chg": 1.33,
-        "pct_chg_5d": -2.32,
-        "pct_chg_20d": -22.32,
-        "rsi_14": 19.4,
+        "close": 38.41,
+        "pct_chg": 0.37,
+        "pct_chg_5d": -3.25,
+        "pct_chg_20d": -23.06,
+        "rsi_14": 17.0,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -21317,38 +21317,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "pct_chg_5d": 0,
-        "pct_chg_20d": 0,
-        "rsi_14": 50,
-        "signal_score": 0,
-        "ema_up": 0,
+        "close": 100.79,
+        "pct_chg": -4.23,
+        "pct_chg_5d": 10.41,
+        "pct_chg_20d": -6.84,
+        "rsi_14": 39.4,
+        "signal_score": 3,
+        "ema_up": 7,
         "ema_dirs": [
-          false,
-          false,
-          false,
-          false,
-          false,
-          false,
-          false
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
         ],
-        "ema_score": 0,
+        "ema_score": 7,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": ""
+        "开盘_标签": "🦵长腿收阴 ➖平开"
       },
       "institution": "杰富瑞",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 7,
+      "ema_dirs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ema_score": 7
     },
     "sz_300903": {
       "code": "300903",
@@ -21363,12 +21374,12 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "pct_chg_5d": 0,
-        "pct_chg_20d": 0,
-        "rsi_14": 50,
-        "signal_score": 0,
+        "close": 79.7,
+        "pct_chg": -6.1,
+        "pct_chg_5d": -5.6,
+        "pct_chg_20d": -2.57,
+        "rsi_14": 20.9,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -21389,16 +21400,27 @@
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 1,
+        "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": ""
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "杰富瑞",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     }
   },
-  "last_update": "2026-07-15 10:31:00",
-  "total_count": 199,
+  "last_update": "2026-07-15 11:22:08",
+  "total_count": 203,
   "last_industry_update": "2026-07-07 16:23",
   "candidates": {
     "sh_603986": {
