@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-概念涨跌幅排名 Top40（涨幅前20 + 跌幅前20）v2
-=== 改用 同花顺(THS) 数据源，绕开被墙的 东财(EM) ===
-用法：python fetch_concept_ranking_v2.py
-输出：data/concept_ranking.json, data/concept_history.json
+概念涨跌幅排名 Top40（涨幅前20 + 跌幅前20）
+用法：python fetch_concept_ranking.py
+输出：data/concept_ranking.json
 """
 
 import akshare as ak
@@ -12,73 +11,87 @@ import json
 import datetime
 import os
 import time
-import concurrent.futures
 
 OUT = "data/concept_ranking.json"
 HISTORY = "data/concept_history.json"
-MAX_WORKERS = 12  # 并发线程数
+MAX_RETRY = 3
+TOP_N = 20  # 涨幅/跌幅各取前N名
 
 
 def log(msg):
     print(f"[{datetime.datetime.now().strftime('%H:%M:%S')}] {msg}")
 
 
-def get_concept_pct(name):
-    """获取单概念板块涨幅(%)"""
-    try:
-        df = ak.stock_board_concept_info_ths(symbol=name)
-        row = df[df['项目'] == '板块涨幅']
-        if row.empty:
-            return (name, None)
-        pct_str = row['值'].values[0]
-        pct_val = float(pct_str.replace('%', ''))
-        return (name, pct_val)
-    except Exception as e:
-        log(f"  ⚠ {name}: {e}")
-        return (name, None)
-
-
 def fetch_concept_ranking():
-    """获取概念板块涨跌幅排名（同花顺数据源）"""
-    log("获取概念板块列表（同花顺）...")
-    names_df = ak.stock_board_concept_name_ths()
-    names = names_df['name'].tolist()
-    log(f"✓ 共 {len(names)} 个概念板块")
+    """获取概念板块涨跌幅排名"""
+    df = None
+    for attempt in range(1, MAX_RETRY + 1):
+        try:
+            log(f"获取概念板块列表（第{attempt}次）...")
+            df = ak.stock_board_concept_name_em()
+            log(f"✓ 获取到 {len(df)} 个概念板块")
+            break
+        except Exception as e:
+            log(f"✗ 第{attempt}次失败: {e}")
+            if attempt < MAX_RETRY:
+                time.sleep(2)
+            else:
+                return []
 
-    # 并发获取所有概念的涨跌幅
-    log(f"并发获取{len(names)}个概念的涨跌幅（{MAX_WORKERS}线程）...")
-    t0 = time.time()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        results = list(executor.map(get_concept_pct, names))
-    elapsed = time.time() - t0
-
-    valid = [(n, p) for n, p in results if p is not None]
-    failed = len(names) - len(valid)
-    log(f"✓ {len(valid)}/{len(names)} 个成功{f'（{failed}个跳过）' if failed else ''}，耗时 {elapsed:.0f}s")
-
-    if len(valid) == 0:
-        log("⚠ 全部失败，返回空")
+    if df is None or len(df) == 0:
         return []
 
-    # 排序：涨幅从高到低
-    valid.sort(key=lambda x: -x[1])
+    # 找涨跌幅字段
+    pct_col = None
+    for col in df.columns:
+        if '涨跌幅' in str(col) or 'pct' in str(col).lower() or 'change' in str(col).lower():
+            pct_col = col
+            break
 
-    # 涨幅前TOP_N + 跌幅前TOP_N
-    TOP_N = 20
-    top_gainers = valid[:TOP_N]
-    top_losers = valid[-TOP_N:][::-1]
+    if not pct_col:
+        # 默认用第3列（索引2）
+        pct_col = df.columns[2]
+        log(f"⚠ 未找到涨跌幅字段，尝试使用: {pct_col}")
+
+    log(f"使用涨跌幅字段: {pct_col}")
+
+    # 找名称字段
+    name_col = df.columns[0]  # 默认第1列是名称
+    for col in df.columns:
+        if '名称' in str(col) or 'name' in str(col).lower() or '板块' in str(col):
+            name_col = col
+            break
+    log(f"使用名称字段: {name_col}")
+
+    # 转换为数字
+    df[pct_col] = df[pct_col].astype(float)
+
+    # 按涨跌幅排序
+    df_sorted = df.sort_values(by=pct_col, ascending=False)
+
+    # 涨幅前TOP_N
+    top_gainers = df_sorted.head(TOP_N)
+    # 跌幅前TOP_N（排序让跌幅最大的排第一）
+    top_losers = df_sorted.tail(TOP_N).iloc[::-1]
 
     ranking = []
-    for name, pct in top_gainers:
-        ranking.append({'name': name, 'pct': round(pct, 2)})
-    for name, pct in top_losers:
-        ranking.append({'name': name, 'pct': round(pct, 2)})
+    for _, row in top_gainers.iterrows():
+        ranking.append({
+            'name': str(row[name_col]),
+            'pct': round(float(row[pct_col]), 2),
+        })
+
+    for _, row in top_losers.iterrows():
+        ranking.append({
+            'name': str(row[name_col]),
+            'pct': round(float(row[pct_col]), 2),
+        })
 
     return ranking
 
 
 def main():
-    log("概念涨跌幅排名 v2（同花顺数据源）")
+    log("概念涨跌幅排名 v2")
     print("=" * 50)
 
     ranking = fetch_concept_ranking()
@@ -86,6 +99,7 @@ def main():
 
     if not ranking:
         log("⚠ 获取失败，检查是否需要保留旧数据")
+        # 保护逻辑：只要旧数据有效就保留，不覆盖为空
         old_data = None
         if os.path.exists(OUT):
             try:
@@ -93,6 +107,7 @@ def main():
                     old_data = json.load(f)
             except:
                 pass
+
         if old_data and old_data.get('ranking') and len(old_data['ranking']) > 0:
             log(f"✓ 保留上一份有效数据({len(old_data['ranking'])}条)，不覆盖")
             return
@@ -108,11 +123,12 @@ def main():
         'update_time': now_str,
         'ranking': ranking,
     }
+
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    # 概念历史（用于前端"连X天"统计）
+    # 追加历史记录（用于前端"连X天"统计）
     today_str = datetime.datetime.now().strftime('%Y-%m-%d')
     concept_day = {}
     for item in ranking:
@@ -122,6 +138,7 @@ def main():
         with open(HISTORY, 'r', encoding='utf-8') as f:
             history = json.load(f)
     history[today_str] = concept_day
+    # 只保留最近10个交易日（两周）
     keys = sorted(history.keys())
     if len(keys) > 10:
         for old in keys[:-10]:
@@ -143,3 +160,4 @@ if __name__ == "__main__":
     except Exception as e:
         record_failure(__file__, str(e))
         raise
+
