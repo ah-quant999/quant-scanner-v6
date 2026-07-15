@@ -189,6 +189,63 @@ def get_market_index():
     return df.tail(LOOKBACK_DAYS).reset_index(drop=True)
 
 
+def get_market_context(mkt_df):
+    """
+    根据大盘(上证)今日及近期走势，判断 CRDS 逆势龙头数据的有效性。
+    逻辑：逆势龙头只在大跌/震荡市有效；若今日大涨，则信号参考意义极低。
+    """
+    if mkt_df is None or len(mkt_df) < 2:
+        return {
+            "valid": False,
+            "validity": "未知",
+            "summary": "大盘数据不足，无法判断 CRDS 有效性",
+            "today_pct": None,
+            "prev_pct": None,
+            "trend5_pct": None,
+            "color": "#999999",
+        }
+    today_pct = float(mkt_df["pct_chg"].iloc[-1])
+    prev_pct = float(mkt_df["pct_chg"].iloc[-2])
+    trend5_pct = float(mkt_df["pct_chg"].iloc[-5:].sum()) if len(mkt_df) >= 5 else 0.0
+
+    # 判断结论：以今日上证涨跌幅为主
+    if today_pct >= 2.0:
+        validity = "失效"
+        summary = f"上证今日大涨 +{today_pct:.2f}%，逆势龙头信号参考意义极低，无需关注"
+        color = "#999999"
+        valid = False
+    elif today_pct >= 1.0:
+        validity = "低效"
+        summary = f"上证今日涨 +{today_pct:.2f}%，市场偏强，CRDS 有效性降低"
+        color = "#BA7517"
+        valid = True
+    elif today_pct >= -0.5:
+        validity = "有效"
+        summary = f"上证今日 {today_pct:+.2f}%，市场震荡，CRDS 可正常参考"
+        color = "#1D9E75"
+        valid = True
+    elif today_pct >= -2.0:
+        validity = "较有效"
+        summary = f"上证今日 {today_pct:+.2f}%，市场偏弱，CRDS 较有效"
+        color = "#1D9E75"
+        valid = True
+    else:
+        validity = "高有效"
+        summary = f"上证今日大跌 {today_pct:.2f}%，恐慌市 CRDS 信号最强，但需防系统性风险"
+        color = "#185FA5"
+        valid = True
+
+    return {
+        "valid": valid,
+        "validity": validity,
+        "summary": summary,
+        "today_pct": round(today_pct, 2),
+        "prev_pct": round(prev_pct, 2),
+        "trend5_pct": round(trend5_pct, 2),
+        "color": color,
+    }
+
+
 def get_stock_kline(code):
     """获取个股近期K线(含成交额)"""
     prefix = "1" if (code.startswith("6") or code.startswith("688")) else "0"
@@ -471,6 +528,10 @@ def calc_crds():
         return None
     print(f"  大盘: {len(mkt_df)} 天")
 
+    # 2.5 大盘环境判断
+    market_context = get_market_context(mkt_df)
+    print(f"  [大盘判断] {market_context['validity']} | 上证今日{market_context['today_pct']:+.2f}% | {market_context['summary']}")
+
     # 3. 逐只计算CRDS
     print(f"\n[2/3] 逐只计算CRDS ({len(all_stocks)} 只)...")
     results = []
@@ -512,6 +573,7 @@ def calc_crds():
     output = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_scanned": len(results),
+        "market_context": market_context,
         "cond1_list": [{"code": r["code"], "name": r["name"], "board_label": r["board_label"]} for r in cond1_list],
         "cond2_list": [{"code": r["code"], "name": r["name"], "board_label": r["board_label"]} for r in cond2_list],
         "cond3_list": [{"code": r["code"], "name": r["name"], "board_label": r["board_label"]} for r in cond3_list],

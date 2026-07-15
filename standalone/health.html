@@ -38424,7 +38424,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 12:00:52",
+"update_time": "2026-07-15 12:03:45",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120770,6 +120770,10 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
   function fmt(t){ return t ? t : '未知'; }
   function renderOps(){
     var s = window.OPS_STATUS || {};
+    // 优先读部署时写入的 build-stamp meta（每次部署都刷新，最准）；
+    // 兜底回退到 .ops_status.json 的 cloud_deploy_time（旧部署/本地预览无 meta 时）。
+    var _meta = document.querySelector('meta[name="build-stamp"]');
+    var deployTime = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
     var box = document.getElementById('opsStatusBox');
     if(!box){
       box = document.createElement('div');
@@ -120782,7 +120786,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     var neo = s.neodata_status==='ok'?'正常':'异常';
     var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
     box.innerHTML = '<div style="font-weight:600;margin-bottom:6px;color:#fff">运维状态</div>'+
-      '<div>最后部署：'+fmt(s.cloud_deploy_time)+'</div>'+
+      '<div>最后部署：'+fmt(deployTime)+'</div>'+
       '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
       '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
       '<div style="color:#999">令牌有效至：'+fmt(s.neodata_valid_until)+'</div>';
