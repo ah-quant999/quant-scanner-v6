@@ -1200,13 +1200,16 @@ window.addEventListener('load',function(){
 
       <!-- 📊 CRDS逆势龙头评分卡 — 暂未上架 -->
       <div id="crdsCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;">📊 <span style="font-weight:700;font-size:14px;color:#333;">CRDS 逆势龙头筛选</span> <span id="crdsTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          📊 <span style="font-weight:700;font-size:14px;color:#333;">CRDS · 逆势龙头</span>
+          <span id="crdsTime" style="font-size:11px;color:#999;font-weight:400;"></span>
           <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">暂未上架</span>
           <span style="font-size:10px;color:#fff;background:#c62828;padding:1px 7px;border-radius:8px;">短线</span>
           <span style="font-size:10px;color:#fff;background:#1565c0;padding:1px 7px;border-radius:8px;">盘后</span>
           <span style="font-size:10px;color:#fff;background:#607d8b;padding:1px 7px;border-radius:8px;">日频</span>
         </div>
-        <!-- 大盘环境判断 -->
+        <div id="crdsCoverage" style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.6;"></div>
+        <!-- 大盘环境判断（CRDS 特有） -->
         <div id="crdsMarketContext" style="display:none;margin-bottom:10px;padding:8px 10px;border-radius:6px;background:#f8f9fa;border-left:4px solid #ccc;">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
             <span style="font-size:12px;font-weight:600;color:#555;">大盘判断</span>
@@ -1215,46 +1218,67 @@ window.addEventListener('load',function(){
           </div>
           <div id="crdsMarketSummary" style="font-size:12px;color:#666;margin-top:4px;"></div>
         </div>
-        <!-- 交集分级：放在卡片名下方 -->
-        <div id="crdsLevels" style="padding:0 0 10px 0;">
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;"><span style="font-size:12px;font-weight:600;">三项全满足</span><span style="background:#1D9E75;color:#fff;font-size:11px;padding:1px 8px;border-radius:8px;">精选级</span><span id="crdsElite" style="font-size:12px;"></span></div>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><span style="font-size:12px;font-weight:600;">两项满足</span><span style="background:#BA7517;color:#fff;font-size:11px;padding:1px 8px;border-radius:8px;">进阶级</span><span id="crdsAdv" style="font-size:12px;"></span></div>
-        </div>
-        <div id="crdsBody" style="background:#fff;">
-          <!-- 三列条件区(每列内部用两列) -->
-          <div id="crdsCondRow" style="display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:0.5px solid #e0e0e0;padding:8px 0;">
-            <div id="crdsCond1" style="padding:0 10px 0 0;border-right:0.5px solid #e0e0e0;">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;cursor:pointer;user-select:none;background:#fafafa;padding:5px 8px;border-radius:6px;" onclick="tsToggle('crdsList1','crdsArr1')">
-                <span style="width:18px;height:18px;border-radius:50%;background:#185FA5;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</span>
-                <span style="font-size:13px;font-weight:600;flex:1;">10日≥2板</span>
-                <span id="crdsCnt1" style="font-size:12px;font-weight:600;color:#185FA5;"></span>
-                <span id="crdsArr1" style="font-size:10px;color:#999;">▴</span>
+        <!-- 双列下拉：精选/进阶 (左) + 三个条件 (右) -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <!-- 列1: 精选/进阶 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('crdsEliteBody','crdsEliteArr')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#1D9E75;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">三项全满足</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#1D9E75;"><span id="crdsEliteCnt">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="crdsEliteArr" style="font-size:10px;color:#999;">▾</span>
               </div>
-              <div id="crdsList1" style="font-size:12px;color:#555;line-height:1.8;column-count:2;column-gap:14px;"></div>
+              <div id="crdsEliteBody" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
             </div>
-            <div id="crdsCond2" style="padding:0 10px;border-right:0.5px solid #e0e0e0;">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;cursor:pointer;user-select:none;background:#fafafa;padding:5px 8px;border-radius:6px;" onclick="tsToggle('crdsList2','crdsArr2')">
-                <span style="width:18px;height:18px;border-radius:50%;background:#C62828;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</span>
-                <span style="font-size:13px;font-weight:600;flex:1;">大跌日逆势板</span>
-                <span id="crdsCnt2" style="font-size:12px;font-weight:600;color:#C62828;"></span>
-                <span id="crdsArr2" style="font-size:10px;color:#999;">▴</span>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('crdsAdvBody','crdsAdvArr')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#BA7517;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">两项满足</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#BA7517;"><span id="crdsAdvCnt">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="crdsAdvArr" style="font-size:10px;color:#999;">▾</span>
               </div>
-              <div id="crdsList2" style="font-size:12px;color:#555;line-height:1.8;column-count:2;column-gap:14px;"></div>
-            </div>
-            <div id="crdsCond3" style="padding:0 0 0 10px;">
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;cursor:pointer;user-select:none;background:#fafafa;padding:5px 8px;border-radius:6px;" onclick="tsToggle('crdsList3','crdsArr3')">
-                <span style="width:18px;height:18px;border-radius:50%;background:#3B6D11;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</span>
-                <span style="font-size:13px;font-weight:600;flex:1;">量能确认</span>
-                <span id="crdsCnt3" style="font-size:12px;font-weight:600;color:#3B6D11;"></span>
-                <span id="crdsArr3" style="font-size:10px;color:#999;">▴</span>
-              </div>
-              <div id="crdsList3" style="font-size:12px;color:#555;line-height:1.8;column-count:2;column-gap:14px;"></div>
+              <div id="crdsAdvBody" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
             </div>
           </div>
-          <!-- 通达信公式 -->
-          <div style="padding:10px 0 0 0;font-size:11px;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span style="font-size:12px;font-weight:600;color:#666;">通达信公式（合并版）</span><span style="font-size:10px;color:#aaa;">复制到公式管理器 → 条件选股</span></div>
-            <div style="background:#f2f2f2;border-radius:6px;padding:8px 10px;font-family:monospace;line-height:1.6;color:#555;font-size:11px;white-space:pre-wrap;">ZT:=C/REF(C,1)>=1.095 AND C=H;
+          <!-- 列2: 三个条件 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('crdsList1','crdsArr1')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#185FA5;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">10日≥2板</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#185FA5;"><span id="crdsCnt1">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="crdsArr1" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="crdsList1" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:280px;overflow-y:auto;"></div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('crdsList2','crdsArr2')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#C62828;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">大跌日逆势板</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#C62828;"><span id="crdsCnt2">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="crdsArr2" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="crdsList2" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('crdsList3','crdsArr3')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#3B6D11;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">量能确认</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#3B6D11;"><span id="crdsCnt3">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="crdsArr3" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="crdsList3" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- 历史扫描 -->
+        <div id="crdsHistory" style="font-size:11px;color:#999;"></div>
+      </div>
+      <!-- 通达信公式（CRDS 评分细则参考） -->
+      <div id="crdsFormula" style="margin-top:14px;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;"><span style="font-size:12px;font-weight:600;color:#666;">通达信公式（合并版）</span><span style="font-size:10px;color:#aaa;">复制到公式管理器 → 条件选股</span></div>
+        <div style="background:#f2f2f2;border-radius:6px;padding:8px 10px;font-family:monospace;line-height:1.6;color:#555;font-size:11px;white-space:pre-wrap;">ZT:=C/REF(C,1)>=1.095 AND C=H;
 IDN:=(INDEXC-REF(INDEXC,1))/REF(INDEXC,1)*100<=-1.5;
 VR:=AMO/MA(AMO,20);
 VR3:=MA(AMO,3)/MA(AMO,20);
@@ -1265,8 +1289,7 @@ AFMAX:=HHV(IF(ZT AND IDN,(C/REF(C,1)-1)*100/ABS((INDEXC/REF(INDEXC,1)-1)*100),0)
 CRDS:=(AFMAX*MIN(VRMAX,3)*(1+ZDOWN/MAX(ZCNT,1)))/3*10;
 {均衡版}
 SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
-          </div>
-        </div>
+      </div>
       </div>
 
       <!-- 🧪 三重选股 · 金钻起涨（实验盯盘） — 暂未上架 -->
@@ -38938,7 +38961,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 16:53:18",
+"update_time": "2026-07-15 17:04:56",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120521,6 +120544,16 @@ function renderCrdsCard() {
   // 更新时间
   document.getElementById('crdsTime').textContent = '更新 ' + (d.update_time || '');
 
+  // 头注：扫描量 + 失败 + 短/盘后/日频说明
+  var covEl = document.getElementById('crdsCoverage');
+  if (covEl) {
+    var scanned = d.total_scanned || 0;
+    var failed = d.failed || 0;
+    covEl.innerHTML = '扫描 A股 ' + scanned + ' 只'
+      + (failed ? ('，失败 ' + failed) : '')
+      + ' ｜ <b style="color:#1565c0;">盘后看</b>(基于日K) · <b style="color:#c62828;">短线</b>捕捉逆势龙头 · <b style="color:#607d8b;">日频</b>(每日盘后跑)';
+  }
+
   // 大盘环境判断
   var mc = d.market_context || {};
   var mcBox = document.getElementById('crdsMarketContext');
@@ -120540,19 +120573,71 @@ function renderCrdsCard() {
     }
   }
 
-  // 三列条件数据
-  var l1 = d.cond1_list || []; var l2 = d.cond2_list || []; var l3 = d.cond3_list || [];
-  document.getElementById('crdsCnt1').textContent = l1.length + '只';
-  document.getElementById('crdsCnt2').textContent = l2.length + '只';
-  document.getElementById('crdsCnt3').textContent = l3.length + '只';
-  document.getElementById('crdsList1').innerHTML = l1.map(function(s){return '<span style="cursor:default;">'+s.name+'('+s.code+')</span><br>';}).join('');
-  document.getElementById('crdsList2').innerHTML = l2.map(function(s){return '<span style="cursor:default;">'+s.name+'('+s.code+')</span><br>';}).join('');
-  document.getElementById('crdsList3').innerHTML = l3.map(function(s){return '<span style="cursor:default;">'+s.name+'('+s.code+')</span><br>';}).join('');
+  function fillList(listEl, arr, html) {
+    if (!arr || !arr.length) {
+      listEl.innerHTML = html;
+      return;
+    }
+    listEl.innerHTML = arr.map(function(s){
+      return '<span style="cursor:default;">' + (s.name || s.code) + '(' + s.code + ')</span><br>';
+    }).join('');
+  }
 
-  // 交集分级
-  var elite = d.elite || []; var adv = d.advanced || []; var watch = d.watch || [];
-  document.getElementById('crdsElite').innerHTML = elite.length ? elite.map(function(s){return '<b>'+s.name+'('+s.code+') CRDS='+s.score+'</b>, ';}).join('').slice(0,-2) : '无';
-  document.getElementById('crdsAdv').innerHTML = adv.length ? adv.map(function(s){return s.name+'('+s.code+') CRDS='+s.score+', ';}).join('').slice(0,-2) : '无';
+  // 三个条件
+  var l1 = d.cond1_list || []; var l2 = d.cond2_list || []; var l3 = d.cond3_list || [];
+  document.getElementById('crdsCnt1').textContent = l1.length;
+  document.getElementById('crdsCnt2').textContent = l2.length;
+  document.getElementById('crdsCnt3').textContent = l3.length;
+  fillList(document.getElementById('crdsList1'), l1, '<span style="color:#999;">今日无（10日≥2板稀疏信号）</span>');
+  fillList(document.getElementById('crdsList2'), l2, '<span style="color:#999;">今日无（需近期大跌日）</span>');
+  fillList(document.getElementById('crdsList3'), l3, '<span style="color:#999;">今日无</span>');
+
+  // 交集分级：精选 / 进阶
+  var elite = d.elite || []; var adv = d.advanced || [];
+  document.getElementById('crdsEliteCnt').textContent = elite.length;
+  document.getElementById('crdsAdvCnt').textContent = adv.length;
+  fillElite(document.getElementById('crdsEliteBody'), elite);
+  fillAdv(document.getElementById('crdsAdvBody'), adv);
+
+  // 历史扫描
+  var hist = d.history || [];
+  var histEl = document.getElementById('crdsHistory');
+  if (histEl) {
+    if (hist.length) {
+      var html = '<b>📜 历史扫描 (近 ' + hist.length + ' 天)</b><br>';
+      hist.forEach(function(h) {
+        html += h.date + ': 精选' + (h.elite||0) + ' 进阶' + (h.advanced||0) + ' 10日≥2板' + (h.cond1||0) + ' 大跌' + (h.cond2||0) + ' 量能' + (h.cond3||0) + ' | 扫描' + (h.scanned||0) + '<br>';
+      });
+      histEl.innerHTML = html;
+    } else {
+      var today = (d.update_time || '').slice(0, 10) || '今日';
+      histEl.innerHTML = '<b>📜 历史扫描 (近1天)</b><br>'
+        + today + ': 精选' + elite.length + ' 进阶' + adv.length
+        + ' 10日≥2板' + l1.length + ' 大跌' + l2.length + ' 量能' + l3.length
+        + ' | 扫描' + (d.total_scanned || 0)
+        + '<br><span style="color:#bbb;">（每日盘后自动累积历史）</span>';
+    }
+  }
+}
+
+function fillElite(el, arr) {
+  if (!arr || !arr.length) {
+    el.innerHTML = '<span style="color:#999;">今日无（精选级需3条件全满足，稀疏信号）</span>';
+    return;
+  }
+  el.innerHTML = arr.map(function(s){
+    return '<b>' + s.name + '(' + s.code + ')</b> CRDS=' + s.score + '<br>';
+  }).join('');
+}
+
+function fillAdv(el, arr) {
+  if (!arr || !arr.length) {
+    el.innerHTML = '<span style="color:#999;">今日无</span>';
+    return;
+  }
+  el.innerHTML = arr.map(function(s){
+    return s.name + '(' + s.code + ') CRDS=' + s.score + '<br>';
+  }).join('');
 }
 
 var _unlistedCardsMoved = false;
