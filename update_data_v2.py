@@ -1471,6 +1471,43 @@ def main():
     except Exception:
         ops_status = {}
 
+    # 从 HANDOVER_LOG.jsonl 提取最近三方状态（云端/小九/阿狸咪），注入到 OPS_STATUS
+    try:
+        import collections
+        log_path = os.path.join(BASE_DIR, "HANDOVER_LOG.jsonl")
+        three_party = {"cloud": {"status": "unknown", "last_time": "-"}, "xiaojiu": {"status": "unknown", "last_time": "-"}, "alimi": {"status": "unknown", "last_time": "-"}}
+        if os.path.exists(log_path):
+            with open(log_path, encoding="utf-8") as _lf:
+                all_lines = _lf.readlines()
+            # 取最后50行，找出各角色最新的成功/失败记录
+            for line in reversed(all_lines[-50:]):
+                line = line.strip()
+                if not line: continue
+                try:
+                    rec = json.loads(line)
+                except Exception:
+                    continue
+                t = rec.get("time", "")
+                host = rec.get("host", "")
+                succ = rec.get("success", False)
+                mode = rec.get("mode", "")
+                # 云端 = GitHubActions
+                if host == "GitHubActions":
+                    if three_party["cloud"]["last_time"] == "-":
+                        three_party["cloud"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
+                elif host == "CAT":
+                    if three_party["xiaojiu"]["last_time"] == "-":
+                        three_party["xiaojiu"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
+                elif host == "ALIMI":
+                    if three_party["alimi"]["last_time"] == "-":
+                        three_party["alimi"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
+        ops_status["three_party"] = three_party
+        # 判断三方综合结论
+        ok_count = sum(1 for v in three_party.values() if v["status"] == "ok")
+        ops_status["three_party_summary"] = f"云端={'✅' if three_party['cloud']['status']=='ok' else '❌'} 小九={'✅' if three_party['xiaojiu']['status']=='ok' else '❌'} 阿狸咪={'✅' if three_party['alimi']['status']=='ok' else '❌'}"
+    except Exception as e:
+        print(f"  ⚠️ 三方状态读取失败: {e}")
+
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
