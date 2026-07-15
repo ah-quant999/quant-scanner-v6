@@ -71,9 +71,11 @@ def gh_api(method, path, pat, body=None):
         req.add_header("Content-Type", "application/json")
     try:
         with urllib.request.urlopen(req, data=data, timeout=15) as resp:
-            return resp.status, json.loads(resp.read().decode("utf-8"))
+            raw = resp.read().decode("utf-8")
+            return resp.status, json.loads(raw) if raw else {}
     except urllib.error.HTTPError as e:
-        return e.code, json.loads(e.read().decode("utf-8") or "{}")
+        raw = e.read().decode("utf-8")
+        return e.code, json.loads(raw) if raw else {}
 
 
 def encrypt_secret(public_key_b64, secret_value):
