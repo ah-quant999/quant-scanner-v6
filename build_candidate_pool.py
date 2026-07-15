@@ -148,25 +148,15 @@ HK_TOP = 50           # 港股取成交额前 N
 # ---------- 行情抓取（带回退） ----------
 def _a_share_spot_mootdx():
     """mootdx(通达信直连) 取全市场A股实时行情，按成交额排序。
-    
-    含线程超时保护（家用机 mootdx 可能无限挂起，超时后回退 akshare）。
 
-    东方财富A股行情API持续被封禁(RemoteDisconnected)，故A股候选池改用
-    mootdx 直连通达信行情服务器（与 scanner.py 同一数据源，稳定不受限）。
-    返回 DataFrame(代码/名称/成交额) 或 None。
-
-    注意: client.quotes() 不含 name 列，名称需从 client.stocks() 结果取；
-          client.stocks(market) 返回全市场(含指数/债券/基金)，须按前缀+名称过滤。
+    ⚠️ 家用机可能无限挂起（TrafficStatSocket泄漏），已调整优先级为 akshare 兜底。
+    仅在云端/单位机作为 fallback 使用，超时由调用方 batch_update.py 统一处理。
     """
-    import concurrent.futures
-    _MOOTDX_TIMEOUT = 180  # 秒，家用机 mootdx 可能挂起；超时则回退 akshare
-
-    def _mootdx_impl():
+    try:
         from mootdx.quotes import Quotes
         import pandas as pd
         t = time.time()
         client = Quotes.factory(market='std')
-        # 板块前缀: 上海(market=1)=主板60x+科创688; 深圳(market=0)=主板00x+创业30x
         BOARD_PREFIXES = ('600', '601', '603', '605', '688',
                           '000', '001', '002', '003', '300', '301')
         NAME_EXCLUDE = ('指数', 'Ａ股', 'Ｂ股', '基金', 'ETF', '债券', '转债', '回购')
@@ -187,7 +177,6 @@ def _a_share_spot_mootdx():
                     continue
                 target_codes.append(code)
                 target_names[code] = name
-            # 批量获取实时行情(每批≤80只, 通达信协议上限)
             qparts = []
             for i in range(0, len(target_codes), 80):
                 batch = target_codes[i:i + 80]
@@ -201,7 +190,7 @@ def _a_share_spot_mootdx():
             if not qparts:
                 continue
             qdf = pd.concat(qparts, ignore_index=True)
-            qdf = qdf[qdf['price'] > 0].copy()  # 过滤停牌
+            qdf = qdf[qdf['price'] > 0].copy()
             for _, r in qdf.iterrows():
                 code = str(r['code']).zfill(6)
                 name = target_names.get(code, '')
@@ -214,26 +203,18 @@ def _a_share_spot_mootdx():
         df = pd.DataFrame(rows)
         print(f"  [A股-mootdx] OK 行数={len(df)} {time.time() - t:.1f}s")
         return df
-
-    # 用线程池加硬超时
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
-        fut = ex.submit(_mootdx_impl)
-        try:
-            result = fut.result(timeout=_MOOTDX_TIMEOUT)
-            return result
-        except concurrent.futures.TimeoutError:
-            print(f"  [A股-mootdx] 超时 {_MOOTDX_TIMEOUT}s，回退 akshare")
-            return None
-        except Exception as e:
-            print(f"  [A股-mootdx] 失败: {type(e).__name__} {str(e)[:60]}")
-            return None
+    except Exception as e:
+        print(f"  [A股-mootdx] 失败: {type(e).__name__} {str(e)[:60]}")
+        return None
 
 
 def _a_share_spot():
-    """A股行情获取：mootdx优先 → akshare(东财/新浪)回退。"""
-    df = _a_share_spot_mootdx()
-    if df is not None and len(df):
-        return df
+    """A股行情获取：akshare(东财/新浪)优先 → mootdx(通达信)兜底。
+
+    ⚠️ 家用机 mootdx client.quotes() 无限挂起无法被线程/进程超时捕获，
+       故优先使用 akshare（东财接口 home 机虽慢但不会永久挂起），
+       mootdx 仅作为云端/单位机的兜底方案。
+    """
     for fn in (ak.stock_zh_a_spot_em, ak.stock_zh_a_spot):
         try:
             t = time.time()
@@ -244,7 +225,9 @@ def _a_share_spot():
         except Exception as e:
             print(f"  [A股] {fn.__name__} 失败: {type(e).__name__} {str(e)[:60]}")
             time.sleep(2)
-    return None
+    # mootdx 兜底（云端/单位机可达）
+    print("  [A股] akshare 全失败，尝试 mootdx...")
+    return _a_share_spot_mootdx()
 
 
 def _hk_spot():

@@ -41,7 +41,7 @@
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:13:53",
+    "last_success": "2026-07-15 22:33:22",
     "last_error": null
   },
   "fetch_herding_data": {
@@ -77,7 +77,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:13:51",
+    "last_success": "2026-07-15 22:33:20",
     "last_error": null
   },
   "fetch_fomc": {
@@ -87,22 +87,22 @@
   },
   "fetch_52w_high": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:13:51",
+    "last_success": "2026-07-15 22:33:20",
     "last_error": null
   },
   "fetch_lhb": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:18:13",
+    "last_success": "2026-07-15 22:28:15",
     "last_error": null
   },
   "fetch_analyst_ratings": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:03:31",
+    "last_success": "2026-07-15 22:34:20",
     "last_error": null
   },
   "fetch_policy_density": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-15 22:13:57",
+    "last_success": "2026-07-15 22:33:26",
     "last_error": null
   },
   "fetch_north_fund": {
