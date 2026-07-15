@@ -1214,7 +1214,7 @@ window.addEventListener('load',function(){
       <div id="tripleSelectCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;display:block;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
           🧪 <span style="font-weight:700;font-size:14px;color:#333;">三重选股 · 金钻起涨</span>
-          <span id="tripleSelectTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+          <span id="tripleSelectTime" style="font-size:12px;color:#666;font-weight:500;background:#f5f5f5;padding:1px 8px;border-radius:8px;">更新 ...</span>
           <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">实验盯盘</span>
           <span style="font-size:10px;color:#fff;background:#c62828;padding:1px 7px;border-radius:8px;">短线</span>
           <span style="font-size:10px;color:#fff;background:#1565c0;padding:1px 7px;border-radius:8px;">盘后</span>
@@ -1281,7 +1281,7 @@ window.addEventListener('load',function(){
       <div id="crdsCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;display:block;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
           📊 <span style="font-weight:700;font-size:14px;color:#333;">CRDS · 逆势龙头</span>
-          <span id="crdsTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+          <span id="crdsTime" style="font-size:12px;color:#666;font-weight:500;background:#f5f5f5;padding:1px 8px;border-radius:8px;">更新 ...</span>
           <span style="font-size:10px;color:#fff;background:#7b1fa2;padding:1px 7px;border-radius:8px;">暂未上架</span>
           <span style="font-size:10px;color:#fff;background:#c62828;padding:1px 7px;border-radius:8px;">短线</span>
           <span style="font-size:10px;color:#fff;background:#1565c0;padding:1px 7px;border-radius:8px;">盘后</span>
@@ -38971,7 +38971,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 17:50:47",
+"update_time": "2026-07-15 17:55:25",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120555,7 +120555,7 @@ function renderCrdsCard() {
   card.style.display = 'block';
 
   // 更新时间
-  document.getElementById('crdsTime').textContent = '更新 ' + (d.update_time || '');
+  document.getElementById('crdsTime').textContent = '🕐 更新 ' + (d.update_time || '未知');
 
   // 头注：扫描量 + 失败 + 短/盘后/日频说明
   var covEl = document.getElementById('crdsCoverage');
@@ -120671,7 +120671,7 @@ function renderTripleSelectCard() {
   if (!card) return;
   card.style.display = 'block';
   var tEl = document.getElementById('tripleSelectTime');
-  if (tEl) tEl.textContent = '更新 ' + (today.generated_at || today.date || '');
+  if (tEl) tEl.textContent = '🕐 更新 ' + (today.generated_at || today.date || '未知');
 
   // 头注：说明是盘后日频+短线
   var covEl = document.getElementById('tripleSelectCoverage');
