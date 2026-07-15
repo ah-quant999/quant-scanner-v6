@@ -72,8 +72,9 @@ jobs:
             fetch_macro_data.py fetch_fomc.py fetch_sh_sz_history.py \
             fetch_up_down_stats.py fetch_sh_index_fib.py; do
             echo ">>> $script start $(date -Iseconds)"
-            timeout 90 python "$script" 2>&1 | tail -3 || echo "[超时/失败] $script"
-            echo "<<< $script end"
+            # 不用管道（避免 tail 等 EOF 卡死），用 timeout --kill-after 强杀兜底
+            timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
+            echo "<<< $script end $(date -Iseconds)"
           done
 
       - name: "📡 危机雷达"

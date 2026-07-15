@@ -94,8 +94,8 @@ jobs:
             fetch_up_down_stats.py fetch_sh_index_fib.py fetch_sz_index_fib.py \
             fetch_crisis_data.py; do
             echo ">>> $script start $(date -Iseconds)"
-            timeout 90 python "$script" 2>&1 | tail -3 || echo "[超时/失败] $script"
-            echo "<<< $script end"
+            timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
+            echo "<<< $script end $(date -Iseconds)"
           done
 
       # ─── 盘中扫描（每时间点：scanner watch + 盘中切片） ───
