@@ -647,7 +647,7 @@ tr:hover td { background: #fafbfc; }
         <span style="font-size:14px;font-weight:700;color:#880e4f;margin-left:2px;">🚀 打新速览 <span style="font-size:11px;font-weight:400;color:#999;margin-left:4px;">常驻 · 双维度</span></span>
         <span style="font-size:12px;color:#999;" id="ipoStripTime"></span>
       </div>
-      <div id="ipoStripList" style="display:flex;gap:8px;overflow-x:auto;padding:10px 14px;"></div>
+      <div id="ipoStripList" style="display:flex;flex-direction:column;gap:2px;padding:10px 14px;"></div>
     </div>
 
     <!-- 🚀 打新研判（方案A明细卡，已改由顶部速览条 C1 替代展示；结构保留备用） -->
@@ -449614,38 +449614,68 @@ function renderIpoTopStrip() {
   if (!stocks.length) { strip.style.display = 'none'; return; }
   strip.style.display = 'block';
 
+  // 分组（与后台 ipoGroup 口径一致）
+  var g = {
+    pricing:      stocks.filter(function(s){ return s.status === 'applying' && (!s.issue_price || s.recommend === '待定价'); }),
+    applying:     stocks.filter(function(s){ return s.status === 'applying' && s.issue_price && s.recommend !== '待定价'; }),
+    pre_listing:  stocks.filter(function(s){ return s.status === 'pre_listing'; }),
+    track:        stocks.filter(function(s){ return s.status === 'listed_today' || s.status === 'tracking'; })
+  };
+
   // 头部计数 + 更新时间
   var timeEl = document.getElementById('ipoStripTime');
   if (timeEl) {
-    var applying = 0, preListing = 0;
-    for (var k = 0; k < stocks.length; k++) {
-      if (stocks[k].status === 'applying') applying++;
-      else if (stocks[k].status === 'pre_listing') preListing++;
-    }
-    var tStr = '在申' + applying + ' · 待上市' + preListing;
+    var parts = [];
+    if (g.pricing.length)      parts.push('待定价' + g.pricing.length);
+    if (g.applying.length)     parts.push('申购' + g.applying.length);
+    if (g.pre_listing.length)  parts.push('待上市' + g.pre_listing.length);
+    if (g.track.length)        parts.push('上市日追踪' + g.track.length);
+    var tStr = parts.join(' · ');
     if (d.update_time) { var ft = (typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null; if (ft) tStr += ' · 更新于 ' + ft.text; }
     timeEl.textContent = tStr;
   }
 
-  var h = '';
-  for (var i = 0; i < stocks.length; i++) {
-    var s = stocks[i];
+  function cardHtml(s) {
     var sc = s.score || 0;
     var arb = (typeof s.arbitrage_score === 'number') ? s.arbitrage_score : 0;
     var fund = (typeof s.fundamental_score === 'number') ? s.fundamental_score : 0;
     var tagColor = s.tag_color || (sc >= 65 ? '#2e7d32' : sc >= 50 ? '#e65100' : '#c62828');
     var tagBg = s.bg_color || (sc >= 65 ? '#e8f5e9' : sc >= 50 ? '#fff3e0' : '#ffebee');
     var track = (s.fundamentals && s.fundamentals.track) ? s.fundamentals.track : '';
-    var statusTag = s.status === 'applying' ? '申购' : s.status === 'pre_listing' ? '待上市' : s.status === 'listed_today' ? '上市' : s.status === 'tracking' ? '追踪' : '';
-    h += '<div style="flex:0 0 170px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;">';
+    var h = '';
+    h += '<div style="flex:0 0 180px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;">';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">';
     h += '<span style="font-size:13px;font-weight:700;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.name || '') + '</span>';
     h += '<span style="font-size:11px;font-weight:700;padding:1px 7px;border-radius:8px;background:' + tagBg + ';color:' + tagColor + ';white-space:nowrap;">' + sc + '</span>';
     h += '</div>';
-    h += '<div style="font-size:10px;color:#999;margin:2px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.code || '') + ' · ' + (s.board || '') + (statusTag ? ' · ' + statusTag : '') + (track ? ' · ' + track : '') + '</div>';
+    h += '<div style="font-size:10px;color:#999;margin:2px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.code || '') + ' · ' + (s.board || '') + (track ? ' · ' + track : '') + '</div>';
     h += '<div style="height:5px;background:#f0f0f0;border-radius:3px;margin-bottom:3px;overflow:hidden;"><div style="width:' + Math.max(2, arb) + '%;height:5px;background:#e24b4a;border-radius:3px;"></div></div>';
     h += '<div style="height:5px;background:#f0f0f0;border-radius:3px;margin-bottom:4px;overflow:hidden;"><div style="width:' + Math.max(2, fund) + '%;height:5px;background:#378add;border-radius:3px;"></div></div>';
     h += '<div style="font-size:9px;color:#999;display:flex;justify-content:space-between;"><span>套利' + arb + '</span><span>基本面' + fund + '</span></div>';
+    h += '</div>';
+    return h;
+  }
+
+  var sections = [
+    { title:'待定价',     color:'#607d8b', items:g.pricing },
+    { title:'申购',       color:'#2e7d32', items:g.applying },
+    { title:'待上市',     color:'#1565c0', items:g.pre_listing },
+    { title:'上市日追踪', color:'#6a1b9a', items:g.track }
+  ];
+
+  var h = '';
+  for (var si = 0; si < sections.length; si++) {
+    var sec = sections[si];
+    if (!sec.items.length) continue;
+    h += '<div style="margin-bottom:10px;">';
+    h += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">';
+    h += '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + sec.color + ';"></span>';
+    h += '<span style="font-size:12px;font-weight:700;color:#444;">' + sec.title + '</span>';
+    h += '<span style="font-size:11px;color:#999;">' + sec.items.length + '只</span>';
+    h += '</div>';
+    h += '<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;">';
+    for (var i = 0; i < sec.items.length; i++) { h += cardHtml(sec.items[i]); }
+    h += '</div>';
     h += '</div>';
   }
   listEl.innerHTML = h;
