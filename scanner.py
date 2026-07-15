@@ -2012,17 +2012,6 @@ def check_stock_signals(code, name, market="sh", board_label="", volume_amount=0
         金钻起涨 = bool(last.get("金钻起涨", False))
         金钻信号 = 黄柱 or 金钻起涨
 
-        # 波段是金(副图指标 -> 波段多头)
-        df = calc_band_signal(df)
-        last = df.iloc[-1]
-        波段多头 = bool(last.get("波段多头", False))
-
-        # 主力清洗(副图指标 -> 主力进场/出货)
-        df = calc_zhuli_signal(df)
-        last = df.iloc[-1]
-        主力进场 = bool(last.get("主力进场", False))
-        主力出货 = bool(last.get("主力出货", False))
-
         # 四量图机构变红
         df = calc_siliang_signal(df)
         last = df.iloc[-1]
@@ -2074,10 +2063,8 @@ def check_stock_signals(code, name, market="sh", board_label="", volume_amount=0
             开盘_标签 = "—"
             开盘_高开 = 开盘_低开 = 开盘_阳线 = 开盘_阴线 = 开盘_长腿 = False
 
-        # 三重选股: 金钻起涨 & 波段多头 & 主力进场 & 未出货(基于公式语义组合, 非自由发挥)
-        三重选股 = 金钻起涨 and 波段多头 and 主力进场 and (not 主力出货)
-        # 信号统计(保留原四维共振, 三重选股作为第5个共振维度)
-        signal_count = sum([缠论买, 金钻信号, 机构变红, 上涨趋势, 三重选股])
+        # 信号统计(原四维共振: 缠论买 / 金钻信号 / 四量图机构变红 / 上涨趋势)
+        signal_count = sum([缠论买, 金钻信号, 机构变红, 上涨趋势])
         # 三线共振：四个信号中满足任意三种
         三线共振 = signal_count >= 3
         # 三足鼎立：四信号全满足（最难出现）
@@ -2148,10 +2135,6 @@ def check_stock_signals(code, name, market="sh", board_label="", volume_amount=0
             "缠论买_次数": 缠论买次数,
             "金钻_黄柱": 黄柱,
             "金钻_起涨": 金钻起涨,
-            "三重选股": 三重选股,
-            "波段是金": 波段多头,
-            "主力清洗_进场": 主力进场,
-            "主力清洗_出货": 主力出货,
             "四量图_机构变红": 机构变红,
             "上涨趋势_条件1": 上涨趋势_条件1,
             "上涨趋势_条件2": 上涨趋势_条件2,
@@ -2186,10 +2169,6 @@ def check_stock_signals(code, name, market="sh", board_label="", volume_amount=0
                 "缠论买_次数": 缠论买次数,
                 "金钻_黄柱": 黄柱,
                 "金钻_起涨": 金钻起涨,
-                "三重选股": 三重选股,
-                "波段是金": 波段多头,
-                "主力清洗_进场": 主力进场,
-                "主力清洗_出货": 主力出货,
                 "四量图_机构变红": 机构变红,
                 "上涨趋势_条件1": 上涨趋势_条件1,
                 "上涨趋势_条件2": 上涨趋势_条件2,
