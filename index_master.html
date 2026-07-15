@@ -1198,34 +1198,60 @@ SEL:ZCNT>=2 AND ZDOWN>=1 AND VRMAX>=2.0 AND VR3>=1.5 AND CRDS>=15;</div>
           <span style="font-size:10px;color:#fff;background:#607d8b;padding:1px 7px;border-radius:8px;">日频</span>
         </div>
         <div id="tripleSelectCoverage" style="font-size:11px;color:#888;margin-bottom:8px;line-height:1.6;"></div>
-        <!-- 三列：起涨 / 趋势 / 资金 -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
-          <div style="border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;background:#fafafa;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#c62828;"></span>
-              <span style="font-size:12px;font-weight:600;color:#333;">起涨 · 金钻起涨</span>
-              <span id="tsCol1Cnt" style="font-size:13px;font-weight:700;color:#c62828;margin-left:auto;">0</span><span style="font-size:10px;color:#999;">只</span>
+        <!-- 双列下拉：起涨/趋势 (左) + 资金/选股 (右) -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <!-- 列1: 起涨 + 趋势 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB1','tsA1')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#c62828;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">金钻起涨</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#c62828;"><span id="tsCnt1">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA1" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB1" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
             </div>
-            <div id="tsCol1List" style="font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB2','tsA2')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#1565c0;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">波段多头</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#1565c0;"><span id="tsCnt2">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA2" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB2" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:280px;overflow-y:auto;"></div>
+            </div>
           </div>
-          <div style="border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;background:#fafafa;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#1565c0;"></span>
-              <span style="font-size:12px;font-weight:600;color:#333;">趋势 · 波段多头</span>
-              <span id="tsCol2Cnt" style="font-size:13px;font-weight:700;color:#1565c0;margin-left:auto;">0</span><span style="font-size:10px;color:#999;">只</span>
+          <!-- 列2: 资金进出 + 三重选股 -->
+          <div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB3','tsA3')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#2e7d32;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">主力进场</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#2e7d32;"><span id="tsCnt3">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA3" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB3" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
             </div>
-            <div id="tsCol2List" style="font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
-          </div>
-          <div style="border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;background:#fafafa;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-              <span style="width:10px;height:10px;border-radius:50%;background:#2e7d32;"></span>
-              <span style="font-size:12px;font-weight:600;color:#333;">资金 · 主力进出</span>
-              <span style="font-size:11px;color:#999;margin-left:auto;">进 <span id="tsCol3In" style="color:#2e7d32;font-weight:700;">0</span> / 出 <span id="tsCol3Out" style="color:#ef6c00;font-weight:700;">0</span></span>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB4','tsA4')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#ef6c00;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">主力出货</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#ef6c00;"><span id="tsCnt4">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA4" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB4" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:160px;overflow-y:auto;"></div>
             </div>
-            <div id="tsCol3List" style="font-size:11px;color:#555;line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+            <div style="border:1px solid #e0e0e0;border-radius:8px;margin-bottom:8px;background:#fafafa;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;background:#fff;" onclick="tsToggle('tsB5','tsA5')">
+                <span style="width:10px;height:10px;border-radius:50%;background:#6a1b9a;"></span>
+                <span style="font-size:12px;font-weight:600;color:#333;">三重选股</span>
+                <span style="margin-left:auto;font-size:13px;font-weight:700;color:#6a1b9a;"><span id="tsCnt5">0</span><span style="font-size:10px;color:#999;">只</span></span>
+                <span id="tsA5" style="font-size:10px;color:#999;">▾</span>
+              </div>
+              <div id="tsB5" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:#555;line-height:1.7;max-height:120px;overflow-y:auto;"></div>
+            </div>
           </div>
         </div>
-        <div id="tripleSelectHits" style="font-size:12px;color:#444;line-height:1.9;margin-bottom:8px;"></div>
         <div id="tripleSelectHistory" style="font-size:11px;color:#999;"></div>
       </div>
 
@@ -450696,6 +450722,15 @@ function renderCrdsCard() {
 
 var _unlistedCardsMoved = false;
 
+// 三重选股卡下拉切换
+function tsToggle(bodyId, arrowId) {
+  var b = document.getElementById(bodyId);
+  var a = document.getElementById(arrowId);
+  if (!b) return;
+  if (b.style.display === 'none') { b.style.display = 'block'; if (a) a.textContent = '▴'; }
+  else { b.style.display = 'none'; if (a) a.textContent = '▾'; }
+}
+
 function renderTripleSelectCard() {
   var d = window.EXPERIMENT_DATA || {};
   var today = d.today || {};
@@ -450716,53 +450751,36 @@ function renderTripleSelectCard() {
   var lists = today.lists || {};
   var sig = today.signals || {};
 
-  // 三列填充
-  function fillCol(listEl, arr) {
+  function fillList(listEl, arr, emptyHint) {
     if (!arr || !arr.length) {
-      listEl.innerHTML = '<span style="color:#999;">无</span>';
+      listEl.innerHTML = '<span style="color:#999;">' + (emptyHint || '今日无触发') + '</span>';
       return;
     }
     listEl.innerHTML = arr.map(function(s){
       return '<span style="cursor:default;">' + (s.name||s.code) + '(' + s.code + ')</span><br>';
     }).join('');
   }
-  // 列1：金钻起涨（短线起涨点）
-  document.getElementById('tsCol1Cnt').textContent = sig['金钻起涨'] || 0;
-  fillCol(document.getElementById('tsCol1List'), lists['金钻起涨']);
-  // 列2：波段多头（趋势确认）
-  document.getElementById('tsCol2Cnt').textContent = sig['波段多头'] || 0;
-  fillCol(document.getElementById('tsCol2List'), lists['波段多头']);
-  // 列3：主力进出（资金行为）
-  document.getElementById('tsCol3In').textContent = sig['主力进场'] || 0;
-  document.getElementById('tsCol3Out').textContent = sig['主力出货'] || 0;
-  var col3 = [];
-  (lists['主力进场']||[]).forEach(function(s){ col3.push({s:s, t:'in'}); });
-  (lists['主力出货']||[]).forEach(function(s){ col3.push({s:s, t:'out'}); });
-  var c3 = document.getElementById('tsCol3List');
-  if (!col3.length) { c3.innerHTML = '<span style="color:#999;">无</span>'; }
-  else {
-    c3.innerHTML = col3.map(function(x){
-      var color = x.t === 'in' ? '#2e7d32' : '#ef6c00';
-      var tag = x.t === 'in' ? '进' : '出';
-      return '<span style="color:'+color+';font-weight:600;">'+tag+'</span> '
-        + '<span style="cursor:default;">' + (x.s.name||x.s.code) + '(' + x.s.code + ')</span><br>';
-    }).join('');
-  }
 
-  // 三重选股命中
-  var hitEl = document.getElementById('tripleSelectHits');
-  if (hitEl) {
-    var hits = today.hits || [];
-    if (hits.length) {
-      var hh = '<div style="font-weight:600;color:#6a1b9a;margin-bottom:4px;">🌟 三重选股命中（金钻+波段+主力进场，且非出货）</div>';
-      hh += hits.map(function(h){ return '· '+ (h.name||h.code) + ' (' + h.code + ') ¥' + (h.close||''); }).join('　');
-      hitEl.innerHTML = hh;
-    } else {
-      var anyList = (lists['金钻起涨']&&lists['金钻起涨'].length) || (lists['波段多头']&&lists['波段多头'].length);
-      hitEl.innerHTML = anyList
-        ? '<span style="color:#888;">今日三重选股命中 0 只（金钻+波段+主力进场 三维全满足的 0 只）。上述三列个股清单可分别参考。</span>'
-        : '<span style="color:#999;">今日无任何信号触发。</span>';
-    }
+  // 列1：起涨 / 趋势
+  document.getElementById('tsCnt1').textContent = sig['金钻起涨'] || 0;
+  fillList(document.getElementById('tsB1'), lists['金钻起涨'], '今日无（金钻起涨需6条件全满足，稀疏信号）');
+  document.getElementById('tsCnt2').textContent = sig['波段多头'] || 0;
+  fillList(document.getElementById('tsB2'), lists['波段多头'], '今日无');
+  // 列2：资金进出 + 三重选股
+  document.getElementById('tsCnt3').textContent = sig['主力进场'] || 0;
+  fillList(document.getElementById('tsB3'), lists['主力进场'], '今日无（主力信号需创33日新高/新低）');
+  document.getElementById('tsCnt4').textContent = sig['主力出货'] || 0;
+  fillList(document.getElementById('tsB4'), lists['主力出货'], '今日无');
+  document.getElementById('tsCnt5').textContent = sig['三重选股'] || 0;
+  // 三重选股命中（独立数组）
+  var hits = today.hits || [];
+  var h5 = document.getElementById('tsB5');
+  if (hits.length) {
+    h5.innerHTML = hits.map(function(h){
+      return '<b style="color:#6a1b9a;">🌟</b> ' + (h.name||h.code) + '(' + h.code + ') ¥' + (h.close||'') + '<br>';
+    }).join('');
+  } else {
+    h5.innerHTML = '<span style="color:#999;">今日 0 只（金钻+波段+主力进场 三维全满足）</span>';
   }
 
   // 历史扫描
