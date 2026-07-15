@@ -449643,15 +449643,15 @@ function renderIpoTopStrip() {
     var tagBg = s.bg_color || (sc >= 65 ? '#e8f5e9' : sc >= 50 ? '#fff3e0' : '#ffebee');
     var track = (s.fundamentals && s.fundamentals.track) ? s.fundamentals.track : '';
     var h = '';
-    h += '<div style="flex:0 0 180px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 10px;">';
+    h += '<div style="flex:0 0 calc(20% - 6.4px);background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:10px 12px;box-sizing:border-box;">';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">';
-    h += '<span style="font-size:13px;font-weight:700;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.name || '') + '</span>';
-    h += '<span style="font-size:11px;font-weight:700;padding:1px 7px;border-radius:8px;background:' + tagBg + ';color:' + tagColor + ';white-space:nowrap;">' + sc + '</span>';
+    h += '<span style="font-size:14px;font-weight:700;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.name || '') + '</span>';
+    h += '<span style="font-size:12px;font-weight:700;padding:2px 8px;border-radius:8px;background:' + tagBg + ';color:' + tagColor + ';white-space:nowrap;">' + sc + '</span>';
     h += '</div>';
-    h += '<div style="font-size:10px;color:#999;margin:2px 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.code || '') + ' · ' + (s.board || '') + (track ? ' · ' + track : '') + '</div>';
-    h += '<div style="height:5px;background:#f0f0f0;border-radius:3px;margin-bottom:3px;overflow:hidden;"><div style="width:' + Math.max(2, arb) + '%;height:5px;background:#e24b4a;border-radius:3px;"></div></div>';
-    h += '<div style="height:5px;background:#f0f0f0;border-radius:3px;margin-bottom:4px;overflow:hidden;"><div style="width:' + Math.max(2, fund) + '%;height:5px;background:#378add;border-radius:3px;"></div></div>';
-    h += '<div style="font-size:9px;color:#999;display:flex;justify-content:space-between;"><span>套利' + arb + '</span><span>基本面' + fund + '</span></div>';
+    h += '<div style="font-size:11px;color:#999;margin:4px 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + (s.code || '') + ' · ' + (s.board || '') + (track ? ' · ' + track : '') + '</div>';
+    h += '<div style="height:8px;background:#f0f0f0;border-radius:4px;margin-bottom:4px;overflow:hidden;"><div style="width:' + Math.max(2, arb) + '%;height:8px;background:#e24b4a;border-radius:4px;"></div></div>';
+    h += '<div style="height:8px;background:#f0f0f0;border-radius:4px;margin-bottom:5px;overflow:hidden;"><div style="width:' + Math.max(2, fund) + '%;height:8px;background:#378add;border-radius:4px;"></div></div>';
+    h += '<div style="font-size:10px;color:#999;display:flex;justify-content:space-between;"><span>套利' + arb + '</span><span>基本面' + fund + '</span></div>';
     h += '</div>';
     return h;
   }
@@ -449667,13 +449667,13 @@ function renderIpoTopStrip() {
   for (var si = 0; si < sections.length; si++) {
     var sec = sections[si];
     if (!sec.items.length) continue;
-    h += '<div style="margin-bottom:10px;">';
-    h += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">';
+    h += '<div style="margin-bottom:14px;">';
+    h += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">';
     h += '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + sec.color + ';"></span>';
     h += '<span style="font-size:12px;font-weight:700;color:#444;">' + sec.title + '</span>';
     h += '<span style="font-size:11px;color:#999;">' + sec.items.length + '只</span>';
     h += '</div>';
-    h += '<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;">';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
     for (var i = 0; i < sec.items.length; i++) { h += cardHtml(sec.items[i]); }
     h += '</div>';
     h += '</div>';
