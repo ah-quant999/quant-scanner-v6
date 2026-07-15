@@ -1109,8 +1109,20 @@ tr:hover td { background: #fafbfc; }
     </div>
 
     <div style="background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
-      <h3 style="margin-bottom:4px;font-size:16px;">🩺 系统健康看板</h3>
-      <div style="font-size:12px;color:#999;margin-bottom:14px;">各数据源最后更新状态 · 超过阈值未更新标红</div>
+      <!-- 顶栏：标题 + 运维状态卡片（同一行，admin-only 卡片右对齐） -->
+      <div style="display:flex;align-items:center;gap:20px;margin-bottom:14px;flex-wrap:wrap;">
+        <div style="flex:1 1 auto;min-width:240px;">
+          <h3 style="margin-bottom:4px;font-size:16px;">🩺 系统健康看板</h3>
+          <div style="font-size:12px;color:#999;">各数据源最后更新状态 · 超过阈值未更新标红</div>
+        </div>
+        <div id="opsStatusCard" class="admin-only" style="display:none;flex:0 0 auto;min-width:380px;max-width:560px;background:rgba(248,249,250,0.6);border:1px solid #e0e0e0;border-radius:8px;padding:8px 12px;">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+            <span style="font-size:12px;">⚙️</span>
+            <span style="font-weight:700;font-size:12px;color:#333;">运维状态</span>
+          </div>
+          <div id="opsStatusContent" style="font-size:11px;color:#555;line-height:1.6;"></div>
+        </div>
+      </div>
 
       <!-- F窗口 + 缠论视角 + 窗口失效应对: 不在健康看板 tab 显示; 由 moveCardsToShelf 在点 "暂未上架" 时动态创建并挂到 unlistedPanel -->
 
@@ -1129,12 +1141,6 @@ tr:hover td { background: #fafbfc; }
 
       <!-- 健康看板主内容区（renderHealthDashboard() 渲染目标） -->
       <div id="healthDashboard" style="margin-bottom:16px;"></div>
-
-      <!-- ⚙️ 运维状态 — 健康看板顶部常驻卡片（admin-only） -->
-      <div id="opsStatusCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;">⚙️ <span style="font-weight:700;font-size:14px;color:#333;">运维状态</span></div>
-        <div id="opsStatusContent" style="font-size:12px;color:#555;line-height:1.8;"></div>
-      </div>
 
       <div id="unlistedPanel" style="display:none;font-size:13px;">
         <div style="font-weight:700;font-size:14px;margin-bottom:10px;">暂未上架 / 隐藏卡片</div>
@@ -451679,10 +451685,12 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     var neo = s.neodata_status==='ok'?'正常':'异常';
     var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
     content.innerHTML =
-      '<div>最后部署：'+fmt(deployTime)+'</div>'+
-      '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
-      '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
-      '<div style="color:#999">令牌有效至：'+fmt(s.neodata_valid_until)+'</div>';
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">'+
+        '<div>最后部署：'+fmt(deployTime)+'</div>'+
+        '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
+        '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
+        '<div style="color:#999">令牌有效至：'+fmt(s.neodata_valid_until)+'</div>'+
+      '</div>';
   }
   if(document.readyState!=='loading') renderOps();
   else document.addEventListener('DOMContentLoaded', renderOps);
