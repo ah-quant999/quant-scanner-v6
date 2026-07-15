@@ -450716,6 +450716,9 @@ function toggleUnlistedPanel() {
     btn.style.color = '#fff';
     btn.style.borderColor = '#7b1fa2';
     moveCardsToShelf();
+    // 保险：即使 moveCardsToShelf 出错，也确保 CRDS/三重选股 渲染
+    if (typeof renderCrdsCard === 'function') { try { renderCrdsCard(); } catch(e) {} }
+    if (typeof renderTripleSelectCard === 'function') { try { renderTripleSelectCard(); } catch(e) {} }
   }
 }
 
@@ -450905,7 +450908,6 @@ function renderTripleSelectCard() {
 }
 
 function moveCardsToShelf() {
-  if (_unlistedCardsMoved) return;
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
   var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard'];
