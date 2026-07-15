@@ -41,6 +41,7 @@ __pycache__/
 !pre_market_cloud_failover.py
 !triple_select_scan.py
 !fetch_neodata_daily.py
+!capital_flow_summary.py
 !EVENING_FAILOVER.md
 *.bat
 .wrangler/
@@ -60,6 +61,8 @@ data/*
 !data/sector_rs.json
 # 例外：本机运维状态(兜底结论/neodata有效期)供前端运维卡片读取，须进 Git 让云端部署也展示
 !data/.ops_status.json
+!data/capital_flow_summary.json
+!data/experiment/*.json
 # 敏感文件：显式忽略，防止被 git add -A / -f 重新纳入版本控制（泄露风险）
 data/zsxq_token.json
 data/mahoro_signals.json

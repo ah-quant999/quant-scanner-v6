@@ -1357,6 +1357,27 @@ window.addEventListener('load',function(){
       </div>
       <!-- 通达信公式（CRDS）已移至「逻辑详解」独立页（guide.html 第八节） -->
 
+      <!-- 💰 三方资金流向对比 — 暂未上架 -->
+      <div id="capitalFlowCard" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+          💰 <span style="font-weight:700;font-size:14px;color:#333;">三方资金流向对比</span>
+          <span id="capFlowTime" style="font-size:11px;color:#999;font-weight:400;"></span>
+        </div>
+        <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+          <thead>
+            <tr style="background:#3C3489;color:#fff;">
+              <th style="text-align:left;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">维度</th>
+              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">7月15日方向</th>
+              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
+              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同买入<br><span style="font-size:10px;color:#aaa;">(三方同为正)</span></th>
+              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同卖出<br><span style="font-size:10px;color:#aaa;">(三方向为负)</span></th>
+              <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
+            </tr>
+          </thead>
+          <tbody id="capFlowBody"></tbody>
+        </table>
+      </div>
+
       <!-- 📡 观测候选股池（可点击展开明细） — 暂未上架面板底部（CRDS 之后） -->
       <div id="candidatePoolCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px;">📡 <span style="font-weight:700;font-size:14px;color:#333;">观测候选股池</span><span id="candidatePoolTime" style="font-size:11px;color:#999;font-weight:400;"></span> <span id="candidatePoolCount" style="font-size:11px;color:#888;font-weight:400;"></span></div>
@@ -6071,6 +6092,100 @@ window.CANDIDATE_POOL = {
 };window.EXPERIMENT_DATA = {
 "today": {},
 "history": {}
+};window.CAPITAL_FLOW_DATA = {
+"date": "2026-07-15",
+"update_time": "2026-07-15 22:09:09",
+"north_south": {
+"direction": "流入 133.64亿",
+"trend_5d": "近5日流入372亿",
+"style": "南向持续买入（近5日净流入偏消费+科技）",
+"common_buy": [
+"巨人网络",
+"莲花控股",
+"睿智医药"
+],
+"common_sell": [
+"深科技",
+"华天科技",
+"合肥城建"
+],
+"signal": "当日南向净流入133.64亿，近5日流入372亿"
+},
+"inst": {
+"direction": "机构净买入 [{'code': '001399', 'name': '惠科股份', 'price': 0.0, 'pct': -9.7667, 'reason': '连续三个交易日内，跌幅偏离值累计达到20%的证券', 'category': '标X', 'inst_net_万': 72795.7, 'inst_buy_万': 212930.2, 'inst_sell_万': 140134.5, 'yz_net_万': -29677.9, 'yz_buy_万': 3217.3, 'yz_sell_万': 32895.3, 'seats': {'机构': {'buy': 212930.2, 'sell': 140134.5}, '未识别': {'buy': 3217.3, 'sell': 32895.3}}}, {'code': '002821', 'name': '凯莱英', 'price': 0.0, 'pct': 10.0028, 'reason': '连续三个交易日内，涨幅偏离值累计达到20%的证券', 'category': '标X', 'inst_net_万': 63883.1, 'inst_buy_万': 130771.4, 'inst_sell_万': 66888.3, 'yz_net_万': -30064.6, 'yz_buy_万': 61883.6, 'yz_sell_万': 91948.2, 'seats': {'机构': {'buy': 130771.4, 'sell': 66888.3}, '北向': {'buy': 41078.0, 'sell': 73856.1}, '未识别': {'buy': 20805.6, 'sell': 18092.1}}}, {'code': '002558', 'name': '巨人网络', 'price': 0.0, 'pct': 10.0112, 'reason': '日振幅值达到15%的前5只证券', 'category': '纯共振', 'inst_net_万': 31873.1, 'inst_buy_万': 39304.5, 'inst_sell_万': 7431.5, 'yz_net_万': 37585.1, 'yz_buy_万': 62543.3, 'yz_sell_万': 24958.2, 'seats': {'机构': {'buy': 39304.5, 'sell': 7431.5}, '北向': {'buy': 47440.6, 'sell': 12644.2}, '未识别': {'buy': 15102.7, 'sell': 12314.0}}}] / 净卖出 [{'code': '002208', 'name': '合肥城建', 'price': 0.0, 'pct': -10.0053, 'reason': '连续三个交易日内，跌幅偏离值累计达到20%的证券', 'category': '不达标', 'inst_net_万': -60.1, 'inst_buy_万': 5998.8, 'inst_sell_万': 6058.9, 'yz_net_万': -4756.3, 'yz_buy_万': 34346.0, 'yz_sell_万': 39102.3, 'seats': {'机构': {'buy': 5998.8, 'sell': 6058.9}, '北向': {'buy': 18168.5, 'sell': 24825.1}, '未识别': {'buy': 16177.5, 'sell': 14277.2}}}, {'code': '002517', 'name': '恺英网络', 'price': 0.0, 'pct': 9.9872, 'reason': '日涨幅偏离值达到7%的前5只证券', 'category': '标X', 'inst_net_万': -269.3, 'inst_buy_万': 11335.7, 'inst_sell_万': 11604.9, 'yz_net_万': 28403.7, 'yz_buy_万': 35973.4, 'yz_sell_万': 7569.7, 'seats': {'机构': {'buy': 11335.7, 'sell': 11604.9}, '北向': {'buy': 24248.8, 'sell': 5387.4}, '未识别': {'buy': 11724.6, 'sell': 2182.3}}}, {'code': '920193', 'name': '吉和昌', 'price': 0.0, 'pct': -13.9231, 'reason': '当日换手率达到20%的前5只股票', 'category': '不达标', 'inst_net_万': -404.9, 'inst_buy_万': 401.6, 'inst_sell_万': 806.5, 'yz_net_万': -1882.5, 'yz_buy_万': 1988.3, 'yz_sell_万': 3870.8, 'seats': {'机构': {'buy': 401.6, 'sell': 806.5}, '未识别': {'buy': 1988.3, 'sell': 3870.8}}}]",
+"style": "偏好名单中的龙头（药/科技/金融）",
+"common_buy": [
+"惠科股份",
+"凯莱英",
+"巨人网络"
+],
+"common_sell": [
+"合肥城建",
+"恺英网络",
+"吉和昌"
+],
+"signal": "机构净额4.8亿"
+},
+"hot_money": {
+"direction": "游资净买入 39 只 / 净卖出 38 只",
+"style": "追涨题材+次新",
+"common_buy": [
+"豫能控股",
+"巨人网络",
+"铂力特"
+],
+"common_sell": [
+"赤天化",
+"安道麦B",
+"虹美菱B"
+],
+"signal": ""
+},
+"common_buy_stocks": [
+"巨人网络",
+"莲花控股",
+"睿智医药",
+"华联控股",
+"银信科技",
+"幸福蓝海",
+"上海港湾"
+],
+"common_sell_stocks": [
+"深科技",
+"华天科技",
+"合肥城建",
+"巨力索具",
+"博杰股份"
+],
+"top_sectors": [
+{
+"name": "芯片概念",
+"net_5d": 1031.26
+},
+{
+"name": "人民币贬值受益",
+"net_5d": 895.47
+},
+{
+"name": "汽车电子",
+"net_5d": 849.24
+},
+{
+"name": "数据中心(AIDC)",
+"net_5d": 768.66
+},
+{
+"name": "5G",
+"net_5d": 746.1
+}
+],
+"signals": [
+"机构全天净买入4.8亿",
+"三方共振净买入: 巨人网络, 莲花控股, 睿智医药",
+"三方共振净卖出: 深科技, 华天科技, 合肥城建",
+"资金偏好: 芯片概念, 人民币贬值受益, 汽车电子",
+"南向单日净134亿"
+]
 };window.SCAN_DATA = {
 "scan_mode": "full",
 "scan_time": "2026-07-15 22:02:12",
@@ -24865,7 +24980,7 @@ true
 ],
 "gold_pool_total": 157
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 22:46:20",
+"update_time": "2026-07-15 23:26:44",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -108076,10 +108191,51 @@ function renderTripleSelectCard() {
   }
 }
 
+// 💰 三方资金流向对比渲染
+function renderCapitalFlowCard() {
+  var d = window.CAPITAL_FLOW_DATA || {};
+  var card = document.getElementById('capitalFlowCard');
+  if (!card) return;
+  if (!d.north_south && !d.inst && !d.hot_money) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+
+  var tEl = document.getElementById('capFlowTime');
+  if (tEl) tEl.textContent = '更新 ' + (d.update_time || '') + ' | 南向资金（北向已停更，以龙虎榜北向席位为主）';
+
+  var body = document.getElementById('capFlowBody');
+  if (!body) return;
+
+  function row(label, data, color) {
+    if (!data) return '';
+    var direction = data.direction || '-';
+    var style = data.style || '-';
+    var cb = data.common_buy && data.common_buy.length ? data.common_buy.slice(0,3).join('、') : '-';
+    var cs = data.common_sell && data.common_sell.length ? data.common_sell.slice(0,3).join('、') : '-';
+    var signal = data.signal || '-';
+    return '<tr style="background:' + color + ';">'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;font-weight:600;white-space:nowrap;">' + label + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;text-align:center;">' + direction + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + style + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + cb + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + cs + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;font-size:10.5px;max-width:180px;">' + signal + '</td>'
+      + '</tr>';
+  }
+  body.innerHTML = ''
+    + row('南向资金', d.north_south, '#f5fff5')
+    + row('机构/主力', d.inst, '#fff5f5')
+    + row('游资', d.hot_money, '#f5f5ff');
+
+  // 共同信号行
+  if (d.signals && d.signals.length) {
+    body.innerHTML += '<tr><td colspan="6" style="padding:6px 8px;border:1px solid #ddd;background:#fafafa;font-size:10.5px;color:#444;">📌 ' + d.signals.join(' ｜ ') + '</td></tr>';
+  }
+}
+
 function moveCardsToShelf() {
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
-  var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard'];
+  var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard', 'capitalFlowCard'];
   // candidatePoolCard 作为锚点：F窗口等搬入时插到它前面，保证顺序 CRDS → F窗口 → 观测候选股池
   var anchor = document.getElementById('candidatePoolCard');
   cardIds.forEach(function(id) {
@@ -108111,6 +108267,10 @@ function moveCardsToShelf() {
   // 🧪 三重选股 · 金钻起涨（实验盯盘）
   if (typeof renderTripleSelectCard === 'function') {
     try { renderTripleSelectCard(); } catch(e) { console.warn('renderTripleSelectCard fail:', e); }
+  }
+  // 💰 三方资金流向对比
+  if (typeof renderCapitalFlowCard === 'function') {
+    try { renderCapitalFlowCard(); } catch(e) { console.warn('renderCapitalFlowCard fail:', e); }
   }
 }
 

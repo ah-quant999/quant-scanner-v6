@@ -130,6 +130,14 @@ jobs:
           python triple_select_scan.py || echo "⚠️ 三重选股跳过"
           echo "✅ 实验数据已写入 data/experiment/"
 
+      # ─── 资金流向三方对比（新卡） ───
+      - name: "💰 三方资金流向"
+        continue-on-error: true
+        run: |
+          echo "💰 生成资金流向三方对比..."
+          python capital_flow_summary.py || echo "⚠️ 资金流向跳过"
+          echo "✅ 已写入 data/capital_flow_summary.json"
+
       # ─── 构建前端 ───
       - name: "🏗️ 构建前端"
         run: |
