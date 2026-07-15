@@ -47,7 +47,8 @@ worker/
 backup/
 backup_*/
 # 数据目录：全部走坚果云实时同步，不进 Git（避免双机数据冲突）
-data/
+# 用 data/* 而非 data/ ，否则 !data/xxx.json 例外会因父目录被排除而失效
+data/*
 # 例外：DXY/USDCNH 累加历史（方案A 自愈真实分位）须进 Git 持久化+双机共享，
 # 否则 data/ 被忽略→跨机/部署 git reset 清空→永远到不了20点→危险分恒为阈值假值
 !data/dxy_hist.json
