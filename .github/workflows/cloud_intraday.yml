@@ -1,12 +1,13 @@
-# 九宝量化 v6.0 — 盘前+盘中云端任务
+# 九宝量化 v6.0 — 盘前+盘中云端任务（含部署）
 # 覆盖 09:20/10:31/11:46/13:31/14:31 五个时间点
+# 每个时间点都执行「全量抓取 → 扫描 → 构建 → 部署」，
+# 确保交易时段站点始终新鲜（云端长期自洽，双机仅监控）。
 
 name: "☁️ 盘前+盘中任务"
 
 on:
   schedule:
-    # 全部转 UTC（CST - 8）
-    - cron: '20 1 * * 1-5'   # 09:20 CST — 盘前全景（3模块）
+    - cron: '20 1 * * 1-5'   # 09:20 CST — 盘前全景
     - cron: '31 2 * * 1-5'   # 10:31 CST — 盘中扫描
     - cron: '46 3 * * 1-5'   # 11:46 CST — 盘中扫描
     - cron: '31 5 * * 1-5'   # 13:31 CST — 盘中扫描
@@ -15,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: cloud-intraday
@@ -23,7 +25,7 @@ concurrency:
 jobs:
   intraday:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
 
     steps:
       - uses: actions/checkout@v4
@@ -39,51 +41,69 @@ jobs:
         run: pip install -r requirements.txt 2>/dev/null
 
       - name: 注入凭据
+        env:
+          TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
         run: |
           mkdir -p data
-          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+          if [ -n "$TOKEN_JSON" ]; then
+            printf '%s\n' "$TOKEN_JSON" > data/zsxq_token.json
+            echo "✅ zsxq_token 已注入"
+          else
+            echo "⚠️ 无 ZSXQ_TOKEN secret（知识星球数据跳过）"
+          fi
 
-      # ─── 09:20 盘前全景（3模块） ───
-      - name: "🌅 09:20 — 金股观测 (机构研报+投行+全量扫描)"
+      # ─── 09:20 盘前全景（金股+投行，仅盘前） ───
+      - name: "🌅 09:20 — 金股观测 (机构研报+投行+候选池)"
         if: github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
           python guanlan_extractor.py || echo "[跳过] guanlan"
           python build_candidate_pool.py || echo "[跳过] build_candidate_pool"
-          python scanner.py watch || echo "[跳过] scanner watch"
 
-      - name: "🌅 09:20 — 总览页 (国际投行+大盘指数+宏观)"
+      - name: "🌅 09:20 — 总览页 (大盘指数+宏观+隔夜)"
         if: github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
-          python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
           python fetch_macro_data.py || echo "[跳过] macro"
-          python fetch_sh_index_fib.py || echo "[跳过] sh_fib"
-          python fetch_sz_index_fib.py || echo "[跳过] sz_fib"
           python fetch_fomc.py || echo "[跳过] fomc"
           python fetch_overnight_timeline.py 2>/dev/null || echo "[跳过] overnight"
 
-      - name: "🌅 09:20 — 数据监控 (SH_FIB+成交金额+两融/ETF)"
-        if: github.event.schedule == '20 1 * * 1-5'
+      # ─── 全量数据抓取（每个时间点都跑，保证各数据块完整） ───
+      - name: "📡 全量数据抓取"
         continue-on-error: true
         run: |
-          python fetch_sh_index_fib.py || echo "[跳过] sh_fib"
-          python fetch_sh_sz_history.py || echo "[跳过] sh_sz_history"
-          python fetch_up_down_stats.py || echo "[跳过] up_down"
-          python fetch_margin.py || echo "[跳过] margin"
-          python fetch_margin_etf.py || echo "[跳过] margin_etf"
+          for script in \
+            fetch_nt_data.py fetch_margin.py fetch_margin_etf.py \
+            fetch_etf_subscription.py fetch_suspension_alert.py \
+            fetch_stock_deviation.py fetch_sector_fund_flow.py \
+            fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py \
+            fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py \
+            fetch_south_individual.py fetch_herding_data.py \
+            fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
+            fetch_macro_data.py fetch_sh_sz_history.py \
+            fetch_up_down_stats.py fetch_sh_index_fib.py fetch_sz_index_fib.py \
+            fetch_crisis_data.py; do
+            python "$script" || echo "[跳过] $script"
+          done
 
-      # ─── 10:31/11:46/13:31/14:31 盘中扫描（4轮） ───
+      # ─── 盘中扫描（每时间点：scanner watch + 盘中切片） ───
       - name: "🔬 盘中扫描 (总览+预判)"
-        if: github.event.schedule != '20 1 * * 1-5'
         continue-on-error: true
         run: python run_intraday_scan.py --skip-standalone
 
-      - name: "🔬 09:20 也跑一次 (盘前预热)"
-        if: github.event.schedule == '20 1 * * 1-5'
-        continue-on-error: true
-        run: python run_intraday_scan.py --skip-standalone || echo "[跳过] intraday_scan"
+      # ─── 构建前端 ───
+      - name: "🏗️ 构建前端"
+        run: python update_data_v2.py
+
+      # ─── 部署到 GitHub Pages ───
+      - name: "🚀 部署到 GitHub Pages"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
 
       - name: "📝 写日志"
         run: |

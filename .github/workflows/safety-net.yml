@@ -11,6 +11,10 @@ on:
     - cron: "0  13 * * *"    # 21:00 备份检查（每天）
   workflow_dispatch:
 
+permissions:
+  actions: write
+  contents: read
+
 jobs:
   health-check:
     runs-on: ubuntu-latest
@@ -63,3 +67,16 @@ jobs:
           echo "  数据年龄: ${{ steps.fresh.outputs.age_hours }}小时"
           echo "  最新扫描: ${{ steps.fresh.outputs.scan_time }}"
           echo "═══════════════════════════════════════"
+
+      - name: 自动兜底（数据过旧触发盘中任务重跑）
+        if: ${{ steps.fresh.outputs.age_hours != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGE: ${{ steps.fresh.outputs.age_hours }}
+        run: |
+          if [ "${AGE:-0}" -gt 6 ]; then
+            echo "::error::数据已 ${AGE} 小时未更新，自动触发 cloud_intraday 重跑"
+            gh workflow run cloud_intraday.yml
+          else
+            echo "✅ 数据新鲜（${AGE}h），无需兜底"
+          fi

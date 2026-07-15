@@ -36,9 +36,16 @@ jobs:
         run: pip install -r requirements.txt 2>/dev/null
 
       - name: 注入凭据
+        env:
+          TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
         run: |
           mkdir -p data
-          [ -n "${{ secrets.ZSXQ_TOKEN }}" ] && echo '${{ secrets.ZSXQ_TOKEN }}' > data/zsxq_token.json
+          if [ -n "$TOKEN_JSON" ]; then
+            printf '%s\n' "$TOKEN_JSON" > data/zsxq_token.json
+            echo "✅ zsxq_token 已注入"
+          else
+            echo "⚠️ 无 ZSXQ_TOKEN secret（知识星球数据跳过）"
+          fi
 
       # ─── 15:30 A+H全量扫描 → 候选池 → 金股池 ───
       - name: "📊 15:30 — A+H全量扫描+候选池+金股池"
