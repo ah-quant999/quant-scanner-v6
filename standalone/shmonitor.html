@@ -38961,7 +38961,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-15 17:08:25",
+"update_time": "2026-07-15 17:26:03",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -120531,6 +120531,9 @@ function toggleUnlistedPanel() {
     btn.style.color = '#fff';
     btn.style.borderColor = '#7b1fa2';
     moveCardsToShelf();
+    // 保险：即使 moveCardsToShelf 出错，也确保 CRDS/三重选股 渲染
+    if (typeof renderCrdsCard === 'function') { try { renderCrdsCard(); } catch(e) {} }
+    if (typeof renderTripleSelectCard === 'function') { try { renderTripleSelectCard(); } catch(e) {} }
   }
 }
 
@@ -120720,7 +120723,6 @@ function renderTripleSelectCard() {
 }
 
 function moveCardsToShelf() {
-  if (_unlistedCardsMoved) return;
   var panel = document.getElementById('unlistedPanel');
   if (!panel) return;
   var cardIds = ['herdingCard', 'shFibChanlunSection', 'tripleSelectCard', 'crdsCard'];
