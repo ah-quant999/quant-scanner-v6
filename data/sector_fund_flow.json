@@ -1,1003 +1,140 @@
 {
-  "update_time": "2026-07-15 10:25",
-  "data_type": "real",
+  "update_time": "2026-07-15 22:08",
+  "data_type": "empty",
   "summary": {
-    "in_count": 40,
+    "in_count": 0,
     "out_count": 0,
-    "in_text": "证金持股(117.5亿)、高股息精选(86.6亿)、创新药(70.4亿)、同花顺中特估100(66.2亿)、同花顺漂亮100(63.2亿)",
+    "in_text": "无",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 证金持股+117.5亿、高股息精选+86.6亿、创新药+70.4亿"
+    "alert": "板块资金流向平稳"
   },
-  "sectors_in": [
-    {
-      "name": "证金持股",
-      "net": 117.46,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "高股息精选",
-      "net": 86.57,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "创新药",
-      "net": 70.37,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺中特估100",
-      "net": 66.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺漂亮100",
-      "net": 63.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "证券",
-      "net": 60.02,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "期货概念",
-      "net": 53.24,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "超级品牌",
-      "net": 45.59,
-      "net_5d": 26.31,
-      "net_20d": -239.88,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "减肥药",
-      "net": 45.22,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "化学制药",
-      "net": 43.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AIGC概念",
-      "net": 43.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "仿制药一致性评价",
-      "net": 38.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医药电商",
-      "net": 36.31,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "银行",
-      "net": 32.12,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "辅助生殖",
-      "net": 31.73,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "眼科医疗",
-      "net": 29.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "互联网金融",
-      "net": 29.08,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "细胞免疫治疗",
-      "net": 29.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "互联网保险",
-      "net": 27.85,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "跨境支付(CIPS)",
-      "net": 25.46,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白酒概念",
-      "net": 24.42,
-      "net_5d": 5.87,
-      "net_20d": -240.01,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "肝炎概念",
-      "net": 23.69,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白酒",
-      "net": 23.08,
-      "net_5d": 5.48,
-      "net_20d": -184.22,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "合成生物",
-      "net": 21.54,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "虚拟数字人",
-      "net": 21.22,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "IP经济(谷子经济)",
-      "net": 20.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "NFT概念",
-      "net": 18.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "ChatGPT概念",
-      "net": 18.59,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "游戏",
-      "net": 18.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "保险",
-      "net": 17.73,
-      "net_5d": 9.79,
-      "net_20d": -26.79,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "养老概念",
-      "net": 17.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "参股券商",
-      "net": 16.95,
-      "net_5d": 11.77,
-      "net_20d": -502.55,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医美概念",
-      "net": 16.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AI应用",
-      "net": 16.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "CRO概念",
-      "net": 16.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医疗服务",
-      "net": 16.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "电子竞技",
-      "net": 15.28,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "手机游戏",
-      "net": 14.33,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒概念",
-      "net": 14.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "家庭医生",
-      "net": 13.81,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    }
-  ],
+  "sectors_in": [],
   "sectors_out": [],
-  "top_list": [
-    {
-      "name": "证金持股",
-      "net": 117.46,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "高股息精选",
-      "net": 86.57,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "创新药",
-      "net": 70.37,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺中特估100",
-      "net": 66.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺漂亮100",
-      "net": 63.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "证券",
-      "net": 60.02,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "期货概念",
-      "net": 53.24,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "超级品牌",
-      "net": 45.59,
-      "net_5d": 26.31,
-      "net_20d": -239.88,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "减肥药",
-      "net": 45.22,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "化学制药",
-      "net": 43.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AIGC概念",
-      "net": 43.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "仿制药一致性评价",
-      "net": 38.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医药电商",
-      "net": 36.31,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "银行",
-      "net": 32.12,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "辅助生殖",
-      "net": 31.73,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "眼科医疗",
-      "net": 29.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "互联网金融",
-      "net": 29.08,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "细胞免疫治疗",
-      "net": 29.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "互联网保险",
-      "net": 27.85,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "跨境支付(CIPS)",
-      "net": 25.46,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白酒概念",
-      "net": 24.42,
-      "net_5d": 5.87,
-      "net_20d": -240.01,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "肝炎概念",
-      "net": 23.69,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白酒",
-      "net": 23.08,
-      "net_5d": 5.48,
-      "net_20d": -184.22,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "合成生物",
-      "net": 21.54,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "虚拟数字人",
-      "net": 21.22,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "IP经济(谷子经济)",
-      "net": 20.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "NFT概念",
-      "net": 18.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "ChatGPT概念",
-      "net": 18.59,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "游戏",
-      "net": 18.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "保险",
-      "net": 17.73,
-      "net_5d": 9.79,
-      "net_20d": -26.79,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "养老概念",
-      "net": 17.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "参股券商",
-      "net": 16.95,
-      "net_5d": 11.77,
-      "net_20d": -502.55,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医美概念",
-      "net": 16.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AI应用",
-      "net": 16.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "CRO概念",
-      "net": 16.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "医疗服务",
-      "net": 16.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "电子竞技",
-      "net": 15.28,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "手机游戏",
-      "net": 14.33,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒概念",
-      "net": 14.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "家庭医生",
-      "net": 13.81,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    }
-  ],
-  "consecutive": {
-    "证金持股": {
-      "days": 1,
-      "trend": "in"
-    },
-    "高股息精选": {
-      "days": 1,
-      "trend": "in"
-    },
-    "创新药": {
-      "days": 1,
-      "trend": "in"
-    },
-    "同花顺中特估100": {
-      "days": 1,
-      "trend": "in"
-    },
-    "同花顺漂亮100": {
-      "days": 1,
-      "trend": "in"
-    },
-    "证券": {
-      "days": 1,
-      "trend": "in"
-    },
-    "期货概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "超级品牌": {
-      "days": 1,
-      "trend": "in"
-    },
-    "减肥药": {
-      "days": 1,
-      "trend": "in"
-    },
-    "化学制药": {
-      "days": 1,
-      "trend": "in"
-    },
-    "AIGC概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "仿制药一致性评价": {
-      "days": 1,
-      "trend": "in"
-    },
-    "医药电商": {
-      "days": 1,
-      "trend": "in"
-    },
-    "银行": {
-      "days": 1,
-      "trend": "in"
-    },
-    "辅助生殖": {
-      "days": 1,
-      "trend": "in"
-    },
-    "眼科医疗": {
-      "days": 1,
-      "trend": "in"
-    },
-    "互联网金融": {
-      "days": 1,
-      "trend": "in"
-    },
-    "细胞免疫治疗": {
-      "days": 1,
-      "trend": "in"
-    },
-    "互联网保险": {
-      "days": 1,
-      "trend": "in"
-    },
-    "跨境支付(CIPS)": {
-      "days": 1,
-      "trend": "in"
-    },
-    "白酒概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "肝炎概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "白酒": {
-      "days": 1,
-      "trend": "in"
-    },
-    "合成生物": {
-      "days": 1,
-      "trend": "in"
-    },
-    "虚拟数字人": {
-      "days": 1,
-      "trend": "in"
-    },
-    "IP经济(谷子经济)": {
-      "days": 1,
-      "trend": "in"
-    },
-    "NFT概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "ChatGPT概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "游戏": {
-      "days": 1,
-      "trend": "in"
-    },
-    "保险": {
-      "days": 1,
-      "trend": "in"
-    },
-    "养老概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "参股券商": {
-      "days": 1,
-      "trend": "in"
-    },
-    "医美概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "AI应用": {
-      "days": 1,
-      "trend": "in"
-    },
-    "CRO概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "医疗服务": {
-      "days": 1,
-      "trend": "in"
-    },
-    "电子竞技": {
-      "days": 1,
-      "trend": "in"
-    },
-    "手机游戏": {
-      "days": 1,
-      "trend": "in"
-    },
-    "文化传媒概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "家庭医生": {
-      "days": 1,
-      "trend": "in"
-    }
-  },
+  "top_list": [],
+  "consecutive": {},
+  "data_note": "所有数据源不可用",
   "trend_5d": [
     {
-      "name": "超级品牌",
-      "net": 45.59,
-      "net_5d": 26.31,
-      "net_20d": -239.88,
+      "name": "芯片概念",
+      "net": 171.21,
+      "net_5d": 1031.26,
+      "net_20d": 0,
+      "net_60d": null,
       "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
+      "consecutive_days": 5,
+      "trend": "in"
     },
     {
-      "name": "参股券商",
-      "net": 16.95,
-      "net_5d": 11.77,
-      "net_20d": -502.55,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "保险",
-      "net": 17.73,
-      "net_5d": 9.79,
-      "net_20d": -26.79,
+      "name": "人民币贬值受益",
+      "net": 232.45,
+      "net_5d": 895.47,
+      "net_20d": 0,
+      "net_60d": null,
       "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
+      "consecutive_days": 5,
+      "trend": "in"
     },
     {
-      "name": "白酒概念",
-      "net": 24.42,
-      "net_5d": 5.87,
-      "net_20d": -240.01,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "白酒",
-      "net": 23.08,
-      "net_5d": 5.48,
-      "net_20d": -184.22,
+      "name": "汽车电子",
+      "net": 83.95,
+      "net_5d": 849.24,
+      "net_20d": 0,
+      "net_60d": null,
       "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "数据中心(AIDC)",
+      "net": 213.81,
+      "net_5d": 768.66,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "5G",
+      "net": 203.4,
+      "net_5d": 746.1,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "共封装光学(CPO)",
+      "net": 247.66,
+      "net_5d": 677.63,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "沪股通",
+      "net": 207.45,
+      "net_5d": 610.29,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "无人驾驶",
+      "net": 86.48,
+      "net_5d": 564.39,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "汽车芯片",
+      "net": 6.39,
+      "net_5d": 552.95,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "半导体",
+      "net": 25.03,
+      "net_5d": 520.94,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "通信设备",
+      "net": 131.56,
+      "net_5d": 514.69,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "液冷服务器",
+      "net": 68.92,
+      "net_5d": 498.04,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
     }
   ],
-  "trend_20d": [
-    {
-      "name": "保险",
-      "net": 17.73,
-      "net_5d": 9.79,
-      "net_20d": -26.79,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "白酒",
-      "net": 23.08,
-      "net_5d": 5.48,
-      "net_20d": -184.22,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "超级品牌",
-      "net": 45.59,
-      "net_5d": 26.31,
-      "net_20d": -239.88,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "白酒概念",
-      "net": 24.42,
-      "net_5d": 5.87,
-      "net_20d": -240.01,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "参股券商",
-      "net": 16.95,
-      "net_5d": 11.77,
-      "net_20d": -502.55,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    }
-  ],
+  "trend_20d": [],
   "trend_60d": []
 }

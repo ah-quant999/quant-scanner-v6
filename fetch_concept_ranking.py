@@ -41,8 +41,12 @@ def get_concept_pct(name):
 def fetch_concept_ranking():
     """获取概念板块涨跌幅排名（同花顺数据源）"""
     log("获取概念板块列表（同花顺）...")
-    names_df = ak.stock_board_concept_name_ths()
-    names = names_df['name'].tolist()
+    try:
+        names_df = ak.stock_board_concept_name_ths()
+        names = names_df['name'].tolist()
+    except Exception as e:
+        log(f"✗ 获取概念列表失败: {e}")
+        return []
     log(f"✓ 共 {len(names)} 个概念板块")
 
     # 并发获取所有概念的涨跌幅

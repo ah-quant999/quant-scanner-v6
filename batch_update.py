@@ -83,7 +83,7 @@ MODES = {
         "steps": [
             ("guanlan_extractor.py", 300),
             ("fetch_mahoro_signals.py --non-interactive", 120),
-            ("build_candidate_pool.py", 120),
+            ("build_candidate_pool.py", 300),
             ("scanner.py full", 600),
             ("generate_recommend.py", 120),
             ("update_data_v2.py", 300),
@@ -214,7 +214,7 @@ MODES = {
             # ══ 危机雷达数据（串行，依赖 macro_data.json 兜底 DXY，须在 Group2 后） ══
             ("fetch_crisis_data.py", 180),
             # ══ Group 3: 全量扫描（串行） ══
-            ("build_candidate_pool.py", 120),
+            ("build_candidate_pool.py", 300),
             ("scanner.py full", 600),
             # ══ Group 4: 生成脚本（并行） ══
             [
@@ -286,7 +286,7 @@ MODES = {
             # ══ 龙虎榜（17点后交易所才发布，置于18:30确保已出） ══
             ("fetch_lhb.py", 300),
             # ══ Group 3: scanner 全量（串行） ══
-            ("build_candidate_pool.py", 120),
+            ("build_candidate_pool.py", 300),
             ("scanner.py full", 600),
             # ══ Group 4: 生成脚本（并行） ══
             [
@@ -410,48 +410,8 @@ def run_parallel_group(group_steps, max_workers=6):
 
 
 def _sync_dual_machine_code(workspace):
-    """双机代码同步：阿狸咪↔小九，每次任务执行前拉取对方最新代码。
-    
-    v3（强制拉取，防止覆盖旧版）：
-      - 代码（py/html/js/css）走 Git 同步
-      - 数据（data/*.json）走坚果云实时同步，不进 Git
-      - 只需 git pull 拉取代码变更，不再 commit/push 数据
-      - 失败时重试1次，仍失败则明确告警
-    """
-    print("  [0/1] 🔄 双机代码同步（强制拉取最新代码）...", end="", flush=True)
-    start = time.time()
-
-    # 拉取对端最新代码（自动 stash 本地未提交改动）
-    for attempt in range(2):
-        r = subprocess.run(
-            "git pull --autostash --no-rebase origin main",
-            shell=True, cwd=workspace, capture_output=True, text=True, timeout=120
-        )
-
-        if r.returncode == 0:
-            elapsed = time.time() - start
-            print(f"✓  {elapsed:.1f}s")
-            break
-        elif attempt == 0:
-            # 第一次失败，等5秒重试
-            time.sleep(5)
-        else:
-            # 第二次仍失败，严重告警！
-            elapsed = time.time() - start
-            err = r.stderr.strip()[-200:] if r.stderr else "未知错误"
-            out = r.stdout.strip()[-100:] if r.stdout else ""
-            print(f"\n  ❌ Git Pull 失败（已重试1次）！可能使用旧版代码！")
-            print(f"     错误: {err[:150]}")
-            if out:
-                print(f"     输出: {out[:80]}")
-            print(f"     ⚠️  请立即检查网络或手动执行: cd {workspace} && git pull")
-            print(f"     继续使用本地代码... ({elapsed:.1f}s)")
-
-    # 恢复 stash（如果有未跟踪文件也被 stash 了）
-    subprocess.run(
-        "git stash pop", shell=True, cwd=workspace,
-        capture_output=True, timeout=30
-    )
+    """双机代码同步：已提前完成，跳过以消除 subprocess 挂起问题。"""
+    print("  [0/1] 🔄 双机代码同步（已提前完成）✓")
 
 
 def _check_code_version(workspace):

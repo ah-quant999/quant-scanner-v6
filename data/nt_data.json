@@ -1,35 +1,35 @@
 {
-  "update_time": "2026-07-15 11:11",
+  "update_time": "2026-07-15 22:08",
   "alerts": [
     {
       "type": "summary",
       "severity": "low",
       "message": "ETF监测中，6涨6跌",
-      "time": "11:11"
+      "time": "22:08"
     },
     {
       "type": "etf",
       "severity": "medium",
       "message": "华夏科创50ETF 大跌 4.56%",
-      "time": "11:12"
+      "time": "22:09"
     },
     {
       "type": "etf",
       "severity": "high",
       "message": "酒ETF 大涨 5.05%",
-      "time": "11:12"
+      "time": "22:09"
     },
     {
       "type": "etf",
       "severity": "high",
       "message": "芯片ETF 大跌 5.67%",
-      "time": "11:12"
+      "time": "22:09"
     },
     {
       "type": "etf",
       "severity": "medium",
       "message": "医药ETF 大涨 3.27%",
-      "time": "11:12"
+      "time": "22:09"
     }
   ],
   "etfFlow": {
