@@ -449642,6 +449642,7 @@ function renderIpoTopStrip() {
     var tagColor = s.tag_color || (sc >= 65 ? '#2e7d32' : sc >= 50 ? '#e65100' : '#c62828');
     var tagBg = s.bg_color || (sc >= 65 ? '#e8f5e9' : sc >= 50 ? '#fff3e0' : '#ffebee');
     var track = (s.fundamentals && s.fundamentals.track) ? s.fundamentals.track : '';
+    var hls = (s.highlights && s.highlights.length) ? s.highlights.slice(0, 2).join(' · ') : '';
     var h = '';
     h += '<div style="flex:0 0 calc(20% - 6.4px);background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:10px 12px;box-sizing:border-box;">';
     h += '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">';
@@ -449652,6 +449653,7 @@ function renderIpoTopStrip() {
     h += '<div style="height:8px;background:#f0f0f0;border-radius:4px;margin-bottom:4px;overflow:hidden;"><div style="width:' + Math.max(2, arb) + '%;height:8px;background:#e24b4a;border-radius:4px;"></div></div>';
     h += '<div style="height:8px;background:#f0f0f0;border-radius:4px;margin-bottom:5px;overflow:hidden;"><div style="width:' + Math.max(2, fund) + '%;height:8px;background:#378add;border-radius:4px;"></div></div>';
     h += '<div style="font-size:10px;color:#999;display:flex;justify-content:space-between;"><span>套利' + arb + '</span><span>基本面' + fund + '</span></div>';
+    if (hls) h += '<div style="font-size:10px;color:#666;margin-top:5px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + hls + '</div>';
     h += '</div>';
     return h;
   }
@@ -449667,6 +449669,8 @@ function renderIpoTopStrip() {
   for (var si = 0; si < sections.length; si++) {
     var sec = sections[si];
     if (!sec.items.length) continue;
+    // 组内按 score 降序
+    sec.items.sort(function(a, b){ return (b.score || 0) - (a.score || 0); });
     h += '<div style="margin-bottom:14px;">';
     h += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">';
     h += '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + sec.color + ';"></span>';
