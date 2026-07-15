@@ -1508,6 +1508,9 @@ def main():
     except Exception as e:
         print(f"  ⚠️ 三方状态读取失败: {e}")
 
+    # ☁️ 云端部署时间戳（将替换所有卡片「更新于」为统一时间）
+    cloud_time = datetime.now().strftime("%Y-%m-%d %H:%M")
+
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
@@ -1626,6 +1629,15 @@ def main():
         # 立即替换（不收集后排序，防止位置偏移导致串行）
         content = content[:s] + new_block + content[e:]
         print(f"  ✓ {name}: {e-s:,} → {len(new_block):,} 字符")
+
+    # ☁️ 统一云端更新时间（replace by string, not marker+find_block_end）
+    cloud_placeholder = 'window.CLOUD_UPDATE_TIME = "CLOUD_TIME_PLACEHOLDER";'
+    cloud_value = f'window.CLOUD_UPDATE_TIME = "{cloud_time}";'
+    if cloud_placeholder in content:
+        content = content.replace(cloud_placeholder, cloud_value)
+        print(f"  ✓ CLOUD_UPDATE_TIME → {cloud_time}")
+    else:
+        print(f"  ⚠️  CLOUD_UPDATE_TIME placeholder 未找到")
 
     # ===== 注入 NT_DATA.calendar（使用最新 fetch_nt_data.py 生成的日历）=====
     nt_json_path = os.path.join(BASE_DIR, "data", "nt_data.json")

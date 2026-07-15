@@ -127,6 +127,24 @@ tr:hover td { background: #fafbfc; }
 .predict-card .card-time { font-size: 11px; font-weight: 400; color: rgba(0,0,0,0.45); }
 .predict-card .card-time.stale { color: #e65100; font-weight: 500; }
 .predict-card .card-time.stale.critical { color: #c62828; font-weight: 600; }
+
+/* ☁️ 云端更新时间胶囊 */
+.cloud-update-capsule {
+  display: inline-block;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+[id$="Time"].cloud-synced, .card-time.cloud-synced, .update-time-badge.cloud-synced {
+  color: #0d47a1 !important;
+  font-weight: 500;
+  opacity: 1 !important;
+}
 .stale-notice { display: flex; align-items: center; gap: 8px; background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 10px 16px; margin-bottom: 12px; font-size: 13px; color: #e65100; }
 .stale-notice .sn-icon { font-size: 18px; flex-shrink: 0; }
 .stale-notice .sn-text { flex: 1; line-height: 1.6; }
@@ -1338,6 +1356,7 @@ tr:hover td { background: #fafbfc; }
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
+window.CLOUD_UPDATE_TIME = "CLOUD_TIME_PLACEHOLDER";
 window.CANDIDATE_POOL = {};
 window.CRDS_CARD_DATA = {};
 window.EXPERIMENT_DATA = {};
@@ -451222,6 +451241,24 @@ if (window.LHB_DATA) try { renderLhbPredict(); } catch(e) { console.log('renderL
 if (window.NORTH_FUND_DATA && window.NORTH_FUND_DATA.update_time) try { renderNorthFund(); } catch(e) { console.log('renderNorthFund error:', e.message); }
 try { renderSuspensionAlert(); } catch(e) { console.log('renderSuspensionAlert error:', e.message); }
 try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.message); }
+// ===== ☁️ 统一云端更新时间（所有卡片时间戳统一为部署时间） =====
+(function applyCloudUpdateTime() {
+  var ct = window.CLOUD_UPDATE_TIME || '';
+  if (!ct) return;
+  // Format: "2026-07-16 06:52:12" → "07-16 06:52"
+  var m = ct.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})/);
+  var formatted = m ? (m[2] + '-' + m[3] + ' ' + m[4]) : ct.slice(0,16);
+  var text = '☁ 云端更新 · ' + formatted;
+  var el;
+  // a) span[id$="Time"] — all card time spans
+  if (typeof document !== 'undefined') {
+    try { document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; }); } catch(ex){}
+    // b) .card-time spans — explicit card-time class
+    try { document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; }); } catch(ex){}
+    // c) .update-time-badge — chart/section time badges
+    try { document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; }); } catch(ex){}
+  }
+})();
 </script>
 
 

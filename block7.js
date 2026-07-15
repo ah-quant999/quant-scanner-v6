@@ -5377,3 +5377,25 @@ if (window.LHB_DATA) try { renderLhbPredict(); } catch(e) { console.log('renderL
 if (window.NORTH_FUND_DATA && window.NORTH_FUND_DATA.update_time) try { renderNorthFund(); } catch(e) { console.log('renderNorthFund error:', e.message); }
 try { renderSuspensionAlert(); } catch(e) { console.log('renderSuspensionAlert error:', e.message); }
 try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.message); }
+
+// ===== ☁️ 统一云端更新时间（独立页版：读 build-stamp meta 标签） =====
+(function applyCloudUpdateTime() {
+  function sweep(){
+    if (window._cloudTimeApplied) return;
+    try {
+      var stamp = document.querySelector('meta[name="build-stamp"]');
+      var ct = stamp ? stamp.getAttribute('content') : '';
+      if (!ct || ct.length < 12) return;
+      // "20260716065148" → "07-16 06:51"
+      var formatted = ct.slice(4,6) + '-' + ct.slice(6,8) + ' ' + ct.slice(8,10) + ':' + ct.slice(10,12);
+      var text = '☁ 云端更新 · ' + formatted;
+      document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
+      document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
+      document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; e.className += ' cloud-synced'; });
+      window._cloudTimeApplied = true;
+    } catch(ex){}
+  }
+  // 主站由 index_master.html 内联 sweep 处理；独立页通过 load 事件延迟 sweep
+  if (document.readyState === 'complete') { setTimeout(sweep, 800); }
+  else { window.addEventListener('load', function(){ setTimeout(sweep, 800); }); }
+})();
