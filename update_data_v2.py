@@ -6,6 +6,7 @@
 """
 
 import shutil, os as _os
+from datetime import datetime
 _NODE_PATH = _os.path.join(_os.path.expanduser("~"), ".workbuddy", "binaries", "node", "versions", "22.22.2", "node.exe")
 if not _os.path.exists(_NODE_PATH):
     _NODE_PATH = shutil.which("node") or "node"   # Linux CI 降级
@@ -1081,6 +1082,8 @@ def main():
     herding_data = load_json(os.path.join(DATA_DIR, "herding_data.json"), {"update_time": ""})
     sector_rs    = load_json(os.path.join(DATA_DIR, "sector_rs.json"), {"update_time": "", "strong_5d": [], "strong_20d": [], "strong_52w": []})
     ipo_score    = load_json(os.path.join(DATA_DIR, "ipo_score.json"), {"update_time": "", "eligible_count": 0, "summary": "", "stocks": []})
+    # 给前端 IPO 分组用：区分今日申购 vs 待申购
+    ipo_score["today"] = datetime.now().strftime("%Y%m%d")
     cffex_holdings = load_json(os.path.join(DATA_DIR, "cffex_holdings.json"), {})
     inst_trade = load_json(os.path.join(DATA_DIR, "inst_trade.json"), {})
     overnight_brief = load_json(os.path.join(DATA_DIR, "overnight_timeline.json"), [])

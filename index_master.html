@@ -1139,6 +1139,15 @@ tr:hover td { background: #fafbfc; }
       <!-- 📊 CRDS逆势龙头评分卡 — 暂未上架 -->
       <div id="crdsCard" class="admin-only" style="display:none;background:#fff;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-top:14px;margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;">📊 <span style="font-weight:700;font-size:14px;color:#333;">CRDS 逆势龙头筛选</span> <span id="crdsTime" style="font-size:11px;color:#999;font-weight:400;"></span></div>
+        <!-- 大盘环境判断 -->
+        <div id="crdsMarketContext" style="display:none;margin-bottom:10px;padding:8px 10px;border-radius:6px;background:#f8f9fa;border-left:4px solid #ccc;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;color:#555;">大盘判断</span>
+            <span id="crdsMarketValidity" style="font-size:12px;font-weight:700;padding:1px 8px;border-radius:8px;color:#fff;"></span>
+            <span id="crdsMarketPct" style="font-size:12px;color:#555;"></span>
+          </div>
+          <div id="crdsMarketSummary" style="font-size:12px;color:#666;margin-top:4px;"></div>
+        </div>
         <!-- 交集分级：放在卡片名下方 -->
         <div id="crdsLevels" style="padding:0 0 10px 0;">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px;"><span style="font-size:12px;font-weight:600;">三项全满足</span><span style="background:#1D9E75;color:#fff;font-size:11px;padding:1px 8px;border-radius:8px;">精选级</span><span id="crdsElite" style="font-size:12px;"></span></div>
@@ -449614,22 +449623,25 @@ function renderIpoTopStrip() {
   if (!stocks.length) { strip.style.display = 'none'; return; }
   strip.style.display = 'block';
 
-  // 分组（与后台 ipoGroup 口径一致）
+  // 分组：今日申购 → 待定价 → 待申购 → 待上市 → 上市日追踪
+  var today = d.today || '';
   var g = {
-    pricing:      stocks.filter(function(s){ return s.status === 'applying' && (!s.issue_price || s.recommend === '待定价'); }),
-    applying:     stocks.filter(function(s){ return s.status === 'applying' && s.issue_price && s.recommend !== '待定价'; }),
-    pre_listing:  stocks.filter(function(s){ return s.status === 'pre_listing'; }),
-    track:        stocks.filter(function(s){ return s.status === 'listed_today' || s.status === 'tracking'; })
+    today_applying: stocks.filter(function(s){ return s.status === 'applying' && s.apply_date === today && s.issue_price && s.recommend !== '待定价'; }),
+    pricing:        stocks.filter(function(s){ return s.status === 'applying' && (!s.issue_price || s.recommend === '待定价'); }),
+    applying:       stocks.filter(function(s){ return s.status === 'applying' && s.issue_price && s.recommend !== '待定价' && s.apply_date !== today; }),
+    pre_listing:    stocks.filter(function(s){ return s.status === 'pre_listing'; }),
+    track:          stocks.filter(function(s){ return s.status === 'listed_today' || s.status === 'tracking'; })
   };
 
   // 头部计数 + 更新时间
   var timeEl = document.getElementById('ipoStripTime');
   if (timeEl) {
     var parts = [];
-    if (g.pricing.length)      parts.push('待定价' + g.pricing.length);
-    if (g.applying.length)     parts.push('申购' + g.applying.length);
-    if (g.pre_listing.length)  parts.push('待上市' + g.pre_listing.length);
-    if (g.track.length)        parts.push('上市日追踪' + g.track.length);
+    if (g.today_applying.length) parts.push('今日申购' + g.today_applying.length);
+    if (g.pricing.length)        parts.push('待定价' + g.pricing.length);
+    if (g.applying.length)       parts.push('待申购' + g.applying.length);
+    if (g.pre_listing.length)    parts.push('待上市' + g.pre_listing.length);
+    if (g.track.length)          parts.push('上市日追踪' + g.track.length);
     var tStr = parts.join(' · ');
     if (d.update_time) { var ft = (typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null; if (ft) tStr += ' · 更新于 ' + ft.text; }
     timeEl.textContent = tStr;
@@ -449659,8 +449671,9 @@ function renderIpoTopStrip() {
   }
 
   var sections = [
+    { title:'今日申购',   color:'#c62828', items:g.today_applying },
     { title:'待定价',     color:'#607d8b', items:g.pricing },
-    { title:'申购',       color:'#2e7d32', items:g.applying },
+    { title:'待申购',     color:'#2e7d32', items:g.applying },
     { title:'待上市',     color:'#1565c0', items:g.pre_listing },
     { title:'上市日追踪', color:'#6a1b9a', items:g.track }
   ];
@@ -450597,6 +450610,25 @@ function renderCrdsCard() {
 
   // 更新时间
   document.getElementById('crdsTime').textContent = '更新 ' + (d.update_time || '');
+
+  // 大盘环境判断
+  var mc = d.market_context || {};
+  var mcBox = document.getElementById('crdsMarketContext');
+  if (mcBox) {
+    if (mc.summary) {
+      mcBox.style.display = 'block';
+      var validityEl = document.getElementById('crdsMarketValidity');
+      var pctEl = document.getElementById('crdsMarketPct');
+      var summaryEl = document.getElementById('crdsMarketSummary');
+      validityEl.textContent = mc.validity || '未知';
+      validityEl.style.backgroundColor = mc.color || '#999999';
+      pctEl.textContent = mc.today_pct != null ? '上证 ' + (mc.today_pct >= 0 ? '+' : '') + mc.today_pct.toFixed(2) + '%' : '';
+      summaryEl.textContent = mc.summary;
+      mcBox.style.borderLeftColor = mc.color || '#ccc';
+    } else {
+      mcBox.style.display = 'none';
+    }
+  }
 
   // 三列条件数据
   var l1 = d.cond1_list || []; var l2 = d.cond2_list || []; var l3 = d.cond3_list || [];
