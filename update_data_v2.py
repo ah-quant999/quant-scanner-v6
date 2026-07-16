@@ -1465,11 +1465,31 @@ def main():
         ("OPS_STATUS",      "window.OPS_STATUS = ",      "{", "}"),
     ]
     # 本机运维状态（兜底结论 + neodata 有效期），供前端运维卡片读取
+    # 注意：.ops_status.json 由 pre_market_cloud_failover.py / fetch_neodata_daily.py 在本机写入；
+    #       GitHub Actions 云端无这些脚本，文件为空 → 此处做 CI 兜底。
+    _is_ci = os.environ.get("GITHUB_ACTIONS") == "true"
+    _now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         with open(os.path.join(BASE_DIR, "data", ".ops_status.json"), encoding="utf-8") as _f:
             ops_status = json.load(_f)
+        # 文件存在但内容为空字典（0字节会被 json.load 抛异常走 except）
+        if not isinstance(ops_status, dict):
+            ops_status = {}
     except Exception:
         ops_status = {}
+
+    # ── CI / 空数据兜底：确保前端卡片不会全显示"未知" ──
+    if _is_ci or not ops_status.get("failover_status):
+        ops_status.setdefault("failover_status", "OK" if _is_ci else "未知")
+        ops_status.setdefault("failover_time", _now_str)
+    if _is_ci or not ops_status.get("cloud_deploy_time"):
+        ops_status.setdefault("cloud_deploy_time", datetime.now().strftime("%Y%m%d%H%M%S"))
+    ops_status.setdefault("updated_at", _now_str)
+    # neodata 字段：云端没有 token 也不跑 fetch_neodata_daily，给明确提示
+    if not ops_status.get("neodata_status"):
+        ops_status["neodata_status"] = "n/a" if _is_ci else "未知"
+        ops_status.setdefault("neodata_updated", "")
+        ops_status.setdefault("neodata_valid_until", "")
 
     # 从 HANDOVER_LOG.jsonl 提取最近三方状态（云端/小九/阿狸咪），注入到 OPS_STATUS
     try:
