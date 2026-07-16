@@ -449422,12 +449422,14 @@ function renderLhbPredict() {
   }
 
   // 四分组：机构独买 / 机游共振 / 游资独买 / 北向席位（严格互斥，每只股票只出现在一个块）
-  var instStocks = stocks.filter(function(s){ return (s.inst_net_万||0) > 8000 && (s.yz_net_万||0) <= 8000 && bxNet(s) <= 0; });
-  var resonance = stocks.filter(function(s){ return (s.inst_net_万||0) > 8000 && (s.yz_net_万||0) > 8000 && bxNet(s) <= 0; });
-  var yzStocks = stocks.filter(function(s){ return (s.yz_net_万||0) > 8000 && (s.inst_net_万||0) <= 8000 && bxNet(s) <= 0; });
+  // ★ 2026-07-17 改用 s.category 分类（机游共振/机构独买/游资独买/不达标），
+  //   替代原来的内联阈值过滤（旧分类 纯共振/标X/不达标 已废弃）
+  var instStocks = stocks.filter(function(s){ return s.category === '机构独买'; });
+  var resonance = stocks.filter(function(s){ return s.category === '机游共振'; });
+  var yzStocks = stocks.filter(function(s){ return s.category === '游资独买'; });
 
-  // 北向席位：仅保留纯北向（无机构/游资参与），避免与其他块重复
-  var bxStocks = stocks.filter(function(s){ return bxNet(s) > 0 && (s.inst_net_万||0) <= 8000 && (s.yz_net_万||0) <= 8000; });
+  // 北向席位：仅保留纯北向（不达标中带北向净买入的）
+  var bxStocks = stocks.filter(function(s){ return s.category === '不达标' && bxNet(s) > 0; });
 
   function formatNet(val_wan) {
     var yi = val_wan / 10000;
@@ -449543,7 +449545,7 @@ function renderLhbPredict() {
   h = '<div style="font-weight:700;font-size:13px;color:#333;text-align:left;padding:8px 12px;margin-bottom:10px;background:linear-gradient(90deg,#e0f2f1,#fff);border-left:4px solid #a5d6a7;border-radius:0 6px 6px 0;">' + lhbSummary + '</div>' + h;
 
   // 底部辅助信息
-  var others = stocks.filter(function(s){ return s.category !== '纯共振' && (s.inst_net_万||0) <= 8000 && (s.yz_net_万||0) <= 8000; });
+  var others = stocks.filter(function(s){ return s.category === '不达标' && bxNet(s) <= 0; });
   if (others.length) {
     h += '<div style="font-size:12px;color:#999;text-align:center;">另有 ' + others.length + ' 只不达标（未达到0.8亿门槛），暂不展示</div>';
   }
