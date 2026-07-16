@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- build: 20260701085830 -->
-<meta name="build-stamp" content="20260717003548">
+<meta name="build-stamp" content="20260717041152">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -1415,7 +1415,7 @@ window.addEventListener('load',function(){
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-17 00:35";
+window.CLOUD_UPDATE_TIME = "2026-07-17 04:11";
 window.POST_CLOSE_TIME = "2026-07-16 15:30:00";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-14 18:37:39",
@@ -43131,7 +43131,7 @@ true
 ],
 "gold_pool_total": 266
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-17 00:35:46",
+"update_time": "2026-07-17 04:11:50",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -121116,7 +121116,12 @@ function setPostMarketTime(id, rawTime, source) {
     setChartTime(id, rawTime, source); // 真实过期，保留红标不掩盖
     return;
   }
-  if (window.POST_CLOSE_TIME) {
+  // 2026-07-17 修复：rawTime 是今天/昨晚盘后时优先用它（如 lhb 00:30 刷 → "今日 00:30"），
+  //   否则才回退到 POST_CLOSE_TIME（"昨日 15:30"）。原来硬性优先 POST_CLOSE_TIME 导致
+  //   4 张卡都显示"昨日 15:30"而主人误判为陈旧。
+  if (rawTime && ft && ft.daysAgo === 0) {
+    setChartTime(id, rawTime, source);
+  } else if (window.POST_CLOSE_TIME) {
     setChartTime(id, window.POST_CLOSE_TIME, source);
   } else if (rawTime) {
     setChartTime(id, rawTime, source);
@@ -132165,8 +132170,13 @@ function renderCapitalFlowCard() {
 
   var tEl = document.getElementById('capFlowTime');
   if (tEl) {
-    var _pcf = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : (d.update_time ? fmtDataTime(d.update_time) : null);
-    tEl.textContent = '更新于 ' + (_pcf ? _pcf.text : '');
+    // 2026-07-17 修复：d.update_time 是今天时优先用它（如资金流盘后 22:00 刷 → "今日 22:00"），
+    //   否则回退 POST_CLOSE_TIME。同步 setPostMarketTime 行为。
+    var _df = d.update_time ? fmtDataTime(d.update_time) : null;
+    var _useUpdate = _df && _df.daysAgo === 0;
+    var _ts = _useUpdate ? d.update_time : (window.POST_CLOSE_TIME || d.update_time || '');
+    var _fmt = _ts ? fmtDataTime(_ts) : null;
+    tEl.textContent = '更新于 ' + (_fmt ? _fmt.text : '');
   }
 
   var body = document.getElementById('capFlowBody');
@@ -133003,8 +133013,8 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 "neodata_valid_until": "2026-07-17 16:20:53",
 "updated_at": "2026-07-16 17:32:07",
 "failover_status": "未知",
-"failover_time": "2026-07-17 00:35:46",
-"cloud_deploy_time": "20260717003546",
+"failover_time": "2026-07-17 04:11:50",
+"cloud_deploy_time": "20260717041150",
 "three_party": {
 "cloud": {
 "status": "ok",
@@ -133018,7 +133028,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 "alimi": {
 "status": "ok",
-"last_time": "2026-07-16 23:43:30",
+"last_time": "2026-07-17 00:36:22",
 "mode": "deploy"
 }
 },
