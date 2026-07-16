@@ -1167,6 +1167,7 @@ tr:hover td { background: #fafbfc; }
       <!-- 健康看板 sub-tabs -->
       <div id="healthSubTabs" style="display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;border-bottom:2px solid #e0e0e0;padding-bottom:8px;">
         <button class="health-sub-tab active" data-cat="all" onclick="renderHealthDashboard('all')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #e0e0e0;background:#1976d2;color:#fff;">📋 全部</button>
+        <button id="btnOpsDetail" onclick="toggleOpsDetail()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #546e7a;background:#eceff1;color:#546e7a;">⚙️ 运维</button>
         <button class="health-sub-tab" data-cat="live" onclick="renderHealthDashboard('live')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #2e7d32;background:#e8f5e9;color:#2e7d32;">🟢 活数据</button>
         <button class="health-sub-tab" data-cat="scan" onclick="renderHealthDashboard('scan')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #e0e0e0;background:#fff;color:#333;">📊 核心扫描</button>
         <button class="health-sub-tab" data-cat="signal" onclick="renderHealthDashboard('signal')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #e0e0e0;background:#fff;color:#333;">🏆 信号排名</button>
@@ -450801,6 +450802,26 @@ function toggleUnlistedPanel() {
   }
 }
 
+// ===== 运维详情面板切换 =====
+function toggleOpsDetail() {
+  var card = document.getElementById('opsStatusCard');
+  var btn = document.getElementById('btnOpsDetail');
+  if (!card || !btn) return;
+  var isShown = card.style.display !== 'none' && card.style.display !== '';
+  // card 默认由 renderOps() 设为 block，这里用 visibility 或直接 toggle display
+  if (isShown) {
+    card.style.display = 'none';
+    btn.style.background = '#eceff1'; btn.style.color = '#546e7a'; btn.style.borderColor = '#546e7a';
+  } else {
+    card.style.display = 'block';
+    btn.style.background = '#546e7a'; btn.style.color = '#fff'; btn.style.borderColor = '#546e7a';
+    // 确保 OPS_STATUS 数据已注入
+    if (!window.OPS_STATUS || Object.keys(window.OPS_STATUS).length === 0) {
+      card.innerHTML = '<div style="padding:10px;color:#999;font-size:11px;">暂无运维数据（需部署后注入 .ops_status.json）</div>';
+    }
+  }
+}
+
 // ===== CRDS 逆势龙头评分卡渲染 =====
 function renderCrdsCard() {
   var d = window.CRDS_CARD_DATA || {};
@@ -451859,17 +451880,25 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     var card = document.getElementById('opsStatusCard');
     var content = document.getElementById('opsStatusContent');
     if(!card || !content) return;
-    card.style.display = 'block';
+    // 默认隐藏，由 ⚙️运维 按钮切换显示
+    card.style.display = 'none';
     var st = s.failover_status || '未知';
     var stColor = st==='OK'?'#4caf50':(st==='RECOVERED'?'#ff9800':(st==='FAILED'?'#f44336':'#9e9e9e'));
     var neo = s.neodata_status==='ok'?'正常':'异常';
     var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
+    // 计算令牌剩余时间
+    var neoExp = s.neodata_valid_until ? new Date(s.neodata_valid_until.replace(/\s/,'T')) : null;
+    var now = new Date();
+    var neoRemain = neoExp ? Math.max(0, Math.round((neoExp - now) / 3600000)) : null;
+    var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '未知';
+    var neoRemainColor = neoRemain !== null ? (neoRemain > 3 ? '#4caf50' : (neoRemain > 1 ? '#ff9800' : '#f44336')) : '#999';
     content.innerHTML =
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">'+
-        '<div>最后部署：'+fmt(deployTime)+'</div>'+
-        '<div>盘前兜底：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#999">('+fmt(s.failover_time)+')</span></div>'+
-        '<div>neodata：<b style="color:'+neoColor+'">'+neo+'</b></div>'+
-        '<div style="color:#999">令牌有效至：'+fmt(s.neodata_valid_until)+'</div>'+
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 16px;font-size:11px;">'+
+        '<div><span style="color:#999">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
+        '<div><span style="color:#999">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb">'+fmt(s.failover_time)+'</span></div>'+
+        '<div><span style="color:#999">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb">'+fmt(s.neodata_updated)+'</span></div>'+
+        '<div><span style="color:#999">令牌有效至</span>：<b style="color:'+neoRemainColor+'">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:10px;">('+neoRemainStr+')</span></div>'+
+        '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:3px;margin-top:1px;"><span style="color:#999">状态文件更新</span>：<span style="color:#bbb">'+fmt(s.updated_at)+'</span> ｜ <span style="color:#999">neodata上次拉取</span>：<span style="color:#bbb">'+fmt(s.neodata_updated)+'</span></div>'+
       '</div>';
   }
   if(document.readyState!=='loading') renderOps();
