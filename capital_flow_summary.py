@@ -143,13 +143,11 @@ def main():
             s5_亿 = 0
 
     if south_dir == "流入":
-        south_direction = f"南向持续买入（近5日净流入{s5_亿:.1f}亿）"
+        south_direction = f"南向持续买入（近5日净流入{s5_亿:.1f}亿，当日+{south_total_亿:.1f}亿）"
     elif south_dir == "流出":
-        south_direction = f"南向持续卖出（近5日净流出{s5_亿:.1f}亿）"
+        south_direction = f"南向持续卖出（近5日净流出{s5_亿:.1f}亿，当日-{south_total_亿:.1f}亿）"
     else:
         south_direction = f"南向持平（近5日净{s5_dir_word}{s5_亿:.1f}亿）"
-
-    south_signal_extra = f"当日南向净{south_dir}{south_total_亿:.1f}亿" if south_total_亿 else "当日无数据"
 
     # 5日板块偏好
     trend_5d = sf.get("trend_5d", [])
@@ -167,7 +165,6 @@ def main():
     bx_direction = f"龙虎榜北向席位{bx_dir_word}{fmt_yi(abs(bx_net_total))}（仅覆盖异动股）"
     bx_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("北向")], ind_stocks, n=3)
     bx_style = f"偏好：{ '、'.join(bx_style_sectors[:3]) }" if bx_style_sectors else "未形成集中偏好"
-    bx_signal = f"北向席位净买入 {len(bx_buy)} 只 / 净卖出 {len(bx_sell)} 只"
 
     # ── 3. 机构席位（龙虎榜机构专用席位） ──
     inst_buy, inst_sell = seats_top(stocks, "机构", n=3)
@@ -176,7 +173,6 @@ def main():
     inst_direction = f"机构席位{inst_dir_word}{fmt_yi(abs(inst_net_total))}（龙虎榜专用席位）"
     inst_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("机构")], ind_stocks, n=3)
     inst_style = f"偏好：{ '、'.join(inst_style_sectors[:3]) }" if inst_style_sectors else "高切低防御"
-    inst_signal = f"机构席位净买入 {len(inst_buy)} 只 / 净卖出 {len(inst_sell)} 只"
 
     # ── 4. 游资（龙虎榜未识别席位 + 涨停敢死队特征） ──
     yz_buy, yz_sell = seats_top(stocks, "未识别", n=3)
@@ -185,7 +181,6 @@ def main():
     yz_direction = f"游资席位{yz_dir_word}{fmt_yi(abs(yz_net_total))}（未识别席位）"
     yz_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("未识别")], ind_stocks, n=3)
     yz_style = f"偏好：{ '、'.join(yz_style_sectors[:3]) }" if yz_style_sectors else "追涨题材+次新"
-    yz_signal = f"游资席位净买入 {len(yz_buy)} 只 / 净卖出 {len(yz_sell)} 只"
 
     # ── 5. 三方共振（北向席位、机构席位、游资席位 同方向） ──
     # 这里用 lhb_result 里的原始字段 inst_net_万/yz_net_万 与 北向席位 net 再判断一次，更稳健
@@ -241,34 +236,6 @@ def main():
         f"🚀 游资席位{yz_verb}{fmt_yi(abs(yz_net_total))}，主攻{_buy_names(yz_buy)}等题材，"
         f"风格偏向事件驱动与次新。"
     )
-    # 共振 + 板块主线
-    cb = "、".join(common_buy_names[:3]) or "无"
-    cs = "、".join(common_sell_names[:3]) or "无"
-    ts = "、".join(s["name"] for s in trend_5d[:3]) or "无"
-    analysis.append(
-        f"🔁 三方共振：买入共识集中在{cb}，卖出共识集中在{cs}；"
-        f"5日板块资金共识最强为{ts}，科技硬件（芯片/汽车电子）仍是资金主线，"
-        f"但内部出现接力分化——封测端遭机构与北向共振减仓，游戏/医药获多方加仓。"
-    )
-
-    # ── 7. 关键信号汇总 ──
-    signals = []
-    if south_total_亿:
-        signals.append(f"南向单日净{south_dir}{south_total_亿:.1f}亿")
-    if north_trend:
-        signals.append(north_trend)
-    if common_buy_names:
-        signals.append(f"三方共振净买入：{', '.join(common_buy_names[:3])}")
-    if common_sell_names:
-        signals.append(f"三方共振净卖出：{', '.join(common_sell_names[:3])}")
-    if inflow_sectors:
-        signals.append(f"5日资金偏好：{', '.join(inflow_sectors[:3])}")
-    if bx_buy:
-        signals.append(f"北向席位买入：{format_names(bx_buy[:2], with_money=False)}")
-    if inst_buy:
-        signals.append(f"机构席位买入：{format_names(inst_buy[:2], with_money=False)}")
-    if yz_buy:
-        signals.append(f"游资席位买入：{format_names(yz_buy[:2], with_money=False)}")
 
     # ── 7. 输出 ──
     result = {
@@ -280,35 +247,30 @@ def main():
             "trend_5d": north_trend,
             "style": south_style,
             "common_buy": [],
-            "common_sell": [],
-            "signal": f"{south_signal_extra}｜{north_trend}"
+            "common_sell": []
         },
         "bx": {
             "direction": bx_direction,
             "style": bx_style,
             "common_buy": format_names(bx_buy),
-            "common_sell": format_names(bx_sell),
-            "signal": bx_signal
+            "common_sell": format_names(bx_sell)
         },
         "inst": {
             "direction": inst_direction,
             "style": inst_style,
             "common_buy": format_names(inst_buy),
-            "common_sell": format_names(inst_sell),
-            "signal": inst_signal
+            "common_sell": format_names(inst_sell)
         },
         "hot_money": {
             "direction": yz_direction,
             "style": yz_style,
             "common_buy": format_names(yz_buy),
-            "common_sell": format_names(yz_sell),
-            "signal": yz_signal
+            "common_sell": format_names(yz_sell)
         },
         "common_buy_stocks": common_buy_names,
         "common_sell_stocks": common_sell_names,
         "top_sectors": [{"name": s["name"], "net_5d": s.get("net_5d", 0)} for s in trend_5d[:5]],
         "analysis": analysis,
-        "signals": signals,
         # 新增：各维度原始 Top 列表供前端扩展使用
         "raw": {
             "bx_buy": [(name, fmt_yi(net), code) for name, net, code in bx_buy],

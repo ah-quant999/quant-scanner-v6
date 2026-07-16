@@ -941,7 +941,6 @@ tr:hover td { background: #fafbfc; }
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净买入TOP3</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净卖出TOP3</th>
-                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
               </tr>
             </thead>
             <tbody id="capFlowBody"></tbody>
@@ -451040,7 +451039,6 @@ function renderCapitalFlowCard() {
     var style = data.style || '-';
     var cb = data.common_buy && data.common_buy.length ? data.common_buy.slice(0,3).join('、') : '-';
     var cs = data.common_sell && data.common_sell.length ? data.common_sell.slice(0,3).join('、') : '-';
-    var signal = data.signal || '-';
     var dc = dirClass(direction);
     return '<tr style="background:' + color + ';">'
       + '<td style="padding:6px 8px;border:1px solid #ddd;font-weight:600;white-space:nowrap;">' + label + '</td>'
@@ -451048,7 +451046,6 @@ function renderCapitalFlowCard() {
       + '<td style="padding:6px 8px;border:1px solid #ddd;">' + style + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;color:#e94560;">' + cb + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;color:#27ae60;">' + cs + '</td>'
-      + '<td style="padding:6px 8px;border:1px solid #ddd;font-size:10.5px;max-width:180px;">' + signal + '</td>'
       + '</tr>';
   }
   body.innerHTML = ''
@@ -451056,11 +451053,6 @@ function renderCapitalFlowCard() {
     + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
     + row('🏦 机构席位', d.inst, '#fff5f5')
     + row('🚀 游资席位', d.hot_money, '#f5f5ff');
-
-  // 共同信号行
-  if (d.signals && d.signals.length) {
-    body.innerHTML += '<tr><td colspan="6" style="padding:6px 8px;border:1px solid #ddd;background:#fafafa;font-size:10.5px;color:#444;">📌 ' + d.signals.join(' ｜ ') + '</td></tr>';
-  }
 
   // 研判文字（仿左图：自然语言解读）
   var analysisEl = document.getElementById('capFlowAnalysis');
