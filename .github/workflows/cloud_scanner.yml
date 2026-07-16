@@ -4,6 +4,10 @@
 name: "☁️ 云端收盘扫描+部署"
 
 on:
+  # ⏳ 临时 push 触发（2026-07-16 22:25 云端cron跳过，用于补跑关闭前数据）
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cloud_scanner.yml']
   # ✅ 2026-07-16 闭环加固：云端恢复自主定时(cron)，发令枪降级为监控+幂等补触发。
   #   这是今晚(7-16)事故的根因修复：18:31 收盘扫描此前仅靠小九发令枪，枪停则云端不跑。
   schedule:
