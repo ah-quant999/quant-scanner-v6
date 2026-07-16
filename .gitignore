@@ -63,6 +63,15 @@ data/*
 !data/.ops_status.json
 !data/capital_flow_summary.json
 !data/experiment/*.json
+# 例外：本机:40中国源脚本产出(美区云端跑不了，已移出云端 fetch 循环)，须进 Git
+# 让云端构建(update_data_v2.py)也能读到本机 push 的新鲜数据，否则前端读空/陈旧
+!data/margin_data.json
+!data/stock_deviation.json
+!data/concept_ranking.json
+!data/cffex_holdings.json
+!data/inst_trade.json
+!data/sh_index_fib.json
+!data/sz_index_fib.json
 # 敏感文件：显式忽略，防止被 git add -A / -f 重新纳入版本控制（泄露风险）
 data/zsxq_token.json
 data/mahoro_signals.json
