@@ -451146,29 +451146,8 @@ function renderHealthDashboard(cat){
     }
   }
 
-  // ── 三方健康看板（云端/小九/阿狸咪） ──
-  var ops = window.OPS_STATUS || {};
-  var tp = ops.three_party || {};
-  var tpSummary = ops.three_party_summary || '';
-  var tpParts = [];
-  if (tp.cloud || tp.xiaojiu || tp.alimi) {
-    ['cloud','xiaojiu','alimi'].forEach(function(k){
-      var v = tp[k] || {};
-      var label = k==='cloud' ? '☁️ 云端' : k==='xiaojiu' ? '💻 小九' : '🏠 阿狸咪';
-      var ok = v.status === 'ok';
-      var icon = ok ? '✅' : v.status === 'fail' ? '❌' : '❓';
-      var color = ok ? '#2e7d32' : '#c62828';
-      tpParts.push('<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;background:' + (ok?'#e8f5e9':'#ffebee') + ';margin:0 2px;"><b style="color:' + color + ';">' + icon + ' ' + label + '</b><span style="font-size:10px;color:#666;">' + (v.last_time || '') + '</span></span>');
-    });
-  }
-  if (tpParts.length) {
-    var tpHtml = '<div style="padding:10px 14px;margin-bottom:12px;background:#f8f9fa;border-radius:8px;border:1px solid #e0e0e0;">';
-    tpHtml += '<div style="font-size:12px;font-weight:700;color:#1a237e;margin-bottom:6px;">🛡️ 三方监控（最后成功记录）</div>';
-    tpHtml += '<div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center;">' + tpParts.join('') + '</div>';
-    tpHtml += '</div>';
-  } else {
-    var tpHtml = '';
-  }
+  // ── 三方监控已移入运维状态卡（renderOps）内，此处不再单独渲染 ──
+  var tpHtml = '';
 
   function fmtAgo(ts){
     if(!ts) return {text:'未知',stale:true,days:999};
@@ -451278,7 +451257,7 @@ function renderHealthDashboard(cat){
     rows += '</table></div>';
   }
 
-  el.innerHTML = (tpHtml || '') + rows;
+  el.innerHTML = rows;
 }
 
 // ===== 2026世界杯胜率分析 =====
@@ -451901,15 +451880,15 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     card.style.display = 'block';
     var st = s.failover_status || '未知';
     var stColor = st==='OK'?'#4caf50':(st==='RECOVERED'?'#ff9800':(st==='FAILED'?'#f44336':'#9e9e9e'));
-    var neo = s.neodata_status==='ok'?'正常':'异常';
-    var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
+    var neo = s.neodata_status==='ok'?'正常':(s.neodata_status==='n/a'?'—':'异常');
+    var neoColor = s.neodata_status==='ok'?'#4caf50':(s.neodata_status==='n/a'?'#999':'#f44336');
     // 计算令牌剩余时间
     var neoExp = s.neodata_valid_until ? new Date(s.neodata_valid_until.replace(/\s/,'T')) : null;
     var now = new Date();
     var neoRemain = neoExp ? Math.max(0, Math.round((neoExp - now) / 3600000)) : null;
-    var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '未知';
+    var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '—';
     var neoRemainColor = neoRemain !== null ? (neoRemain > 3 ? '#4caf50' : (neoRemain > 1 ? '#ff9800' : '#f44336')) : '#999';
-    // 三方监控（云端/小九/阿狸咪）最后成功时间
+    // ── 左栏：三方监控（云端/小九/阿狸咪）──
     var tp = s.three_party || {};
     var tpHtml = '';
     ['cloud','xiaojiu','alimi'].forEach(function(k){
@@ -451918,17 +451897,26 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
       var ok = v.status === 'ok';
       var icon = ok ? '✅' : v.status === 'fail' ? '❌' : '❓';
       var color = ok ? '#2e7d32' : '#c62828';
-      tpHtml += '<div style="font-size:10px;"><b style="color:'+color+';">'+icon+' '+label+'</b> <span style="color:#bbb">'+(v.last_time||'—')+'</span></div>';
+      tpHtml += '<div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;"><b style="color:'+color+';font-size:14px;">'+icon+'</b><span style="color:#333;font-weight:600;">'+label+'</span><span style="color:#bbb;margin-left:auto;font-size:12px;">'+(v.last_time||'—')+'</span></div>';
     });
+    // ── 右栏：运维指标 ──
     content.innerHTML =
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;font-size:11px;">'+
-        '<div><span style="color:#999">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
-        '<div><span style="color:#999">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb">'+fmt(s.failover_time)+'</span></div>'+
-        '<div><span style="color:#999">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb">'+fmt(s.neodata_updated)+'</span></div>'+
-        '<div><span style="color:#999">令牌有效至</span>：<b style="color:'+neoRemainColor+'">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:10px;">('+neoRemainStr+')</span></div>'+
-        '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:2px;margin-top:1px;"><span style="color:#999;font-weight:600;font-size:10px;">三方监控</span></div>'+
-        '<div style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px 8px;">'+tpHtml+'</div>'+
-        '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:2px;margin-top:1px;"><span style="color:#999">状态更新</span>：<span style="color:#bbb">'+fmt(s.updated_at)+'</span></div>'+
+      '<div style="display:flex;gap:20px;align-items:stretch;">'+
+        /* 左栏：三方监控 */
+        '<div style="flex:0 0 180px;border-right:2px solid #eee;padding-right:16px;">'+
+          '<div style="font-size:12px;font-weight:700;color:#1a237e;margin-bottom:8px;">🛡️ 三方监控</div>'+
+          '<div>'+tpHtml+'</div>'+
+        '</div>'+
+        /* 右栏：指标网格 */
+        '<div style="flex:1;min-width:0;">'+
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:13px;">'+
+            '<div><span style="color:#888">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
+            '<div><span style="color:#888">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.failover_time)+'</span></div>'+
+            '<div><span style="color:#888">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.neodata_updated)+'</span></div>'+
+            '<div><span style="color:#888">令牌有效至</span>：<b style="color:'+neoRemainColor+';font-size:12px">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:11px;">('+neoRemainStr+')</span></div>'+
+            '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:4px;margin-top:2px;"><span style="color:#888">状态更新</span>：<span style="color:#bbb;font-size:11px">'+fmt(s.updated_at)+'</span></div>'+
+          '</div>'+
+        '</div>'+
       '</div>';
   }
   if(document.readyState!=='loading') renderOps();
