@@ -449677,17 +449677,11 @@ function renderIpoTopStrip() {
     track:          stocks.filter(function(s){ return s.status === 'listed_today' || s.status === 'tracking'; })
   };
 
-  // 头部计数 + 更新时间
+  // 头部更新于时间
   var timeEl = document.getElementById('ipoStripTime');
   if (timeEl) {
-    var parts = [];
-    if (g.today_applying.length) parts.push('今日申购' + g.today_applying.length);
-    if (g.pricing.length)        parts.push('待定价' + g.pricing.length);
-    if (g.applying.length)       parts.push('待申购' + g.applying.length);
-    if (g.pre_listing.length)    parts.push('待上市' + g.pre_listing.length);
-    if (g.track.length)          parts.push('上市日追踪' + g.track.length);
-    var tStr = parts.join(' · ');
-    if (d.update_time) { var _pcs = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : ((typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null); if (_pcs) tStr += ' · 更新于 ' + _pcs.text; }
+    var tStr = '';
+    if (d.update_time) { var _pcs = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : ((typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null); if (_pcs) tStr = '更新于 ' + _pcs.text; }
     timeEl.textContent = tStr;
   }
 
