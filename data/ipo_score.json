@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-07-16 05:43:01",
+  "update_time": "2026-07-16 06:14:36",
   "eligible_count": 4,
   "pre_listing_count": 3,
-  "listed_count": 1,
+  "listed_count": 0,
   "tracking_count": 0,
-  "summary": "4只待评估，3只待上市，今日1只上市。 📋 可转债2待申购，1只今日上市",
+  "summary": "4只待评估，3只待上市。 📋 可转债2待申购，1只今日上市",
   "stocks": [
     {
       "code": "688825",
@@ -240,27 +240,6 @@
         "募资10亿"
       ],
       "status": "pre_listing"
-    },
-    {
-      "code": "920117",
-      "name": "N龙鑫",
-      "issue_price": 17.83,
-      "latest_price": 35.99,
-      "open_price": 36.5,
-      "change_pct": 101.85,
-      "turnover": 79.16,
-      "total_return": 101.85,
-      "open_return": 104.71,
-      "board": "北交所",
-      "listing_date": "20260716",
-      "score": 0,
-      "recommend": "上市首日",
-      "tag_color": "#1565c0",
-      "bg_color": "#e3f2fd",
-      "highlights": [
-        "开盘涨104.71%"
-      ],
-      "status": "listed_today"
     },
     {
       "type": "bond",
@@ -534,11 +513,11 @@
       "status": "tracking",
       "market_code": "SZ",
       "dec_sumfina": 33.0,
-      "latest": 1376.9,
+      "latest": 1371.11,
       "open_price": 1335.4,
-      "change_pct": 2.68,
-      "turnover": 28.08,
-      "total_return": 1276.9,
+      "change_pct": 2.25,
+      "turnover": 29.86,
+      "total_return": 1271.1,
       "open_return": 1235.4,
       "score": 66,
       "arbitrage_score": 80,
@@ -548,12 +527,12 @@
       "bg_color": "#fff3e0",
       "fundamentals": {
         "track": "可转债",
-        "total_return": 1276.9,
-        "turnover": 28.08
+        "total_return": 1271.1,
+        "turnover": 29.86
       },
       "highlights": [
-        "较发行 +1276.9%",
-        "现价 ¥1376.90",
+        "较发行 +1271.1%",
+        "现价 ¥1371.11",
         "🟡 表现良好，观望等回调"
       ]
     }

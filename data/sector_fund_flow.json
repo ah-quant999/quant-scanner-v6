@@ -1,53 +1,17 @@
 {
-  "update_time": "2026-07-16 05:53",
+  "update_time": "2026-07-16 06:26",
   "data_type": "real",
   "summary": {
     "in_count": 40,
     "out_count": 0,
-    "in_text": "AI智能体(51.0亿)、抖音概念(字节概念)(47.5亿)、阿里巴巴概念(46.8亿)、信创(40.9亿)、DeepSeek概念(39.8亿)",
+    "in_text": "抖音概念(字节概念)(45.7亿)、ChatGPT概念(36.6亿)、虚拟数字人(35.7亿)、信创(34.2亿)、华为海思概念股(33.4亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 AI智能体+51.0亿、抖音概念(字节概念)+47.5亿、阿里巴巴概念+46.8亿"
+    "alert": "🔥 40个板块大幅流入；🚀 抖音概念(字节概念)+45.7亿、ChatGPT概念+36.6亿、虚拟数字人+35.7亿"
   },
   "sectors_in": [
     {
-      "name": "AI智能体",
-      "net": 51.01,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
       "name": "抖音概念(字节概念)",
-      "net": 47.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "阿里巴巴概念",
-      "net": 46.79,
-      "net_5d": -158.52,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "信创",
-      "net": 40.87,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "DeepSeek概念",
-      "net": 39.83,
+      "net": 45.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -56,7 +20,7 @@
     },
     {
       "name": "ChatGPT概念",
-      "net": 39.67,
+      "net": 36.63,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -64,8 +28,8 @@
       "trend": "in"
     },
     {
-      "name": "AIGC概念",
-      "net": 39.34,
+      "name": "虚拟数字人",
+      "net": 35.68,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -73,44 +37,8 @@
       "trend": "in"
     },
     {
-      "name": "AI应用",
-      "net": 38.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "百度概念",
-      "net": 37.68,
-      "net_5d": -83.11,
-      "net_20d": -3251.9,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "腾讯概念",
-      "net": 35.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "人工智能",
-      "net": 35.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "元宇宙",
-      "net": 34.68,
+      "name": "信创",
+      "net": 34.24,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -119,7 +47,7 @@
     },
     {
       "name": "华为海思概念股",
-      "net": 34.32,
+      "net": 33.35,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -127,8 +55,8 @@
       "trend": "in"
     },
     {
-      "name": "区块链",
-      "net": 26.63,
+      "name": "AIGC概念",
+      "net": 32.43,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -136,8 +64,8 @@
       "trend": "in"
     },
     {
-      "name": "粤港澳大湾区",
-      "net": 25.43,
+      "name": "Web3.0",
+      "net": 23.8,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -145,8 +73,8 @@
       "trend": "in"
     },
     {
-      "name": "虚拟现实",
-      "net": 24.32,
+      "name": "AI应用",
+      "net": 23.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -154,26 +82,8 @@
       "trend": "in"
     },
     {
-      "name": "多模态AI",
-      "net": 24.07,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "鸿蒙概念",
-      "net": 24.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "在线教育",
-      "net": 23.91,
+      "name": "短剧游戏",
+      "net": 21.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -182,7 +92,7 @@
     },
     {
       "name": "文化传媒概念",
-      "net": 22.59,
+      "net": 20.82,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -190,17 +100,26 @@
       "trend": "in"
     },
     {
-      "name": "超级品牌",
-      "net": 22.0,
-      "net_5d": 80.19,
-      "net_20d": -1.78,
+      "name": "多模态AI",
+      "net": 19.79,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "DeepSeek概念",
+      "net": 17.09,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "消费电子",
-      "net": 21.79,
+      "net": 16.83,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -208,8 +127,8 @@
       "trend": "in"
     },
     {
-      "name": "智谱AI",
-      "net": 21.75,
+      "name": "网红经济",
+      "net": 16.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -217,71 +136,8 @@
       "trend": "in"
     },
     {
-      "name": "智能座舱",
-      "net": 21.39,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "国家大基金持股",
-      "net": 20.97,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "智能穿戴",
-      "net": 20.74,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺漂亮100",
-      "net": 19.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "车联网(车路协同)",
-      "net": 19.11,
-      "net_5d": -252.85,
-      "net_20d": -3104.38,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "语音技术",
-      "net": 18.84,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "盐湖提锂",
-      "net": 18.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "云计算",
-      "net": 18.06,
+      "name": "快手概念",
+      "net": 16.38,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -290,70 +146,7 @@
     },
     {
       "name": "AI视频",
-      "net": 17.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "网红经济",
-      "net": 17.34,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "华为鲲鹏",
-      "net": 17.1,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "数字经济",
-      "net": 16.8,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "算力租赁",
-      "net": 16.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "MR(混合现实)",
-      "net": 16.31,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "网络安全",
-      "net": 15.17,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "黄金概念",
-      "net": 14.88,
+      "net": 15.52,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -362,10 +155,217 @@
     },
     {
       "name": "文化传媒",
-      "net": 14.63,
+      "net": 14.92,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "IP经济(谷子经济)",
+      "net": 11.99,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为昇腾",
+      "net": 11.87,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "国家大基金持股",
+      "net": 10.88,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "移动支付",
+      "net": 10.82,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "手机游戏",
+      "net": 10.49,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "智能座舱",
+      "net": 10.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "贵金属",
+      "net": 10.1,
+      "net_5d": 2.62,
+      "net_20d": -680.7,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "AI语料",
+      "net": 10.03,
+      "net_5d": 22.09,
+      "net_20d": -448.31,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "虚拟现实",
+      "net": 9.53,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "网络游戏",
+      "net": 9.4,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "网络安全",
+      "net": 8.65,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "中药",
+      "net": 7.87,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "汽车整车",
+      "net": 7.78,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "软件开发",
+      "net": 7.52,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "猪肉",
+      "net": 7.32,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 7.16,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "NFT概念",
+      "net": 7.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为盘古",
+      "net": 7.02,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "小红书概念",
+      "net": 6.84,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "金属钴",
+      "net": 6.57,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "游戏",
+      "net": 6.42,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为欧拉",
+      "net": 6.28,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "蚂蚁集团概念",
+      "net": 6.12,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     }
@@ -373,44 +373,8 @@
   "sectors_out": [],
   "top_list": [
     {
-      "name": "AI智能体",
-      "net": 51.01,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
       "name": "抖音概念(字节概念)",
-      "net": 47.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "阿里巴巴概念",
-      "net": 46.79,
-      "net_5d": -158.52,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "信创",
-      "net": 40.87,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "DeepSeek概念",
-      "net": 39.83,
+      "net": 45.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -419,7 +383,7 @@
     },
     {
       "name": "ChatGPT概念",
-      "net": 39.67,
+      "net": 36.63,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -427,8 +391,8 @@
       "trend": "in"
     },
     {
-      "name": "AIGC概念",
-      "net": 39.34,
+      "name": "虚拟数字人",
+      "net": 35.68,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -436,44 +400,8 @@
       "trend": "in"
     },
     {
-      "name": "AI应用",
-      "net": 38.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "百度概念",
-      "net": 37.68,
-      "net_5d": -83.11,
-      "net_20d": -3251.9,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "腾讯概念",
-      "net": 35.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "人工智能",
-      "net": 35.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "元宇宙",
-      "net": 34.68,
+      "name": "信创",
+      "net": 34.24,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -482,7 +410,7 @@
     },
     {
       "name": "华为海思概念股",
-      "net": 34.32,
+      "net": 33.35,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -490,8 +418,8 @@
       "trend": "in"
     },
     {
-      "name": "区块链",
-      "net": 26.63,
+      "name": "AIGC概念",
+      "net": 32.43,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -499,8 +427,8 @@
       "trend": "in"
     },
     {
-      "name": "粤港澳大湾区",
-      "net": 25.43,
+      "name": "Web3.0",
+      "net": 23.8,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -508,8 +436,8 @@
       "trend": "in"
     },
     {
-      "name": "虚拟现实",
-      "net": 24.32,
+      "name": "AI应用",
+      "net": 23.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -517,26 +445,8 @@
       "trend": "in"
     },
     {
-      "name": "多模态AI",
-      "net": 24.07,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "鸿蒙概念",
-      "net": 24.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "在线教育",
-      "net": 23.91,
+      "name": "短剧游戏",
+      "net": 21.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -545,7 +455,7 @@
     },
     {
       "name": "文化传媒概念",
-      "net": 22.59,
+      "net": 20.82,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -553,17 +463,26 @@
       "trend": "in"
     },
     {
-      "name": "超级品牌",
-      "net": 22.0,
-      "net_5d": 80.19,
-      "net_20d": -1.78,
+      "name": "多模态AI",
+      "net": 19.79,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "DeepSeek概念",
+      "net": 17.09,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "消费电子",
-      "net": 21.79,
+      "net": 16.83,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -571,8 +490,8 @@
       "trend": "in"
     },
     {
-      "name": "智谱AI",
-      "net": 21.75,
+      "name": "网红经济",
+      "net": 16.71,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -580,71 +499,8 @@
       "trend": "in"
     },
     {
-      "name": "智能座舱",
-      "net": 21.39,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "国家大基金持股",
-      "net": 20.97,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "智能穿戴",
-      "net": 20.74,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺漂亮100",
-      "net": 19.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "车联网(车路协同)",
-      "net": 19.11,
-      "net_5d": -252.85,
-      "net_20d": -3104.38,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "语音技术",
-      "net": 18.84,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "盐湖提锂",
-      "net": 18.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "云计算",
-      "net": 18.06,
+      "name": "快手概念",
+      "net": 16.38,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -653,70 +509,7 @@
     },
     {
       "name": "AI视频",
-      "net": 17.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "网红经济",
-      "net": 17.34,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "华为鲲鹏",
-      "net": 17.1,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "数字经济",
-      "net": 16.8,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "算力租赁",
-      "net": 16.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "MR(混合现实)",
-      "net": 16.31,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "网络安全",
-      "net": 15.17,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "黄金概念",
-      "net": 14.88,
+      "net": 15.52,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -725,32 +518,223 @@
     },
     {
       "name": "文化传媒",
-      "net": 14.63,
+      "net": 14.92,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
       "consecutive_days": 1,
       "trend": "in"
+    },
+    {
+      "name": "IP经济(谷子经济)",
+      "net": 11.99,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为昇腾",
+      "net": 11.87,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "国家大基金持股",
+      "net": 10.88,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "移动支付",
+      "net": 10.82,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "手机游戏",
+      "net": 10.49,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "智能座舱",
+      "net": 10.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "贵金属",
+      "net": 10.1,
+      "net_5d": 2.62,
+      "net_20d": -680.7,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "AI语料",
+      "net": 10.03,
+      "net_5d": 22.09,
+      "net_20d": -448.31,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "虚拟现实",
+      "net": 9.53,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "网络游戏",
+      "net": 9.4,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "网络安全",
+      "net": 8.65,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "中药",
+      "net": 7.87,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "汽车整车",
+      "net": 7.78,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "软件开发",
+      "net": 7.52,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "猪肉",
+      "net": 7.32,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 7.16,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "NFT概念",
+      "net": 7.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为盘古",
+      "net": 7.02,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "小红书概念",
+      "net": 6.84,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "金属钴",
+      "net": 6.57,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "游戏",
+      "net": 6.42,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "华为欧拉",
+      "net": 6.28,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "蚂蚁集团概念",
+      "net": 6.12,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
     }
   ],
   "consecutive": {
-    "AI智能体": {
-      "days": 1,
-      "trend": "in"
-    },
     "抖音概念(字节概念)": {
-      "days": 1,
-      "trend": "in"
-    },
-    "阿里巴巴概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "信创": {
-      "days": 1,
-      "trend": "in"
-    },
-    "DeepSeek概念": {
       "days": 1,
       "trend": "in"
     },
@@ -758,27 +742,11 @@
       "days": 1,
       "trend": "in"
     },
-    "AIGC概念": {
+    "虚拟数字人": {
       "days": 1,
       "trend": "in"
     },
-    "AI应用": {
-      "days": 1,
-      "trend": "in"
-    },
-    "百度概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "腾讯概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "人工智能": {
-      "days": 1,
-      "trend": "in"
-    },
-    "元宇宙": {
+    "信创": {
       "days": 1,
       "trend": "in"
     },
@@ -786,27 +754,19 @@
       "days": 1,
       "trend": "in"
     },
-    "区块链": {
+    "AIGC概念": {
       "days": 1,
       "trend": "in"
     },
-    "粤港澳大湾区": {
+    "Web3.0": {
       "days": 1,
       "trend": "in"
     },
-    "虚拟现实": {
+    "AI应用": {
       "days": 1,
       "trend": "in"
     },
-    "多模态AI": {
-      "days": 1,
-      "trend": "in"
-    },
-    "鸿蒙概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "在线教育": {
+    "短剧游戏": {
       "days": 1,
       "trend": "in"
     },
@@ -814,7 +774,11 @@
       "days": 1,
       "trend": "in"
     },
-    "超级品牌": {
+    "多模态AI": {
+      "days": 1,
+      "trend": "in"
+    },
+    "DeepSeek概念": {
       "days": 1,
       "trend": "in"
     },
@@ -822,39 +786,11 @@
       "days": 1,
       "trend": "in"
     },
-    "智谱AI": {
+    "网红经济": {
       "days": 1,
       "trend": "in"
     },
-    "智能座舱": {
-      "days": 1,
-      "trend": "in"
-    },
-    "国家大基金持股": {
-      "days": 1,
-      "trend": "in"
-    },
-    "智能穿戴": {
-      "days": 1,
-      "trend": "in"
-    },
-    "同花顺漂亮100": {
-      "days": 1,
-      "trend": "in"
-    },
-    "车联网(车路协同)": {
-      "days": 1,
-      "trend": "in"
-    },
-    "语音技术": {
-      "days": 1,
-      "trend": "in"
-    },
-    "盐湖提锂": {
-      "days": 1,
-      "trend": "in"
-    },
-    "云计算": {
+    "快手概念": {
       "days": 1,
       "trend": "in"
     },
@@ -862,23 +798,47 @@
       "days": 1,
       "trend": "in"
     },
-    "网红经济": {
+    "文化传媒": {
       "days": 1,
       "trend": "in"
     },
-    "华为鲲鹏": {
+    "IP经济(谷子经济)": {
       "days": 1,
       "trend": "in"
     },
-    "数字经济": {
+    "华为昇腾": {
       "days": 1,
       "trend": "in"
     },
-    "算力租赁": {
+    "国家大基金持股": {
       "days": 1,
       "trend": "in"
     },
-    "MR(混合现实)": {
+    "移动支付": {
+      "days": 1,
+      "trend": "in"
+    },
+    "手机游戏": {
+      "days": 1,
+      "trend": "in"
+    },
+    "智能座舱": {
+      "days": 1,
+      "trend": "in"
+    },
+    "贵金属": {
+      "days": 1,
+      "trend": "in"
+    },
+    "AI语料": {
+      "days": 1,
+      "trend": "in"
+    },
+    "虚拟现实": {
+      "days": 1,
+      "trend": "in"
+    },
+    "网络游戏": {
       "days": 1,
       "trend": "in"
     },
@@ -886,52 +846,72 @@
       "days": 1,
       "trend": "in"
     },
-    "黄金概念": {
+    "中药": {
       "days": 1,
       "trend": "in"
     },
-    "文化传媒": {
+    "汽车整车": {
+      "days": 1,
+      "trend": "in"
+    },
+    "软件开发": {
+      "days": 1,
+      "trend": "in"
+    },
+    "猪肉": {
+      "days": 1,
+      "trend": "in"
+    },
+    "计算机设备": {
+      "days": 1,
+      "trend": "in"
+    },
+    "NFT概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "华为盘古": {
+      "days": 1,
+      "trend": "in"
+    },
+    "小红书概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "金属钴": {
+      "days": 1,
+      "trend": "in"
+    },
+    "游戏": {
+      "days": 1,
+      "trend": "in"
+    },
+    "华为欧拉": {
+      "days": 1,
+      "trend": "in"
+    },
+    "蚂蚁集团概念": {
       "days": 1,
       "trend": "in"
     }
   },
   "trend_5d": [
     {
-      "name": "超级品牌",
-      "net": 22.0,
-      "net_5d": 80.19,
-      "net_20d": -1.78,
+      "name": "AI语料",
+      "net": 10.03,
+      "net_5d": 22.09,
+      "net_20d": -448.31,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
     },
     {
-      "name": "百度概念",
-      "net": 37.68,
-      "net_5d": -83.11,
-      "net_20d": -3251.9,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "阿里巴巴概念",
-      "net": 46.79,
-      "net_5d": -158.52,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "车联网(车路协同)",
-      "net": 19.11,
-      "net_5d": -252.85,
-      "net_20d": -3104.38,
-      "type": "概念",
+      "name": "贵金属",
+      "net": 10.1,
+      "net_5d": 2.62,
+      "net_20d": -680.7,
+      "type": "行业",
       "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
@@ -939,31 +919,21 @@
   ],
   "trend_20d": [
     {
-      "name": "超级品牌",
-      "net": 22.0,
-      "net_5d": 80.19,
-      "net_20d": -1.78,
+      "name": "AI语料",
+      "net": 10.03,
+      "net_5d": 22.09,
+      "net_20d": -448.31,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
     },
     {
-      "name": "车联网(车路协同)",
-      "net": 19.11,
-      "net_5d": -252.85,
-      "net_20d": -3104.38,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "百度概念",
-      "net": 37.68,
-      "net_5d": -83.11,
-      "net_20d": -3251.9,
-      "type": "概念",
+      "name": "贵金属",
+      "net": 10.1,
+      "net_5d": 2.62,
+      "net_20d": -680.7,
+      "type": "行业",
       "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
