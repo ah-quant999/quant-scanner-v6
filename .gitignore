@@ -67,6 +67,8 @@ data/*
 !data/sector_rs.json
 # 例外：本机运维状态(兜底结论/neodata有效期)供前端运维卡片读取，须进 Git 让云端部署也展示
 !data/.ops_status.json
+# 例外：候选池（家用机akshare东财连不上，需云端跑后进 Git 让 deploy 拿得到）
+!data/candidate_pool.json
 !data/capital_flow_summary.json
 !data/experiment/*.json
 # 例外：本机:40中国源脚本产出(美区云端跑不了，已移出云端 fetch 循环)，须进 Git
