@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: cloud-data-fetch
@@ -115,3 +117,54 @@ jobs:
       - name: "💓 上报云端心跳"
         continue-on-error: true
         run: python report_heartbeat.py --role cloud --mode cloud_data_fetch
+
+      # ═══════════════════════════════════════════════
+      # 🏗️ 构建+部署（将最新数据部署到 gh-pages，18:31 cloud_scanner 的最终版会覆盖本次）
+      # ═══════════════════════════════════════════════
+
+      - name: "🏗️ 构建前端"
+        run: |
+          python update_data_v2.py
+          echo "✅ 构建完成"
+
+      # ─── 生成独立页(standalone) 并校验与主站同源同戳 ───
+      - name: "📱 生成独立页(standalone) + 同源同戳校验"
+        run: |
+          python ensure_standalone_sync.py --inject-buildstamp
+          echo "✅ standalone 已与主站同步校验，可安全上线"
+
+      # ─── 部署前诊断 ───
+      - name: "🔍 部署前诊断 (确认 dist/index.html)"
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "::error::dist/index.html 不存在，前端构建可能失败，终止部署"
+            ls -la dist 2>/dev/null || echo "dist 目录不存在"
+            exit 1
+          fi
+          echo "✅ dist/index.html 存在 ($(wc -c < dist/index.html) bytes)"
+
+      # ─── 部署 ───
+      - name: "🚀 部署到 GitHub Pages"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+          user_name: cloud-bot
+          user_email: cloud-bot@users.noreply.github.com
+
+      # ─── 部署后验证 ───
+      - name: "✅ 部署验证 (ls-remote 确认 gh-pages)"
+        run: |
+          sleep 5
+          git ls-remote origin gh-pages
+
+      - name: "📝 写部署日志"
+        run: |
+          echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_data_fetch_deploy\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          echo "✅ 17:31 数据抓取+部署完成"
+
+      - name: "⛔ 失败通知"
+        if: failure()
+        run: echo "::error::☁️ cloud_data_fetch 构建/部署失败"
