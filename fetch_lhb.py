@@ -174,17 +174,29 @@ def _fetch_inst_sina(date_str=None):
     return inst_map
 
 def classify(inst_buy, inst_sell, other_buy, other_sell):
-    """机构 vs 非机构（北向+游资+量化+未识别）净买入判定"""
+    """机构 vs 游资(不含北向) 净买入判定 — 按站点"数据口径说明"表
+    ★ 2026-07-17 重构:
+      - 4 分类：机游共振 / 机构独买 / 游资独买 / 不达标
+      - 口径：机游共振 = 双方都买 (inst>0 AND yz>0)，不限大小
+      - 口径：独买 = 任一>阈值(0.8亿) 且 另一方<=0
+      - 阈值的"强买"定义保留
+    """
     inst_net = inst_buy - inst_sell
     other_net = other_buy - other_sell
     inst_strong = inst_net > THRESHOLD
     other_strong = other_net > THRESHOLD
+    # ★ 双方都买(不限大小) → 机游共振
+    if inst_net > 0 and other_net > 0:
+        return '机游共振', inst_net, other_net
+    # 单边强买
+    if inst_strong and not other_strong:
+        return '机构独买', inst_net, other_net
+    if other_strong and not inst_strong:
+        return '游资独买', inst_net, other_net
+    # 双方都强买(原纯共振)
     if inst_strong and other_strong:
-        return '纯共振', inst_net, other_net
-    elif inst_strong or other_strong:
-        return '标X', inst_net, other_net
-    else:
-        return '不达标', inst_net, other_net
+        return '机游共振', inst_net, other_net
+    return '不达标', inst_net, other_net
 
 def main():
     print("=" * 50)
@@ -202,7 +214,7 @@ def main():
 
     detail_map = fetch_seat_detail(stocks, date_str)
 
-    results = {'纯共振': [], '标X': [], '不达标': []}
+    results = {'机游共振': [], '机构独买': [], '游资独买': [], '不达标': []}
     for s in stocks:
         code = s['code']
         seats = detail_map.get(code, {})
@@ -224,13 +236,17 @@ def main():
             inst_sell = inst_data['sell']
             inst_net = inst_data['net']
 
-        # 非机构：北向+游资+量化+未识别（来自 seat detail）
+        # ★ 2026-07-17 修复：按站点"数据口径说明"表 — 「机游共振」= 机构+游资同时净买入，
+        #   明确「本页不涉及北向」。所以 yz 必须剔除北向：游资+量化+未识别。
+        #   之前把'北向'算进 other_buy/other_sell → yz 含深股通专用席位的卖出，污染数据。
         other_buy = 0
         other_sell = 0
-        for stype in ('北向', '游资', '量化', '未识别'):
+        for stype in ('游资', '量化', '未识别'):
             d = seats.get(stype, {'buy': 0, 'sell': 0})
             other_buy += d['buy']
             other_sell += d['sell']
+        # 北向单独算（不归入 yz，供其他用途）
+        # var bx = seats.get('北向', {'buy': 0, 'sell': 0})
 
         cat, _, other_net = classify(
             inst_buy, inst_sell,
@@ -277,10 +293,11 @@ def main():
     output = {
         'date': date_str,
         'update_time': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        'stocks': results['纯共振'] + results['标X'] + results['不达标'],
+        'stocks': results['机游共振'] + results['机构独买'] + results['游资独买'] + results['不达标'],
         'summary': {
-            '纯共振': len(results['纯共振']),
-            '标X': len(results['标X']),
+            '机游共振': len(results['机游共振']),
+            '机构独买': len(results['机构独买']),
+            '游资独买': len(results['游资独买']),
             '不达标': len(results['不达标']),
             '总计': len(stocks),
         }
@@ -292,15 +309,16 @@ def main():
     _update_lhb_history(results, date_str)
 
     print(f"\n完成！")
-    print(f"  纯共振：{len(results['纯共振'])} 只")
-    for r in results['纯共振'][:5]:
+    print(f"  机游共振（双方都买）：{len(results['机游共振'])} 只")
+    for r in results['机游共振'][:5]:
         types = '/'.join(r['seats'].keys()) if r.get('seats') else '无'
-        print(f"    {r['code']} {r['name']} 机构{r['inst_net_万']}万 其他{r['yz_net_万']}万 [{types}]")
-    print(f"  标X：{len(results['标X'])} 只")
+        print(f"    {r['code']} {r['name']} 机构{r['inst_net_万']}万 游资{r['yz_net_万']}万")
+    print(f"  机构独买：{len(results['机构独买'])} 只")
+    print(f"  游资独买：{len(results['游资独买'])} 只")
     print(f"  不达标：{len(results['不达标'])} 只")
 
 def _update_lhb_history(results, date_str):
-    """只写入纯共振数据到机游共振日历"""
+    """只写入机游共振数据到机游共振日历（2026-07-17 改：纯共振→机游共振）"""
     path = "data/lhb_history.json"
     hist = {}
     if os.path.exists(path):
@@ -310,7 +328,7 @@ def _update_lhb_history(results, date_str):
         except Exception:
             pass
     pure_simple = []
-    for item in results['纯共振']:
+    for item in results.get('机游共振', results.get('纯共振', [])):
         pure_simple.append({
             'code': item['code'],
             'name': item['name'],
