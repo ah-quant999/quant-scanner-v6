@@ -451885,12 +451885,24 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 <script>
 (function(){
   function fmt(t){ return t ? t : '未知'; }
+  // 将 14 位 build-stamp（云端UTC/本地北京时间）统一转成 "MM-DD HH:MM" 北京时间显示
+  function fmtStampBeijing(raw) {
+    if (!raw || raw.length < 12) return fmt(raw);
+    var y = raw.slice(0,4), mo = raw.slice(4,6), d = raw.slice(6,8);
+    var h = parseInt(raw.slice(8,10),10), mi = raw.slice(10,12);
+    // 云端 runner 用 datetime.now() 出 UTC，+8 转北京；本地部署已是北京时再加 8 会溢出，
+    // 用 heuristic：h < 6（交易时段不可能这么早）→ 判定 UTC，否则判定已是北京。
+    var isUtc = (h < 6);
+    if (isUtc) { h += 8; if (h >= 24) { h -= 24; /* 日跨越不处理，仅修正时分 */ } }
+    return mo + '-' + d + ' ' + String(h).padStart(2,'0') + ':' + mi;
+  }
   function renderOps(){
     var s = window.OPS_STATUS || {};
     // 优先读部署时写入的 build-stamp meta（每次部署都刷新，最准）；
     // 兜底回退到 .ops_status.json 的 cloud_deploy_time（旧部署/本地预览无 meta 时）。
     var _meta = document.querySelector('meta[name="build-stamp"]');
-    var deployTime = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
+    var deployTimeRaw = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
+    var deployTime = fmtStampBeijing(deployTimeRaw);
     var card = document.getElementById('opsStatusCard');
     var content = document.getElementById('opsStatusContent');
     if(!card || !content) return;
