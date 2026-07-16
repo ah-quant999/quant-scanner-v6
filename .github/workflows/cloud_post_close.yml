@@ -12,6 +12,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: cloud-post-close-${{ github.event.schedule }}
@@ -96,6 +98,15 @@ jobs:
           echo "<<< update_data_v2.py end"
           echo "✅ 16:30 三卡片刷新完成"
 
+      - name: "🔍 16:30 — 部署前诊断"
+        if: github.event.schedule == '30 8 * * 1-5'
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "::error::dist/index.html 不存在，终止部署"
+            exit 1
+          fi
+          echo "✅ dist/index.html 存在"
+
       - name: "🚀 16:30 — 部署三卡片版"
         if: github.event.schedule == '30 8 * * 1-5'
         uses: peaceiris/actions-gh-pages@v3
@@ -104,6 +115,14 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           keep_files: false
+          user_name: cloud-bot
+          user_email: cloud-bot@users.noreply.github.com
+
+      - name: "✅ 16:30 — 部署验证"
+        if: github.event.schedule == '30 8 * * 1-5'
+        run: |
+          sleep 5
+          git ls-remote origin gh-pages
 
       - name: "📝 写日志"
         run: |

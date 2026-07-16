@@ -16,6 +16,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
   actions: read
 
 concurrency:
@@ -123,6 +125,16 @@ jobs:
             echo "✅ data 已推 main"
           fi
 
+      # ─── 部署前诊断（确认前端构建产物存在）───
+      - name: "🔍 部署前诊断 (确认 dist/index.html)"
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "::error::dist/index.html 不存在，前端构建可能失败，终止部署"
+            ls -la dist 2>/dev/null || echo "dist 目录不存在"
+            exit 1
+          fi
+          echo "✅ dist/index.html 存在 ($(wc -c < dist/index.html) bytes)"
+
       # ─── 部署到 GitHub Pages ───
       - name: "🚀 部署到 GitHub Pages"
         uses: peaceiris/actions-gh-pages@v3
@@ -131,6 +143,15 @@ jobs:
           publish_dir: ./dist
           publish_branch: gh-pages
           keep_files: false
+          user_name: cloud-bot
+          user_email: cloud-bot@users.noreply.github.com
+
+      # ─── 部署后验证（确认 gh-pages 已刷新）───
+      - name: "✅ 部署验证 (ls-remote 确认 gh-pages)"
+        run: |
+          sleep 5
+          echo "当前 gh-pages HEAD:"
+          git ls-remote origin gh-pages
 
       - name: "📝 写日志"
         run: |
