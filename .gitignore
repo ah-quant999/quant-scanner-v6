@@ -47,6 +47,8 @@ __pycache__/
 # 主站↔独立页 同步校验闸门（部署共用，须进 Git 让云端工作流可调用）
 !ensure_standalone_sync.py
 !EVENING_FAILOVER.md
+# 双机发令枪运行时状态（本地写，不进 Git）
+.dispatch_state.json
 *.bat
 .wrangler/
 worker/
