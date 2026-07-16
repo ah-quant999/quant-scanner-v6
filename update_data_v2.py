@@ -6,7 +6,7 @@
 """
 
 import shutil, os as _os
-from datetime import datetime
+from datetime import datetime, timedelta
 _NODE_PATH = _os.path.join(_os.path.expanduser("~"), ".workbuddy", "binaries", "node", "versions", "22.22.2", "node.exe")
 if not _os.path.exists(_NODE_PATH):
     _NODE_PATH = shutil.which("node") or "node"   # Linux CI 降级
@@ -1527,6 +1527,14 @@ def main():
     # ☁️ 云端部署时间戳（将替换所有卡片「更新于」为统一时间）
     cloud_time = datetime.now().strftime("%Y-%m-%d %H:%M")
 
+    # 📅 盘后收盘时间（盘后类卡片统一显示为「交易日收盘 15:30」，与健康卡片一致）
+    _now = datetime.now()
+    if _now.hour >= 15:
+        _close = _now.replace(hour=15, minute=30, second=0, microsecond=0)
+    else:
+        _close = (_now - timedelta(days=1)).replace(hour=15, minute=30, second=0, microsecond=0)
+    post_close_time = _close.strftime("%Y-%m-%d %H:%M:%S")
+
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
@@ -1654,6 +1662,15 @@ def main():
         print(f"  ✓ CLOUD_UPDATE_TIME → {cloud_time}")
     else:
         print(f"  ⚠️  CLOUD_UPDATE_TIME placeholder 未找到")
+
+    # 📅 注入盘后收盘时间占位符（供盘后类卡片统一时间戳使用）
+    post_close_placeholder = 'window.POST_CLOSE_TIME = "POST_CLOSE_TIME_PLACEHOLDER";'
+    post_close_value = f'window.POST_CLOSE_TIME = "{post_close_time}";'
+    if post_close_placeholder in content:
+        content = content.replace(post_close_placeholder, post_close_value)
+        print(f"  ✓ POST_CLOSE_TIME → {post_close_time}")
+    else:
+        print(f"  ⚠️  POST_CLOSE_TIME placeholder 未找到")
 
     # ===== 注入 NT_DATA.calendar（使用最新 fetch_nt_data.py 生成的日历）=====
     nt_json_path = os.path.join(BASE_DIR, "data", "nt_data.json")

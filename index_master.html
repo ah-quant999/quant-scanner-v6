@@ -1361,6 +1361,7 @@ tr:hover td { background: #fafbfc; }
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
 window.CLOUD_UPDATE_TIME = "CLOUD_TIME_PLACEHOLDER";
+window.POST_CLOSE_TIME = "POST_CLOSE_TIME_PLACEHOLDER";
 window.CANDIDATE_POOL = {};
 window.CRDS_CARD_DATA = {};
 window.EXPERIMENT_DATA = {};
@@ -440281,6 +440282,23 @@ function setChartTime(id, timeStr, source) {
   else el.className = 'update-time-badge';
 }
 
+// 盘后类卡片统一时间戳：归一到交易日收盘 15:30（与健康卡片一致），但严重过期(≥2天)保留真实时间+红标
+function setPostMarketTime(id, rawTime, source) {
+  var ft = rawTime ? fmtDataTime(rawTime) : null;
+  if (ft && ft.daysAgo !== undefined && ft.daysAgo >= 2) {
+    setChartTime(id, rawTime, source); // 真实过期，保留红标不掩盖
+    return;
+  }
+  if (window.POST_CLOSE_TIME) {
+    setChartTime(id, window.POST_CLOSE_TIME, source);
+  } else if (rawTime) {
+    setChartTime(id, rawTime, source);
+  } else {
+    var el = document.getElementById(id);
+    if (el) el.textContent = '';
+  }
+}
+
 function getStaleNote(ft, source) {
   // 根据数据源和延迟天数生成备注
   if (!ft || !ft.stale) return '';
@@ -440549,7 +440567,7 @@ function render() {
                (cpObj && cpObj.update_time) ||
                d.update_time || d.scan_time ||
                (window.SCAN_DATA && (window.SCAN_DATA.update_time || window.SCAN_DATA.scan_time)) || '';
-      if (ut) { var ft = fmtDataTime(ut); boardTimeEl.textContent = '更新于 ' + ft.text; }
+      if (ut) { setPostMarketTime('boardSummaryTime', ut, 'main'); }
     }
 
     // 金股观测
@@ -449407,8 +449425,7 @@ function renderLhbPredict() {
   var stocks = d.stocks || [];
   if (!stocks.length) { con.innerHTML = '<div style="color:#999;text-align:center;padding:10px;">暂无龙虎榜数据</div>'; return; }
   if (timeEl) {
-    var ft = fmtDataTime(d.update_time || d.scan_time || '');
-    timeEl.textContent = '更新于 ' + ft.text;
+    setPostMarketTime('lhbPredictTime', d.update_time || d.scan_time || '', 'lhb');
   }
 
   // 四分组：机构独买 / 机游共振 / 游资独买 / 北向席位（严格互斥，每只股票只出现在一个块）
@@ -449564,8 +449581,7 @@ function renderNorthFund() {
   }
 
   if (timeEl && d.update_time) {
-    var ft = fmtDataTime(d.update_time);
-    timeEl.textContent = '更新于 ' + ft.text;
+    setPostMarketTime('northFundTime', d.update_time, 'north');
   }
 
   var h = '';
@@ -449853,7 +449869,7 @@ function renderIpoTopStrip() {
     if (g.pre_listing.length)    parts.push('待上市' + g.pre_listing.length);
     if (g.track.length)          parts.push('上市日追踪' + g.track.length);
     var tStr = parts.join(' · ');
-    if (d.update_time) { var ft = (typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null; if (ft) tStr += ' · 更新于 ' + ft.text; }
+    if (d.update_time) { var _pcs = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : ((typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null); if (_pcs) tStr += ' · 更新于 ' + _pcs.text; }
     timeEl.textContent = tStr;
   }
 
@@ -449941,7 +449957,7 @@ function renderIpoScore() {
     if (bodyWrap) bodyWrap.style.display = 'none';
     var timeEl2 = document.getElementById('ipoScoreTime');
     var timeStr = '';
-    if (timeEl2 && d.update_time) { var ft2 = fmtDataTime(d.update_time); timeStr = '更新于 ' + ft2.text; }
+    if (timeEl2 && d.update_time) { var ft2 = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : fmtDataTime(d.update_time); timeStr = '更新于 ' + ft2.text; }
     var titleSpan = card.querySelector('div[style*="border-bottom"] span');
     if (titleSpan) {
       titleSpan.innerHTML = '<span style="font-size:14px;font-weight:700;color:#880e4f;">🚀 打新研判</span> <span style="font-size:11px;font-weight:400;color:#999;">申购·上市</span> <span style="font-size:11px;color:#aaa;margin-left:4px;">' + timeStr + '</span> <span style="font-size:11px;color:#bbb;margin-left:auto;">📭 近期无新股</span>';
@@ -449958,8 +449974,7 @@ function renderIpoScore() {
 
   var timeEl = document.getElementById('ipoScoreTime');
   if (timeEl && d.update_time) {
-    var ft = fmtDataTime(d.update_time);
-    timeEl.textContent = '更新于 ' + ft.text;
+    setPostMarketTime('ipoScoreTime', d.update_time, 'main');
   }
 
   var titleSpan = card.querySelector('div[style*="border-bottom"] span');
@@ -450572,8 +450587,7 @@ function renderTop10Daily() {
   // 设置更新时间
   var timeEl = document.getElementById('top10DailyTime');
   if (timeEl && data.update_time) {
-    var ft = fmtDataTime(data.update_time);
-    timeEl.textContent = '更新于 ' + ft.text;
+    setPostMarketTime('top10DailyTime', data.update_time, 'main');
   }
 
   function buildBlock(s, rank) {
@@ -450627,9 +450641,7 @@ function renderLimitUpHeatmap() {
 
   var timeEl = document.getElementById('limitUpHeatTime');
   if (timeEl && data.update_time) {
-    var ft = fmtDataTime(data.update_time);
-    timeEl.textContent = '更新于 ' + ft.text;
-    setChartTime('limitUpHeatTime', data.update_time, 'LimitUpHeatmap');
+    setPostMarketTime('limitUpHeatTime', data.update_time, 'LimitUpHeatmap');
   }
 
   function isIgnite(sectorData, idx) {
@@ -451021,7 +451033,10 @@ function renderCapitalFlowCard() {
   card.style.display = 'block';
 
   var tEl = document.getElementById('capFlowTime');
-  if (tEl) tEl.textContent = '更新 ' + (d.update_time || '') + ' | 南向为全市场口径；北向/机构/游资为龙虎榜席位口径';
+  if (tEl) {
+    var _pcf = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : (d.update_time ? fmtDataTime(d.update_time) : null);
+    tEl.textContent = '更新 ' + (_pcf ? _pcf.text : '') + ' | 南向为全市场口径；北向/机构/游资为龙虎榜席位口径';
+  }
 
   var body = document.getElementById('capFlowBody');
   if (!body) return;
