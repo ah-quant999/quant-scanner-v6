@@ -441910,7 +441910,7 @@ function renderAISummary() {
   const timeEl = document.getElementById('aiSummaryTime');
   if (timeEl) {
     const t = nt.update_time || sf.update_time || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
-    if (t) { var ft = fmtDataTime(t); timeEl.textContent = '更新于 ' + ft.text; } else { timeEl.textContent = ''; }
+    if (t) { setPostMarketTime('aiSummaryTime', t, 'summary'); } else { timeEl.textContent = ''; }
   }
 
   var rows = [];
@@ -442226,7 +442226,7 @@ function renderETFFlow() {
   const timeEl = document.getElementById('ntEtfFlowTime');
   if (timeEl) {
     var t = nt.update_time || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
-    if (t) { var ft = fmtDataTime(t); timeEl.textContent = '更新于 ' + ft.text; }
+    if (t) { setPostMarketTime('ntEtfFlowTime', t, 'etf'); }
   }
 
   var upAmt = etfs.filter(function(e){return (e.change_pct || 0) > 0;}).reduce(function(s,e){return s+(e.amount||0);},0);
@@ -442337,9 +442337,7 @@ function renderSectorFundFlow() {
 
   // 更新时间
   var timeEl = document.getElementById('sectorFlowTime');
-  if (timeEl) {
-    if (data.update_time) { var ft = fmtDataTime(data.update_time); timeEl.textContent = '更新于 ' + ft.text; }
-  }
+  if (timeEl && data.update_time) { setPostMarketTime('sectorFlowTime', data.update_time, 'sector'); }
 
   var h = '';
 
@@ -442384,7 +442382,7 @@ function renderSectorFundFlow() {
     h += '</div>';
     h += '</div>';
     var timeEl = document.getElementById('sectorFlowTime');
-    if (timeEl && data.update_time) { var ft = fmtDataTime(data.update_time); timeEl.textContent = '更新于 ' + ft.text + '（趋势数据）'; }
+    if (timeEl && data.update_time) { setPostMarketTime('sectorFlowTime', data.update_time, 'sector'); timeEl.textContent += '（趋势数据）'; }
     content.innerHTML = h;
     card.style.display = 'block';
     if(analysisEl) analysisEl.style.display='block';
@@ -442886,8 +442884,7 @@ function renderCffex() {
 
   var timeEl = document.getElementById('cffexTime');
   if (timeEl && data.update_time) {
-    var ft = fmtDataTime(data.update_time);
-    timeEl.textContent = '更新于 ' + ft.text;
+    setPostMarketTime('cffexTime', data.update_time, 'main');
   }
 
   var h = '';
