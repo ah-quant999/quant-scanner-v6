@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- build: 20260701085830 -->
+<meta name="build-stamp" content="__BUILD_STAMP__">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -450650,6 +450651,23 @@ function toggleUnlistedPanel() {
   }
 }
 
+// ===== 🕐 统一卡片时间格式 (2026-07-16 统一版式) =====
+// 优先级：d.update_time / today.generated_at / window.POST_CLOSE_TIME / <meta build-stamp> / '未知'
+function fmtCardTime(d, altField) {
+  var v = (d && d[altField]) || '';
+  if (!v && typeof window !== 'undefined') {
+    if (window.POST_CLOSE_TIME) v = window.POST_CLOSE_TIME;
+    else {
+      var meta = document.querySelector('meta[name="build-stamp"]');
+      if (meta) {
+        var ct = meta.getAttribute('content') || '';
+        if (ct && ct.length >= 12) v = ct.slice(0,4) + '-' + ct.slice(4,6) + '-' + ct.slice(6,8) + ' ' + ct.slice(8,10) + ':' + ct.slice(10,12) + ':' + (ct.length>=14?ct.slice(12,14):'00');
+      }
+    }
+  }
+  return '🕐 更新于 ' + (v || '未知');
+}
+
 // ===== CRDS 逆势龙头评分卡渲染 =====
 function renderCrdsCard() {
   var d = window.CRDS_CARD_DATA || {};
@@ -450657,8 +450675,8 @@ function renderCrdsCard() {
   if (!card) return;
   card.style.display = 'block';
 
-  // 更新时间
-  document.getElementById('crdsTime').textContent = '🕐 更新 ' + (d.update_time || '未知');
+  // 更新时间（统一版式：🕐 更新于 2026-07-16 22:22:36）
+  document.getElementById('crdsTime').textContent = fmtCardTime(d, 'update_time');
 
   // 头注：扫描量 + 失败 + 短/盘后/日频说明
   var covEl = document.getElementById('crdsCoverage');
@@ -450670,22 +450688,27 @@ function renderCrdsCard() {
       + ' ｜ <b style="color:#1565c0;">盘后看</b>(基于日K) · <b style="color:#c62828;">短线</b>捕捉逆势龙头 · <b style="color:#607d8b;">日频</b>(每日盘后跑)';
   }
 
-  // 大盘环境判断
+  // 大盘环境判断（始终显示；缺数据时给占位说明）
   var mc = d.market_context || {};
   var mcBox = document.getElementById('crdsMarketContext');
   if (mcBox) {
+    mcBox.style.display = 'block';  // 始终显示，由内容决定是数据还是占位
+    var validityEl = document.getElementById('crdsMarketValidity');
+    var pctEl = document.getElementById('crdsMarketPct');
+    var summaryEl = document.getElementById('crdsMarketSummary');
     if (mc.summary) {
-      mcBox.style.display = 'block';
-      var validityEl = document.getElementById('crdsMarketValidity');
-      var pctEl = document.getElementById('crdsMarketPct');
-      var summaryEl = document.getElementById('crdsMarketSummary');
       validityEl.textContent = mc.validity || '未知';
       validityEl.style.backgroundColor = mc.color || '#999999';
       pctEl.textContent = mc.today_pct != null ? '上证 ' + (mc.today_pct >= 0 ? '+' : '') + mc.today_pct.toFixed(2) + '%' : '';
       summaryEl.textContent = mc.summary;
       mcBox.style.borderLeftColor = mc.color || '#ccc';
     } else {
-      mcBox.style.display = 'none';
+      // 缺数据时显示占位（不静默隐藏）
+      validityEl.textContent = '暂无数据';
+      validityEl.style.backgroundColor = '#9e9e9e';
+      pctEl.textContent = '';
+      summaryEl.textContent = '⚠️ 大盘环境判断数据未生成（CRDS 暂未跑或上游数据缺失）';
+      mcBox.style.borderLeftColor = '#9e9e9e';
     }
   }
 
@@ -450773,8 +450796,9 @@ function renderTripleSelectCard() {
   var card = document.getElementById('tripleSelectCard');
   if (!card) return;
   card.style.display = 'block';
+  // 统一版式：🕐 更新于 YYYY-MM-DD HH:MM:SS（与 CRDS / 三重选股卡一致）
   var tEl = document.getElementById('tripleSelectTime');
-  if (tEl) tEl.textContent = '🕐 更新 ' + (today.generated_at || today.date || '未知');
+  if (tEl) tEl.textContent = fmtCardTime(today, 'generated_at') || fmtCardTime(d, 'date');
 
   // 头注：说明是盘后日频+短线
   var covEl = document.getElementById('tripleSelectCoverage');

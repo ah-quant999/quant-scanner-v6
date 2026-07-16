@@ -1672,6 +1672,17 @@ def main():
     else:
         print(f"  ⚠️  POST_CLOSE_TIME placeholder 未找到")
 
+    # 🕐 注入 build-stamp meta 标签（YYYYMMDDHHMMSS）— 供 renderCrdsCard/renderTripleSelectCard
+    #    等 fallback + block7.js cloud sweep 共用，CRDS/三重选股卡统一版式不再显示"未知"
+    build_stamp_value = datetime.now().strftime("%Y%m%d%H%M%S")
+    build_stamp_placeholder = '<meta name="build-stamp" content="__BUILD_STAMP__">'
+    build_stamp_replacement = f'<meta name="build-stamp" content="{build_stamp_value}">'
+    if build_stamp_placeholder in content:
+        content = content.replace(build_stamp_placeholder, build_stamp_replacement)
+        print(f"  ✓ build-stamp meta → {build_stamp_value}")
+    else:
+        print(f"  ⚠️  build-stamp meta placeholder 未找到（CRDS/三重选股卡可能显示未知）")
+
     # ===== 注入 NT_DATA.calendar（使用最新 fetch_nt_data.py 生成的日历）=====
     nt_json_path = os.path.join(BASE_DIR, "data", "nt_data.json")
     fresh_calendar = []
