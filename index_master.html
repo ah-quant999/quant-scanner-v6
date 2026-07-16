@@ -451310,46 +451310,12 @@ if (window.LHB_DATA) try { renderLhbPredict(); } catch(e) { console.log('renderL
 if (window.NORTH_FUND_DATA && window.NORTH_FUND_DATA.update_time) try { renderNorthFund(); } catch(e) { console.log('renderNorthFund error:', e.message); }
 try { renderSuspensionAlert(); } catch(e) { console.log('renderSuspensionAlert error:', e.message); }
 try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.message); }
-// ===== ☁️ 统一云端更新时间（多层 sweep：即时 + load 延迟，防止被 deferred render 覆盖） =====
-(function applyCloudUpdateTime() {
-  var ct = window.CLOUD_UPDATE_TIME || '';
-  if (!ct) return;
-  var m = ct.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})/);
-  var formatted = m ? (m[2] + '-' + m[3] + ' ' + m[4]) : ct.slice(0,16);
-  var text = '☁ 云端更新 · ' + formatted;
-
-  function sweep() {
-    if (typeof document === 'undefined') return;
-    try { document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    try { document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    try { document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    // 兜底：扫描所有 span/div 含 "更新于" 的文字节点（处理 innerHTML 动态生成没有 id 的时间）
-    try {
-      if (typeof NodeFilter !== 'undefined' && document.createTreeWalker) {
-        var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-        var tn;
-        while ((tn = tw.nextNode())) {
-          if (tn.textContent && tn.textContent.indexOf('更新于') >= 0 && tn.parentNode) {
-            tn.textContent = text;
-          }
-        }
-      }
-    } catch(ex){}
-  }
-
-  sweep(); // 即时 sweep（主站渲染后）
-  // 延迟 sweep（standalone 页 / deferred 渲染覆盖保护）
-  window.addEventListener('load', function() {
-    setTimeout(sweep, 100);
-    setTimeout(sweep, 400);
-    setTimeout(sweep, 1000);
-    setTimeout(sweep, 2500);
-  });
-  // 最终保护：可见性变化时再扫一次（应对 tab 切换 / 暂未上架展开）
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) setTimeout(sweep, 200);
-  });
-})();
+// ===== 云端更新时间 sweep 已禁用（2026-07-16 修复） =====
+// 原 applyCloudUpdateTime() 会把所有数据卡片的时间戳强制改写成部署时间，
+// 造成"时间戳最新 = 数据新鲜"的误判（如涨停联动显示 07-16 10:10 但数据只到 07-15）。
+// 现由各卡片自身 render 显示真实 update_time（fmtDataTime 自带 stale/critical 标红），
+// 云端"最后部署"时间仅在 admin 运维状态卡（opsStatusContent）展示，二者不再混淆。
+// window.CLOUD_UPDATE_TIME 仍保留供需要处读取。
 </script>
 
 
