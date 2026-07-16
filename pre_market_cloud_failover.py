@@ -3,9 +3,12 @@
 pre_market_cloud_failover.py
 全时段云端健康监控 + 兜底。
 原为"盘前 09:20 兜底检查"（已废弃），现改为全时段轮询：
-- 每 30 分钟由 automation 调用（09:00~16:30）
-- 检查云端最近一次成功部署距今是否超过 75 分钟（上限 71 分钟无事后判断）
-- 超时则触发本机补跑 + 强制部署
+- 每 30 分钟由 automation 调用（工作日 09:00~16:30）
+- 核心：按 SCHEDULE_TRADING 计划时刻表判断"漏跑"——
+  只有某计划部署时刻已过去 > MISS_GRACE_MIN(35min) 且云端自该时刻起
+  无任何新部署，才判定真实漏跑并触发本机补跑；
+  正常的长部署间隔（11:46→13:31=105min、18:31→21:00=149min）
+  不会误触发（历史 bug：纯"距上次部署>75min"阈值会每次都误兜底）。
 
 产出：
 - data/.ops_status.json（运维状态更新）
@@ -29,8 +32,22 @@ PY = r"C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\python.exe"
 
 # 阈值（分钟）
 GRACE_PERIOD_MIN = 30        # 宽限期：距上次部署 ≤ 30 分钟 → OK
-FAILOVER_THRESHOLD_MIN = 75  # 兜底阈值：> 75 分钟无部署 → 触发（略大于云端最大间隔 71 分钟）
+# ⚠️ 注意：云端计划部署间隔本身就有 > 75 分钟的（午间 11:46→13:31=105min、
+# 晚间 18:31→21:00=149min）。纯"距上次部署>X分钟"的阈值判断会在这些正常间隔
+# 误兜底。故改为"按云端计划时刻表判断漏跑"（见 SCHEDULE 与 compute_miss）。
+FAILOVER_THRESHOLD_MIN = 165 # 兜底阈值（仅作非交易日/无计划表的兜底上限，>149min）
 MORNING_GRACE_HOUR = 10      # 早于 10:00 且今天无部署 → 给云端 09:20 留窗口
+
+# 云端计划部署时刻（交易日，本地时区，24h）。
+# 来源：盘中 09:20/10:31/11:46/13:31/14:31；收盘 15:30/16:15/16:30；
+#       抓取 17:31；扫描+部署 18:31；备份 21:00。
+# 用途：精确判断"某次计划部署是否漏跑"——只有某计划时刻已过去 > MISS_GRACE_MIN
+# 且云端自该时刻起没有任何新部署，才判定为真实漏跑并兜底；正常间隔不会误触发。
+SCHEDULE_TRADING = [
+    (9, 20), (10, 31), (11, 46), (13, 31), (14, 31),
+    (15, 30), (16, 15), (16, 30), (17, 31), (18, 31), (21, 0),
+]
+MISS_GRACE_MIN = 35          # 某次计划部署后超过 35 分钟仍无新部署 → 判定漏跑
 
 
 def run(cmd, cwd=ROOT, timeout=300, capture=True):
@@ -205,13 +222,90 @@ def run_fallback(details: dict) -> int:
     return 0
 
 
+def _planned_at(now, h, m):
+    return now.replace(hour=h, minute=m, second=0, microsecond=0)
+
+def last_planned_le_now(now, schedule):
+    """返回 <= now 的最大计划部署时刻（今天），无则 None。"""
+    cands = [_planned_at(now, h, m) for (h, m) in schedule
+             if _planned_at(now, h, m) <= now]
+    return max(cands) if cands else None
+
+def decide_cloud(now, build_stamp, build_err, is_trading_day, in_trading_hours):
+    """纯函数：判定云端是否健康（可被单测直接验证）。
+
+    核心：按 SCHEDULE_TRADING 计划时刻表判断"漏跑"——
+    只有某计划时刻已过去 > MISS_GRACE_MIN 且云端自该时刻起无任何新部署，
+    才判定漏跑并兜底；正常的长部署间隔（11:46→13:31=105min、
+    18:31→21:00=149min）不会误触发。
+
+    返回 (cloud_ok: bool, cloud_reason: str, extra: dict)。
+    """
+    cloud_ok = False
+    cloud_reason = ""
+    elapsed_min = None
+    build_dt = None
+    extra = {}
+
+    if build_stamp:
+        build_dt = parse_timestamp(build_stamp)
+        if build_dt:
+            elapsed_min = (now - build_dt).total_seconds() / 60.0
+            extra["build_dt"] = build_dt.strftime("%Y-%m-%d %H:%M:%S")
+            extra["elapsed_min"] = round(elapsed_min, 1)
+
+    if not build_stamp or not build_dt:
+        if not is_trading_day and not in_trading_hours:
+            cloud_ok = True
+            cloud_reason = (f"无法获取云端 build stamp，但非交易日非交易时段，"
+                            f"跳过：{build_err}")
+        else:
+            cloud_ok = False
+            cloud_reason = f"无法获取云端 build stamp：{build_err}"
+        return cloud_ok, cloud_reason, extra
+
+    if is_trading_day:
+        last_p = last_planned_le_now(now, SCHEDULE_TRADING)
+        if last_p is None:
+            # 今天首个计划部署（09:20）还未到 → 等待盘前，不介入
+            cloud_ok = True
+            cloud_reason = (f"今天首个计划部署未到（当前 {now:%H:%M}），"
+                            f"云端最后部署 {build_stamp}，等待盘前部署")
+        elif build_dt >= last_p:
+            # 云端已在最近一次计划部署后成功部署 → 正常
+            cloud_ok = True
+            cloud_reason = (f"云端 {build_stamp}（{elapsed_min:.0f} 分钟前）晚于"
+                            f"计划 {last_p:%H:%M}，部署正常，无漏跑")
+        else:
+            # 云端停留在 last_p 之前 → last_p 未成功部署
+            overdue = (now - last_p).total_seconds() / 60.0
+            if overdue <= MISS_GRACE_MIN:
+                cloud_ok = True
+                cloud_reason = (f"计划 {last_p:%H:%M} 刚过 {overdue:.0f} 分钟"
+                                f"（宽限 {MISS_GRACE_MIN}），等待云端")
+            else:
+                cloud_ok = False
+                cloud_reason = (f"计划 {last_p:%H:%M} 已过期 {overdue:.0f} 分钟"
+                                f"（>宽限 {MISS_GRACE_MIN}），云端仍停留在"
+                                f" {build_stamp}，判定漏跑，触发兜底")
+    else:
+        # 非交易日：保守地仅用阈值（监控本就只在工作日跑，极少见）
+        if elapsed_min < FAILOVER_THRESHOLD_MIN:
+            cloud_ok = True
+            cloud_reason = (f"非交易日，云端 {elapsed_min:.0f} 分钟前有部署"
+                            f"（{build_stamp}），未超阈值")
+        else:
+            cloud_ok = False
+            cloud_reason = (f"非交易日但云端 {elapsed_min:.0f} 分钟无部署"
+                            f"（{build_stamp}），超过阈值触发兜底")
+    return cloud_ok, cloud_reason, extra
+
 def main():
     now = now_dt()
 
     # ── 判断是否进入交易时段 ──
     is_trading_day = check_trading_day()
     in_trading_hours = 9 <= now.hour <= 15
-    is_morning = now.hour < MORNING_GRACE_HOUR
 
     # 非交易日且非交易时段 → 跳过
     if not is_trading_day and not in_trading_hours:
@@ -221,7 +315,6 @@ def main():
     # ── 获取云端最近部署 ──
     build_stamp, build_err = fetch_remote_build_stamp()
     now_ts = now.strftime("%Y%m%d%H%M%S")
-    today_prefix = now.strftime("%Y%m%d")
 
     details = {
         "build_stamp": build_stamp,
@@ -230,60 +323,9 @@ def main():
         "trading_day": is_trading_day,
     }
 
-    cloud_ok = False
-    cloud_reason = ""
-    elapsed_min = None
-
-    if build_stamp:
-        build_dt = parse_timestamp(build_stamp)
-        if build_dt:
-            elapsed_min = (now - build_dt).total_seconds() / 60.0
-            details["build_dt"] = build_dt.strftime("%Y-%m-%d %H:%M:%S")
-            details["elapsed_min"] = round(elapsed_min, 1)
-
-            is_today = build_stamp.startswith(today_prefix)
-
-            if is_today:
-                # ── 今天有云端部署 ──
-                if elapsed_min < GRACE_PERIOD_MIN:
-                    cloud_ok = True
-                    cloud_reason = (f"云端 {elapsed_min:.0f} 分钟前有部署"
-                                    f"({build_stamp})，在宽限期内，跳过")
-                elif elapsed_min < FAILOVER_THRESHOLD_MIN:
-                    cloud_ok = True
-                    cloud_reason = (f"云端 {elapsed_min:.0f} 分钟前有部署"
-                                    f"({build_stamp})，距触发兜底还有"
-                                    f"{FAILOVER_THRESHOLD_MIN - elapsed_min:.0f}分钟")
-                elif is_morning and is_trading_day:
-                    # 早盘(盘前)且交易日：即便今天已有部署（如 07:16 盘前
-                    # 预热），距 09:20 盘前部署仍在计划间隔内，给云端留窗口，
-                    # 不应误兜底。
-                    cloud_ok = True
-                    cloud_reason = (f"云端最近部署 {build_stamp}（今天，"
-                                    f"{elapsed_min:.0f} 分钟前），但早于 "
-                                    f"{MORNING_GRACE_HOUR}:00 且为交易日，"
-                                    f"等待云端 09:20 盘前部署")
-                else:
-                    cloud_ok = False
-                    cloud_reason = (f"云端最近部署距今 {elapsed_min:.0f} 分钟"
-                                    f"({build_stamp})，超过阈值"
-                                    f" {FAILOVER_THRESHOLD_MIN} 分钟，触发兜底")
-            else:
-                # ── 最后一次部署不是今天 ──
-                if is_morning and is_trading_day:
-                    # 早于 10:00，给云端 09:20 留窗口
-                    cloud_ok = True
-                    cloud_reason = (f"云端最近部署 {build_stamp}（非今天），"
-                                    f"早于 {MORNING_GRACE_HOUR}:00，等待云端")
-                else:
-                    cloud_ok = False
-                    cloud_reason = (f"云端最近部署 {build_stamp}（非今天），"
-                                    f"距现在 {elapsed_min:.0f} 分钟，且已过"
-                                    f" {MORNING_GRACE_HOUR}:00，触发兜底")
-        else:
-            cloud_reason = f"build stamp {build_stamp} 格式无法解析"
-    else:
-        cloud_reason = f"无法获取云端 build stamp: {build_err}"
+    cloud_ok, cloud_reason, extra = decide_cloud(
+        now, build_stamp, build_err, is_trading_day, in_trading_hours)
+    details.update(extra)
 
     details["cloud_ok"] = cloud_ok
     details["reason"] = cloud_reason
