@@ -451035,7 +451035,7 @@ function renderCapitalFlowCard() {
   var tEl = document.getElementById('capFlowTime');
   if (tEl) {
     var _pcf = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : (d.update_time ? fmtDataTime(d.update_time) : null);
-    tEl.textContent = '更新 ' + (_pcf ? _pcf.text : '') + ' | 南向为全市场口径；北向/机构/游资为龙虎榜席位口径';
+    tEl.textContent = '更新于 ' + (_pcf ? _pcf.text : '');
   }
 
   var body = document.getElementById('capFlowBody');

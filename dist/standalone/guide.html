@@ -1,12 +1,12 @@
 <!--
 ⚠️ 逻辑详解独立页 (standalone/guide.html) — 用户明确要求保留，禁止删除！
    内容：九宝量化V6.0 算法逻辑详解（按前端 Tab 顺序与卡片排列组织）
-   最后更新：2026-07-15（云端架构迁移 v7.0）
+   最后更新：2026-07-16 00:40（阿狸咪·凌晨审计：预判信号页 涨停联动/四路资金流向对比 位置确认，与代码一致）
 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta name="build-stamp" content="20260715234341">
+<meta name="build-stamp" content="20260716160739">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>九宝量化 V6.0 - 逻辑详解</title>
@@ -350,6 +350,11 @@ table td, table th, table tr { color: #333 !important; }
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
+        <b>🔥 涨停联动</b>：位于一眼结论正下方（2026-07-16 审计：HTML 顺序 line 919 在 summaryOverview line 908 之后），10日滚动热力矩阵展示涨停个股所属概念板块的日频热度。用于回答"涨停效应集中在哪些板块"。<br>
+        <b>分析口径</b>：🔥持续热点(≥7日有涨停且近3日连续) → ⚡新启动(今日≥2家涨停但前2日=0) → 💤消退(前5日活跃但近3日<2)。数据盘后更新。
+      </div>
+
+      <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
         <b>🎯 精选预判信号</b>：判断逻辑：52周新高数量 + 分析师转向数量 交叉分析。<br>
         <table style="width:100%;margin-top:6px;border-collapse:collapse;font-size:11px;">
           <tr style="background:#eee;"><th style="padding:4px 8px;border:1px solid #ddd;">场景</th><th style="padding:4px 8px;border:1px solid #ddd;">条件</th><th style="padding:4px 8px;border:1px solid #ddd;">判断</th><th style="padding:4px 8px;border:1px solid #ddd;">操作含义</th></tr>
@@ -364,8 +369,12 @@ table td, table th, table tr { color: #333 !important; }
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
-        <b>🐉 机游共振·龙虎榜</b>：三色块布局——左🏦机构净买入 / 中⚡机游共振 / 右🔥游资净买入，按金额降序，支持连续上榜标注 连X日。8000万门槛约0.8亿，低于不显示。席位全部统计：机构专用/深股通沪股通/游资/量化/未识别，逐笔明细如实分类，知名游资标注别名 章盟主/孙哥等。数据盘后更新。<br>
+        <b>🐉 机游共振·龙虎榜</b>：四色块布局——左🏦机构净买入 / 中⚡机游共振 / 右🔥游资净买入 / 最右🌎北向席位净买入，按金额降序，支持连续上榜标注 连X日。8000万门槛约0.8亿，低于不显示。席位全部统计：机构专用/深股通沪股通/游资/量化/未识别，逐笔明细如实分类，知名游资标注别名 章盟主/孙哥等。四色块已做严格互斥：每只股票只出现在一个块中（北向加持的股票不再混入游资/机构/共振块，反之亦然）。数据盘后更新。<br>
         <b>判定标准</b>：当机构和游资两类资金同时净买入某只股票时，标记为「纯共振」（最强信号）；仅机构净买入而游资净卖出时标记为「标X」（需观察）；当两类资金合计净买入超过0.8亿元时升级为「强烈共振」。T+1盘后更新。
+      </div>
+
+      <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
+        <b>💰 四路资金流向对比</b>：位于机游共振·龙虎榜正下方（2026-07-16 审计：HTML 顺序 line 977 在 lhbPredictContent line 973 之后，已正式从"暂未上架"上架到预判信号页），横向对比南向资金、北向席位、机构/主力、游资四个维度的当日方向、偏好风格、共同买入/卖出个股及关键信号。用于判断多路资金是否同向共振或分歧。<br>
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
@@ -392,7 +401,7 @@ table td, table th, table tr { color: #333 !important; }
         <b>· 量化席位</b> → <code style="background:#f3e5f5;color:#7b1fa2;padding:1px 4px;border-radius:3px;">量化</code><br>
         <b>· 未识别席位</b> → <code style="background:#f5f5f5;color:#666;padding:1px 4px;border-radius:3px;">未识别</code> 实事求是保留，不编造<br><br>
         <b>纯共振判定</b>：机构净买入 > <b>8000万</b> 且 非机构净买入 北向+游资+量化+未识别合计 > <b>8000万</b> → 纯共振<br>
-        三色块严格互斥：机构独买 仅机构达标 / 机游共振 双向达标 / 游资独买 仅非机构达标，同一股票只出现在其中一个块。
+        四色块严格互斥：机构独买 仅机构达标 / 机游共振 双向达标 / 游资独买 仅非机构达标 / 北向席位 仅北向席位达标，同一股票只出现在其中一个块，避免重复计数。
       </div>
 
       <div style="padding:10px 14px;background:#f8f9fa;border-radius:8px;font-size:12px;line-height:1.8;margin-bottom:8px;">
@@ -400,8 +409,9 @@ table td, table th, table tr { color: #333 !important; }
         <table style="width:100%;margin-top:6px;border-collapse:collapse;font-size:11px;">
           <tr style="background:#eee;"><th style="padding:4px 8px;border:1px solid #ddd;">位置</th><th style="padding:4px 8px;border:1px solid #ddd;">卡片名</th><th style="padding:4px 8px;border:1px solid #ddd;">回答什么</th><th style="padding:4px 8px;border:1px solid #ddd;">内容</th></tr>
           <tr><td style="padding:4px 8px;border:1px solid #ddd;">首页</td><td style="padding:4px 8px;border:1px solid #ddd;">🚀 主力板块</td><td style="padding:4px 8px;border:1px solid #ddd;">今天钱进出多少？</td><td style="padding:4px 8px;border:1px solid #ddd;">净额大数 + 流入TOP5 + 流出TOP5（简洁）</td></tr>
-          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">📊 板块资金轮动</td><td style="padding:4px 8px;border:1px solid #ddd;">钱从哪来→到哪去？</td><td style="padding:4px 8px;border:1px solid #ddd;">轮动路线表 + 真流出/假流出(轮动)/真流入/超跌反弹分类 + 持续方向</td></tr>
           <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">🔥 涨停联动</td><td style="padding:4px 8px;border:1px solid #ddd;">涨停效应在哪？</td><td style="padding:4px 8px;border:1px solid #ddd;">10日热力矩阵 + 持续热点/新启动/消退/全局情绪</td></tr>
+          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">📊 板块资金轮动</td><td style="padding:4px 8px;border:1px solid #ddd;">钱从哪来→到哪去？</td><td style="padding:4px 8px;border:1px solid #ddd;">轮动路线表 + 真流出/假流出(轮动)/真流入/超跌反弹分类 + 持续方向</td></tr>
+          <tr><td style="padding:4px 8px;border:1px solid #ddd;">预判信号</td><td style="padding:4px 8px;border:1px solid #ddd;">💰 四路资金流向对比</td><td style="padding:4px 8px;border:1px solid #ddd;">四路资金同向还是分歧？</td><td style="padding:4px 8px;border:1px solid #ddd;">南向/北向席位/机构/游资方向 + 偏好风格 + 共同买入/卖出 + 关键信号</td></tr>
         </table><br>
         <b>三者关系</b>：① 首页主力板块 = 看一眼今天的资金净额和方向；② 预判资金轮动 = 追问资金到底在板块间怎么转移（资金逻辑）；③ 预判涨停联动 = 追问涨停效应集中在哪些板块（价格逻辑）。同是板块数据但维度独立——资金轮动看净流入金额，涨停联动看涨停家数，不重复不冲突。<br><br>
         <!-- 💡 资金数据·三张卡片怎么读？ -->
