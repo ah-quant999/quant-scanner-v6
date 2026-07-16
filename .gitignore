@@ -82,6 +82,7 @@ data/*
 data/zsxq_token.json
 data/mahoro_signals.json
 .neodata_token
+.gh_pat
 dist/data/
 # 生成产物：由 update_data_v2.py 生成，不进 Git
 dist/index.html

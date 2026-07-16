@@ -224,13 +224,13 @@ def _a_share_spot_mootdx():
 
 
 def _a_share_spot():
-    """A股行情获取：akshare(东财/新浪)优先 → mootdx(通达信)兜底。
+    """A股行情获取：akshare(新浪/东财)优先 → mootdx(通达信)兜底。
 
-    ⚠️ 家用机 mootdx client.quotes() 无限挂起无法被线程/进程超时捕获，
-       故优先使用 akshare（东财接口 home 机虽慢但不会永久挂起），
-       mootdx 仅作为云端/单位机的兜底方案。
+    ⚠️ 家用机：新浪接口稳定（已验证 ~18s/5500只），东财居家网络常挂死，
+       故交换顺序：新浪优先、东财次之、mootdx 仅作兜底（单位机/云端可达）。
     """
-    for fn in (ak.stock_zh_a_spot_em, ak.stock_zh_a_spot):
+    # 家用机：新浪优先（已验证可靠），东财居家网络常挂死靠后
+    for fn in (ak.stock_zh_a_spot, ak.stock_zh_a_spot_em):
         try:
             t = time.time()
             df = fn()
@@ -246,7 +246,8 @@ def _a_share_spot():
 
 
 def _hk_spot():
-    for fn in (ak.stock_hk_spot_em, ak.stock_hk_spot):
+    # 家用机：新浪优先（已验证可靠），东财居家网络常挂死靠后
+    for fn in (ak.stock_hk_spot, ak.stock_hk_spot_em):
         try:
             t = time.time()
             df = fn()
