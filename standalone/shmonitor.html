@@ -1003,7 +1003,6 @@ window.addEventListener('load',function(){
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净买入TOP3</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净卖出TOP3</th>
-                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
               </tr>
             </thead>
             <tbody id="capFlowBody"></tbody>
@@ -1220,12 +1219,12 @@ window.addEventListener('load',function(){
           <h3 style="margin-bottom:4px;font-size:16px;">🩺 系统健康看板</h3>
           <div style="font-size:12px;color:#999;">各数据源最后更新状态 · 超过阈值未更新标红</div>
         </div>
-        <div id="opsStatusCard" class="admin-only" style="display:none;flex:0 0 auto;min-width:380px;max-width:560px;background:rgba(248,249,250,0.6);border:1px solid #e0e0e0;border-radius:8px;padding:8px 12px;">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-            <span style="font-size:12px;">⚙️</span>
-            <span style="font-weight:700;font-size:12px;color:#333;">运维状态</span>
+        <div id="opsStatusCard" class="admin-only" style="display:none;flex:0 0 66%;min-width:360px;background:rgba(248,249,250,0.6);border:1px solid #e0e0e0;border-radius:10px;padding:12px 16px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <span style="font-size:16px;">⚙️</span>
+            <span style="font-weight:700;font-size:14px;color:#333;">运维状态</span>
           </div>
-          <div id="opsStatusContent" style="font-size:11px;color:#555;line-height:1.6;"></div>
+          <div id="opsStatusContent" style="font-size:13px;color:#555;line-height:1.7;"></div>
         </div>
       </div>
 
@@ -1423,7 +1422,7 @@ window.addEventListener('load',function(){
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-16 10:10";
+window.CLOUD_UPDATE_TIME = "2026-07-16 11:50";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-16 09:14:49",
 "total": 338,
@@ -7746,12 +7745,11 @@ window.CANDIDATE_POOL = {
 "update_time": "2026-07-15 22:09:09",
 "data_note": "龙虎榜席位数据，仅覆盖当日价格/换手率异动的上榜个股；全市场北向/机构/游资净流向已不可获取",
 "north_south": {
-"direction": "南向持续买入（近5日净流入372.4亿）",
+"direction": "南向持续买入（近5日净流入372.4亿，当日+133.6亿）",
 "trend_5d": "连续5日净流入372.4亿",
-"style": "5日持续流入：芯片概念、人民币贬值受益、汽车电子",
+"style": "5日持续流入：芯片概念、数据中心(AIDC)、5G",
 "common_buy": [],
-"common_sell": [],
-"signal": "当日南向净流入133.6亿｜连续5日净流入372.4亿"
+"common_sell": []
 },
 "bx": {
 "direction": "龙虎榜北向席位净流出7.0亿（仅覆盖异动股）",
@@ -7765,8 +7763,7 @@ window.CANDIDATE_POOL = {
 "华天科技（-7.1亿）",
 "深科技（-3.5亿）",
 "凯莱英（-3.3亿）"
-],
-"signal": "北向席位净买入 3 只 / 净卖出 3 只"
+]
 },
 "inst": {
 "direction": "机构席位净流入4.4亿（龙虎榜专用席位）",
@@ -7780,8 +7777,7 @@ window.CANDIDATE_POOL = {
 "华天科技（-7.7亿）",
 "迪哲医药（-3.3亿）",
 "中国卫星（-1.5亿）"
-],
-"signal": "机构席位净买入 3 只 / 净卖出 3 只"
+]
 },
 "hot_money": {
 "direction": "游资席位净流入3.5亿（未识别席位）",
@@ -7795,8 +7791,7 @@ window.CANDIDATE_POOL = {
 "惠科股份（-3.0亿）",
 "佰维存储（-1.9亿）",
 "铖昌科技（-1.8亿）"
-],
-"signal": "游资席位净买入 3 只 / 净卖出 3 只"
+]
 },
 "common_buy_stocks": [
 "巨人网络",
@@ -7817,41 +7812,30 @@ window.CANDIDATE_POOL = {
 "top_sectors": [
 {
 "name": "芯片概念",
-"net_5d": 1031.26
-},
-{
-"name": "人民币贬值受益",
-"net_5d": 895.47
-},
-{
-"name": "汽车电子",
-"net_5d": 849.24
+"net_5d": 1193.89
 },
 {
 "name": "数据中心(AIDC)",
-"net_5d": 768.66
+"net_5d": 960.36
 },
 {
 "name": "5G",
-"net_5d": 746.1
+"net_5d": 937.51
+},
+{
+"name": "共封装光学(CPO)",
+"net_5d": 913.43
+},
+{
+"name": "人民币贬值受益",
+"net_5d": 873.91
 }
 ],
 "analysis": [
-"🌏 南向资金持续净买入，连续5日净流入372.4亿，偏好芯片概念、人民币贬值受益、汽车电子；当日净买入133.6亿，是A股主要的增量外资来源，对风险偏好有托底作用。",
+"🌏 南向资金持续净买入，连续5日净流入372.4亿，偏好芯片概念、数据中心(AIDC)、5G；当日净买入133.6亿，是A股主要的增量外资来源，对风险偏好有托底作用。",
 "🌎 龙虎榜北向席位净卖出7.0亿（仅覆盖异动股），主要加仓巨人网络、恺英网络、减仓华天科技、深科技，反映外资对高位科技/医药偏谨慎、选择兑现。",
 "🏦 机构席位净买入4.4亿，买入惠科股份、凯莱英、卖出华天科技、迪哲医药，与北向在半导体封测上反向（卖出华天科技），呈'高切低'承接特征。",
-"🚀 游资席位净买入3.5亿，主攻豫能控股、儒意电影等题材，风格偏向事件驱动与次新。",
-"🔁 三方共振：买入共识集中在巨人网络、莲花控股、睿智医药，卖出共识集中在深科技、华天科技、合肥城建；5日板块资金共识最强为芯片概念、人民币贬值受益、汽车电子，科技硬件（芯片/汽车电子）仍是资金主线，但内部出现接力分化——封测端遭机构与北向共振减仓，游戏/医药获多方加仓。"
-],
-"signals": [
-"南向单日净流入133.6亿",
-"连续5日净流入372.4亿",
-"三方共振净买入：巨人网络, 莲花控股, 睿智医药",
-"三方共振净卖出：深科技, 华天科技, 合肥城建",
-"5日资金偏好：芯片概念, 人民币贬值受益, 汽车电子",
-"北向席位买入：['巨人网络', '恺英网络']",
-"机构席位买入：['惠科股份', '凯莱英']",
-"游资席位买入：['豫能控股', '儒意电影']"
+"🚀 游资席位净买入3.5亿，主攻豫能控股、儒意电影等题材，风格偏向事件驱动与次新。"
 ],
 "raw": {
 "bx_buy": [
@@ -69361,7 +69345,7 @@ true
 ],
 "gold_pool_total": 199
 };var GOLD_POOL = window.GOLD_POOL_DATA = window.GOLD_POOL = {
-"update_time": "2026-07-16 10:10:06",
+"update_time": "2026-07-16 11:47:06",
 "stocks": {
 "sh_600172": {
 "code": "600172",
@@ -103686,7 +103670,7 @@ false
 ],
 "update_time": "2026-07-15 22:10"
 };window.MACRO_DATA = {
-"update_time": "2026-07-16 09:42:45",
+"update_time": "2026-07-16 11:49:01",
 "monetary": {
 "cn_bond_10y": {
 "value": 1.7406,
@@ -103705,11 +103689,11 @@ false
 "date": "2026-06-22"
 },
 "shibor": {
-"on": 1.3925,
-"w1": 1.4235,
-"m1": 1.4168,
+"on": 1.389,
+"w1": 1.44,
+"m1": 1.419,
 "m3": 1.43,
-"date": "2026-07-15"
+"date": "2026-07-16"
 },
 "m2_yoy": {
 "value": 8.0,
@@ -103739,7 +103723,7 @@ false
 },
 "social_financing": {
 "value": 3623,
-"change_pct": 29.4,
+"change_pct": 29.3,
 "date": "2026-06-01"
 },
 "export_yoy": {
@@ -103762,38 +103746,39 @@ false
 },
 "global_macro": {
 "vix": {
-"value": 18.15,
+"value": 18.1,
 "date": "2026-07-16"
 },
 "usdcnh": {
-"price": 6.7681,
-"prev_close": 6.7703,
-"date": "2026-07-16",
-"source": "Sina实时"
+"price": 7.3088,
+"prev_close": null,
+"date": "2023-11-10",
+"source": "中行汇率"
 },
 "dxy": {
-"value": 100.51,
-"pct": 0.0,
-"date": "2026-07-16"
+"value": 100.5,
+"pct": 0.06,
+"date": "2026-07-16",
+"source": "Sina-DINIW"
 },
 "commodities": {
 "gold": {
-"value": 4042.7,
+"value": 4038.7,
 "unit": "美元/盎司",
 "date": "2026-07-16"
 },
 "silver": {
-"value": 57.53,
+"value": 57.47,
 "unit": "美元/盎司",
 "date": "2026-07-16"
 },
 "copper": {
-"value": 6.3465,
+"value": 6.405,
 "unit": "美元/磅",
 "date": "2026-07-16"
 },
 "oil": {
-"value": 79.51,
+"value": 78.94,
 "unit": "美元/桶",
 "date": "2026-07-16"
 }
@@ -157916,7 +157901,6 @@ function renderCapitalFlowCard() {
     var style = data.style || '-';
     var cb = data.common_buy && data.common_buy.length ? data.common_buy.slice(0,3).join('、') : '-';
     var cs = data.common_sell && data.common_sell.length ? data.common_sell.slice(0,3).join('、') : '-';
-    var signal = data.signal || '-';
     var dc = dirClass(direction);
     return '<tr style="background:' + color + ';">'
       + '<td style="padding:6px 8px;border:1px solid #ddd;font-weight:600;white-space:nowrap;">' + label + '</td>'
@@ -157924,7 +157908,6 @@ function renderCapitalFlowCard() {
       + '<td style="padding:6px 8px;border:1px solid #ddd;">' + style + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;color:#e94560;">' + cb + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;color:#27ae60;">' + cs + '</td>'
-      + '<td style="padding:6px 8px;border:1px solid #ddd;font-size:10.5px;max-width:180px;">' + signal + '</td>'
       + '</tr>';
   }
   body.innerHTML = ''
@@ -157932,11 +157915,6 @@ function renderCapitalFlowCard() {
     + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
     + row('🏦 机构席位', d.inst, '#fff5f5')
     + row('🚀 游资席位', d.hot_money, '#f5f5ff');
-
-  // 共同信号行
-  if (d.signals && d.signals.length) {
-    body.innerHTML += '<tr><td colspan="6" style="padding:6px 8px;border:1px solid #ddd;background:#fafafa;font-size:10.5px;color:#444;">📌 ' + d.signals.join(' ｜ ') + '</td></tr>';
-  }
 
   // 研判文字（仿左图：自然语言解读）
   var analysisEl = document.getElementById('capFlowAnalysis');
@@ -158030,29 +158008,8 @@ function renderHealthDashboard(cat){
     }
   }
 
-  // ── 三方健康看板（云端/小九/阿狸咪） ──
-  var ops = window.OPS_STATUS || {};
-  var tp = ops.three_party || {};
-  var tpSummary = ops.three_party_summary || '';
-  var tpParts = [];
-  if (tp.cloud || tp.xiaojiu || tp.alimi) {
-    ['cloud','xiaojiu','alimi'].forEach(function(k){
-      var v = tp[k] || {};
-      var label = k==='cloud' ? '☁️ 云端' : k==='xiaojiu' ? '💻 小九' : '🏠 阿狸咪';
-      var ok = v.status === 'ok';
-      var icon = ok ? '✅' : v.status === 'fail' ? '❌' : '❓';
-      var color = ok ? '#2e7d32' : '#c62828';
-      tpParts.push('<span style="display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:4px;background:' + (ok?'#e8f5e9':'#ffebee') + ';margin:0 2px;"><b style="color:' + color + ';">' + icon + ' ' + label + '</b><span style="font-size:10px;color:#666;">' + (v.last_time || '') + '</span></span>');
-    });
-  }
-  if (tpParts.length) {
-    var tpHtml = '<div style="padding:10px 14px;margin-bottom:12px;background:#f8f9fa;border-radius:8px;border:1px solid #e0e0e0;">';
-    tpHtml += '<div style="font-size:12px;font-weight:700;color:#1a237e;margin-bottom:6px;">🛡️ 三方监控（最后成功记录）</div>';
-    tpHtml += '<div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center;">' + tpParts.join('') + '</div>';
-    tpHtml += '</div>';
-  } else {
-    var tpHtml = '';
-  }
+  // ── 三方监控已移入运维状态卡（renderOps）内，此处不再单独渲染 ──
+  var tpHtml = '';
 
   function fmtAgo(ts){
     if(!ts) return {text:'未知',stale:true,days:999};
@@ -158162,7 +158119,7 @@ function renderHealthDashboard(cat){
     rows += '</table></div>';
   }
 
-  el.innerHTML = (tpHtml || '') + rows;
+  el.innerHTML = rows;
 }
 
 // ===== 2026世界杯胜率分析 =====
@@ -158186,46 +158143,12 @@ if (window.LHB_DATA) try { renderLhbPredict(); } catch(e) { console.log('renderL
 if (window.NORTH_FUND_DATA && window.NORTH_FUND_DATA.update_time) try { renderNorthFund(); } catch(e) { console.log('renderNorthFund error:', e.message); }
 try { renderSuspensionAlert(); } catch(e) { console.log('renderSuspensionAlert error:', e.message); }
 try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.message); }
-// ===== ☁️ 统一云端更新时间（多层 sweep：即时 + load 延迟，防止被 deferred render 覆盖） =====
-(function applyCloudUpdateTime() {
-  var ct = window.CLOUD_UPDATE_TIME || '';
-  if (!ct) return;
-  var m = ct.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}:\d{2})/);
-  var formatted = m ? (m[2] + '-' + m[3] + ' ' + m[4]) : ct.slice(0,16);
-  var text = '☁ 云端更新 · ' + formatted;
-
-  function sweep() {
-    if (typeof document === 'undefined') return;
-    try { document.querySelectorAll('[id$="Time"]').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    try { document.querySelectorAll('.card-time').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    try { document.querySelectorAll('.update-time-badge').forEach(function(e){ e.textContent = text; }); } catch(ex){}
-    // 兜底：扫描所有 span/div 含 "更新于" 的文字节点（处理 innerHTML 动态生成没有 id 的时间）
-    try {
-      if (typeof NodeFilter !== 'undefined' && document.createTreeWalker) {
-        var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-        var tn;
-        while ((tn = tw.nextNode())) {
-          if (tn.textContent && tn.textContent.indexOf('更新于') >= 0 && tn.parentNode) {
-            tn.textContent = text;
-          }
-        }
-      }
-    } catch(ex){}
-  }
-
-  sweep(); // 即时 sweep（主站渲染后）
-  // 延迟 sweep（standalone 页 / deferred 渲染覆盖保护）
-  window.addEventListener('load', function() {
-    setTimeout(sweep, 100);
-    setTimeout(sweep, 400);
-    setTimeout(sweep, 1000);
-    setTimeout(sweep, 2500);
-  });
-  // 最终保护：可见性变化时再扫一次（应对 tab 切换 / 暂未上架展开）
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) setTimeout(sweep, 200);
-  });
-})();
+// ===== 云端更新时间 sweep 已禁用（2026-07-16 修复） =====
+// 原 applyCloudUpdateTime() 会把所有数据卡片的时间戳强制改写成部署时间，
+// 造成"时间戳最新 = 数据新鲜"的误判（如涨停联动显示 07-16 10:10 但数据只到 07-15）。
+// 现由各卡片自身 render 显示真实 update_time（fmtDataTime 自带 stale/critical 标红），
+// 云端"最后部署"时间仅在 admin 运维状态卡（opsStatusContent）展示，二者不再混淆。
+// window.CLOUD_UPDATE_TIME 仍保留供需要处读取。
 </script>
 
 
@@ -158792,6 +158715,13 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 })();
 </script>
 <script>window.OPS_STATUS = {
+"failover_status": "未知",
+"failover_time": "2026-07-16 11:50:44",
+"cloud_deploy_time": "20260716115044",
+"updated_at": "2026-07-16 11:50:44",
+"neodata_status": "未知",
+"neodata_updated": "",
+"neodata_valid_until": "",
 "three_party": {
 "cloud": {
 "status": "unknown",
@@ -158811,27 +158741,39 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 <script>
 (function(){
   function fmt(t){ return t ? t : '未知'; }
+  // 将 14 位 build-stamp（云端UTC/本地北京时间）统一转成 "MM-DD HH:MM" 北京时间显示
+  function fmtStampBeijing(raw) {
+    if (!raw || raw.length < 12) return fmt(raw);
+    var y = raw.slice(0,4), mo = raw.slice(4,6), d = raw.slice(6,8);
+    var h = parseInt(raw.slice(8,10),10), mi = raw.slice(10,12);
+    // 云端 runner 用 datetime.now() 出 UTC，+8 转北京；本地部署已是北京时再加 8 会溢出，
+    // 用 heuristic：h < 6（交易时段不可能这么早）→ 判定 UTC，否则判定已是北京。
+    var isUtc = (h < 6);
+    if (isUtc) { h += 8; if (h >= 24) { h -= 24; /* 日跨越不处理，仅修正时分 */ } }
+    return mo + '-' + d + ' ' + String(h).padStart(2,'0') + ':' + mi;
+  }
   function renderOps(){
     var s = window.OPS_STATUS || {};
     // 优先读部署时写入的 build-stamp meta（每次部署都刷新，最准）；
     // 兜底回退到 .ops_status.json 的 cloud_deploy_time（旧部署/本地预览无 meta 时）。
     var _meta = document.querySelector('meta[name="build-stamp"]');
-    var deployTime = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
+    var deployTimeRaw = (_meta && _meta.getAttribute('content')) ? _meta.getAttribute('content') : (s.cloud_deploy_time || '');
+    var deployTime = fmtStampBeijing(deployTimeRaw);
     var card = document.getElementById('opsStatusCard');
     var content = document.getElementById('opsStatusContent');
     if(!card || !content) return;
     card.style.display = 'block';
     var st = s.failover_status || '未知';
     var stColor = st==='OK'?'#4caf50':(st==='RECOVERED'?'#ff9800':(st==='FAILED'?'#f44336':'#9e9e9e'));
-    var neo = s.neodata_status==='ok'?'正常':'异常';
-    var neoColor = s.neodata_status==='ok'?'#4caf50':'#f44336';
+    var neo = s.neodata_status==='ok'?'正常':(s.neodata_status==='n/a'?'—':'异常');
+    var neoColor = s.neodata_status==='ok'?'#4caf50':(s.neodata_status==='n/a'?'#999':'#f44336');
     // 计算令牌剩余时间
     var neoExp = s.neodata_valid_until ? new Date(s.neodata_valid_until.replace(/\s/,'T')) : null;
     var now = new Date();
     var neoRemain = neoExp ? Math.max(0, Math.round((neoExp - now) / 3600000)) : null;
-    var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '未知';
+    var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '—';
     var neoRemainColor = neoRemain !== null ? (neoRemain > 3 ? '#4caf50' : (neoRemain > 1 ? '#ff9800' : '#f44336')) : '#999';
-    // 三方监控（云端/小九/阿狸咪）最后成功时间
+    // ── 左栏：三方监控（云端/小九/阿狸咪）──
     var tp = s.three_party || {};
     var tpHtml = '';
     ['cloud','xiaojiu','alimi'].forEach(function(k){
@@ -158840,17 +158782,26 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
       var ok = v.status === 'ok';
       var icon = ok ? '✅' : v.status === 'fail' ? '❌' : '❓';
       var color = ok ? '#2e7d32' : '#c62828';
-      tpHtml += '<div style="font-size:10px;"><b style="color:'+color+';">'+icon+' '+label+'</b> <span style="color:#bbb">'+(v.last_time||'—')+'</span></div>';
+      tpHtml += '<div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;"><b style="color:'+color+';font-size:14px;">'+icon+'</b><span style="color:#333;font-weight:600;">'+label+'</span><span style="color:#bbb;margin-left:auto;font-size:12px;">'+(v.last_time||'—')+'</span></div>';
     });
+    // ── 右栏：运维指标 ──
     content.innerHTML =
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;font-size:11px;">'+
-        '<div><span style="color:#999">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
-        '<div><span style="color:#999">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb">'+fmt(s.failover_time)+'</span></div>'+
-        '<div><span style="color:#999">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb">'+fmt(s.neodata_updated)+'</span></div>'+
-        '<div><span style="color:#999">令牌有效至</span>：<b style="color:'+neoRemainColor+'">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:10px;">('+neoRemainStr+')</span></div>'+
-        '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:2px;margin-top:1px;"><span style="color:#999;font-weight:600;font-size:10px;">三方监控</span></div>'+
-        '<div style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px 8px;">'+tpHtml+'</div>'+
-        '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:2px;margin-top:1px;"><span style="color:#999">状态更新</span>：<span style="color:#bbb">'+fmt(s.updated_at)+'</span></div>'+
+      '<div style="display:flex;gap:20px;align-items:stretch;">'+
+        /* 左栏：三方监控 */
+        '<div style="flex:0 0 180px;border-right:2px solid #eee;padding-right:16px;">'+
+          '<div style="font-size:12px;font-weight:700;color:#1a237e;margin-bottom:8px;">🛡️ 三方监控</div>'+
+          '<div>'+tpHtml+'</div>'+
+        '</div>'+
+        /* 右栏：指标网格 */
+        '<div style="flex:1;min-width:0;">'+
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:13px;">'+
+            '<div><span style="color:#888">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
+            '<div><span style="color:#888">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.failover_time)+'</span></div>'+
+            '<div><span style="color:#888">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.neodata_updated)+'</span></div>'+
+            '<div><span style="color:#888">令牌有效至</span>：<b style="color:'+neoRemainColor+';font-size:12px">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:11px;">('+neoRemainStr+')</span></div>'+
+            '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:4px;margin-top:2px;"><span style="color:#888">状态更新</span>：<span style="color:#bbb;font-size:11px">'+fmt(s.updated_at)+'</span></div>'+
+          '</div>'+
+        '</div>'+
       '</div>';
   }
   if(document.readyState!=='loading') renderOps();
