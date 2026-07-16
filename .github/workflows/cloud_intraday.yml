@@ -73,7 +73,7 @@ jobs:
 
       # ─── 09:20 盘前全景（金股+投行，仅盘前） ───
       - name: "🌅 09:20 — 金股观测 (机构研报+投行+候选池)"
-        if: github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
+        if: github.event.inputs.slot == '' || github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
@@ -81,7 +81,7 @@ jobs:
           python build_candidate_pool.py || echo "[跳过] build_candidate_pool"
 
       - name: "🌅 09:20 — 总览页 (大盘指数+宏观+隔夜)"
-        if: github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
+        if: github.event.inputs.slot == '' || github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_macro_data.py || echo "[跳过] macro"
