@@ -77,7 +77,10 @@ def push_with_retry(path, role, mode, max_attempts=3):
     msg = f"hb: {role} {mode} {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     for attempt in range(1, max_attempts + 1):
         # 先拉最新（rebase），避免 non-fast-forward
-        _git("pull", "--rebase", "origin", "main")
+        # --autostash: 云端 workflow 前置 fetch/扫描会改写 data/*.json(已跟踪, unstaged)，
+        #   普通 pull --rebase 会因 unstaged changes 直接失败导致心跳 push 失败（被 continue-on-error 静默掩盖）。
+        #   autostash 在 pull 前自动 stash、pull 后自动 pop，绕过该坑。
+        _git("pull", "--rebase", "--autostash", "origin", "main")
         _git("add", "-f", path)
         c = _git("commit", "-m", msg)
         if c.returncode != 0 and "nothing to commit" not in (c.stdout + c.stderr):
