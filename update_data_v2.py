@@ -1489,36 +1489,34 @@ def main():
         ops_status.setdefault("neodata_updated", "")
         ops_status.setdefault("neodata_valid_until", "")
 
-    # 从 HANDOVER_LOG.jsonl 提取最近三方状态（云端/小九/阿狸咪），注入到 OPS_STATUS
+    # 从 data/hb_*.json 读取三方心跳（云端/小九/阿狸咪），注入到 OPS_STATUS
+    # 取代原 HANDOVER_LOG.jsonl 机制（gitignore + 构建后才写 + 本机 host 用 COMPUTERNAME
+    # 与云端期望的 CAT/ALIMI 不匹配，导致三方监控永远 unknown/❓）。
+    # 新机制：三方各自写 data/hb_<role>.json 并 push 到 origin/main，构建时互可读到。
     try:
-        import collections
-        log_path = os.path.join(BASE_DIR, "HANDOVER_LOG.jsonl")
-        three_party = {"cloud": {"status": "unknown", "last_time": "-"}, "xiaojiu": {"status": "unknown", "last_time": "-"}, "alimi": {"status": "unknown", "last_time": "-"}}
-        if os.path.exists(log_path):
-            with open(log_path, encoding="utf-8") as _lf:
-                all_lines = _lf.readlines()
-            # 取最后50行，找出各角色最新的成功/失败记录
-            for line in reversed(all_lines[-50:]):
-                line = line.strip()
-                if not line: continue
+        three_party = {
+            "cloud": {"status": "unknown", "last_time": "-", "mode": ""},
+            "xiaojiu": {"status": "unknown", "last_time": "-", "mode": ""},
+            "alimi": {"status": "unknown", "last_time": "-", "mode": ""},
+        }
+        _hb_map = {
+            "cloud": "hb_cloud.json",
+            "xiaojiu": "hb_xiaojiu.json",
+            "alimi": "hb_alimi.json",
+        }
+        for _role, _fn in _hb_map.items():
+            _p = os.path.join(BASE_DIR, "data", _fn)
+            if os.path.exists(_p):
                 try:
-                    rec = json.loads(line)
-                except Exception:
-                    continue
-                t = rec.get("time", "")
-                host = rec.get("host", "")
-                succ = rec.get("success", False)
-                mode = rec.get("mode", "")
-                # 云端 = GitHubActions
-                if host == "GitHubActions":
-                    if three_party["cloud"]["last_time"] == "-":
-                        three_party["cloud"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
-                elif host == "CAT":
-                    if three_party["xiaojiu"]["last_time"] == "-":
-                        three_party["xiaojiu"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
-                elif host == "ALIMI":
-                    if three_party["alimi"]["last_time"] == "-":
-                        three_party["alimi"] = {"status": "ok" if succ else "fail", "last_time": t, "mode": mode}
+                    with open(_p, encoding="utf-8") as _hf:
+                        _d = json.load(_hf)
+                    three_party[_role] = {
+                        "status": _d.get("status", "ok"),
+                        "last_time": _d.get("last_time", "-"),
+                        "mode": _d.get("mode", ""),
+                    }
+                except Exception as _e:
+                    print(f"  ⚠️ 读取 {_fn} 失败: {_e}")
         ops_status["three_party"] = three_party
         # 判断三方综合结论
         ok_count = sum(1 for v in three_party.values() if v["status"] == "ok")

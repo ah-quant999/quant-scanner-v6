@@ -708,6 +708,17 @@ def main():
         log(f"\nSUCCESS! Deployed to {OUTPUT_URL}")
         log("   (GitHub Pages build takes 1-2 min)")
 
+        # 4.5 三方心跳上报（小九/阿狸咪自动识别），非致命
+        try:
+            log("   💓 上报本机心跳到 origin/main ...")
+            _hb = subprocess.run([sys.executable, "report_heartbeat.py", "--role", "auto", "--mode", "deploy"],
+                                 cwd=PROJECT_ROOT, capture_output=True, text=True, timeout=120)
+            for _l in (_hb.stdout + _hb.stderr).strip().split("\n"):
+                if _l.strip():
+                    log("   " + _l)
+        except Exception as _e:
+            log(f"   ⚠️ 心跳上报失败(非致命，不影响部署): {_e}")
+
         # 5. 自动同步源代码到 main 分支（永久防止双机版号冲突）
         log("-" * 55)
         log("5. Auto-syncing source code to main...")
