@@ -3061,6 +3061,30 @@ def watch_gold_pool():
     new_triple = []  # 新增三线共振
     errors = 0
 
+    # ── 分批保存函数（定义在循环前，供 idx%50 调用，防 300s 超时整批丢失） ──
+    def _save_watch_result_partial():
+        partial = {
+            "scan_mode": "watch",
+            "scan_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "total_scanned": len(results),
+            "total_errors": errors,
+            "error_details": _error_details,
+            "triple_count": len(三线共振_list),
+            "double_count": len(双线共振_list),
+            "new_triple_count": len(new_triple),
+            "triple_signals": 三线共振_list,
+            "double_signals": 双线共振_list,
+            "new_triple_signals": new_triple,
+            "all_results": results,
+            "gold_pool_total": pool["total_count"],
+            "_partial": True,  # 标记半成品，前端可见但可用 progress
+        }
+        try:
+            with open(WATCH_RESULT_JSON, "w", encoding="utf-8") as f:
+                json.dump(partial, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"  ⚠️ 分批保存失败: {e}")
+
     stocks_list = list(pool["stocks"].values())
     total = len(stocks_list)
 
@@ -3103,6 +3127,11 @@ def watch_gold_pool():
             _eastmoney_consec_fails = 0
             _eastmoney_cooldown_until = 0.0
 
+        # 每 50 只分批保存（防 300s 超时整批丢失）
+        if idx > 0 and idx % 50 == 0:
+            print(f"\n  💾 分批保存进度 ({idx}/{total})")
+            _save_watch_result_partial()
+
     print(f"\n\n精监完成!")
     print(f"  扫描: {len(results)}, 错误: {errors}")
     print(f"  三线共振: {len(三线共振_list)} 只")
@@ -3115,7 +3144,7 @@ def watch_gold_pool():
     # 排序
     results.sort(key=lambda x: (-x["signal_count"], -x.get("pct_chg", 0)))
 
-    # 输出精监结果
+    # 终态保存（完整版，无 _partial 标记）
     output = {
         "scan_mode": "watch",
         "scan_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

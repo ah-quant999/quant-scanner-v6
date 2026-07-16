@@ -49,13 +49,25 @@ def run():
     errors = []
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
+    # ── scanner.py watch 单步超时加长到 900s (273只股票@~2s需 500+s，旧 300s 必超时中断 → watch_result.json 2天未更新) ──
+    _STEP_TIMEOUTS = {
+        'scanner.py watch': 900,
+        '涨跌家数': 180,
+        '盘中数据NT': 180,
+        '概念排行': 180,
+        '板块资金': 360,
+        'ETF资金': 180,
+        '市场快报': 180,
+        '成交历史': 180,
+        '两融余额': 180,
+    }
     for name, cmd in STEPS:
         print(f'\n[{datetime.now().strftime("%H:%M:%S")}] ▶ {name}...')
         # 块内统一用 retries 控制重试，避免 continue/嵌套混乱
         r = None
         try:
             r = subprocess.run(cmd, cwd=BASE,
-                             capture_output=True, text=True, timeout=300)
+                             capture_output=True, text=True, timeout=_STEP_TIMEOUTS.get(name, 300))
         except subprocess.TimeoutExpired:
             print(f'  ❌ {name} 超时')
             errors.append({'step': name, 'time': now, 'error': '超时'})
