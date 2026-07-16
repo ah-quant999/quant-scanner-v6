@@ -937,15 +937,19 @@ tr:hover td { background: #fafbfc; }
             <thead>
               <tr style="background:#3C3489;color:#fff;">
                 <th style="text-align:left;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">维度</th>
-                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">7月15日方向</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">方向</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
-                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同买入<br><span style="font-size:10px;color:#aaa;">(三方同为正)</span></th>
-                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">共同卖出<br><span style="font-size:10px;color:#aaa;">(三方向为负)</span></th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净买入TOP3</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净卖出TOP3</th>
                 <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
               </tr>
             </thead>
             <tbody id="capFlowBody"></tbody>
           </table>
+          <div id="capFlowResonance" style="margin-top:8px;padding:8px 10px;background:#fff;border:1px dashed #d1c4e9;border-radius:8px;font-size:11px;color:#444;line-height:1.6;display:none;"></div>
+          <div style="margin-top:8px;font-size:10px;color:#888;line-height:1.5;">
+            <b>口径说明：</b>"北向/机构/游资"均来自沪深交易所龙虎榜席位明细，仅覆盖当日价格/换手率异动的上榜个股；港交所自2024年5月起已停更全市场北向资金实时及盘后净流入数据，本卡片不再展示不可获取的全市场汇总数据。南向资金为港股通（沪深港通）净流入，可获取全市场口径。
+          </div>
         </div>
       </div>
 
@@ -451016,10 +451020,17 @@ function renderCapitalFlowCard() {
   card.style.display = 'block';
 
   var tEl = document.getElementById('capFlowTime');
-  if (tEl) tEl.textContent = '更新 ' + (d.update_time || '') + ' | 南向资金（北向已停更，以龙虎榜北向席位为主）';
+  if (tEl) tEl.textContent = '更新 ' + (d.update_time || '') + ' | 南向为全市场口径；北向/机构/游资为龙虎榜席位口径';
 
   var body = document.getElementById('capFlowBody');
   if (!body) return;
+
+  function dirClass(dirStr) {
+    if (!dirStr) return '';
+    if (dirStr.indexOf('流入') !== -1 || dirStr.indexOf('买入') !== -1 || dirStr.indexOf('净流入') !== -1) return 'up';
+    if (dirStr.indexOf('流出') !== -1 || dirStr.indexOf('卖出') !== -1 || dirStr.indexOf('净流出') !== -1) return 'down';
+    return '';
+  }
 
   function row(label, data, color) {
     if (!data) return '';
@@ -451028,23 +451039,43 @@ function renderCapitalFlowCard() {
     var cb = data.common_buy && data.common_buy.length ? data.common_buy.slice(0,3).join('、') : '-';
     var cs = data.common_sell && data.common_sell.length ? data.common_sell.slice(0,3).join('、') : '-';
     var signal = data.signal || '-';
+    var dc = dirClass(direction);
     return '<tr style="background:' + color + ';">'
       + '<td style="padding:6px 8px;border:1px solid #ddd;font-weight:600;white-space:nowrap;">' + label + '</td>'
-      + '<td style="padding:6px 8px;border:1px solid #ddd;text-align:center;">' + direction + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;text-align:center;' + (dc ? 'color:' + (dc === 'up' ? '#e94560' : '#27ae60') + ';font-weight:600;' : '') + '">' + direction + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;">' + style + '</td>'
-      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + cb + '</td>'
-      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + cs + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;color:#e94560;">' + cb + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;color:#27ae60;">' + cs + '</td>'
       + '<td style="padding:6px 8px;border:1px solid #ddd;font-size:10.5px;max-width:180px;">' + signal + '</td>'
       + '</tr>';
   }
   body.innerHTML = ''
-    + row('南向资金', d.north_south, '#f5fff5')
-    + row('机构/主力', d.inst, '#fff5f5')
-    + row('游资', d.hot_money, '#f5f5ff');
+    + row('🌏 南向资金', d.north_south, '#f5fff5')
+    + row('🌎 龙虎榜北向席位', d.north_south, '#f0f8ff')
+    + row('🏦 机构席位', d.inst, '#fff5f5')
+    + row('🚀 游资席位', d.hot_money, '#f5f5ff');
 
   // 共同信号行
   if (d.signals && d.signals.length) {
     body.innerHTML += '<tr><td colspan="6" style="padding:6px 8px;border:1px solid #ddd;background:#fafafa;font-size:10.5px;color:#444;">📌 ' + d.signals.join(' ｜ ') + '</td></tr>';
+  }
+
+  // 三方共振单独展示
+  var resEl = document.getElementById('capFlowResonance');
+  if (resEl) {
+    var parts = [];
+    if (d.common_buy_stocks && d.common_buy_stocks.length) {
+      parts.push('<span style="color:#e94560;">🔴 三方共振净买入：' + d.common_buy_stocks.slice(0,5).join('、') + '</span>');
+    }
+    if (d.common_sell_stocks && d.common_sell_stocks.length) {
+      parts.push('<span style="color:#27ae60;">🟢 三方共振净卖出：' + d.common_sell_stocks.slice(0,5).join('、') + '</span>');
+    }
+    if (parts.length) {
+      resEl.innerHTML = parts.join(' ｜ ');
+      resEl.style.display = 'block';
+    } else {
+      resEl.style.display = 'none';
+    }
   }
 }
 
