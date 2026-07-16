@@ -994,14 +994,6 @@ tr:hover td { background: #fafbfc; }
         </div>
       </div>
 
-      <!-- 南向资金 -->
-      <div class="predict-card" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="background:linear-gradient(135deg,#fffde7,#fff9c4);color:#f9a825;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">🌏 南向资金<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="northFundTime" class="card-time"></span></div>
-        <div id="northFundAnalysis" style="display:none;padding:8px 14px 0 14px;font-size:11px;color:#555;line-height:1.7;background:#fafbfc;"></div>
-        <div style="padding:14px 18px;font-size:13px;line-height:1.8;background:#fafbfc;">
-          <div id="northFundContent"></div>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -449559,177 +449551,6 @@ function renderLhbPredict() {
 
 // renderMainStock 已合并至 renderHerdingMain
 
-// ===== 北向资金监控 v4 (方向预判+板块+个股+策略) =====
-function renderNorthFund() {
-  var d = window.NORTH_FUND_DATA || {};
-  var con = document.getElementById('northFundContent');
-  var timeEl = document.getElementById('northFundTime');
-  if (!con) return;
-
-  var sf = d.south_flow || {};
-  var sw = d.south_week || {};
-  var sh = d.south_history || [];
-  var ni = d.north_info || {};
-  var si = d.south_individual || null;
-
-  if (!d.update_time && sf.total === 0 && !d.data_available) {
-    con.innerHTML = '<div style="color:#999;text-align:center;padding:10px;">暂无资金数据，盘后更新</div>';
-    return;
-  }
-
-  if (timeEl && d.update_time) {
-    setPostMarketTime('northFundTime', d.update_time, 'north');
-  }
-
-  var h = '';
-
-  // ── 操作建议（卡片顶部，色块上方）──
-  var advice = '';
-  if (sf.direction === '流入' && sw.direction === '流入' && sh && sh.slice(-5).filter(function(p){return p.net_buy > 0;}).length >= 4) {
-    advice = '💡 南向连续多日流入，港股中线机会明确';
-  } else if (sf.direction === '流出' && sw.direction === '流出') {
-    advice = '💡 南向日周双流出，港股暂观望';
-  } else if (sf.direction === '流出' && sw.direction === '流入') {
-    advice = '💡 日内流出但本周仍净流入，维持仓位';
-  } else {
-    advice = '💡 维持当前港股仓位，关注次日方向';
-  }
-  h += '<div style="font-size:12px;color:#555;line-height:1.6;padding:6px 10px;background:#fafafa;border-radius:6px;margin-bottom:10px;border-left:3px solid #ffe082;">' + advice + '</div>';
-
-  // ── 南向资金（港股通→港股）核心指标 + 分析融合 ──
-  var sfDir = sf.direction === '流出' ? '-' : (sf.direction === '流入' ? '+' : '');
-  var sfColor = sf.direction === '流出' ? '#2e7d32' : '#c62828';
-  var sfVerdict = sf.direction === '流入' ? (sf.total > 50 ? '大幅加仓' : '温和买入') : (Math.abs(sf.total) > 50 ? '短线减仓' : '短线谨慎');
-  h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">';
-  h += '<div style="background:' + (sf.direction === '流出' ? '#e8f5e9' : '#ffebee') + ';border-radius:8px;padding:12px;text-align:center;">';
-  h += '<div style="font-size:11px;color:#888;margin-bottom:4px;">🇭🇰 南向当日净买额 <span style="font-size:10px;color:'+sfColor+';">· '+sfVerdict+'</span></div>';
-  h += '<div style="font-size:22px;font-weight:700;color:' + sfColor + ';">' + sfDir + (sf.total || '--') + '<span style="font-size:12px;font-weight:400;">亿</span></div>';
-  h += '<div style="font-size:10px;color:#999;margin-top:2px;">沪 ' + (sf.sh_net > 0 ? '+' : '') + (sf.sh_net || '--') + '亿 · 深 ' + (sf.sz_net > 0 ? '+' : '') + (sf.sz_net || '--') + '亿</div>';
-  h += '</div>';
-
-  var swDir = sw.direction === '流出' ? '-' : (sw.direction === '流入' ? '+' : '');
-  var swColor = sw.direction === '流出' ? '#2e7d32' : '#c62828';
-  var swVerdict = sw.direction === '流入' ? '中期看多港股' : '中期偏谨慎';
-  h += '<div style="background:' + (sw.direction === '流出' ? '#e8f5e9' : '#ffebee') + ';border-radius:8px;padding:12px;text-align:center;">';
-  h += '<div style="font-size:11px;color:#888;margin-bottom:4px;">本周累计净买额 <span style="font-size:10px;color:'+swColor+';">· '+swVerdict+'</span></div>';
-  h += '<div style="font-size:22px;font-weight:700;color:' + swColor + ';">' + swDir + (sw.total || '--') + '<span style="font-size:12px;font-weight:400;">亿</span></div>';
-  if (sw.days) h += '<div style="font-size:10px;color:#999;margin-top:2px;">' + sw.date_range + ' · ' + sw.days + '日</div>';
-  h += '</div></div>';
-
-  // ── 30日趋势迷你图 ──
-  if (sh.length >= 5) {
-    var totalBuy = sh.reduce(function(s,p){return s + (p.net_buy||0);}, 0);
-    var totalStr = totalBuy >= 0 ? ('累计净买入 <b style="color:#c62828;">+' + totalBuy.toFixed(1) + '亿</b>') : ('累计净卖出 <b style="color:#2e7d32;">' + totalBuy.toFixed(1) + '亿</b>');
-    h += '<div style="margin-bottom:8px;font-size:11px;color:#888;">📈 南向近' + sh.length + '日净买额趋势 — ' + totalStr + '</div>';
-    h += '<div style="display:flex;align-items:flex-end;gap:3px;height:50px;padding:4px 0;margin-bottom:4px;">';
-    var maxAbs = 0;
-    sh.forEach(function(p) { if (Math.abs(p.net_buy) > maxAbs) maxAbs = Math.abs(p.net_buy); });
-    maxAbs = Math.max(maxAbs, 10);
-    sh.forEach(function(p) {
-      var barH = Math.abs(p.net_buy) / maxAbs * 40;
-      var barColor = p.net_buy >= 0 ? '#c62828' : '#2e7d32';
-      var valText = (p.net_buy > 0 ? '+' : '') + p.net_buy.toFixed(1);
-      h += '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative;">';
-      h += '<span style="font-size:8px;color:' + barColor + ';margin-bottom:1px;">' + valText + '</span>';
-      h += '<div style="width:100%;max-width:20px;height:' + Math.max(barH, 1) + 'px;background:' + barColor + ';border-radius:2px 2px 0 0;" title="' + p.date + ': ' + valText + '亿"></div>';
-      h += '</div>';
-    });
-    h += '</div>';
-    h += '<div style="display:flex;justify-content:space-between;font-size:9px;color:#aaa;">';
-    sh.forEach(function(p) {
-      h += '<span style="flex:1;text-align:center;">' + p.date.slice(5) + '</span>';
-    });
-    h += '</div>';
-  }
-
-  // ── 南向个股明细（流入/流出TOP5） ──
-  if (si && (si.top_buy && si.top_buy.length > 0 || si.top_sell && si.top_sell.length > 0)) {
-    h += '<div style="margin-top:10px;">';
-    if (si.top_buy && si.top_buy.length > 0) {
-      h += '<div style="font-size:11px;font-weight:700;color:#c62828;margin-bottom:4px;">🔴 流入TOP5</div>';
-      h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;">';
-      si.top_buy.forEach(function(s) {
-        h += '<div style="font-size:12px;color:#333;display:flex;justify-content:space-between;padding:1px 0;">';
-        h += '<span>' + s.name + '</span>';
-        h += '<b style="color:#c62822;font-size:11px;white-space:nowrap;">+' + s.net_buy.toFixed(1) + '亿</b>';
-        h += '</div>';
-      });
-      h += '</div>';
-    }
-    if (si.top_sell && si.top_sell.length > 0) {
-      h += '<div style="font-size:11px;font-weight:700;color:#2e7d32;margin-bottom:4px;margin-top:6px;">🟢 流出TOP5</div>';
-      h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;">';
-      si.top_sell.forEach(function(s) {
-        h += '<div style="font-size:12px;color:#333;display:flex;justify-content:space-between;padding:1px 0;">';
-        h += '<span>' + s.name + '</span>';
-        h += '<b style="color:#2e7d32;font-size:11px;white-space:nowrap;">' + s.net_buy.toFixed(1) + '亿</b>';
-        h += '</div>';
-      });
-      h += '</div>';
-    }
-    h += '</div>';
-  }
-
-  <!-- 北向停更公告 -->
-  h += '<div style="margin-top:12px;background:#fff3e0;border:1px solid #ffe0b2;border-radius:8px;padding:10px 12px;font-size:11px;color:#e65100;line-height:1.6;">';
-  h += '<b>⚠️ 北向资金净买额已停更</b><br>';
-  h += ni.status || ni.note || '自2024年5月起港交所不再披露沪深股通实时买入/卖出金额，北向净买额数据不可用。';
-  if (ni.last_available) h += '<br>最后可用日期：' + ni.last_available;
-  h += '</div>';
-
-  con.innerHTML = h;
-}
-
-// 南向资金智能分析
-function buildSouthFlowAnalysis(sf, sw, sh, si) {
-  var items = [];
-  
-  // 1. 当日方向判断
-  if (sf.direction && sf.total) {
-    var dayVerdict = '';
-    if (sf.direction === '流入' && sf.total > 50) dayVerdict = '当日大幅净买入' + sf.total + '亿，南向积极加仓港股';
-    else if (sf.direction === '流入') dayVerdict = '当日净买入' + sf.total + '亿，南向温和买入';
-    else if (sf.direction === '流出' && Math.abs(sf.total) > 50) dayVerdict = '当日大幅净卖出' + Math.abs(sf.total) + '亿，南向短线减仓';
-    else dayVerdict = '当日净卖出' + Math.abs(sf.total) + '亿，南向短线谨慎';
-    items.push('📊 ' + dayVerdict);
-  }
-  
-  // 2. 本周方向
-  if (sw.direction && sw.total) {
-    var weekVerdict = sw.direction === '流入' ? '本周累计净买入' + sw.total + '亿，中期看多港股' : '本周累计净卖出' + Math.abs(sw.total) + '亿，中期偏谨慎';
-    items.push('📅 ' + weekVerdict);
-  }
-  
-  // 3. 趋势（从历史数据看近5日方向）
-  if (sh && sh.length >= 5) {
-    var recent5 = sh.slice(-5);
-    var upDays = recent5.filter(function(p){return p.net_buy > 0;}).length;
-    var total5 = recent5.reduce(function(s,p){return s + (p.net_buy||0);}, 0);
-    if (upDays >= 4) items.push('🔥 近5日' + upDays + '天净流入，南向持续加仓');
-    else if (upDays <= 1) items.push('❄️ 近5日仅' + upDays + '天净流入，南向偏谨慎');
-    else if (total5 > 100) items.push('📈 近5日累计净流入' + total5.toFixed(0) + '亿');
-    else if (total5 < -100) items.push('📉 近5日累计净流出' + Math.abs(total5).toFixed(0) + '亿');
-  }
-  
-  // 4. 个股流向
-  if (si && si.top_buy && si.top_buy.length) {
-    items.push('🔴 买入聚焦：' + si.top_buy.slice(0,3).map(function(s){return s.name;}).join('、'));
-  }
-  
-  // 5. 操作建议
-  if (sf.direction === '流入' && sw.direction === '流入' && sh && sh.slice(-5).filter(function(p){return p.net_buy > 0;}).length >= 4) {
-    items.push('💡 <b>建议：</b>南向连续多日流入，港股中线机会明确，关注南向重仓的科技/高股息标的');
-  } else if (sf.direction === '流出' && sw.direction === '流出') {
-    items.push('💡 <b>建议：</b>南向日周双流出，港股暂观望，等待资金回流信号');
-  } else if (sf.direction === '流出' && sw.direction === '流入') {
-    items.push('💡 <b>建议：</b>日内流出但本周仍净流入，属短期波动，维持港股仓位不变');
-  } else {
-    items.push('💡 <b>建议：</b>维持当前港股仓位，关注次日方向确认');
-  }
-  
-  return items.join('<br>');
-} /* buildSouthFlowAnalysis 已废弃，分析逻辑已融入色块 */
-
 // ===== 金股池异动停牌 =====
 function renderSuspensionAlert() {
   var card = document.getElementById('suspensionCard');
@@ -450793,7 +450614,6 @@ var PAGE_CARDS = [
   {page:'🔮 预判信号', card:'📊 板块资金三合一', check:function(){var el=document.getElementById('sectorRotationContent'); return el && el.innerHTML.length > 100;}},
   {page:'🔮 预判信号', card:'🐉 龙虎榜监控',      check:function(){return !!(window.LHB_DATA&&window.LHB_DATA.update_time);}},
   {page:'🔮 预判信号', card:'💰 四路资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
-  {page:'🔮 预判信号', card:'🌏 南向资金',        check:function(){return !!(window.NORTH_FUND_DATA&&window.NORTH_FUND_DATA.update_time);}},
   // ===== 金股观测页 =====
   {page:'⭐ 金股观测', card:'🌟 个股强烈关注',    check:function(){var el=document.getElementById('goldTable'); return el && el.innerHTML.length > 50;}},
   {page:'⭐ 金股观测', card:'🧬 多维80+推荐',    check:function(){var el=document.getElementById('top10Content'); return el && el.innerHTML.length > 100;}},
@@ -451290,7 +451110,6 @@ try { renderCapitalFlowCard(); } catch(e) { console.log('renderCapitalFlowCard e
 if (HERRING_DATA && HERRING_DATA.update_time) try { renderHerdingMain(); } catch(e) { console.log('renderHerdingMain error:', e.message); }
 try { renderHealthDashboard(); } catch(e) { console.log('renderHealthDashboard error:', e.message); }
 if (window.LHB_DATA) try { renderLhbPredict(); } catch(e) { console.log('renderLhbPredict error:', e.message); }
-if (window.NORTH_FUND_DATA && window.NORTH_FUND_DATA.update_time) try { renderNorthFund(); } catch(e) { console.log('renderNorthFund error:', e.message); }
 try { renderSuspensionAlert(); } catch(e) { console.log('renderSuspensionAlert error:', e.message); }
 try { renderIpoScore(); } catch(e) { console.log('renderIpoScore error:', e.message); }
 // ===== 云端更新时间 sweep 已禁用（2026-07-16 修复） =====
