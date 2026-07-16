@@ -218,6 +218,8 @@ MODES = {
             ("scanner.py full", 600),
             # ══ Group 4: 生成脚本（并行） ══
             [
+                ("calc_crds.py", 300),
+                ("triple_select_scan.py", 600),
                 ("fetch_overnight_brief.py", 120),
                 ("generate_recommend.py", 120),
                 ("generate_top10.py", 60),
@@ -290,6 +292,8 @@ MODES = {
             ("scanner.py full", 600),
             # ══ Group 4: 生成脚本（并行） ══
             [
+                ("calc_crds.py", 300),
+                ("triple_select_scan.py", 600),
                 ("fetch_overnight_brief.py", 120),
                 ("generate_recommend.py", 120),
                 ("generate_top10.py", 60),
@@ -312,7 +316,7 @@ MODES = {
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
             ("check_syntax.py", 30),
             ("sync_check.py", 30),
-            ("deploy_now.py", 180),
+            ("close_deploy_guarded.py", 200),
             ("push_notify.py", 30),
         ],
     },

@@ -19,6 +19,21 @@ import time
 import akshare as ak
 import requests as _requests
 
+# ════════════════════════════════════════════════════════════════
+# 给 akshare HTTP 底层加默认连接/读取超时，根治家用机网络层卡死
+# ════════════════════════════════════════════════════════════════
+# akshare 内部直接调 requests.get/post 但不传 timeout，家用机 WiFi 丢包时会
+# 永久挂起且无法被 batch_update.py 的进程级超时捕获。此处 monkey-patch
+# requests.Session.request，在未显式指定 timeout 时注入 (15,60)。
+_ORIG_SESSION_REQUEST = _requests.Session.request
+
+def _session_request_with_timeout(self, method, url, **kwargs):
+    if kwargs.get("timeout") is None:
+        kwargs["timeout"] = (15, 60)  # (connect, read)
+    return _ORIG_SESSION_REQUEST(self, method, url, **kwargs)
+
+_requests.Session.request = _session_request_with_timeout
+
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 OUT = os.path.join(DATA, "candidate_pool.json")
 
