@@ -33,17 +33,48 @@ FAILOVER_THRESHOLD_MIN = 75  # 兜底阈值：> 75 分钟无部署 → 触发（
 MORNING_GRACE_HOUR = 10      # 早于 10:00 且今天无部署 → 给云端 09:20 留窗口
 
 
-def run(cmd, cwd=ROOT, timeout=300):
-    """运行命令，返回 (exit_code, stdout, stderr)"""
+def run(cmd, cwd=ROOT, timeout=300, capture=True):
+    """运行命令，返回 (exit_code, stdout, stderr)。
+
+    重要：生产脚本经 WindowsApps/python.exe 桩启动后会派生真实解释器子进程
+    并继承 stdout 管道；孙进程持有管道写端会导致 capture_output 的 EOF 永久
+    等待（死锁，进程卡死、日志写不出）。改为临时文件重定向收集输出，
+    从根本上避免管道挂起。
+    """
+    import tempfile
     print(f"[RUN] {cmd}")
+    if not capture:
+        try:
+            p = subprocess.run(
+                cmd, cwd=cwd, shell=True,
+                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                timeout=timeout,
+            )
+            return p.returncode, "", ""
+        except subprocess.TimeoutExpired:
+            return -1, "", ""
+    tf = tempfile.NamedTemporaryFile(
+        mode="w", suffix=".log", delete=False,
+        encoding="utf-8", errors="replace",
+    )
+    out_path = tf.name
+    tf.close()
     try:
-        p = subprocess.run(
-            cmd, cwd=cwd, shell=True, capture_output=True,
-            text=True, encoding="utf-8", errors="replace", timeout=timeout,
-        )
-        return p.returncode, p.stdout, p.stderr
-    except subprocess.TimeoutExpired as e:
-        return -1, e.stdout or "", e.stderr or ""
+        full = f'{cmd} > "{out_path}" 2>&1'
+        p = subprocess.run(full, cwd=cwd, shell=True, timeout=timeout)
+        try:
+            with open(out_path, encoding="utf-8", errors="replace") as f:
+                combined = f.read()
+        except Exception:
+            combined = ""
+        return p.returncode, combined, ""
+    except subprocess.TimeoutExpired:
+        return -1, "", ""
+    finally:
+        try:
+            os.remove(out_path)
+        except Exception:
+            pass
 
 
 def today_str():
@@ -223,6 +254,15 @@ def main():
                     cloud_reason = (f"云端 {elapsed_min:.0f} 分钟前有部署"
                                     f"({build_stamp})，距触发兜底还有"
                                     f"{FAILOVER_THRESHOLD_MIN - elapsed_min:.0f}分钟")
+                elif is_morning and is_trading_day:
+                    # 早盘(盘前)且交易日：即便今天已有部署（如 07:16 盘前
+                    # 预热），距 09:20 盘前部署仍在计划间隔内，给云端留窗口，
+                    # 不应误兜底。
+                    cloud_ok = True
+                    cloud_reason = (f"云端最近部署 {build_stamp}（今天，"
+                                    f"{elapsed_min:.0f} 分钟前），但早于 "
+                                    f"{MORNING_GRACE_HOUR}:00 且为交易日，"
+                                    f"等待云端 09:20 盘前部署")
                 else:
                     cloud_ok = False
                     cloud_reason = (f"云端最近部署距今 {elapsed_min:.0f} 分钟"

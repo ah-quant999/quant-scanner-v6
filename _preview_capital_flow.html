@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三方资金流向对比 · 预览</title>
+<style>body{font-family:-apple-system,"Microsoft YaHei",sans-serif;background:#f0f2f5;margin:0;padding:24px;}</style>
+</head><body>
+<div id="capitalFlowCard" class="predict-card" style="display:block;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 三方资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
+        <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+            <thead>
+              <tr style="background:#3C3489;color:#fff;">
+                <th style="text-align:left;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">维度</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">方向</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">偏好风格</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净买入TOP3</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">净卖出TOP3</th>
+                <th style="text-align:center;padding:6px 8px;border:1px solid #2A2470;font-weight:500;">关键信号</th>
+              </tr>
+            </thead>
+            <tbody id="capFlowBody"></tbody>
+          </table>
+          <div id="capFlowResonance" style="margin-top:8px;padding:8px 10px;background:#fff;border:1px dashed #d1c4e9;border-radius:8px;font-size:11px;color:#444;line-height:1.6;display:block;"></div>
+          <div id="capFlowAnalysis" style="margin-top:8px;padding:10px 12px;background:linear-gradient(135deg,#faf7ff,#f3eefe);border:1px solid #d1c4e9;border-radius:8px;font-size:11px;color:#333;line-height:1.6;display:block;"></div>
+          <div style="margin-top:8px;font-size:10px;color:#888;line-height:1.5;">
+            <b>口径说明：</b>"北向/机构/游资"均来自沪深交易所龙虎榜席位明细，仅覆盖当日价格/换手率异动的上榜个股；港交所自2024年5月起已停更全市场北向资金实时及盘后净流入数据，本卡片不再展示不可获取的全市场汇总数据。南向资金为港股通（沪深港通）净流入，可获取全市场口径。
+          </div>
+        </div>
+      </div>
+<script>
+window.CAPITAL_FLOW_DATA = {"date": "2026-07-15", "update_time": "2026-07-15 22:09:09", "data_note": "龙虎榜席位数据，仅覆盖当日价格/换手率异动的上榜个股；全市场北向/机构/游资净流向已不可获取", "north_south": {"direction": "南向持续买入（近5日净流入372.4亿）", "trend_5d": "连续5日净流入372.4亿", "style": "5日持续流入：芯片概念、人民币贬值受益、汽车电子", "common_buy": [], "common_sell": [], "signal": "当日南向净流入133.6亿｜连续5日净流入372.4亿"}, "bx": {"direction": "龙虎榜北向席位净流出7.0亿（仅覆盖异动股）", "style": "偏好：计算机、通信和其他电子设备制造业、医药制造业、互联网和相关服务", "common_buy": ["巨人网络（3.5亿）", "恺英网络（1.9亿）", "莲花控股（1.6亿）"], "common_sell": ["华天科技（-7.1亿）", "深科技（-3.5亿）", "凯莱英（-3.3亿）"], "signal": "北向席位净买入 3 只 / 净卖出 3 只"}, "inst": {"direction": "机构席位净流入4.4亿（龙虎榜专用席位）", "style": "偏好：计算机、通信和其他电子设备制造业、化学原料和化学制品制造业、互联网和相关服务", "common_buy": ["惠科股份（7.3亿）", "凯莱英（6.4亿）", "巨人网络（3.2亿）"], "common_sell": ["华天科技（-7.7亿）", "迪哲医药（-3.3亿）", "中国卫星（-1.5亿）"], "signal": "机构席位净买入 3 只 / 净卖出 3 只"}, "hot_money": {"direction": "游资席位净流入3.5亿（未识别席位）", "style": "偏好：计算机、通信和其他电子设备制造业、医药制造业、化学原料和化学制品制造业", "common_buy": ["豫能控股（5.0亿）", "儒意电影（2.6亿）", "铂力特（2.6亿）"], "common_sell": ["惠科股份（-3.0亿）", "佰维存储（-1.9亿）", "铖昌科技（-1.8亿）"], "signal": "游资席位净买入 3 只 / 净卖出 3 只"}, "common_buy_stocks": ["巨人网络", "莲花控股", "睿智医药", "华联控股", "银信科技", "幸福蓝海", "上海港湾"], "common_sell_stocks": ["深科技", "华天科技", "合肥城建", "巨力索具", "博杰股份"], "top_sectors": [{"name": "芯片概念", "net_5d": 1031.26}, {"name": "人民币贬值受益", "net_5d": 895.47}, {"name": "汽车电子", "net_5d": 849.24}, {"name": "数据中心(AIDC)", "net_5d": 768.66}, {"name": "5G", "net_5d": 746.1}], "analysis": ["🌏 南向资金持续净买入，连续5日净流入372.4亿，偏好芯片概念、人民币贬值受益、汽车电子；当日净买入133.6亿，是A股主要的增量外资来源，对风险偏好有托底作用。", "🌎 龙虎榜北向席位净卖出7.0亿（仅覆盖异动股），主要加仓巨人网络、恺英网络、减仓华天科技、深科技，反映外资对高位科技/医药偏谨慎、选择兑现。", "🏦 机构席位净买入4.4亿，买入惠科股份、凯莱英、卖出华天科技、迪哲医药，与北向在半导体封测上反向（卖出华天科技），呈'高切低'承接特征。", "🚀 游资席位净买入3.5亿，主攻豫能控股、儒意电影等题材，风格偏向事件驱动与次新。", "🔁 三方共振：买入共识集中在巨人网络、莲花控股、睿智医药，卖出共识集中在深科技、华天科技、合肥城建；5日板块资金共识最强为芯片概念、人民币贬值受益、汽车电子，科技硬件（芯片/汽车电子）仍是资金主线，但内部出现接力分化——封测端遭机构与北向共振减仓，游戏/医药获多方加仓。"], "signals": ["南向单日净流入133.6亿", "连续5日净流入372.4亿", "三方共振净买入：巨人网络, 莲花控股, 睿智医药", "三方共振净卖出：深科技, 华天科技, 合肥城建", "5日资金偏好：芯片概念, 人民币贬值受益, 汽车电子", "北向席位买入：['巨人网络', '恺英网络']", "机构席位买入：['惠科股份', '凯莱英']", "游资席位买入：['豫能控股', '儒意电影']"], "raw": {"bx_buy": [["巨人网络", "3.5亿", "002558"], ["恺英网络", "1.9亿", "002517"], ["莲花控股", "1.6亿", "600186"]], "bx_sell": [["华天科技", "-7.1亿", "002185"], ["深科技", "-3.5亿", "000021"], ["凯莱英", "-3.3亿", "002821"]], "inst_buy": [["惠科股份", "7.3亿", "001399"], ["凯莱英", "6.4亿", "002821"], ["巨人网络", "3.2亿", "002558"]], "inst_sell": [["华天科技", "-7.7亿", "002185"], ["迪哲医药", "-3.3亿", "688192"], ["中国卫星", "-1.5亿", "600118"]], "yz_buy": [["豫能控股", "5.0亿", "001896"], ["儒意电影", "2.6亿", "002739"], ["铂力特", "2.6亿", "688333"]], "yz_sell": [["惠科股份", "-3.0亿", "001399"], ["佰维存储", "-1.9亿", "688525"], ["铖昌科技", "-1.8亿", "001270"]]}};
+function renderCapitalFlowCard() {
+  var d = window.CAPITAL_FLOW_DATA || {};
+  var card = document.getElementById('capitalFlowCard');
+  if (!card) return;
+  if (!d.north_south && !d.inst && !d.hot_money) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+
+  var tEl = document.getElementById('capFlowTime');
+  if (tEl) tEl.textContent = '更新 ' + (d.update_time || '') + ' | 南向为全市场口径；北向/机构/游资为龙虎榜席位口径';
+
+  var body = document.getElementById('capFlowBody');
+  if (!body) return;
+
+  function dirClass(dirStr) {
+    if (!dirStr) return '';
+    if (dirStr.indexOf('流入') !== -1 || dirStr.indexOf('买入') !== -1 || dirStr.indexOf('净流入') !== -1) return 'up';
+    if (dirStr.indexOf('流出') !== -1 || dirStr.indexOf('卖出') !== -1 || dirStr.indexOf('净流出') !== -1) return 'down';
+    return '';
+  }
+
+  function row(label, data, color) {
+    if (!data) return '';
+    var direction = data.direction || '-';
+    var style = data.style || '-';
+    var cb = data.common_buy && data.common_buy.length ? data.common_buy.slice(0,3).join('、') : '-';
+    var cs = data.common_sell && data.common_sell.length ? data.common_sell.slice(0,3).join('、') : '-';
+    var signal = data.signal || '-';
+    var dc = dirClass(direction);
+    return '<tr style="background:' + color + ';">'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;font-weight:600;white-space:nowrap;">' + label + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;text-align:center;' + (dc ? 'color:' + (dc === 'up' ? '#e94560' : '#27ae60') + ';font-weight:600;' : '') + '">' + direction + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;">' + style + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;color:#e94560;">' + cb + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;color:#27ae60;">' + cs + '</td>'
+      + '<td style="padding:6px 8px;border:1px solid #ddd;font-size:10.5px;max-width:180px;">' + signal + '</td>'
+      + '</tr>';
+  }
+  body.innerHTML = ''
+    + row('🌏 南向资金', d.north_south, '#f5fff5')
+    + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
+    + row('🏦 机构席位', d.inst, '#fff5f5')
+    + row('🚀 游资席位', d.hot_money, '#f5f5ff');
+
+  // 共同信号行
+  if (d.signals && d.signals.length) {
+    body.innerHTML += '<tr><td colspan="6" style="padding:6px 8px;border:1px solid #ddd;background:#fafafa;font-size:10.5px;color:#444;">📌 ' + d.signals.join(' ｜ ') + '</td></tr>';
+  }
+
+  // 研判文字（仿左图：自然语言解读）
+  var analysisEl = document.getElementById('capFlowAnalysis');
+  if (analysisEl) {
+    if (d.analysis && d.analysis.length) {
+      var html = '<div style="margin-bottom:4px;font-weight:700;color:#4527a0;font-size:11.5px;">📊 资金研判</div>';
+      html += d.analysis.map(function(p){
+        return '<div style="margin:3px 0;line-height:1.65;">' + p + '</div>';
+      }).join('');
+      analysisEl.innerHTML = html;
+      analysisEl.style.display = 'block';
+    } else {
+      analysisEl.style.display = 'none';
+    }
+  }
+
+  // 三方共振单独展示
+  var resEl = document.getElementById('capFlowResonance');
+  if (resEl) {
+    var parts = [];
+    if (d.common_buy_stocks && d.common_buy_stocks.length) {
+      parts.push('<span style="color:#e94560;">🔴 三方共振净买入：' + d.common_buy_stocks.slice(0,5).join('、') + '</span>');
+    }
+    if (d.common_sell_stocks && d.common_sell_stocks.length) {
+      parts.push('<span style="color:#27ae60;">🟢 三方共振净卖出：' + d.common_sell_stocks.slice(0,5).join('、') + '</span>');
+    }
+    if (parts.length) {
+      resEl.innerHTML = parts.join(' ｜ ');
+      resEl.style.display = 'block';
+    } else {
+      resEl.style.display = 'none';
+    }
+  }
+}
+
+
+renderCapitalFlowCard();
+</script>
+</body></html>
