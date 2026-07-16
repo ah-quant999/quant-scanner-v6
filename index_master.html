@@ -440282,7 +440282,12 @@ function setPostMarketTime(id, rawTime, source) {
     setChartTime(id, rawTime, source); // 真实过期，保留红标不掩盖
     return;
   }
-  if (window.POST_CLOSE_TIME) {
+  // 2026-07-17 修复：rawTime 是今天/昨晚盘后时优先用它（如 lhb 00:30 刷 → "今日 00:30"），
+  //   否则才回退到 POST_CLOSE_TIME（"昨日 15:30"）。原来硬性优先 POST_CLOSE_TIME 导致
+  //   4 张卡都显示"昨日 15:30"而主人误判为陈旧。
+  if (rawTime && ft && ft.daysAgo === 0) {
+    setChartTime(id, rawTime, source);
+  } else if (window.POST_CLOSE_TIME) {
     setChartTime(id, window.POST_CLOSE_TIME, source);
   } else if (rawTime) {
     setChartTime(id, rawTime, source);
@@ -450871,8 +450876,13 @@ function renderCapitalFlowCard() {
 
   var tEl = document.getElementById('capFlowTime');
   if (tEl) {
-    var _pcf = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : (d.update_time ? fmtDataTime(d.update_time) : null);
-    tEl.textContent = '更新于 ' + (_pcf ? _pcf.text : '');
+    // 2026-07-17 修复：d.update_time 是今天时优先用它（如资金流盘后 22:00 刷 → "今日 22:00"），
+    //   否则回退 POST_CLOSE_TIME。同步 setPostMarketTime 行为。
+    var _df = d.update_time ? fmtDataTime(d.update_time) : null;
+    var _useUpdate = _df && _df.daysAgo === 0;
+    var _ts = _useUpdate ? d.update_time : (window.POST_CLOSE_TIME || d.update_time || '');
+    var _fmt = _ts ? fmtDataTime(_ts) : null;
+    tEl.textContent = '更新于 ' + (_fmt ? _fmt.text : '');
   }
 
   var body = document.getElementById('capFlowBody');
