@@ -28,6 +28,8 @@ jobs:
   intraday:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      TZ: Asia/Shanghai
 
     steps:
       - uses: actions/checkout@v4
@@ -86,20 +88,20 @@ jobs:
       - name: "📡 全量数据抓取"
         continue-on-error: true
         run: |
-          # 注：以下中国数据源已移出云端，改由本机双机(小九/阿狸咪)负责抓取并 push main，
-          # 云端直接复用 main 上的新鲜数据（避免美区 runner 无中国网络导致 60s 超时静默失败+覆盖）：
-          #   fetch_margin / fetch_sh_sz_history / fetch_etf_subscription /
-          #   fetch_up_down_stats / fetch_north_fund / capital_flow_summary(依赖 north_fund)
+          # 注：以下中国数据源在美区 runner 必 60s 超时(exit 124) 不重写文件→数据冻结，
+          # 已全部移出云端，改由本机双机(小九/阿狸咪 :40 自动化)在中国网络抓取并 push main，
+          # 云端直接复用 main 上的新鲜数据。仅保留美区可达的 US/国际源脚本：
+          #   fetch_nt_data / fetch_suspension_alert / fetch_main_week / fetch_main_stock /
+          #   fetch_south_individual / fetch_herding_data / fetch_ipo_data / fetch_macro_data /
+          #   fetch_sh_index_fib / fetch_crisis_data
           for script in \
-            fetch_nt_data.py fetch_margin_etf.py \
-            fetch_suspension_alert.py fetch_stock_deviation.py \
-            fetch_sector_fund_flow.py fetch_sector_rs.py \
-            fetch_main_week.py fetch_market_alerts.py \
-            fetch_concept_ranking.py fetch_main_stock.py \
+            fetch_nt_data.py \
+            fetch_suspension_alert.py \
+            fetch_main_week.py fetch_main_stock.py \
             fetch_south_individual.py fetch_herding_data.py \
-            fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
+            fetch_ipo_data.py \
             fetch_macro_data.py \
-            fetch_sh_index_fib.py fetch_sz_index_fib.py \
+            fetch_sh_index_fib.py \
             fetch_crisis_data.py; do
             echo ">>> $script start $(date -Iseconds)"
             timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
@@ -139,6 +141,25 @@ jobs:
             exit 1
           fi
           echo "✅ dist/index.html 存在 ($(wc -c < dist/index.html) bytes)"
+
+      # ─── 注入 build-stamp（北京时间，每次部署刷新）───
+      # 注：云端用 peaceiris/actions-gh-pages 直接发布 ./dist，update_data_v2.py 不写 build-stamp，
+      # 必须在此显式注入，否则运维卡/前端一直显示最后一次「本地 deploy_now.py」的时间。
+      - name: "🏷️ 注入 build-stamp (北京时间)"
+        run: |
+          STAMP=$(TZ=Asia/Shanghai date +%Y%m%d%H%M%S)
+          python - "$STAMP" <<'PY'
+          import re, sys
+          stamp = sys.argv[1]
+          p = "dist/index.html"
+          s = open(p, encoding="utf-8").read()
+          if 'name="build-stamp"' in s:
+              s = re.sub(r'name="build-stamp" content="[^"]*"', f'name="build-stamp" content="{stamp}"', s)
+          else:
+              s = s.replace("<head>", f'<head>\n<meta name="build-stamp" content="{stamp}">', 1)
+          open(p, "w", encoding="utf-8").write(s)
+          print("build-stamp =", stamp)
+          PY
 
       # ─── 部署到 GitHub Pages ───
       - name: "🚀 部署到 GitHub Pages"
