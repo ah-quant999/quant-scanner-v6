@@ -101,7 +101,6 @@ jobs:
             fetch_south_individual.py fetch_herding_data.py \
             fetch_ipo_data.py \
             fetch_macro_data.py \
-            fetch_sh_index_fib.py \
             fetch_crisis_data.py; do
             echo ">>> $script start $(date -Iseconds)"
             timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
@@ -112,6 +111,11 @@ jobs:
       - name: "🔬 盘中扫描 (总览+预判)"
         continue-on-error: true
         run: python run_intraday_scan.py --skip-standalone
+
+      # ─── 云端心跳上报（先于构建，使本次部署即含云端状态）───
+      - name: "💓 上报云端心跳"
+        continue-on-error: true
+        run: python report_heartbeat.py --role cloud --mode cloud_intraday
 
       # ─── 构建前端 ───
       - name: "🏗️ 构建前端"

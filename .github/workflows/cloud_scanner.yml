@@ -143,6 +143,11 @@ jobs:
           python capital_flow_summary.py || echo "⚠️ 资金流向跳过"
           echo "✅ 已写入 data/capital_flow_summary.json"
 
+      # ─── 云端心跳上报（先于构建，使本次部署即含云端状态）───
+      - name: "💓 上报云端心跳"
+        continue-on-error: true
+        run: python report_heartbeat.py --role cloud --mode cloud_close
+
       # ─── 构建前端 ───
       - name: "🏗️ 构建前端"
         run: |

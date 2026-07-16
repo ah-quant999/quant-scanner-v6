@@ -94,6 +94,9 @@ jobs:
             timeout 90 python "$s" 2>/dev/null | tail -3 || echo "[超时/失败] $s"
             echo "<<< $s end"
           done
+          echo ">>> report_heartbeat.py start"
+          python report_heartbeat.py --role cloud --mode cloud_postclose || echo "[跳过] heartbeat"
+          echo "<<< report_heartbeat.py end"
           echo ">>> update_data_v2.py start"
           timeout 120 python update_data_v2.py 2>&1 | tail -5 || echo "[超时/失败] update_data_v2"
           echo "<<< update_data_v2.py end"
