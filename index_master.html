@@ -450651,7 +450651,7 @@ function toggleUnlistedPanel() {
   }
 }
 
-// ===== 🕐 统一卡片时间格式 (2026-07-16 统一版式) =====
+// ===== 🕐 统一卡片时间格式 (2026-07-17 统一版式：今日/昨日/N天前 HH:MM) =====
 // 优先级：d.update_time / today.generated_at / window.POST_CLOSE_TIME / <meta build-stamp> / '未知'
 function fmtCardTime(d, altField) {
   var v = (d && d[altField]) || '';
@@ -450665,7 +450665,9 @@ function fmtCardTime(d, altField) {
       }
     }
   }
-  return '🕐 更新于 ' + (v || '未知');
+  if (!v) return '🕐 更新于 未知';
+  // 统一版式：🕐 更新于 今日 16:22 / 昨日 16:16 / 2天前 15:30（与观澜候选股池/各卡片一致）
+  return '🕐 更新于 ' + fmtDataTime(v).text;
 }
 
 // ===== CRDS 逆势龙头评分卡渲染 =====
