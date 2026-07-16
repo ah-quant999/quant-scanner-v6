@@ -197,7 +197,7 @@ def main():
         print("无龙虎榜数据")
         return
 
-    # 新浪机构席位接口：直接给出机构买入/卖出，比东财席位明细更稳
+    # 新浪机构席位接口：兜底（新浪把北向卖出误并入机构卖出，必须以东财「机构专用」为主源）
     inst_map = _fetch_inst_sina(date_str)
 
     detail_map = fetch_seat_detail(stocks, date_str)
@@ -207,16 +207,22 @@ def main():
         code = s['code']
         seats = detail_map.get(code, {})
 
-        # 机构数据优先用新浪；新浪缺失时才用 seat detail 兜底
-        inst_data = inst_map.get(code, {'buy': 0, 'sell': 0, 'net': 0})
-        inst_buy = inst_data['buy']
-        inst_sell = inst_data['sell']
-        inst_net = inst_data['net']
-        if inst_buy == 0 and inst_sell == 0 and '机构' in seats:
-            inst = seats['机构']
-            inst_buy = inst['buy']
-            inst_sell = inst['sell']
+        # ★ 2026-07-17 修复：东财「机构专用」优先（贴近交易所原始披露），
+        #   新浪作为兜底。新浪 bug：把北向(深股通)卖出误并入机构卖出，
+        #   导致机构净买入被高估。
+        inst_buy = 0
+        inst_sell = 0
+        inst_net = 0
+        if '机构' in seats and (seats['机构']['buy'] > 0 or seats['机构']['sell'] > 0):
+            inst_buy = seats['机构']['buy']
+            inst_sell = seats['机构']['sell']
             inst_net = inst_buy - inst_sell
+        else:
+            # 东财缺数据时，用新浪兜底
+            inst_data = inst_map.get(code, {'buy': 0, 'sell': 0, 'net': 0})
+            inst_buy = inst_data['buy']
+            inst_sell = inst_data['sell']
+            inst_net = inst_data['net']
 
         # 非机构：北向+游资+量化+未识别（来自 seat detail）
         other_buy = 0

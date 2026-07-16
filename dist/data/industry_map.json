@@ -1,8 +1,8 @@
 {
- "update_time": "2026-07-14 17:32",
- "total_stocks": 446,
+ "update_time": "2026-07-15 22:33",
+ "total_stocks": 453,
  "total_sectors": 38,
- "total_associations": 446,
+ "total_associations": 453,
  "stocks": {
   "sh_600030": {
    "industry": "资本市场服务"
@@ -1341,6 +1341,27 @@
   },
   "sz_301358": {
    "industry": "计算机、通信和其他电子设备制造业"
+  },
+  "sh_002028": {
+   "industry": "电气机械和器材制造业"
+  },
+  "sh_002270": {
+   "industry": "电气机械和器材制造业"
+  },
+  "sh_603906": {
+   "industry": "计算机、通信和其他电子设备制造业"
+  },
+  "sz_300919": {
+   "industry": "计算机、通信和其他电子设备制造业"
+  },
+  "sh_601155": {
+   "industry": "房地产业"
+  },
+  "sh_603260": {
+   "industry": "化学原料和化学制品制造业"
+  },
+  "sz_301301": {
+   "industry": "医药制造业"
   }
  }
 }

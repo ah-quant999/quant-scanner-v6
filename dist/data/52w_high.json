@@ -1,1884 +1,1884 @@
 {
-  "update_time": "2026-07-14 17:30",
-  "total": 206,
+  "update_time": "2026-07-16 17:26",
+  "total": 372,
   "top_gainers": [
     {
-      "code": "300532",
-      "name": "今天国际",
-      "pct_chg": 20.07
+      "code": "300805",
+      "name": "电声股份",
+      "pct_chg": 19.97
     },
     {
-      "code": "300164",
-      "name": "通源石油",
-      "pct_chg": 20.04
+      "code": "300426",
+      "name": "华智数媒",
+      "pct_chg": 13.94
     },
     {
-      "code": "300937",
-      "name": "药易购",
-      "pct_chg": 20.01
+      "code": "300638",
+      "name": "广和通",
+      "pct_chg": 13.75
     },
     {
-      "code": "300191",
-      "name": "潜能恒信",
-      "pct_chg": 18.23
+      "code": "300231",
+      "name": "银信科技",
+      "pct_chg": 10.79
     },
     {
-      "code": "300534",
-      "name": "陇神戎发",
-      "pct_chg": 16.33
+      "code": "300255",
+      "name": "常山药业",
+      "pct_chg": 10.45
     },
     {
-      "code": "300990",
-      "name": "同飞股份",
-      "pct_chg": 14.69
-    },
-    {
-      "code": "300157",
-      "name": "新锦动力",
-      "pct_chg": 11.58
-    },
-    {
-      "code": "000008",
-      "name": "神州高铁",
-      "pct_chg": 10.17
-    },
-    {
-      "code": "000554",
-      "name": "泰山石油",
+      "code": "000676",
+      "name": "智度股份",
       "pct_chg": 10.09
     },
     {
-      "code": "002162",
-      "name": "悦心健康",
-      "pct_chg": 10.09
+      "code": "002365",
+      "name": "永安药业",
+      "pct_chg": 10.02
     },
     {
-      "code": "600829",
-      "name": "人民同泰",
-      "pct_chg": 10.04
+      "code": "600664",
+      "name": "哈药股份",
+      "pct_chg": 10.02
     },
     {
-      "code": "603577",
-      "name": "汇金通",
+      "code": "000829",
+      "name": "天音控股",
       "pct_chg": 10.01
+    },
+    {
+      "code": "001230",
+      "name": "劲旅环境",
+      "pct_chg": 10.01
+    },
+    {
+      "code": "600436",
+      "name": "片仔癀",
+      "pct_chg": 10.0
+    },
+    {
+      "code": "000504",
+      "name": "南华生物",
+      "pct_chg": 9.99
     },
     {
       "code": "603580",
       "name": "艾艾精工",
-      "pct_chg": 10.01
+      "pct_chg": 9.99
     },
     {
-      "code": "000968",
-      "name": "蓝焰控股",
-      "pct_chg": 10.0
+      "code": "002127",
+      "name": "南极电商",
+      "pct_chg": 9.86
     },
     {
-      "code": "001388",
-      "name": "信通电子",
-      "pct_chg": 10.0
+      "code": "002788",
+      "name": "鹭燕医药",
+      "pct_chg": 9.82
     }
   ],
   "top_sectors": [],
   "stocks": [
     {
-      "code": "000008",
-      "name": "神州高铁",
-      "pct_chg": 10.17,
-      "price": 2.6,
-      "prev_high": 2.56,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.45
+      "code": "000002",
+      "name": "万科A",
+      "pct_chg": 3.19,
+      "price": 3.23,
+      "prev_high": 3.13,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.09
     },
     {
-      "code": "000059",
-      "name": "华锦股份",
-      "pct_chg": 3.51,
-      "price": 4.42,
-      "prev_high": 4.36,
+      "code": "000028",
+      "name": "国药一致",
+      "pct_chg": 2.04,
+      "price": 21.52,
+      "prev_high": 21.13,
+      "prev_high_date": "2026-07-06",
+      "turnover": 1.34
+    },
+    {
+      "code": "000030",
+      "name": "富奥股份",
+      "pct_chg": 3.9,
+      "price": 4.26,
+      "prev_high": 4.23,
       "prev_high_date": "2026-06-16",
-      "turnover": 3.39
+      "turnover": 1.44
+    },
+    {
+      "code": "000088",
+      "name": "盐田港",
+      "pct_chg": 0.0,
+      "price": 4.34,
+      "prev_high": 4.34,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.56
+    },
+    {
+      "code": "000089",
+      "name": "深圳机场",
+      "pct_chg": 0.91,
+      "price": 6.63,
+      "prev_high": 6.57,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.96
     },
     {
       "code": "000153",
       "name": "丰原药业",
-      "pct_chg": 2.4,
-      "price": 5.55,
-      "prev_high": 5.49,
-      "prev_high_date": "2026-07-10",
-      "turnover": 3.01
+      "pct_chg": 1.58,
+      "price": 5.79,
+      "prev_high": 5.7,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.96
     },
     {
-      "code": "000333",
-      "name": "美的集团",
-      "pct_chg": 0.97,
-      "price": 81.18,
-      "prev_high": 80.4,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.67
+      "code": "000411",
+      "name": "英特集团",
+      "pct_chg": 1.03,
+      "price": 9.79,
+      "prev_high": 9.75,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.22
     },
     {
       "code": "000423",
       "name": "东阿阿胶",
-      "pct_chg": 0.7,
-      "price": 49.07,
-      "prev_high": 49.05,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.04
+      "pct_chg": 2.7,
+      "price": 51.4,
+      "prev_high": 50.05,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.25
     },
     {
-      "code": "000498",
-      "name": "山东路桥",
-      "pct_chg": 1.22,
-      "price": 4.97,
-      "prev_high": 4.94,
-      "prev_high_date": "2026-07-08",
-      "turnover": 0.57
+      "code": "000504",
+      "name": "南华生物",
+      "pct_chg": 9.99,
+      "price": 9.36,
+      "prev_high": 8.51,
+      "prev_high_date": "2026-07-15",
+      "turnover": 8.73
+    },
+    {
+      "code": "000513",
+      "name": "丽珠集团",
+      "pct_chg": 0.54,
+      "price": 31.49,
+      "prev_high": 31.32,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.84
     },
     {
       "code": "000516",
       "name": "国际医学",
-      "pct_chg": 3.69,
-      "price": 4.22,
-      "prev_high": 4.17,
-      "prev_high_date": "2026-06-18",
-      "turnover": 2.43
+      "pct_chg": 1.15,
+      "price": 4.41,
+      "prev_high": 4.36,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.33
     },
     {
-      "code": "000554",
-      "name": "泰山石油",
-      "pct_chg": 10.09,
-      "price": 6.44,
-      "prev_high": 6.43,
-      "prev_high_date": "2026-06-15",
-      "turnover": 11.1
+      "code": "000538",
+      "name": "云南白药",
+      "pct_chg": 2.58,
+      "price": 52.11,
+      "prev_high": 50.8,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.26
+    },
+    {
+      "code": "000563",
+      "name": "陕国投A",
+      "pct_chg": 0.33,
+      "price": 3.03,
+      "prev_high": 3.02,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.12
+    },
+    {
+      "code": "000568",
+      "name": "泸州老窖",
+      "pct_chg": 1.27,
+      "price": 84.18,
+      "prev_high": 83.28,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.29
+    },
+    {
+      "code": "000596",
+      "name": "古井贡酒",
+      "pct_chg": 2.36,
+      "price": 90.62,
+      "prev_high": 88.53,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.93
     },
     {
       "code": "000597",
       "name": "东北制药",
-      "pct_chg": 2.17,
-      "price": 4.72,
-      "prev_high": 4.62,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.38
+      "pct_chg": 2.08,
+      "price": 4.9,
+      "prev_high": 4.8,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.87
     },
     {
       "code": "000598",
       "name": "兴蓉环境",
-      "pct_chg": 2.73,
-      "price": 6.78,
-      "prev_high": 6.76,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.94
+      "pct_chg": 0.14,
+      "price": 6.91,
+      "prev_high": 6.9,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.9
     },
     {
       "code": "000650",
       "name": "仁和药业",
-      "pct_chg": 1.49,
-      "price": 5.45,
-      "prev_high": 5.41,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.93
+      "pct_chg": 1.07,
+      "price": 5.66,
+      "prev_high": 5.6,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.25
     },
     {
       "code": "000651",
       "name": "格力电器",
-      "pct_chg": 1.21,
-      "price": 39.18,
-      "prev_high": 39.0,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.9
+      "pct_chg": 0.0,
+      "price": 39.83,
+      "prev_high": 39.83,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.74
     },
     {
       "code": "000661",
       "name": "长春高新",
-      "pct_chg": 3.13,
-      "price": 71.6,
-      "prev_high": 70.27,
-      "prev_high_date": "2026-07-01",
-      "turnover": 3.42
+      "pct_chg": 5.4,
+      "price": 75.94,
+      "prev_high": 72.05,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.54
+    },
+    {
+      "code": "000676",
+      "name": "智度股份",
+      "pct_chg": 10.09,
+      "price": 6.22,
+      "prev_high": 5.65,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.61
+    },
+    {
+      "code": "000705",
+      "name": "浙江震元",
+      "pct_chg": 1.98,
+      "price": 6.71,
+      "prev_high": 6.58,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.06
+    },
+    {
+      "code": "000710",
+      "name": "贝瑞基因",
+      "pct_chg": 2.84,
+      "price": 8.33,
+      "prev_high": 8.13,
+      "prev_high_date": "2026-06-23",
+      "turnover": 4.48
+    },
+    {
+      "code": "000715",
+      "name": "中兴商业",
+      "pct_chg": 0.41,
+      "price": 4.94,
+      "prev_high": 4.92,
+      "prev_high_date": "2026-06-24",
+      "turnover": 1.46
+    },
+    {
+      "code": "000729",
+      "name": "燕京啤酒",
+      "pct_chg": 3.0,
+      "price": 12.01,
+      "prev_high": 11.66,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.66
+    },
+    {
+      "code": "000731",
+      "name": "四川美丰",
+      "pct_chg": 1.03,
+      "price": 5.89,
+      "prev_high": 5.83,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.03
     },
     {
       "code": "000739",
       "name": "普洛药业",
-      "pct_chg": 4.95,
-      "price": 19.09,
-      "prev_high": 18.46,
-      "prev_high_date": "2026-07-06",
-      "turnover": 2.01
+      "pct_chg": 2.59,
+      "price": 21.0,
+      "prev_high": 20.47,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.28
     },
     {
-      "code": "000755",
-      "name": "山西高速",
-      "pct_chg": 1.52,
-      "price": 4.67,
-      "prev_high": 4.65,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.31
+      "code": "000750",
+      "name": "国海证券",
+      "pct_chg": 0.79,
+      "price": 3.84,
+      "prev_high": 3.83,
+      "prev_high_date": "2026-07-01",
+      "turnover": 1.38
+    },
+    {
+      "code": "000788",
+      "name": "北大医药",
+      "pct_chg": 0.0,
+      "price": 5.6,
+      "prev_high": 5.6,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.64
+    },
+    {
+      "code": "000790",
+      "name": "华神科技",
+      "pct_chg": 1.56,
+      "price": 3.91,
+      "prev_high": 3.85,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.29
+    },
+    {
+      "code": "000798",
+      "name": "中水渔业",
+      "pct_chg": 3.0,
+      "price": 7.9,
+      "prev_high": 7.73,
+      "prev_high_date": "2026-06-16",
+      "turnover": 3.69
     },
     {
       "code": "000813",
       "name": "德展健康",
-      "pct_chg": 2.43,
-      "price": 3.37,
-      "prev_high": 3.29,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.01
+      "pct_chg": 1.74,
+      "price": 3.51,
+      "prev_high": 3.45,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.43
+    },
+    {
+      "code": "000829",
+      "name": "天音控股",
+      "pct_chg": 10.01,
+      "price": 9.12,
+      "prev_high": 8.55,
+      "prev_high_date": "2026-06-16",
+      "turnover": 5.11
     },
     {
       "code": "000848",
       "name": "承德露露",
-      "pct_chg": 2.97,
-      "price": 8.33,
-      "prev_high": 8.09,
-      "prev_high_date": "2026-07-13",
+      "pct_chg": 0.0,
+      "price": 8.46,
+      "prev_high": 8.46,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.25
+    },
+    {
+      "code": "000850",
+      "name": "华茂股份",
+      "pct_chg": 3.55,
+      "price": 4.08,
+      "prev_high": 4.04,
+      "prev_high_date": "2026-07-03",
       "turnover": 1.75
+    },
+    {
+      "code": "000860",
+      "name": "顺鑫农业",
+      "pct_chg": 1.93,
+      "price": 11.1,
+      "prev_high": 10.89,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.58
+    },
+    {
+      "code": "000886",
+      "name": "海南高速",
+      "pct_chg": 1.58,
+      "price": 4.49,
+      "prev_high": 4.42,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.89
+    },
+    {
+      "code": "000888",
+      "name": "峨眉山A",
+      "pct_chg": 1.12,
+      "price": 9.9,
+      "prev_high": 9.88,
+      "prev_high_date": "2026-06-16",
+      "turnover": 3.8
+    },
+    {
+      "code": "000895",
+      "name": "双汇发展",
+      "pct_chg": 1.25,
+      "price": 24.4,
+      "prev_high": 24.1,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.46
     },
     {
       "code": "000900",
       "name": "现代投资",
-      "pct_chg": 1.64,
-      "price": 3.71,
-      "prev_high": 3.69,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.0
+      "pct_chg": 0.0,
+      "price": 3.75,
+      "prev_high": 3.75,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.71
     },
     {
       "code": "000919",
       "name": "金陵药业",
-      "pct_chg": 3.07,
-      "price": 6.37,
-      "prev_high": 6.23,
-      "prev_high_date": "2026-07-06",
-      "turnover": 3.11
+      "pct_chg": 0.15,
+      "price": 6.51,
+      "prev_high": 6.5,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.38
     },
     {
-      "code": "000948",
-      "name": "南天信息",
-      "pct_chg": 3.35,
-      "price": 13.9,
-      "prev_high": 13.56,
-      "prev_high_date": "2026-07-09",
-      "turnover": 4.83
+      "code": "000938",
+      "name": "紫光股份",
+      "pct_chg": 8.61,
+      "price": 38.59,
+      "prev_high": 38.41,
+      "prev_high_date": "2026-07-10",
+      "turnover": 15.8
     },
     {
       "code": "000950",
       "name": "重药控股",
-      "pct_chg": 1.89,
-      "price": 5.39,
-      "prev_high": 5.39,
-      "prev_high_date": "2026-07-06",
-      "turnover": 2.43
+      "pct_chg": 0.9,
+      "price": 5.64,
+      "prev_high": 5.59,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.43
     },
     {
-      "code": "000968",
-      "name": "蓝焰控股",
-      "pct_chg": 10.0,
-      "price": 7.04,
-      "prev_high": 6.96,
-      "prev_high_date": "2026-06-15",
-      "turnover": 6.96
+      "code": "000963",
+      "name": "华东医药",
+      "pct_chg": 1.69,
+      "price": 31.96,
+      "prev_high": 31.43,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.24
     },
     {
-      "code": "000989",
-      "name": "九芝堂",
-      "pct_chg": 5.46,
-      "price": 9.47,
-      "prev_high": 8.98,
-      "prev_high_date": "2026-07-13",
-      "turnover": 16.15
+      "code": "000990",
+      "name": "诚志股份",
+      "pct_chg": 0.0,
+      "price": 9.56,
+      "prev_high": 9.56,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.38
     },
     {
       "code": "000999",
       "name": "华润三九",
-      "pct_chg": 1.59,
-      "price": 24.88,
-      "prev_high": 24.55,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.25
+      "pct_chg": 2.54,
+      "price": 25.84,
+      "prev_high": 25.2,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.84
     },
     {
-      "code": "001206",
-      "name": "依依股份",
-      "pct_chg": 7.62,
-      "price": 20.77,
-      "prev_high": 20.63,
-      "prev_high_date": "2026-07-08",
-      "turnover": 11.38
+      "code": "001201",
+      "name": "东瑞股份",
+      "pct_chg": 1.19,
+      "price": 11.95,
+      "prev_high": 11.81,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.74
     },
     {
-      "code": "001378",
-      "name": "德冠新材",
-      "pct_chg": 8.29,
-      "price": 21.29,
-      "prev_high": 20.61,
+      "code": "001213",
+      "name": "中铁特货",
+      "pct_chg": 0.0,
+      "price": 3.57,
+      "prev_high": 3.57,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.23
+    },
+    {
+      "code": "001230",
+      "name": "劲旅环境",
+      "pct_chg": 10.01,
+      "price": 19.46,
+      "prev_high": 19.06,
       "prev_high_date": "2026-06-16",
-      "turnover": 17.2
+      "turnover": 8.97
     },
     {
-      "code": "001388",
-      "name": "信通电子",
-      "pct_chg": 10.0,
-      "price": 32.44,
-      "prev_high": 30.16,
-      "prev_high_date": "2026-06-23",
-      "turnover": 3.8
+      "code": "001314",
+      "name": "亿道信息",
+      "pct_chg": 1.23,
+      "price": 62.72,
+      "prev_high": 61.96,
+      "prev_high_date": "2026-07-15",
+      "turnover": 12.95
     },
     {
-      "code": "001872",
-      "name": "招商港口",
-      "pct_chg": 1.93,
-      "price": 21.7,
-      "prev_high": 21.29,
+      "code": "001317",
+      "name": "三羊马",
+      "pct_chg": 0.45,
+      "price": 51.3,
+      "prev_high": 51.07,
+      "prev_high_date": "2026-07-15",
+      "turnover": 11.71
+    },
+    {
+      "code": "001395",
+      "name": "亚联机械",
+      "pct_chg": 7.74,
+      "price": 32.43,
+      "prev_high": 31.49,
       "prev_high_date": "2026-07-13",
-      "turnover": 0.22
+      "turnover": 16.83
+    },
+    {
+      "code": "002003",
+      "name": "伟星股份",
+      "pct_chg": 1.86,
+      "price": 9.29,
+      "prev_high": 9.12,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.1
+    },
+    {
+      "code": "002007",
+      "name": "华兰生物",
+      "pct_chg": 2.55,
+      "price": 13.66,
+      "prev_high": 13.32,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.49
+    },
+    {
+      "code": "002019",
+      "name": "亿帆医药",
+      "pct_chg": 4.68,
+      "price": 10.95,
+      "prev_high": 10.46,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.61
     },
     {
       "code": "002022",
       "name": "科华生物",
-      "pct_chg": 4.09,
-      "price": 5.09,
-      "prev_high": 5.08,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.91
+      "pct_chg": 1.92,
+      "price": 5.31,
+      "prev_high": 5.21,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.07
     },
     {
-      "code": "002038",
-      "name": "双鹭药业",
-      "pct_chg": 4.91,
-      "price": 7.05,
-      "prev_high": 6.72,
-      "prev_high_date": "2026-07-13",
-      "turnover": 13.6
-    },
-    {
-      "code": "002078",
-      "name": "太阳纸业",
-      "pct_chg": 2.34,
-      "price": 13.54,
-      "prev_high": 13.38,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.96
-    },
-    {
-      "code": "002123",
-      "name": "梦网科技",
-      "pct_chg": 6.16,
-      "price": 9.48,
-      "prev_high": 8.93,
-      "prev_high_date": "2026-07-13",
-      "turnover": 8.62
-    },
-    {
-      "code": "002156",
-      "name": "通富微电",
-      "pct_chg": 5.84,
-      "price": 77.87,
-      "prev_high": 77.81,
-      "prev_high_date": "2026-06-25",
-      "turnover": 16.01
-    },
-    {
-      "code": "002162",
-      "name": "悦心健康",
-      "pct_chg": 10.09,
-      "price": 3.82,
-      "prev_high": 3.67,
+      "code": "002027",
+      "name": "分众传媒",
+      "pct_chg": 2.41,
+      "price": 5.1,
+      "prev_high": 5.01,
       "prev_high_date": "2026-06-16",
-      "turnover": 4.34
+      "turnover": 1.42
     },
     {
-      "code": "002185",
-      "name": "华天科技",
-      "pct_chg": 6.42,
-      "price": 25.68,
-      "prev_high": 25.31,
-      "prev_high_date": "2026-07-10",
-      "turnover": 25.25
+      "code": "002032",
+      "name": "苏泊尔",
+      "pct_chg": 1.0,
+      "price": 44.26,
+      "prev_high": 43.93,
+      "prev_high_date": "2026-07-08",
+      "turnover": 0.2
+    },
+    {
+      "code": "002035",
+      "name": "华帝股份",
+      "pct_chg": 1.24,
+      "price": 4.9,
+      "prev_high": 4.86,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.46
+    },
+    {
+      "code": "002061",
+      "name": "浙江交科",
+      "pct_chg": 0.0,
+      "price": 3.6,
+      "prev_high": 3.6,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.56
+    },
+    {
+      "code": "002069",
+      "name": "獐子岛",
+      "pct_chg": 1.25,
+      "price": 3.25,
+      "prev_high": 3.21,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.5
+    },
+    {
+      "code": "002100",
+      "name": "天康生物",
+      "pct_chg": 7.63,
+      "price": 7.19,
+      "prev_high": 6.75,
+      "prev_high_date": "2026-07-06",
+      "turnover": 4.43
+    },
+    {
+      "code": "002101",
+      "name": "广东鸿图",
+      "pct_chg": 1.97,
+      "price": 9.33,
+      "prev_high": 9.29,
+      "prev_high_date": "2026-06-30",
+      "turnover": 1.22
+    },
+    {
+      "code": "002110",
+      "name": "三钢闽光",
+      "pct_chg": 0.66,
+      "price": 3.03,
+      "prev_high": 3.02,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.0
+    },
+    {
+      "code": "002127",
+      "name": "南极电商",
+      "pct_chg": 9.86,
+      "price": 3.23,
+      "prev_high": 2.94,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.21
+    },
+    {
+      "code": "002141",
+      "name": "贤丰控股",
+      "pct_chg": 5.35,
+      "price": 5.91,
+      "prev_high": 5.85,
+      "prev_high_date": "2026-07-07",
+      "turnover": 18.95
+    },
+    {
+      "code": "002166",
+      "name": "莱茵生物",
+      "pct_chg": 5.89,
+      "price": 7.37,
+      "prev_high": 7.35,
+      "prev_high_date": "2026-06-16",
+      "turnover": 5.88
+    },
+    {
+      "code": "002172",
+      "name": "澳洋健康",
+      "pct_chg": 3.13,
+      "price": 3.29,
+      "prev_high": 3.19,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.78
+    },
+    {
+      "code": "002186",
+      "name": "全聚德",
+      "pct_chg": 1.67,
+      "price": 9.11,
+      "prev_high": 9.1,
+      "prev_high_date": "2026-06-23",
+      "turnover": 1.43
     },
     {
       "code": "002219",
       "name": "新里程",
-      "pct_chg": 2.56,
-      "price": 2.0,
-      "prev_high": 1.98,
-      "prev_high_date": "2026-07-10",
-      "turnover": 4.04
+      "pct_chg": 3.96,
+      "price": 2.1,
+      "prev_high": 2.02,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.77
     },
     {
       "code": "002223",
       "name": "鱼跃医疗",
-      "pct_chg": 2.24,
-      "price": 26.9,
-      "prev_high": 26.6,
-      "prev_high_date": "2026-07-03",
-      "turnover": 2.02
+      "pct_chg": 1.35,
+      "price": 27.84,
+      "prev_high": 27.47,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.19
+    },
+    {
+      "code": "002244",
+      "name": "滨江集团",
+      "pct_chg": 5.07,
+      "price": 8.7,
+      "prev_high": 8.61,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.88
+    },
+    {
+      "code": "002252",
+      "name": "上海莱士",
+      "pct_chg": 5.27,
+      "price": 5.19,
+      "prev_high": 4.93,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.38
     },
     {
       "code": "002262",
       "name": "恩华药业",
-      "pct_chg": 2.75,
-      "price": 20.57,
-      "prev_high": 20.45,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.73
+      "pct_chg": 0.89,
+      "price": 21.44,
+      "prev_high": 21.25,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.12
+    },
+    {
+      "code": "002267",
+      "name": "陕天然气",
+      "pct_chg": 0.42,
+      "price": 7.14,
+      "prev_high": 7.11,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.64
+    },
+    {
+      "code": "002275",
+      "name": "桂林三金",
+      "pct_chg": 0.73,
+      "price": 13.77,
+      "prev_high": 13.67,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.61
     },
     {
       "code": "002287",
       "name": "奇正藏药",
-      "pct_chg": 2.32,
-      "price": 21.21,
-      "prev_high": 20.73,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.05
+      "pct_chg": 2.42,
+      "price": 21.97,
+      "prev_high": 21.45,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.1
+    },
+    {
+      "code": "002294",
+      "name": "信立泰",
+      "pct_chg": 7.04,
+      "price": 41.37,
+      "prev_high": 40.08,
+      "prev_high_date": "2026-07-03",
+      "turnover": 5.91
     },
     {
       "code": "002303",
       "name": "美盈森",
-      "pct_chg": 4.36,
-      "price": 4.55,
-      "prev_high": 4.53,
-      "prev_high_date": "2026-07-10",
-      "turnover": 6.05
+      "pct_chg": 0.6,
+      "price": 5.04,
+      "prev_high": 5.01,
+      "prev_high_date": "2026-07-15",
+      "turnover": 15.02
+    },
+    {
+      "code": "002311",
+      "name": "海大集团",
+      "pct_chg": 3.03,
+      "price": 47.92,
+      "prev_high": 47.16,
+      "prev_high_date": "2026-07-06",
+      "turnover": 0.95
+    },
+    {
+      "code": "002315",
+      "name": "焦点科技",
+      "pct_chg": 5.73,
+      "price": 25.1,
+      "prev_high": 24.93,
+      "prev_high_date": "2026-06-16",
+      "turnover": 6.38
     },
     {
       "code": "002321",
       "name": "华英农业",
-      "pct_chg": 1.07,
-      "price": 1.89,
-      "prev_high": 1.88,
-      "prev_high_date": "2026-07-10",
-      "turnover": 1.28
+      "pct_chg": 0.0,
+      "price": 1.92,
+      "prev_high": 1.92,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.26
     },
     {
       "code": "002329",
       "name": "皇氏集团",
-      "pct_chg": 7.41,
+      "pct_chg": 0.58,
       "price": 3.48,
-      "prev_high": 3.47,
-      "prev_high_date": "2026-07-07",
-      "turnover": 9.89
+      "prev_high": 3.48,
+      "prev_high_date": "2026-07-14",
+      "turnover": 6.3
+    },
+    {
+      "code": "002330",
+      "name": "得利斯",
+      "pct_chg": 2.36,
+      "price": 3.91,
+      "prev_high": 3.82,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.05
+    },
+    {
+      "code": "002332",
+      "name": "仙琚制药",
+      "pct_chg": 1.15,
+      "price": 8.81,
+      "prev_high": 8.71,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.19
+    },
+    {
+      "code": "002343",
+      "name": "慈文传媒",
+      "pct_chg": 5.97,
+      "price": 4.97,
+      "prev_high": 4.92,
+      "prev_high_date": "2026-06-16",
+      "turnover": 6.7
     },
     {
       "code": "002349",
       "name": "精华制药",
-      "pct_chg": 1.79,
-      "price": 6.82,
-      "prev_high": 6.7,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.15
+      "pct_chg": 1.45,
+      "price": 7.01,
+      "prev_high": 6.91,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.45
     },
     {
-      "code": "002379",
-      "name": "宏桥控股",
-      "pct_chg": 10.0,
-      "price": 17.49,
-      "prev_high": 17.36,
-      "prev_high_date": "2026-06-22",
-      "turnover": 9.74
+      "code": "002365",
+      "name": "永安药业",
+      "pct_chg": 10.02,
+      "price": 13.18,
+      "prev_high": 11.98,
+      "prev_high_date": "2026-07-15",
+      "turnover": 10.52
+    },
+    {
+      "code": "002385",
+      "name": "大北农",
+      "pct_chg": 1.97,
+      "price": 3.1,
+      "prev_high": 3.04,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.68
     },
     {
       "code": "002390",
       "name": "信邦制药",
-      "pct_chg": 3.83,
-      "price": 2.98,
-      "prev_high": 2.88,
-      "prev_high_date": "2026-06-15",
-      "turnover": 2.02
+      "pct_chg": 2.28,
+      "price": 3.14,
+      "prev_high": 3.07,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.29
+    },
+    {
+      "code": "002393",
+      "name": "力生制药",
+      "pct_chg": 1.18,
+      "price": 15.46,
+      "prev_high": 15.28,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.66
     },
     {
       "code": "002399",
       "name": "海普瑞",
-      "pct_chg": 2.18,
-      "price": 9.86,
-      "prev_high": 9.65,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.54
+      "pct_chg": 2.47,
+      "price": 10.36,
+      "prev_high": 10.11,
+      "prev_high_date": "2026-07-15",
+      "turnover": 0.72
     },
     {
       "code": "002422",
       "name": "科伦药业",
-      "pct_chg": 8.26,
-      "price": 48.5,
-      "prev_high": 47.98,
-      "prev_high_date": "2026-07-03",
-      "turnover": 4.87
+      "pct_chg": 1.69,
+      "price": 49.9,
+      "prev_high": 49.07,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.91
     },
     {
-      "code": "002479",
-      "name": "富春环保",
-      "pct_chg": 3.89,
-      "price": 5.07,
-      "prev_high": 4.88,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.17
+      "code": "002437",
+      "name": "誉衡药业",
+      "pct_chg": 0.96,
+      "price": 3.17,
+      "prev_high": 3.14,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.47
     },
     {
       "code": "002481",
       "name": "双塔食品",
-      "pct_chg": 3.23,
-      "price": 4.16,
-      "prev_high": 4.05,
-      "prev_high_date": "2026-07-02",
-      "turnover": 1.54
+      "pct_chg": 1.19,
+      "price": 4.27,
+      "prev_high": 4.22,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.26
     },
     {
-      "code": "002490",
-      "name": "山东墨龙",
-      "pct_chg": 9.56,
-      "price": 9.05,
-      "prev_high": 8.26,
-      "prev_high_date": "2026-07-13",
-      "turnover": 19.96
+      "code": "002508",
+      "name": "老板电器",
+      "pct_chg": 1.25,
+      "price": 16.18,
+      "prev_high": 16.04,
+      "prev_high_date": "2026-06-16",
+      "turnover": 0.95
     },
     {
       "code": "002511",
       "name": "中顺洁柔",
-      "pct_chg": 1.57,
-      "price": 7.13,
-      "prev_high": 7.1,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.21
+      "pct_chg": 0.28,
+      "price": 7.27,
+      "prev_high": 7.25,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.33
     },
     {
-      "code": "002546",
-      "name": "新联电子",
-      "pct_chg": 5.75,
-      "price": 8.64,
-      "prev_high": 8.17,
-      "prev_high_date": "2026-07-13",
-      "turnover": 9.1
+      "code": "002548",
+      "name": "金新农",
+      "pct_chg": 0.96,
+      "price": 4.23,
+      "prev_high": 4.19,
+      "prev_high_date": "2026-07-10",
+      "turnover": 8.24
     },
     {
-      "code": "002550",
-      "name": "千红制药",
-      "pct_chg": 1.15,
-      "price": 7.02,
-      "prev_high": 6.94,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.06
+      "code": "002551",
+      "name": "尚荣医疗",
+      "pct_chg": 2.03,
+      "price": 3.01,
+      "prev_high": 2.95,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.08
     },
     {
-      "code": "002563",
-      "name": "森马服饰",
-      "pct_chg": 4.17,
-      "price": 5.74,
-      "prev_high": 5.72,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.92
+      "code": "002558",
+      "name": "巨人网络",
+      "pct_chg": 2.44,
+      "price": 30.28,
+      "prev_high": 29.56,
+      "prev_high_date": "2026-07-15",
+      "turnover": 10.48
+    },
+    {
+      "code": "002567",
+      "name": "唐人神",
+      "pct_chg": 1.33,
+      "price": 3.81,
+      "prev_high": 3.76,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.08
     },
     {
       "code": "002589",
       "name": "瑞康医药",
-      "pct_chg": 3.4,
-      "price": 2.74,
-      "prev_high": 2.72,
-      "prev_high_date": "2026-06-15",
-      "turnover": 3.65
+      "pct_chg": 0.71,
+      "price": 2.85,
+      "prev_high": 2.83,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.67
     },
     {
-      "code": "002603",
-      "name": "以岭药业",
-      "pct_chg": 4.13,
-      "price": 17.15,
-      "prev_high": 16.47,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.95
+      "code": "002594",
+      "name": "比亚迪",
+      "pct_chg": 2.59,
+      "price": 94.14,
+      "prev_high": 91.76,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.74
+    },
+    {
+      "code": "002626",
+      "name": "金达威",
+      "pct_chg": 1.6,
+      "price": 15.25,
+      "prev_high": 15.01,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.05
     },
     {
       "code": "002644",
       "name": "佛慈制药",
-      "pct_chg": 3.22,
-      "price": 7.69,
-      "prev_high": 7.56,
-      "prev_high_date": "2026-06-16",
-      "turnover": 1.75
+      "pct_chg": 1.53,
+      "price": 7.98,
+      "prev_high": 7.86,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.92
+    },
+    {
+      "code": "002653",
+      "name": "海思科",
+      "pct_chg": 6.83,
+      "price": 79.19,
+      "prev_high": 78.8,
+      "prev_high_date": "2026-07-02",
+      "turnover": 4.74
     },
     {
       "code": "002675",
       "name": "东诚药业",
-      "pct_chg": 1.79,
-      "price": 13.06,
-      "prev_high": 12.93,
+      "pct_chg": 0.15,
+      "price": 13.36,
+      "prev_high": 13.34,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.09
+    },
+    {
+      "code": "002688",
+      "name": "金河生物",
+      "pct_chg": 2.36,
+      "price": 5.2,
+      "prev_high": 5.09,
       "prev_high_date": "2026-07-06",
-      "turnover": 1.82
+      "turnover": 2.07
+    },
+    {
+      "code": "002697",
+      "name": "红旗连锁",
+      "pct_chg": 0.64,
+      "price": 4.69,
+      "prev_high": 4.66,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.58
+    },
+    {
+      "code": "002714",
+      "name": "牧原股份",
+      "pct_chg": 3.15,
+      "price": 40.9,
+      "prev_high": 39.65,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.98
+    },
+    {
+      "code": "002727",
+      "name": "一心堂",
+      "pct_chg": 3.41,
+      "price": 11.53,
+      "prev_high": 11.15,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.8
+    },
+    {
+      "code": "002728",
+      "name": "特一药业",
+      "pct_chg": 0.78,
+      "price": 10.27,
+      "prev_high": 10.19,
+      "prev_high_date": "2026-07-15",
+      "turnover": 9.85
     },
     {
       "code": "002737",
       "name": "葵花药业",
-      "pct_chg": 1.31,
-      "price": 13.12,
-      "prev_high": 12.95,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.28
+      "pct_chg": 2.75,
+      "price": 13.81,
+      "prev_high": 13.44,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.49
     },
     {
       "code": "002746",
       "name": "仙坛股份",
-      "pct_chg": 1.06,
-      "price": 5.73,
-      "prev_high": 5.67,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.33
+      "pct_chg": 2.38,
+      "price": 6.01,
+      "prev_high": 5.87,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.49
     },
     {
-      "code": "002774",
-      "name": "快意电梯",
-      "pct_chg": 6.09,
-      "price": 16.19,
-      "prev_high": 15.9,
-      "prev_high_date": "2026-07-10",
-      "turnover": 5.62
-    },
-    {
-      "code": "002821",
-      "name": "凯莱英",
-      "pct_chg": 7.63,
-      "price": 177.95,
-      "prev_high": 167.75,
-      "prev_high_date": "2026-06-29",
-      "turnover": 5.69
-    },
-    {
-      "code": "002901",
-      "name": "大博医疗",
-      "pct_chg": 2.97,
-      "price": 46.79,
-      "prev_high": 45.57,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.36
-    },
-    {
-      "code": "002907",
-      "name": "华森制药",
-      "pct_chg": 0.14,
-      "price": 14.52,
-      "prev_high": 14.5,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.34
-    },
-    {
-      "code": "002958",
-      "name": "青农商行",
-      "pct_chg": 1.41,
-      "price": 2.87,
-      "prev_high": 2.83,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.44
-    },
-    {
-      "code": "300009",
-      "name": "安科生物",
-      "pct_chg": 0.35,
-      "price": 8.59,
-      "prev_high": 8.56,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.88
-    },
-    {
-      "code": "300039",
-      "name": "上海凯宝",
-      "pct_chg": 3.46,
-      "price": 5.38,
-      "prev_high": 5.2,
-      "prev_high_date": "2026-07-13",
-      "turnover": 10.62
-    },
-    {
-      "code": "300069",
-      "name": "金利华电",
-      "pct_chg": 0.15,
-      "price": 40.16,
-      "prev_high": 40.1,
-      "prev_high_date": "2026-07-13",
-      "turnover": 20.24
-    },
-    {
-      "code": "300110",
-      "name": "华仁药业",
-      "pct_chg": 2.59,
-      "price": 2.77,
-      "prev_high": 2.7,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.52
-    },
-    {
-      "code": "300119",
-      "name": "瑞普生物",
-      "pct_chg": 1.52,
-      "price": 16.03,
-      "prev_high": 15.99,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.44
-    },
-    {
-      "code": "300142",
-      "name": "沃森生物",
-      "pct_chg": 1.97,
+      "code": "002780",
+      "name": "三夫户外",
+      "pct_chg": 1.89,
       "price": 13.46,
-      "prev_high": 13.35,
-      "prev_high_date": "2026-07-01",
-      "turnover": 6.03
-    },
-    {
-      "code": "300157",
-      "name": "新锦动力",
-      "pct_chg": 11.58,
-      "price": 4.24,
-      "prev_high": 4.18,
+      "prev_high": 13.41,
       "prev_high_date": "2026-06-16",
-      "turnover": 19.76
+      "turnover": 6.56
     },
     {
-      "code": "300158",
-      "name": "振东制药",
-      "pct_chg": 3.05,
-      "price": 5.07,
-      "prev_high": 5.06,
-      "prev_high_date": "2026-06-15",
-      "turnover": 2.65
-    },
-    {
-      "code": "300164",
-      "name": "通源石油",
-      "pct_chg": 20.04,
-      "price": 11.38,
-      "prev_high": 9.48,
-      "prev_high_date": "2026-07-13",
-      "turnover": 43.98
-    },
-    {
-      "code": "300171",
-      "name": "东富龙",
-      "pct_chg": 3.07,
-      "price": 12.07,
-      "prev_high": 11.82,
-      "prev_high_date": "2026-07-06",
-      "turnover": 2.79
-    },
-    {
-      "code": "300181",
-      "name": "佐力药业",
-      "pct_chg": 5.24,
-      "price": 14.87,
-      "prev_high": 14.39,
-      "prev_high_date": "2026-07-01",
-      "turnover": 7.11
-    },
-    {
-      "code": "300191",
-      "name": "潜能恒信",
-      "pct_chg": 18.23,
-      "price": 30.35,
-      "prev_high": 30.0,
-      "prev_high_date": "2026-06-16",
-      "turnover": 16.73
-    },
-    {
-      "code": "300194",
-      "name": "福安药业",
-      "pct_chg": 1.9,
-      "price": 3.75,
-      "prev_high": 3.68,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.56
-    },
-    {
-      "code": "300214",
-      "name": "日科化学",
-      "pct_chg": 8.94,
-      "price": 13.4,
-      "prev_high": 12.3,
-      "prev_high_date": "2026-07-13",
-      "turnover": 20.12
-    },
-    {
-      "code": "300287",
-      "name": "飞利信",
-      "pct_chg": 4.12,
-      "price": 4.3,
-      "prev_high": 4.13,
-      "prev_high_date": "2026-07-13",
-      "turnover": 9.86
-    },
-    {
-      "code": "300298",
-      "name": "三诺生物",
-      "pct_chg": 3.61,
-      "price": 15.22,
-      "prev_high": 14.99,
-      "prev_high_date": "2026-07-03",
-      "turnover": 2.86
-    },
-    {
-      "code": "300318",
-      "name": "博晖创新",
-      "pct_chg": 5.69,
-      "price": 4.83,
-      "prev_high": 4.58,
+      "code": "002788",
+      "name": "鹭燕医药",
+      "pct_chg": 9.82,
+      "price": 12.3,
+      "prev_high": 11.36,
       "prev_high_date": "2026-06-23",
-      "turnover": 3.35
+      "turnover": 16.0
     },
     {
-      "code": "300332",
-      "name": "天壕能源",
-      "pct_chg": 6.46,
-      "price": 5.11,
-      "prev_high": 4.8,
-      "prev_high_date": "2026-07-13",
-      "turnover": 9.74
-    },
-    {
-      "code": "300404",
-      "name": "博济医药",
-      "pct_chg": 4.85,
-      "price": 9.94,
-      "prev_high": 9.49,
-      "prev_high_date": "2026-07-06",
-      "turnover": 9.24
-    },
-    {
-      "code": "300439",
-      "name": "美康生物",
-      "pct_chg": 2.21,
-      "price": 8.77,
-      "prev_high": 8.63,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.54
-    },
-    {
-      "code": "300463",
-      "name": "迈克生物",
-      "pct_chg": 1.47,
-      "price": 8.97,
-      "prev_high": 8.94,
-      "prev_high_date": "2026-07-10",
-      "turnover": 1.97
-    },
-    {
-      "code": "300511",
-      "name": "雪榕生物",
-      "pct_chg": 3.24,
-      "price": 5.73,
-      "prev_high": 5.68,
-      "prev_high_date": "2026-07-06",
-      "turnover": 4.67
-    },
-    {
-      "code": "300532",
-      "name": "今天国际",
-      "pct_chg": 20.07,
-      "price": 7.3,
-      "prev_high": 6.86,
-      "prev_high_date": "2026-06-15",
-      "turnover": 9.28
-    },
-    {
-      "code": "300534",
-      "name": "陇神戎发",
-      "pct_chg": 16.33,
-      "price": 10.47,
-      "prev_high": 9.0,
-      "prev_high_date": "2026-07-13",
-      "turnover": 29.87
-    },
-    {
-      "code": "300592",
-      "name": "华凯易佰",
-      "pct_chg": 8.87,
-      "price": 19.02,
-      "prev_high": 18.74,
-      "prev_high_date": "2026-07-10",
-      "turnover": 6.38
-    },
-    {
-      "code": "300601",
-      "name": "康泰生物",
-      "pct_chg": 2.78,
-      "price": 12.21,
-      "prev_high": 11.97,
-      "prev_high_date": "2026-07-06",
-      "turnover": 2.64
-    },
-    {
-      "code": "300654",
-      "name": "世纪天鸿",
-      "pct_chg": 5.46,
-      "price": 10.82,
-      "prev_high": 10.38,
-      "prev_high_date": "2026-07-10",
-      "turnover": 6.8
-    },
-    {
-      "code": "300705",
-      "name": "九典制药",
-      "pct_chg": 3.14,
-      "price": 10.83,
-      "prev_high": 10.77,
-      "prev_high_date": "2026-07-06",
-      "turnover": 3.64
-    },
-    {
-      "code": "300712",
-      "name": "永福股份",
-      "pct_chg": 1.35,
-      "price": 23.27,
-      "prev_high": 23.03,
+      "code": "002847",
+      "name": "盐津铺子",
+      "pct_chg": 5.34,
+      "price": 50.35,
+      "prev_high": 50.32,
       "prev_high_date": "2026-06-16",
-      "turnover": 1.16
+      "turnover": 3.03
     },
     {
-      "code": "300725",
-      "name": "药石科技",
-      "pct_chg": 6.49,
-      "price": 41.0,
-      "prev_high": 38.5,
-      "prev_high_date": "2026-07-13",
-      "turnover": 12.37
-    },
-    {
-      "code": "300759",
-      "name": "康龙化成",
-      "pct_chg": 8.36,
-      "price": 36.93,
-      "prev_high": 34.08,
-      "prev_high_date": "2026-07-13",
-      "turnover": 8.87
-    },
-    {
-      "code": "300761",
-      "name": "立华股份",
-      "pct_chg": 0.32,
-      "price": 19.14,
-      "prev_high": 19.08,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.82
-    },
-    {
-      "code": "300791",
-      "name": "仙乐健康",
-      "pct_chg": 4.9,
-      "price": 17.35,
-      "prev_high": 17.29,
+      "code": "002852",
+      "name": "道道全",
+      "pct_chg": 1.56,
+      "price": 7.81,
+      "prev_high": 7.7,
       "prev_high_date": "2026-06-23",
-      "turnover": 1.34
+      "turnover": 1.55
     },
     {
-      "code": "300929",
-      "name": "华骐环保",
-      "pct_chg": 5.51,
-      "price": 14.56,
-      "prev_high": 13.8,
-      "prev_high_date": "2026-07-13",
-      "turnover": 9.77
+      "code": "002864",
+      "name": "盘龙药业",
+      "pct_chg": 4.37,
+      "price": 31.99,
+      "prev_high": 30.65,
+      "prev_high_date": "2026-07-15",
+      "turnover": 11.89
     },
     {
-      "code": "300937",
-      "name": "药易购",
-      "pct_chg": 20.01,
-      "price": 23.21,
-      "prev_high": 21.37,
-      "prev_high_date": "2026-06-15",
-      "turnover": 16.85
+      "code": "002867",
+      "name": "周大生",
+      "pct_chg": 2.58,
+      "price": 12.73,
+      "prev_high": 12.41,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.51
     },
     {
-      "code": "300990",
-      "name": "同飞股份",
-      "pct_chg": 14.69,
-      "price": 120.41,
-      "prev_high": 111.0,
-      "prev_high_date": "2026-06-24",
-      "turnover": 19.82
+      "code": "002873",
+      "name": "新天药业",
+      "pct_chg": 3.18,
+      "price": 8.43,
+      "prev_high": 8.17,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.21
     },
     {
-      "code": "600007",
-      "name": "中国国贸",
-      "pct_chg": 1.83,
-      "price": 20.05,
-      "prev_high": 19.81,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.21
+      "code": "002891",
+      "name": "中宠股份",
+      "pct_chg": 3.28,
+      "price": 29.58,
+      "prev_high": 28.69,
+      "prev_high_date": "2026-06-16",
+      "turnover": 5.96
     },
     {
-      "code": "600018",
-      "name": "上港集团",
-      "pct_chg": 1.76,
-      "price": 5.19,
-      "prev_high": 5.1,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.46
+      "code": "002900",
+      "name": "哈三联",
+      "pct_chg": 8.22,
+      "price": 12.11,
+      "prev_high": 11.19,
+      "prev_high_date": "2026-07-15",
+      "turnover": 20.92
     },
     {
-      "code": "600025",
-      "name": "华能水电",
-      "pct_chg": 0.0,
-      "price": 9.81,
-      "prev_high": 9.81,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.24
+      "code": "002905",
+      "name": "金逸影视",
+      "pct_chg": 4.56,
+      "price": 7.79,
+      "prev_high": 7.47,
+      "prev_high_date": "2026-07-10",
+      "turnover": 3.54
     },
     {
-      "code": "600028",
-      "name": "中国石化",
-      "pct_chg": 3.07,
-      "price": 5.03,
-      "prev_high": 4.88,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.45
+      "code": "002923",
+      "name": "润都股份",
+      "pct_chg": 0.17,
+      "price": 11.83,
+      "prev_high": 11.81,
+      "prev_high_date": "2026-07-15",
+      "turnover": 10.74
     },
     {
-      "code": "600056",
-      "name": "中国医药",
-      "pct_chg": 1.28,
-      "price": 9.5,
-      "prev_high": 9.38,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.09
-    },
-    {
-      "code": "600073",
-      "name": "光明肉业",
-      "pct_chg": 0.59,
-      "price": 5.09,
-      "prev_high": 5.09,
+      "code": "002926",
+      "name": "华西证券",
+      "pct_chg": 0.35,
+      "price": 8.56,
+      "prev_high": 8.54,
       "prev_high_date": "2026-07-06",
       "turnover": 0.78
     },
     {
-      "code": "600085",
-      "name": "同仁堂",
-      "pct_chg": 0.9,
-      "price": 24.75,
-      "prev_high": 24.53,
-      "prev_high_date": "2026-07-13",
+      "code": "002958",
+      "name": "青农商行",
+      "pct_chg": 0.68,
+      "price": 2.97,
+      "prev_high": 2.95,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.31
+    },
+    {
+      "code": "002991",
+      "name": "甘源食品",
+      "pct_chg": 1.09,
+      "price": 42.75,
+      "prev_high": 42.29,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.79
+    },
+    {
+      "code": "002998",
+      "name": "优彩资源",
+      "pct_chg": 5.57,
+      "price": 7.77,
+      "prev_high": 7.65,
+      "prev_high_date": "2026-07-02",
+      "turnover": 13.15
+    },
+    {
+      "code": "300003",
+      "name": "乐普医疗",
+      "pct_chg": 1.06,
+      "price": 13.28,
+      "prev_high": 13.14,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.82
+    },
+    {
+      "code": "300015",
+      "name": "爱尔眼科",
+      "pct_chg": 1.46,
+      "price": 9.01,
+      "prev_high": 8.88,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.02
+    },
+    {
+      "code": "300026",
+      "name": "红日药业",
+      "pct_chg": 0.0,
+      "price": 3.43,
+      "prev_high": 3.43,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.83
+    },
+    {
+      "code": "300030",
+      "name": "阳普医疗",
+      "pct_chg": 2.77,
+      "price": 6.67,
+      "prev_high": 6.49,
+      "prev_high_date": "2026-07-15",
+      "turnover": 4.56
+    },
+    {
+      "code": "300039",
+      "name": "上海凯宝",
+      "pct_chg": 5.61,
+      "price": 5.65,
+      "prev_high": 5.38,
+      "prev_high_date": "2026-07-14",
+      "turnover": 10.2
+    },
+    {
+      "code": "300070",
+      "name": "碧水源",
+      "pct_chg": 0.0,
+      "price": 3.5,
+      "prev_high": 3.5,
+      "prev_high_date": "2026-07-15",
       "turnover": 1.29
     },
     {
-      "code": "600211",
-      "name": "西藏药业",
-      "pct_chg": 1.39,
-      "price": 39.3,
-      "prev_high": 39.03,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.94
-    },
-    {
-      "code": "600236",
-      "name": "桂冠电力",
-      "pct_chg": 4.42,
-      "price": 9.93,
-      "prev_high": 9.81,
-      "prev_high_date": "2026-06-17",
-      "turnover": 0.26
-    },
-    {
-      "code": "600252",
-      "name": "中恒集团",
-      "pct_chg": 7.88,
-      "price": 2.19,
-      "prev_high": 2.05,
-      "prev_high_date": "2026-06-15",
-      "turnover": 5.01
-    },
-    {
-      "code": "600267",
-      "name": "海正药业",
-      "pct_chg": 2.29,
-      "price": 11.59,
-      "prev_high": 11.33,
-      "prev_high_date": "2026-07-13",
-      "turnover": 5.36
-    },
-    {
-      "code": "600269",
-      "name": "赣粤高速",
-      "pct_chg": 0.24,
-      "price": 4.15,
-      "prev_high": 4.14,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.73
-    },
-    {
-      "code": "600272",
-      "name": "开开实业",
-      "pct_chg": 4.53,
-      "price": 11.3,
-      "prev_high": 11.11,
-      "prev_high_date": "2026-07-03",
-      "turnover": 3.64
-    },
-    {
-      "code": "600285",
-      "name": "羚锐制药",
-      "pct_chg": 0.18,
-      "price": 22.7,
-      "prev_high": 22.66,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.86
-    },
-    {
-      "code": "600288",
-      "name": "大恒科技",
-      "pct_chg": 3.25,
-      "price": 17.18,
-      "prev_high": 17.11,
-      "prev_high_date": "2026-07-08",
-      "turnover": 22.18
-    },
-    {
-      "code": "600327",
-      "name": "大东方",
-      "pct_chg": 2.65,
-      "price": 3.49,
-      "prev_high": 3.48,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.64
-    },
-    {
-      "code": "600329",
-      "name": "达仁堂",
-      "pct_chg": 2.5,
-      "price": 39.39,
-      "prev_high": 38.43,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.18
-    },
-    {
-      "code": "600332",
-      "name": "白云山",
-      "pct_chg": 0.73,
-      "price": 22.06,
-      "prev_high": 21.9,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.07
-    },
-    {
-      "code": "600333",
-      "name": "长春燃气",
-      "pct_chg": 2.36,
-      "price": 5.63,
-      "prev_high": 5.58,
-      "prev_high_date": "2026-07-10",
-      "turnover": 1.72
-    },
-    {
-      "code": "600351",
-      "name": "亚宝药业",
-      "pct_chg": 2.19,
-      "price": 6.54,
-      "prev_high": 6.4,
-      "prev_high_date": "2026-07-13",
-      "turnover": 3.49
-    },
-    {
-      "code": "600354",
-      "name": "敦煌种业",
-      "pct_chg": 9.96,
-      "price": 5.41,
-      "prev_high": 5.33,
-      "prev_high_date": "2026-06-15",
-      "turnover": 6.06
-    },
-    {
-      "code": "600368",
-      "name": "五洲交通",
-      "pct_chg": 4.07,
-      "price": 3.84,
-      "prev_high": 3.69,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.57
-    },
-    {
-      "code": "600380",
-      "name": "健康元",
-      "pct_chg": 1.58,
-      "price": 10.26,
-      "prev_high": 10.25,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.2
-    },
-    {
-      "code": "600422",
-      "name": "昆药集团",
-      "pct_chg": 1.48,
-      "price": 8.91,
-      "prev_high": 8.78,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.98
-    },
-    {
-      "code": "600428",
-      "name": "中远海特",
-      "pct_chg": 7.74,
-      "price": 10.58,
-      "prev_high": 9.82,
-      "prev_high_date": "2026-07-13",
-      "turnover": 7.53
-    },
-    {
-      "code": "600436",
-      "name": "片仔癀",
-      "pct_chg": 0.83,
-      "price": 126.62,
-      "prev_high": 125.58,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.95
-    },
-    {
-      "code": "600461",
-      "name": "洪城环境",
-      "pct_chg": 0.22,
-      "price": 9.27,
-      "prev_high": 9.25,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.9
-    },
-    {
-      "code": "600479",
-      "name": "千金药业",
-      "pct_chg": 1.76,
-      "price": 9.83,
-      "prev_high": 9.71,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.98
-    },
-    {
-      "code": "600488",
-      "name": "津药药业",
-      "pct_chg": 7.47,
-      "price": 6.47,
-      "prev_high": 6.02,
-      "prev_high_date": "2026-07-13",
-      "turnover": 16.94
-    },
-    {
-      "code": "600511",
-      "name": "国药股份",
-      "pct_chg": 1.73,
-      "price": 27.66,
-      "prev_high": 27.43,
-      "prev_high_date": "2026-06-23",
-      "turnover": 1.24
-    },
-    {
-      "code": "600513",
-      "name": "联环药业",
-      "pct_chg": 4.58,
-      "price": 17.82,
-      "prev_high": 17.04,
-      "prev_high_date": "2026-07-13",
-      "turnover": 17.76
-    },
-    {
-      "code": "600521",
-      "name": "华海药业",
-      "pct_chg": 0.77,
-      "price": 16.97,
-      "prev_high": 16.84,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.96
-    },
-    {
-      "code": "600523",
-      "name": "贵航股份",
-      "pct_chg": 2.21,
-      "price": 11.57,
-      "prev_high": 11.5,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.49
-    },
-    {
-      "code": "600535",
-      "name": "天士力",
-      "pct_chg": 1.46,
-      "price": 14.59,
-      "prev_high": 14.53,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.36
-    },
-    {
-      "code": "600566",
-      "name": "济川药业",
-      "pct_chg": 2.6,
-      "price": 25.25,
-      "prev_high": 25.22,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.92
-    },
-    {
-      "code": "600572",
-      "name": "康恩贝",
-      "pct_chg": 1.43,
-      "price": 4.25,
-      "prev_high": 4.19,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.88
-    },
-    {
-      "code": "600594",
-      "name": "益佰制药",
-      "pct_chg": 2.06,
-      "price": 3.47,
-      "prev_high": 3.4,
-      "prev_high_date": "2026-07-13",
-      "turnover": 3.84
-    },
-    {
-      "code": "600613",
-      "name": "神奇制药",
-      "pct_chg": 3.74,
-      "price": 4.99,
-      "prev_high": 4.88,
-      "prev_high_date": "2026-06-23",
-      "turnover": 3.77
-    },
-    {
-      "code": "600621",
-      "name": "华鑫股份",
-      "pct_chg": 0.8,
-      "price": 13.91,
-      "prev_high": 13.8,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.08
-    },
-    {
-      "code": "600664",
-      "name": "哈药股份",
-      "pct_chg": 9.97,
-      "price": 4.08,
-      "prev_high": 3.71,
-      "prev_high_date": "2026-07-13",
-      "turnover": 17.48
-    },
-    {
-      "code": "600673",
-      "name": "东阳光",
-      "pct_chg": 1.31,
-      "price": 38.75,
-      "prev_high": 38.34,
-      "prev_high_date": "2026-07-09",
-      "turnover": 3.08
-    },
-    {
-      "code": "600676",
-      "name": "交运股份",
-      "pct_chg": 3.0,
-      "price": 7.22,
-      "prev_high": 7.06,
+      "code": "300086",
+      "name": "康芝药业",
+      "pct_chg": 3.5,
+      "price": 6.81,
+      "prev_high": 6.71,
       "prev_high_date": "2026-07-02",
-      "turnover": 1.58
+      "turnover": 10.92
     },
     {
-      "code": "600713",
-      "name": "南京医药",
-      "pct_chg": 5.08,
-      "price": 5.38,
-      "prev_high": 5.17,
-      "prev_high_date": "2026-07-06",
+      "code": "300110",
+      "name": "华仁药业",
+      "pct_chg": 0.71,
+      "price": 2.84,
+      "prev_high": 2.82,
+      "prev_high_date": "2026-07-15",
       "turnover": 3.14
     },
     {
-      "code": "600750",
-      "name": "华润江中",
-      "pct_chg": 0.28,
-      "price": 24.77,
-      "prev_high": 24.7,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.03
+      "code": "300119",
+      "name": "瑞普生物",
+      "pct_chg": 0.92,
+      "price": 16.44,
+      "prev_high": 16.29,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.39
     },
     {
-      "code": "600771",
-      "name": "广誉远",
-      "pct_chg": 0.33,
-      "price": 15.1,
-      "prev_high": 15.05,
-      "prev_high_date": "2026-07-13",
-      "turnover": 3.27
+      "code": "300122",
+      "name": "智飞生物",
+      "pct_chg": 3.85,
+      "price": 12.96,
+      "prev_high": 12.61,
+      "prev_high_date": "2026-06-17",
+      "turnover": 3.24
     },
     {
-      "code": "600782",
-      "name": "新钢股份",
-      "pct_chg": 3.46,
-      "price": 2.69,
-      "prev_high": 2.67,
-      "prev_high_date": "2026-06-15",
-      "turnover": 1.68
-    },
-    {
-      "code": "600812",
-      "name": "华北制药",
-      "pct_chg": 2.12,
-      "price": 4.82,
-      "prev_high": 4.72,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.01
-    },
-    {
-      "code": "600829",
-      "name": "人民同泰",
-      "pct_chg": 10.04,
-      "price": 8.99,
-      "prev_high": 8.49,
-      "prev_high_date": "2026-06-16",
-      "turnover": 1.99
-    },
-    {
-      "code": "600833",
-      "name": "第一医药",
-      "pct_chg": 3.0,
-      "price": 9.95,
-      "prev_high": 9.93,
-      "prev_high_date": "2026-06-23",
-      "turnover": 2.37
-    },
-    {
-      "code": "600882",
-      "name": "妙可蓝多",
-      "pct_chg": 2.6,
-      "price": 20.52,
-      "prev_high": 20.0,
-      "prev_high_date": "2026-07-13",
-      "turnover": 3.64
-    },
-    {
-      "code": "600886",
-      "name": "国投电力",
-      "pct_chg": 1.79,
-      "price": 14.23,
-      "prev_high": 13.98,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.61
-    },
-    {
-      "code": "600900",
-      "name": "长江电力",
-      "pct_chg": 0.46,
-      "price": 28.55,
-      "prev_high": 28.42,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.65
-    },
-    {
-      "code": "600918",
-      "name": "中泰证券",
-      "pct_chg": 1.62,
-      "price": 5.64,
-      "prev_high": 5.55,
-      "prev_high_date": "2026-07-13",
-      "turnover": 2.31
-    },
-    {
-      "code": "600928",
-      "name": "西安银行",
-      "pct_chg": 0.57,
-      "price": 3.52,
-      "prev_high": 3.5,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.57
-    },
-    {
-      "code": "600988",
-      "name": "赤峰黄金",
-      "pct_chg": 8.1,
-      "price": 34.95,
-      "prev_high": 32.84,
-      "prev_high_date": "2026-07-10",
-      "turnover": 5.16
-    },
-    {
-      "code": "600998",
-      "name": "九州通",
-      "pct_chg": 2.96,
-      "price": 5.21,
-      "prev_high": 5.06,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.53
-    },
-    {
-      "code": "601000",
-      "name": "唐山港",
-      "pct_chg": 3.1,
-      "price": 4.33,
-      "prev_high": 4.31,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.6
-    },
-    {
-      "code": "601002",
-      "name": "晋亿实业",
-      "pct_chg": 2.89,
-      "price": 4.99,
-      "prev_high": 4.91,
-      "prev_high_date": "2026-06-15",
-      "turnover": 6.87
-    },
-    {
-      "code": "601077",
-      "name": "渝农商行",
-      "pct_chg": 1.52,
-      "price": 6.69,
-      "prev_high": 6.67,
-      "prev_high_date": "2026-06-16",
-      "turnover": 0.88
-    },
-    {
-      "code": "601088",
-      "name": "中国神华",
-      "pct_chg": 1.8,
-      "price": 43.42,
-      "prev_high": 42.65,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.31
-    },
-    {
-      "code": "601162",
-      "name": "天风证券",
-      "pct_chg": 0.79,
-      "price": 3.84,
-      "prev_high": 3.81,
-      "prev_high_date": "2026-07-13",
-      "turnover": 3.81
-    },
-    {
-      "code": "601169",
-      "name": "北京银行",
-      "pct_chg": 1.01,
-      "price": 5.01,
-      "prev_high": 4.96,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.71
-    },
-    {
-      "code": "601225",
-      "name": "陕西煤业",
-      "pct_chg": 2.5,
-      "price": 24.55,
-      "prev_high": 24.35,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.66
-    },
-    {
-      "code": "601333",
-      "name": "广深铁路",
+      "code": "300138",
+      "name": "晨光生物",
       "pct_chg": 0.68,
-      "price": 2.98,
-      "prev_high": 2.98,
-      "prev_high_date": "2026-07-08",
-      "turnover": 1.12
+      "price": 10.37,
+      "prev_high": 10.3,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.51
     },
     {
-      "code": "601339",
-      "name": "百隆东方",
-      "pct_chg": 4.99,
-      "price": 7.79,
-      "prev_high": 7.42,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.32
+      "code": "300142",
+      "name": "沃森生物",
+      "pct_chg": 1.45,
+      "price": 13.99,
+      "prev_high": 13.79,
+      "prev_high_date": "2026-07-15",
+      "turnover": 7.22
     },
     {
-      "code": "601607",
-      "name": "上海医药",
-      "pct_chg": 1.72,
-      "price": 16.61,
-      "prev_high": 16.45,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.85
+      "code": "300143",
+      "name": "盈康生命",
+      "pct_chg": 6.35,
+      "price": 7.7,
+      "prev_high": 7.25,
+      "prev_high_date": "2026-06-24",
+      "turnover": 3.79
     },
     {
-      "code": "601628",
-      "name": "中国人寿",
-      "pct_chg": 2.62,
-      "price": 38.72,
-      "prev_high": 38.16,
-      "prev_high_date": "2026-07-01",
-      "turnover": 0.27
+      "code": "300149",
+      "name": "睿智医药",
+      "pct_chg": 6.74,
+      "price": 11.09,
+      "prev_high": 10.39,
+      "prev_high_date": "2026-07-15",
+      "turnover": 27.21
     },
     {
-      "code": "601827",
-      "name": "三峰环境",
-      "pct_chg": 0.38,
-      "price": 7.91,
-      "prev_high": 7.88,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.62
+      "code": "300158",
+      "name": "振东制药",
+      "pct_chg": 0.96,
+      "price": 5.25,
+      "prev_high": 5.2,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.37
     },
     {
-      "code": "601857",
-      "name": "中国石油",
-      "pct_chg": 3.52,
-      "price": 10.0,
-      "prev_high": 9.88,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.2
+      "code": "300168",
+      "name": "万达信息",
+      "pct_chg": 2.29,
+      "price": 4.91,
+      "prev_high": 4.89,
+      "prev_high_date": "2026-06-16",
+      "turnover": 1.95
     },
     {
-      "code": "601919",
-      "name": "中远海控",
-      "pct_chg": 2.05,
-      "price": 14.41,
-      "prev_high": 14.12,
-      "prev_high_date": "2026-07-13",
-      "turnover": 0.76
+      "code": "300171",
+      "name": "东富龙",
+      "pct_chg": 0.56,
+      "price": 12.5,
+      "prev_high": 12.43,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.87
     },
     {
-      "code": "601968",
-      "name": "宝钢包装",
-      "pct_chg": 5.02,
-      "price": 4.39,
-      "prev_high": 4.36,
-      "prev_high_date": "2026-06-15",
+      "code": "300194",
+      "name": "福安药业",
+      "pct_chg": 1.3,
+      "price": 3.89,
+      "prev_high": 3.84,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.21
+    },
+    {
+      "code": "300204",
+      "name": "舒泰神",
+      "pct_chg": 5.41,
+      "price": 27.68,
+      "prev_high": 26.26,
+      "prev_high_date": "2026-07-15",
+      "turnover": 19.9
+    },
+    {
+      "code": "300231",
+      "name": "银信科技",
+      "pct_chg": 10.79,
+      "price": 10.06,
+      "prev_high": 9.08,
+      "prev_high_date": "2026-07-15",
+      "turnover": 18.89
+    },
+    {
+      "code": "300233",
+      "name": "金城医药",
+      "pct_chg": 0.07,
+      "price": 13.93,
+      "prev_high": 13.92,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.36
+    },
+    {
+      "code": "300244",
+      "name": "迪安诊断",
+      "pct_chg": 3.17,
+      "price": 21.18,
+      "prev_high": 20.53,
+      "prev_high_date": "2026-07-15",
+      "turnover": 13.1
+    },
+    {
+      "code": "300251",
+      "name": "光线传媒",
+      "pct_chg": 9.52,
+      "price": 13.57,
+      "prev_high": 12.75,
+      "prev_high_date": "2026-07-10",
+      "turnover": 7.38
+    },
+    {
+      "code": "300254",
+      "name": "仟源医药",
+      "pct_chg": 4.62,
+      "price": 9.29,
+      "prev_high": 9.28,
+      "prev_high_date": "2026-06-16",
+      "turnover": 14.57
+    },
+    {
+      "code": "300255",
+      "name": "常山药业",
+      "pct_chg": 10.45,
+      "price": 31.7,
+      "prev_high": 29.37,
+      "prev_high_date": "2026-06-16",
+      "turnover": 12.87
+    },
+    {
+      "code": "300298",
+      "name": "三诺生物",
+      "pct_chg": 2.11,
+      "price": 15.95,
+      "prev_high": 15.62,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.6
+    },
+    {
+      "code": "300314",
+      "name": "戴维医疗",
+      "pct_chg": 3.11,
+      "price": 10.27,
+      "prev_high": 9.96,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.14
+    },
+    {
+      "code": "300315",
+      "name": "掌趣科技",
+      "pct_chg": 2.72,
+      "price": 4.16,
+      "prev_high": 4.12,
+      "prev_high_date": "2026-06-22",
+      "turnover": 4.15
+    },
+    {
+      "code": "300318",
+      "name": "博晖创新",
+      "pct_chg": 2.88,
+      "price": 5.0,
+      "prev_high": 4.86,
+      "prev_high_date": "2026-07-15",
       "turnover": 2.06
     },
     {
-      "code": "603053",
-      "name": "成都燃气",
-      "pct_chg": 1.27,
-      "price": 8.76,
-      "prev_high": 8.73,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.22
+      "code": "300347",
+      "name": "泰格医药",
+      "pct_chg": 4.03,
+      "price": 53.99,
+      "prev_high": 51.9,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.63
     },
     {
-      "code": "603065",
-      "name": "宿迁联盛",
-      "pct_chg": 10.0,
-      "price": 23.54,
-      "prev_high": 21.91,
-      "prev_high_date": "2026-07-08",
-      "turnover": 12.98
+      "code": "300357",
+      "name": "我武生物",
+      "pct_chg": 4.75,
+      "price": 25.79,
+      "prev_high": 24.62,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.48
     },
     {
-      "code": "603087",
-      "name": "甘李药业",
-      "pct_chg": 7.18,
-      "price": 70.0,
-      "prev_high": 67.09,
-      "prev_high_date": "2026-07-06",
-      "turnover": 4.03
+      "code": "300381",
+      "name": "溢多利",
+      "pct_chg": 1.66,
+      "price": 6.12,
+      "prev_high": 6.1,
+      "prev_high_date": "2026-06-23",
+      "turnover": 1.99
     },
     {
-      "code": "603127",
-      "name": "昭衍新药",
-      "pct_chg": 7.0,
-      "price": 46.02,
-      "prev_high": 43.22,
-      "prev_high_date": "2026-07-10",
-      "turnover": 10.96
+      "code": "300404",
+      "name": "博济医药",
+      "pct_chg": 5.27,
+      "price": 10.79,
+      "prev_high": 10.25,
+      "prev_high_date": "2026-07-15",
+      "turnover": 17.71
     },
     {
-      "code": "603137",
-      "name": "恒尚节能",
-      "pct_chg": 9.99,
-      "price": 32.37,
-      "prev_high": 29.43,
-      "prev_high_date": "2026-07-13",
-      "turnover": 20.18
+      "code": "300406",
+      "name": "九强生物",
+      "pct_chg": 1.02,
+      "price": 11.85,
+      "prev_high": 11.73,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.54
     },
     {
-      "code": "603162",
-      "name": "海通发展",
-      "pct_chg": 6.13,
-      "price": 10.74,
-      "prev_high": 10.3,
-      "prev_high_date": "2026-06-15",
-      "turnover": 16.08
+      "code": "300413",
+      "name": "芒果超媒",
+      "pct_chg": 3.64,
+      "price": 15.65,
+      "prev_high": 15.63,
+      "prev_high_date": "2026-06-16",
+      "turnover": 2.76
     },
     {
-      "code": "603207",
-      "name": "小方制药",
-      "pct_chg": 1.74,
-      "price": 23.98,
-      "prev_high": 23.76,
-      "prev_high_date": "2026-07-06",
-      "turnover": 3.6
+      "code": "300426",
+      "name": "华智数媒",
+      "pct_chg": 13.94,
+      "price": 6.05,
+      "prev_high": 5.7,
+      "prev_high_date": "2026-06-16",
+      "turnover": 8.24
     },
     {
-      "code": "603233",
-      "name": "大参林",
-      "pct_chg": 8.85,
-      "price": 19.68,
-      "prev_high": 18.08,
-      "prev_high_date": "2026-07-13",
-      "turnover": 1.74
+      "code": "300439",
+      "name": "美康生物",
+      "pct_chg": 1.34,
+      "price": 9.04,
+      "prev_high": 8.92,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.93
     },
     {
-      "code": "603235",
-      "name": "天新药业",
-      "pct_chg": 2.18,
-      "price": 23.42,
-      "prev_high": 23.42,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.13
-    },
-    {
-      "code": "603259",
-      "name": "药明康德",
-      "pct_chg": 6.05,
-      "price": 127.51,
-      "prev_high": 126.17,
-      "prev_high_date": "2026-06-29",
-      "turnover": 3.04
-    },
-    {
-      "code": "603309",
-      "name": "维力医疗",
-      "pct_chg": 2.97,
-      "price": 12.14,
-      "prev_high": 12.13,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.44
-    },
-    {
-      "code": "603313",
-      "name": "梦百合",
-      "pct_chg": 7.51,
-      "price": 8.59,
-      "prev_high": 7.99,
-      "prev_high_date": "2026-07-13",
-      "turnover": 14.79
-    },
-    {
-      "code": "603367",
-      "name": "辰欣药业",
-      "pct_chg": 9.98,
-      "price": 15.1,
-      "prev_high": 14.01,
-      "prev_high_date": "2026-07-03",
-      "turnover": 5.46
-    },
-    {
-      "code": "603387",
-      "name": "基蛋生物",
-      "pct_chg": 1.57,
-      "price": 8.39,
-      "prev_high": 8.33,
-      "prev_high_date": "2026-07-06",
-      "turnover": 1.88
-    },
-    {
-      "code": "603391",
-      "name": "力聚热能",
+      "code": "300452",
+      "name": "山河药辅",
       "pct_chg": 1.64,
-      "price": 59.57,
-      "prev_high": 58.61,
-      "prev_high_date": "2026-07-13",
-      "turnover": 8.63
+      "price": 13.0,
+      "prev_high": 12.79,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.03
     },
     {
-      "code": "603519",
-      "name": "立霸股份",
-      "pct_chg": 1.21,
-      "price": 15.03,
-      "prev_high": 14.93,
-      "prev_high_date": "2026-07-01",
-      "turnover": 3.98
+      "code": "300454",
+      "name": "深信服",
+      "pct_chg": 3.49,
+      "price": 112.6,
+      "prev_high": 111.24,
+      "prev_high_date": "2026-07-10",
+      "turnover": 7.96
     },
     {
-      "code": "603538",
-      "name": "美诺华",
-      "pct_chg": 7.42,
-      "price": 35.45,
-      "prev_high": 33.0,
-      "prev_high_date": "2026-07-13",
-      "turnover": 31.48
+      "code": "300463",
+      "name": "迈克生物",
+      "pct_chg": 2.18,
+      "price": 9.39,
+      "prev_high": 9.19,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.62
     },
     {
-      "code": "603569",
-      "name": "长久物流",
-      "pct_chg": 2.17,
-      "price": 5.66,
-      "prev_high": 5.65,
-      "prev_high_date": "2026-06-15",
-      "turnover": 0.71
+      "code": "300485",
+      "name": "赛升药业",
+      "pct_chg": 3.46,
+      "price": 10.45,
+      "prev_high": 10.1,
+      "prev_high_date": "2026-07-15",
+      "turnover": 9.2
     },
     {
-      "code": "603577",
-      "name": "汇金通",
-      "pct_chg": 10.01,
-      "price": 10.0,
-      "prev_high": 9.86,
-      "prev_high_date": "2026-07-03",
-      "turnover": 2.84
-    },
-    {
-      "code": "603580",
-      "name": "艾艾精工",
-      "pct_chg": 10.01,
-      "price": 33.75,
-      "prev_high": 30.68,
+      "code": "300498",
+      "name": "温氏股份",
+      "pct_chg": 4.33,
+      "price": 14.22,
+      "prev_high": 13.73,
       "prev_high_date": "2026-07-06",
-      "turnover": 0.47
+      "turnover": 1.82
     },
     {
-      "code": "603590",
-      "name": "康辰药业",
-      "pct_chg": 4.54,
-      "price": 35.96,
-      "prev_high": 34.4,
-      "prev_high_date": "2026-07-13",
-      "turnover": 4.93
+      "code": "300519",
+      "name": "新光药业",
+      "pct_chg": 3.32,
+      "price": 14.62,
+      "prev_high": 14.15,
+      "prev_high_date": "2026-07-15",
+      "turnover": 12.96
     },
     {
-      "code": "603609",
-      "name": "禾丰股份",
-      "pct_chg": 1.7,
+      "code": "300528",
+      "name": "幸福蓝海",
+      "pct_chg": 5.89,
+      "price": 17.99,
+      "prev_high": 16.99,
+      "prev_high_date": "2026-07-15",
+      "turnover": 14.53
+    },
+    {
+      "code": "300529",
+      "name": "健帆生物",
+      "pct_chg": 3.69,
+      "price": 17.7,
+      "prev_high": 17.07,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.41
+    },
+    {
+      "code": "300532",
+      "name": "今天国际",
+      "pct_chg": 2.6,
+      "price": 7.51,
+      "prev_high": 7.32,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.33
+    },
+    {
+      "code": "300534",
+      "name": "陇神戎发",
+      "pct_chg": 7.22,
+      "price": 11.58,
+      "prev_high": 10.8,
+      "prev_high_date": "2026-07-15",
+      "turnover": 32.28
+    },
+    {
+      "code": "300583",
+      "name": "赛托生物",
+      "pct_chg": 2.9,
+      "price": 12.77,
+      "prev_high": 12.41,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.65
+    },
+    {
+      "code": "300595",
+      "name": "欧普康视",
+      "pct_chg": 2.69,
+      "price": 11.46,
+      "prev_high": 11.19,
+      "prev_high_date": "2026-06-17",
+      "turnover": 2.61
+    },
+    {
+      "code": "300601",
+      "name": "康泰生物",
+      "pct_chg": 1.42,
+      "price": 12.85,
+      "prev_high": 12.67,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.95
+    },
+    {
+      "code": "300633",
+      "name": "开立医疗",
+      "pct_chg": 2.86,
+      "price": 19.77,
+      "prev_high": 19.6,
+      "prev_high_date": "2026-07-06",
+      "turnover": 2.99
+    },
+    {
+      "code": "300636",
+      "name": "同和药业",
+      "pct_chg": 1.87,
+      "price": 7.09,
+      "prev_high": 7.03,
+      "prev_high_date": "2026-06-23",
+      "turnover": 2.33
+    },
+    {
+      "code": "300638",
+      "name": "广和通",
+      "pct_chg": 13.75,
+      "price": 20.68,
+      "prev_high": 20.59,
+      "prev_high_date": "2026-06-16",
+      "turnover": 10.69
+    },
+    {
+      "code": "300639",
+      "name": "凯普生物",
+      "pct_chg": 0.0,
+      "price": 5.57,
+      "prev_high": 5.57,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.82
+    },
+    {
+      "code": "300642",
+      "name": "透景生命",
+      "pct_chg": 1.72,
+      "price": 13.6,
+      "prev_high": 13.37,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.31
+    },
+    {
+      "code": "300654",
+      "name": "世纪天鸿",
+      "pct_chg": 3.46,
+      "price": 11.36,
+      "prev_high": 10.98,
+      "prev_high_date": "2026-07-15",
+      "turnover": 6.91
+    },
+    {
+      "code": "300676",
+      "name": "华大基因",
+      "pct_chg": 1.77,
+      "price": 38.03,
+      "prev_high": 37.37,
+      "prev_high_date": "2026-07-15",
+      "turnover": 3.0
+    },
+    {
+      "code": "300683",
+      "name": "海特生物",
+      "pct_chg": 4.41,
+      "price": 30.8,
+      "prev_high": 29.5,
+      "prev_high_date": "2026-07-15",
+      "turnover": 18.47
+    },
+    {
+      "code": "300685",
+      "name": "艾德生物",
+      "pct_chg": 0.97,
+      "price": 18.75,
+      "prev_high": 18.57,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.81
+    },
+    {
+      "code": "300705",
+      "name": "九典制药",
+      "pct_chg": 2.41,
+      "price": 11.46,
+      "prev_high": 11.19,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.13
+    },
+    {
+      "code": "300723",
+      "name": "一品红",
+      "pct_chg": 2.27,
+      "price": 41.85,
+      "prev_high": 41.29,
+      "prev_high_date": "2026-07-03",
+      "turnover": 5.72
+    },
+    {
+      "code": "300725",
+      "name": "药石科技",
+      "pct_chg": 1.98,
+      "price": 41.81,
+      "prev_high": 41.0,
+      "prev_high_date": "2026-07-15",
+      "turnover": 14.66
+    },
+    {
+      "code": "300760",
+      "name": "迈瑞医疗",
+      "pct_chg": 2.95,
+      "price": 150.31,
+      "prev_high": 146.0,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.75
+    },
+    {
+      "code": "300761",
+      "name": "立华股份",
+      "pct_chg": 2.57,
+      "price": 19.98,
+      "prev_high": 19.48,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.24
+    },
+    {
+      "code": "300783",
+      "name": "三只松鼠",
+      "pct_chg": 0.58,
+      "price": 17.26,
+      "prev_high": 17.16,
+      "prev_high_date": "2026-07-15",
+      "turnover": 2.98
+    },
+    {
+      "code": "300805",
+      "name": "电声股份",
+      "pct_chg": 19.97,
+      "price": 8.83,
+      "prev_high": 8.08,
+      "prev_high_date": "2026-06-16",
+      "turnover": 15.04
+    },
+    {
+      "code": "300832",
+      "name": "新产业",
+      "pct_chg": 2.44,
+      "price": 45.0,
+      "prev_high": 44.3,
+      "prev_high_date": "2026-07-03",
+      "turnover": 1.14
+    },
+    {
+      "code": "300888",
+      "name": "稳健医疗",
+      "pct_chg": 4.74,
+      "price": 30.7,
+      "prev_high": 29.31,
+      "prev_high_date": "2026-07-15",
+      "turnover": 1.59
+    },
+    {
+      "code": "300896",
+      "name": "爱美客",
+      "pct_chg": 3.39,
+      "price": 97.54,
+      "prev_high": 94.34,
+      "prev_high_date": "2026-07-15",
+      "turnover": 5.09
+    },
+    {
+      "code": "300929",
+      "name": "华骐环保",
+      "pct_chg": 2.87,
+      "price": 15.43,
+      "prev_high": 15.0,
+      "prev_high_date": "2026-07-15",
+      "turnover": 10.02
+    },
+    {
+      "code": "300942",
+      "name": "易瑞生物",
+      "pct_chg": 3.14,
       "price": 6.57,
-      "prev_high": 6.5,
-      "prev_high_date": "2026-07-10",
-      "turnover": 0.46
-    },
-    {
-      "code": "603648",
-      "name": "畅联股份",
-      "pct_chg": 2.88,
-      "price": 9.65,
-      "prev_high": 9.43,
-      "prev_high_date": "2026-07-10",
-      "turnover": 1.01
-    },
-    {
-      "code": "603669",
-      "name": "灵康药业",
-      "pct_chg": 8.82,
-      "price": 7.4,
-      "prev_high": 6.8,
-      "prev_high_date": "2026-07-13",
-      "turnover": 14.27
-    },
-    {
-      "code": "603676",
-      "name": "卫信康",
-      "pct_chg": 2.26,
-      "price": 9.05,
-      "prev_high": 9.01,
-      "prev_high_date": "2026-07-06",
-      "turnover": 0.71
-    },
-    {
-      "code": "603700",
-      "name": "宁水集团",
-      "pct_chg": 3.1,
-      "price": 11.64,
-      "prev_high": 11.61,
-      "prev_high_date": "2026-06-30",
-      "turnover": 2.09
-    },
-    {
-      "code": "603707",
-      "name": "健友股份",
-      "pct_chg": 2.88,
-      "price": 7.85,
-      "prev_high": 7.64,
+      "prev_high": 6.57,
       "prev_high_date": "2026-07-03",
-      "turnover": 1.27
-    },
-    {
-      "code": "603858",
-      "name": "步长制药",
-      "pct_chg": 1.47,
-      "price": 15.88,
-      "prev_high": 15.75,
-      "prev_high_date": "2026-07-08",
-      "turnover": 0.93
+      "turnover": 2.8
     }
   ],
   "note": "数据源: akshare stock_rank_cxg_ths(), 板块分析需neodata支持"

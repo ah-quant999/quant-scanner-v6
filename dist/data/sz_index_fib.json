@@ -1,15 +1,15 @@
 {
   "current": {
-    "index": 14924.87,
+    "index": 14779.4,
     "change_pct": 0,
     "change_points": 0,
-    "days_down": 17,
-    "total_pct": -8.84,
-    "total_points": -1447.63,
-    "avg_pct": 0.52,
+    "days_down": 18,
+    "total_pct": -9.73,
+    "total_points": -1593.1,
+    "avg_pct": 0.54,
     "peak_date": "20260622",
     "peak_close": 16372.5,
-    "date": "2026-07-15",
+    "date": "2026-07-16",
     "mode": "阴跌磨底"
   },
   "windows": [
@@ -17,56 +17,56 @@
       "name": "F(3)",
       "date": "2026-05-25",
       "desc": "小反弹窗口",
-      "days_left": -51,
+      "days_left": -52,
       "status": "passed"
     },
     {
       "name": "F(5)",
       "date": "2026-05-27",
       "desc": "短期变盘",
-      "days_left": -49,
+      "days_left": -50,
       "status": "passed"
     },
     {
       "name": "F(8)",
       "date": "2026-05-30",
       "desc": "8日变盘",
-      "days_left": -46,
+      "days_left": -47,
       "status": "passed"
     },
     {
       "name": "F(13)",
       "date": "2026-06-04",
       "desc": "13日重要窗口",
-      "days_left": -41,
+      "days_left": -42,
       "status": "passed"
     },
     {
       "name": "F(21)",
       "date": "2026-06-12",
       "desc": "21日大窗口",
-      "days_left": -33,
+      "days_left": -34,
       "status": "passed"
     },
     {
       "name": "F(34)",
       "date": "2026-06-25",
       "desc": "34日中期窗口",
-      "days_left": -20,
+      "days_left": -21,
       "status": "passed"
     },
     {
       "name": "F(55)",
       "date": "2026-07-16",
       "desc": "55日长期窗口",
-      "days_left": 1,
+      "days_left": 0,
       "status": "active"
     }
   ],
   "next_cycle": [],
   "judgement": {
-    "summary": "从20260622高点跌17天（-8.84%），阴跌磨底",
+    "summary": "从20260622高点跌18天（-9.73%），阴跌磨底",
     "key_window": ""
   },
-  "update_time": "2026-07-15 09:13"
+  "update_time": "2026-07-16 15:37"
 }

@@ -1,17 +1,26 @@
 {
-  "update_time": "2026-07-15 09:12",
+  "update_time": "2026-07-16 17:27",
   "data_type": "real",
   "summary": {
     "in_count": 40,
     "out_count": 0,
-    "in_text": "融资融券(528.9亿)、深股通(347.8亿)、共封装光学(CPO)(247.7亿)、人民币贬值受益(232.4亿)、数据中心(AIDC)(213.8亿)",
+    "in_text": "抖音概念(字节概念)(39.3亿)、华为海思概念股(34.4亿)、虚拟数字人(29.4亿)、AI智能体(28.5亿)、信创(27.9亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 融资融券+528.9亿(连4天)、深股通+347.8亿(连3天)、共封装光学(CPO)+247.7亿(连5天)"
+    "alert": "🔥 40个板块大幅流入；🚀 抖音概念(字节概念)+39.3亿(连2天)、华为海思概念股+34.4亿(连4天)、虚拟数字人+29.4亿(连3天)"
   },
   "sectors_in": [
     {
-      "name": "融资融券",
-      "net": 528.93,
+      "name": "抖音概念(字节概念)",
+      "net": 39.3,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "华为海思概念股",
+      "net": 34.42,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -19,8 +28,8 @@
       "trend": "in"
     },
     {
-      "name": "深股通",
-      "net": 347.84,
+      "name": "虚拟数字人",
+      "net": 29.35,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -28,89 +37,8 @@
       "trend": "in"
     },
     {
-      "name": "共封装光学(CPO)",
-      "net": 247.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "人民币贬值受益",
-      "net": 232.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "数据中心(AIDC)",
-      "net": 213.81,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "沪股通",
-      "net": 207.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "5G",
-      "net": 203.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "国企改革",
-      "net": 191.06,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "2026中报预增",
-      "net": 179.87,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "锂电池概念",
-      "net": 173.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "芯片概念",
-      "net": 171.21,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "新能源汽车",
-      "net": 140.73,
+      "name": "AI智能体",
+      "net": 28.48,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -118,8 +46,8 @@
       "trend": "in"
     },
     {
-      "name": "西部大开发",
-      "net": 137.75,
+      "name": "信创",
+      "net": 27.86,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -127,18 +55,26 @@
       "trend": "in"
     },
     {
-      "name": "通信设备",
-      "net": 131.56,
-      "net_5d": 395.85,
+      "name": "ChatGPT概念",
+      "net": 27.03,
+      "net_5d": 0,
       "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
+      "type": "概念",
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "小金属概念",
-      "net": 127.66,
+      "name": "百度概念",
+      "net": 23.51,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "AIGC概念",
+      "net": 23.37,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -146,72 +82,9 @@
       "trend": "in"
     },
     {
-      "name": "光伏概念",
-      "net": 121.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "一带一路",
-      "net": 114.93,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "PCB概念",
-      "net": 113.88,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "储能",
-      "net": 111.49,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "光纤概念",
-      "net": 99.83,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺出海50",
-      "net": 93.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "无人驾驶",
-      "net": 86.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "汽车电子",
-      "net": 83.95,
-      "net_5d": 559.08,
+      "name": "国家大基金持股",
+      "net": 22.55,
+      "net_5d": 312.23,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -219,8 +92,8 @@
       "trend": "in"
     },
     {
-      "name": "同花顺漂亮100",
-      "net": 82.91,
+      "name": "阿里巴巴概念",
+      "net": 22.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -228,8 +101,26 @@
       "trend": "in"
     },
     {
-      "name": "金属铜",
-      "net": 77.65,
+      "name": "短剧游戏",
+      "net": 21.82,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "Web3.0",
+      "net": 21.71,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "腾讯概念",
+      "net": 19.98,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -237,147 +128,265 @@
       "trend": "in"
     },
     {
-      "name": "同花顺新质50",
-      "net": 73.02,
-      "net_5d": 227.44,
+      "name": "智谱AI",
+      "net": 19.66,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "在线教育",
+      "net": 19.17,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒概念",
+      "net": 19.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "元宇宙",
+      "net": 17.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "超级品牌",
+      "net": 16.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "AI视频",
+      "net": 15.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "快手概念",
+      "net": 15.39,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "网红经济",
+      "net": 15.15,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "语音技术",
+      "net": 14.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 13.35,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "盐湖提锂",
+      "net": 11.93,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "鸿蒙概念",
+      "net": 10.53,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "多模态AI",
+      "net": 9.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "华为昇腾",
+      "net": 9.26,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "IP经济(谷子经济)",
+      "net": 8.76,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "消费电子",
+      "net": 8.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "MR(混合现实)",
+      "net": 8.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "移动支付",
+      "net": 7.78,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "华为鲲鹏",
+      "net": 7.6,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 7.43,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "网络游戏",
+      "net": 6.93,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "白酒",
+      "net": 6.66,
+      "net_5d": 35.7,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "猪肉",
+      "net": 6.48,
+      "net_5d": 38.06,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "华为概念",
-      "net": 72.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "黄金概念",
-      "net": 71.61,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "宁德时代概念",
-      "net": 71.34,
-      "net_5d": -948.69,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "液冷服务器",
-      "net": 68.92,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
       "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "F5G概念",
-      "net": 68.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "风电",
-      "net": 64.8,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "固态电池",
-      "net": 63.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 63.07,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "元件",
-      "net": 58.11,
+      "name": "汽车整车",
+      "net": 6.45,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
-      "consecutive_days": 4,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "粤港澳大湾区",
-      "net": 56.55,
+      "name": "AI语料",
+      "net": 6.33,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "2026一季报预增",
-      "net": 55.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "工业金属",
-      "net": 54.71,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
-      "name": "创投",
-      "net": 54.68,
+      "name": "华为盘古",
+      "net": 6.22,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "比亚迪概念",
-      "net": 53.38,
-      "net_5d": -1645.84,
+      "name": "小红书概念",
+      "net": 6.06,
+      "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 1,
       "trend": "in"
     }
   ],
   "sectors_out": [],
   "top_list": [
     {
-      "name": "融资融券",
-      "net": 528.93,
+      "name": "抖音概念(字节概念)",
+      "net": 39.3,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "华为海思概念股",
+      "net": 34.42,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -385,8 +394,8 @@
       "trend": "in"
     },
     {
-      "name": "深股通",
-      "net": 347.84,
+      "name": "虚拟数字人",
+      "net": 29.35,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -394,89 +403,8 @@
       "trend": "in"
     },
     {
-      "name": "共封装光学(CPO)",
-      "net": 247.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "人民币贬值受益",
-      "net": 232.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "数据中心(AIDC)",
-      "net": 213.81,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "沪股通",
-      "net": 207.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "5G",
-      "net": 203.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "国企改革",
-      "net": 191.06,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "2026中报预增",
-      "net": 179.87,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "锂电池概念",
-      "net": 173.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "芯片概念",
-      "net": 171.21,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "新能源汽车",
-      "net": 140.73,
+      "name": "AI智能体",
+      "net": 28.48,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -484,8 +412,8 @@
       "trend": "in"
     },
     {
-      "name": "西部大开发",
-      "net": 137.75,
+      "name": "信创",
+      "net": 27.86,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -493,18 +421,26 @@
       "trend": "in"
     },
     {
-      "name": "通信设备",
-      "net": 131.56,
-      "net_5d": 395.85,
+      "name": "ChatGPT概念",
+      "net": 27.03,
+      "net_5d": 0,
       "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
+      "type": "概念",
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "小金属概念",
-      "net": 127.66,
+      "name": "百度概念",
+      "net": 23.51,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "AIGC概念",
+      "net": 23.37,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -512,72 +448,9 @@
       "trend": "in"
     },
     {
-      "name": "光伏概念",
-      "net": 121.47,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "一带一路",
-      "net": 114.93,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "PCB概念",
-      "net": 113.88,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "储能",
-      "net": 111.49,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "光纤概念",
-      "net": 99.83,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺出海50",
-      "net": 93.4,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "无人驾驶",
-      "net": 86.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "汽车电子",
-      "net": 83.95,
-      "net_5d": 559.08,
+      "name": "国家大基金持股",
+      "net": 22.55,
+      "net_5d": 312.23,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -585,8 +458,8 @@
       "trend": "in"
     },
     {
-      "name": "同花顺漂亮100",
-      "net": 82.91,
+      "name": "阿里巴巴概念",
+      "net": 22.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -594,8 +467,26 @@
       "trend": "in"
     },
     {
-      "name": "金属铜",
-      "net": 77.65,
+      "name": "短剧游戏",
+      "net": 21.82,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "Web3.0",
+      "net": 21.71,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "腾讯概念",
+      "net": 19.98,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -603,301 +494,410 @@
       "trend": "in"
     },
     {
-      "name": "同花顺新质50",
-      "net": 73.02,
-      "net_5d": 227.44,
+      "name": "智谱AI",
+      "net": 19.66,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "在线教育",
+      "net": 19.17,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒概念",
+      "net": 19.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "元宇宙",
+      "net": 17.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "超级品牌",
+      "net": 16.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "AI视频",
+      "net": 15.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "快手概念",
+      "net": 15.39,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "网红经济",
+      "net": 15.15,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "语音技术",
+      "net": 14.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 13.35,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "盐湖提锂",
+      "net": 11.93,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "鸿蒙概念",
+      "net": 10.53,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "多模态AI",
+      "net": 9.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "华为昇腾",
+      "net": 9.26,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "IP经济(谷子经济)",
+      "net": 8.76,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "消费电子",
+      "net": 8.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "MR(混合现实)",
+      "net": 8.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "移动支付",
+      "net": 7.78,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "华为鲲鹏",
+      "net": 7.6,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 7.43,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "网络游戏",
+      "net": 6.93,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "白酒",
+      "net": 6.66,
+      "net_5d": 35.7,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "猪肉",
+      "net": 6.48,
+      "net_5d": 38.06,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "华为概念",
-      "net": 72.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "黄金概念",
-      "net": 71.61,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "宁德时代概念",
-      "net": 71.34,
-      "net_5d": -948.69,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "液冷服务器",
-      "net": 68.92,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
       "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "F5G概念",
-      "net": 68.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "风电",
-      "net": 64.8,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "固态电池",
-      "net": 63.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 63.07,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "元件",
-      "net": 58.11,
+      "name": "汽车整车",
+      "net": 6.45,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
-      "consecutive_days": 4,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "粤港澳大湾区",
-      "net": 56.55,
+      "name": "AI语料",
+      "net": 6.33,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "2026一季报预增",
-      "net": 55.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "工业金属",
-      "net": 54.71,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
-      "name": "创投",
-      "net": 54.68,
+      "name": "华为盘古",
+      "net": 6.22,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "比亚迪概念",
-      "net": 53.38,
-      "net_5d": -1645.84,
+      "name": "小红书概念",
+      "net": 6.06,
+      "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 1,
       "trend": "in"
     }
   ],
   "consecutive": {
-    "融资融券": {
-      "days": 4,
-      "trend": "in"
-    },
-    "深股通": {
-      "days": 3,
-      "trend": "in"
-    },
-    "共封装光学(CPO)": {
-      "days": 5,
-      "trend": "in"
-    },
-    "人民币贬值受益": {
-      "days": 5,
-      "trend": "in"
-    },
-    "数据中心(AIDC)": {
-      "days": 5,
-      "trend": "in"
-    },
-    "沪股通": {
-      "days": 5,
-      "trend": "in"
-    },
-    "5G": {
-      "days": 5,
-      "trend": "in"
-    },
-    "国企改革": {
+    "抖音概念(字节概念)": {
       "days": 2,
       "trend": "in"
     },
-    "2026中报预增": {
-      "days": 3,
-      "trend": "in"
-    },
-    "锂电池概念": {
-      "days": 3,
-      "trend": "in"
-    },
-    "芯片概念": {
-      "days": 5,
-      "trend": "in"
-    },
-    "新能源汽车": {
+    "华为海思概念股": {
       "days": 4,
       "trend": "in"
     },
-    "西部大开发": {
+    "虚拟数字人": {
+      "days": 3,
+      "trend": "in"
+    },
+    "AI智能体": {
+      "days": 4,
+      "trend": "in"
+    },
+    "信创": {
       "days": 2,
       "trend": "in"
     },
-    "通信设备": {
+    "ChatGPT概念": {
+      "days": 4,
+      "trend": "in"
+    },
+    "百度概念": {
+      "days": 4,
+      "trend": "in"
+    },
+    "AIGC概念": {
+      "days": 2,
+      "trend": "in"
+    },
+    "国家大基金持股": {
       "days": 6,
       "trend": "in"
     },
-    "小金属概念": {
+    "阿里巴巴概念": {
+      "days": 4,
+      "trend": "in"
+    },
+    "短剧游戏": {
       "days": 2,
       "trend": "in"
     },
-    "光伏概念": {
+    "Web3.0": {
+      "days": 2,
+      "trend": "in"
+    },
+    "腾讯概念": {
       "days": 3,
       "trend": "in"
     },
-    "一带一路": {
+    "智谱AI": {
+      "days": 2,
+      "trend": "in"
+    },
+    "在线教育": {
+      "days": 2,
+      "trend": "in"
+    },
+    "文化传媒概念": {
+      "days": 2,
+      "trend": "in"
+    },
+    "元宇宙": {
+      "days": 4,
+      "trend": "in"
+    },
+    "超级品牌": {
       "days": 3,
       "trend": "in"
     },
-    "PCB概念": {
+    "AI视频": {
+      "days": 2,
+      "trend": "in"
+    },
+    "快手概念": {
+      "days": 2,
+      "trend": "in"
+    },
+    "网红经济": {
+      "days": 1,
+      "trend": "in"
+    },
+    "语音技术": {
+      "days": 1,
+      "trend": "in"
+    },
+    "文化传媒": {
+      "days": 2,
+      "trend": "in"
+    },
+    "盐湖提锂": {
+      "days": 2,
+      "trend": "in"
+    },
+    "鸿蒙概念": {
+      "days": 2,
+      "trend": "in"
+    },
+    "多模态AI": {
       "days": 3,
       "trend": "in"
     },
-    "储能": {
+    "华为昇腾": {
+      "days": 2,
+      "trend": "in"
+    },
+    "IP经济(谷子经济)": {
       "days": 3,
       "trend": "in"
     },
-    "光纤概念": {
-      "days": 5,
+    "消费电子": {
+      "days": 2,
       "trend": "in"
     },
-    "同花顺出海50": {
-      "days": 3,
+    "MR(混合现实)": {
+      "days": 1,
       "trend": "in"
     },
-    "无人驾驶": {
-      "days": 5,
+    "移动支付": {
+      "days": 2,
       "trend": "in"
     },
-    "汽车电子": {
+    "华为鲲鹏": {
+      "days": 2,
+      "trend": "in"
+    },
+    "计算机设备": {
+      "days": 4,
+      "trend": "in"
+    },
+    "网络游戏": {
+      "days": 4,
+      "trend": "in"
+    },
+    "白酒": {
       "days": 6,
       "trend": "in"
     },
-    "同花顺漂亮100": {
-      "days": 4,
-      "trend": "in"
-    },
-    "金属铜": {
-      "days": 3,
-      "trend": "in"
-    },
-    "同花顺新质50": {
-      "days": 2,
-      "trend": "in"
-    },
-    "华为概念": {
-      "days": 4,
-      "trend": "in"
-    },
-    "黄金概念": {
-      "days": 3,
-      "trend": "in"
-    },
-    "宁德时代概念": {
-      "days": 2,
-      "trend": "in"
-    },
-    "液冷服务器": {
+    "猪肉": {
       "days": 5,
       "trend": "in"
     },
-    "F5G概念": {
-      "days": 4,
+    "汽车整车": {
+      "days": 1,
       "trend": "in"
     },
-    "风电": {
+    "AI语料": {
       "days": 2,
       "trend": "in"
     },
-    "固态电池": {
-      "days": 2,
+    "华为盘古": {
+      "days": 1,
       "trend": "in"
     },
-    "氢能源": {
-      "days": 2,
-      "trend": "in"
-    },
-    "元件": {
-      "days": 4,
-      "trend": "in"
-    },
-    "粤港澳大湾区": {
-      "days": 3,
-      "trend": "in"
-    },
-    "2026一季报预增": {
-      "days": 3,
-      "trend": "in"
-    },
-    "工业金属": {
-      "days": 2,
-      "trend": "in"
-    },
-    "创投": {
-      "days": 3,
-      "trend": "in"
-    },
-    "比亚迪概念": {
-      "days": 4,
+    "小红书概念": {
+      "days": 1,
       "trend": "in"
     }
   },
@@ -907,122 +907,120 @@
       "net": 171.21,
       "net_5d": 1193.89,
       "net_20d": 0,
+      "net_60d": null,
       "type": "概念",
       "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
     },
     {
       "name": "数据中心(AIDC)",
       "net": 213.81,
       "net_5d": 960.36,
       "net_20d": 0,
-      "type": "概念",
+      "net_60d": null,
+      "type": "行业",
       "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
     },
     {
       "name": "5G",
       "net": 203.4,
       "net_5d": 937.51,
       "net_20d": 0,
-      "type": "概念",
+      "net_60d": null,
+      "type": "行业",
       "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
     },
     {
       "name": "共封装光学(CPO)",
       "net": 247.66,
       "net_5d": 913.43,
       "net_20d": 0,
-      "type": "概念",
+      "net_60d": null,
+      "type": "行业",
       "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
     },
     {
       "name": "人民币贬值受益",
       "net": 232.45,
       "net_5d": 873.91,
       "net_20d": 0,
-      "type": "概念",
+      "net_60d": null,
+      "type": "行业",
       "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
     },
     {
       "name": "沪股通",
       "net": 207.45,
       "net_5d": 779.84,
       "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "半导体",
-      "net": 15.21,
-      "net_5d": 646.84,
-      "net_20d": 0,
       "net_60d": null,
       "type": "行业",
       "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "汽车电子",
-      "net": 83.95,
-      "net_5d": 583.5,
+      "name": "半导体",
+      "net": 55.95,
+      "net_5d": 637.67,
       "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
+      "net_60d": null,
+      "type": "行业",
       "consecutive_days": 6,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
+    },
+    {
+      "name": "汽车电子",
+      "net": 39.55,
+      "net_5d": 583.6,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "华为概念",
+      "net": 74.01,
+      "net_5d": 543.14,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "概念",
+      "consecutive_days": 5,
+      "trend": "in"
     },
     {
       "name": "通信设备",
       "net": 131.56,
       "net_5d": 486.18,
       "net_20d": 0,
+      "net_60d": null,
       "type": "行业",
-      "source": "本地累加",
       "consecutive_days": 6,
-      "trend": "in",
-      "net_60d": null
+      "trend": "in"
+    },
+    {
+      "name": "存储芯片",
+      "net": 32.89,
+      "net_5d": 483.44,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
     },
     {
       "name": "无人驾驶",
       "net": 86.48,
       "net_5d": 479.48,
       "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "消费电子概念",
-      "net": 12.58,
-      "net_5d": 441.17,
-      "net_20d": 0,
       "net_60d": null,
-      "type": "概念",
+      "type": "行业",
       "consecutive_days": 5,
       "trend": "in"
-    },
-    {
-      "name": "光纤概念",
-      "net": 99.83,
-      "net_5d": 431.44,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in",
-      "net_60d": null
     }
   ],
   "trend_20d": [],

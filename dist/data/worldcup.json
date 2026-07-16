@@ -1,13 +1,13 @@
 {
-  "update_time": "2026-07-15 08:22:44",
+  "update_time": "2026-07-14 07:25:52",
   "matchday": "⚽ 32强淘汰赛进行中",
   "status_note": "🔥 6月28日起32强淘汰赛正式开战",
   "qual_probs": {
     "A": {
       "墨西哥": 100.0,
-      "韩国": 86.9,
-      "捷克": 0.6,
-      "南非": 12.5
+      "韩国": 88.1,
+      "捷克": 0.7,
+      "南非": 11.2
     },
     "B": {
       "加拿大": 100.0,
@@ -23,8 +23,8 @@
     },
     "D": {
       "美国": 100.0,
-      "澳大利亚": 87.0,
-      "巴拉圭": 13.0,
+      "澳大利亚": 86.7,
+      "巴拉圭": 13.3,
       "土耳其": 0.0
     },
     "E": {
@@ -35,19 +35,19 @@
     },
     "F": {
       "荷兰": 100.0,
-      "日本": 97.1,
-      "瑞典": 2.9,
+      "日本": 96.8,
+      "瑞典": 3.2,
       "突尼斯": 0.0
     },
     "G": {
-      "埃及": 91.9,
-      "比利时": 81.2,
-      "伊朗": 16.1,
+      "埃及": 91.2,
+      "比利时": 80.9,
+      "伊朗": 17.1,
       "新西兰": 10.9
     },
     "H": {
-      "西班牙": 97.7,
-      "佛得角": 95.6,
+      "西班牙": 97.5,
+      "佛得角": 95.7,
       "乌拉圭": 3.8,
       "沙特": 2.9
     },
@@ -59,21 +59,21 @@
     },
     "J": {
       "阿根廷": 100.0,
-      "奥地利": 87.5,
+      "奥地利": 87.2,
       "约旦": 0.0,
-      "阿尔及利亚": 12.5
+      "阿尔及利亚": 12.8
     },
     "K": {
-      "哥伦比亚": 16.8,
-      "葡萄牙": 93.6,
-      "刚果金": 89.6,
+      "哥伦比亚": 16.9,
+      "葡萄牙": 93.9,
+      "刚果金": 89.3,
       "乌兹别克": 0.0
     },
     "L": {
       "英格兰": 100.0,
-      "加纳": 88.2,
+      "加纳": 87.6,
       "巴拿马": 0.0,
-      "克罗地亚": 11.8
+      "克罗地亚": 12.4
     }
   },
   "adj_eff": {
@@ -343,7 +343,7 @@
           "gf": 2,
           "ga": 2,
           "region": "AFC",
-          "qual_prob": 86.9,
+          "qual_prob": 88.1,
           "adj_gf": 2.1,
           "adj_ga": 3.8,
           "opp_strength": 7.0
@@ -356,7 +356,7 @@
           "gf": 2,
           "ga": 3,
           "region": "UEFA",
-          "qual_prob": 0.6,
+          "qual_prob": 0.7,
           "adj_gf": 2.3,
           "adj_ga": 5.8,
           "opp_strength": 4.0
@@ -369,7 +369,7 @@
           "gf": 1,
           "ga": 3,
           "region": "CAF",
-          "qual_prob": 12.5,
+          "qual_prob": 11.2,
           "adj_gf": 1.1,
           "adj_ga": 5.5,
           "opp_strength": 7.0
@@ -514,7 +514,7 @@
           "gf": 2,
           "ga": 2,
           "region": "AFC",
-          "qual_prob": 87.0,
+          "qual_prob": 86.7,
           "adj_gf": 2.0,
           "adj_ga": 3.5,
           "opp_strength": 6.0
@@ -527,7 +527,7 @@
           "gf": 2,
           "ga": 4,
           "region": "CONMEBOL",
-          "qual_prob": 13.0,
+          "qual_prob": 13.3,
           "adj_gf": 2.4,
           "adj_ga": 7.0,
           "opp_strength": 6.0
@@ -628,7 +628,7 @@
           "gf": 6,
           "ga": 2,
           "region": "AFC",
-          "qual_prob": 97.1,
+          "qual_prob": 96.8,
           "adj_gf": 6.5,
           "adj_ga": 3.7,
           "opp_strength": 4.0
@@ -641,7 +641,7 @@
           "gf": 6,
           "ga": 6,
           "region": "UEFA",
-          "qual_prob": 2.9,
+          "qual_prob": 3.2,
           "adj_gf": 6.3,
           "adj_ga": 11.2,
           "opp_strength": 4.0
@@ -672,7 +672,7 @@
           "gf": 4,
           "ga": 2,
           "region": "CAF",
-          "qual_prob": 91.9,
+          "qual_prob": 91.2,
           "adj_gf": 4.3,
           "adj_ga": 3.9,
           "opp_strength": 3.0
@@ -685,7 +685,7 @@
           "gf": 1,
           "ga": 1,
           "region": "UEFA",
-          "qual_prob": 81.2,
+          "qual_prob": 80.9,
           "adj_gf": 1.3,
           "adj_ga": 1.8,
           "opp_strength": 6.0
@@ -698,7 +698,7 @@
           "gf": 2,
           "ga": 2,
           "region": "AFC",
-          "qual_prob": 16.1,
+          "qual_prob": 17.1,
           "adj_gf": 2.1,
           "adj_ga": 3.9,
           "opp_strength": 3.0
@@ -729,7 +729,7 @@
           "gf": 4,
           "ga": 0,
           "region": "UEFA",
-          "qual_prob": 97.7,
+          "qual_prob": 97.5,
           "adj_gf": 4.3,
           "adj_ga": 0.0,
           "opp_strength": 3.0
@@ -742,7 +742,7 @@
           "gf": 2,
           "ga": 2,
           "region": "CAF",
-          "qual_prob": 95.6,
+          "qual_prob": 95.7,
           "adj_gf": 2.3,
           "adj_ga": 3.8,
           "opp_strength": 6.0
@@ -856,7 +856,7 @@
           "gf": 3,
           "ga": 3,
           "region": "UEFA",
-          "qual_prob": 87.5,
+          "qual_prob": 87.2,
           "adj_gf": 3.0,
           "adj_ga": 5.5,
           "opp_strength": 6.0
@@ -882,7 +882,7 @@
           "gf": 2,
           "ga": 4,
           "region": "CAF",
-          "qual_prob": 12.5,
+          "qual_prob": 12.8,
           "adj_gf": 2.0,
           "adj_ga": 7.3,
           "opp_strength": 6.0
@@ -900,7 +900,7 @@
           "gf": 3,
           "ga": 1,
           "region": "CONMEBOL",
-          "qual_prob": 16.8,
+          "qual_prob": 16.9,
           "adj_gf": 3.0,
           "adj_ga": 2.0,
           "opp_strength": 2.0
@@ -913,7 +913,7 @@
           "gf": 6,
           "ga": 1,
           "region": "UEFA",
-          "qual_prob": 93.6,
+          "qual_prob": 93.9,
           "adj_gf": 6.1,
           "adj_ga": 1.9,
           "opp_strength": 2.0
@@ -926,7 +926,7 @@
           "gf": 1,
           "ga": 1,
           "region": "CAF",
-          "qual_prob": 89.6,
+          "qual_prob": 89.3,
           "adj_gf": 1.3,
           "adj_ga": 1.8,
           "opp_strength": 8.0
@@ -970,7 +970,7 @@
           "gf": 1,
           "ga": 0,
           "region": "CAF",
-          "qual_prob": 88.2,
+          "qual_prob": 87.6,
           "adj_gf": 1.0,
           "adj_ga": 0.0,
           "opp_strength": 4.0
@@ -996,7 +996,7 @@
           "gf": 3,
           "ga": 4,
           "region": "UEFA",
-          "qual_prob": 11.8,
+          "qual_prob": 12.4,
           "adj_gf": 3.5,
           "adj_ga": 7.4,
           "opp_strength": 4.0
@@ -1792,13 +1792,13 @@
       "round": "半决赛",
       "home": "法国",
       "away": "西班牙",
-      "score": "0-2",
+      "score": "",
       "venue": "阿灵顿 · AT&T Stadium",
       "home_seed": 0,
       "away_seed": 0,
       "home_raw": "France",
       "away_raw": "Spain",
-      "finished": true
+      "finished": false
     },
     {
       "date": "Jul 15",
@@ -1842,16 +1842,20 @@
   ],
   "odds": [
     {
-      "n": "西班牙",
-      "prob": 55.1
+      "n": "法国",
+      "prob": 54.5
     },
     {
-      "n": "阿根廷",
-      "prob": 24.4
+      "n": "西班牙",
+      "prob": 32.9
     },
     {
       "n": "英格兰",
-      "prob": 20.5
+      "prob": 7.3
+    },
+    {
+      "n": "阿根廷",
+      "prob": 5.3
     }
   ],
   "all_teams": [
