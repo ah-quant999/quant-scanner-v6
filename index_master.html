@@ -929,9 +929,9 @@ tr:hover td { background: #fafbfc; }
         <div style="padding:14px 18px;font-size:13px;line-height:1.8;background:#fafbfc;" id="lhbPredictContent"></div>
       </div>
 
-      <!-- 💰 三方资金流向对比（位于机游共振·龙虎榜正下方，2026-07-16 审计：从 暂未上架 上架到预判信号） -->
+      <!-- 💰 四路资金流向对比（位于机游共振·龙虎榜正下方，2026-07-16 审计：从 暂未上架 上架到预判信号） -->
       <div id="capitalFlowCard" class="predict-card" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 三方资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
+        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
         <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
           <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
             <thead>
@@ -449412,10 +449412,13 @@ function renderLhbPredict() {
     timeEl.textContent = '更新于 ' + ft.text;
   }
 
-  // 三分组：机构独买 / 机游共振 / 游资独买（严格互斥）
-  var instStocks = stocks.filter(function(s){ return (s.inst_net_万||0) > 8000 && (s.yz_net_万||0) <= 8000; });
-  var yzStocks = stocks.filter(function(s){ return (s.yz_net_万||0) > 8000 && (s.inst_net_万||0) <= 8000; });
-  var resonance = stocks.filter(function(s){ return s.category === '纯共振'; });
+  // 四分组：机构独买 / 机游共振 / 游资独买 / 北向席位（严格互斥，每只股票只出现在一个块）
+  var instStocks = stocks.filter(function(s){ return (s.inst_net_万||0) > 8000 && (s.yz_net_万||0) <= 8000 && bxNet(s) <= 0; });
+  var yzStocks = stocks.filter(function(s){ return (s.yz_net_万||0) > 8000 && (s.inst_net_万||0) <= 8000 && bxNet(s) <= 0; });
+  var resonance = stocks.filter(function(s){ return s.category === '纯共振' && bxNet(s) <= 0; });
+
+  // 北向席位：仅保留纯北向（无机构/游资参与），避免与其他块重复
+  var bxStocks = stocks.filter(function(s){ return bxNet(s) > 0 && (s.inst_net_万||0) <= 8000 && (s.yz_net_万||0) <= 8000; });
 
   function formatNet(val_wan) {
     var yi = val_wan / 10000;
@@ -449500,15 +449503,14 @@ function renderLhbPredict() {
       '</div></div>';
   }
 
-  // 四色块（加北向席位）
-  var bxStocks = stocks.filter(function(s){ return bxNet(s) > 0; });
+  // 四色块（机构 / 机游共振 / 游资 / 北向席位，已严格互斥）
   h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">';
-  // 左1：机构净买入（底部含净卖出top5，显示北向加持徽章）
-  h += renderBlock(instStocks, function(s){ return s.inst_net_万; }, '机构净买入', '#e3f2fd', '#1565c0', '🏦', false, true, sellFooter);
-  // 左2：机游共振（显示游资别名 + 北向加持徽章）
-  h += renderBlock(resonance, function(s){ return (s.inst_net_万||0) + (s.yz_net_万||0); }, '机游共振', '#fff8e1', '#f57f17', '⚡', true, true);
-  // 左3：游资净买入（显示游资别名 + 北向加持徽章）
-  h += renderBlock(yzStocks, function(s){ return s.yz_net_万; }, '游资净买入', '#fce4ec', '#c62828', '🔥', true, true);
+  // 左1：机构净买入（底部含净卖出top5）
+  h += renderBlock(instStocks, function(s){ return s.inst_net_万; }, '机构净买入', '#e3f2fd', '#1565c0', '🏦', false, false, sellFooter);
+  // 左2：机游共振（显示游资别名）
+  h += renderBlock(resonance, function(s){ return (s.inst_net_万||0) + (s.yz_net_万||0); }, '机游共振', '#fff8e1', '#f57f17', '⚡', true, false);
+  // 左3：游资净买入（显示游资别名）
+  h += renderBlock(yzStocks, function(s){ return s.yz_net_万; }, '游资净买入', '#fce4ec', '#c62828', '🔥', true, false);
   // 右：北向席位净买入（从 seats.北向 计算，独立展示）
   h += renderBlock(bxStocks, function(s){ return bxNet(s); }, '🌎 北向席位净买入', '#ede7f6', '#4527a0', '🌎', false, false);
   h += '</div>';
@@ -450782,7 +450784,7 @@ var PAGE_CARDS = [
   {page:'🔮 预判信号', card:'🔥 涨停联动',        check:function(){var el=document.getElementById('limitUpHeatCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'📊 板块资金三合一', check:function(){var el=document.getElementById('sectorRotationContent'); return el && el.innerHTML.length > 100;}},
   {page:'🔮 预判信号', card:'🐉 龙虎榜监控',      check:function(){return !!(window.LHB_DATA&&window.LHB_DATA.update_time);}},
-  {page:'🔮 预判信号', card:'💰 三方资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
+  {page:'🔮 预判信号', card:'💰 四路资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'🌏 南向资金',        check:function(){return !!(window.NORTH_FUND_DATA&&window.NORTH_FUND_DATA.update_time);}},
   // ===== 金股观测页 =====
   {page:'⭐ 金股观测', card:'🌟 个股强烈关注',    check:function(){var el=document.getElementById('goldTable'); return el && el.innerHTML.length > 50;}},
@@ -451011,7 +451013,7 @@ function renderTripleSelectCard() {
   }
 }
 
-// 💰 三方资金流向对比渲染
+// 💰 四路资金流向对比渲染
 function renderCapitalFlowCard() {
   var d = window.CAPITAL_FLOW_DATA || {};
   var card = document.getElementById('capitalFlowCard');
@@ -451130,7 +451132,7 @@ function moveCardsToShelf() {
   if (typeof renderTripleSelectCard === 'function') {
     try { renderTripleSelectCard(); } catch(e) { console.warn('renderTripleSelectCard fail:', e); }
   }
-  // 💰 三方资金流向对比
+  // 💰 四路资金流向对比
   if (typeof renderCapitalFlowCard === 'function') {
     try { renderCapitalFlowCard(); } catch(e) { console.warn('renderCapitalFlowCard fail:', e); }
   }
