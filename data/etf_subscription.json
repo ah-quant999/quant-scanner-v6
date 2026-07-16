@@ -1,16 +1,10 @@
 {
   "sh": [
     {
-      "date": "4/23",
-      "date_raw": "2026-04-23",
-      "total_shares_bil": 3558.73,
-      "net_subscribe_bil": 0.0
-    },
-    {
       "date": "4/24",
       "date_raw": "2026-04-24",
       "total_shares_bil": 3533.04,
-      "net_subscribe_bil": -25.69
+      "net_subscribe_bil": 0.0
     },
     {
       "date": "4/27",
@@ -329,20 +323,20 @@
       "date_raw": "2026-07-14",
       "total_shares_bil": 2572.6,
       "net_subscribe_bil": 19.92
+    },
+    {
+      "date": "7/15",
+      "date_raw": "2026-07-15",
+      "total_shares_bil": 2495.51,
+      "net_subscribe_bil": -77.08
     }
   ],
   "sh_all": [
     {
-      "date": "4/23",
-      "date_raw": "2026-04-23",
-      "total_shares_bil": 19617.08,
-      "net_subscribe_bil": 0.0
-    },
-    {
       "date": "4/24",
       "date_raw": "2026-04-24",
       "total_shares_bil": 19573.04,
-      "net_subscribe_bil": -44.04
+      "net_subscribe_bil": 0.0
     },
     {
       "date": "4/27",
@@ -661,7 +655,13 @@
       "date_raw": "2026-07-14",
       "total_shares_bil": 19465.62,
       "net_subscribe_bil": 79.89
+    },
+    {
+      "date": "7/15",
+      "date_raw": "2026-07-15",
+      "total_shares_bil": 19491.41,
+      "net_subscribe_bil": 25.79
     }
   ],
-  "update_time": "2026-07-15 22:10"
+  "update_time": "2026-07-16 11:54"
 }
