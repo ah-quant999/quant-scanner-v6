@@ -367,11 +367,18 @@ def decide_cloud(now, build_stamp, build_err, is_trading_day, in_trading_hours,
     r = run_by_T.get(tstar_hm)
 
     if r is None:
+        # 无对应 run 对象：可能 GitHub schedule 延迟尚未创建 run，
+        # 但 build-stamp 是部署成功的铁证——若 build 已更新到本次计划时刻，
+        # 直接判 OK（不依赖 run 对象可见性，避免 75min 后误兜底）。
+        if build_dt and build_dt >= T_star:
+            return True, (f"计划部署 {T_star:%H:%M} 暂无对应 run 对象，"
+                          f"但 build-stamp {build_stamp} 已更新（部署成功铁证），OK"), extra
         overdue = (now - T_star).total_seconds() / 60.0
         if overdue < SCHEDULE_DELAY_GRACE_MIN:
-            return True, (f"计划部署 {T_star:%H:%M} 暂无对应 run（调度延迟/运行中），"
-                          f"已等 {overdue:.0f} 分钟（宽限 {SCHEDULE_DELAY_GRACE_MIN}），等待"),
-                          extra
+            return True, (
+                f"计划部署 {T_star:%H:%M} 暂无对应 run（调度延迟/运行中），"
+                f"已等 {overdue:.0f} 分钟（宽限 {SCHEDULE_DELAY_GRACE_MIN}），等待"
+            ), extra
         return False, (f"计划部署 {T_star:%H:%M} 已过期 {overdue:.0f} 分钟仍无任何 run，"
                        f"判定云端未触发，触发兜底"), extra
 
@@ -421,9 +428,10 @@ def _decide_by_schedule(now, build_stamp, build_dt, build_err,
                           f"云端最后部署 {build_stamp}，等待盘前部署"), extra
         if build_dt >= last_p:
             elapsed = (now - build_dt).total_seconds() / 60.0
-            return True, (f"云端 {build_stamp}（{elapsed:.0f} 分钟前）晚于计划 "
-                          f"{last_p:%H:%M}，部署正常，无漏跑（API 不可达，降级时刻表判断）"),
-                          extra
+            return True, (
+                f"云端 {build_stamp}（{elapsed:.0f} 分钟前）晚于计划 "
+                f"{last_p:%H:%M}，部署正常，无漏跑（API 不可达，降级时刻表判断）"
+            ), extra
         overdue = (now - last_p).total_seconds() / 60.0
         if overdue <= MISS_GRACE_MIN:
             return True, (f"计划 {last_p:%H:%M} 刚过 {overdue:.0f} 分钟（宽限 "
