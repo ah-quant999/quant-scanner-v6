@@ -102,6 +102,15 @@ jobs:
           echo "<<< update_data_v2.py end"
           echo "✅ 16:30 三卡片刷新完成"
 
+      # ─── 生成独立页(standalone) 随主站一起部署（修复 RISK-2：云端不再清空独立页）───
+      - name: "📱 生成独立页(standalone)"
+        continue-on-error: true
+        run: |
+          python extract_panels_v6.py
+          mkdir -p dist/standalone
+          cp -r standalone/*.html dist/standalone/ 2>/dev/null || true
+          echo "✅ standalone 已并入 dist/standalone/（与本地 deploy_now.py 产物一致）"
+
       - name: "🔍 16:30 — 部署前诊断"
         if: github.event.schedule == '30 8 * * 1-5'
         run: |

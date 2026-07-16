@@ -109,3 +109,8 @@ jobs:
         run: |
           echo "{\"time\":\"$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_data_fetch\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
           echo "✅ 17:31 数据抓取完成"
+
+      # ─── 云端心跳上报（证明云端数据抓取活跃，即使不部署前端）───
+      - name: "💓 上报云端心跳"
+        continue-on-error: true
+        run: python report_heartbeat.py --role cloud --mode cloud_data_fetch

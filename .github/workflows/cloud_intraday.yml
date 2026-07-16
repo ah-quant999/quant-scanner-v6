@@ -165,6 +165,15 @@ jobs:
           print("build-stamp =", stamp)
           PY
 
+      # ─── 生成独立页(standalone) 随主站一起部署（修复 RISK-2：云端不再清空独立页）───
+      - name: "📱 生成独立页(standalone)"
+        continue-on-error: true
+        run: |
+          python extract_panels_v6.py
+          mkdir -p dist/standalone
+          cp -r standalone/*.html dist/standalone/ 2>/dev/null || true
+          echo "✅ standalone 已并入 dist/standalone/（与本地 deploy_now.py 产物一致）"
+
       # ─── 部署到 GitHub Pages ───
       - name: "🚀 部署到 GitHub Pages"
         uses: peaceiris/actions-gh-pages@v3
