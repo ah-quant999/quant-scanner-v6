@@ -1088,7 +1088,6 @@ def main():
     inst_trade = load_json(os.path.join(DATA_DIR, "inst_trade.json"), {})
     overnight_brief = load_json(os.path.join(DATA_DIR, "overnight_timeline.json"), [])
     worldcup = load_json(os.path.join(DATA_DIR, "worldcup.json"), {})
-    lottery_data = load_json(os.path.join(DATA_DIR, "lottery_data.json"), {})
     crds_data    = load_json(os.path.join(DATA_DIR, "crds_result.json"), {})
     # 暂未上架 · 三重选股 / 金钻起涨（实验盯盘）
     experiment = {"today": {}, "history": {}}
@@ -1449,7 +1448,6 @@ def main():
         ("CFFEX_HOLDINGS", "window.CFFEX_HOLDINGS = ", "{", "}"),
         ("INST_TRADE",     "window.INST_TRADE = ",     "{", "}"),
         ("WORLD_CUP",     "window.WORLD_CUP = ",      "{", "}"),
-        ("LOTTERY_DATA",  "window.LOTTERY_DATA = ",   "{", "}"),
         ("LIMIT_UP_HEATMAP","window.LIMIT_UP_HEATMAP = ","{", "}"),
         ("W52_HIGH",      "window.W52_HIGH = ",       "{", "}"),
         ("ANALYST_RATINGS", "window.ANALYST_RATINGS = ", "{", "}"),
@@ -1534,7 +1532,7 @@ def main():
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
-                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, lottery_data, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, capital_flow, ops_status]
+                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, worldcup, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, capital_flow, ops_status]
     replacements = []
 
     for (name, marker, open_ch, close_ch), data in zip(markers, data_objs):
