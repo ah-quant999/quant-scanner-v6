@@ -35,7 +35,8 @@ jobs:
           cache: 'pip'
 
       - name: 安装依赖
-        run: pip install -r requirements.txt
+        continue-on-error: true
+        run: pip install -r requirements.txt || echo "⚠️ 依赖安装失败，将用标准库构建前端"
 
       - name: 注入凭据
         env:
