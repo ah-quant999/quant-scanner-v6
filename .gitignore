@@ -105,3 +105,6 @@ dist/standalone/
 
 # 暂不上架的待观察改动，不进 Git 共享
 暂不上架/
+
+# 临时预览页（本地看，不进仓库）
+_preview_*.html
