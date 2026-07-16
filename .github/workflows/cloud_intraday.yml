@@ -86,17 +86,21 @@ jobs:
       - name: "📡 全量数据抓取"
         continue-on-error: true
         run: |
+          # 注：以下中国数据源已移出云端，改由本机双机(小九/阿狸咪)负责抓取并 push main，
+          # 云端直接复用 main 上的新鲜数据（避免美区 runner 无中国网络导致 60s 超时静默失败+覆盖）：
+          #   fetch_margin / fetch_sh_sz_history / fetch_etf_subscription /
+          #   fetch_up_down_stats / fetch_north_fund / capital_flow_summary(依赖 north_fund)
           for script in \
-            fetch_nt_data.py fetch_margin.py fetch_margin_etf.py \
-            fetch_etf_subscription.py fetch_suspension_alert.py \
-            fetch_stock_deviation.py fetch_sector_fund_flow.py \
-            fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py \
-            fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py \
+            fetch_nt_data.py fetch_margin_etf.py \
+            fetch_suspension_alert.py fetch_stock_deviation.py \
+            fetch_sector_fund_flow.py fetch_sector_rs.py \
+            fetch_main_week.py fetch_market_alerts.py \
+            fetch_concept_ranking.py fetch_main_stock.py \
             fetch_south_individual.py fetch_herding_data.py \
             fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
-            fetch_macro_data.py fetch_sh_sz_history.py \
-            fetch_up_down_stats.py fetch_sh_index_fib.py fetch_sz_index_fib.py \
-            fetch_crisis_data.py capital_flow_summary.py; do
+            fetch_macro_data.py \
+            fetch_sh_index_fib.py fetch_sz_index_fib.py \
+            fetch_crisis_data.py; do
             echo ">>> $script start $(date -Iseconds)"
             timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
             echo "<<< $script end $(date -Iseconds)"
