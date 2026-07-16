@@ -66,6 +66,7 @@ jobs:
         if: github.event.schedule == '30 11 * * 5'
         continue-on-error: true
         run: |
+          python fetch_stock_names.py || echo "[跳过] stock_names"
           python batch_update.py close_deploy || echo "[跳过] close_deploy"
           python update_data_v2.py || echo "[跳过] update_data_v2"
           python build_market_signal.py 2>/dev/null || echo "[跳过] market_signal"

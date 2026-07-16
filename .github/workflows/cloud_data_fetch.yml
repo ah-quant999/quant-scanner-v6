@@ -61,7 +61,11 @@ jobs:
       - name: "📡 全量数据抓取"
         continue-on-error: true
         run: |
-          SCRIPTS="fetch_nt_data.py fetch_margin.py fetch_margin_etf.py fetch_etf_subscription.py fetch_suspension_alert.py fetch_stock_deviation.py fetch_sector_fund_flow.py fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py fetch_concept_ranking.py fetch_main_stock.py fetch_north_fund.py fetch_south_individual.py fetch_herding_data.py fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py fetch_macro_data.py fetch_fomc.py fetch_sh_sz_history.py fetch_up_down_stats.py fetch_sh_index_fib.py"
+          # 注：以下中国数据源已移至本机双机负责（美区 runner 无中国网络→60s 超时静默失败）：
+          #   fetch_margin / fetch_etf_subscription / fetch_north_fund /
+          #   fetch_sh_sz_history / fetch_up_down_stats / capital_flow_summary
+          #   (etf_subscription.json 由 fetch_margin_etf.py 在云端覆盖)
+          SCRIPTS="fetch_nt_data.py fetch_margin_etf.py fetch_suspension_alert.py fetch_stock_deviation.py fetch_sector_fund_flow.py fetch_sector_rs.py fetch_main_week.py fetch_market_alerts.py fetch_concept_ranking.py fetch_main_stock.py fetch_south_individual.py fetch_herding_data.py fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py fetch_macro_data.py fetch_fomc.py fetch_sh_index_fib.py fetch_sz_index_fib.py"
           # 并行执行：所有脚本同时启动，wait 等全部完成（wall-time 60s+10s SIGKILL max）
           PIDS=""
           for script in $SCRIPTS; do
