@@ -198,12 +198,23 @@ def main():
         except:
             pass
     
-    # 获取最新数据
+    # 获取最新数据 — 2026-07-17 修复：CFFEX 当日数据盘后才发布，
+    #   用今天日期直接调常返回空。fallback：今天 → 昨天 → 前天 逐个试，
+    #   找到最近一个能返回数据的交易日。
     today_str = datetime.now().strftime('%Y%m%d')
-    result, actual_date = fetch_cffex_data(today_str)
-    
+    yest_str = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
+    day2_str = (datetime.now() - timedelta(days=2)).strftime('%Y%m%d')
+    candidates = [today_str, yest_str, day2_str]
+    result = None
+    actual_date = None
+    for d in candidates:
+        log(f"  尝试日期 {d} ...")
+        r, _ = fetch_cffex_data(d)
+        if r:
+            result, actual_date = r, d
+            break
     if not result:
-        log("❌ 数据获取失败")
+        log("❌ 数据获取失败（最近 3 个交易日均无）")
         sys.exit(1)
     
     # 提取中信持仓
