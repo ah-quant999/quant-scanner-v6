@@ -4,8 +4,7 @@
 name: "☁️ 收盘数据抓取 (17:31)"
 
 on:
-  schedule:
-    - cron: '31 9 * * 1-5'   # 17:31 CST
+  # ⚠️ 移除不可靠的 GitHub 定时调度，改由本地双机经 API 精准触发(trigger_cloud_dispatch.py)。
   workflow_dispatch:
 
 permissions:

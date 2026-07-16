@@ -80,14 +80,12 @@ jobs:
           python update_data_v2.py || echo "[跳过] update_data_v2"
           python batch_update.py weekend_light || echo "[跳过] weekend_light"
 
-      # ─── 生成独立页(standalone) 随主站一起部署（修复 RISK-2：云端不再清空独立页）───
-      - name: "📱 生成独立页(standalone)"
-        continue-on-error: true
+      # ─── 生成独立页(standalone) 并校验与主站同源同戳（RISK-2 修复 + 2026-07-16 同步闸门）───
+      # ⚠️ 故意【不】加 continue-on-error：抽页/同步/同源校验任一失败即令本步失败 → 阻断部署。
+      - name: "📱 生成独立页(standalone) + 同源同戳校验"
         run: |
-          python extract_panels_v6.py
-          mkdir -p dist/standalone
-          cp -r standalone/*.html dist/standalone/ 2>/dev/null || true
-          echo "✅ standalone 已并入 dist/standalone/"
+          python ensure_standalone_sync.py --inject-buildstamp
+          echo "✅ standalone 已与主站同步校验，可安全上线"
 
       # ─── 云端心跳上报（证明云端周期任务活跃）───
       - name: "💓 上报云端心跳"

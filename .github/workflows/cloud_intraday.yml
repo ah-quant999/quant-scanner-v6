@@ -6,13 +6,17 @@
 name: "☁️ 盘前+盘中任务"
 
 on:
-  schedule:
-    - cron: '20 1 * * 1-5'   # 09:20 CST — 盘前全景
-    - cron: '31 2 * * 1-5'   # 10:31 CST — 盘中扫描
-    - cron: '46 3 * * 1-5'   # 11:46 CST — 盘中扫描
-    - cron: '31 5 * * 1-5'   # 13:31 CST — 盘中扫描
-    - cron: '31 6 * * 1-5'   # 14:31 CST — 盘中扫描
+  # ⚠️ GitHub 定时调度为 best-effort，历史上曾整片延迟 ~5h，不可靠。
+  # 故移除 schedule，改由本地双机经 GitHub API 精准触发(见 trigger_cloud_dispatch.py)，
+  # 云端仅作为算力；safety-net.yml 在本地双机均离线时由 GitHub 高频轮询补触发。
   workflow_dispatch:
+    inputs:
+      slot:
+        description: '模拟的 cron 档位，如 "20 1 * * 1-5"；留空=默认全量刷新'
+        required: false
+        default: ''
+        type: string
+
 
 permissions:
   contents: write
@@ -69,7 +73,7 @@ jobs:
 
       # ─── 09:20 盘前全景（金股+投行，仅盘前） ───
       - name: "🌅 09:20 — 金股观测 (机构研报+投行+候选池)"
-        if: github.event.schedule == '20 1 * * 1-5'
+        if: github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
@@ -77,7 +81,7 @@ jobs:
           python build_candidate_pool.py || echo "[跳过] build_candidate_pool"
 
       - name: "🌅 09:20 — 总览页 (大盘指数+宏观+隔夜)"
-        if: github.event.schedule == '20 1 * * 1-5'
+        if: github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_macro_data.py || echo "[跳过] macro"
@@ -146,33 +150,14 @@ jobs:
           fi
           echo "✅ dist/index.html 存在 ($(wc -c < dist/index.html) bytes)"
 
-      # ─── 注入 build-stamp（北京时间，每次部署刷新）───
-      # 注：云端用 peaceiris/actions-gh-pages 直接发布 ./dist，update_data_v2.py 不写 build-stamp，
-      # 必须在此显式注入，否则运维卡/前端一直显示最后一次「本地 deploy_now.py」的时间。
-      - name: "🏷️ 注入 build-stamp (北京时间)"
+      # ─── 生成独立页(standalone) + 注入 build-stamp + 同源同戳校验（RISK-2 + 2026-07-16 同步闸门）───
+      # ensure_standalone_sync.py 会：① 从 dist/index.html 重建 standalone/ ② 同步到 dist/standalone/
+      # ③ 给 dist/ 全部 html 注入 build-stamp（替代原先只给主站注入、漏掉独立页的脚本）④ 同源同戳校验
+      # ⚠️ 故意【不】加 continue-on-error：抽页/同步/校验任一失败即阻断部署，绝不允许半残上线。
+      - name: "📱 生成独立页 + 同源同戳校验 + build-stamp"
         run: |
-          STAMP=$(TZ=Asia/Shanghai date +%Y%m%d%H%M%S)
-          python - "$STAMP" <<'PY'
-          import re, sys
-          stamp = sys.argv[1]
-          p = "dist/index.html"
-          s = open(p, encoding="utf-8").read()
-          if 'name="build-stamp"' in s:
-              s = re.sub(r'name="build-stamp" content="[^"]*"', f'name="build-stamp" content="{stamp}"', s)
-          else:
-              s = s.replace("<head>", f'<head>\n<meta name="build-stamp" content="{stamp}">', 1)
-          open(p, "w", encoding="utf-8").write(s)
-          print("build-stamp =", stamp)
-          PY
-
-      # ─── 生成独立页(standalone) 随主站一起部署（修复 RISK-2：云端不再清空独立页）───
-      - name: "📱 生成独立页(standalone)"
-        continue-on-error: true
-        run: |
-          python extract_panels_v6.py
-          mkdir -p dist/standalone
-          cp -r standalone/*.html dist/standalone/ 2>/dev/null || true
-          echo "✅ standalone 已并入 dist/standalone/（与本地 deploy_now.py 产物一致）"
+          python ensure_standalone_sync.py --inject-buildstamp
+          echo "✅ standalone 已与主站同步校验，可安全上线"
 
       # ─── 部署到 GitHub Pages ───
       - name: "🚀 部署到 GitHub Pages"

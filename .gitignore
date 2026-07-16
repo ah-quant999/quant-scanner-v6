@@ -42,6 +42,10 @@ __pycache__/
 !triple_select_scan.py
 !fetch_neodata_daily.py
 !capital_flow_summary.py
+# 云端精准发令枪（本地双机调用，ops 脚本，须进 Git 让双机共享）
+!trigger_cloud_dispatch.py
+# 主站↔独立页 同步校验闸门（部署共用，须进 Git 让云端工作流可调用）
+!ensure_standalone_sync.py
 !EVENING_FAILOVER.md
 *.bat
 .wrangler/
@@ -91,6 +95,8 @@ workbuddy/
 .batch_heartbeat.json
 .scanner.lock
 HANDOVER_LOG.jsonl
+# 云端发令枪幂等状态（每台机器独立，不进 Git）
+.dispatch_state.json
 node_modules/
 *.log
 .env

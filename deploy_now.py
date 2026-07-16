@@ -439,65 +439,37 @@ def _ghpages_stale_seconds():
 
 
 def _regen_standalone_if_needed():
-    """强制重建并同步独立页（standalone/overview.html 等），确保与主站 dist/index.html 完全一致。
+    """强制重建并同步独立页，并校验与主站同源同戳；失败返回 False 阻断部署。
 
-    ⚠️ 时序铁律（2026-07-09 修复）：本函数必须在本文件 main() 中
-    _ensure_dist_fresh()（即 update_data_v2.py 重建 dist/index.html）【之后】调用。
-    若在其之前调用，extract_panels_v6.py 读取的是【旧版】dist/index.html
-    → 独立页拿到旧数据，而主站拿到新数据 → standalone/overview.html 永远落后一版。
+    ⚠️ 时序铁律：必须在 _ensure_dist_fresh()（update_data_v2.py 重建 dist/index.html）之后调用，
+       否则读到旧版 dist/index.html → 独立页永远落后一版。
 
-    改为【无条件】每次都重建 + 同步（不再用 mtime 跳过）：
-    独立页是主站拆分产物，必须随主站"同步部署"，否则用户会看到主站有、独立页没有。
+    2026-07-16 加固：统一委托 ensure_standalone_sync.py 完成「抽取 + 同步 + 同源同戳校验」。
+    任一环节失败即返回 False，使 main() 阻断部署，杜绝「主站上线、独立页缺失」的半残状态
+    （此前云端 continue-on-error + `cp || true` 会在抽页失败时静默让独立页变陈旧/缺失）。
     """
     project_root = os.path.dirname(os.path.abspath(__file__))
-    dist_index = os.path.join(project_root, "dist", "index.html")
-    standalone_dir = os.path.join(project_root, "standalone")
+    sync_py = os.path.join(project_root, "ensure_standalone_sync.py")
+    if not os.path.exists(sync_py):
+        log("   ❌ ensure_standalone_sync.py 缺失，无法保证独立页同步，阻断部署")
+        return False
+    if not os.path.exists(os.path.join(project_root, "dist", "index.html")):
+        log("   ❌ dist/index.html 不存在，无法重建独立页，阻断部署")
+        return False
 
-    if not os.path.exists(dist_index):
-        log("   WARN dist/index.html 不存在，跳过独立页重建")
-        return
-
-    # 1) 无条件从已注入数据的 dist/index.html 抽取独立页
-    log("   🔄 重建独立页 standalone/*（确保与主站同步部署）...")
-    extract_py = os.path.join(project_root, "extract_panels_v6.py")
-    if os.path.exists(extract_py):
-        result = subprocess.run([sys.executable, extract_py],
-                               capture_output=True, text=True, timeout=120, cwd=project_root)
-        if result.returncode == 0:
-            log("   ✓ 独立页重建完成")
-        else:
-            log(f"   WARN 独立页重建失败（不阻塞主站部署）: {result.stderr[:200]}")
-    else:
-        log("   WARN extract_panels_v6.py 未找到，跳过重建")
-
-    # 2) 同步 standalone/ -> dist/standalone/，确保随主站一起上线
-    #    共振页(triple/multi_resonance)强制用 dist/ 根目录新鲜版覆盖，避免 standalone 旧副本上 gh-pages
-    dist_standalone = os.path.join(project_root, "dist", "standalone")
-    os.makedirs(dist_standalone, exist_ok=True)
-    if os.path.exists(standalone_dir):
-        for fname in os.listdir(standalone_dir):
-            if not fname.endswith('.html'):
-                continue
-            if fname in ('triple_resonance.html', 'multi_resonance.html'):
-                continue  # 这两个由下方 dist/ 根目录版强制覆盖
-            shutil.copy2(os.path.join(standalone_dir, fname), os.path.join(dist_standalone, fname))
-    for _p in ('triple_resonance', 'multi_resonance'):
-        _src = os.path.join(project_root, "dist", f"{_p}.html")
-        _dst = os.path.join(dist_standalone, f"{_p}.html")
-        if os.path.exists(_src):
-            shutil.copy2(_src, _dst)
-            # 根目录版返回链接指向主站(index.html / index_master.html)；
-            # 位于 dist/standalone/ 下需降级为 ../index.html，否则指向不存在的 standalone/index*.html
-            try:
-                with open(_dst, 'r', encoding='utf-8') as _f:
-                    _c = _f.read()
-                _c = _c.replace('href="index_master.html"', 'href="../index.html"')
-                _c = _c.replace('href="index.html"', 'href="../index.html"')
-                with open(_dst, 'w', encoding='utf-8') as _f:
-                    _f.write(_c)
-            except Exception as _e:
-                log(f"   WARN 重写 {_p} 返回链接失败（不阻塞）: {_e}")
-    log("   ✓ 独立页已同步至 dist/standalone/（将随主站一起上线）")
+    log("   🔗 重建并校验独立页（确保与主站同步部署）...")
+    r = subprocess.run([sys.executable, sync_py],
+                       capture_output=True, text=True, timeout=240, cwd=project_root)
+    for line in r.stdout.strip().split("\n"):
+        if line.strip():
+            log("   " + line.strip())
+    if r.returncode != 0:
+        log("   ❌ 独立页同步校验失败，阻断部署（防主站与独立页不同步）")
+        if r.stderr.strip():
+            log("   " + r.stderr.strip()[:300])
+        return False
+    log("   ✓ 独立页已与主站同步校验通过")
+    return True
 
 def main():
     log("=== Start Deploy (GitHub Pages) ===")
@@ -547,7 +519,9 @@ def main():
 
         # 0.6 数据注入完成【之后】重建独立页，确保 standalone/overview.html 与主站同步上线
         #      ⚠️ 必须在此之后调用，否则读到旧版 dist/index.html（见 _regen_standalone_if_needed 注释）
-        _regen_standalone_if_needed()
+        if not _regen_standalone_if_needed():
+            log("\nERROR deploy aborted: 独立页与主站不同步，已阻断部署以防半残上线")
+            return 1
 
         # Use temp dir for gh-pages
         # 【2026-07-13修复】Windows 下 tempfile.mkdtemp 返回反斜杠路径(E:\Temp\xxx)，

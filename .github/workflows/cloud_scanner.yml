@@ -4,8 +4,7 @@
 name: "☁️ 云端收盘扫描+部署"
 
 on:
-  schedule:
-    - cron: '31 10 * * 1-5'   # 18:31 CST（交易日）
+  # ⚠️ 移除不可靠的 GitHub 定时调度，改由本地双机经 API 精准触发(trigger_cloud_dispatch.py)。
   workflow_dispatch:
 
 permissions:
@@ -154,14 +153,13 @@ jobs:
           python update_data_v2.py
           echo "✅ 构建完成"
 
-      # ─── 生成独立页(standalone) 随主站一起部署（修复 RISK-2：云端不再清空独立页）───
-      - name: "📱 生成独立页(standalone)"
-        continue-on-error: true
+      # ─── 生成独立页(standalone) 并校验与主站同源同戳（RISK-2 修复 + 2026-07-16 同步闸门）───
+      # ⚠️ 故意【不】加 continue-on-error：抽页/同步/同源校验任一失败即令本步失败 → 阻断部署，
+      #    绝不允许「主站上线、独立页缺失/陈旧」的半残状态被 keep_files:false 推上 gh-pages。
+      - name: "📱 生成独立页(standalone) + 同源同戳校验"
         run: |
-          python extract_panels_v6.py
-          mkdir -p dist/standalone
-          cp -r standalone/*.html dist/standalone/ 2>/dev/null || true
-          echo "✅ standalone 已并入 dist/standalone/（与本地 deploy_now.py 产物一致）"
+          python ensure_standalone_sync.py --inject-buildstamp
+          echo "✅ standalone 已与主站同步校验，可安全上线"
 
       # ─── 部署前诊断 ───
       - name: "🔍 部署前诊断 (确认 dist/index.html)"
