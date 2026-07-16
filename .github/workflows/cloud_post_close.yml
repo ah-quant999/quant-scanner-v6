@@ -4,7 +4,11 @@
 name: "☁️ 收盘全景分阶段"
 
 on:
-  # ⚠️ 同 cloud_intraday：移除不可靠的 GitHub 定时调度，改由本地双机经 API 精准触发。
+  # ✅ 2026-07-16 闭环加固：云端恢复自主定时(cron)，发令枪降级为监控+幂等补触发。
+  schedule:
+    - cron: '30 7 * * 1-5'   # 15:30 CST A+H全量扫描
+    - cron: '15 8 * * 1-5'   # 16:15 CST 龙虎榜后共振
+    - cron: '30 8 * * 1-5'   # 16:30 CST 全模块三卡片刷新+部署
   workflow_dispatch:
     inputs:
       slot:
@@ -65,7 +69,7 @@ jobs:
 
       # ─── 15:30 A+H全量扫描 → 候选池 → 金股池 ───
       - name: "📊 15:30 — A+H全量扫描+候选池+金股池"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '30 7 * * 1-5' || github.event.schedule == '30 7 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '30 7 * * 1-5' || github.event.inputs.slot == '30 7 * * 1-5'
         continue-on-error: true
         run: |
           echo ">>> scanner.py start $(date -Iseconds)"
@@ -79,7 +83,7 @@ jobs:
 
       # ─── 16:15 龙虎榜公布后 ───
       - name: "🐉 16:15 — 龙虎榜+机器共振+抱团+板块轮动+五维"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '15 8 * * 1-5' || github.event.schedule == '15 8 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '15 8 * * 1-5' || github.event.inputs.slot == '15 8 * * 1-5'
         continue-on-error: true
         run: |
           for s in fetch_lhb.py update_triple_resonance_daily.py update_multi_resonance_daily.py calc_crds.py generate_recommend.py generate_top10.py generate_one_look.py; do
@@ -90,7 +94,7 @@ jobs:
 
       # ─── 16:30 全模块（三卡片刷新） ───
       - name: "🧩 16:30 — 全模块三卡片刷新"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '30 8 * * 1-5' || github.event.schedule == '30 8 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '30 8 * * 1-5' || github.event.inputs.slot == '30 8 * * 1-5'
         continue-on-error: true
         run: |
           for s in fetch_sector_fund_flow.py fetch_nt_data.py fetch_market_alerts.py generate_recommend.py generate_top10.py; do
@@ -115,7 +119,7 @@ jobs:
           echo "✅ standalone 已与主站同步校验，可安全上线"
 
       - name: "🔍 16:30 — 部署前诊断"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '30 8 * * 1-5' || github.event.schedule == '30 8 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '30 8 * * 1-5' || github.event.inputs.slot == '30 8 * * 1-5'
         run: |
           if [ ! -f dist/index.html ]; then
             echo "::error::dist/index.html 不存在，终止部署"
@@ -124,7 +128,7 @@ jobs:
           echo "✅ dist/index.html 存在"
 
       - name: "🚀 16:30 — 部署三卡片版"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '30 8 * * 1-5' || github.event.schedule == '30 8 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '30 8 * * 1-5' || github.event.inputs.slot == '30 8 * * 1-5'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -135,7 +139,7 @@ jobs:
           user_email: cloud-bot@users.noreply.github.com
 
       - name: "✅ 16:30 — 部署验证"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '30 8 * * 1-5' || github.event.schedule == '30 8 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '30 8 * * 1-5' || github.event.inputs.slot == '30 8 * * 1-5'
         run: |
           sleep 5
           git ls-remote origin gh-pages

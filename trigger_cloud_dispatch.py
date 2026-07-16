@@ -97,6 +97,29 @@ def get_build_stamp():
     return 0
 
 
+def recent_success(workflow_file, pat, minutes=60):
+    """幂等第3层：查 GitHub Actions 运行历史，若该 workflow 近 minutes 分钟内有成功运行则视为已跑。
+    这样即使本机发令枪与云端 cron 同时到点，也不会重复触发（cron 已跑则发令枪跳过）。"""
+    url = f"https://api.github.com/repos/{REPO}/actions/workflows/{workflow_file}/runs?status=success&per_page=3"
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"Authorization": f"Bearer {pat}", "Accept": "application/vnd.github+json"},
+        )
+        data = json.loads(urllib.request.urlopen(req, timeout=10).read())
+        now = datetime.now(timezone.utc)
+        for run in data.get("workflow_runs", []):
+            created = run.get("created_at", "")
+            if not created:
+                continue
+            ct = datetime.fromisoformat(created.replace("Z", "+00:00"))
+            if (now - ct).total_seconds() <= minutes * 60:
+                return True
+    except Exception as e:
+        log(f"⚠️ 查询运行历史失败(将放行触发): {e}")
+    return False
+
+
 def load_state():
     if os.path.exists(STATE_FILE):
         try:
@@ -186,6 +209,11 @@ def main():
                     continue
             except Exception:
                 pass
+
+        # 幂等第3层：云端 cron 近 60min 已成功跑过该 workflow → 跳过（发令枪不再重复触发）
+        if recent_success(wf, pat, minutes=60):
+            log(f"🕐 {wf} 近 60min 云端已成功运行，发令枪跳过（避免与 cron 重复）")
+            continue
 
         # 触发
         ok = dispatch(wf, slot, pat, dry_run)

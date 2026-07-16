@@ -6,9 +6,15 @@
 name: "☁️ 盘前+盘中任务"
 
 on:
-  # ⚠️ GitHub 定时调度为 best-effort，历史上曾整片延迟 ~5h，不可靠。
-  # 故移除 schedule，改由本地双机经 GitHub API 精准触发(见 trigger_cloud_dispatch.py)，
-  # 云端仅作为算力；safety-net.yml 在本地双机均离线时由 GitHub 高频轮询补触发。
+  # ✅ 2026-07-16 闭环加固：云端恢复自主定时(cron)，不再 solely 依赖小九发令枪。
+  #   GitHub cron 作「主力执行」；小九发令枪(trigger_cloud_dispatch.py)降级为「监控+幂等补触发」；
+  #   safety-net 为最后兜底。各 cron 串与下方 slot 串一致，由 step 的 if 自动选档。
+  schedule:
+    - cron: '20 1 * * 1-5'   # 09:20 CST 盘前全景
+    - cron: '31 2 * * 1-5'   # 10:31 CST
+    - cron: '46 3 * * 1-5'   # 11:46 CST
+    - cron: '31 5 * * 1-5'   # 13:31 CST
+    - cron: '31 6 * * 1-5'   # 14:31 CST
   workflow_dispatch:
     inputs:
       slot:
@@ -73,7 +79,7 @@ jobs:
 
       # ─── 09:20 盘前全景（金股+投行，仅盘前） ───
       - name: "🌅 09:20 — 金股观测 (机构研报+投行+候选池)"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '20 1 * * 1-5' || github.event.inputs.slot == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_mahoro_signals.py --non-interactive 2>/dev/null || echo "[跳过] mahoro"
@@ -81,7 +87,7 @@ jobs:
           python build_candidate_pool.py || echo "[跳过] build_candidate_pool"
 
       - name: "🌅 09:20 — 总览页 (大盘指数+宏观+隔夜)"
-        if: github.event.inputs.slot == '' || github.event.inputs.slot == '20 1 * * 1-5' || github.event.schedule == '20 1 * * 1-5'
+        if: github.event.schedule == '' && github.event.inputs.slot == '' || github.event.schedule == '20 1 * * 1-5' || github.event.inputs.slot == '20 1 * * 1-5'
         continue-on-error: true
         run: |
           python fetch_macro_data.py || echo "[跳过] macro"

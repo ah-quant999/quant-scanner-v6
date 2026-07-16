@@ -90,6 +90,10 @@ jobs:
             echo "::error::数据已 ${AGE} 小时未更新（${PHASE}阈值 ${THRESHOLD}h），本地双机疑似均离线，自动补触发云端"
             echo ">>> 触发 cloud_intraday.yml（盘中/总览刷新+部署）"
             gh workflow run cloud_intraday.yml
+            echo ">>> 触发 cloud_data_fetch.yml（17:31 收盘数据抓取）"
+            gh workflow run cloud_data_fetch.yml
+            echo ">>> 触发 cloud_scanner.yml（18:31 收盘扫描+部署）"
+            gh workflow run cloud_scanner.yml
             HOUR=$(TZ=Asia/Shanghai date +%H)
             if [ "$HOUR" -ge 16 ] && [ "$HOUR" -lt 19 ]; then
               echo ">>> 盘后时段，额外触发 cloud_post_close.yml slot=30 8（全模块三卡片+部署）"
