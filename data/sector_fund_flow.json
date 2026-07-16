@@ -1,23 +1,717 @@
 {
-  "update_time": "2026-07-15 22:08",
-  "data_type": "empty",
+  "update_time": "2026-07-16 10:06",
+  "data_type": "real",
   "summary": {
-    "in_count": 0,
+    "in_count": 19,
     "out_count": 0,
-    "in_text": "无",
+    "in_text": "消费电子(31.5亿)、IT服务(15.8亿)、通用设备(10.9亿)、文化传媒(7.1亿)、汽车零部件(6.5亿)",
     "out_text": "无",
-    "alert": "板块资金流向平稳"
+    "alert": "🔥 19个板块大幅流入；🚀 消费电子+31.5亿(连2天)、IT服务+15.8亿(连3天)、通用设备+10.9亿(连3天)"
   },
-  "sectors_in": [],
+  "sectors_in": [
+    {
+      "name": "消费电子",
+      "net": 31.52,
+      "net_5d": -127.2,
+      "net_20d": -451.63,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "IT服务",
+      "net": 15.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "通用设备",
+      "net": 10.88,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 7.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "汽车零部件",
+      "net": 6.54,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 6.11,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "光学光电子",
+      "net": 3.97,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "白色家电",
+      "net": 3.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "元件",
+      "net": 3.72,
+      "net_5d": -32.26,
+      "net_20d": -721.8,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "自动化设备",
+      "net": 3.37,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "通信服务",
+      "net": 3.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "专用设备",
+      "net": 2.91,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "房地产",
+      "net": 2.46,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "影视院线",
+      "net": 2.25,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "电网设备",
+      "net": 2.17,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "纺织制造",
+      "net": 1.68,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "互联网电商",
+      "net": 1.56,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "服装家纺",
+      "net": 1.42,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "军工电子",
+      "net": 1.2,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    }
+  ],
   "sectors_out": [],
-  "top_list": [],
-  "consecutive": {},
-  "data_note": "所有数据源不可用",
+  "top_list": [
+    {
+      "name": "消费电子",
+      "net": 31.52,
+      "net_5d": -127.2,
+      "net_20d": -451.63,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "IT服务",
+      "net": 15.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "通用设备",
+      "net": 10.88,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 7.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "汽车零部件",
+      "net": 6.54,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "计算机设备",
+      "net": 6.11,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "光学光电子",
+      "net": 3.97,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "白色家电",
+      "net": 3.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "元件",
+      "net": 3.72,
+      "net_5d": -32.26,
+      "net_20d": -721.8,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "自动化设备",
+      "net": 3.37,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "通信服务",
+      "net": 3.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "专用设备",
+      "net": 2.91,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "房地产",
+      "net": 2.46,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "影视院线",
+      "net": 2.25,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "电网设备",
+      "net": 2.17,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "纺织制造",
+      "net": 1.68,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "互联网电商",
+      "net": 1.56,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "服装家纺",
+      "net": 1.42,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "军工电子",
+      "net": 1.2,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "环保设备",
+      "net": 0.87,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "电机",
+      "net": 0.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "包装印刷",
+      "net": 0.75,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "农产品加工",
+      "net": 0.62,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "小家电",
+      "net": 0.57,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "塑料制品",
+      "net": 0.53,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "养殖业",
+      "net": 0.5,
+      "net_5d": 24.94,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "家居用品",
+      "net": 0.47,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "其他社会服务",
+      "net": 0.47,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "汽车服务及其他",
+      "net": 0.3,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "黑色家电",
+      "net": 0.26,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "软件开发",
+      "net": 0.14,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "饮料制造",
+      "net": 0.05,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "厨卫电器",
+      "net": -0.01,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "out"
+    },
+    {
+      "name": "教育",
+      "net": -0.03,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "out"
+    },
+    {
+      "name": "造纸",
+      "net": -0.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "out"
+    },
+    {
+      "name": "贸易",
+      "net": -0.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "out"
+    },
+    {
+      "name": "旅游及酒店",
+      "net": -0.09,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "out"
+    },
+    {
+      "name": "美容护理",
+      "net": -0.09,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "out"
+    },
+    {
+      "name": "化学纤维",
+      "net": -0.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "out"
+    },
+    {
+      "name": "汽车整车",
+      "net": -0.2,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "out"
+    }
+  ],
+  "consecutive": {
+    "消费电子": {
+      "days": 2,
+      "trend": "in"
+    },
+    "IT服务": {
+      "days": 3,
+      "trend": "in"
+    },
+    "通用设备": {
+      "days": 3,
+      "trend": "in"
+    },
+    "文化传媒": {
+      "days": 2,
+      "trend": "in"
+    },
+    "汽车零部件": {
+      "days": 2,
+      "trend": "in"
+    },
+    "计算机设备": {
+      "days": 4,
+      "trend": "in"
+    },
+    "光学光电子": {
+      "days": 2,
+      "trend": "in"
+    },
+    "白色家电": {
+      "days": 1,
+      "trend": "in"
+    },
+    "元件": {
+      "days": 5,
+      "trend": "in"
+    },
+    "自动化设备": {
+      "days": 2,
+      "trend": "in"
+    },
+    "通信服务": {
+      "days": 2,
+      "trend": "in"
+    },
+    "专用设备": {
+      "days": 2,
+      "trend": "in"
+    },
+    "房地产": {
+      "days": 2,
+      "trend": "in"
+    },
+    "影视院线": {
+      "days": 3,
+      "trend": "in"
+    },
+    "电网设备": {
+      "days": 2,
+      "trend": "in"
+    },
+    "纺织制造": {
+      "days": 1,
+      "trend": "in"
+    },
+    "互联网电商": {
+      "days": 1,
+      "trend": "in"
+    },
+    "服装家纺": {
+      "days": 1,
+      "trend": "in"
+    },
+    "军工电子": {
+      "days": 2,
+      "trend": "in"
+    },
+    "环保设备": {
+      "days": 1,
+      "trend": "in"
+    },
+    "电机": {
+      "days": 1,
+      "trend": "in"
+    },
+    "包装印刷": {
+      "days": 2,
+      "trend": "in"
+    },
+    "农产品加工": {
+      "days": 1,
+      "trend": "in"
+    },
+    "小家电": {
+      "days": 1,
+      "trend": "in"
+    },
+    "塑料制品": {
+      "days": 1,
+      "trend": "in"
+    },
+    "养殖业": {
+      "days": 3,
+      "trend": "in"
+    },
+    "家居用品": {
+      "days": 1,
+      "trend": "in"
+    },
+    "其他社会服务": {
+      "days": 1,
+      "trend": "in"
+    },
+    "汽车服务及其他": {
+      "days": 1,
+      "trend": "in"
+    },
+    "黑色家电": {
+      "days": 4,
+      "trend": "in"
+    },
+    "软件开发": {
+      "days": 3,
+      "trend": "in"
+    },
+    "饮料制造": {
+      "days": 1,
+      "trend": "in"
+    },
+    "厨卫电器": {
+      "days": 5,
+      "trend": "out"
+    },
+    "教育": {
+      "days": 2,
+      "trend": "out"
+    },
+    "造纸": {
+      "days": 3,
+      "trend": "out"
+    },
+    "贸易": {
+      "days": 4,
+      "trend": "out"
+    },
+    "旅游及酒店": {
+      "days": 2,
+      "trend": "out"
+    },
+    "美容护理": {
+      "days": 4,
+      "trend": "out"
+    },
+    "化学纤维": {
+      "days": 2,
+      "trend": "out"
+    },
+    "汽车整车": {
+      "days": 1,
+      "trend": "out"
+    }
+  },
   "trend_5d": [
     {
       "name": "芯片概念",
       "net": 171.21,
-      "net_5d": 1031.26,
+      "net_5d": 1193.89,
       "net_20d": 0,
       "net_60d": null,
       "type": "概念",
@@ -25,29 +719,9 @@
       "trend": "in"
     },
     {
-      "name": "人民币贬值受益",
-      "net": 232.45,
-      "net_5d": 895.47,
-      "net_20d": 0,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "汽车电子",
-      "net": 83.95,
-      "net_5d": 849.24,
-      "net_20d": 0,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
       "name": "数据中心(AIDC)",
       "net": 213.81,
-      "net_5d": 768.66,
+      "net_5d": 960.36,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
@@ -57,7 +731,7 @@
     {
       "name": "5G",
       "net": 203.4,
-      "net_5d": 746.1,
+      "net_5d": 937.51,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
@@ -67,7 +741,17 @@
     {
       "name": "共封装光学(CPO)",
       "net": 247.66,
-      "net_5d": 677.63,
+      "net_5d": 913.43,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "人民币贬值受益",
+      "net": 232.45,
+      "net_5d": 873.91,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
@@ -77,27 +761,7 @@
     {
       "name": "沪股通",
       "net": 207.45,
-      "net_5d": 610.29,
-      "net_20d": 0,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "无人驾驶",
-      "net": 86.48,
-      "net_5d": 564.39,
-      "net_20d": 0,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "汽车芯片",
-      "net": 6.39,
-      "net_5d": 552.95,
+      "net_5d": 779.84,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
@@ -106,18 +770,18 @@
     },
     {
       "name": "半导体",
-      "net": 25.03,
-      "net_5d": 520.94,
+      "net": 15.21,
+      "net_5d": 646.84,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
-      "consecutive_days": 7,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "通信设备",
-      "net": 131.56,
-      "net_5d": 514.69,
+      "name": "汽车电子",
+      "net": 83.95,
+      "net_5d": 583.5,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
@@ -125,16 +789,67 @@
       "trend": "in"
     },
     {
-      "name": "液冷服务器",
-      "net": 68.92,
-      "net_5d": 498.04,
+      "name": "通信设备",
+      "net": 131.56,
+      "net_5d": 486.18,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "行业",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "无人驾驶",
+      "net": 86.48,
+      "net_5d": 479.48,
       "net_20d": 0,
       "net_60d": null,
       "type": "行业",
       "consecutive_days": 5,
       "trend": "in"
+    },
+    {
+      "name": "消费电子概念",
+      "net": 12.58,
+      "net_5d": 441.17,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "概念",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "光纤概念",
+      "net": 99.83,
+      "net_5d": 431.44,
+      "net_20d": 0,
+      "net_60d": null,
+      "type": "概念",
+      "consecutive_days": 5,
+      "trend": "in"
     }
   ],
-  "trend_20d": [],
+  "trend_20d": [
+    {
+      "name": "消费电子",
+      "net": 31.52,
+      "net_5d": -127.2,
+      "net_20d": -451.63,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in",
+      "net_60d": null
+    },
+    {
+      "name": "元件",
+      "net": 3.72,
+      "net_5d": 243.2,
+      "net_20d": -721.8,
+      "type": "行业",
+      "consecutive_days": 5,
+      "trend": "in",
+      "net_60d": null
+    }
+  ],
   "trend_60d": []
 }
