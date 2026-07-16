@@ -50,9 +50,11 @@ SLOTS = [
     ((15, 30), "cloud_post_close.yml", "30 7 * * 1-5", True),
     ((16, 15), "cloud_post_close.yml", "15 8 * * 1-5", True),
     ((16, 30), "cloud_post_close.yml", "30 8 * * 1-5", True),
-    # 收盘数据抓取 / 扫描部署（不部署，仅状态文件防重）
+    # 收盘数据抓取 / 扫描部署
     ((17, 31), "cloud_data_fetch.yml", "", False),
     ((18, 31), "cloud_scanner.yml",  "", True),
+    # 竞彩娱乐（每天 07:30；云端 cron 已覆盖全年，发令枪仅作工作日补枪）
+    ((7, 30),  "cloud_worldcup.yml", "", True),
 ]
 
 
@@ -98,9 +100,9 @@ def get_build_stamp():
 
 
 def recent_success(workflow_file, pat, minutes=60):
-    """幂等第3层：查 GitHub Actions 运行历史，若该 workflow 近 minutes 分钟内有成功运行则视为已跑。
-    这样即使本机发令枪与云端 cron 同时到点，也不会重复触发（cron 已跑则发令枪跳过）。"""
-    url = f"https://api.github.com/repos/{REPO}/actions/workflows/{workflow_file}/runs?status=success&per_page=3"
+    """幂等第3层：查 GitHub Actions 运行历史，若该 workflow 近 minutes 分钟内有成功运行
+    或在跑中(in_progress/queued)则视为已跑，发令枪跳过（避免与 cron 重复触发）。"""
+    url = f"https://api.github.com/repos/{REPO}/actions/workflows/{workflow_file}/runs?per_page=5"
     try:
         req = urllib.request.Request(
             url,
@@ -109,6 +111,9 @@ def recent_success(workflow_file, pat, minutes=60):
         data = json.loads(urllib.request.urlopen(req, timeout=10).read())
         now = datetime.now(timezone.utc)
         for run in data.get("workflow_runs", []):
+            status = run.get("status", "")
+            if status not in ("success", "in_progress", "queued"):
+                continue
             created = run.get("created_at", "")
             if not created:
                 continue
@@ -166,10 +171,7 @@ def dispatch(workflow_file, slot, pat, dry_run):
 def main():
     dry_run = "--dry-run" in sys.argv
     now = datetime.now(TZ)
-    # 仅工作日（周一~周五）触发交易时段档位
-    if now.weekday() >= 5:  # 5=Sat, 6=Sun
-        log("📅 周末，跳过交易时段档位触发（周末任务由 GitHub cron 自行处理）")
-        return
+    is_weekend = now.weekday() >= 5  # 5=Sat, 6=Sun
 
     pat = get_pat()
     if not pat:
@@ -179,13 +181,18 @@ def main():
         log("🧪 DRY-RUN 模式：不真正 dispatch。")
 
     build_stamp = get_build_stamp()
-    log(f"🕐 当前北京时间 {now.strftime('%Y-%m-%d %H:%M')} | 线上 build-stamp={build_stamp}")
+    log(f"🕐 当前北京时间 {now.strftime('%Y-%m-%d %H:%M')} {'(周末)' if is_weekend else '(工作日)'} | 线上 build-stamp={build_stamp}")
     log(f"📋 共 {len(SLOTS)} 个档位待判定")
 
     state = load_state()
     dispatched_any = False
 
     for (h, m), wf, slot, use_stamp in SLOTS:
+        # 周末只处理竞彩，跳过交易时段档位
+        if is_weekend and wf != "cloud_worldcup.yml":
+            log(f"📅 周末，跳过交易时段档位 {wf}")
+            continue
+
         slot_dt = now.replace(hour=h, minute=m, second=0, microsecond=0)
         due = now >= (slot_dt + timedelta(minutes=GRACE_MIN))
         if not due:

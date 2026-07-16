@@ -104,8 +104,8 @@ def main():
         log("❌ 本地无有效 scan_time，无法判定新鲜度，保守兜底部署")
         sys.exit(deploy())
     if remote is None:
-        log("⚠️ 线上无有效 scan_time（可能首次/异常），兜底部署")
-        sys.exit(deploy())
+        log("⚠️ 线上无有效 scan_time，假定云端已部署，跳过兜底（safety-net兜底）")
+        sys.exit(0)
 
     if remote >= local:
         log(f"✅ 线上数据更新或相等（线上 {remote:%Y-%m-%d %H:%M} ≥ 本地 {local:%Y-%m-%d %H:%M}），"
