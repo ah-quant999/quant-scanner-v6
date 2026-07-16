@@ -96,7 +96,7 @@ jobs:
             fetch_cffex_holdings.py fetch_inst_trade.py fetch_ipo_data.py \
             fetch_macro_data.py fetch_sh_sz_history.py \
             fetch_up_down_stats.py fetch_sh_index_fib.py fetch_sz_index_fib.py \
-            fetch_crisis_data.py; do
+            fetch_crisis_data.py capital_flow_summary.py; do
             echo ">>> $script start $(date -Iseconds)"
             timeout --kill-after=10 60 python "$script" > /tmp/last_fetch.log 2>&1 || echo "[超时/失败] $script (exit $?)"
             echo "<<< $script end $(date -Iseconds)"
