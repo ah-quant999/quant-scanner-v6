@@ -1479,7 +1479,7 @@ def main():
         ops_status = {}
 
     # ── CI / 空数据兜底：确保前端卡片不会全显示"未知" ──
-    if _is_ci or not ops_status.get("failover_status):
+    if _is_ci or not ops_status.get("failover_status"):
         ops_status.setdefault("failover_status", "OK" if _is_ci else "未知")
         ops_status.setdefault("failover_time", _now_str)
     if _is_ci or not ops_status.get("cloud_deploy_time"):
