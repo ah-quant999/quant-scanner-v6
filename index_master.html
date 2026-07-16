@@ -451888,34 +451888,40 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
     var neoRemain = neoExp ? Math.max(0, Math.round((neoExp - now) / 3600000)) : null;
     var neoRemainStr = neoRemain !== null ? (neoRemain > 0 ? '余'+neoRemain+'h' : '已过期') : '—';
     var neoRemainColor = neoRemain !== null ? (neoRemain > 3 ? '#4caf50' : (neoRemain > 1 ? '#ff9800' : '#f44336')) : '#999';
-    // ── 左栏：三方监控（云端/小九/阿狸咪）──
+    // ── 三方监控（云端/小九/阿狸咪）──
     var tp = s.three_party || {};
-    var tpHtml = '';
-    ['cloud','xiaojiu','alimi'].forEach(function(k){
+    var tpParts = ['cloud','xiaojiu','alimi'].map(function(k){
       var v = tp[k] || {};
-      var label = k==='cloud' ? '☁️ 云端' : k==='xiaojiu' ? '💻 小九' : '🏠 阿狸咪';
+      var label = k==='cloud' ? '云' : k==='xiaojiu' ? '九' : '阿';
       var ok = v.status === 'ok';
-      var icon = ok ? '✅' : v.status === 'fail' ? '❌' : '❓';
-      var color = ok ? '#2e7d32' : '#c62828';
-      tpHtml += '<div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;"><b style="color:'+color+';font-size:14px;">'+icon+'</b><span style="color:#333;font-weight:600;">'+label+'</span><span style="color:#bbb;margin-left:auto;font-size:12px;">'+(v.last_time||'—')+'</span></div>';
+      var icon = ok ? '✓' : v.status === 'fail' ? '✕' : '?';
+      var color = ok ? '#3b6d11' : (v.status==='fail' ? '#a32d2d' : '#888');
+      return '<span style="color:'+color+';font-weight:500">'+icon+'</span> '+label+' <span style="color:#bbb">'+fmt(v.last_time)+'</span>';
     });
-    // ── 右栏：运维指标 ──
+    var tpLine = tpParts.join(' <span style="color:#ddd">|</span> ');
+    // ── 徽章胶囊（方案 B：指标徽章 + 底部详情）──
+    function _badge(text, c){
+      return '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 11px;background:'+c.bg+';border-radius:7px;font-size:11px;font-weight:500;color:'+c.fg+'"><span style="width:6px;height:6px;border-radius:50%;background:'+c.dot+'"></span>'+text+'</span>';
+    }
+    var cOK={bg:'#eaf3de',fg:'#3b6d11',dot:'#639922'};
+    var cWarn={bg:'#faefda',fg:'#854f0b',dot:'#ef9f27'};
+    var cBad={bg:'#fcebeb',fg:'#a32d2d',dot:'#e24b4a'};
+    var cGray={bg:'#f1efea',fg:'#5f5e5a',dot:'#888780'};
+    var bFail = st==='OK'?cOK:(st==='RECOVERED'?cWarn:(st==='FAILED'?cBad:cGray));
+    var bNeo = s.neodata_status==='ok'?cOK:(s.neodata_status==='n/a'?cGray:cBad);
+    var bTok = neoRemain!==null ? (neoRemain>3?cOK:(neoRemain>1?cWarn:cBad)) : cGray;
     content.innerHTML =
-      '<div style="display:flex;gap:20px;align-items:stretch;">'+
-        /* 左栏：三方监控 */
-        '<div style="flex:0 0 180px;border-right:2px solid #eee;padding-right:16px;">'+
-          '<div style="font-size:12px;font-weight:700;color:#1a237e;margin-bottom:8px;">🛡️ 三方监控</div>'+
-          '<div>'+tpHtml+'</div>'+
+      '<div style="display:flex;flex-direction:column;gap:9px;">'+
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">'+
+          _badge('兜底:'+st, bFail)+
+          _badge('neodata:'+neo, bNeo)+
+          _badge('令牌:'+neoRemainStr, bTok)+
+          _badge('部署:'+fmt(deployTime), cOK)+
         '</div>'+
-        /* 右栏：指标网格 */
-        '<div style="flex:1;min-width:0;">'+
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:13px;">'+
-            '<div><span style="color:#888">最后部署</span>：<b>'+fmt(deployTime)+'</b></div>'+
-            '<div><span style="color:#888">盘前兜底</span>：<b style="color:'+stColor+'">'+st+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.failover_time)+'</span></div>'+
-            '<div><span style="color:#888">neodata</span>：<b style="color:'+neoColor+'">'+neo+'</b> <span style="color:#bbb;font-size:11px">'+fmt(s.neodata_updated)+'</span></div>'+
-            '<div><span style="color:#888">令牌有效至</span>：<b style="color:'+neoRemainColor+';font-size:12px">'+fmt(s.neodata_valid_until)+'</b> <span style="color:'+neoRemainColor+';font-size:11px;">('+neoRemainStr+')</span></div>'+
-            '<div style="grid-column:1/-1;border-top:1px solid #eee;padding-top:4px;margin-top:2px;"><span style="color:#888">状态更新</span>：<span style="color:#bbb;font-size:11px">'+fmt(s.updated_at)+'</span></div>'+
-          '</div>'+
+        '<div style="display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#888;align-items:center;">'+
+          '<span style="font-weight:500;color:#1a237e">三方</span>'+
+          '<span>'+tpLine+'</span>'+
+          '<span style="margin-left:auto;color:#bbb">状态更新 '+fmt(s.updated_at)+'</span>'+
         '</div>'+
       '</div>';
   }
