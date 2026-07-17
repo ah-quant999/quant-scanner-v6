@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- build: 20260701085830 -->
-<meta name="build-stamp" content="20260717123607">
+<meta name="build-stamp" content="20260717125424">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -994,7 +994,7 @@ window.addEventListener('load',function(){
 
       <!-- 💰 四路资金流向对比（位于机游共振·龙虎榜正下方，2026-07-16 审计：从 暂未上架 上架到预判信号） -->
       <div id="capitalFlowCard" class="predict-card" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">席位口径·盘中+盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
+        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">席位口径</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
         <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
           <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
             <thead>
@@ -1413,7 +1413,7 @@ window.addEventListener('load',function(){
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-17 12:36";
+window.CLOUD_UPDATE_TIME = "2026-07-17 12:54";
 window.POST_CLOSE_TIME = "2026-07-16 15:30:00";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-17 12:03:34",
@@ -75426,7 +75426,7 @@ true
 "ema_score": 2
 }
 },
-"update_time": "2026-07-17 12:36:05",
+"update_time": "2026-07-17 12:54:22",
 "candidates": {
 "sh_603986": {
 "code": "603986",
@@ -82033,7 +82033,7 @@ true
 ],
 "update_time": "2026-07-17 10:31"
 };window.MACRO_DATA = {
-"update_time": "2026-07-17 12:29:24",
+"update_time": "2026-07-17 12:52:40",
 "monetary": {
 "cn_bond_10y": {
 "value": 1.7437,
@@ -82109,39 +82109,39 @@ true
 },
 "global_macro": {
 "vix": {
-"value": 19.05,
+"value": 19.1,
 "date": "2026-07-17"
 },
 "usdcnh": {
 "price": 6.773,
-"prev_close": 6.7762,
+"prev_close": 6.7759,
 "date": "2026-07-17",
 "source": "Sina实时"
 },
 "dxy": {
 "value": 100.79,
-"pct": 0.09,
+"pct": 0.1,
 "date": "2026-07-17",
 "source": "Sina-DINIW"
 },
 "commodities": {
 "gold": {
-"value": 3991.8,
+"value": 3985.3,
 "unit": "美元/盎司",
 "date": "2026-07-17"
 },
 "silver": {
-"value": 55.6,
+"value": 55.47,
 "unit": "美元/盎司",
 "date": "2026-07-17"
 },
 "copper": {
-"value": 6.2285,
+"value": 6.213,
 "unit": "美元/磅",
 "date": "2026-07-17"
 },
 "oil": {
-"value": 79.18,
+"value": 79.12,
 "unit": "美元/桶",
 "date": "2026-07-17"
 }
@@ -135782,19 +135782,8 @@ function renderCapitalFlowCard() {
 
   var tEl = document.getElementById('capFlowTime');
   if (tEl) {
-    // 2026-07-17 修复：明确区分龙虎榜日期（lhb_date）与南向日期（north_fund_date）。
-    // 龙虎榜席位数据滞后一日，避免标成"今日"。
-    var lhbDate = d.lhb_date || '';
-    var nfDate = d.north_fund_date || '';
-    if (lhbDate && nfDate) {
-      tEl.textContent = '龙虎榜 ' + lhbDate + ' · 南向 ' + nfDate;
-    } else if (lhbDate) {
-      tEl.textContent = '龙虎榜 ' + lhbDate;
-    } else if (d.update_time) {
-      tEl.textContent = '更新于 ' + d.update_time;
-    } else {
-      tEl.textContent = '';
-    }
+    // 统一版式：与其他卡片一致，只显示"🕐 更新于 今日/昨日 HH:MM"
+    tEl.textContent = fmtCardTime(d, 'update_time');
   }
 
   var body = document.getElementById('capFlowBody');
@@ -135823,6 +135812,9 @@ function renderCapitalFlowCard() {
       + '</tr>';
   }
   body.innerHTML = ''
+    + '<div style="font-size:10px;color:#888;margin-bottom:6px;padding:0 2px;">'
+    + '数据源：龙虎榜席位 ' + (d.lhb_date || '-') + '｜南向资金 ' + (d.north_fund_date || '-') + '｜仅覆盖异动上榜股'
+    + '</div>'
     + row('🌏 南向资金', d.north_south, '#f5fff5')
     + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
     + row('🏦 机构席位', d.inst, '#fff5f5')
@@ -136641,7 +136633,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 "xiaojiu": {
 "status": "ok",
-"last_time": "2026-07-17 11:56:58",
+"last_time": "2026-07-17 12:36:45",
 "mode": "deploy"
 },
 "alimi": {
