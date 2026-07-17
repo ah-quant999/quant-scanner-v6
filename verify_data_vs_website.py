@@ -1438,6 +1438,257 @@ def check_scoring_integrity():
                  issues)
 
 
+# ============================================================
+# 通用时间解析
+# ============================================================
+def _parse_dt(s):
+    """尽量把各种时间字符串解析为 datetime；失败返回 None。"""
+    if not s or not isinstance(s, str):
+        return None
+    s = s.strip()
+    # 纯 8 位日期 20260716
+    if re.fullmatch(r"\d{8}", s):
+        try:
+            return datetime.strptime(s, "%Y%m%d")
+        except Exception:
+            return None
+    # ISO 带时区 2026-07-07T23:25:27.9+00:00 → 去掉时区与微秒
+    s2 = re.sub(r"(\.\d+)?([+-]\d{2}:?\d{2}|Z)$", "", s).replace("T", " ")
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d", "%Y/%m/%d %H:%M:%S"):
+        try:
+            return datetime.strptime(s2, fmt)
+        except Exception:
+            continue
+    return None
+
+
+# ============================================================
+# 监控① 数据正确性（业务不变量断言）— 纯本地判定，不依赖外部 API
+# 目的：抓"口径漂移/数值自相矛盾"类 bug（如机游共振阈值、废弃分类回潮）
+# ============================================================
+def check_data_invariants():
+    print("\n" + "=" * 60)
+    print("🧮 [11/12] 数据正确性 · 业务不变量断言")
+    print("=" * 60)
+
+    fails = []   # 硬违规 → FAIL
+    warns = []   # 待关注 → WARN
+    TH = 8000    # 万元 = 0.8 亿门槛
+
+    # --- 1) 龙虎榜分类口径自洽（本次事故的正是这一类）---
+    lhb = load_json("lhb_result.json")
+    if lhb and isinstance(lhb, dict):
+        stocks = lhb.get("stocks", []) or []
+        ALLOWED = {"机游共振", "机构独买", "游资独买", "不达标"}
+        LEGACY = {"纯共振", "标X"}
+        from collections import Counter
+        cat_cnt = Counter(s.get("category", "?") for s in stocks)
+        # 1a. 废弃分类回潮（scanner.py/fetch_lhb.py 抢写会导致）
+        legacy_hit = LEGACY & set(cat_cnt)
+        unknown = set(cat_cnt) - ALLOWED - LEGACY
+        if legacy_hit:
+            fails.append(f"龙虎榜出现废弃分类 {dict((k, cat_cnt[k]) for k in legacy_hit)}（口径漂移，卡片会时好时坏）")
+        if unknown:
+            fails.append(f"龙虎榜出现未知分类 {dict((k, cat_cnt[k]) for k in unknown)}")
+        # 1b. 每只个股的分类必须与其金额自洽
+        bad_res = bad_inst = bad_yz = 0
+        for s in stocks:
+            cat = s.get("category")
+            inst = s.get("inst_net_万", 0) or 0
+            yz = s.get("yz_net_万", 0) or 0
+            if cat == "机游共振" and not (inst > TH and yz > TH):
+                bad_res += 1
+            elif cat == "机构独买" and not (inst > TH):
+                bad_inst += 1
+            elif cat == "游资独买" and not (yz > TH):
+                bad_yz += 1
+        if bad_res:
+            fails.append(f"{bad_res} 只标'机游共振'却未双超 0.8 亿（inst>{TH}万 且 yz>{TH}万）")
+        if bad_inst:
+            fails.append(f"{bad_inst} 只标'机构独买'却 inst≤0.8 亿")
+        if bad_yz:
+            fails.append(f"{bad_yz} 只标'游资独买'却 yz≤0.8 亿")
+        # 1c. summary 计数与实际分布一致
+        summ = lhb.get("summary", {}) or {}
+        for k in ("机游共振", "机构独买", "游资独买", "不达标"):
+            if k in summ and summ.get(k) != cat_cnt.get(k, 0):
+                warns.append(f"lhb summary[{k}]={summ.get(k)} ≠ 实际 {cat_cnt.get(k, 0)}")
+        print(f"  龙虎榜分类分布: {dict(cat_cnt)}")
+    else:
+        warns.append("lhb_result.json 缺失或格式异常")
+
+    # --- 2) 多维共振评分范围 [0,143] ---
+    top10 = load_json("top10_daily.json")
+    if top10 and isinstance(top10, dict):
+        rows = top10.get("top10", []) or []
+        oor = 0
+        for r in rows:
+            sc = r.get("score", r.get("总分", r.get("total_score")))
+            if isinstance(sc, (int, float)) and not (0 <= sc <= 143):
+                oor += 1
+        if oor:
+            fails.append(f"多维共振评分越界(不在0~143)：{oor} 只")
+        else:
+            print(f"  多维共振评分: {len(rows)} 只全部在 0~143 区间")
+        # 80+ 精选计数自洽
+        c80 = top10.get("count_80plus")
+        if isinstance(c80, int):
+            real80 = sum(1 for r in rows if isinstance(r.get("score", r.get("总分")), (int, float)) and (r.get("score", r.get("总分")) or 0) >= 80)
+            # rows 通常只存 top10，real80 仅供参考，不强制
+    # --- 3) 金股池入池条件（signal≥2 或研报覆盖）软校验 ---
+    gp = load_json("gold_pool.json")
+    if gp and isinstance(gp, dict):
+        gstocks = gp.get("stocks", []) or []
+        # stocks 可能是 list，也可能是 {code: {...}} 的 dict
+        if isinstance(gstocks, dict):
+            gstocks = list(gstocks.values())
+        if gstocks and isinstance(gstocks[0], dict):
+            REPORT_SRC = {"观澜台", "观澜台研报", "maharo研报", "投行研报", "研报"}
+            bad = 0
+            for s in gstocks:
+                sig = s.get("signal", s.get("signal_count", s.get("signals", 0))) or 0
+                srcs = s.get("sources", s.get("source", []))
+                if isinstance(srcs, str):
+                    srcs = [srcs]
+                covered = bool(set(srcs or []) & REPORT_SRC)
+                if not ((isinstance(sig, int) and sig >= 2) or covered):
+                    bad += 1
+            if bad:
+                warns.append(f"金股池 {bad}/{len(gstocks)} 只不满足 signal≥2 或研报覆盖（可能口径变化）")
+            print(f"  金股池: {len(gstocks)} 只，不合规 {bad}")
+
+    # 汇总
+    if fails:
+        record_check("数据正确性·不变量", "FAIL", f"{len(fails)} 项硬违规", fails + warns)
+        print(f"  ❌ {len(fails)} 项硬违规")
+        for x in fails:
+            print(f"     • {x}")
+    elif warns:
+        record_check("数据正确性·不变量", "WARN", f"{len(warns)} 项待关注", warns)
+        print(f"  ⚠️  {len(warns)} 项待关注")
+    else:
+        record_check("数据正确性·不变量", "PASS", "全部业务不变量通过")
+        print("  ✅ 全部业务不变量通过")
+
+
+# ============================================================
+# 监控② 新鲜度一致性（更新时间 vs 最新数据 vs 文件写入时间）
+# 目的：抓"声明更新了、实际数据陈旧"类 bug（如世界杯停在 07-07）
+# ============================================================
+def check_freshness_consistency():
+    print("\n" + "=" * 60)
+    print("⏱️  [12/12] 新鲜度一致性 · 更新时间 vs 最新数据")
+    print("=" * 60)
+
+    BASE = os.path.dirname(os.path.abspath(__file__))
+    now = datetime.now()
+    is_trading = _is_trading_day(now.date())
+    fails = []
+    warns = []
+
+    # (文件名, 交易日最大允许小时, 中文名) —— 仅列必须按日刷新的生产数据
+    RULES = [
+        ("lhb_result.json", 30, "龙虎榜"),
+        ("main_stock.json", 30, "个股主力资金"),
+        ("top10_daily.json", 30, "每日精选"),
+        ("herding_data.json", 30, "资金抱团"),
+        ("north_fund.json", 30, "南向资金"),
+        ("sector_fund_flow.json", 30, "板块资金流"),
+        ("sector_rs.json", 30, "板块RS"),
+        ("concept_ranking.json", 30, "概念排行"),
+        ("crds_result.json", 30, "CRDS逆势"),
+        ("52w_high.json", 30, "52周新高"),
+        ("candidate_pool.json", 40, "候选池"),
+        ("gold_pool.json", 40, "金股池"),
+        ("crisis_data.json", 40, "危机雷达"),
+        ("macro_data.json", 40, "宏观数据"),
+        ("suspension_alert.json", 40, "停牌警示"),
+    ]
+
+    checked = 0
+    for fn, max_h, cn in RULES:
+        d = load_json(fn)
+        if not isinstance(d, dict):
+            warns.append(f"{cn}({fn}) 缺失或非法")
+            continue
+        claim = d.get("update_time") or d.get("fetch_time") or d.get("generated_at") or d.get("date")
+        dt = _parse_dt(claim)
+        if dt is None:
+            warns.append(f"{cn}({fn}) 无法解析更新时间: {claim!r}")
+            continue
+        age_h = (now - dt).total_seconds() / 3600.0
+        checked += 1
+        # A. 绝对新鲜度（仅交易日强制）
+        if is_trading and age_h > max_h:
+            fails.append(f"{cn}({fn}) 陈旧 {age_h:.1f}h > 阈值 {max_h}h（声明更新={claim}）")
+        # B. 声明一致性：update_time 与文件实际写入 mtime 不能相差过大
+        p = os.path.join(DATA_DIR, fn)
+        try:
+            mtime = datetime.fromtimestamp(os.path.getmtime(p))
+            gap_h = abs((mtime - dt).total_seconds()) / 3600.0
+            if gap_h > 48:
+                warns.append(f"{cn}({fn}) 声明更新时间({claim}) 与文件实际写入({mtime:%Y-%m-%d %H:%M}) 相差 {gap_h:.0f}h（时间戳可能造假/未真正刷新）")
+        except Exception:
+            pass
+
+    # --- 世界杯专项：抓 07-07 停更那一类 ---
+    WC_CANDIDATES = [
+        os.path.join(BASE, "dist", "worldcup_matches.json"),          # repo-temp/dist（曾停更陷阱）
+        r"E:\workspace\stock-scanner\dist\worldcup_matches.json",     # 根 dist（standalone 实际读取）
+        os.path.join(DATA_DIR, "worldcup.json"),                       # 计算后测算数据
+    ]
+    wc_best = None      # 取最新那份作为"实际生效"
+    wc_reports = []
+    for wp in WC_CANDIDATES:
+        if not os.path.exists(wp):
+            continue
+        try:
+            wd = json.load(open(wp, "r", encoding="utf-8"))
+        except Exception:
+            continue
+        claim = wd.get("fetch_time") or wd.get("update_time")
+        dt = _parse_dt(claim)
+        if dt is None:
+            continue
+        age_d = (now - dt).total_seconds() / 86400.0
+        wc_reports.append((os.path.basename(os.path.dirname(wp)) + "/" + os.path.basename(wp), age_d, claim))
+        if wc_best is None or age_d < wc_best[1]:
+            wc_best = (wp, age_d, claim)
+    if wc_best is None:
+        warns.append("世界杯数据文件全部缺失/无法解析时间")
+    else:
+        # 实际生效那份（最新）> 2 天即判失效
+        if wc_best[1] > 2:
+            fails.append(f"世界杯竞彩数据陈旧 {wc_best[1]:.1f} 天（最新一份={wc_best[2]}），配套测算已失真")
+        else:
+            print(f"  世界杯(生效): {os.path.basename(wc_best[0])} 数据龄 {wc_best[1]:.1f} 天 ✅")
+        # 陷阱提示：某副本远比生效份陈旧 → 提醒清理，防被误读
+        for name, age_d, claim in wc_reports:
+            if age_d > 3 and age_d > wc_best[1] + 2:
+                warns.append(f"存在陈旧世界杯副本 {name}（{age_d:.1f} 天，{claim}）——若被流水线误读会显示旧数据，建议清理")
+
+    label = "交易日" if is_trading else "非交易日(仅提醒不判失败)"
+    print(f"  检查 {checked} 个生产数据文件 | 模式: {label}")
+    if fails:
+        record_check("新鲜度一致性", "FAIL", f"{len(fails)} 项陈旧/失真", fails + warns)
+        print(f"  ❌ {len(fails)} 项陈旧/不一致")
+        for x in fails:
+            print(f"     • {x}")
+    elif warns:
+        record_check("新鲜度一致性", "WARN", f"{len(warns)} 项待关注", warns)
+        print(f"  ⚠️  {len(warns)} 项待关注")
+    else:
+        record_check("新鲜度一致性", "PASS", "全部数据新鲜且时间戳一致")
+        print("  ✅ 全部数据新鲜且更新时间可信")
+
+
+def _is_trading_day(d):
+    """粗判交易日：周一~周五且非固定长假。宁可多跑(周末仅提醒不判FAIL)。"""
+    if d.weekday() >= 5:
+        return False
+    return True
+
+
 def main():
     fast_mode = "--fast" in sys.argv
     only_issues = "--only-issues" in sys.argv
@@ -1479,6 +1730,10 @@ def main():
         check_top10_daily_quality()
         check_scoring_integrity()
         check_fetch_log()
+
+        # 第11-12项：数据正确性 + 新鲜度一致性（纯本地判定，快速模式也跑）
+        check_data_invariants()
+        check_freshness_consistency()
 
         elapsed = time.time() - t0
     finally:

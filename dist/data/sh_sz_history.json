@@ -1,371 +1,371 @@
 {
-  "update_time": "2026-07-17 10:40:51",
+  "update_time": "2026-07-17 14:24",
   "amount_history": [
     {
       "date": "4/20",
-      "sh_amount": 11526.2,
-      "sz_amount": 13304.5,
-      "total": 24830.7
+      "sh_amount": 11347.3,
+      "sz_amount": 13407.5,
+      "total": 24754.8
     },
     {
       "date": "4/21",
-      "sh_amount": 11269.2,
-      "sz_amount": 12891.3,
-      "total": 24160.4
+      "sh_amount": 11094.3,
+      "sz_amount": 12991.0,
+      "total": 24085.4
     },
     {
       "date": "4/22",
-      "sh_amount": 11382.1,
-      "sz_amount": 12865.2,
-      "total": 24247.3
+      "sh_amount": 11205.5,
+      "sz_amount": 12964.8,
+      "total": 24170.3
     },
     {
       "date": "4/23",
-      "sh_amount": 13115.4,
-      "sz_amount": 14007.7,
-      "total": 27123.0
+      "sh_amount": 12911.9,
+      "sz_amount": 14116.1,
+      "total": 27027.9
     },
     {
       "date": "4/24",
-      "sh_amount": 11823.0,
-      "sz_amount": 13063.5,
-      "total": 24886.5
+      "sh_amount": 11639.6,
+      "sz_amount": 13164.6,
+      "total": 24804.2
     },
     {
       "date": "4/27",
-      "sh_amount": 11528.3,
-      "sz_amount": 13067.2,
-      "total": 24595.5
+      "sh_amount": 11349.4,
+      "sz_amount": 13168.4,
+      "total": 24517.8
     },
     {
       "date": "4/28",
-      "sh_amount": 11734.6,
-      "sz_amount": 13321.2,
-      "total": 25055.8
+      "sh_amount": 11552.5,
+      "sz_amount": 13424.3,
+      "total": 24976.8
     },
     {
       "date": "4/29",
-      "sh_amount": 12002.6,
-      "sz_amount": 13554.1,
-      "total": 25556.7
+      "sh_amount": 11816.4,
+      "sz_amount": 13659.0,
+      "total": 25475.3
     },
     {
       "date": "4/30",
-      "sh_amount": 12836.8,
-      "sz_amount": 13578.4,
-      "total": 26415.3
+      "sh_amount": 12637.7,
+      "sz_amount": 13683.5,
+      "total": 26321.2
     },
     {
       "date": "5/6",
-      "sh_amount": 13701.8,
-      "sz_amount": 15208.2,
-      "total": 28910.0
+      "sh_amount": 13489.2,
+      "sz_amount": 15325.9,
+      "total": 28815.2
     },
     {
       "date": "5/7",
-      "sh_amount": 13396.9,
-      "sz_amount": 15544.0,
-      "total": 28940.9
+      "sh_amount": 13189.0,
+      "sz_amount": 15664.3,
+      "total": 28853.3
     },
     {
       "date": "5/8",
-      "sh_amount": 13620.5,
-      "sz_amount": 15207.7,
-      "total": 28828.2
+      "sh_amount": 13409.2,
+      "sz_amount": 15325.4,
+      "total": 28734.6
     },
     {
       "date": "5/11",
-      "sh_amount": 14904.7,
-      "sz_amount": 16779.9,
-      "total": 31684.6
+      "sh_amount": 14673.5,
+      "sz_amount": 16909.7,
+      "total": 31583.2
     },
     {
       "date": "5/12",
-      "sh_amount": 14049.8,
-      "sz_amount": 15605.2,
-      "total": 29655.0
+      "sh_amount": 13831.8,
+      "sz_amount": 15726.0,
+      "total": 29557.8
     },
     {
       "date": "5/13",
-      "sh_amount": 13776.9,
-      "sz_amount": 15228.3,
-      "total": 29005.2
+      "sh_amount": 13563.1,
+      "sz_amount": 15346.2,
+      "total": 28909.3
     },
     {
       "date": "5/14",
-      "sh_amount": 14934.0,
-      "sz_amount": 16078.4,
-      "total": 31012.4
+      "sh_amount": 14702.3,
+      "sz_amount": 16202.9,
+      "total": 30905.2
     },
     {
       "date": "5/15",
-      "sh_amount": 14326.8,
-      "sz_amount": 15639.8,
-      "total": 29966.6
+      "sh_amount": 14104.5,
+      "sz_amount": 15760.8,
+      "total": 29865.4
     },
     {
       "date": "5/18",
-      "sh_amount": 12256.9,
-      "sz_amount": 13589.5,
-      "total": 25846.4
+      "sh_amount": 12066.7,
+      "sz_amount": 13694.7,
+      "total": 25761.4
     },
     {
       "date": "5/19",
-      "sh_amount": 12068.8,
-      "sz_amount": 13459.0,
-      "total": 25527.9
+      "sh_amount": 11881.6,
+      "sz_amount": 13563.2,
+      "total": 25444.8
     },
     {
       "date": "5/20",
-      "sh_amount": 12196.6,
-      "sz_amount": 13367.0,
-      "total": 25563.7
+      "sh_amount": 12007.4,
+      "sz_amount": 13470.5,
+      "total": 25477.9
     },
     {
       "date": "5/21",
-      "sh_amount": 14210.7,
-      "sz_amount": 16178.9,
-      "total": 30389.6
+      "sh_amount": 13990.2,
+      "sz_amount": 16304.1,
+      "total": 30294.3
     },
     {
       "date": "5/22",
-      "sh_amount": 11518.7,
-      "sz_amount": 14045.3,
-      "total": 25564.0
+      "sh_amount": 11340.0,
+      "sz_amount": 14154.0,
+      "total": 25494.0
     },
     {
       "date": "5/25",
-      "sh_amount": 12036.0,
-      "sz_amount": 14379.5,
-      "total": 26415.5
+      "sh_amount": 11849.2,
+      "sz_amount": 14490.8,
+      "total": 26340.1
     },
     {
       "date": "5/26",
-      "sh_amount": 12795.1,
-      "sz_amount": 15153.5,
-      "total": 27948.6
+      "sh_amount": 12596.6,
+      "sz_amount": 15270.7,
+      "total": 27867.3
     },
     {
       "date": "5/27",
-      "sh_amount": 12906.3,
-      "sz_amount": 15017.2,
-      "total": 27923.5
+      "sh_amount": 12706.0,
+      "sz_amount": 15133.4,
+      "total": 27839.5
     },
     {
       "date": "5/28",
-      "sh_amount": 12138.6,
-      "sz_amount": 13765.2,
-      "total": 25903.7
+      "sh_amount": 11950.2,
+      "sz_amount": 13871.7,
+      "total": 25822.0
     },
     {
       "date": "5/29",
-      "sh_amount": 14296.3,
-      "sz_amount": 15624.8,
-      "total": 29921.0
+      "sh_amount": 14074.4,
+      "sz_amount": 15745.7,
+      "total": 29820.2
     },
     {
       "date": "6/1",
-      "sh_amount": 13210.3,
-      "sz_amount": 13996.1,
-      "total": 27206.4
+      "sh_amount": 13005.4,
+      "sz_amount": 14104.4,
+      "total": 27109.7
     },
     {
       "date": "6/2",
-      "sh_amount": 12550.2,
-      "sz_amount": 13571.9,
-      "total": 26122.1
+      "sh_amount": 12355.5,
+      "sz_amount": 13677.0,
+      "total": 26032.4
     },
     {
       "date": "6/3",
-      "sh_amount": 13062.3,
-      "sz_amount": 14591.4,
-      "total": 27653.7
+      "sh_amount": 12859.7,
+      "sz_amount": 14704.3,
+      "total": 27564.0
     },
     {
       "date": "6/4",
-      "sh_amount": 12138.9,
-      "sz_amount": 13233.1,
-      "total": 25371.9
+      "sh_amount": 11950.5,
+      "sz_amount": 13335.5,
+      "total": 25286.0
     },
     {
       "date": "6/5",
-      "sh_amount": 12954.2,
-      "sz_amount": 15061.0,
-      "total": 28015.2
+      "sh_amount": 12753.2,
+      "sz_amount": 15177.6,
+      "total": 27930.8
     },
     {
       "date": "6/8",
-      "sh_amount": 12883.3,
-      "sz_amount": 14516.0,
-      "total": 27399.4
+      "sh_amount": 12683.5,
+      "sz_amount": 14628.4,
+      "total": 27311.8
     },
     {
       "date": "6/9",
-      "sh_amount": 11266.8,
-      "sz_amount": 13216.7,
-      "total": 24483.5
+      "sh_amount": 11092.0,
+      "sz_amount": 13319.0,
+      "total": 24411.0
     },
     {
       "date": "6/10",
-      "sh_amount": 11699.2,
-      "sz_amount": 13077.0,
-      "total": 24776.2
+      "sh_amount": 11517.7,
+      "sz_amount": 13178.2,
+      "total": 24695.9
     },
     {
       "date": "6/11",
-      "sh_amount": 11110.0,
-      "sz_amount": 12328.9,
-      "total": 23438.9
+      "sh_amount": 10937.6,
+      "sz_amount": 12424.3,
+      "total": 23362.0
     },
     {
       "date": "6/12",
-      "sh_amount": 14521.6,
-      "sz_amount": 14584.0,
-      "total": 29105.7
+      "sh_amount": 14296.3,
+      "sz_amount": 14696.9,
+      "total": 28993.2
     },
     {
       "date": "6/15",
-      "sh_amount": 13266.6,
-      "sz_amount": 13934.6,
-      "total": 27201.3
+      "sh_amount": 13060.8,
+      "sz_amount": 14042.5,
+      "total": 27103.3
     },
     {
       "date": "6/16",
-      "sh_amount": 12030.9,
-      "sz_amount": 13893.6,
-      "total": 25924.5
+      "sh_amount": 11844.2,
+      "sz_amount": 14001.2,
+      "total": 25845.4
     },
     {
       "date": "6/17",
-      "sh_amount": 11882.5,
-      "sz_amount": 13729.6,
-      "total": 25612.1
+      "sh_amount": 11698.2,
+      "sz_amount": 13835.9,
+      "total": 25534.0
     },
     {
       "date": "6/18",
-      "sh_amount": 12860.3,
-      "sz_amount": 14064.4,
-      "total": 26924.7
+      "sh_amount": 12660.8,
+      "sz_amount": 14173.3,
+      "total": 26834.1
     },
     {
       "date": "6/22",
-      "sh_amount": 14532.7,
-      "sz_amount": 16131.0,
-      "total": 30663.7
+      "sh_amount": 14307.3,
+      "sz_amount": 16255.8,
+      "total": 30563.1
     },
     {
       "date": "6/23",
-      "sh_amount": 13854.7,
-      "sz_amount": 14862.3,
-      "total": 28717.1
+      "sh_amount": 13639.8,
+      "sz_amount": 14977.3,
+      "total": 28617.1
     },
     {
       "date": "6/24",
-      "sh_amount": 12594.8,
-      "sz_amount": 14543.4,
-      "total": 27138.2
+      "sh_amount": 12399.4,
+      "sz_amount": 14656.0,
+      "total": 27055.4
     },
     {
       "date": "6/25",
-      "sh_amount": 13101.6,
-      "sz_amount": 15286.9,
-      "total": 28388.5
+      "sh_amount": 12898.3,
+      "sz_amount": 15405.3,
+      "total": 28303.5
     },
     {
       "date": "6/26",
-      "sh_amount": 12899.3,
-      "sz_amount": 15397.1,
-      "total": 28296.4
+      "sh_amount": 12699.1,
+      "sz_amount": 15516.3,
+      "total": 28215.4
     },
     {
       "date": "6/29",
-      "sh_amount": 12881.5,
-      "sz_amount": 14873.0,
-      "total": 27754.5
+      "sh_amount": 12681.7,
+      "sz_amount": 14988.1,
+      "total": 27669.8
     },
     {
       "date": "6/30",
-      "sh_amount": 11693.7,
-      "sz_amount": 13705.0,
-      "total": 25398.6
+      "sh_amount": 11512.2,
+      "sz_amount": 13811.1,
+      "total": 25323.3
     },
     {
       "date": "7/1",
-      "sh_amount": 13138.1,
-      "sz_amount": 16071.3,
-      "total": 29209.5
+      "sh_amount": 12934.3,
+      "sz_amount": 16195.7,
+      "total": 29130.0
     },
     {
       "date": "7/2",
-      "sh_amount": 12823.6,
-      "sz_amount": 15767.4,
-      "total": 28590.9
+      "sh_amount": 12624.6,
+      "sz_amount": 15889.4,
+      "total": 28514.0
     },
     {
       "date": "7/3",
-      "sh_amount": 11764.0,
-      "sz_amount": 14457.9,
-      "total": 26221.9
+      "sh_amount": 11581.4,
+      "sz_amount": 14569.8,
+      "total": 26151.3
     },
     {
       "date": "7/6",
-      "sh_amount": 11536.4,
-      "sz_amount": 14129.3,
-      "total": 25665.7
+      "sh_amount": 11357.4,
+      "sz_amount": 14238.7,
+      "total": 25596.1
     },
     {
       "date": "7/7",
-      "sh_amount": 10053.0,
-      "sz_amount": 12481.6,
-      "total": 22534.6
+      "sh_amount": 9897.0,
+      "sz_amount": 12578.2,
+      "total": 22475.2
     },
     {
       "date": "7/8",
-      "sh_amount": 9696.9,
-      "sz_amount": 12045.7,
-      "total": 21742.6
+      "sh_amount": 9546.4,
+      "sz_amount": 12139.0,
+      "total": 21685.4
     },
     {
       "date": "7/9",
-      "sh_amount": 10807.5,
-      "sz_amount": 13182.5,
-      "total": 23990.0
+      "sh_amount": 10639.8,
+      "sz_amount": 13284.5,
+      "total": 23924.4
     },
     {
       "date": "7/10",
-      "sh_amount": 12261.1,
-      "sz_amount": 15251.6,
-      "total": 27512.7
+      "sh_amount": 12070.9,
+      "sz_amount": 15369.6,
+      "total": 27440.5
     },
     {
       "date": "7/13",
-      "sh_amount": 11547.0,
-      "sz_amount": 13502.1,
-      "total": 25049.1
+      "sh_amount": 11367.8,
+      "sz_amount": 13606.6,
+      "total": 24974.5
     },
     {
       "date": "7/14",
-      "sh_amount": 11333.5,
-      "sz_amount": 12419.7,
-      "total": 23753.2
+      "sh_amount": 11157.7,
+      "sz_amount": 12515.9,
+      "total": 23673.5
     },
     {
       "date": "7/15",
-      "sh_amount": 11259.8,
-      "sz_amount": 12680.5,
-      "total": 23940.3
+      "sh_amount": 11085.1,
+      "sz_amount": 12778.6,
+      "total": 23863.7
     },
     {
       "date": "7/16",
-      "sh_amount": 10460.0,
-      "sz_amount": 12256.2,
-      "total": 22716.2
+      "sh_amount": 10297.7,
+      "sz_amount": 12351.1,
+      "total": 22648.8
     },
     {
       "date": "7/17",
-      "sh_amount": 5556.8,
-      "sz_amount": 6480.6,
-      "total": 12037.4
+      "sh_amount": 11047.5,
+      "sz_amount": 12542.6,
+      "total": 23590.1
     }
   ],
   "up_down": {},

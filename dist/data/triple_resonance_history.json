@@ -282,8 +282,8 @@
     },
     "00005": {
       "name": "汇丰控股",
-      "close": 157.5,
-      "pct_chg": 0.38,
+      "close": 156.6,
+      "pct_chg": -0.19,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -466,8 +466,8 @@
     },
     "03908": {
       "name": "中金公司",
-      "close": 21.9,
-      "pct_chg": 3.69,
+      "close": 21.02,
+      "pct_chg": -4.89,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -482,8 +482,8 @@
     },
     "03759": {
       "name": "康龙化成",
-      "close": 25.78,
-      "pct_chg": 9.24,
+      "close": 23.38,
+      "pct_chg": -6.33,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -521,9 +521,9 @@
       "_source": "gold_pool"
     },
     "09988": {
-      "name": "阿里巴巴-W",
-      "close": 117.3,
-      "pct_chg": 3.44,
+      "name": "09988",
+      "close": 112.6,
+      "pct_chg": -3.68,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -746,8 +746,8 @@
     },
     "09626": {
       "name": "哔哩哔哩-W",
-      "close": 141.9,
-      "pct_chg": -4.06,
+      "close": 138.9,
+      "pct_chg": -6.09,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -1090,8 +1090,8 @@
     },
     "300395": {
       "name": "菲利华",
-      "close": 89.93,
-      "pct_chg": -3.4,
+      "close": 87.52,
+      "pct_chg": -5.99,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -1282,8 +1282,8 @@
     },
     "06160": {
       "name": "百济神州",
-      "close": 186.3,
-      "pct_chg": -2.36,
+      "close": 186.9,
+      "pct_chg": -2.04,
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "gold_pool"
@@ -1391,6 +1391,94 @@
       "pct_chg_20d": 0,
       "update_time": "2026-07-17",
       "_source": "snapshot"
+    },
+    "00992": {
+      "name": "00992",
+      "close": 21.26,
+      "pct_chg": -4.49,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "00586": {
+      "name": "海螺创业",
+      "close": 8.44,
+      "pct_chg": -0.12,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "002028": {
+      "name": "思源电气",
+      "close": 148.85,
+      "pct_chg": -1.68,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "002270": {
+      "name": "华明装备",
+      "close": 17.55,
+      "pct_chg": 0.34,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "603806": {
+      "name": "福斯特",
+      "close": 14.05,
+      "pct_chg": -1.54,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "300972": {
+      "name": "万辰集团",
+      "close": 192.15,
+      "pct_chg": -7.17,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "603606": {
+      "name": "东方电缆",
+      "close": 38.24,
+      "pct_chg": -1.77,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "01816": {
+      "name": "中广核电力",
+      "close": 2.72,
+      "pct_chg": 0.0,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "02208": {
+      "name": "金风科技",
+      "close": 9.15,
+      "pct_chg": -6.06,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "02688": {
+      "name": "新奥能源",
+      "close": 41.86,
+      "pct_chg": -1.64,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
+    },
+    "03393": {
+      "name": "威胜集团",
+      "close": 17.42,
+      "pct_chg": -5.07,
+      "pct_chg_20d": 0,
+      "update_time": "2026-07-17",
+      "_source": "gold_pool"
     }
   }
 }

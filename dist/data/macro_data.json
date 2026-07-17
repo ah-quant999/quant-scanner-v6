@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-17 10:28:53",
+  "update_time": "2026-07-17 15:57:14",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7437,
@@ -18,11 +18,11 @@
       "date": "2026-06-22"
     },
     "shibor": {
-      "on": 1.389,
-      "w1": 1.44,
-      "m1": 1.419,
+      "on": 1.3971,
+      "w1": 1.435,
+      "m1": 1.4199,
       "m3": 1.43,
-      "date": "2026-07-16"
+      "date": "2026-07-17"
     },
     "m2_yoy": {
       "value": 8.0,
@@ -75,39 +75,39 @@
   },
   "global_macro": {
     "vix": {
-      "value": 18.85,
+      "value": 19.0,
       "date": "2026-07-17"
     },
     "usdcnh": {
       "price": 6.773,
-      "prev_close": 6.7768,
+      "prev_close": 6.7782,
       "date": "2026-07-17",
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 100.77,
-      "pct": 0.07,
+      "value": 100.7,
+      "pct": 0.05,
       "date": "2026-07-17",
       "source": "Sina-DINIW"
     },
     "commodities": {
       "gold": {
-        "value": 3986.5,
+        "value": 4000.2,
         "unit": "美元/盎司",
         "date": "2026-07-17"
       },
       "silver": {
-        "value": 55.52,
+        "value": 55.81,
         "unit": "美元/盎司",
         "date": "2026-07-17"
       },
       "copper": {
-        "value": 6.2455,
+        "value": 6.2515,
         "unit": "美元/磅",
         "date": "2026-07-17"
       },
       "oil": {
-        "value": 79.17,
+        "value": 78.79,
         "unit": "美元/桶",
         "date": "2026-07-17"
       }
