@@ -6,13 +6,11 @@ guanlan_extractor.py — 知识星球研报自动提取器（API优先 + Seleniu
 用途: 从知识星球(zsxq.com)抓取投行/机构研报，解析出机构名、评级、
       涉及股票、原文，输出数据文件:
         - data/guanlan_reports.json    观澜台研报列表
-        - data/zhaixingge_reports.json 摘星阁研报列表
         - data/guanlan_watchlist.json  合并推股池
 
 数据源:
   - 观澜台: wx.zsxq.com/group/28882555515111 (group_id=28882555515111)
-  - 摘星阁: wx.zsxq.com/group/28882455114411 (group_id=28882455114411)
-  - 甲股文: wx.zsxq.com/group/51115218441414 (可选)
+  - 甲股文: wx.zsxq.com/group/51115218441414 (可选, 未启用)
 
 认证: cookie名=zsxq_access_token（非 xq_a_token！）
 凭据: data/zszxq_token.json {"token": "...", "updated": "..."}
@@ -22,6 +20,7 @@ guanlan_extractor.py — 知识星球研报自动提取器（API优先 + Seleniu
 更新历史:
   2026-07-07  重写为 API 优先模式，新增摘星阁双星球支持
              根因修复: cookie 名从 xq_a_token → zsxq_access_token
+  2026-07-17  放弃摘星阁源(数据陈旧且未被候选池消费)，从 GROUPS 移除
 """
 import json
 import os
@@ -42,11 +41,6 @@ GROUPS = {
         "name": "观澜台",
         "group_id": "28882555515111",
         "out_reports": os.path.join(DATA_DIR, "guanlan_reports.json"),
-    },
-    "zhaixingge": {
-        "name": "摘星阁",
-        "group_id": "28882455114411",
-        "out_reports": os.path.join(DATA_DIR, "zhaixingge_reports.json"),
     },
 }
 WATCHLIST_OUT = os.path.join(DATA_DIR, "guanlan_watchlist.json")
@@ -575,7 +569,7 @@ def process_group(key, config, token):
 
 def main():
     print("=== 知识星球研报提取 (guanlan_extractor) ===")
-    print("   模式: API优先 | 星球: 观澜台 + 摘星阁\n")
+    print("   模式: API优先 | 星球: 观澜台\n")
 
     # 构建股票名索引（用于只写名字没写代码的研报反查）
     global NAME_INDEX
@@ -594,7 +588,7 @@ def main():
         try:
             reps, watches = process_group(key, config, token)
             total_reports += len(reps)
-            all_watch.update(watches)  # 摘星阁的股票也入推股池（同code后者覆盖）
+            all_watch.update(watches)  # 观澜台股票入推股池
         except Exception as e:
             print(f"  [ERR] {config['name']} 处理异常: {e}")
 

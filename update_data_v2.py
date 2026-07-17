@@ -1134,13 +1134,8 @@ def main():
     analyst_ratings = load_json(os.path.join(DATA_DIR, "analyst_ratings.json"), {"update_time": "", "upgrades": [], "hot_stocks": []})
     policy_density = load_json(os.path.join(DATA_DIR, "policy_density.json"), {"update_time": "", "density": 0, "level": "低", "signals": []})
     fetch_errors = load_json(os.path.join(DATA_DIR, ".fetch_errors.json"), {"last_scan": "", "errors": []})
-    _zxa_raw = load_json(os.path.join(DATA_DIR, "zhaixingge_reports.json"))
-    if isinstance(_zxa_raw, list):
-        zhaixingge_data = {"update_time": "", "reports": _zxa_raw}
-    elif isinstance(_zxa_raw, dict):
-        zhaixingge_data = _zxa_raw
-    else:
-        zhaixingge_data = {"update_time": "", "reports": []}
+    # 摘星阁源已放弃(2026-07-17): 数据陈旧且未被候选池消费, 不再读取 zhaixingge_reports.json
+    zhaixingge_data = {"update_time": "", "reports": []}
 
     # 加载观澜台研报（用于健康看板时间戳）
     _gl_raw = load_json(os.path.join(DATA_DIR, "guanlan_reports.json"))
