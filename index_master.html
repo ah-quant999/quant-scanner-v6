@@ -449684,7 +449684,7 @@ function renderIpoTopStrip() {
   var timeEl = document.getElementById('ipoStripTime');
   if (timeEl) {
     var tStr = '';
-    if (d.update_time) { var _pcs = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : ((typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null); if (_pcs) tStr = '更新于 ' + _pcs.text; }
+    if (d.update_time) { var _pcs = (typeof fmtDataTime === 'function') ? fmtDataTime(d.update_time) : null; if (_pcs) tStr = '更新于 ' + _pcs.text; }
     timeEl.textContent = tStr;
   }
 

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- build: 20260701085830 -->
-<meta name="build-stamp" content="20260717111553">
+<meta name="build-stamp" content="20260717112059">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -1413,7 +1413,7 @@ window.addEventListener('load',function(){
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-17 11:15";
+window.CLOUD_UPDATE_TIME = "2026-07-17 11:20";
 window.POST_CLOSE_TIME = "2026-07-16 15:30:00";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-14 18:37:39",
@@ -75474,7 +75474,7 @@ true
 "ema_score": 2
 }
 },
-"update_time": "2026-07-17 11:15:51",
+"update_time": "2026-07-17 11:20:57",
 "candidates": {
 "sh_603986": {
 "code": "603986",
@@ -124407,7 +124407,7 @@ function fmtDataTime(timeStr) {
     if (dd > now) {
       return { text: '昨日 ' + timePart, stale: true, daysAgo: 1, mmdd: '', time: timePart, ts: ts };
     }
-    return { text: '今日 ' + timePart, stale: false, ts: ts };
+    return { text: '今日 ' + timePart, stale: false, daysAgo: 0, ts: ts };
   }
   // 非今天：用"当前时刻"而非"今日零点"计算天数差（避免早上看昨日下午数据误判为今日）
   var dp = datePart.split('-');
@@ -136725,7 +136725,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 "xiaojiu": {
 "status": "ok",
-"last_time": "2026-07-17 10:42:29",
+"last_time": "2026-07-17 11:16:38",
 "mode": "deploy"
 },
 "alimi": {

@@ -224,12 +224,19 @@ def _a_share_spot_mootdx():
 
 
 def _a_share_spot():
-    """A股行情获取：akshare(新浪/东财)优先 → mootdx(通达信)兜底。
+    """A股行情获取：mootdx(通达信)优先 → akshare(新浪/东财)兜底。
 
-    ⚠️ 家用机：新浪接口稳定（已验证 ~18s/5500只），东财居家网络常挂死，
-       故交换顺序：新浪优先、东财次之、mootdx 仅作兜底（单位机/云端可达）。
+    2026-07-17 修正：本机/单位机 mootdx 22s 稳定完成；akshare 新浪/东财当前
+    居家网络下会无限挂起且 monkey-patch 的 timeout 未能捕获，故交换顺序。
+    云端无通达信网络时自然回退到 akshare。
     """
-    # 家用机：新浪优先（已验证可靠），东财居家网络常挂死靠后
+    # 1) mootdx 优先（本机实测 22s/5000+只，稳定）
+    df = _a_share_spot_mootdx()
+    if df is not None and len(df):
+        return df
+
+    # 2) akshare 兜底（云端/外部网络可达场景）
+    print("  [A股] mootdx 失败，尝试 akshare...")
     for fn in (ak.stock_zh_a_spot, ak.stock_zh_a_spot_em):
         try:
             t = time.time()
@@ -240,9 +247,7 @@ def _a_share_spot():
         except Exception as e:
             print(f"  [A股] {fn.__name__} 失败: {type(e).__name__} {str(e)[:60]}")
             time.sleep(2)
-    # mootdx 兜底（云端/单位机可达）
-    print("  [A股] akshare 全失败，尝试 mootdx...")
-    return _a_share_spot_mootdx()
+    return None
 
 
 def _hk_spot():

@@ -103,8 +103,51 @@ def pre_deploy_audit():
     return True
 
 
+def _extract_data_ts(content):
+    """从 JSON 内容中提取数据源自带的时间戳（update_time/date 等），比 mtime 更准。"""
+    try:
+        d = json.loads(content)
+    except Exception:
+        return None
+    if not isinstance(d, dict):
+        return None
+    keys = ['update_time', 'updateTime', 'generated_at', 'generatedAt', 'updated_at', 'updatedAt',
+            'saved_at', 'savedAt', 'scan_time', 'scanTime', 'date', 'as_of', 'asOf']
+    for k in keys:
+        if k in d and d[k]:
+            return str(d[k])
+    return None
+
+
+def _ts_to_epoch(ts_str):
+    """把各种时间字符串统一转成 epoch 秒（失败返回 None）。"""
+    if not ts_str:
+        return None
+    ts_str = str(ts_str).strip()
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d", "%Y%m%d%H%M%S", "%Y/%m/%d %H:%M:%S"):
+        try:
+            return int(datetime.strptime(ts_str, fmt).replace(tzinfo=timezone.utc).timestamp())
+        except Exception:
+            continue
+    # ISO 8601 / RFC 3339 兜底：先去掉时区信息再解析
+    s = ts_str
+    if s.endswith('Z'):
+        s = s[:-1] + '+00:00'
+    for fmt in ("%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S"):
+        try:
+            return int(datetime.strptime(s, fmt).timestamp())
+        except Exception:
+            continue
+    return None
+
+
 def sync_remote_data():
-    """Pull data from GitHub main branch, merge into local data/ (newer wins)"""
+    """Pull data from GitHub main branch, merge into local data/ (newer wins)
+
+    2026-07-17 修正：不再用文件 mtime 作为新旧唯一标准，因为 mtime 可能因 git checkout
+    或复制操作而变新，但数据内容仍是旧的。现在优先比较 JSON 内部的时间戳字段
+    （update_time / date / generated_at 等），内容更新才覆盖；没有内部时间戳再回退到 mtime。
+    """
     log("=" * 55)
     log("0. Syncing remote data (two-machine merge)...")
     log("=" * 55)
@@ -145,15 +188,25 @@ def sync_remote_data():
             except:
                 pass
         else:
-            # Compare by commit timestamp
-            r2 = run(f"git log -1 --format=%ct origin/main -- {remote_rel_path}")
-            if r2.returncode != 0:
-                continue
-            try:
-                remote_ts = int(r2.stdout.strip())
-            except:
-                continue
-            local_ts = int(os.path.getmtime(local_path))
+            # 优先按 JSON 内容自带的时间戳比较；无法提取时回退到文件 mtime
+            remote_ts = _ts_to_epoch(_extract_data_ts(remote_content))
+            local_content = open(local_path, 'r', encoding='utf-8').read()
+            local_ts = _ts_to_epoch(_extract_data_ts(local_content))
+
+            fallback = False
+            if remote_ts is None or local_ts is None:
+                # 内容时间戳不全，用 commit timestamp / mtime 兜底
+                r2 = run(f"git log -1 --format=%ct origin/main -- {remote_rel_path}")
+                if r2.returncode == 0:
+                    try:
+                        remote_ts = int(r2.stdout.strip())
+                    except Exception:
+                        fallback = True
+                else:
+                    fallback = True
+                if fallback:
+                    continue
+                local_ts = int(os.path.getmtime(local_path))
 
             if remote_ts > local_ts + 2:  # 2s tolerance
                 try:
