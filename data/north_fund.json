@@ -1,12 +1,12 @@
 {
-  "update_time": "2026-07-17 09:40:24",
+  "update_time": "2026-07-17 10:32:25",
   "data_date": null,
   "south_flow": {
-    "total": 7.13,
+    "total": 19.57,
     "unit": "亿",
     "direction": "流入",
-    "sh_net": 7.66,
-    "sz_net": -0.53
+    "sh_net": 38.23,
+    "sz_net": -18.66
   },
   "south_week": {
     "total": 324.44,

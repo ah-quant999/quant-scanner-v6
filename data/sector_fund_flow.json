@@ -1,64 +1,17 @@
 {
-  "update_time": "2026-07-17 09:42",
+  "update_time": "2026-07-17 10:33",
   "data_type": "real",
   "summary": {
-    "in_count": 40,
+    "in_count": 35,
     "out_count": 0,
-    "in_text": "高股息精选(24.9亿)、同花顺中特估100(12.3亿)、绿色电力(11.5亿)、银行(11.2亿)、煤化工概念(8.7亿)",
+    "in_text": "电力(37.4亿)、高股息精选(24.2亿)、绿色电力(23.7亿)、超超临界发电(18.8亿)、风电(16.7亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 高股息精选+24.9亿(连7天)、同花顺中特估100+12.3亿(连5天)、绿色电力+11.5亿"
+    "alert": "🔥 35个板块大幅流入；🚀 电力+37.4亿、高股息精选+24.2亿(连7天)、绿色电力+23.7亿"
   },
   "sectors_in": [
     {
-      "name": "高股息精选",
-      "net": 24.91,
-      "net_5d": 271.78,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺中特估100",
-      "net": 12.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "绿色电力",
-      "net": 11.5,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "银行",
-      "net": 11.21,
-      "net_5d": 149.46,
-      "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "煤化工概念",
-      "net": 8.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
       "name": "电力",
-      "net": 8.44,
+      "net": 37.42,
       "net_5d": 8.52,
       "net_20d": -1323.22,
       "type": "行业",
@@ -66,44 +19,27 @@
       "trend": "in"
     },
     {
-      "name": "动力电池回收",
-      "net": 8.41,
-      "net_5d": 0,
+      "name": "高股息精选",
+      "net": 24.16,
+      "net_5d": 207.19,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 2,
+      "source": "本地累加",
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
-      "name": "国企改革",
-      "net": 8.32,
+      "name": "绿色电力",
+      "net": 23.73,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "钠离子电池",
-      "net": 7.91,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "央企国企改革",
-      "net": 7.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "超超临界发电",
-      "net": 5.94,
+      "net": 18.81,
       "net_5d": -2.23,
       "net_20d": -906.24,
       "type": "概念",
@@ -111,81 +47,8 @@
       "trend": "in"
     },
     {
-      "name": "天然气",
-      "net": 5.79,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "碳中和",
-      "net": 5.69,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "电池",
-      "net": 5.68,
-      "net_5d": -309.07,
-      "net_20d": -4328.55,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "碳交易",
-      "net": 5.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "期货概念",
-      "net": 5.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "跨境支付(CIPS)",
-      "net": 5.56,
-      "net_5d": 64.47,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "雄安新区",
-      "net": 4.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "页岩气",
-      "net": 4.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "煤炭概念",
-      "net": 4.5,
+      "name": "风电",
+      "net": 16.74,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -194,7 +57,7 @@
     },
     {
       "name": "虚拟电厂",
-      "net": 4.35,
+      "net": 16.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -202,107 +65,17 @@
       "trend": "in"
     },
     {
-      "name": "互联网金融",
-      "net": 4.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "证券",
-      "net": 4.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "物业管理",
-      "net": 4.09,
+      "name": "核电",
+      "net": 13.65,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "虚拟数字人",
-      "net": 3.88,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "光伏建筑一体化",
-      "net": 3.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "软件开发",
-      "net": 3.56,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "PPP概念",
-      "net": 3.5,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 3.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "参股券商",
-      "net": 3.41,
-      "net_5d": 54.65,
-      "net_20d": -287.33,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "参股银行",
-      "net": 3.34,
-      "net_5d": 60.11,
-      "net_20d": -585.53,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "智谱AI",
-      "net": 3.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
       "trend": "in"
     },
     {
       "name": "抽水蓄能",
-      "net": 3.15,
+      "net": 13.11,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -310,8 +83,18 @@
       "trend": "in"
     },
     {
-      "name": "化肥",
-      "net": 3.11,
+      "name": "银行",
+      "net": 12.96,
+      "net_5d": 120.63,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "光伏建筑一体化",
+      "net": 9.49,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -319,17 +102,63 @@
       "trend": "in"
     },
     {
-      "name": "超级品牌",
-      "net": 3.09,
-      "net_5d": 107.86,
-      "net_20d": 152.8,
+      "name": "碳交易",
+      "net": 7.27,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "同花顺中特估100",
+      "net": 6.19,
+      "net_5d": 133.53,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "其他电源设备",
+      "net": 6.15,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "智慧灯杆",
+      "net": 5.76,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "煤化工概念",
+      "net": 4.86,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "页岩气",
+      "net": 4.57,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "数据要素",
-      "net": 3.03,
+      "name": "换电概念",
+      "net": 4.29,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -337,8 +166,8 @@
       "trend": "in"
     },
     {
-      "name": "AIGC概念",
-      "net": 3.0,
+      "name": "煤炭概念",
+      "net": 4.27,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -346,85 +175,165 @@
       "trend": "in"
     },
     {
-      "name": "长安汽车概念",
-      "net": 2.84,
-      "net_5d": -233.44,
-      "net_20d": -3136.11,
+      "name": "电网设备",
+      "net": 3.98,
+      "net_5d": -56.12,
+      "net_20d": -1304.37,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "华为数字能源",
+      "net": 3.6,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "雅下水电概念",
+      "net": 3.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "天然气",
+      "net": 2.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "化学制品",
+      "net": 2.48,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "钙钛矿电池",
+      "net": 2.4,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "可燃冰",
+      "net": 2.05,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "建筑装饰",
+      "net": 2.0,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "央企国企改革",
+      "net": 1.7,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "生物质能发电",
+      "net": 1.64,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "净水概念",
-      "net": 2.83,
-      "net_5d": 0,
+      "net": 1.64,
+      "net_5d": 22.05,
       "net_20d": 0,
       "type": "概念",
+      "source": "本地累加",
       "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "互联网保险",
-      "net": 2.79,
+      "name": "环氧丙烷",
+      "net": 1.55,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "PVDF概念",
+      "net": 1.46,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "燃气",
+      "net": 1.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
       "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "电力物联网",
+      "net": 1.24,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "举牌",
+      "net": 1.19,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "公路铁路运输",
+      "net": 1.15,
+      "net_5d": 6.82,
+      "net_20d": 7.48,
+      "type": "行业",
+      "consecutive_days": 1,
       "trend": "in"
     }
   ],
   "sectors_out": [],
   "top_list": [
     {
-      "name": "高股息精选",
-      "net": 24.91,
-      "net_5d": 271.78,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "同花顺中特估100",
-      "net": 12.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "绿色电力",
-      "net": 11.5,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "银行",
-      "net": 11.21,
-      "net_5d": 149.46,
-      "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "煤化工概念",
-      "net": 8.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
       "name": "电力",
-      "net": 8.44,
+      "net": 37.42,
       "net_5d": 8.52,
       "net_20d": -1323.22,
       "type": "行业",
@@ -432,44 +341,27 @@
       "trend": "in"
     },
     {
-      "name": "动力电池回收",
-      "net": 8.41,
-      "net_5d": 0,
+      "name": "高股息精选",
+      "net": 24.16,
+      "net_5d": 207.19,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 2,
+      "source": "本地累加",
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
-      "name": "国企改革",
-      "net": 8.32,
+      "name": "绿色电力",
+      "net": 23.73,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "钠离子电池",
-      "net": 7.91,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "央企国企改革",
-      "net": 7.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "超超临界发电",
-      "net": 5.94,
+      "net": 18.81,
       "net_5d": -2.23,
       "net_20d": -906.24,
       "type": "概念",
@@ -477,81 +369,8 @@
       "trend": "in"
     },
     {
-      "name": "天然气",
-      "net": 5.79,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "碳中和",
-      "net": 5.69,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "电池",
-      "net": 5.68,
-      "net_5d": -309.07,
-      "net_20d": -4328.55,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "碳交易",
-      "net": 5.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "期货概念",
-      "net": 5.66,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "跨境支付(CIPS)",
-      "net": 5.56,
-      "net_5d": 64.47,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "雄安新区",
-      "net": 4.52,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "页岩气",
-      "net": 4.51,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "煤炭概念",
-      "net": 4.5,
+      "name": "风电",
+      "net": 16.74,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -560,7 +379,7 @@
     },
     {
       "name": "虚拟电厂",
-      "net": 4.35,
+      "net": 16.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -568,107 +387,17 @@
       "trend": "in"
     },
     {
-      "name": "互联网金融",
-      "net": 4.3,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "证券",
-      "net": 4.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "物业管理",
-      "net": 4.09,
+      "name": "核电",
+      "net": 13.65,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "虚拟数字人",
-      "net": 3.88,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "光伏建筑一体化",
-      "net": 3.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "软件开发",
-      "net": 3.56,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "PPP概念",
-      "net": 3.5,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 3.45,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "参股券商",
-      "net": 3.41,
-      "net_5d": 54.65,
-      "net_20d": -287.33,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "参股银行",
-      "net": 3.34,
-      "net_5d": 60.11,
-      "net_20d": -585.53,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "智谱AI",
-      "net": 3.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
       "trend": "in"
     },
     {
       "name": "抽水蓄能",
-      "net": 3.15,
+      "net": 13.11,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -676,8 +405,18 @@
       "trend": "in"
     },
     {
-      "name": "化肥",
-      "net": 3.11,
+      "name": "银行",
+      "net": 12.96,
+      "net_5d": 120.63,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "光伏建筑一体化",
+      "net": 9.49,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -685,17 +424,63 @@
       "trend": "in"
     },
     {
-      "name": "超级品牌",
-      "net": 3.09,
-      "net_5d": 107.86,
-      "net_20d": 152.8,
+      "name": "碳交易",
+      "net": 7.27,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "同花顺中特估100",
+      "net": 6.19,
+      "net_5d": 133.53,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 5,
+      "trend": "in"
+    },
+    {
+      "name": "其他电源设备",
+      "net": 6.15,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "智慧灯杆",
+      "net": 5.76,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "煤化工概念",
+      "net": 4.86,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "页岩气",
+      "net": 4.57,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "数据要素",
-      "net": 3.03,
+      "name": "换电概念",
+      "net": 4.29,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -703,8 +488,8 @@
       "trend": "in"
     },
     {
-      "name": "AIGC概念",
-      "net": 3.0,
+      "name": "煤炭概念",
+      "net": 4.27,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -712,111 +497,224 @@
       "trend": "in"
     },
     {
-      "name": "长安汽车概念",
-      "net": 2.84,
-      "net_5d": -233.44,
-      "net_20d": -3136.11,
+      "name": "电网设备",
+      "net": 3.98,
+      "net_5d": -56.12,
+      "net_20d": -1304.37,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "华为数字能源",
+      "net": 3.6,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "雅下水电概念",
+      "net": 3.13,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "天然气",
+      "net": 2.83,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "化学制品",
+      "net": 2.48,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "钙钛矿电池",
+      "net": 2.4,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "可燃冰",
+      "net": 2.05,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "建筑装饰",
+      "net": 2.0,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "央企国企改革",
+      "net": 1.7,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "生物质能发电",
+      "net": 1.64,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "净水概念",
-      "net": 2.83,
-      "net_5d": 0,
+      "net": 1.64,
+      "net_5d": 22.05,
       "net_20d": 0,
       "type": "概念",
+      "source": "本地累加",
       "consecutive_days": 5,
       "trend": "in"
     },
     {
-      "name": "互联网保险",
-      "net": 2.79,
+      "name": "环氧丙烷",
+      "net": 1.55,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "PVDF概念",
+      "net": 1.46,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "燃气",
+      "net": 1.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
       "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "电力物联网",
+      "net": 1.24,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "举牌",
+      "net": 1.19,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "公路铁路运输",
+      "net": 1.15,
+      "net_5d": 6.82,
+      "net_20d": 7.48,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "石油加工贸易",
+      "net": 0.99,
+      "net_5d": 11.75,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "光热发电",
+      "net": 0.88,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "轨交设备",
+      "net": 0.8,
+      "net_5d": -1.89,
+      "net_20d": -84.73,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "化学原料",
+      "net": 0.76,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "港口航运",
+      "net": 0.68,
+      "net_5d": 16.88,
+      "net_20d": -56.36,
+      "type": "行业",
+      "consecutive_days": 1,
       "trend": "in"
     }
   ],
   "consecutive": {
-    "高股息精选": {
-      "days": 7,
+    "电力": {
+      "days": 1,
       "trend": "in"
     },
-    "同花顺中特估100": {
-      "days": 5,
+    "高股息精选": {
+      "days": 7,
       "trend": "in"
     },
     "绿色电力": {
       "days": 1,
       "trend": "in"
     },
-    "银行": {
-      "days": 6,
-      "trend": "in"
-    },
-    "煤化工概念": {
-      "days": 2,
-      "trend": "in"
-    },
-    "电力": {
-      "days": 1,
-      "trend": "in"
-    },
-    "动力电池回收": {
-      "days": 2,
-      "trend": "in"
-    },
-    "国企改革": {
-      "days": 3,
-      "trend": "in"
-    },
-    "钠离子电池": {
-      "days": 2,
-      "trend": "in"
-    },
-    "央企国企改革": {
-      "days": 2,
-      "trend": "in"
-    },
     "超超临界发电": {
       "days": 1,
       "trend": "in"
     },
-    "天然气": {
-      "days": 2,
-      "trend": "in"
-    },
-    "碳中和": {
-      "days": 1,
-      "trend": "in"
-    },
-    "电池": {
-      "days": 1,
-      "trend": "in"
-    },
-    "碳交易": {
-      "days": 1,
-      "trend": "in"
-    },
-    "期货概念": {
-      "days": 2,
-      "trend": "in"
-    },
-    "跨境支付(CIPS)": {
-      "days": 6,
-      "trend": "in"
-    },
-    "雄安新区": {
-      "days": 1,
-      "trend": "in"
-    },
-    "页岩气": {
-      "days": 4,
-      "trend": "in"
-    },
-    "煤炭概念": {
+    "风电": {
       "days": 3,
       "trend": "in"
     },
@@ -824,71 +722,91 @@
       "days": 1,
       "trend": "in"
     },
-    "互联网金融": {
-      "days": 2,
-      "trend": "in"
-    },
-    "证券": {
-      "days": 2,
-      "trend": "in"
-    },
-    "物业管理": {
+    "核电": {
       "days": 1,
-      "trend": "in"
-    },
-    "虚拟数字人": {
-      "days": 4,
-      "trend": "in"
-    },
-    "光伏建筑一体化": {
-      "days": 1,
-      "trend": "in"
-    },
-    "软件开发": {
-      "days": 4,
-      "trend": "in"
-    },
-    "PPP概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "氢能源": {
-      "days": 3,
-      "trend": "in"
-    },
-    "参股券商": {
-      "days": 1,
-      "trend": "in"
-    },
-    "参股银行": {
-      "days": 2,
-      "trend": "in"
-    },
-    "智谱AI": {
-      "days": 3,
       "trend": "in"
     },
     "抽水蓄能": {
       "days": 1,
       "trend": "in"
     },
-    "化肥": {
+    "银行": {
+      "days": 6,
+      "trend": "in"
+    },
+    "光伏建筑一体化": {
       "days": 1,
       "trend": "in"
     },
-    "超级品牌": {
-      "days": 4,
-      "trend": "in"
-    },
-    "数据要素": {
+    "碳交易": {
       "days": 1,
       "trend": "in"
     },
-    "AIGC概念": {
+    "同花顺中特估100": {
+      "days": 5,
+      "trend": "in"
+    },
+    "其他电源设备": {
       "days": 3,
       "trend": "in"
     },
-    "长安汽车概念": {
+    "智慧灯杆": {
+      "days": 2,
+      "trend": "in"
+    },
+    "煤化工概念": {
+      "days": 2,
+      "trend": "in"
+    },
+    "页岩气": {
+      "days": 4,
+      "trend": "in"
+    },
+    "换电概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "煤炭概念": {
+      "days": 3,
+      "trend": "in"
+    },
+    "电网设备": {
+      "days": 3,
+      "trend": "in"
+    },
+    "华为数字能源": {
+      "days": 1,
+      "trend": "in"
+    },
+    "雅下水电概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "天然气": {
+      "days": 2,
+      "trend": "in"
+    },
+    "化学制品": {
+      "days": 1,
+      "trend": "in"
+    },
+    "钙钛矿电池": {
+      "days": 1,
+      "trend": "in"
+    },
+    "可燃冰": {
+      "days": 1,
+      "trend": "in"
+    },
+    "建筑装饰": {
+      "days": 1,
+      "trend": "in"
+    },
+    "央企国企改革": {
+      "days": 2,
+      "trend": "in"
+    },
+    "生物质能发电": {
       "days": 1,
       "trend": "in"
     },
@@ -896,8 +814,48 @@
       "days": 5,
       "trend": "in"
     },
-    "互联网保险": {
+    "环氧丙烷": {
+      "days": 1,
+      "trend": "in"
+    },
+    "PVDF概念": {
+      "days": 3,
+      "trend": "in"
+    },
+    "燃气": {
       "days": 2,
+      "trend": "in"
+    },
+    "电力物联网": {
+      "days": 1,
+      "trend": "in"
+    },
+    "举牌": {
+      "days": 3,
+      "trend": "in"
+    },
+    "公路铁路运输": {
+      "days": 1,
+      "trend": "in"
+    },
+    "石油加工贸易": {
+      "days": 3,
+      "trend": "in"
+    },
+    "光热发电": {
+      "days": 1,
+      "trend": "in"
+    },
+    "轨交设备": {
+      "days": 1,
+      "trend": "in"
+    },
+    "化学原料": {
+      "days": 1,
+      "trend": "in"
+    },
+    "港口航运": {
+      "days": 1,
       "trend": "in"
     }
   },
@@ -1025,38 +983,38 @@
   ],
   "trend_20d": [
     {
-      "name": "超级品牌",
-      "net": 3.09,
-      "net_5d": 107.86,
-      "net_20d": 152.8,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "参股券商",
-      "net": 3.41,
-      "net_5d": 54.65,
-      "net_20d": -287.33,
-      "type": "概念",
+      "name": "公路铁路运输",
+      "net": 1.15,
+      "net_5d": 6.82,
+      "net_20d": 7.48,
+      "type": "行业",
       "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
     },
     {
-      "name": "参股银行",
-      "net": 3.34,
-      "net_5d": 60.11,
-      "net_20d": -585.53,
-      "type": "概念",
-      "consecutive_days": 2,
+      "name": "港口航运",
+      "net": 0.68,
+      "net_5d": 16.88,
+      "net_20d": -56.36,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in",
+      "net_60d": null
+    },
+    {
+      "name": "轨交设备",
+      "net": 0.8,
+      "net_5d": -1.89,
+      "net_20d": -84.73,
+      "type": "行业",
+      "consecutive_days": 1,
       "trend": "in",
       "net_60d": null
     },
     {
       "name": "超超临界发电",
-      "net": 5.94,
+      "net": 18.81,
       "net_5d": -2.23,
       "net_20d": -906.24,
       "type": "概念",
@@ -1065,30 +1023,20 @@
       "net_60d": null
     },
     {
+      "name": "电网设备",
+      "net": 3.98,
+      "net_5d": -56.12,
+      "net_20d": -1304.37,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in",
+      "net_60d": null
+    },
+    {
       "name": "电力",
-      "net": 8.44,
+      "net": 37.42,
       "net_5d": 8.52,
       "net_20d": -1323.22,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "长安汽车概念",
-      "net": 2.84,
-      "net_5d": -233.44,
-      "net_20d": -3136.11,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
-      "name": "电池",
-      "net": 5.68,
-      "net_5d": -309.07,
-      "net_20d": -4328.55,
       "type": "行业",
       "consecutive_days": 1,
       "trend": "in",
