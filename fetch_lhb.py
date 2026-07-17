@@ -177,25 +177,22 @@ def classify(inst_buy, inst_sell, other_buy, other_sell):
     """机构 vs 游资(不含北向) 净买入判定 — 按站点"数据口径说明"表
     ★ 2026-07-17 重构:
       - 4 分类：机游共振 / 机构独买 / 游资独买 / 不达标
-      - 口径：机游共振 = 双方都买 (inst>0 AND yz>0)，不限大小
-      - 口径：独买 = 任一>阈值(0.8亿) 且 另一方<=0
-      - 阈值的"强买"定义保留
+      - 口径：机游共振 = 机构净买入>0.8亿 且 游资净买入>0.8亿（双方都强买）
+      - 口径：独买 = 任一>阈值(0.8亿) 且 另一方<=0.8亿
+      - 低于阈值或不满足上述条件 → 不达标
     """
     inst_net = inst_buy - inst_sell
     other_net = other_buy - other_sell
     inst_strong = inst_net > THRESHOLD
     other_strong = other_net > THRESHOLD
-    # ★ 双方都买(不限大小) → 机游共振
-    if inst_net > 0 and other_net > 0:
+    # 双方都强买 → 机游共振
+    if inst_strong and other_strong:
         return '机游共振', inst_net, other_net
     # 单边强买
     if inst_strong and not other_strong:
         return '机构独买', inst_net, other_net
     if other_strong and not inst_strong:
         return '游资独买', inst_net, other_net
-    # 双方都强买(原纯共振)
-    if inst_strong and other_strong:
-        return '机游共振', inst_net, other_net
     return '不达标', inst_net, other_net
 
 def main():

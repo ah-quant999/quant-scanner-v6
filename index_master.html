@@ -1030,7 +1030,7 @@ tr:hover td { background: #fafbfc; }
         <!-- 第2行：龙虎榜 + 主力资金 -->
         <div style="padding:10px 12px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
           <div style="font-weight:700;color:#1565c0;margin-bottom:4px;">🐉 龙虎榜</div>
-          <div style="color:#555;">上榜日期 + 分类（纯共振/标X/不达标）+ 机构净买额 + 游资净买额</div>
+          <div style="color:#555;">上榜日期 + 分类（机游共振/机构独买/游资独买/不达标）+ 机构净买额 + 游资净买额</div>
         </div>
         <div style="padding:10px 12px;background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
           <div style="font-weight:700;color:#b71c1c;margin-bottom:4px;">💰 主力资金</div>
@@ -379208,7 +379208,7 @@ false
 "trend": true
 },
 "consecutive_days": 1,
-"fund_detail": "龙虎榜纯共振",
+"fund_detail": "龙虎榜机游共振",
 "sector_detail": "",
 "inst_detail": ""
 },
@@ -403554,7 +403554,7 @@ true
 "price": 0.0,
 "pct": 9.994,
 "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
-"category": "纯共振",
+"category": "机游共振",
 "inst_net_万": 120736.8,
 "inst_buy_万": 135428.9,
 "inst_sell_万": 14692.1,
@@ -403592,7 +403592,7 @@ true
 "price": 0.0,
 "pct": 9.992,
 "reason": "日涨幅偏离值达到7%的前5只证券",
-"category": "纯共振",
+"category": "机游共振",
 "inst_net_万": 9001.7,
 "inst_buy_万": 9001.7,
 "inst_sell_万": 0,
@@ -403618,7 +403618,7 @@ true
 "price": 0.0,
 "pct": 16.8518,
 "reason": "连续三个交易日内，涨幅偏离值累计达到30%的证券",
-"category": "纯共振",
+"category": "机游共振",
 "inst_net_万": 39899.8,
 "inst_buy_万": 76712.9,
 "inst_sell_万": 36813.1,
@@ -403651,7 +403651,7 @@ true
 "price": 0.0,
 "pct": 7.4556,
 "reason": "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
-"category": "纯共振",
+"category": "机游共振",
 "inst_net_万": 53551.0,
 "inst_buy_万": 77673.0,
 "inst_sell_万": 24122.0,
@@ -403681,7 +403681,7 @@ true
 "price": 0.0,
 "pct": 20.0095,
 "reason": "有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券",
-"category": "纯共振",
+"category": "机游共振",
 "inst_net_万": 28278.9,
 "inst_buy_万": 28278.9,
 "inst_sell_万": 0,
@@ -403714,7 +403714,7 @@ true
 "price": 0.0,
 "pct": 1.3645,
 "reason": "日换手率达到20%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": -33548.4,
 "inst_buy_万": 15868.0,
 "inst_sell_万": 49416.3,
@@ -403739,7 +403739,7 @@ true
 "price": 0.0,
 "pct": 5.1626,
 "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 20095.7,
 "inst_buy_万": 196135.4,
 "inst_sell_万": 176039.7,
@@ -403764,7 +403764,7 @@ true
 "price": 0.0,
 "pct": -8.0052,
 "reason": "连续三个交易日内，跌幅偏离值累计达到20%的证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 18546.2,
 "inst_buy_万": 33310.1,
 "inst_sell_万": 14763.9,
@@ -403800,7 +403800,7 @@ true
 "price": 0.0,
 "pct": 10.003,
 "reason": "日涨幅偏离值达到7%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 19225.0,
 "inst_buy_万": 29848.0,
 "inst_sell_万": 10623.0,
@@ -403832,7 +403832,7 @@ true
 "price": 0.0,
 "pct": 20.0,
 "reason": "日涨幅达到15%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 17197.9,
 "inst_buy_万": 19480.5,
 "inst_sell_万": 2282.6,
@@ -403857,7 +403857,7 @@ true
 "price": 0.0,
 "pct": 20.0,
 "reason": "日涨幅达到15%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": -4073.1,
 "inst_buy_万": 10280.4,
 "inst_sell_万": 14353.4,
@@ -403882,7 +403882,7 @@ true
 "price": 0.0,
 "pct": 20.0097,
 "reason": "日涨幅达到15%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 3819.8,
 "inst_buy_万": 18395.4,
 "inst_sell_万": 14575.5,
@@ -403907,7 +403907,7 @@ true
 "price": 0.0,
 "pct": 20.0029,
 "reason": "日涨幅达到15%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 408.5,
 "inst_buy_万": 41206.6,
 "inst_sell_万": 40798.1,
@@ -403936,7 +403936,7 @@ true
 "price": 0.0,
 "pct": 20.0167,
 "reason": "日涨幅达到15%的前5只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 21780.6,
 "inst_buy_万": 44622.9,
 "inst_sell_万": 22842.3,
@@ -403965,7 +403965,7 @@ true
 "price": 0.0,
 "pct": 6.7993,
 "reason": "连续三个交易日内，涨幅偏离值累计达到30%的证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 45704.8,
 "inst_buy_万": 81512.9,
 "inst_sell_万": 35808.0,
@@ -403994,7 +403994,7 @@ true
 "price": 0.0,
 "pct": 10.0035,
 "reason": "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 4038.5,
 "inst_buy_万": 13996.2,
 "inst_sell_万": 9957.7,
@@ -404026,7 +404026,7 @@ true
 "price": 0.0,
 "pct": 5.5662,
 "reason": "有价格涨跌幅限制的连续3个交易日内收盘价格涨幅偏离值累计达到30%的证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": 16900.2,
 "inst_buy_万": 32207.5,
 "inst_sell_万": 15307.3,
@@ -404062,7 +404062,7 @@ true
 "price": 0.0,
 "pct": 18.6023,
 "reason": "有价格涨跌幅限制的日换手率达到30%的前五只证券",
-"category": "标X",
+"category": "不达标",
 "inst_net_万": -2921.6,
 "inst_buy_万": 0,
 "inst_sell_万": 2921.6,
@@ -405754,9 +405754,10 @@ true
 }
 ],
 "summary": {
-"纯共振": 5,
-"标X": 13,
-"不达标": 86,
+"机游共振": 5,
+"机构独买": 0,
+"游资独买": 0,
+"不达标": 99,
 "总计": 104
 },
 "pure_sectors": {
@@ -441533,7 +441534,7 @@ function updateLhbBadge(d) {
   var stocks = (d && d.stocks) ? d.stocks : [];
   var pureCount = 0;
   for (var i = 0; i < stocks.length; i++) {
-    if (stocks[i].category === '纯共振') pureCount++;
+    if (stocks[i].category === '机游共振') pureCount++;
   }
   badge.textContent = String(pureCount);
 }
@@ -441557,16 +441558,12 @@ function renderLHB() {
 
   dateEl.textContent = '（' + lhbData.date + '）';
 
-  // 设置badge数量（纯共振股票数）
+  // 设置badge数量（机游共振股票数）
   updateLhbBadge(lhbData);
 
-  // 过滤掉不达标，排序：纯共振（金额降序）→ 标X（金额降序）
-  const filtered = lhbData.stocks.filter(s => s.category === '纯共振' || s.category === '标X');
+  // 过滤掉不达标，只展示机游共振，按金额降序
+  const filtered = lhbData.stocks.filter(s => s.category === '机游共振');
   const sorted = filtered.sort((a, b) => {
-    // 纯共振排前面
-    if (a.category === '纯共振' && b.category !== '纯共振') return -1;
-    if (a.category !== '纯共振' && b.category === '纯共振') return 1;
-    // 同分类按机构净买入降序
     return b['inst_net_万'] - a['inst_net_万'];
   });
 
@@ -441585,10 +441582,8 @@ function renderLHB() {
     const jm = s['inst_net_万'] || 0;
     const cls = jm > 0 ? 'class="up"' : jm < 0 ? 'class="down"' : '';
     const cat = s['category'] || '不达标';
-    const tag = cat === '纯共振'
-      ? '<span style="background:#dc262615;color:#dc2626;padding:2px 8px;border-radius:4px;font-weight:700">纯共振</span>'
-      : cat === '标X'
-      ? '<span style="background:#f59e0b15;color:#d97706;padding:2px 8px;border-radius:4px;font-weight:700">标X</span>'
+    const tag = cat === '机游共振'
+      ? '<span style="background:#dc262615;color:#dc2626;padding:2px 8px;border-radius:4px;font-weight:700">机游共振</span>'
       : '<span style="background:#9e9e9e15;color:#888;padding:2px 8px;border-radius:4px;font-size:11px">不达标</span>';
     const days = s['连续天数'] || 1;
     const flames = '🔥'.repeat(Math.min(days, 5));
@@ -441656,11 +441651,11 @@ function renderLhbCalendarHealth() {
   }
 
   titleEl.textContent = curYear + '年' + (lhbCalMonth+1) + '月 机游共振日历';
-  subEl.textContent = '本月累计：纯共振 ' + pureCount + ' 只次 | 标X ' + xCount + ' 只次';
+  subEl.textContent = '本月累计：机游共振 ' + pureCount + ' 只次';
 
   statsEl.innerHTML =
-    '<div class="lhb-stat-card red"><div class="num">' + pureCount + '</div><div class="label">纯共振(只次)</div></div>' +
-    '<div class="lhb-stat-card blue"><div class="num">' + pureSum.toFixed(2) + '亿</div><div class="label">纯共振合计</div></div>';
+    '<div class="lhb-stat-card red"><div class="num">' + pureCount + '</div><div class="label">机游共振(只次)</div></div>' +
+    '<div class="lhb-stat-card blue"><div class="num">' + pureSum.toFixed(2) + '亿</div><div class="label">机游共振合计</div></div>';
 
   // 构建月历
   const year = lhbCalYear;
@@ -441782,12 +441777,12 @@ function renderLhbCalendar() {
 
   // 标题
   titleEl.textContent = curYear + '年' + (lhbCalMonth+1) + '月 机游共振日历';
-  subEl.textContent = '本月累计：纯共振 ' + pureCount + ' 只次 | 标X ' + xCount + ' 只次';
+  subEl.textContent = '本月累计：机游共振 ' + pureCount + ' 只次';
 
-  // 统计卡片：只保留纯共振统计 + 合计金额
+  // 统计卡片：只保留机游共振统计 + 合计金额
   statsEl.innerHTML =
-    '<div class="lhb-stat-card red"><div class="num">' + pureCount + '</div><div class="label">纯共振(只次)</div></div>' +
-    '<div class="lhb-stat-card blue"><div class="num">' + pureSum.toFixed(2) + '亿</div><div class="label">纯共振合计</div></div>';
+    '<div class="lhb-stat-card red"><div class="num">' + pureCount + '</div><div class="label">机游共振(只次)</div></div>' +
+    '<div class="lhb-stat-card blue"><div class="num">' + pureSum.toFixed(2) + '亿</div><div class="label">机游共振合计</div></div>';
 
   // 构建月历
   const year = lhbCalYear;
@@ -441826,7 +441821,7 @@ function renderLhbCalendar() {
       const markXList = dayData.mark_x || [];
       const resonanceList = dayData.pure || [];
 
-      // 显示全部纯共振（2列布局）
+      // 显示全部机游共振（2列布局）
       const mid = Math.ceil(resonanceList.length / 2);
       const left = resonanceList.slice(0, mid);
       const right = resonanceList.slice(mid);
@@ -444788,7 +444783,7 @@ function buildQueryExtras(queryCode, queryName) {
       if (lhbDate.length === 8) lhbDate = lhbDate.slice(0,4)+'-'+lhbDate.slice(4,6)+'-'+lhbDate.slice(6,8);
       var lhItems = [];
       lhItems.push('<span>📅 <b>'+lhbDate+'</b></span>');
-      lhItems.push('<span>分类: <b style="color:'+(lh.category==='纯共振'?'#c62828':'#e65100')+';">'+lh.category+'</b></span>');
+      lhItems.push('<span>分类: <b style="color:'+(lh.category==='机游共振'?'#c62828':'#9e9e9e')+';">'+lh.category+'</b></span>');
       if (lh.inst_net_万) lhItems.push('<span>机构净买: <b style="color:#c62828;">'+(lh.inst_net_万/10000).toFixed(1)+'亿</b></span>');
       if (lh.yz_net_万) lhItems.push('<span>游资净买: <b style="color:#e65100;">'+(lh.yz_net_万/10000).toFixed(1)+'亿</b></span>');
       row2.push(['🐉 龙虎榜', '<div style="font-size:12px;line-height:1.8;">'+lhItems.join(' ')+'</div>']);
@@ -449256,7 +449251,7 @@ window.HERRING_DATA = {
 },
 "data_available": true,
 "data_source": "权威公开数据源"
-};if ((!window.LHB_DATA || !window.LHB_DATA.stocks || !window.LHB_DATA.stocks.length)) window.LHB_DATA = {"date":"20260612","update_time":"2026-06-15 00:44:53","summary":{"纯共振":6,"标X":27,"不达标":54,"总计":87}};
+};if ((!window.LHB_DATA || !window.LHB_DATA.stocks || !window.LHB_DATA.stocks.length)) window.LHB_DATA = {"date":"20260612","update_time":"2026-06-15 00:44:53","summary":{"机游共振":6,"机构独买":0,"游资独买":0,"不达标":54,"总计":60}};
 function getCatalystStatus(dateStr) {
   var today = new Date();
   var todayStr = today.getFullYear() + '-' + ('0'+(today.getMonth()+1)).slice(-2) + '-' + ('0'+today.getDate()).slice(-2);
@@ -449422,11 +449417,17 @@ function renderLhbPredict() {
   }
 
   // 四分组：机构独买 / 机游共振 / 游资独买 / 北向席位（严格互斥，每只股票只出现在一个块）
+<<<<<<< Updated upstream
   // ★ 2026-07-17 改用 s.category 分类（机游共振/机构独买/游资独买/不达标），
   //   替代原来的内联阈值过滤（旧分类 纯共振/标X/不达标 已废弃）
   var instStocks = stocks.filter(function(s){ return s.category === '机构独买'; });
   var resonance = stocks.filter(function(s){ return s.category === '机游共振'; });
   var yzStocks = stocks.filter(function(s){ return s.category === '游资独买'; });
+=======
+  var instStocks = stocks.filter(function(s){ return s.category === '机构独买' && bxNet(s) <= 0; });
+  var resonance = stocks.filter(function(s){ return s.category === '机游共振' && bxNet(s) <= 0; });
+  var yzStocks = stocks.filter(function(s){ return s.category === '游资独买' && bxNet(s) <= 0; });
+>>>>>>> Stashed changes
 
   // 北向席位：仅保留纯北向（不达标中带北向净买入的）
   var bxStocks = stocks.filter(function(s){ return s.category === '不达标' && bxNet(s) > 0; });
@@ -449544,8 +449545,17 @@ function renderLhbPredict() {
   }
   h = '<div style="font-weight:700;font-size:13px;color:#333;text-align:left;padding:8px 12px;margin-bottom:10px;background:linear-gradient(90deg,#e0f2f1,#fff);border-left:4px solid #a5d6a7;border-radius:0 6px 6px 0;">' + lhbSummary + '</div>' + h;
 
+<<<<<<< Updated upstream
   // 底部辅助信息
   var others = stocks.filter(function(s){ return s.category === '不达标' && bxNet(s) <= 0; });
+=======
+  // 底部辅助信息：统计未进入任何展示块的股票
+  var displayedCodes = {};
+  [instStocks, resonance, yzStocks, bxStocks].forEach(function(arr){
+    arr.forEach(function(s){ displayedCodes[s.code] = true; });
+  });
+  var others = stocks.filter(function(s){ return !displayedCodes[s.code]; });
+>>>>>>> Stashed changes
   if (others.length) {
     h += '<div style="font-size:12px;color:#999;text-align:center;">另有 ' + others.length + ' 只不达标（未达到0.8亿门槛），暂不展示</div>';
   }
@@ -450105,7 +450115,7 @@ function renderPredictSummary() {
   var h = '';
 
   // 提取核心数据（供下方关注列表使用）
-  var pureLhb = (lhb.stocks && lhb.stocks.length) ? lhb.stocks.filter(function(s){return s.category==='纯共振';}) : [];
+  var pureLhb = (lhb.stocks && lhb.stocks.length) ? lhb.stocks.filter(function(s){return s.category==='机游共振';}) : [];
 
   // ═══ 核心关注 ═══
   var alerts = [];
@@ -450114,7 +450124,7 @@ function renderPredictSummary() {
   if (pureLhb.length) {
     var lhbSum = 0;
     pureLhb.forEach(function(s){ lhbSum += (s.inst_net_万||0) + (s.yz_net_万||0); });
-    var lhbMsg = '<b style="color:#1565c0;">机游共振</b>：'+pureLhb.length+'只纯共振';
+    var lhbMsg = '<b style="color:#1565c0;">机游共振</b>：'+pureLhb.length+'只机游共振';
     if (lhb.pure_sector_top && lhb.pure_sectors) {
       var topSec = lhb.pure_sector_top;
       var topCnt = lhb.pure_sectors[topSec] || 1;
