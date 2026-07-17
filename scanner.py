@@ -3425,14 +3425,19 @@ def scan_jy共振(target_date=None):
                 "上榜原因": str(row.get("上榜原因", "")),
             }
 
-            # 分类判定
+            # 分类判定（与 fetch_lhb.py 统一口径：机游共振/机构独买/游资独买/不达标）
             if jg_net > 8000_0000 and yz_net > 8000_0000:
-                entry["分类"] = "纯共振"
+                entry["分类"] = "机游共振"
                 if code not in seen_pure:
                     pure_resonance.append(entry)
                     seen_pure.add(code)
-            elif jg_net > 8000_0000 and yz_net < 0:
-                entry["分类"] = "标X"
+            elif jg_net > 8000_0000 and yz_net <= 8000_0000:
+                entry["分类"] = "机构独买"
+                if code not in seen_mark:
+                    mark_x.append(entry)
+                    seen_mark.add(code)
+            elif yz_net > 8000_0000 and jg_net <= 8000_0000:
+                entry["分类"] = "游资独买"
                 if code not in seen_mark:
                     mark_x.append(entry)
                     seen_mark.add(code)
@@ -3449,7 +3454,7 @@ def scan_jy共振(target_date=None):
             "stocks": stocks,
             "pure_resonance": pure_resonance,
             "mark_x": mark_x,
-            "summary": f"龙虎榜{len(stocks)}只 | 纯共振{len(pure_resonance)}只 | 标X{len(mark_x)}只",
+            "summary": f"龙虎榜{len(stocks)}只 | 机游共振{len(pure_resonance)}只 | 独买{len(mark_x)}只",
         }
 
         # 连续共振天数追踪
@@ -3473,7 +3478,7 @@ def scan_jy共振(target_date=None):
             json.dump(output, f, ensure_ascii=False, indent=2)
 
         print(f"\n  结果已保存: {LHB_RESULT_PATH}")
-        print(f"  纯共振 {len(pure_resonance)} 只 | 标X {len(mark_x)} 只")
+        print(f"  机游共振 {len(pure_resonance)} 只 | 独买 {len(mark_x)} 只")
         return output
 
     except ImportError:

@@ -3275,7 +3275,7 @@ window.HERRING_DATA = {
 },
 "data_available": true,
 "data_source": "权威公开数据源"
-};if ((!window.LHB_DATA || !window.LHB_DATA.stocks || !window.LHB_DATA.stocks.length)) window.LHB_DATA = {"date":"20260612","update_time":"2026-06-15 00:44:53","summary":{"纯共振":6,"标X":27,"不达标":54,"总计":87}};
+};if ((!window.LHB_DATA || !window.LHB_DATA.stocks || !window.LHB_DATA.stocks.length)) window.LHB_DATA = {"date":"20260612","update_time":"2026-06-15 00:44:53","summary":{"机游共振":6,"标X":27,"不达标":54,"总计":87}};
 function getCatalystStatus(dateStr) {
   var today = new Date();
   var todayStr = today.getFullYear() + '-' + ('0'+(today.getMonth()+1)).slice(-2) + '-' + ('0'+today.getDate()).slice(-2);
@@ -4310,7 +4310,7 @@ function renderPredictSummary() {
   var h = '';
 
   // 提取核心数据（供下方关注列表使用）
-  var pureLhb = (lhb.stocks && lhb.stocks.length) ? lhb.stocks.filter(function(s){return s.category==='纯共振';}) : [];
+  var pureLhb = (lhb.stocks && lhb.stocks.length) ? lhb.stocks.filter(function(s){return s.category==='机游共振';}) : [];
 
   // ═══ 核心关注 ═══
   var alerts = [];
@@ -4319,7 +4319,7 @@ function renderPredictSummary() {
   if (pureLhb.length) {
     var lhbSum = 0;
     pureLhb.forEach(function(s){ lhbSum += (s.inst_net_万||0) + (s.yz_net_万||0); });
-    var lhbMsg = '<b style="color:#1565c0;">机游共振</b>：'+pureLhb.length+'只纯共振';
+    var lhbMsg = '<b style="color:#1565c0;">机游共振</b>：'+pureLhb.length+'只机游共振';
     if (lhb.pure_sector_top && lhb.pure_sectors) {
       var topSec = lhb.pure_sector_top;
       var topCnt = lhb.pure_sectors[topSec] || 1;
@@ -4510,7 +4510,7 @@ function renderMacroOverview(){
   var sfTotalIn = sfIndIn2.reduce(function(s,x){return s+(x.net||0);},0);
   var sfTotalOut = sfIndOut2.reduce(function(s,x){return s+Math.abs(x.net||0);},0);
   var lhbStocks = (window.LHB_DATA||{}).stocks||[];
-  var pureRes = lhbStocks.filter(function(s){return s.category==='纯共振';});
+  var pureRes = lhbStocks.filter(function(s){return s.category==='机游共振';});
   var instBuy = lhbStocks.filter(function(s){return (s.inst_net_万||0)>8000 && (s.yz_net_万||0)<=8000;});
 
   var finalWord = '';
