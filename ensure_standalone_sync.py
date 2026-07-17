@@ -17,8 +17,10 @@
   3. (可选 --inject-buildstamp) 给 dist/ 下所有 html 注入 build-stamp/title（与本地 deploy_now.py 一致）
   4. 同源同戳指纹校验：dist/index.html 与 dist/standalone/overview.html 的
      window.*_DATA 标记集合 + POST_CLOSE_TIME 必须完全一致
-  5. 校验失败 -> 打印诊断并 exit(1)，使调用方（云端 step / 本地 deploy）阻断部署，
-     绝不允许「主站上线、独立页缺失」的半残状态上线
+  5. 硬核数据块校验：EXPERIMENT_DATA / CRDS_CARD_DATA 等关键数据块在
+     主站与独立页之间必须逐字段一致（防止只同戳不同数据）
+  6. 校验失败 -> 打印诊断并 exit(1)，使调用方（云端 step / 本地 deploy）阻断部署，
+     绝不允许「主站上线、独立页缺失/数据陈旧」的半残状态上线
 
 用法:
   python ensure_standalone_sync.py                 # 仅抽取+同步+校验
@@ -29,7 +31,8 @@ import sys
 import re
 import shutil
 import subprocess
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+CST = timezone(timedelta(hours=8))  # 统一 build-stamp 时区，避免云端(UTC)覆盖本机(CST)
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST_DIR = os.path.join(PROJECT_ROOT, "dist")
@@ -96,7 +99,7 @@ def _sync_to_dist():
 
 def _inject_buildstamp():
     """给 dist/ 下所有 html 注入 build-stamp / title（与本地 deploy_now.py CDN bust 一致）。"""
-    now_stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    now_stamp = datetime.now(CST).strftime("%Y%m%d%H%M%S")
     pat_build = re.compile(r"<!-- build: \d+ -->")
     pat_title = re.compile(r"<title>九宝量化 v\d\.\d</title>")
     pat_meta = re.compile(r'<meta name="build-stamp" content="[^"]*">')
@@ -183,6 +186,65 @@ def _verify_parity():
     return True, (f"主站/独立页同源同戳校验通过 "
                   f"(标记 {len(fp_main[0])} 个, POST_CLOSE_TIME={fp_main[1]}, "
                   f"体积 {fp_main[2]}B/{fp_ov[2]}B)")
+
+
+def _extract_data_block(path, marker):
+    """从 HTML 中提取 window.X = {...} JSON 对象，失败返回 None。"""
+    import json
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            c = f.read()
+    except Exception:
+        return None
+    i = c.find(marker)
+    if i < 0:
+        return None
+    i += len(marker)
+    while i < len(c) and c[i] in " \t\r\n":
+        i += 1
+    try:
+        obj, _ = json.JSONDecoder().raw_decode(c, i)
+        return obj
+    except Exception:
+        return None
+
+
+def _verify_data_parity():
+    """
+    硬核数据块校验：主站与独立页的关键数据块必须逐字段一致。
+    可发现「独立页从旧版 dist/index.html 抽取」或「数据注入失败」导致不同步。
+    """
+    main_html = os.path.join(DIST_DIR, "index.html")
+    checks = []
+    for fname in os.listdir(DIST_STANDALONE):
+        if not fname.endswith(".html"):
+            continue
+        st_path = os.path.join(DIST_STANDALONE, fname)
+        if os.path.getsize(st_path) < 100000:
+            continue  # 导航页等不需要校验
+        # EXPERIMENT_DATA 关键字段
+        main_exp = _extract_data_block(main_html, "window.EXPERIMENT_DATA = ")
+        st_exp = _extract_data_block(st_path, "window.EXPERIMENT_DATA = ")
+        if main_exp and st_exp:
+            mt = main_exp.get("today", {})
+            st = st_exp.get("today", {})
+            for k in ("scanned", "total", "failed", "generated_at"):
+                if mt.get(k) != st.get(k):
+                    checks.append((fname, "EXPERIMENT_DATA.today." + k, mt.get(k), st.get(k)))
+        # CRDS_CARD_DATA 关键字段
+        main_crds = _extract_data_block(main_html, "window.CRDS_CARD_DATA = ")
+        st_crds = _extract_data_block(st_path, "window.CRDS_CARD_DATA = ")
+        if main_crds and st_crds:
+            for k in ("total_scanned", "failed", "update_time"):
+                if main_crds.get(k) != st_crds.get(k):
+                    checks.append((fname, "CRDS_CARD_DATA." + k, main_crds.get(k), st_crds.get(k)))
+            for k in ("elite", "advanced", "cond1_list", "cond2_list", "cond3_list"):
+                if len(main_crds.get(k, [])) != len(st_crds.get(k, [])):
+                    checks.append((fname, f"CRDS_CARD_DATA.{k}.length", len(main_crds.get(k, [])), len(st_crds.get(k, []))))
+    if not checks:
+        return True, "关键数据块（EXPERIMENT_DATA/CRDS_CARD_DATA）逐字段一致"
+    detail = "; ".join(f"{fname} {field}: 主站={mv} 独立页={sv}" for fname, field, mv, sv in checks[:5])
+    return False, "关键数据块不一致: " + detail
 
 
 def main():

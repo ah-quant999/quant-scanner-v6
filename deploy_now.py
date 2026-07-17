@@ -11,7 +11,8 @@ Pre-deploy audit via deploy_audit.py:
   - --force to skip audit
 """
 import os, sys, time, shutil, subprocess, tempfile, json
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+CST = timezone(timedelta(hours=8))  # 统一 build-stamp 时区，避免云端(UTC)覆盖本机(CST)
 
 DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
 OUTPUT_URL = "https://ah-quant999.github.io/quant-scanner-v6/"
@@ -560,7 +561,7 @@ def main():
         # 1.5 CDN cache busting（改注释 + 改 title + 加 meta 标签，三重确保 CDN 感知文件变化）
         log("1.5. Busting CDN cache...")
         import re
-        now_stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+        now_stamp = datetime.now(CST).strftime("%Y%m%d%H%M%S")
         pattern = re.compile(r'<!-- build: \d+ -->')
         pattern_title = re.compile(r'<title>九宝量化 v\d\.\d</title>')
         pattern_meta = re.compile(r'<meta name="build-stamp" content="[^"]*">')
