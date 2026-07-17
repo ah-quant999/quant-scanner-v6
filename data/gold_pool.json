@@ -89,7 +89,11 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "hk_9988": {
       "code": "9988",
@@ -224,7 +228,11 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "hk_00700": {
       "code": "00700",
@@ -416,7 +424,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300750": {
       "code": "300750",
@@ -505,7 +517,11 @@
         false
       ],
       "ema_score": 1,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_300207": {
       "code": "300207",
@@ -562,7 +578,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_600183": {
       "code": "600183",
@@ -654,7 +674,11 @@
         true
       ],
       "ema_score": 1,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_002916": {
       "code": "002916",
@@ -711,7 +735,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "hk_2579": {
       "code": "2579",
@@ -814,7 +842,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300024": {
       "code": "300024",
@@ -871,7 +903,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "hk_1299": {
       "code": "1299",
@@ -1022,7 +1058,11 @@
         false,
         false
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "非金属矿物制品业",
+      "sectors": [
+        "非金属矿物制品业"
+      ]
     },
     "sh_600601": {
       "code": "600601",
@@ -1113,7 +1153,11 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603186": {
       "code": "603186",
@@ -1173,7 +1217,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603228": {
       "code": "603228",
@@ -1232,7 +1280,11 @@
         false,
         false
       ],
-      "ema_score": 3
+      "ema_score": 3,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603328": {
       "code": "603328",
@@ -1291,7 +1343,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603386": {
       "code": "603386",
@@ -1350,7 +1406,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603920": {
       "code": "603920",
@@ -1409,7 +1469,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_603936": {
       "code": "603936",
@@ -1468,7 +1532,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_605058": {
       "code": "605058",
@@ -1527,7 +1595,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_605258": {
       "code": "605258",
@@ -1586,7 +1658,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688183": {
       "code": "688183",
@@ -1677,7 +1753,11 @@
         true
       ],
       "ema_score": 6,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688519": {
       "code": "688519",
@@ -1768,7 +1848,11 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_000823": {
       "code": "000823",
@@ -1827,7 +1911,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_001389": {
       "code": "001389",
@@ -1917,7 +2005,11 @@
         false
       ],
       "ema_score": 2,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002134": {
       "code": "002134",
@@ -1976,7 +2068,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002436": {
       "code": "002436",
@@ -2067,7 +2163,11 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002552": {
       "code": "002552",
@@ -2126,7 +2226,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002579": {
       "code": "002579",
@@ -2185,7 +2289,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002636": {
       "code": "002636",
@@ -2276,7 +2384,11 @@
         true
       ],
       "ema_score": 1,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002815": {
       "code": "002815",
@@ -2335,7 +2447,11 @@
         true,
         true
       ],
-      "ema_score": 6
+      "ema_score": 6,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002938": {
       "code": "002938",
@@ -2426,7 +2542,11 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300476": {
       "code": "300476",
@@ -2517,7 +2637,11 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构"
+      "fund_type": "机构",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300739": {
       "code": "300739",
@@ -2576,7 +2700,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300814": {
       "code": "300814",
@@ -2635,7 +2763,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300852": {
       "code": "300852",
@@ -2694,7 +2826,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300903": {
       "code": "300903",
@@ -2785,7 +2921,11 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300964": {
       "code": "300964",
@@ -2844,7 +2984,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301132": {
       "code": "301132",
@@ -2903,7 +3047,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301282": {
       "code": "301282",
@@ -2962,7 +3110,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301366": {
       "code": "301366",
@@ -3021,7 +3173,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301628": {
       "code": "301628",
@@ -3080,7 +3236,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688655": {
       "code": "688655",
@@ -3139,7 +3299,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002913": {
       "code": "002913",
@@ -3198,7 +3362,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301041": {
       "code": "301041",
@@ -3257,7 +3425,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_301251": {
       "code": "301251",
@@ -3316,7 +3488,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300759": {
       "code": "300759",
@@ -3408,7 +3584,11 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "混合"
+      "fund_type": "混合",
+      "industry": "研究和试验发展",
+      "sectors": [
+        "研究和试验发展"
+      ]
     },
     "sh_002028": {
       "code": "002028",
@@ -3465,7 +3645,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_002270": {
       "code": "002270",
@@ -3522,7 +3706,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_688347": {
       "code": "688347",
@@ -3608,7 +3796,11 @@
         true,
         true
       ],
-      "ema_score": 2
+      "ema_score": 2,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002407": {
       "code": "002407",
@@ -3694,7 +3886,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "化学原料和化学制品制造业",
+      "sectors": [
+        "化学原料和化学制品制造业"
+      ]
     },
     "sz_300438": {
       "code": "300438",
@@ -3780,7 +3976,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "hk_00005": {
       "code": "00005",
@@ -3952,7 +4152,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300346": {
       "code": "300346",
@@ -4038,7 +4242,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_600111": {
       "code": "600111",
@@ -4124,7 +4332,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "有色金属冶炼和压延加工业",
+      "sectors": [
+        "有色金属冶炼和压延加工业"
+      ]
     },
     "hk_06160": {
       "code": "06160",
@@ -4296,7 +4508,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "非金属矿物制品业",
+      "sectors": [
+        "非金属矿物制品业"
+      ]
     },
     "sz_300442": {
       "code": "300442",
@@ -4382,7 +4598,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ]
     },
     "sh_688047": {
       "code": "688047",
@@ -4468,7 +4688,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "hk_09626": {
       "code": "09626",
@@ -4640,7 +4864,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "橡胶和塑料制品业",
+      "sectors": [
+        "橡胶和塑料制品业"
+      ]
     },
     "sz_300782": {
       "code": "300782",
@@ -4726,7 +4954,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688027": {
       "code": "688027",
@@ -4812,7 +5044,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002156": {
       "code": "002156",
@@ -4898,7 +5134,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002080": {
       "code": "002080",
@@ -4984,7 +5224,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "非金属矿物制品业",
+      "sectors": [
+        "非金属矿物制品业"
+      ]
     },
     "sh_600176": {
       "code": "600176",
@@ -5070,7 +5314,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "非金属矿物制品业",
+      "sectors": [
+        "非金属矿物制品业"
+      ]
     },
     "sz_002600": {
       "code": "002600",
@@ -5156,7 +5404,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300672": {
       "code": "300672",
@@ -5242,7 +5494,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688143": {
       "code": "688143",
@@ -5328,7 +5584,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_600487": {
       "code": "600487",
@@ -5414,7 +5674,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_600105": {
       "code": "600105",
@@ -5500,7 +5764,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_600498": {
       "code": "600498",
@@ -5586,7 +5854,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300347": {
       "code": "300347",
@@ -5672,7 +5944,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "研究和试验发展",
+      "sectors": [
+        "研究和试验发展"
+      ]
     },
     "sz_300870": {
       "code": "300870",
@@ -5758,7 +6034,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_000636": {
       "code": "000636",
@@ -5844,7 +6124,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300475": {
       "code": "300475",
@@ -5930,7 +6214,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "批发业",
+      "sectors": [
+        "批发业"
+      ]
     },
     "sz_300548": {
       "code": "300548",
@@ -6016,7 +6304,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002463": {
       "code": "002463",
@@ -6075,7 +6367,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002916": {
       "code": "002916",
@@ -6134,7 +6430,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_600030": {
       "code": "600030",
@@ -6193,7 +6493,11 @@
         true,
         true
       ],
-      "ema_score": 2
+      "ema_score": 2,
+      "industry": "资本市场服务",
+      "sectors": [
+        "资本市场服务"
+      ]
     },
     "sh_601600": {
       "code": "601600",
@@ -6240,7 +6544,11 @@
         "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": ""
-      }
+      },
+      "industry": "有色金属冶炼和压延加工业",
+      "sectors": [
+        "有色金属冶炼和压延加工业"
+      ]
     },
     "sh_600900": {
       "code": "600900",
@@ -6287,7 +6595,11 @@
         "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": ""
-      }
+      },
+      "industry": "电力、热力生产和供应业",
+      "sectors": [
+        "电力、热力生产和供应业"
+      ]
     },
     "sz_300274": {
       "code": "300274",
@@ -6346,7 +6658,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "hk_09988": {
       "code": "09988",
@@ -6361,7 +6677,8 @@
       "sources": [
         "港股成交前50",
         "观澜台",
-        "观澜台研报"
+        "观澜台研报",
+        "投行研报"
       ],
       "latest": {
         "close": 114.2,
@@ -6557,7 +6874,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_002270": {
       "code": "002270",
@@ -6615,7 +6936,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_603806": {
       "code": "603806",
@@ -6673,7 +6998,11 @@
         false,
         false
       ],
-      "ema_score": 2
+      "ema_score": 2,
+      "industry": "橡胶和塑料制品业",
+      "sectors": [
+        "橡胶和塑料制品业"
+      ]
     },
     "sz_300972": {
       "code": "300972",
@@ -6730,7 +7059,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "零售业",
+      "sectors": [
+        "零售业"
+      ]
     },
     "sh_603606": {
       "code": "603606",
@@ -6776,7 +7109,11 @@
         "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": ""
-      }
+      },
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_605117": {
       "code": "605117",
@@ -6834,7 +7171,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_002202": {
       "code": "002202",
@@ -6880,7 +7221,11 @@
         "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": ""
-      }
+      },
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sz_300001": {
       "code": "300001",
@@ -6927,7 +7272,11 @@
         "signal_count": 0,
         "当日涨停": false,
         "开盘_标签": ""
-      }
+      },
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "hk_03759": {
       "code": "03759",
@@ -7222,7 +7571,7 @@
       "ema_score": 2
     }
   },
-  "update_time": "2026-07-17 11:20:57",
+  "update_time": "2026-07-17 12:26:28",
   "candidates": {
     "sh_603986": {
       "code": "603986",
