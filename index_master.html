@@ -450434,14 +450434,9 @@ function renderTop10Daily() {
     row1 = stocks80.slice(0, 5);
     row2 = stocks80.slice(5, 10);
   } else {
-    // 今日无 80+ 共振，改为展示评分最高 Top10，避免空卡片
-    var best = top10.slice(0, 10);
-    row1 = best.slice(0, 5);
-    row2 = best.slice(5, 10);
-    var maxScore = best[0] ? best[0].total_score : 0;
-    noteHtml = '<div style="font-size:11px;color:#e65100;margin-bottom:8px;padding:6px 8px;background:#fff3e0;border-radius:6px;">'
-      + '⚠️ 今日暂无 80+ 共振股票（当前最高 ' + maxScore + ' 分），展示评分最高 Top10'
-      + '</div>';
+    // 无 80+ 共振股票 → 隐藏卡片，不降级展示低分股
+    card.style.display = 'none';
+    return;
   }
 
   var h = '<div style="display:flex;flex-direction:column;gap:10px;">';

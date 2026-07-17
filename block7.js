@@ -3615,7 +3615,7 @@ function renderLhbPredict() {
   // 三分组：机构独买 / 机游共振 / 游资独买（严格互斥）
   var instStocks = stocks.filter(function(s){ return (s.inst_net_万||0) > 8000 && (s.yz_net_万||0) <= 8000; });
   var yzStocks = stocks.filter(function(s){ return (s.yz_net_万||0) > 8000 && (s.inst_net_万||0) <= 8000; });
-  var resonance = stocks.filter(function(s){ return s.category === '纯共振'; });
+  var resonance = stocks.filter(function(s){ return s.category === '机游共振'; });
 
   function formatNet(val_wan) {
     var yi = val_wan / 10000;
@@ -3714,7 +3714,7 @@ function renderLhbPredict() {
   h = '<div style="font-weight:700;font-size:13px;color:#333;text-align:left;padding:8px 12px;margin-bottom:10px;background:linear-gradient(90deg,#e0f2f1,#fff);border-left:4px solid #a5d6a7;border-radius:0 6px 6px 0;">' + lhbSummary + '</div>' + h;
 
   // 底部辅助信息
-  var others = stocks.filter(function(s){ return s.category !== '纯共振' && (s.inst_net_万||0) <= 8000 && (s.yz_net_万||0) <= 8000; });
+  var others = stocks.filter(function(s){ return s.category !== '机游共振' && (s.inst_net_万||0) <= 8000 && (s.yz_net_万||0) <= 8000; });
   if (others.length) {
     h += '<div style="font-size:12px;color:#999;text-align:center;">另有 ' + others.length + ' 只不达标（未达到0.8亿门槛），暂不展示</div>';
   }
@@ -4673,8 +4673,10 @@ function renderTop10Daily() {
     '</div>';
   }
 
-  var row1 = top10.filter(function(s){ return s.total_score >= 80; }).slice(0, 5);
-  var row2 = top10.filter(function(s){ return s.total_score >= 80; }).slice(5, 10);
+  var stocks80 = top10.filter(function(s){ return s.total_score >= 80; });
+  if (!stocks80.length) { card.style.display = 'none'; return; }
+  var row1 = stocks80.slice(0, 5);
+  var row2 = stocks80.slice(5, 10);
 
   var h = '<div style="display:flex;flex-direction:column;gap:10px;">';
   h += '<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">';
