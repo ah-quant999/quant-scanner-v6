@@ -6,7 +6,7 @@
 """
 
 import shutil, os as _os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 _NODE_PATH = _os.path.join(_os.path.expanduser("~"), ".workbuddy", "binaries", "node", "versions", "22.22.2", "node.exe")
 if not _os.path.exists(_NODE_PATH):
     _NODE_PATH = shutil.which("node") or "node"   # Linux CI 降级
@@ -33,6 +33,8 @@ if not _os.path.exists(_NODE_PATH):
   guanlan_watchlist.json → guanlan_extractor.py (每日09:25/17:00)
 """
 import os, sys, json, time, re, subprocess, glob
+
+CST = timezone(timedelta(hours=8))  # 统一 build-stamp/部署时间时区，避免云端(UTC)与本机(CST)混用导致健康监控误判超时
 
 # 拼音首字母（Python端预计算，替代JS端脆弱硬编码字典）
 try:
@@ -1466,7 +1468,7 @@ def main():
     # 注意：.ops_status.json 由 pre_market_cloud_failover.py / fetch_neodata_daily.py 在本机写入；
     #       GitHub Actions 云端无这些脚本，文件为空 → 此处做 CI 兜底。
     _is_ci = os.environ.get("GITHUB_ACTIONS") == "true"
-    _now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    _now_str = datetime.now(CST).strftime("%Y-%m-%d %H:%M:%S")
     try:
         with open(os.path.join(BASE_DIR, "data", ".ops_status.json"), encoding="utf-8") as _f:
             ops_status = json.load(_f)
@@ -1481,7 +1483,7 @@ def main():
         ops_status.setdefault("failover_status", "OK" if _is_ci else "未知")
         ops_status.setdefault("failover_time", _now_str)
     if _is_ci or not ops_status.get("cloud_deploy_time"):
-        ops_status.setdefault("cloud_deploy_time", datetime.now().strftime("%Y%m%d%H%M%S"))
+        ops_status.setdefault("cloud_deploy_time", datetime.now(CST).strftime("%Y%m%d%H%M%S"))
     ops_status.setdefault("updated_at", _now_str)
     # neodata 字段：云端没有 token 也不跑 fetch_neodata_daily，给明确提示
     if not ops_status.get("neodata_status"):
@@ -1674,7 +1676,7 @@ def main():
 
     # 🕐 注入 build-stamp meta 标签（YYYYMMDDHHMMSS）— 供 renderCrdsCard/renderTripleSelectCard
     #    等 fallback + block7.js cloud sweep 共用，CRDS/三重选股卡统一版式不再显示"未知"
-    build_stamp_value = datetime.now().strftime("%Y%m%d%H%M%S")
+    build_stamp_value = datetime.now(CST).strftime("%Y%m%d%H%M%S")
     build_stamp_placeholder = '<meta name="build-stamp" content="__BUILD_STAMP__">'
     build_stamp_replacement = f'<meta name="build-stamp" content="{build_stamp_value}">'
     if build_stamp_placeholder in content:
