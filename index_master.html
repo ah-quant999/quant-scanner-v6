@@ -947,6 +947,7 @@ tr:hover td { background: #fafbfc; }
             </thead>
             <tbody id="capFlowBody"></tbody>
           </table>
+          <div id="capFlowSource" style="margin-top:6px;font-size:10px;color:#888;padding:0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></div>
           <div id="capFlowAnalysis" style="margin-top:8px;padding:10px 12px;background:linear-gradient(135deg,#faf7ff,#f3eefe);border:1px solid #d1c4e9;border-radius:8px;font-size:11px;color:#333;line-height:1.6;display:none;"></div>
           <div style="margin-top:8px;font-size:10px;color:#888;line-height:1.5;">
             <b>口径说明：</b>"北向/机构/游资"均来自沪深交易所龙虎榜席位明细，仅覆盖当日价格/换手率异动的上榜个股；港交所自2024年5月起已停更全市场北向资金实时及盘后净流入数据，本卡片不再展示不可获取的全市场汇总数据。南向资金为港股通（沪深港通）净流入，可获取全市场口径。
@@ -450903,13 +450904,15 @@ function renderCapitalFlowCard() {
       + '</tr>';
   }
   body.innerHTML = ''
-    + '<div style="font-size:10px;color:#888;margin-bottom:6px;padding:0 2px;">'
-    + '数据源：龙虎榜席位 ' + (d.lhb_date || '-') + '｜南向资金 ' + (d.north_fund_date || '-') + '｜仅覆盖异动上榜股'
-    + '</div>'
     + row('🏦 机构席位', d.inst, '#fff5f5')
     + row('🚀 游资席位', d.hot_money, '#f5f5ff')
-    + row('🌏 南向资金', d.north_south, '#f5fff5')
-    + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff');
+    + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
+    + row('🌏 南向资金', d.north_south, '#f5fff5');
+
+  var srcEl = document.getElementById('capFlowSource');
+  if (srcEl) {
+    srcEl.textContent = '数据源：龙虎榜席位 ' + (d.lhb_date || '-') + '｜南向资金 ' + (d.north_fund_date || '-') + '｜仅覆盖异动上榜股';
+  }
 
   // 研判文字（仿左图：自然语言解读）
   var analysisEl = document.getElementById('capFlowAnalysis');

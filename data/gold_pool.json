@@ -7585,23 +7585,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 112.26,
+        "pct_chg": 4.23,
+        "pct_chg_5d": 3.4,
+        "pct_chg_20d": -3.64,
+        "rsi_14": 50.6,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_688017": {
       "code": "688017",
@@ -7616,23 +7642,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 392.0,
+        "pct_chg": 1.33,
+        "pct_chg_5d": 0.26,
+        "pct_chg_20d": 4.19,
+        "rsi_14": 50.1,
+        "signal_score": 0,
+        "ema_up": 1,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
           true
         ],
-        "ema_score": 3
+        "ema_score": 1,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 1,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "ema_score": 1
     },
     "sh_688777": {
       "code": "688777",
@@ -7649,18 +7701,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "德意志银行",
       "rating": "未评级"
@@ -7678,23 +7745,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 41.83,
+        "pct_chg": -0.26,
+        "pct_chg_5d": -0.43,
+        "pct_chg_20d": -7.29,
+        "rsi_14": 44.9,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 2,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "⚠️高开低走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_002472": {
       "code": "002472",
@@ -7709,23 +7802,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 42.49,
+        "pct_chg": 0.24,
+        "pct_chg_5d": 0.35,
+        "pct_chg_20d": 0.43,
+        "rsi_14": 57.8,
+        "signal_score": 0,
+        "ema_up": 1,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
           true
         ],
-        "ema_score": 3
+        "ema_score": 1,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 1,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "ema_score": 1
     },
     "sz_300124": {
       "code": "300124",
@@ -7740,23 +7859,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 60.35,
+        "pct_chg": 0.07,
+        "pct_chg_5d": -4.86,
+        "pct_chg_20d": -15.21,
+        "rsi_14": 39.2,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0.52,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "⚡低开高走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_002747": {
       "code": "002747",
@@ -7771,23 +7916,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
+        "close": 41.48,
+        "pct_chg": 8.02,
+        "pct_chg_5d": -5.94,
+        "pct_chg_20d": 22.36,
+        "rsi_14": 56.6,
         "signal_score": 7.0,
-        "ema_up": 0,
+        "ema_up": 1,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
           true
         ],
-        "ema_score": 3
+        "ema_score": 1,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 1,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "ema_score": 1
     },
     "sz_002074": {
       "code": "002074",
@@ -7802,23 +7973,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 26.4,
+        "pct_chg": 5.39,
+        "pct_chg_5d": 3.08,
+        "pct_chg_20d": -12.84,
+        "rsi_14": 36.0,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "institution": "德银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_300014": {
       "code": "300014",
@@ -7833,23 +8030,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 52.65,
+        "pct_chg": 0.75,
+        "pct_chg_5d": -6.12,
+        "pct_chg_20d": -21.28,
+        "rsi_14": 19.5,
+        "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": true,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
       },
       "institution": "德银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_002594": {
       "code": "002594",
@@ -7864,10 +8087,13 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 92.35,
+        "pct_chg": 2.41,
+        "pct_chg_5d": 5.18,
+        "pct_chg_20d": 3.02,
+        "rsi_14": 66.7,
+        "signal_score": 3,
+        "ema_up": 7,
         "ema_dirs": [
           true,
           true,
@@ -7877,10 +8103,33 @@
           true,
           true
         ],
-        "ema_score": 3
+        "ema_score": 7,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "institution": "德银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 7,
+      "ema_dirs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ema_score": 7
     },
     "sh_688041": {
       "code": "688041",
@@ -7895,23 +8144,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 324.99,
+        "pct_chg": -4.65,
+        "pct_chg_5d": -5.25,
+        "pct_chg_20d": 10.42,
+        "rsi_14": 39.5,
+        "signal_score": 1.0,
+        "ema_up": 2,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
+          false,
+          false,
+          false,
+          false,
+          false,
           true,
           true
         ],
-        "ema_score": 3
+        "ema_score": 2,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "摩根士丹利",
-      "rating": "增持"
+      "rating": "增持",
+      "ema_up": 2,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      "ema_score": 2
     },
     "sh_601099": {
       "code": "601099",
@@ -7926,23 +8201,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 3.43,
+        "pct_chg": 0.88,
+        "pct_chg_5d": 1.18,
+        "pct_chg_20d": 2.69,
+        "rsi_14": 42.4,
+        "signal_score": 6,
+        "ema_up": 1,
         "ema_dirs": [
           true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 1,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 2,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "⚡低开高走"
       },
       "institution": "摩根士丹利",
-      "rating": "增持"
+      "rating": "增持",
+      "ema_up": 1,
+      "ema_dirs": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 1
     },
     "hk_1672": {
       "code": "1672",
@@ -7959,18 +8260,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "花旗",
       "rating": "买入"
@@ -7990,18 +8306,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "花旗",
       "rating": "买入"
@@ -8021,18 +8352,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "花旗",
       "rating": "买入"
@@ -8050,23 +8396,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 106.99,
+        "pct_chg": -1.03,
+        "pct_chg_5d": -17.89,
+        "pct_chg_20d": -20.69,
+        "rsi_14": 27.0,
+        "signal_score": 2.0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 2.93,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": true,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_688301": {
       "code": "688301",
@@ -8083,18 +8455,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8114,18 +8501,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8145,18 +8547,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8174,23 +8591,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 65.74,
+        "pct_chg": -3.12,
+        "pct_chg_5d": -10.61,
+        "pct_chg_20d": -11.6,
+        "rsi_14": 35.5,
+        "signal_score": 3.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 2.39,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "hk_2590": {
       "code": "2590",
@@ -8207,18 +8650,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8238,18 +8696,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8269,18 +8742,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8300,18 +8788,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8329,23 +8832,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 32.2,
+        "pct_chg": -1.65,
+        "pct_chg_5d": -11.17,
+        "pct_chg_20d": -31.09,
+        "rsi_14": 17.3,
+        "signal_score": 5.0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 1.36,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": true,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ➖平开"
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_603338": {
       "code": "603338",
@@ -8362,18 +8891,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8393,18 +8937,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8424,18 +8983,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根士丹利",
       "rating": "未评级"
@@ -8453,23 +9027,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 4.25,
+        "pct_chg": 1.19,
+        "pct_chg_5d": -0.23,
+        "pct_chg_20d": -16.67,
+        "rsi_14": 39.2,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": true,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "⚡低开高走"
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_603259": {
       "code": "603259",
@@ -8486,18 +9086,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根大通",
       "rating": "买入"
@@ -8515,23 +9130,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 30.0,
+        "pct_chg": -9.04,
+        "pct_chg_5d": -16.36,
+        "pct_chg_20d": 8.97,
+        "rsi_14": 43.8,
+        "signal_score": 1.8,
+        "ema_up": 3,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
+          false,
+          false,
+          false,
+          false,
           true,
           true,
           true
         ],
-        "ema_score": 3
+        "ema_score": 3,
+        "turnover_rate": 5.23,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "摩根大通",
-      "rating": "买入"
+      "rating": "买入",
+      "ema_up": 3,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "ema_score": 3
     },
     "sh_688302": {
       "code": "688302",
@@ -8548,18 +9189,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根大通",
       "rating": "买入"
@@ -8577,10 +9233,13 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 308.56,
+        "pct_chg": -7.29,
+        "pct_chg_5d": -0.75,
+        "pct_chg_20d": 34.49,
+        "rsi_14": 53.6,
+        "signal_score": 3.0,
+        "ema_up": 7,
         "ema_dirs": [
           true,
           true,
@@ -8590,10 +9249,33 @@
           true,
           true
         ],
-        "ema_score": 3
+        "ema_score": 7,
+        "turnover_rate": 0.56,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "摩根大通",
-      "rating": "买入"
+      "rating": "买入",
+      "ema_up": 7,
+      "ema_dirs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ema_score": 7
     },
     "sz_002422": {
       "code": "002422",
@@ -8608,10 +9290,13 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
-        "ema_up": 0,
+        "close": 44.91,
+        "pct_chg": -10.0,
+        "pct_chg_5d": 1.91,
+        "pct_chg_20d": 25.03,
+        "rsi_14": 59.9,
+        "signal_score": 4.5,
+        "ema_up": 7,
         "ema_dirs": [
           true,
           true,
@@ -8621,10 +9306,33 @@
           true,
           true
         ],
-        "ema_score": 3
+        "ema_score": 7,
+        "turnover_rate": 2.11,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": true,
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "摩根大通",
-      "rating": "买入"
+      "rating": "买入",
+      "ema_up": 7,
+      "ema_dirs": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "ema_score": 7
     },
     "sz_002653": {
       "code": "002653",
@@ -8641,18 +9349,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根大通",
       "rating": "买入"
@@ -8670,23 +9393,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 82.96,
+        "pct_chg": -0.3,
+        "pct_chg_5d": -17.95,
+        "pct_chg_20d": -0.08,
+        "rsi_14": 36.2,
+        "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 6.71,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "institution": "摩根大通",
-      "rating": "增持"
+      "rating": "增持",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_688820": {
       "code": "688820",
@@ -8703,24 +9452,39 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "摩根大通",
       "rating": "增持"
     }
   },
-  "update_time": "2026-07-17 13:28:15",
+  "update_time": "2026-07-17 13:43:07",
   "candidates": {
     "sh_603986": {
       "code": "603986",
