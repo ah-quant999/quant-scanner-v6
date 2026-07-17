@@ -182,9 +182,9 @@ def main():
 
         # 龙虎榜
         lhb_info = lhb_map.get(raw_code)
-        if lhb_info and lhb_info["category"] == "纯共振":
+        if lhb_info and lhb_info["category"] == "机游共振":
             fund += 5
-            fund_detail.append(f"龙虎榜纯共振")
+            fund_detail.append(f"龙虎榜机游共振")
         elif lhb_info and lhb_info["inst_net"] > 0:
             fund += 3
             fund_detail.append(f"龙虎榜+{lhb_info['inst_net']:.0f}万")

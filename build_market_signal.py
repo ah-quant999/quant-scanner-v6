@@ -191,7 +191,7 @@ def build():
     sf_total_in = sum(x.get('net', 0) for x in sf_ind_in)
     sf_total_out = sum(abs(x.get('net', 0)) for x in sf_ind_out)
     lhb_stocks = lhb.get('stocks', [])
-    pure_res = [s for s in lhb_stocks if s.get('category') == '纯共振']
+    pure_res = [s for s in lhb_stocks if s.get('category') == '机游共振']
     if avg_score >= 7 and sf_total_in > sf_total_out and len(pure_res) >= 2:
         final_word = '🟢 资金+机构+技术面共振偏多，可适当参与。'
     elif avg_score >= 5:

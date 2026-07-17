@@ -2355,23 +2355,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 32.54,
+        "pct_chg": -1.39,
+        "pct_chg_5d": -12.15,
+        "pct_chg_20d": -9.96,
+        "rsi_14": 46.3,
+        "signal_score": 3.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0.62,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "📉低开低走"
       },
       "institution": "瑞银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_603290": {
       "code": "603290",
@@ -2388,18 +2414,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "瑞银",
       "rating": "未评级"
@@ -2419,18 +2460,33 @@
       "latest": {
         "close": 0,
         "pct_chg": 0,
-        "signal_score": 7.0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": ""
       },
       "institution": "瑞银",
       "rating": "未评级"
@@ -2448,23 +2504,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 59.33,
+        "pct_chg": -3.65,
+        "pct_chg_5d": -4.52,
+        "pct_chg_20d": -15.16,
+        "rsi_14": 41.6,
+        "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0.96,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "瑞银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_688396": {
       "code": "688396",
@@ -2479,23 +2561,49 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 71.56,
+        "pct_chg": -5.69,
+        "pct_chg_5d": -15.81,
+        "pct_chg_20d": -0.26,
+        "rsi_14": 39.3,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 0,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "瑞银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_002850": {
       "code": "002850",
@@ -2510,24 +2618,50 @@
         "投行研报"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "signal_score": 7.0,
+        "close": 193.36,
+        "pct_chg": 0.7,
+        "pct_chg_5d": -1.83,
+        "pct_chg_20d": -4.77,
+        "rsi_14": 54.9,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
-          true,
-          true,
-          true,
-          true,
-          true,
-          true,
-          true
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
         ],
-        "ema_score": 3
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 1,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "institution": "瑞银",
-      "rating": "未评级"
+      "rating": "未评级",
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     }
   },
-  "update_time": "2026-07-17 15:31:14"
+  "update_time": "2026-07-17 15:45:08"
 }
