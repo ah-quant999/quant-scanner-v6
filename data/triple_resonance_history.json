@@ -33,8 +33,52 @@
   "2026-07-14": [],
   "2026-07-15": [],
   "2026-07-16": [],
-  "2026-07-17": [],
-  "_stock_price_history": {},
+  "2026-07-17": [
+    {
+      "code": "300149",
+      "name": "睿智医药",
+      "close": 9.82,
+      "pct_chg": -11.45,
+      "缠论买_日K": true,
+      "金钻_起涨": false,
+      "四量图_机构变红": true,
+      "上涨趋势": true,
+      "signal_count": 3,
+      "score": 9,
+      "days_in_resonance": 1,
+      "enter_date": "",
+      "duration_days": 0
+    },
+    {
+      "code": "002141",
+      "name": "贤丰控股",
+      "close": 6.45,
+      "pct_chg": 9.14,
+      "缠论买_日K": true,
+      "金钻_起涨": false,
+      "四量图_机构变红": true,
+      "上涨趋势": true,
+      "signal_count": 3,
+      "score": 9,
+      "days_in_resonance": 1,
+      "enter_date": "",
+      "duration_days": 0
+    }
+  ],
+  "_stock_price_history": {
+    "002141": [
+      [
+        "2026-07-17",
+        6.45
+      ]
+    ],
+    "300149": [
+      [
+        "2026-07-17",
+        9.82
+      ]
+    ]
+  },
   "_tracking_latest": {
     "600172": {
       "name": "黄河旋风",
