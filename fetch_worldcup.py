@@ -1001,10 +1001,20 @@ def main():
     else:
         log('    TOP: (空)')
     
+    knockout_total = len(knockout)
+    knockout_finished = sum(1 for m in knockout if m.get('score') and m.get('finished'))
+    knockout_upcoming = knockout_total - knockout_finished
+    if knockout_upcoming == 0:
+        matchday = f"⚽ 32强淘汰赛全部结束（{knockout_total}/{knockout_total}场）"
+    elif knockout_upcoming <= 2:
+        matchday = "⚽ 半决赛结束 · 决赛+三四名决赛待进行"
+    else:
+        matchday = f"⚽ 32强淘汰赛：已完赛{knockout_finished}/{knockout_total}场 · 剩余{knockout_upcoming}场"
+
     output = {
         'update_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'matchday': '⚽ 32强淘汰赛进行中',
-        'status_note': '🔥 6月28日起32强淘汰赛正式开战',
+        'matchday': matchday,
+        'status_note': '🔥 世界杯淘汰赛阶段',
         'qual_probs': qual_probs,
         'adj_eff': {name: {'adj_gf': ae['adj_gf'], 'adj_ga': ae['adj_ga'], 
                            'opp_strength': ae['opponent_strength']} 

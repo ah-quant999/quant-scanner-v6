@@ -426,7 +426,8 @@ h2{{font-size:16px;margin-bottom:12px;border-left:4px solid #ff6b35;padding-left
     print(f"✅ 已生成 {STANDALONE}")
     print(f"   球队: {len(all_teams)} 支")
     print(f"   赛程: {len(results)} 场小组赛 + {len(knockout)} 场淘汰赛")
-    print(f"   夺冠概率 TOP3: {odds[0]['n']} {odds[0]['prob']}% / {odds[1]['n']} {odds[1]['prob']}% / {odds[2]['n']} {odds[2]['prob']}%")
+    top_str = " / ".join([f"{o['n']} {o['prob']}%" for o in odds[:3]]) if odds else "(无)"
+    print(f"   夺冠概率 TOP: {top_str}")
 
 if __name__ == "__main__":
     main()

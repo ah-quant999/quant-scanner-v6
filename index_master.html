@@ -932,7 +932,7 @@ tr:hover td { background: #fafbfc; }
 
       <!-- 💰 四路资金流向对比（位于机游共振·龙虎榜正下方，2026-07-16 审计：从 暂未上架 上架到预判信号） -->
       <div id="capitalFlowCard" class="predict-card" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">中长线·盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
+        <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">席位口径·盘中+盘后</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
         <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
           <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
             <thead>
@@ -450873,13 +450873,19 @@ function renderCapitalFlowCard() {
 
   var tEl = document.getElementById('capFlowTime');
   if (tEl) {
-    // 2026-07-17 修复：d.update_time 是今天时优先用它（如资金流盘后 22:00 刷 → "今日 22:00"），
-    //   否则回退 POST_CLOSE_TIME。同步 setPostMarketTime 行为。
-    var _df = d.update_time ? fmtDataTime(d.update_time) : null;
-    var _useUpdate = _df && _df.daysAgo === 0;
-    var _ts = _useUpdate ? d.update_time : (window.POST_CLOSE_TIME || d.update_time || '');
-    var _fmt = _ts ? fmtDataTime(_ts) : null;
-    tEl.textContent = '更新于 ' + (_fmt ? _fmt.text : '');
+    // 2026-07-17 修复：明确区分龙虎榜日期（lhb_date）与南向日期（north_fund_date）。
+    // 龙虎榜席位数据滞后一日，避免标成"今日"。
+    var lhbDate = d.lhb_date || '';
+    var nfDate = d.north_fund_date || '';
+    if (lhbDate && nfDate) {
+      tEl.textContent = '龙虎榜 ' + lhbDate + ' · 南向 ' + nfDate;
+    } else if (lhbDate) {
+      tEl.textContent = '龙虎榜 ' + lhbDate;
+    } else if (d.update_time) {
+      tEl.textContent = '更新于 ' + d.update_time;
+    } else {
+      tEl.textContent = '';
+    }
   }
 
   var body = document.getElementById('capFlowBody');

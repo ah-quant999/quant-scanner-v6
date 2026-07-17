@@ -85,6 +85,18 @@ def seats_top(stocks, seat_name, n=3):
     sell_rows.sort(key=lambda x: x[1])
     return buy_rows[:n], sell_rows[:n]
 
+
+def seat_net_total(stocks, seat_name):
+    """某席位在所有上榜个股中的净额总和（单位：元）"""
+    total = 0.0
+    for s in stocks:
+        seat = s.get("seats", {}).get(seat_name, {})
+        buy = float(seat.get("buy", 0) or 0) * 1e4
+        sell = float(seat.get("sell", 0) or 0) * 1e4
+        total += buy - sell
+    return total
+
+
 def format_names(rows, with_money=True):
     """rows = [(name, net, code)] → ['A (+x.x亿)', 'B (+y.y亿)']"""
     if not rows:
@@ -113,7 +125,14 @@ def main():
     ind = load("industry_map.json")
     ind_stocks = ind.get("stocks", {})
 
-    today = nf.get("update_time", "").split(" ")[0] or lhb.get("date", "") or "未知"
+    lhb_date_raw = lhb.get("date", "")
+    # lhb_date 可能是 20260716 或 2026-07-16，统一为 YYYY-MM-DD
+    if lhb_date_raw and len(lhb_date_raw) == 8 and lhb_date_raw.isdigit():
+        lhb_date = f"{lhb_date_raw[:4]}-{lhb_date_raw[4:6]}-{lhb_date_raw[6:]}"
+    else:
+        lhb_date = lhb_date_raw
+    nf_date = nf.get("update_time", "").split(" ")[0]
+    today = lhb_date or nf_date or "未知"
     stocks = lhb.get("stocks", [])
 
     # ── 1. 南向资金（港股通，唯一可靠的全市场数据源） ──
@@ -160,7 +179,7 @@ def main():
 
     # ── 2. 北向龙虎榜席位（不是全市场北向，是龙虎榜异动股的北向席位） ──
     bx_buy, bx_sell = seats_top(stocks, "北向", n=3)
-    bx_net_total = sum(net for _, net, _ in bx_buy) + sum(net for _, net, _ in bx_sell)  # sell 为负
+    bx_net_total = seat_net_total(stocks, "北向")
     bx_dir_word = "净流入" if bx_net_total > 0 else "净流出"
     bx_direction = f"龙虎榜北向席位{bx_dir_word}{fmt_yi(abs(bx_net_total))}（仅覆盖异动股）"
     bx_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("北向")], ind_stocks, n=3)
@@ -168,7 +187,7 @@ def main():
 
     # ── 3. 机构席位（龙虎榜机构专用席位） ──
     inst_buy, inst_sell = seats_top(stocks, "机构", n=3)
-    inst_net_total = sum(net for _, net, _ in inst_buy) + sum(net for _, net, _ in inst_sell)
+    inst_net_total = seat_net_total(stocks, "机构")
     inst_dir_word = "净流入" if inst_net_total > 0 else "净流出"
     inst_direction = f"机构席位{inst_dir_word}{fmt_yi(abs(inst_net_total))}（龙虎榜专用席位）"
     inst_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("机构")], ind_stocks, n=3)
@@ -176,7 +195,7 @@ def main():
 
     # ── 4. 游资（龙虎榜未识别席位 + 涨停敢死队特征） ──
     yz_buy, yz_sell = seats_top(stocks, "未识别", n=3)
-    yz_net_total = sum(net for _, net, _ in yz_buy) + sum(net for _, net, _ in yz_sell)
+    yz_net_total = seat_net_total(stocks, "未识别")
     yz_dir_word = "净流入" if yz_net_total > 0 else "净流出"
     yz_direction = f"游资席位{yz_dir_word}{fmt_yi(abs(yz_net_total))}（未识别席位）"
     yz_style_sectors = sector_style_from_stocks([s for s in stocks if s.get("seats", {}).get("未识别")], ind_stocks, n=3)
@@ -240,6 +259,8 @@ def main():
     # ── 7. 输出 ──
     result = {
         "date": today,
+        "lhb_date": lhb_date,
+        "north_fund_date": nf_date,
         "update_time": nf.get("update_time", lhb.get("update_time", "未知")),
         "data_note": "龙虎榜席位数据，仅覆盖当日价格/换手率异动的上榜个股；全市场北向/机构/游资净流向已不可获取",
         "north_south": {
