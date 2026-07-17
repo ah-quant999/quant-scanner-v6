@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- build: 20260701085830 -->
-<meta name="build-stamp" content="20260717125424">
+<meta name="build-stamp" content="20260717130424">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -996,6 +996,7 @@ window.addEventListener('load',function(){
       <div id="capitalFlowCard" class="predict-card" style="display:none;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
         <div style="background:linear-gradient(135deg,#ede7f6,#d1c4e9);color:#4527a0;padding:12px 18px;font-size:15px;font-weight:700;text-align:center;">💰 四路资金流向对比<span style="font-size:10px;font-weight:400;color:#999;margin-left:4px;">席位口径</span> <span style="font-size:11px;font-weight:400;opacity:0.65;" id="capFlowTime" class="card-time"></span></div>
         <div style="padding:8px 14px;font-size:12px;line-height:1.6;background:#fafbfc;overflow-x:auto;">
+          <div id="capFlowResonance" style="margin-bottom:8px;padding:8px 10px;background:#fff;border:1px dashed #d1c4e9;border-radius:8px;font-size:11px;color:#444;line-height:1.6;display:none;"></div>
           <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
             <thead>
               <tr style="background:#3C3489;color:#fff;">
@@ -1008,7 +1009,6 @@ window.addEventListener('load',function(){
             </thead>
             <tbody id="capFlowBody"></tbody>
           </table>
-          <div id="capFlowResonance" style="margin-top:8px;padding:8px 10px;background:#fff;border:1px dashed #d1c4e9;border-radius:8px;font-size:11px;color:#444;line-height:1.6;display:none;"></div>
           <div id="capFlowAnalysis" style="margin-top:8px;padding:10px 12px;background:linear-gradient(135deg,#faf7ff,#f3eefe);border:1px solid #d1c4e9;border-radius:8px;font-size:11px;color:#333;line-height:1.6;display:none;"></div>
           <div style="margin-top:8px;font-size:10px;color:#888;line-height:1.5;">
             <b>口径说明：</b>"北向/机构/游资"均来自沪深交易所龙虎榜席位明细，仅覆盖当日价格/换手率异动的上榜个股；港交所自2024年5月起已停更全市场北向资金实时及盘后净流入数据，本卡片不再展示不可获取的全市场汇总数据。南向资金为港股通（沪深港通）净流入，可获取全市场口径。
@@ -1413,7 +1413,7 @@ window.addEventListener('load',function(){
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-17 12:54";
+window.CLOUD_UPDATE_TIME = "2026-07-17 13:04";
 window.POST_CLOSE_TIME = "2026-07-16 15:30:00";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-17 12:03:34",
@@ -75426,7 +75426,7 @@ true
 "ema_score": 2
 }
 },
-"update_time": "2026-07-17 12:54:22",
+"update_time": "2026-07-17 13:04:22",
 "candidates": {
 "sh_603986": {
 "code": "603986",
@@ -82033,7 +82033,7 @@ true
 ],
 "update_time": "2026-07-17 10:31"
 };window.MACRO_DATA = {
-"update_time": "2026-07-17 12:52:40",
+"update_time": "2026-07-17 13:02:41",
 "monetary": {
 "cn_bond_10y": {
 "value": 1.7437,
@@ -82109,12 +82109,12 @@ true
 },
 "global_macro": {
 "vix": {
-"value": 19.1,
+"value": 19.05,
 "date": "2026-07-17"
 },
 "usdcnh": {
 "price": 6.773,
-"prev_close": 6.7759,
+"prev_close": 6.7766,
 "date": "2026-07-17",
 "source": "Sina实时"
 },
@@ -82126,22 +82126,22 @@ true
 },
 "commodities": {
 "gold": {
-"value": 3985.3,
+"value": 3984.3,
 "unit": "美元/盎司",
 "date": "2026-07-17"
 },
 "silver": {
-"value": 55.47,
+"value": 55.44,
 "unit": "美元/盎司",
 "date": "2026-07-17"
 },
 "copper": {
-"value": 6.213,
+"value": 6.22,
 "unit": "美元/磅",
 "date": "2026-07-17"
 },
 "oil": {
-"value": 79.12,
+"value": 79.17,
 "unit": "美元/桶",
 "date": "2026-07-17"
 }
@@ -135815,10 +135815,10 @@ function renderCapitalFlowCard() {
     + '<div style="font-size:10px;color:#888;margin-bottom:6px;padding:0 2px;">'
     + '数据源：龙虎榜席位 ' + (d.lhb_date || '-') + '｜南向资金 ' + (d.north_fund_date || '-') + '｜仅覆盖异动上榜股'
     + '</div>'
-    + row('🌏 南向资金', d.north_south, '#f5fff5')
-    + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff')
     + row('🏦 机构席位', d.inst, '#fff5f5')
-    + row('🚀 游资席位', d.hot_money, '#f5f5ff');
+    + row('🚀 游资席位', d.hot_money, '#f5f5ff')
+    + row('🌏 南向资金', d.north_south, '#f5fff5')
+    + row('🌎 龙虎榜北向席位', d.bx, '#f0f8ff');
 
   // 研判文字（仿左图：自然语言解读）
   var analysisEl = document.getElementById('capFlowAnalysis');
@@ -136633,7 +136633,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 "xiaojiu": {
 "status": "ok",
-"last_time": "2026-07-17 12:36:45",
+"last_time": "2026-07-17 12:55:15",
 "mode": "deploy"
 },
 "alimi": {
