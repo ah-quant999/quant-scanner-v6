@@ -1,7 +1,11 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
+<<<<<<< Updated upstream
     "last_success": "2026-07-17 14:27:36",
+=======
+    "last_success": "2026-07-17 15:09:51",
+>>>>>>> Stashed changes
     "last_error": null
   },
   "fetch_sh_sz_history": {
