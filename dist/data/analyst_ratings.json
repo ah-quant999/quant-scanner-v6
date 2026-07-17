@@ -1,18 +1,9 @@
 {
-  "update_time": "2026-07-15 22:33",
+  "update_time": "2026-07-17 10:18",
   "upgrades": [],
   "downgrades": [],
   "new_coverage": [],
-  "hot_stocks": [
-    {
-      "code": "300607",
-      "name": "拓斯达",
-      "rating": "买入",
-      "institution": "东莞证券",
-      "report_count_1m": 1,
-      "date": "2026-07-14"
-    }
-  ],
+  "hot_stocks": [],
   "latest_reports": [],
-  "note": "数据源: akshare(TOP40个股), 近3日新增推荐1只（买入/增持） (当日研报0条, 盘后T+1发布)"
+  "note": "数据源: akshare(TOP40个股), 近3日新增推荐0只（买入/增持） (当日研报0条, 盘后T+1发布)"
 }
