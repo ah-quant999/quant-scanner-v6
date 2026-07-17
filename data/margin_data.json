@@ -1,14 +1,6 @@
 {
   "sh": [
     {
-      "date": "4/17",
-      "date_raw": "20260417",
-      "rz_balance": 13414,
-      "rz_buy": 1093,
-      "rq_balance_amt": 129,
-      "total": 13544
-    },
-    {
       "date": "4/20",
       "date_raw": "20260420",
       "rz_balance": 13556,
@@ -479,8 +471,16 @@
       "rz_buy": 1216,
       "rq_balance_amt": 138,
       "total": 14585
+    },
+    {
+      "date": "7/16",
+      "date_raw": "20260716",
+      "rz_balance": 14308,
+      "rz_buy": 1060,
+      "rq_balance_amt": 132,
+      "total": 14440
     }
   ],
   "sz": [],
-  "update_time": "2026-07-16 15:48"
+  "update_time": "2026-07-17 09:38"
 }
