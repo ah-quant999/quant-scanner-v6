@@ -554,12 +554,18 @@ def process_group(key, config, token):
     # 排序：按日期降序
     reports.sort(key=lambda r: r.get("create_time", ""), reverse=True)
 
-    # 3. 写文件
+    # 3. 写文件（包装为对象，带 update_time，供前端状态表读取）
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    out_obj = {
+        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "count": len(reports),
+        "date_range": f"{min(dates)} ~ {max(dates)}" if dates else "?",
+        "reports": reports,
+    }
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(reports, f, ensure_ascii=False, indent=2)
+        json.dump(out_obj, f, ensure_ascii=False, indent=2)
 
-    date_range = f"{min(dates)} ~ {max(dates)}" if dates else "?"
+    date_range = out_obj["date_range"]
     print(f"  ✓ 研报(含股票): {len(reports)} 条 | 日期: {date_range}")
     print(f"  ✓ 推股池新增: {len(watch_stocks)} 只")
     print(f"  ✓ 已保存: {os.path.basename(out_path)}")

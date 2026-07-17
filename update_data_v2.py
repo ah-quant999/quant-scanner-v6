@@ -1138,8 +1138,11 @@ def main():
     zhaixingge_data = {"update_time": "", "reports": []}
 
     # 加载观澜台研报（用于健康看板时间戳）
+    # 兼容旧版 list 与新版对象 {"update_time": ..., "reports": [...]}
     _gl_raw = load_json(os.path.join(DATA_DIR, "guanlan_reports.json"))
-    if isinstance(_gl_raw, list) and _gl_raw:
+    if isinstance(_gl_raw, dict) and _gl_raw.get("reports"):
+        guanlan_reports = _gl_raw
+    elif isinstance(_gl_raw, list) and _gl_raw:
         _gl_time = _gl_raw[0].get("create_time", "") if _gl_raw else ""
         guanlan_reports = {"update_time": _gl_time, "reports": _gl_raw}
     else:
@@ -1188,7 +1191,12 @@ def main():
     #       不能只靠代码相等。
     #    💡 新增: 如果研报提及的股票不在金股池中，直接加入（source=投行研报）
     try:
-        _gl_reports = _gl_raw if isinstance(_gl_raw, list) else []
+        if isinstance(_gl_raw, dict):
+            _gl_reports = _gl_raw.get("reports", [])
+        elif isinstance(_gl_raw, list):
+            _gl_reports = _gl_raw
+        else:
+            _gl_reports = []
         for _gr in _gl_reports:
             # 跳过未知机构的报告（质量不可控）
             _inst = _gr.get("institution", "")

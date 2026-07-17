@@ -55,7 +55,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sh_688017": {
       "code": "688017",
@@ -112,7 +116,11 @@
         false,
         true
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sh_688777": {
       "code": "688777",
@@ -158,7 +166,11 @@
         "开盘_标签": ""
       },
       "institution": "德意志银行",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ]
     },
     "sz_002050": {
       "code": "002050",
@@ -215,7 +227,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sz_002472": {
       "code": "002472",
@@ -272,7 +288,11 @@
         false,
         true
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "汽车制造业",
+      "sectors": [
+        "汽车制造业"
+      ]
     },
     "sz_300124": {
       "code": "300124",
@@ -329,7 +349,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_002747": {
       "code": "002747",
@@ -386,7 +410,11 @@
         false,
         true
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "hk_9988": {
       "code": "9988",
@@ -489,7 +517,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_300014": {
       "code": "300014",
@@ -546,7 +578,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_300750": {
       "code": "300750",
@@ -603,7 +639,11 @@
         false,
         false
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_002594": {
       "code": "002594",
@@ -660,7 +700,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "汽车制造业",
+      "sectors": [
+        "汽车制造业"
+      ]
     },
     "sh_688041": {
       "code": "688041",
@@ -717,7 +761,11 @@
         true,
         true
       ],
-      "ema_score": 2
+      "ema_score": 2,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_601099": {
       "code": "601099",
@@ -774,7 +822,11 @@
         false,
         false
       ],
-      "ema_score": 1
+      "ema_score": 1,
+      "industry": "资本市场服务",
+      "sectors": [
+        "资本市场服务"
+      ]
     },
     "sz_300024": {
       "code": "300024",
@@ -831,7 +883,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sh_600176": {
       "code": "600176",
@@ -888,7 +944,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "非金属矿物制品业",
+      "sectors": [
+        "非金属矿物制品业"
+      ]
     },
     "hk_1672": {
       "code": "1672",
@@ -1083,7 +1143,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "专用设备制造业",
+      "sectors": [
+        "专用设备制造业"
+      ]
     },
     "sh_688301": {
       "code": "688301",
@@ -1129,7 +1193,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "专用设备制造业",
+      "sectors": [
+        "专用设备制造业"
+      ]
     },
     "sh_603699": {
       "code": "603699",
@@ -1278,7 +1346,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "专用设备制造业",
+      "sectors": [
+        "专用设备制造业"
+      ]
     },
     "hk_2590": {
       "code": "2590",
@@ -1714,7 +1786,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电力、热力生产和供应业",
+      "sectors": [
+        "电力、热力生产和供应业"
+      ]
     },
     "sh_601995": {
       "code": "601995",
@@ -1771,7 +1847,11 @@
         true,
         true
       ],
-      "ema_score": 5
+      "ema_score": 5,
+      "industry": "资本市场服务",
+      "sectors": [
+        "资本市场服务"
+      ]
     },
     "sz_002028": {
       "code": "002028",
@@ -1828,7 +1908,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_603259": {
       "code": "603259",
@@ -1874,7 +1958,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根大通",
-      "rating": "买入"
+      "rating": "买入",
+      "industry": "研究和试验发展",
+      "sectors": [
+        "研究和试验发展"
+      ]
     },
     "sh_688222": {
       "code": "688222",
@@ -2091,7 +2179,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "医药制造业",
+      "sectors": [
+        "医药制造业"
+      ]
     },
     "sz_002653": {
       "code": "002653",
@@ -2194,7 +2286,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688820": {
       "code": "688820",
@@ -2240,8 +2336,198 @@
         "开盘_标签": ""
       },
       "institution": "摩根大通",
-      "rating": "增持"
+      "rating": "增持",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
+    },
+    "sh_600150": {
+      "code": "600150",
+      "name": "中国船舶",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
+    },
+    "sh_603290": {
+      "code": "603290",
+      "name": "斯达半导",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
+    },
+    "sz_000951": {
+      "code": "000951",
+      "name": "中国重汽",
+      "market": "深市",
+      "board_label": "主板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
+    },
+    "sz_002475": {
+      "code": "002475",
+      "name": "立讯精密",
+      "market": "深市",
+      "board_label": "主板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
+    },
+    "sh_688396": {
+      "code": "688396",
+      "name": "华润微",
+      "market": "沪市",
+      "board_label": "科创板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
+    },
+    "sz_002850": {
+      "code": "002850",
+      "name": "科达利",
+      "market": "深市",
+      "board_label": "主板",
+      "first_date": "2026-07-17",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "瑞银",
+      "rating": "未评级"
     }
   },
-  "update_time": "2026-07-17 15:17:10"
+  "update_time": "2026-07-17 15:31:14"
 }
