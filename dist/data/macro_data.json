@@ -1,16 +1,16 @@
 {
-  "update_time": "2026-07-16 23:41:30",
+  "update_time": "2026-07-17 08:29:07",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7437,
       "date": "2026-07-16"
     },
     "us_bond_10y": {
-      "value": 4.55,
-      "date": "2026-07-15"
+      "value": 4.57,
+      "date": "2026-07-16"
     },
     "cn_us_spread": {
-      "value": -2.81
+      "value": -2.83
     },
     "lpr": {
       "lpr_1y": 3.0,
@@ -30,7 +30,7 @@
     },
     "open_market_operation": {
       "net_inflow": null,
-      "date": "2026-07-16"
+      "date": "2026-07-17"
     }
   },
   "economy": {
@@ -63,94 +63,94 @@
     "ipo": {
       "count": 10,
       "amount": 0,
-      "date": "2026-07-16"
+      "date": "2026-07-17"
     }
   },
   "market_sentiment": {
     "new_investors": {
       "value": 99.59,
       "change": 0.09,
-      "date": "2026-07-16"
+      "date": "2026-07-17"
     }
   },
   "global_macro": {
     "vix": {
-      "value": 18.2,
-      "date": "2026-07-16"
+      "value": 18.75,
+      "date": "2026-07-17"
     },
     "usdcnh": {
-      "price": 6.7681,
-      "prev_close": 6.7721,
-      "date": "2026-07-16",
+      "price": 6.773,
+      "prev_close": 6.7742,
+      "date": "2026-07-17",
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 100.7,
-      "pct": 0.27,
-      "date": "2026-07-16",
+      "value": 100.74,
+      "pct": 0.04,
+      "date": "2026-07-17",
       "source": "Sina-DINIW"
     },
     "commodities": {
       "gold": {
-        "value": 4018.0,
+        "value": 3990.9,
         "unit": "美元/盎司",
-        "date": "2026-07-16"
+        "date": "2026-07-17"
       },
       "silver": {
-        "value": 56.67,
+        "value": 55.83,
         "unit": "美元/盎司",
-        "date": "2026-07-16"
+        "date": "2026-07-17"
       },
       "copper": {
-        "value": 6.367,
+        "value": 6.28,
         "unit": "美元/磅",
-        "date": "2026-07-16"
+        "date": "2026-07-17"
       },
       "oil": {
-        "value": 78.73,
+        "value": 78.87,
         "unit": "美元/桶",
-        "date": "2026-07-16"
+        "date": "2026-07-17"
       }
     }
   },
   "indicator_status": {
     "lpr": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "LPR利率"
     },
     "m2_yoy": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "M2同比"
     },
     "pmi": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "制造业PMI"
     },
     "cpi": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "CPI同比"
     },
     "ppi": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "PPI同比"
     },
     "social_financing": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "社融规模"
     },
     "export_yoy": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "出口增速"
     },
     "new_investors": {
-      "last_updated": "2026-07-16",
+      "last_updated": "2026-07-17",
       "is_fresh": true,
       "name": "新增投资者"
     }

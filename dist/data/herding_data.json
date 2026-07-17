@@ -1,86 +1,86 @@
 {
-  "update_time": "2026-07-16 17:42:53",
+  "update_time": "2026-07-16 10:01:53",
   "current_clusters": [
     {
       "rank": 1,
       "medal": "🥇",
-      "sector": "文化传媒",
-      "amount": 13.35,
+      "sector": "半导体",
+      "amount": 80.18,
       "unit": "亿",
       "direction": "流入",
-      "leader": "电声股份",
-      "pct": 2.1
+      "leader": "艾为电子",
+      "pct": 0.59
     },
     {
       "rank": 2,
       "medal": "🥈",
       "sector": "消费电子",
-      "amount": 8.38,
+      "amount": 30.08,
       "unit": "亿",
       "direction": "流入",
       "leader": "豪声电子",
-      "pct": 0.13
+      "pct": 3.22
     },
     {
       "rank": 3,
       "medal": "🥉",
-      "sector": "计算机设备",
-      "amount": 7.43,
+      "sector": "IT服务",
+      "amount": 14.69,
       "unit": "亿",
       "direction": "流入",
-      "leader": "雷神科技",
-      "pct": 0.4
+      "leader": "云创退",
+      "pct": 1.29
     }
   ],
   "high_prob": [
     {
-      "sector": "抖音概念(字节概念)",
-      "net": 39.3,
+      "sector": "芯片概念",
+      "net": 134.58,
       "unit": "亿",
-      "leader": "华智数媒",
-      "pct": 1.19
+      "leader": "慧为智能",
+      "pct": 0.18
     },
     {
-      "sector": "华为海思概念股",
-      "net": 34.42,
+      "sector": "机器人概念",
+      "net": 105.61,
       "unit": "亿",
-      "leader": "美格智能",
-      "pct": -1.36
+      "leader": "格林精密",
+      "pct": 0.74
     },
     {
-      "sector": "虚拟数字人",
-      "net": 29.35,
+      "sector": "物联网",
+      "net": 87.84,
       "unit": "亿",
-      "leader": "智度股份",
-      "pct": 1.2
+      "leader": "慧为智能",
+      "pct": 1.01
     },
     {
-      "sector": "AI智能体",
-      "net": 28.48,
+      "sector": "智能穿戴",
+      "net": 78.87,
       "unit": "亿",
-      "leader": "电声股份",
-      "pct": 0.7
+      "leader": "豪声电子",
+      "pct": 2.01
     },
     {
-      "sector": "信创",
-      "net": 27.86,
+      "sector": "消费电子概念",
+      "net": 76.91,
       "unit": "亿",
-      "leader": "雷神科技",
-      "pct": 0.34
+      "leader": "豪声电子",
+      "pct": 1.25
     }
   ],
   "cautious": [
     {
-      "sector": "通信设备",
-      "reason": "主力净流出-67.53亿"
+      "sector": "化学制药",
+      "reason": "主力净流出-20.11亿"
     },
     {
-      "sector": "光学光电子",
-      "reason": "主力净流出-39.69亿"
+      "sector": "证券",
+      "reason": "主力净流出-19.49亿"
     },
     {
-      "sector": "元件",
-      "reason": "主力净流出-37.3亿"
+      "sector": "医疗服务",
+      "reason": "主力净流出-15.75亿"
     }
   ],
   "catalysts": [],
@@ -88,162 +88,162 @@
   "industry_flow": {
     "inflow": [
       {
-        "name": "文化传媒",
-        "net": 13.35,
-        "pct": 2.1,
-        "leader": "电声股份"
+        "name": "半导体",
+        "net": 80.18,
+        "pct": 0.59,
+        "leader": "艾为电子"
       },
       {
         "name": "消费电子",
-        "net": 8.38,
-        "pct": 0.13,
+        "net": 30.08,
+        "pct": 3.22,
         "leader": "豪声电子"
       },
       {
-        "name": "计算机设备",
-        "net": 7.43,
-        "pct": 0.4,
-        "leader": "雷神科技"
+        "name": "IT服务",
+        "net": 14.69,
+        "pct": 1.29,
+        "leader": "云创退"
       },
       {
-        "name": "白酒",
-        "net": 6.66,
-        "pct": 1.37,
-        "leader": "金种子酒"
+        "name": "通用设备",
+        "net": 10.6,
+        "pct": 0.39,
+        "leader": "创世纪"
       },
       {
-        "name": "汽车整车",
-        "net": 6.45,
-        "pct": 0.81,
-        "leader": "宇通客车"
+        "name": "文化传媒",
+        "net": 6.47,
+        "pct": 1.31,
+        "leader": "电声股份"
       }
     ],
     "outflow": [
       {
-        "name": "通信设备",
-        "net": -67.53,
-        "pct": -2.03,
-        "leader": "广和通"
-      },
-      {
-        "name": "光学光电子",
-        "net": -39.69,
-        "pct": -2.26,
-        "leader": "ST合力泰"
-      },
-      {
-        "name": "元件",
-        "net": -37.3,
-        "pct": -1.51,
-        "leader": "逸豪新材"
+        "name": "化学制药",
+        "net": -20.11,
+        "pct": -0.84,
+        "leader": "博瑞医药"
       },
       {
         "name": "证券",
-        "net": -35.41,
-        "pct": -1.33,
-        "leader": "湘财股份"
+        "net": -19.49,
+        "pct": -1.7,
+        "leader": "国海证券"
+      },
+      {
+        "name": "医疗服务",
+        "net": -15.75,
+        "pct": -0.62,
+        "leader": "南华生物"
+      },
+      {
+        "name": "银行",
+        "net": -6.95,
+        "pct": -0.96,
+        "leader": "南京银行"
       },
       {
         "name": "电力",
-        "net": -30.29,
-        "pct": -1.01,
-        "leader": "立新能源"
+        "net": -6.52,
+        "pct": -0.45,
+        "leader": "湖南发展"
       }
     ]
   },
   "concept_flow": {
     "inflow": [
       {
-        "name": "抖音概念(字节概念)",
-        "net": 39.3,
-        "pct": 1.19,
-        "leader": "华智数媒"
+        "name": "芯片概念",
+        "net": 134.58,
+        "pct": 0.18,
+        "leader": "慧为智能"
       },
       {
-        "name": "华为海思概念股",
-        "net": 34.42,
-        "pct": -1.36,
-        "leader": "美格智能"
+        "name": "机器人概念",
+        "net": 105.61,
+        "pct": 0.74,
+        "leader": "格林精密"
       },
       {
-        "name": "虚拟数字人",
-        "net": 29.35,
-        "pct": 1.2,
-        "leader": "智度股份"
+        "name": "物联网",
+        "net": 87.84,
+        "pct": 1.01,
+        "leader": "慧为智能"
       },
       {
-        "name": "AI智能体",
-        "net": 28.48,
-        "pct": 0.7,
-        "leader": "电声股份"
+        "name": "智能穿戴",
+        "net": 78.87,
+        "pct": 2.01,
+        "leader": "豪声电子"
       },
       {
-        "name": "信创",
-        "net": 27.86,
-        "pct": 0.34,
-        "leader": "雷神科技"
+        "name": "消费电子概念",
+        "net": 76.91,
+        "pct": 1.25,
+        "leader": "豪声电子"
       },
       {
-        "name": "ChatGPT概念",
-        "net": 27.03,
-        "pct": 1.1,
-        "leader": "智度股份"
-      },
-      {
-        "name": "百度概念",
-        "net": 23.51,
+        "name": "华为概念",
+        "net": 76.9,
         "pct": 0.79,
-        "leader": "智度股份"
+        "leader": "豪声电子"
       },
       {
-        "name": "AIGC概念",
-        "net": 23.37,
-        "pct": 1.09,
-        "leader": "电声股份"
+        "name": "深股通",
+        "net": 68.77,
+        "pct": 0.04,
+        "leader": "格林精密"
       },
       {
-        "name": "国家大基金持股",
-        "net": 22.55,
-        "pct": -4.72,
-        "leader": "盛科通信"
+        "name": "汽车芯片",
+        "net": 68.34,
+        "pct": 0.96,
+        "leader": "艾为电子"
       },
       {
-        "name": "阿里巴巴概念",
-        "net": 22.14,
-        "pct": 0.82,
-        "leader": "电声股份"
+        "name": "小米概念",
+        "net": 65.82,
+        "pct": 1.18,
+        "leader": "豪声电子"
+      },
+      {
+        "name": "人工智能",
+        "net": 63.06,
+        "pct": 0.66,
+        "leader": "慧为智能"
       }
     ],
     "outflow": [
       {
-        "name": "融资融券",
-        "net": -450.99,
-        "pct": -0.88,
-        "leader": "龙鑫智能"
-      },
-      {
-        "name": "沪股通",
-        "net": -301.55,
-        "pct": -1.26,
+        "name": "创新药",
+        "net": -38.54,
+        "pct": -1.03,
         "leader": "博瑞医药"
       },
       {
-        "name": "芯片概念",
-        "net": -205.63,
-        "pct": -3.09,
-        "leader": "影石创新"
-      },
-      {
-        "name": "2026中报预增",
-        "net": -191.95,
-        "pct": -2.03,
-        "leader": "凯尔达"
+        "name": "同花顺中特估100",
+        "net": -26.89,
+        "pct": -1.04,
+        "leader": "海光信息"
       },
       {
         "name": "国企改革",
-        "net": -185.36,
-        "pct": -0.3,
-        "leader": "华智数媒"
+        "net": -26.88,
+        "pct": -0.18,
+        "leader": "沃顿科技"
+      },
+      {
+        "name": "仿制药一致性评价",
+        "net": -22.26,
+        "pct": -1.17,
+        "leader": "博瑞医药"
+      },
+      {
+        "name": "中字头股票",
+        "net": -21.54,
+        "pct": -0.62,
+        "leader": "中航成飞"
       }
     ]
   }

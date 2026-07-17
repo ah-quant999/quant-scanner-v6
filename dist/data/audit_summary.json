@@ -1,20 +1,26 @@
 {
-  "timestamp": "2026-07-16T23:42:20.671255",
-  "errors": 0,
-  "warnings": 4,
-  "ok": 41,
+  "timestamp": "2026-07-14T10:01:11.478740",
+  "errors": 2,
+  "warnings": 3,
+  "ok": 40,
   "details": {
-    "errors": [],
-    "warnings": [
-      {
-        "dashboard": "选股观测台",
-        "check": "stock_names.json 新鲜度",
-        "message": "文件已老化 148.3h（阈值 72h）"
-      },
+    "errors": [
       {
         "dashboard": "观澜台",
         "check": "recommend.json 新鲜度",
-        "message": "文件已老化 224.3h（阈值 48h）"
+        "message": "文件不存在: recommend.json"
+      },
+      {
+        "dashboard": "观澜台",
+        "check": "recommend.json 格式",
+        "message": "文件不存在: recommend.json"
+      }
+    ],
+    "warnings": [
+      {
+        "dashboard": "选股观测台",
+        "check": "signal_backtest.json 新鲜度",
+        "message": "文件已老化 160.0h（阈值 72h）"
       },
       {
         "dashboard": "部署",

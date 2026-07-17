@@ -1,22 +1,6 @@
 {
   "sh": [
     {
-      "date": "4/15",
-      "date_raw": "20260415",
-      "rz_balance": 13360,
-      "rz_buy": 1142,
-      "rq_balance_amt": 129,
-      "total": 13489
-    },
-    {
-      "date": "4/16",
-      "date_raw": "20260416",
-      "rz_balance": 13408,
-      "rz_buy": 1068,
-      "rq_balance_amt": 130,
-      "total": 13538
-    },
-    {
       "date": "4/17",
       "date_raw": "20260417",
       "rz_balance": 13414,
@@ -479,8 +463,24 @@
       "rz_buy": 1196,
       "rq_balance_amt": 137,
       "total": 14713
+    },
+    {
+      "date": "7/14",
+      "date_raw": "20260714",
+      "rz_balance": 14520,
+      "rz_buy": 1234,
+      "rq_balance_amt": 139,
+      "total": 14659
+    },
+    {
+      "date": "7/15",
+      "date_raw": "20260715",
+      "rz_balance": 14448,
+      "rz_buy": 1216,
+      "rq_balance_amt": 138,
+      "total": 14585
     }
   ],
   "sz": [],
-  "update_time": "2026-07-14 16:30"
+  "update_time": "2026-07-16 15:48"
 }
