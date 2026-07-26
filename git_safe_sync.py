@@ -52,46 +52,26 @@ def _run(args, cwd=WORKSPACE, timeout=240):
 
 
 def safe_pull(remote="origin", branch="main", cwd=None):
-    """安全拉取，绝不遗留未合并文件。
+    """安全拉取，使本地树与 origin/<branch> 完全一致（支持历史被 force-push 重写）。
 
-    返回 True=拉取成功（或已是最新），False=拉取失败（已尽量清理，调用方可重试）。
+    返回 True=对齐成功，False=失败（调用方可重试）。
 
     cwd: 可选，指定在哪个工作树执行（默认本模块所在仓库根）。测试时传入隔离
          worktree 路径即可，绝不触碰主工作树。
+
+    【为何用 reset --hard 而非 pull --rebase】
+    旧实现 `git pull --rebase` 在 main 历史被 filter-branch 重写并 force-push 后，
+    会把本地仍指向旧历史的 commit rebase 回 origin/main，从而把已擦除的凭据文件
+    （如 .wc_jwt_cache.json）重新引入公开仓库。reset --hard 让本地直接镜像
+    origin/<branch>，彻底杜绝旧历史回灌。代价：丢弃本地未推送改动——派生数据
+    （data/、dist/data/）本就重建，源码改动由自动化 commit+push 保证已同步。
     """
     cwd = cwd or WORKSPACE
-    # 1) 丢弃派生数据目录/文件的本地未提交改动（权威版在 origin/main）
-    for d in DERIVED_DIRS:
-        if os.path.isdir(os.path.join(cwd, d)):
-            _run(["checkout", "--", d], cwd=cwd)
-    for f in DERIVED_FILES:
-        fp = os.path.join(cwd, f)
-        if os.path.exists(fp):
-            _run(["checkout", "--", f], cwd=cwd)
-
-    # 2) 是否仍有源码类脏改动？
-    st = _run(["status", "--porcelain"], cwd=cwd)
-    dirty = bool(st.stdout.strip())
-
-    if dirty:
-        # 仅 stash 已跟踪的源码改动（不含 -u：绝不把未跟踪文件卷进 pop，
-        # 避免冲突 drop 时误删新建的本地文件）
-        _run(["stash", "push", "-m", "safe-pull-src"], cwd=cwd)
-
-    # 3) rebase 拉取（树已干净，不会因数据冲突）
-    pull = _run(["pull", "--rebase", remote, branch], cwd=cwd)
-
-    # 4) 冲突安全 pop（仅当上一步真的 stash 了源码改动）
-    if dirty:
-        pop = _run(["stash", "pop"], cwd=cwd)
-        out = (pop.stdout + pop.stderr)
-        if ("CONFLICT" in out or "could not apply" in out
-                or "Previous HEAD" in out or "Merge conflict" in out):
-            # pop 冲突：一律取上游(rebase 后的 HEAD=ours)，丢弃 stash，绝不遗留 UU
-            _run(["checkout", "--ours", "--", "."], cwd=cwd)
-            _run(["add", "-u"], cwd=cwd)          # 清除索引里的未合并条目，否则 git status 仍报 UU
-            _run(["stash", "drop"], cwd=cwd)
-    return pull.returncode == 0
+    fetch = _run(["fetch", remote, branch], cwd=cwd)
+    if fetch.returncode != 0:
+        return False
+    reset = _run(["reset", "--hard", f"{remote}/{branch}"], cwd=cwd)
+    return reset.returncode == 0
 
 
 if __name__ == "__main__":

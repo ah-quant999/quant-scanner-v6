@@ -205,3 +205,7 @@ dist/standalone/
 _preview_*.html
 nul
 !fetch_sector_fund_flow_westock.py
+
+
+# 本地部署密钥（admin/guest 登录口令），绝不进版本库
+.site_pw.json
