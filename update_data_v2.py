@@ -1858,53 +1858,9 @@ def main():
         f.write(content)
     print(f"  ✓ 已保存: index.html + index_master.html ({len(content):,} 字符)")
 
-    # 注入真实密码（替换源码 __PWD__ / __GUEST_PWD__ 占位符）
-    REAL_PWD = os.environ.get("QB_PWD", "cat999")
-    REAL_GUEST_PWD = os.environ.get("QB_GUEST_PWD", "hjd666")
-    for fpath in [OUTPUT_PATH, OUTPUT_PATH_MASTER]:
-        for attempt in range(3):
-            try:
-                with open(fpath, "r", encoding="utf-8") as f:
-                    c = f.read()
-                break
-            except PermissionError:
-                if attempt < 2:
-                    time.sleep(0.3)
-                else:
-                    raise
-        n = c.count("__PWD__")
-        m = c.count("__GUEST_PWD__")
-        if n > 0:
-            c = c.replace("__PWD__", REAL_PWD)
-        if m > 0:
-            c = c.replace("__GUEST_PWD__", REAL_GUEST_PWD)
-        if n > 0 or m > 0:
-            written = False
-            for attempt in range(3):
-                try:
-                    with open(fpath, "w", encoding="utf-8") as f:
-                        f.write(c)
-                    # 回读验证：确认占位符已被替换
-                    with open(fpath, "r", encoding="utf-8") as vf:
-                        vc = vf.read()
-                    if "__PWD__" in vc or "__GUEST_PWD__" in vc:
-                        if attempt < 2:
-                            time.sleep(0.5)
-                            continue  # 写入可能被锁，重试
-                        else:
-                            print(f"  ❌ 密码注入写入验证失败！{os.path.basename(fpath)} 仍含占位符")
-                            return False
-                    written = True
-                    break
-                except PermissionError:
-                    if attempt < 2:
-                        time.sleep(0.5)
-                    else:
-                        raise
-            if not written:
-                print(f"  ❌ 密码注入失败！{os.path.basename(fpath)} 写入不成功")
-                return False
-            print(f"  ✓ 密码已注入 {os.path.basename(fpath)} (admin:{n} 处, guest:{m} 处)")
+    # 密码注入统一由 deploy_now.py 在 dist 副本上完成（读取 env / 本地 .site_pw.json，fail-closed）。
+    # 此处仅生成含 __PWD__ / __GUEST_PWD__ 占位符的模板，不写入明文口令，避免源码/历史泄露。
+    print("  ✓ 已生成含密码占位符的 index.html + index_master.html（真实口令由部署阶段注入）")
 
     # 验证 JS 语法（无论模式，必须执行）
     print("\n  JS 语法验证:")

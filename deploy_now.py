@@ -965,21 +965,31 @@ def main():
                             f.write(c)
         log(f"   Build stamp: {now_stamp}")
 
-        # 1.6. 注入真实密码（替换源码中的 __PWD__ / __GUEST_PWD__ 占位符）
-        # 优先从环境变量读取，否则使用默认值
-        REAL_PWD = os.environ.get("QB_PWD", "cat999")
-        REAL_GUEST_PWD = os.environ.get("QB_GUEST_PWD", "hjd666")
+        # 1.6. 注入真实密码（替换 dist 副本中的 __PWD__ / __GUEST_PWD__ 占位符）
+        # 密码来源：环境变量 QB_PWD / QB_GUEST_PWD，回退到本地 gitignored 的 .site_pw.json。
+        # 绝不写死默认口令；若两者皆无则保留占位符（fail-closed，不暴露明文）。
+        _pw_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".site_pw.json")
+        REAL_PWD = os.environ.get("QB_PWD")
+        REAL_GUEST_PWD = os.environ.get("QB_GUEST_PWD")
+        if (not REAL_PWD or not REAL_GUEST_PWD) and os.path.exists(_pw_file):
+            try:
+                import json as _json
+                _pw = _json.load(open(_pw_file, encoding="utf-8"))
+                REAL_PWD = REAL_PWD or _pw.get("admin")
+                REAL_GUEST_PWD = REAL_GUEST_PWD or _pw.get("guest")
+            except Exception:
+                pass
         for fname in ["index.html", "index_master.html"]:
             fpath = os.path.join(DIST_DIR, fname)
             if os.path.exists(fpath):
                 with open(fpath, "r", encoding="utf-8") as f:
                     c = f.read()
                 replaced = False
-                n = c.count("__PWD__")
+                n = c.count("__PWD__") if REAL_PWD else 0
                 if n > 0:
                     c = c.replace("__PWD__", REAL_PWD)
                     replaced = True
-                m = c.count("__GUEST_PWD__")
+                m = c.count("__GUEST_PWD__") if REAL_GUEST_PWD else 0
                 if m > 0:
                     c = c.replace("__GUEST_PWD__", REAL_GUEST_PWD)
                     replaced = True
@@ -987,6 +997,8 @@ def main():
                     with open(fpath, "w", encoding="utf-8") as f:
                         f.write(c)
                     log(f"   ✓ 密码已注入 {fname} (admin:{n} 处, guest:{m} 处)")
+                else:
+                    log(f"   ⚠ 未配置 QB_PWD/QB_GUEST_PWD，{fname} 保留 __PWD__ 占位符（fail-closed）")
 
         # 2. Copy dist/ to temp dir
         log("2. Copying dist/ ...")
