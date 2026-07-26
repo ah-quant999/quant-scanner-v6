@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>前端数据负责方映射 · 九宝量化 v6</title>
+<style>
+  :root{
+    --bg:#0f1419; --panel:#1a212b; --panel2:#222b38; --line:#2c3744;
+    --txt:#e6edf3; --muted:#9aa7b4; --accent:#58a6ff;
+    --cloud:#3b82f6; --dual:#f97316; --mix:#a855f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+  h1{font-size:24px;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 18px;font-size:13px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 22px;font-size:13px}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .dot.c{background:var(--cloud)} .dot.d{background:var(--dual)} .dot.m{background:var(--mix)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:0 0 20px;overflow:hidden}
+  .card h2{margin:0;padding:13px 18px;font-size:16px;background:var(--panel2);border-bottom:1px solid var(--line)}
+  .card h2 small{color:var(--muted);font-weight:400;font-size:12px;margin-left:8px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;background:rgba(255,255,255,.02);font-size:12px}
+  tr:last-child td{border-bottom:none}
+  td.mod{font-weight:600;white-space:nowrap}
+  .tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;color:#fff;white-space:nowrap}
+  .tag.c{background:var(--cloud)} .tag.d{background:var(--dual)} .tag.m{background:var(--mix)}
+  .note{color:var(--muted);font-size:12px}
+  .fix{color:#fbbf24;font-size:12px;font-weight:600}
+  .foot{color:var(--muted);font-size:12px;margin-top:8px;border-top:1px dashed var(--line);padding-top:14px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>前端数据负责方映射</h1>
+  <p class="sub">九宝量化 v6 · 流水线视角：双机（小九 / 阿狸咪，中国网络）为上游生产方 → 推送主分支 → 云端（境外运行环境）做核心扫描 + 派生计算 + 构建部署。下方先按时序排列（新布局），再给横向分类与前端速查。</p>
+  <div style="margin:0 0 16px;padding:12px 16px;background:#fff3e0;border-left:4px solid #f0a020;border-radius:8px;font-size:13px;line-height:1.8;">
+    <b>⚠️ 当前排班状态（2026-07-23 起）：</b>阿狸咪家中机全天断线，其全部定时任务已由 <b>小九（单位机·全天在线）</b> 全面接管。本页"双机"=小九单机在跑双机职责；标注「<span class="fix">代阿狸咪</span>」的行即原属阿狸咪、现由小九顶上的任务。阿狸咪恢复联网后其本机 20+ 救援船任务会自动续跑。<br>
+    <span class="note">本页为「前端数据负责方映射」补充说明；完整逻辑详解（含选股逻辑、调度韧性、监控守卫类清单）见主站 <b>逻辑详解 tab（guide.html）</b>。</span>
+  </div>
+
+  <div class="legend">
+    <span><i class="dot c"></i> 云端负责（境外运行环境专属 / 主导）</span>
+    <span><i class="dot d"></i> 双机负责（中国源，上游入仓）</span>
+    <span><i class="dot m"></i> 混合（双机入仓为主 + 云端可达源兜底）</span>
+  </div>
+
+  <!-- ① 责任时刻表（新位置：按时间轴） -->
+  <div class="card">
+    <h2>① 责任时刻表 <small>按时间轴排列（新布局）</small></h2>
+    <table>
+      <thead><tr><th style="width:20%">时间档位</th><th style="width:10%">主导方</th><th style="width:34%">动作性质</th><th>覆盖前端模块</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">08:00 每日</td><td><span class="tag d">双机</span></td><td>自动交接检查</td><td class="note">交接单 / 状态快照</td></tr>
+        <tr><td class="mod">08:30 工作日</td><td><span class="tag d">双机</span></td><td>每日自动化审计·盘前深度巡检（监控类）</td><td class="note">审计快照</td></tr>
+        <tr><td class="mod">08:45 盘前</td><td><span class="tag d">双机</span></td><td>中国源全量 + 宏观 / 危机 / 斐波 + 核心扫描预生成 + 构建部署（当日独家部署者）<br><span class="fix">⚠️ 代阿狸咪 08:30 IPO 研判已并入</span></td><td class="note">09:20 盘前全量：总览 / 预判 / 金股 / 宏观 / 危机 / 斐波 / 研报预判</td></tr>
+        <tr><td class="mod">09:25 开盘前</td><td><span class="tag d">双机</span></td><td>开盘前刷新兜底</td><td class="note">打新 / 开盘前</td></tr>
+        <tr><td class="mod">09:30–14:31 盘中 ×5 档</td><td><span class="tag c">云端</span><br><span class="tag d">双机</span></td><td>盘中扫描 + 境外可达源（停牌 / 主板 / 南向个股 / 抱团 / 打新 / 宏观 / 危机）+ 部署；双机整点补中国源</td><td class="note">盘中总览 / 预判、南向个股、抱团、打新、宏观、危机、停牌预警</td></tr>
+        <tr><td class="mod">09:45 工作日</td><td><span class="tag d">双机</span></td><td>云端部署复查（09:20 盘前）</td><td class="note">复查盘前部署</td></tr>
+        <tr><td class="mod">每整点 :40</td><td><span class="tag d">双机</span></td><td>中国源独家：概念排行 / 板块资金流 / 涨跌家数 / 市场预警 / NT + 部署<br><span class="fix">⚠️ 含 17:40 代阿狸咪一段</span></td><td class="note">概念卡 / 板块资金流卡 / 涨跌家数 / 市场预警</td></tr>
+        <tr><td class="mod">09:30 / 10:31 / 11:46 / 13:31 / 14:31 / 16:31</td><td><span class="tag d">双机</span></td><td>盘中刷新部署</td><td class="note">上述盘中卡及时更新</td></tr>
+        <tr><td class="mod">15:30 收盘</td><td><span class="tag c">云端</span></td><td>A+H 全量扫描 + 候选池 + 金股池 + 推荐 + Top10</td><td class="note">金股池 / 候选池 / 推荐 / Top10</td></tr>
+        <tr><td class="mod">16:15 收盘</td><td><span class="tag c">云端</span></td><td>机器共振 + 抱团 + 板块轮动 + 五维</td><td class="note">共振 / 抱团 / 板块轮动 / 五维</td></tr>
+        <tr><td class="mod">16:30 收盘</td><td><span class="tag c">云端</span></td><td>全模块三卡片刷新 + 回测滚动 + 部署</td><td class="note">三卡片 + 回测滚动</td></tr>
+        <tr><td class="mod">16:31 盘后</td><td><span class="tag d">双机</span></td><td>盘后刷新部署</td><td class="note">盘后补</td></tr>
+        <tr><td class="mod">17:25 / 17:31</td><td><span class="tag d">双机</span><br><span class="tag c">云端</span></td><td>双机刷新境外令牌；云端境外数据全量 + 研报 + 危机 + 部署</td><td class="note">研报 / 投行信号、宏观 / 海外利率决议 / 斐波 / 危机</td></tr>
+        <tr><td class="mod">17:35 工作日</td><td><span class="tag d">双机</span></td><td>危机雷达数据兜底（云端沉默时补抓）</td><td class="note">危机雷达</td></tr>
+        <tr><td class="mod">18:31 收盘</td><td><span class="tag c">云端</span></td><td>核心扫描全量 + 生成 + 逆势龙头 + 波动率 + 三方资金流向 + 部署</td><td class="note">全量扫描 / 金股池 / 逆势龙头 / 三方资金流 / 波动率</td></tr>
+        <tr><td class="mod">19:05 工作日</td><td><span class="tag d">双机</span></td><td>收盘二段补扫描 + 部署（close_p2）<br><span class="fix">⚠️ 🆕 代阿狸咪 19:05</span></td><td class="note">兜底云端 18:31 档</td></tr>
+        <tr><td class="mod">19:30 收盘</td><td><span class="tag d">双机</span></td><td>当日最终部署（独家最终）<br><span class="fix">⚠️ 代阿狸咪 19:30</span></td><td class="note">当日最终版全站</td></tr>
+        <tr><td class="mod">21:10 工作日</td><td><span class="tag d">双机</span></td><td>备份兜底（batch_update backup）<br><span class="fix">⚠️ 🆕 代阿狸咪 21:10</span></td><td class="note">本地备份</td></tr>
+        <tr><td class="mod">周末 / 夜间</td><td><span class="tag c">云端</span><br><span class="tag d">双机</span></td><td>云端收盘档静默刷新非行情数据（cloud_weekly/cloud_backup/self_heal）；双机 08:00 交接检查 + 周五 20:00 元数据维护</td><td class="note">周末静默刷新 + 备份</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ② 数据性质 × 负责方（横向分类） -->
+  <div class="card">
+    <h2>② 数据性质 × 负责方 <small>横向分类</small></h2>
+    <table>
+      <thead><tr><th style="width:34%">数据性质</th><th style="width:11%">负责方</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">中国源（概念排行、板块资金流、涨跌家数、市场预警、龙虎榜、涨停联动、精选预判信号、期货持仓、两融、成交历史、境内指数斐波、实验选股卡、<b>盘中数据 NT（异动提醒 / ETF 资金流向 / 重要日历，akshare·东方财富）</b>）</td><td><span class="tag d">双机</span></td><td class="note">境外运行环境不可达，由双机在中国网络抓取并推送主分支，云端只复用。<span class="fix">⚠️ 2026-07-23 修正</span>：NT 原被误留云端抓取，美区 runner 软失败→部署陈旧；现改双机独家供，云端跳过抓取改 git pull 复用</td></tr>
+        <tr><td class="mod">境外 / 国际源（宏观、全球危机、海外利率决议、南向个股、抱团、主板、停牌、重要日历 ETF、打新）</td><td><span class="tag m">混合</span></td><td class="note">云端运行环境可达，可抓取；双机亦可入仓兜底，任一方产出均可</td></tr>
+        <tr><td class="mod">派生计算（核心扫描、候选池、金股池、Top10、逆势龙头、共振、三卡片、三方资金流向、回测）</td><td><span class="tag c">云端</span></td><td class="note">扫描 / 评分类为下游计算，吃的是双机入仓的中国源数据</td></tr>
+        <tr><td class="mod">研报 / 投行信号</td><td><span class="tag m">混合</span></td><td class="note">云端抓境外源 + 双机聚合境内源，多源合并</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ③ 前端模块 × 负责方 速查（去脚本名） -->
+  <div class="card">
+    <h2>③ 前端模块 × 负责方 速查 <small>按前端排列</small></h2>
+    <table>
+      <thead><tr><th style="width:30%">前端模块</th><th style="width:11%">负责方</th><th>数据性质 / 备注</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">总览 · 重要日历 / 国家队 ETF</td><td><span class="tag m">混合</span></td><td class="note">境外可达 + 双机兜底</td></tr>
+        <tr><td class="mod">总览 · 主力板块资金流向 / 概念涨跌排名</td><td><span class="tag d">双机</span></td><td class="note">中国源</td></tr>
+        <tr><td class="mod">总览 · AI 市场速览</td><td><span class="tag d">双机</span></td><td class="note"><span class="fix">⚠️ 已修正</span>：云端已于调度修复中移出该源，现双机独家</td></tr>
+        <tr><td class="mod">总览 · 打新速览 / 研判、金股池异动停牌</td><td><span class="tag m">混合</span></td><td class="note">境外可达 + 双机兜底</td></tr>
+        <tr><td class="mod">上证 · 斐波那契窗口</td><td><span class="tag d">双机</span></td><td class="note">中国源</td></tr>
+        <tr><td class="mod">上证 · 市场温度计 / 危机雷达 / 宏观观测</td><td><span class="tag m">混合</span></td><td class="note">全球 / 国际源，云端可达 + 双机兜底</td></tr>
+        <tr><td class="mod">上证 · 成交 / 涨跌家数 / 两融</td><td><span class="tag d">双机</span></td><td class="note">中国源</td></tr>
+        <tr><td class="mod">上证 · 宽基 ETF 净申赎</td><td><span class="tag d">双机</span></td><td class="note"><span class="fix">⚠️ 已修正</span>：云端已移出对应抓取，现双机独家</td></tr>
+        <tr><td class="mod">预判 · 一眼结论</td><td><span class="tag c">云端</span></td><td class="note">核心扫描派生</td></tr>
+        <tr><td class="mod">预判 · 涨停联动 / 精选预判信号</td><td><span class="tag d">双机</span></td><td class="note">中国源</td></tr>
+        <tr><td class="mod">预判 · 机游共振 · 龙虎榜</td><td><span class="tag d">双机</span></td><td class="note"><span class="fix">⚠️ 已修正</span>：云端已移出龙虎榜抓取，现双机独家</td></tr>
+        <tr><td class="mod">预判 · 四路资金流向对比</td><td><span class="tag c">云端</span></td><td class="note">派生计算（读龙虎榜 + 南向）</td></tr>
+        <tr><td class="mod">查询 · 个股多维</td><td><span class="tag m">混合</span></td><td class="note">名称映射双机周度 + 云端兜底；明细来自扫描 + 龙虎榜 / 研报</td></tr>
+        <tr><td class="mod">金股 · 多维推荐 / 信号速报 / 金股池构成 / 主表</td><td><span class="tag c">云端</span></td><td class="note">核心扫描 + 派生计算（行业 / 研报富集依赖双机入仓）</td></tr>
+        <tr><td class="mod">未上架 · 三重选股实验卡</td><td><span class="tag d">双机</span></td><td class="note">双机专属（境外批量日 K 失败率高，云端不跑，仅读入仓）</td></tr>
+        <tr><td class="mod">未上架 · 逆势龙头 / 观测候选股池</td><td><span class="tag c">云端</span></td><td class="note">派生计算</td></tr>
+        <tr><td class="mod">未上架 · 羊群 / 资金抱团</td><td><span class="tag m">混合</span></td><td class="note">境外可达 + 双机兜底</td></tr>
+        <tr><td class="mod">运维 · 状态看板 / 健康看板 / 构建部署 / 行业映射 / 名称映射</td><td><span class="tag m">混合</span></td><td class="note">双机 + 云端心跳聚合；构建部署为云端下游职责，双机 19:30 守卫兜底</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ④ 调度韧性设计（防"整片沉默"） -->
+  <div class="card">
+    <h2>④ 调度韧性设计 <small>防整片沉默 · 一劳永逸</small></h2>
+    <table>
+      <thead><tr><th style="width:24%">机制</th><th>作用</th></tr></thead>
+      <tbody>
+        <tr><td class="mod">双保险调度</td><td class="note">原生云端定时 + 本机发令枪（本地定时任务）互为备份。发令枪运行在本机，<b>不受平台自动禁用影响</b>，即使原生定时被停也能重新唤起。</td></tr>
+        <tr><td class="mod">档位互斥锁</td><td class="note">不同时间档位各自独立运行、互不取消，根治多档位互相抢占导致的"被取消"沉默。</td></tr>
+        <tr><td class="mod">脆弱步骤容错</td><td class="note">数据抓取 / 计算类单步失败不阻断整体调度，避免被平台判定为"反复失败"而自动停用全部定时任务。</td></tr>
+        <tr><td class="mod">严格部署闸门</td><td class="note">页面抽取 / 同源校验任一失败即阻断当次部署，<b>绝不让半残页面上线</b>（此闸门故意严格）。</td></tr>
+        <tr><td class="mod">新鲜度闸门</td><td class="note">本地数据旧于线上则跳过部署，保留双机新数据，由看门狗稍后修复，不覆盖正确数据。</td></tr>
+        <tr><td class="mod">监控兜底</td><td class="note">全时段健康监控 + 每小时心跳守卫 + 盘前自愈，分钟级发现异常并告警，不再拖一整天。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="foot">
+    判定原则：<b>双机</b> = 中国数据源，境外运行环境超时不可达，由双机在中国网络抓取并推送主分支，云端只复用。<br>
+    <b>云端</b> = 核心扫描 / 候选池 / Top10 / 逆势龙头 / 共振 / 三卡片 / 资金计算 / 构建部署，属下游计算 + 部署职责。<br>
+    <b>混合</b> = 境外可达源，云端可抓取，双机亦可入仓兜底；任一方产出均可。<br>
+    本页不暴露任何内部脚本与数据源细节；标「⚠️ 已修正」的行是 2026-07-22 调度架构修复后由"混合 / 云端尝试"更正为"双机独家"的条目。
+  </p>
+</div>
+</body>
+</html>

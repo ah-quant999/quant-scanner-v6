@@ -1,0 +1,207 @@
+# ============================================
+# DO NOT DELETE: 保护 standalone/ 等关键目录
+# 每次修改前必须核对 DO_NOT_DELETE.md
+# ============================================
+
+__pycache__/
+*.pyc
+# 机器角色标识（每台机器独立：ALIMI / XIAOJIU），不进 Git 共享
+.machine_role
+# 交接读取状态（每台机器独立记录已读文件），不进 Git 共享
+.handoff_read_state.json
+# 忽略所有 Python 脚本（核心算法保护）
+*.py
+# 仅保留部署和运维必需的脚本
+!deploy_now.py
+!update_data_v2.py
+!backup_daily.py
+!send_alert.py
+!deploy_audit.py
+!watch_candidate_pool.py
+!fetch_analyst_ratings.py
+!fetch_policy_density.py
+!update_triple_resonance_history.py
+!heartbeat_xiajiu.py
+!evening_failover_check.py
+!auto_handoff_read.py
+!fetch_crisis_data.py
+!build_crisis_radar.py
+!build_market_signal.py
+!refresh_standalone_and_deploy.py
+!batch_update.py
+!verify_frontend_deploy.py
+!is_trading_day.py
+!fetch_cffex_holdings.py
+!fetch_inst_trade.py
+!fetch_limit_up_heatmap.py
+!fetch_worldcup.py
+!inject_weekend_run.py
+!diag_parallel.py
+!refresh_neodata_token.py
+!pre_market_cloud_failover.py
+!triple_select_scan.py
+!calc_volatility_watch.py
+!fetch_neodata_daily.py
+!fetch_maharo_signals.py
+!capital_flow_summary.py
+!check_data_freshness.py
+!intraday_fresh_check.py
+!intraday_local_failover.py
+!t1_self_heal.py
+!industry_map_self_heal.py
+!git_safe_sync.py
+# 个股行业/概念元数据维护体系（2026-07-23 新增）
+!fetch_concept_map.py
+!maintain_industry_map.py
+!weekly_maintain_stock_meta.py
+# 云端精准发令枪（本地双机调用，ops 脚本，须进 Git 让双机共享）
+!trigger_cloud_dispatch.py
+# 主站↔独立页 同步校验闸门（部署共用，须进 Git 让云端工作流可调用）
+!ensure_standalone_sync.py
+!EVENING_FAILOVER.md
+# 阿狸咪 19:30 收盘部署守卫（云端未成功时禁止本地陈旧数据强推）
+!close_deploy_guarded.py
+# 数据新鲜度看门狗 + 驾驶舱信号回测（须进 Git 让双机/云端共享）
+!data_freshness_watchdog.py
+!cockpit_backtest_now.py
+# 新鲜度闸门（云端所有 workflow 统一调用）
+!check_freshness_vs_ghpages.py
+# 每日自动化审计脚本（2026-07-21 教训：22 任务因 model_id 拼写错误被静默拒绝 5 小时）
+!audit_automations.py
+# check_all_deploys.py 允许（已独立白名单，但显式声明防御层）
+# 双机发令枪运行时状态（本地写，不进 Git）
+.dispatch_state.json
+*.bat
+.wrangler/
+worker/
+backup/
+backup_*/
+# 数据目录：本机双机生成 → 推 main → 云端构建(update_data_v2.py)也能读到新鲜数据。
+# 用 data/* 而非 data/，否则 !data/xxx.json 例外会因父目录被排除而失效。
+# 策略：默认忽略，只放白名单；每次新增构建关键文件必须显式加 !data/xxx.json。
+data/*
+# 例外：核心股池与扫描结果（双机维护，前端展示）
+!data/candidate_pool.json
+!data/gold_pool.json
+!data/scan_result.json
+!data/watch_result.json
+!data/recommend.json
+!data/top10_daily.json
+# 例外：多维共振/历史/跟踪
+!data/multi_resonance_history.json
+!data/sector_fund_flow_history.json
+!data/concept_history.json
+!data/overnight_timeline.json
+!data/signal_backtest.json
+# 例外：统一心跳日志（双机+云端写入，commit 到 main 做全局探测）
+!data/_heartbeat.log
+# 例外：波动率观测实验卡数据（calc_volatility_watch.py 输出，构建注入前端）
+!data/experiment/volatility_watch_*.json
+
+# 本地看门狗节流状态（机器相关，不入库，避免污染其他机/云端）
+.intraday_alert_state.json
+.t1_heal_state.json
+.industry_map_heal_state.json
+!data/scan_progress.json
+# 例外：行业/概念/板块/资金流/RS/52周/指数斐波（本机产出，云端跑不了）
+!data/industry_map_shard_1.json
+!data/industry_map_shard_2.json
+!data/industry_map_shard_3.json
+!data/industry_map_shard_4.json
+!data/industry_map_shard_5.json
+!data/industry_map_shard_6.json
+# 规范个股元数据仓（行业+概念）：曾被 data/* 兜底忽略漏白名单，按铁律显式放行
+!data/industry_map.json
+# 股票→概念 反向映射原始缓存
+!data/concept_map.json
+!data/stock_names.json
+!data/concept_ranking.json
+!data/sector_fund_flow.json
+!data/sector_rs.json
+!data/52w_high.json
+!data/sh_index_fib.json
+!data/sz_index_fib.json
+!data/margin_data.json
+!data/stock_deviation.json
+!data/cffex_holdings.json
+!data/inst_trade.json
+!data/nt_data.json
+!data/capital_flow_summary.json
+# 例外：研报/观澜台/世界杯/CRDS/宏观/危机/停牌（双机维护，前端展示）
+!data/guanlan_reports.json
+!data/guanlan_watchlist.json
+!data/worldcup.json
+!data/crds_result.json
+!data/macro_data.json
+!data/crisis_data.json
+!data/main_stock.json
+!data/main_week.json
+!data/suspension_alert.json
+!data/herding_data.json
+!data/lottery_data.json
+!data/hb_xiaojiu.json
+!data/fomc_summary.json
+# 例外：综合回测结果（多策略多持有期，盘后自动生成）
+!data/backtest_comprehensive.json
+!data/cockpit_backtest.json
+# 例外：基本面质量评分（ROE/营收增速/质量等级）
+!data/fundamental_quality.json
+# 例外：K线信号60日回测（每日19:15自动跑，T+3/T+5胜率排名+明细）
+!data/backtest_tdx.json
+# 例外：mahoro 趋势柱信号（fetch_mahoro_signals.py 产出，2026-07-22 修：与 maharo 区分）
+!data/mahoro_signals.json
+# 例外：westock 备用源板块资金流缓存（fetch_sector_fund_flow.py 主动读，需双机共享）
+!data/sector_fund_flow_westock.json
+# 例外：历史/实验目录（含历史追踪，必须进 Git）
+!data/history/
+!data/experiment/
+# 例外：DXY/USDCNH 累加历史（自愈真实分位，须进 Git）
+!data/dxy_hist.json
+!data/usdcnh_hist.json
+# 例外：运维状态（供前端运维卡片读取）
+!data/.ops_status.json
+# 敏感/瞬时/日志/缓存文件：显式忽略，防止被 git add -A 重新纳入（泄露风险 & 部署噪音）
+data/zsxq_token.json
+data/maharo_signals.json
+!data/maharo_signals.json
+data/.neodata_token
+data/.fetch_errors.json
+data/.fetch_log.json
+data/.pre_market_failover.json
+data/.wc_jwt_cache.json
+data/.maharo_cookies.txt
+data/verify_report.json
+data/audit_summary.json
+data/_crisis_hist_cache.json
+data/*.bak
+data/*.bak_strict
+data/*.log
+# 敏感文件：根目录级（兼容旧配置）
+.neodata_token
+.gh_pat
+.neodata_token.json
+pwd.yaml
+backups/2026-06-18/
+*.bak
+*.bak.*
+# 坚果云冲突文件（双机同步产生，不应进入版本控制）
+*-冲突-*
+*-conflict-*
+dist/data/.enhance_log.txt
+dist/data/zsxq_selenium_snapshot.txt
+!enhanced_backup.py
+_gh_pages_deploy/
+.index_master_md5_lock
+standalone/
+!standalone/guide.html
+!standalone/worldcup.html
+# 构建产物：dist/standalone/ 不进 Git（由部署脚本动态生成）
+dist/standalone/
+
+# 暂不上架的待观察改动，不进 Git 共享
+暂不上架/
+
+# 临时预览页（本地看，不进仓库）
+_preview_*.html
+nul
+!fetch_sector_fund_flow_westock.py

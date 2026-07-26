@@ -1,0 +1,65 @@
+=== Start Deploy (GitHub Pages) ===
+   [CMD] git -c http.version=HTTP/1.1 show origin/main:.deploy_lock... -> fatal: path '.deploy_lock' does not exist in 'origin/main'
+   [CMD] git -c http.version=HTTP/1.1 push origin main... -> To github.com:ah-quant999/quant-scanner-v6.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:ah-quant999/quant-scanner-v6.git'
+hint: Updates were 
+   [LOCK] push rejected (non-fast-forward) — 尝试同步远端后重试
+   ⚠️ 检测到 未合并状态: 10 个, 冲突标记文件: ['data\\concept_ranking.json', 'data\\.ops_status.json', 'data\\macro_data.json', 'data\\suspension_alert.json', 'data\\concept_history.json', 'data\\margin_data.json', 'data\\sh_sz_history.json', 'data\\gold_pool.json', 'data\\macro_data.json', 'data\\concept_history.json', 'data\\sh_sz_history.json', 'data\\concept_ranking.json', 'data\\sector_fund_flow.json', 'data\\.fetch_log.json', 'data\\gold_pool.json', 'data\\margin_data.json', 'data\\.fetch_log.json', 'data\\sector_fund_flow.json', 'data\\suspension_alert.json', 'data\\.ops_status.json']
+   ✓ 已精准还原 20 个含冲突标记的已跟踪文件（保留其他本地提交）
+   ⚠️ 存在未跟踪冲突/未合并状态（0 个），整体 reset --hard origin/main
+   ✓ 已重置到 origin/main，冲突已清理
+   [LOCK] acquired by LEMONCAT (after sync)
+   WARN --force: skipping pre-deploy audit
+   📝 检测到 18 个源码变更
+      _catchup_logs/run_calc_crds.log
+      _catchup_logs/run_cockpit_backtest_now.log
+      _catchup_logs/run_deploy_now.log
+      _catchup_logs/run_fetch_52w_high.log
+      _catchup_logs/run_fetch_concept_ranking.log
+      ... 共 18 个
+   ✓ 已提交: auto: source sync 07-20 16:44 — run_calc_crds.log, run_cockpit_backtest_now.log, run_deploy_now.log
+   ✓ 已推送到 main（小九能拉到了）
+   🔄 强制重建 dist（本地模板为权威版本）...
+   📥 拉取最新模板代码 from origin/main ...
+   ✓ 已更新 index_master.html (from origin/main)
+   ✓ 已更新 update_data_v2.py (from origin/main)
+   执行: python update_data_v2.py --fast
+     ✓ 已保存: index.html + index_master.html (2,272,668 字符)
+     ✓ 已同步 data/*.json → dist/data/
+     ✓ 已同步静态资源 → dist/
+   ✅ 数据块更新成功！
+      部署: python deploy_now.py
+      网址: https://ah-quant999.github.io/quant-scanner-v6/
+   ✓ dist 重建成功
+   执行: python enhance_dist.py
+   ✓ enhance_dist 完成
+   🔍 验证 dist/index.html 数据注入...
+   ✓ 验证通过: LHB_DATA, HERRING_DATA, NORTH_FUND_DATA, MAIN_STOCK_DATA
+   🔗 重建并校验独立页（确保与主站同步部署）...
+   =======================================================
+   🔗 主站 ↔ 独立页 同步校验闸门
+   =======================================================
+   ✓ extract_panels_v6.py 重建 standalone/ 成功
+   ✓ 已同步 13 个独立页到 dist/standalone/
+   ✅ 主站/独立页同源同戳校验通过 (标记 51 个, POST_CLOSE_TIME=2026-07-20 15:30:00, 体积 2272668B/2275218B)
+   ✅ 主站与独立页已确认同步，可安全上线
+   ✓ 独立页已与主站同步校验通过
+1. Cloning gh-pages from GitHub to temp dir...
+   Cloned, cleaning old files...
+1.5. Busting CDN cache...
+   Build stamp: 20260720164512
+2. Copying dist/ ...
+   Copied 92 files
+3. Committing and pushing...
+   ✓ ls-remote 校验通过 (head=9e42b256e533)
+4. Waiting for GitHub Pages build...
+
+SUCCESS! Deployed to https://ah-quant999.github.io/quant-scanner-v6/
+   (GitHub Pages build takes 1-2 min)
+   💓 上报本机心跳到 origin/main ...
+   💓 心跳文件已写: hb_xiaojiu.json (role=xiaojiu, mode=deploy, time=2026-07-20 16:45:27)
+   ✅ 心跳上报成功: xiaojiu → origin/main
+-------------------------------------------------------
+5. Auto-syncing source code to main...
+   [LOCK] released

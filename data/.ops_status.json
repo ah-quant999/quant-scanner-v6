@@ -1,0 +1,71 @@
+{
+  "neodata_status": "ok",
+  "neodata_updated": "2026-07-24 17:20:48",
+  "neodata_valid_until": "2026-07-25 17:20:41",
+  "updated_at": "2026-07-26 20:31:20",
+  "cloud_deploy_time": "20260726203121",
+  "failover_status": "OK",
+  "failover_time": "2026-07-24 07:26:18",
+  "data_correctness": {
+    "status": "PASS",
+    "detail": "全站 21 个数据维度业务不变量全部通过",
+    "issues": [],
+    "time": "2026-07-25 17:05:47"
+  },
+  "freshness_consistency": {
+    "status": "WARN",
+    "detail": "2 项待关注（扫描 54 文件）",
+    "issues": [
+      "sector_fund_flow_westock.json 声明更新(2026-07-21 11:19) 与文件写入(2026-07-23 22:44) 相差 59h（时间戳可能造假）",
+      "signal_backtest.json 声明更新(2026-07-07 18:02:24) 与文件写入(2026-07-23 22:44) 相差 389h（时间戳可能造假）"
+    ],
+    "time": "2026-07-25 17:05:47"
+  },
+  "monitor_updated_at": "2026-07-25 17:05:47",
+  "build_integrity": {
+    "status": "PASS",
+    "detail": "部署产物 18 个关键数据块均注入且非空",
+    "issues": [],
+    "time": "2026-07-25 17:05:47"
+  },
+  "three_party": {
+    "cloud": {
+      "status": "ok",
+      "last_time": "2026-07-26 11:45:48",
+      "mode": "cloud_close"
+    },
+    "xiaojiu": {
+      "status": "ok",
+      "last_time": "2026-07-24 21:06:15",
+      "mode": "backup"
+    },
+    "alimi": {
+      "status": "ok",
+      "last_time": "2026-07-26 20:17:33",
+      "mode": "deploy"
+    }
+  },
+  "three_party_summary": "云端=✅ 小九=✅ 阿狸咪=✅",
+  "audit": {
+    "severity": "ERROR",
+    "error_count": 2,
+    "warn_count": 0,
+    "fixed_count": 0,
+    "issues": [
+      {
+        "level": "ERROR",
+        "type": "silent_failure",
+        "id": "automation-1784635394599",
+        "msg": "task last error: Automation prompt stopped before completion: refusal: {\"code\":-32003,\"message\":\"Quota exceeded: 429 您的使用量已超出频率限制，将在 2026",
+        "last_run": 1784854403091
+      },
+      {
+        "level": "ERROR",
+        "type": "no_neodata_token",
+        "msg": ".neodata_token 文件不存在（路径=E:\\workspace\\stock-scanner\\.neodata_token）；neodata 抓取将全部跳过"
+      }
+    ],
+    "checked_at": "2026-07-25 08:50:51",
+    "updated_at": "2026-07-25 08:50:51"
+  }
+}

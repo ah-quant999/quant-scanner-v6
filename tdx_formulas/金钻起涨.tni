@@ -1,0 +1,22 @@
+{金钻起涨 条件选股公式 最终版}
+{来源: 阿狸咪 交接文档_20260715_给小九_三重选股.md}
+{归档: 2026-07-15 小九(WorkBuddy) 收到源码后存档}
+AH:=XMA(XMA(H,25),25);
+AL:=XMA(XMA(L,25),25);
+金钻趋势:=AL-(AH-AL);
+金牛:=AH-(AL-AH);
+JJ:=(H+L+C)/3;
+QJ0:=VOL/IF(H=L,4,H-L);
+T1:=IF(H=L,1,MIN(C,O)-L);
+T2:=IF(H=L,1,JJ-MIN(C,O));
+T3:=IF(H=L,1,H-MAX(C,O));
+T4:=IF(H=L,1,MAX(C,O)-JJ);
+QJ1:=IF(CAPITAL=0,QJ0*(JJ-MIN(C,O)),QJ0*T1);
+QJ2:=IF(CAPITAL=0,QJ0*(MIN(C,O)-L),QJ0*T2);
+QJ3:=IF(CAPITAL=0,QJ0*(H-MAX(C,O)),QJ0*T3);
+QJ4:=IF(CAPITAL=0,QJ0*(MAX(C,O)-JJ),QJ0*T4);
+DDX:=((QJ1+QJ2)-(QJ3+QJ4))/10000;
+V2:=SMA(IF(C>=REF(C,1),DDX,-DDX/100),2,1);
+DY:=CURRBARSCOUNT=1 AND C<REF(C,1);
+DY2:=REF(V2,1)-DY;
+金钻起涨:C>O AND DY2<0.02 AND MA(C,5)>MA(C,60) AND C/REF(C,1)>=1.02 AND H<金牛 AND L<金钻趋势;

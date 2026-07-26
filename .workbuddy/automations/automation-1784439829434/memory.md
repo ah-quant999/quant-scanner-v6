@@ -1,0 +1,3 @@
+2026-07-22 11:11 盘中补跑 morning_plus 完成：15步中14成功；仅 deploy_now 因 verify_data_vs_website 闸门 FAIL(exit=2) 被阻断跳过（保留上一版正常数据，符合预期）。本地 scan_result 已刷新双保险。未检查云端。
+2026-07-25 11:11 周六非交易日：盘中补跑 no-op 跳过。顺带核验昨夜驾驶舱扣子式升级已上线（gh-pages build 20260725141855，cockpitEarlyRadar/今日结论/三方共振/cockpitSectorMore 标记齐全，rsList 仅余修复注释无代码引用，无回归）。
+2026-07-25 21:25 三重共识部署完成（续 11:11 拍板的"这些都要"）：commit bf0c6d66 → gh-pages ee1955d（build 20260725212059），ls-remote 校验通过。window.TRIPLE_CONSENSUS 已注入(3处)、standalone/triple_consensus.html 上线、金股池多维共振列已替换为三重共识；今日严格0/候补2（佰维存储688525、海康威视002415）。sector_fund_flow 原戳17:59卡18:00门槛1分钟，重跑fetch刷新至21:18后过闸。

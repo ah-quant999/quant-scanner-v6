@@ -1,0 +1,13 @@
+[17:37:10] ========================================
+[17:37:10] 涨跌家数统计抓取开始
+[17:37:10] ========================================
+[17:37:10] akshare第1次尝试...
+[17:37:19]   失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[17:37:22] akshare第2次尝试...
+[17:37:29]   失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[17:37:29] fallback: 新浪API分页抓取...
+[17:38:31]   新浪统计: 5530只, 涨555 跌4939 平36
+[17:38:31] 今日 7/24: 涨555 跌4939 平36
+[17:38:31] 更新今日数据: 7/24
+[17:38:31] 已保存: D:\stock-scanner-repo\repo-temp\data\sh_sz_history.json
+[17:38:31] ✅ 完成

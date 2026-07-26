@@ -1,0 +1,109 @@
+{
+  "run_time": "2026-07-25 17:04:57",
+  "checks": [
+    {
+      "source": "north_fund.json",
+      "status": "PASS",
+      "detail": "南向资金 流出 15.18亿",
+      "issues": [],
+      "time": "17:05:09"
+    },
+    {
+      "source": "herding_data.json",
+      "status": "PASS",
+      "detail": "抱团2方向 + 接力5个",
+      "issues": [],
+      "time": "17:05:10"
+    },
+    {
+      "source": "main_stock.json",
+      "status": "SKIP",
+      "detail": "合法空值(no_data_today)，非交易日/无符合阈值异动，非故障",
+      "issues": [],
+      "time": "17:05:10"
+    },
+    {
+      "source": "sector_fund_flow.json",
+      "status": "PASS",
+      "detail": "[real] 流入18 流出16",
+      "issues": [],
+      "time": "17:05:10"
+    },
+    {
+      "source": "全量同源交叉验证",
+      "status": "FAIL",
+      "detail": "共16项: ✅8 ⚠️0 ❌2 ⏭️6",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "全量数据文件实质审计",
+      "status": "FAIL",
+      "detail": "共38文件: ✅36 ⚠️1 ❌1 ⏭️3",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "north_fund.json [完整]",
+      "status": "PASS",
+      "detail": "停更=True top_buy=空 data_date=无",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "top10_daily.json [审计]",
+      "status": "PASS",
+      "detail": "检测20只，虚假标签0处",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "generate_top10.py [审计]",
+      "status": "PASS",
+      "detail": "检查通过",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "fetch日志审计",
+      "status": "WARN",
+      "detail": "已集成27/28，有问题",
+      "issues": [
+        "fetch_south_individual: 超过72h未成功运行 (114h)",
+        "fetch_stock_names: 从未记录过运行日志"
+      ],
+      "time": "17:05:46"
+    },
+    {
+      "source": "数据正确性·不变量",
+      "status": "PASS",
+      "detail": "全站 21 个数据维度业务不变量全部通过",
+      "issues": [],
+      "time": "17:05:46"
+    },
+    {
+      "source": "新鲜度一致性",
+      "status": "WARN",
+      "detail": "2 项待关注（扫描 54 文件）",
+      "issues": [
+        "sector_fund_flow_westock.json 声明更新(2026-07-21 11:19) 与文件写入(2026-07-23 22:44) 相差 59h（时间戳可能造假）",
+        "signal_backtest.json 声明更新(2026-07-07 18:02:24) 与文件写入(2026-07-23 22:44) 相差 389h（时间戳可能造假）"
+      ],
+      "time": "17:05:46"
+    },
+    {
+      "source": "构建完整性",
+      "status": "PASS",
+      "detail": "部署产物 18 个关键数据块均注入且非空",
+      "issues": [],
+      "time": "17:05:47"
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "passed": 8,
+    "warned": 2,
+    "failed": 2,
+    "skipped": 1
+  }
+}

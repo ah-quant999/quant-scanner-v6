@@ -1,0 +1,325 @@
+# 九宝量化 v6.0 — 云端收盘扫描+部署
+# 分工：中国数据源（板块/概念/龙虎榜/北向/行业映射/实验数据）由本地双机入仓，
+#       云端只负责 A股核心扫描（GTimg）+ 生成 + 构建 + 部署。
+
+name: "☁️ 云端收盘扫描+部署"
+
+on:
+  # ✅ 2026-07-16 闭环加固：云端恢复自主定时(cron)，发令枪降级为监控+幂等补触发。
+  #   这是今晚(7-16)事故的根因修复：18:31 收盘扫描此前仅靠小九发令枪，枪停则云端不跑。
+  schedule:
+    - cron: '31 10 * * *'   # 18:31 CST 收盘扫描+部署（每日含周末；A股扫描周末自动跳过，保留周五数据）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cloud-scanner-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  scan-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      CLOUD_RUNNER: "true"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ─── 构建前拉取最新 main（Fix #5：含双机刚入仓的中国源数据）───
+      # checkout 只取快照；双机 close_p2 在 18:30 推 main，本步确保 18:31 构建前吃到最新数据。
+      - name: "⬇️ 拉取最新 main（含双机入仓数据）"
+        run: git pull --ff-only origin main || echo "⚠️ pull 失败，使用 checkout 快照"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 安装依赖
+        continue-on-error: true
+        run: pip install -r requirements.txt || echo "⚠️ 依赖安装失败，将用标准库构建前端"
+
+      - name: 注入凭据
+        env:
+          TOKEN_JSON: ${{ secrets.ZSXQ_TOKEN }}
+        run: |
+          mkdir -p data
+          if [ -n "$TOKEN_JSON" ]; then
+            printf '%s\n' "$TOKEN_JSON" > data/zsxq_token.json
+            echo "✅ zsxq_token 已注入"
+          else
+            echo "⚠️ 无 ZSXQ_TOKEN secret（知识星球数据跳过）"
+          fi
+
+      # ─── 后台数据抓取（由本地双机负责，云端不重复抓中国数据源） ───
+      # 美区 runner 无法稳定访问东财/新浪/akshare 等中国数据源；
+      # 板块资金/概念排名/龙虎榜/北向/行业映射等数据已由 batch_update.py close/close_p2 入仓。
+      # ─── 后台数据（双机入仓）硬门：核心 China 文件缺失 → 阻断部署（Fix #4）───
+      # 防止「双机当天没推数据，云端照样部署空卡」的半残状态上线。
+      # 仅对【缺失】硬阻断；文件存在（即使内容偏旧）交由部署前监控闸门按新鲜度裁决。
+      # north_fund 港交所 2024-05 后停披露，长期为空，仅告警不阻断。
+      - name: "🔄 后台数据检查（双机入仓硬门）"
+        run: |
+          set -e
+          echo "🔄 中国数据源由本地双机（小九/阿狸咪）负责，云端校验仓库核心文件是否到位..."
+          for f in data/sector_fund_flow.json data/concept_ranking.json data/lhb_result.json data/industry_map_shard_1.json; do
+            if [ -f "$f" ]; then
+              echo "  ✅ $f 已入仓"
+            else
+              echo "::error::$f 未入仓，阻断部署（请检查双机是否已执行 close/close_p2 并推送 main）"
+              exit 1
+            fi
+          done
+          if [ -f data/north_fund.json ]; then
+            echo "  ✅ data/north_fund.json 已入仓"
+          else
+            echo "  ⚠️ data/north_fund.json 未入仓（港交所已停披露，长期为空，仅告警）"
+          fi
+          echo "✅ 核心中国数据均已入仓"
+
+      # ─── 核心扫描（A股全量，GTimg） ───
+      # 2026-07-22 修复：加 continue-on-error。中国源数据已由本机双机入仓到 main，
+      # 云端扫描失败时直接回退 main 上的数据，不阻断部署（避免站点冻结在旧版本）。
+      - name: "🔬 核心扫描（A股全量，GTimg）"
+        continue-on-error: true
+        run: |
+          # 🛌 周末休市保护：周六/周日跳过 A股全量扫描，保留周五最后有效数据，避免空扫覆盖。
+          DOW=$(TZ=Asia/Shanghai date +%u)   # 1=周一 … 7=周日
+          if [ "$DOW" -ge 6 ]; then
+            echo "🛌 周末休市（周$DOW），跳过 A股全量扫描，保留周五数据"
+            exit 0
+          fi
+          set -e
+          python build_candidate_pool.py
+          timeout 2400 python scanner.py full
+          echo "✅ 扫描完成"
+
+      # ─── 龙虎榜+研报（由本地双机负责，云端不重复抓） ───
+      - name: "📡 龙虎榜+研报（双机入仓）"
+        run: |
+          echo "📡 龙虎榜/研报/观澜台由本地双机负责，云端仅检查仓库文件是否到位..."
+          for f in data/lhb_result.json data/maharo_signals.json data/guanlan_reports.json; do
+            if [ -f "$f" ]; then
+              echo "  ✅ $f 已入仓"
+            else
+              echo "  ⚠️ $f 未入仓（请检查双机是否已执行 close/close_p2）"
+            fi
+          done
+          echo "✅ 龙虎榜+研报检查完成"
+
+      # ─── 📡 数据刷新（云端 US runner 可访问的数据源） ───
+      # 2026-07-20 根因修复：cloud_data_fetch 17:31 不提交 data 回 main，
+      # cloud_scanner 18:31 检出的 main 上还是午间旧数据 → 构建部署后会覆盖 gh-pages 上的新鲜数据。
+      # 此步在 scanner 前先刷新云端可达的数据源，确保构建用最新数据。
+      - name: "📡 数据刷新（US runner 可达源：宏观/危机/北向个股/恒指牛熊/异动等）"
+        continue-on-error: true
+        run: |
+          echo "📡 数据刷新（云端 runner 可达的 US/国际源）..."
+          # 2026-07-22 修复：移除 fetch_sz_index_fib.py（该文件不存在；fetch_sh_index_fib.py 会同时写 sz 文件）
+          # 2026-07-23 修正：fetch_nt_data(异动/ETF/日历, akshare/东方财富中国源) 移出云端、改由双机独家供。
+          for script in \
+            fetch_suspension_alert.py \
+            fetch_main_week.py fetch_main_stock.py \
+            fetch_south_individual.py fetch_herding_data.py \
+            fetch_ipo_data.py \
+            fetch_macro_data.py \
+            fetch_sh_index_fib.py \
+            fetch_crisis_data.py; do
+            echo ">>> $script start $(TZ=Asia/Shanghai date -Iseconds)"
+            timeout --kill-after=10 60 python "$script" > /tmp/log_$script.log 2>&1 || echo "[超时/失败] $script (exit $?)"
+            echo "<<< $script end $(TZ=Asia/Shanghai date -Iseconds)"
+          done
+          echo "✅ 数据刷新完成"
+
+      # ─── 生成脚本 ───
+      # 2026-07-22 修复：加 continue-on-error。生成失败时仍可用 main 上双机预生成的数据继续部署。
+      - name: "⚙️ 生成"
+        continue-on-error: true
+        run: |
+          set -e
+          python generate_recommend.py
+          python generate_top10.py
+          echo "✅ 生成完成"
+
+      # ─── CRDS 逆势龙头（依赖 scanner 产出的 watch_result.json） ───
+      # 2026-07-22 修复：加 continue-on-error。CRDS 依赖的 watch_result.json 已由本机双机入仓，失败不阻断。
+      - name: "📊 CRDS 逆势龙头评分"
+        continue-on-error: true
+        run: |
+          set -e
+          echo "📊 计算 CRDS 逆势龙头评分..."
+          python calc_crds.py
+          echo "✅ CRDS 已写入 data/crds_result.json"
+
+      # ─── 📉 波动率观测（暂未上架实验卡）───
+      # 依赖 baostock 日K（云端 Linux 可用，akshare 作备）；失败不阻断（卡片显示暂无数据，不造假）。
+      - name: "📉 波动率观测数据生成"
+        continue-on-error: true
+        run: |
+          echo "📉 计算主要指数已实现波动率 + 企稳信号..."
+          timeout --kill-after=10 240 python calc_volatility_watch.py > /tmp/log_vol.log 2>&1 || echo "[失败] calc_volatility_watch.py (exit $?)"
+          echo "✅ 波动率数据已写入 data/experiment/volatility_watch_2*.json"
+
+      # ─── 三重选股实验（暂未上架）───
+      # 云端 GTimg 批量拉日K失败率高(50%)，BaoStock 在云端又常挂死；
+      # 改由本地双机（小九/阿狸咪）通过 batch_update.py close/close_p2 预跑并入仓，
+      # 云端仅验证文件存在，不再重复执行扫描。
+      - name: "🧪 三重选股实验(暂未上架)"
+        run: |
+          echo "🧪 三重选股实验由本地双机预跑入仓，云端直接读取..."
+          files=$(ls -1 data/experiment/triple_select_2*.json 2>/dev/null | wc -l)
+          if [ "$files" -eq 0 ]; then
+            echo "::warning::data/experiment/triple_select_*.json 不存在，暂未上架实验卡将为空"
+            echo "   请检查本地双机是否已执行 batch_update.py close/close_p2 并提交 experiment 文件"
+          else
+            echo "✅ 实验数据文件已入仓: $files 个"
+            ls -1 data/experiment/triple_select_*.json | tail -3
+          fi
+
+      # ─── 资金流向三方对比（新卡） ───
+      # 2026-07-22 修复：加 continue-on-error。capital_flow_summary 若依赖中国源失败，不阻断部署。
+      - name: "💰 三方资金流向"
+        continue-on-error: true
+        run: |
+          set -e
+          echo "💰 生成资金流向三方对比..."
+          python capital_flow_summary.py
+          echo "✅ 已写入 data/capital_flow_summary.json"
+
+      # ─── 云端心跳上报（先于构建，使本次部署即含云端状态）───
+      - name: "💓 上报云端心跳"
+        continue-on-error: true
+        run: python report_heartbeat.py --role cloud --mode cloud_close
+
+      # ─── 构建前端（数据监控已移至构建后，见部署前监控闸门）───
+      # ─── 构建前端 ───
+      - name: "🏗️ 构建前端"
+        run: |
+          python update_data_v2.py
+          echo "✅ 构建完成"
+
+      # ─── 生成独立页(standalone) 并校验与主站同源同戳（RISK-2 修复 + 2026-07-16 同步闸门）───
+      # ⚠️ 故意【不】加 continue-on-error：抽页/同步/同源校验任一失败即令本步失败 → 阻断部署，
+      #    绝不允许「主站上线、独立页缺失/陈旧」的半残状态被 keep_files:false 推上 gh-pages。
+      - name: "📱 生成独立页(standalone) + 同源同戳校验"
+        run: |
+          python ensure_standalone_sync.py --inject-buildstamp
+          echo "✅ standalone 已与主站同步校验，可安全上线"
+
+      # ─── 部署前诊断 ───
+      - name: "🔍 部署前诊断 (确认 dist/index.html)"
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "::error::dist/index.html 不存在，前端构建可能失败，终止部署"
+            ls -la dist 2>/dev/null || echo "dist 目录不存在"
+            exit 1
+          fi
+          echo "✅ dist/index.html 存在 ($(wc -c < dist/index.html) bytes)"
+
+      # ─── 部署前数据监控闸门（构建后运行：校验数据正确性+新鲜度+构建完整性；失败则阻断部署）───
+      - name: "🔎 数据监控(正确性+新鲜度+构建完整性)"
+        continue-on-error: true
+        run: |
+          python verify_data_vs_website.py --fast --gate --only-issues || echo "MONITOR_FAIL=1" >> $GITHUB_ENV
+
+      - name: "🔄 同步最新运维状态到 dist（确保部署的 .ops_status.json 是监控后最新版）"
+        run: |
+          if [ -f data/.ops_status.json ]; then
+            cp -f data/.ops_status.json dist/data/.ops_status.json
+            echo "✅ 已同步 data/.ops_status.json → dist/data/.ops_status.json"
+          else
+            echo "⚠️ data/.ops_status.json 不存在，跳过同步"
+          fi
+
+      # ─── 🛡️ 新鲜度闸门（2026-07-20 根因修复）：对比 gh-pages 当前数据 ───
+      # 防止「cloud_data_fetch 不写回 main → cloud_scanner 用午间旧数据构建」
+      # 或「双机刚推的新数据被云端旧数据覆盖」的管道缺陷。
+      # 2026-07-22 修复：闸门返回 1 时会写 SKIP_DEPLOY=true 跳过部署，但不应让 job 整体变 failure。
+      - name: "🛡️ 新鲜度闸门：对比 gh-pages 当前数据，防旧覆盖新"
+        continue-on-error: true
+        run: python check_freshness_vs_ghpages.py
+
+      # ─── 自愈原则（2026-07-19 根因修复）：监控只"告警"绝不"阻断" ───
+      # 旧逻辑：监控命中(含新鲜度)即 exit 1 取消部署 → 站点冻结在旧数据，且无自愈 → 这就是一周“旧数据”的根源。
+      # 新逻辑：监控命中只标红告警；部署照常进行（上线 main 上的最新数据）。
+      #   陈旧数据由本地 data_freshness_watchdog（每30分钟）自动重抓+部署修复，云端不再“只拦不修”。
+      #   仅【核心文件缺失】(上方硬门 line 64-77) 仍阻断，那是真·无数据可部署。
+      - name: "⚠️ 监控告警(不阻断部署·自愈由本地watchdog负责)"
+        if: ${{ env.MONITOR_FAIL == '1' }}
+        run: |
+          echo "::warning::数据监控命中问题(数据正确性/新鲜度/构建完整性)，但【不阻断部署】——继续上线 main 最新数据；详情见 data/verify_report.json 与运维状态卡片。陈旧数据由本地 data_freshness_watchdog 每30分钟自动重抓修复。"
+
+      # ─── 部署（原生 git push，零外部 action 依赖）───
+      - name: "🚀 部署到 GitHub Pages (direct git push)"
+        if: ${{ env.SKIP_DEPLOY != 'true' }}
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd dist
+          git init -q
+          git config user.name "cloud-bot"
+          git config user.email "cloud-bot@users.noreply.github.com"
+          git add -A
+          git commit -qm "deploy: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S')"
+          git push -f "https://x-access-token:${GIT_TOKEN}@github.com/ah-quant999/quant-scanner-v6.git" HEAD:gh-pages
+          echo "本地部署 HEAD: $(git rev-parse HEAD)"
+
+      # ─── 部署后验证：真实比对 SHA，不一致即 fail（防静默黑 20 天）───
+      - name: "✅ 部署验证 (ls-remote 比对 SHA)"
+        if: ${{ env.SKIP_DEPLOY != 'true' }}
+        env:
+          GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sleep 8
+          REMOTE=$(git ls-remote "https://x-access-token:${GIT_TOKEN}@github.com/ah-quant999/quant-scanner-v6.git" gh-pages | cut -f1)
+          LOCAL=$(cd dist && git rev-parse HEAD)
+          echo "远程 gh-pages HEAD: $REMOTE"
+          echo "本地 部署   HEAD: $LOCAL"
+          if [ -z "$REMOTE" ] || [ "$REMOTE" != "$LOCAL" ]; then
+            echo "::error::🚨 部署未生效！远程 gh-pages ($REMOTE) ≠ 本地 ($LOCAL)"
+            exit 1
+          fi
+          echo "✅ gh-pages 已成功刷新，部署闸门通过"
+
+      # ─── 数据监控告警闸门：部署已完成，此处仅标红触发告警(safety-net)，不影响已上线数据 ───
+      - name: "🔎 数据监控告警闸门(正确性+新鲜度·仅告警)"
+        if: always()
+        run: |
+          if [ "${MONITOR_FAIL:-0}" = "1" ]; then
+            echo "::warning::数据监控命中问题(数据正确性或新鲜度一致性)，详情见 data/verify_report.json 与运维状态卡片；陈旧数据由本地 watchdog 自动修复"
+          else
+            echo "🟢 数据正确性 + 新鲜度一致性 监控通过"
+          fi
+
+      - name: "💓 写云端心跳"
+        continue-on-error: true
+        run: |
+          echo "$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S') | cloud | cloud_scanner | DONE" >> data/_heartbeat.log
+          git config user.name "cloud-bot"
+          git config user.email "cloud-bot@users.noreply.github.com"
+          git add -f data/_heartbeat.log
+          git diff --cached --quiet || (git commit -m "heartbeat: cloud_scanner done" && git push origin main)
+
+      - name: "📝 写日志"
+        run: |
+          if [ "${SKIP_DEPLOY:-false}" = "true" ]; then
+            echo "{\"time\":\"$(date -u '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_close\",\"host\":\"GitHubActions\",\"success\":true,\"skipped\":\"freshness_gate\"}" >> HANDOVER_LOG.jsonl
+            echo "⏭️ 新鲜度闸门阻断：本地数据旧于 gh-pages，部署跳过"
+          else
+            echo "{\"time\":\"$(date -u '+%Y-%m-%d %H:%M:%S')\",\"mode\":\"cloud_close\",\"host\":\"GitHubActions\",\"success\":true}" >> HANDOVER_LOG.jsonl
+          fi
+
+      - name: "⛔ 失败通知"
+        if: failure()
+        run: echo "::error::☁️ 云端扫描工作流执行失败！"
+
+      - name: "⏭️ 跳过通知"
+        if: ${{ env.SKIP_DEPLOY == 'true' }}
+        run: echo "::warning::⏭️ 新鲜度闸门阻断：本地数据旧于 gh-pages，未部署。双机新数据保留完好。watchdog 稍后将尝试修复。"

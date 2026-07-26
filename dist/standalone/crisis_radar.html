@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="build-stamp" content="20260727070306">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>危机雷达 · 九宝量化 V6.0</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif;background:#f4f6fa;color:#1f2a44;padding-top:52px;-webkit-font-smoothing:antialiased;}
+.header{background:linear-gradient(135deg,#232b3e,#111726);color:#fff;padding:12px 20px;position:fixed;top:0;left:0;right:0;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,.15);}
+.header .brand{font-size:16px;font-weight:800;letter-spacing:.5px;}
+.header .sub{font-size:11px;opacity:.65;margin-top:2px;}
+.header a{color:#8fb7ff;text-decoration:none;}
+.wrap{max-width:1040px;margin:12px auto;padding:0 14px 50px;}
+/* Hero */
+.hero{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 10px rgba(30,42,68,.06);margin-bottom:12px;display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:center;}
+.hero-left{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero-badge{display:inline-block;font-size:13px;font-weight:800;color:#fff;padding:4px 14px;border-radius:18px;margin-top:4px;}
+.catbars{width:100%;margin-top:12px;display:flex;flex-direction:column;gap:7px;}
+.catrow{display:flex;align-items:center;gap:10px;}
+.catname{width:88px;font-size:12.5px;font-weight:700;display:flex;flex-direction:column;color:#3a445c;}
+.catw{font-size:10px;color:#9aa3b5;font-weight:500;}
+.cattrack{flex:1;height:9px;background:#eef1f7;border-radius:5px;overflow:hidden;}
+.catfill{height:100%;border-radius:5px;transition:width .6s;}
+.catval{width:34px;text-align:right;font-size:14px;font-weight:800;}
+.hero-right{display:flex;flex-direction:column;align-items:center;}
+.radar-cap{font-size:12px;color:#8a93a6;margin-top:2px;}
+/* Section */
+.sec{background:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 2px 8px rgba(30,42,68,.06);margin-bottom:10px;}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #eef1f7;padding-bottom:6px;margin-bottom:8px;}
+.sec-title{font-size:14px;font-weight:800;color:#1f2a44;}
+.sec-sub{font-size:10px;color:#9aa3b5;font-weight:500;margin-left:6px;}
+.sec-score{font-size:18px;font-weight:800;display:flex;flex-direction:column;align-items:flex-end;line-height:1;}
+.sec-score-lbl{font-size:9px;color:#9aa3b5;font-weight:500;margin-top:2px;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
+.card{background:#fbfcfe;border:1px solid #eef1f7;border-radius:9px 0 0 9px;padding:7px 9px 7px 6px;}
+.c-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.c-name{font-size:11.5px;font-weight:700;color:#2a3550;}
+.c-freq{font-size:8.5px;color:#9aa3b5;background:#eef1f7;padding:1px 5px;border-radius:5px;}
+.c-val{font-size:18px;font-weight:800;line-height:1.05;}
+.c-meta{font-size:9.5px;color:#8a93a6;margin-top:2px;}
+.pctwrap{margin-top:5px;}
+.pcttrack{position:relative;height:5px;background:linear-gradient(90deg,#4FA85A,#EF9F27,#E24B4A);border-radius:3px;}
+.pctfill{position:absolute;top:-2px;width:2px;height:9px;background:#1f2a44;border-radius:2px;transform:translateX(-1px);box-shadow:0 0 0 2px #fff;}
+.pcttxt{font-size:9.5px;color:#8a93a6;margin-top:2px;}
+.c-foot{display:flex;justify-content:space-between;align-items:center;margin-top:5px;}
+.c-badge{font-size:9.5px;font-weight:700;color:#fff;padding:1px 6px;border-radius:6px;}
+.c-date{font-size:9px;color:#b0b8c8;}
+/* Method */
+.method{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(30,42,68,.06);font-size:11.5px;line-height:1.75;color:#5a6478;}
+.method b{color:#3a445c;}
+.method .mt{font-size:14px;font-weight:800;color:#1f2a44;margin-bottom:8px;}
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:460px){
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="brand">🛰️ 六维预警雷达 · 九宝量化 V6.0</div>
+  <div class="sub"><a href="../index.html" onclick="try{localStorage.setItem('from_tab','shmonitor');}catch(e){}">← 返回数据监控</a> &nbsp;|&nbsp; 六维预警雷达 · 月度/季度视角 · 中长线 · 数据更新：2026-07-25 13:15:49</div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-left">
+      <svg viewBox="0 0 240 140" width="100%" style="max-width:260px;">
+      <path d="M 30 120 A 90 90 0 0 1 210 120" fill="none" stroke="#e9edf4" stroke-width="16" stroke-linecap="round"/><path d="M 30 120 A 90 90 0 0 1 103.7 31.5" fill="none" stroke="#EF9F27" stroke-width="16" stroke-linecap="round"/>
+      <text x="120" y="112" text-anchor="middle" font-size="46" font-weight="800" fill="#EF9F27">44</text>
+      <text x="120" y="136" text-anchor="middle" font-size="12" fill="#8a93a6">综合危机指数 / 100</text>
+    </svg>
+      <div class="hero-badge" style="background:#EF9F27;">需要关注</div>
+      <div class="catbars">
+      <div class="catrow">
+        <div class="catname">货币<span class="catw">权重40%</span></div>
+        <div class="cattrack"><div class="catfill" style="width:61.9%;background:#E24B4A;"></div></div>
+        <div class="catval" style="color:#E24B4A;">61.9</div>
+      </div>
+      <div class="catrow">
+        <div class="catname">经济<span class="catw">权重35%</span></div>
+        <div class="cattrack"><div class="catfill" style="width:25.8%;background:#4FA85A;"></div></div>
+        <div class="catval" style="color:#4FA85A;">25.8</div>
+      </div>
+      <div class="catrow">
+        <div class="catname">全球<span class="catw">权重25%</span></div>
+        <div class="cattrack"><div class="catfill" style="width:41.6%;background:#EF9F27;"></div></div>
+        <div class="catval" style="color:#EF9F27;">41.6</div>
+      </div></div>
+    </div>
+    <div class="hero-right">
+      <svg viewBox="0 0 300 300" width="100%" style="max-width:320px;">
+      <polygon points="150.0,118.8 172.7,131.9 172.7,158.1 150.0,171.2 127.3,158.1 127.3,131.9" fill="none" stroke="#eef1f7" stroke-width="1"/><polygon points="150.0,92.5 195.5,118.8 195.5,171.2 150.0,197.5 104.5,171.3 104.5,118.8" fill="none" stroke="#eef1f7" stroke-width="1"/><polygon points="150.0,66.2 218.2,105.6 218.2,184.4 150.0,223.8 81.8,184.4 81.8,105.6" fill="none" stroke="#eef1f7" stroke-width="1"/><polygon points="150.0,40.0 240.9,92.5 240.9,197.5 150.0,250.0 59.1,197.5 59.1,92.5" fill="none" stroke="#eef1f7" stroke-width="1"/><line x1="150" y1="145" x2="150.0" y2="40.0" stroke="#e2e7f0" stroke-width="1"/><line x1="150" y1="145" x2="240.9" y2="92.5" stroke="#e2e7f0" stroke-width="1"/><line x1="150" y1="145" x2="240.9" y2="197.5" stroke="#e2e7f0" stroke-width="1"/><line x1="150" y1="145" x2="150.0" y2="250.0" stroke="#e2e7f0" stroke-width="1"/><line x1="150" y1="145" x2="59.1" y2="197.5" stroke="#e2e7f0" stroke-width="1"/><line x1="150" y1="145" x2="59.1" y2="92.5" stroke="#e2e7f0" stroke-width="1"/><polygon points="150.0,76.8 203.5,114.1 172.7,158.1 150.0,175.7 107.4,169.6 145.5,142.4" fill="rgba(226,75,74,0.16)" stroke="#E24B4A" stroke-width="2"/><circle cx="150.0" cy="76.8" r="3.5" fill="#E24B4A"/><circle cx="203.5" cy="114.1" r="3.5" fill="#E24B4A"/><circle cx="172.7" cy="158.1" r="3.5" fill="#4FA85A"/><circle cx="150.0" cy="175.7" r="3.5" fill="#4FA85A"/><circle cx="107.4" cy="169.6" r="3.5" fill="#EF9F27"/><circle cx="145.5" cy="142.4" r="3.5" fill="#4FA85A"/><text x="150.0" y="18.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">流动性</text><text x="150.0" y="32.0" text-anchor="middle" font-size="11" font-weight="800" fill="#E24B4A" dominant-baseline="middle">65.0</text><text x="260.0" y="81.5" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">利率</text><text x="260.0" y="95.5" text-anchor="start" font-size="11" font-weight="800" fill="#E24B4A" dominant-baseline="middle">58.8</text><text x="260.0" y="208.5" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">经济</text><text x="260.0" y="222.5" text-anchor="start" font-size="11" font-weight="800" fill="#4FA85A" dominant-baseline="middle">25.0</text><text x="150.0" y="272.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">房地产</text><text x="150.0" y="286.0" text-anchor="middle" font-size="11" font-weight="800" fill="#4FA85A" dominant-baseline="middle">29.2</text><text x="40.0" y="208.5" text-anchor="end" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">全球</text><text x="40.0" y="222.5" text-anchor="end" font-size="11" font-weight="800" fill="#EF9F27" dominant-baseline="middle">46.9</text><text x="40.0" y="81.5" text-anchor="end" font-size="12.5" font-weight="700" fill="#1f2a44" dominant-baseline="middle">汇率</text><text x="40.0" y="95.5" text-anchor="end" font-size="11" font-weight="800" fill="#4FA85A" dominant-baseline="middle">5.0</text>
+    </svg>
+      <div class="radar-cap">六维危险分（越靠外越危险 · 0-100）</div>
+    </div>
+  </div>
+
+  
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">💧 货币流动性<span class="sec-sub">流动性 · 利率</span></div>
+      <div class="sec-score" style="color:#E24B4A;">61.9<span class="sec-score-lbl">大类危险分</span></div>
+    </div>
+    <div class="grid">
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">SHIBOR隔夜</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">1.3812%</div>
+        <div class="c-meta"><span style="color:#4FA85A;font-weight:700;">↓ 改善</span> &nbsp;·&nbsp; 越高越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:76.9%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">76.9%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 76.9</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">两融余额</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">1.3725万亿</div>
+        <div class="c-meta"><span style="color:#4FA85A;font-weight:700;">↓ 改善</span> &nbsp;·&nbsp; 越高越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:72.3%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">72.3%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 72.3</span>
+          <span class="c-date">2026-07-23</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #EF9F27;">
+        <div class="c-head">
+          <span class="c-name">M2同比</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#EF9F27;">8%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:54.2%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#EF9F27;">54.2%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#EF9F27;">关注 45.8</span>
+          <span class="c-date">2026-06-01</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #EF9F27;">
+        <div class="c-head">
+          <span class="c-name">期限利差10Y-2Y</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#EF9F27;">0.4589%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:60.4%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#EF9F27;">60.4%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#EF9F27;">关注 39.6</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">中美利差10Y</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">-2.962%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:0.8%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">0.8%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 99.2</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #EF9F27;">
+        <div class="c-head">
+          <span class="c-name">LPR 5年</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#EF9F27;">3.5%</div>
+        <div class="c-meta"><span style="color:#b0b8c8;">→ 持平</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:62.5%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#EF9F27;">62.5%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#EF9F27;">关注 37.5</span>
+          <span class="c-date">2026-07-20</span>
+        </div>
+      </div></div>
+  </div>
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">🏭 经济基本面<span class="sec-sub">经济 · 房地产</span></div>
+      <div class="sec-score" style="color:#4FA85A;">25.8<span class="sec-score-lbl">大类危险分</span></div>
+    </div>
+    <div class="grid">
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">制造业PMI</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">50.30</div>
+        <div class="c-meta"><span style="color:#4FA85A;font-weight:700;">↑ 改善</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:91.7%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">91.7%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 8.3</span>
+          <span class="c-date">2026-06-01</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">社融增量·滚动同比</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">-3.2%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:25.0%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">25.0%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 75.0</span>
+          <span class="c-date">2026-04-01</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">出口同比</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">27.00%</div>
+        <div class="c-meta"><span style="color:#4FA85A;font-weight:700;">↑ 改善</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:95.8%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">95.8%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 4.2</span>
+          <span class="c-date">2026-06-01</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">CPI同比</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">1%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:87.5%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">87.5%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 12.5</span>
+          <span class="c-date">2026-06-01</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">70城二手房价环比</span>
+          <span class="c-freq">月频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">0.25%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:70.8%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">70.8%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 29.2</span>
+          <span class="c-date">2026-06-01</span>
+        </div>
+      </div></div>
+  </div>
+  <div class="sec">
+    <div class="sec-head">
+      <div class="sec-title">🌍 全球风险<span class="sec-sub">全球 · 汇率</span></div>
+      <div class="sec-score" style="color:#EF9F27;">41.6<span class="sec-score-lbl">大类危险分</span></div>
+    </div>
+    <div class="grid">
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">VIX恐慌指数</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">19.20</div>
+        <div class="c-meta"><span style="color:#b0b8c8;">→ 持平</span> &nbsp;·&nbsp; 越高越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:61.5%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">61.5%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">警惕 61.5</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #EF9F27;">
+        <div class="c-head">
+          <span class="c-name">美元指数DXY</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#EF9F27;">101</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↑ 恶化</span> &nbsp;·&nbsp; 越高越危险</div>
+        <div class="pctwrap"><div class="pcttxt" style="color:#b0b8c8;">阈值判定（无1年历史）</div></div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#EF9F27;">关注 33.199999999999996</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">铜金比</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">3.446</div>
+        <div class="c-meta"><span style="color:#b0b8c8;">→ 持平</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:94.6%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">94.6%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 5.4</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">BDI波罗的海</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">2,743</div>
+        <div class="c-meta"><span style="color:#b0b8c8;">→ 持平</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:85.4%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">85.4%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 14.6</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">WTI原油</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">$90.47</div>
+        <div class="c-meta"><span style="color:#4FA85A;font-weight:700;">↑ 改善</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:78.8%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#4FA85A;">78.8%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 21.2</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #4FA85A;">
+        <div class="c-head">
+          <span class="c-name">离岸人民币</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#4FA85A;">6.7776</div>
+        <div class="c-meta"><span style="color:#b0b8c8;">→ 持平</span> &nbsp;·&nbsp; 越高越危险</div>
+        <div class="pctwrap"><div class="pcttxt" style="color:#b0b8c8;">阈值判定（无1年历史）</div></div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#4FA85A;">平稳 5</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">美债10Y-2Y倒挂</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">0.36%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↓ 恶化</span> &nbsp;·&nbsp; 越低越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:7.3%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">7.3%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 92.7</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div>
+      <div class="card" style="border-left:3px solid #E24B4A;">
+        <div class="c-head">
+          <span class="c-name">美债2Y收益率</span>
+          <span class="c-freq">日频</span>
+        </div>
+        <div class="c-val" style="color:#E24B4A;">4.33%</div>
+        <div class="c-meta"><span style="color:#E24B4A;font-weight:700;">↑ 恶化</span> &nbsp;·&nbsp; 越高越危险</div>
+        
+        <div class="pctwrap">
+          <div class="pcttrack"><div class="pctfill" style="left:99.6%;"></div></div>
+          <div class="pcttxt">近1年分位 <b style="color:#E24B4A;">99.6%</b></div>
+        </div>
+        <div class="c-foot">
+          <span class="c-badge" style="background:#E24B4A;">危机 99.6</span>
+          <span class="c-date">2026-07-24</span>
+        </div>
+      </div></div>
+  </div>
+
+
+</div>
+</body>
+</html>

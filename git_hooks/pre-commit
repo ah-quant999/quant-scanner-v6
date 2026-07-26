@@ -1,0 +1,87 @@
+#!/bin/bash
+# ============================================================
+# pre-commit 钩子 — 阻止删除 DO_NOT_DELETE.md 中登记的"不得删除"文件
+# 安装: cp git_hooks/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#       本副本提交在 git_hooks/pre-commit，双机 pull 后各自安装即可。
+#
+# 2026-07-12 修复:
+#   1. 原钩子读 DO_NOT_DELETE.txt，但真实清单是 DO_NOT_DELETE.md → 文件不存在直接放行，机制完全失效。
+#      现优先读 .md，回退 .txt。
+#   2. 原钩子用 awk -F'\t' 解析 markdown `|` 表格，提取到的"保护 token"是行首的 `|`，匹配不到任何文件。
+#      现正确提取表格第一列的路径/通配符（去反引号、取首个 token），支持 `*` 通配与目录前缀 `/` 匹配。
+# ============================================================
+set -u
+
+ROOT="$(git rev-parse --show-toplevel)"
+
+# 优先 .md，回退 .txt
+if [ -f "$ROOT/DO_NOT_DELETE.md" ]; then
+  REGISTRY="$ROOT/DO_NOT_DELETE.md"
+elif [ -f "$ROOT/DO_NOT_DELETE.txt" ]; then
+  REGISTRY="$ROOT/DO_NOT_DELETE.txt"
+else
+  # 清单不存在则放行
+  exit 0
+fi
+
+# 本次提交中被删除(状态 D)的文件
+DELETED="$(git diff --cached --name-only --diff-filter=D)"
+if [ -z "$DELETED" ]; then
+  exit 0
+fi
+
+# 解析受保护清单: 从 markdown 表格提取第一列的路径/通配符
+# - 跳过注释(# 开头)、空行、分隔行(|---|)、无 `|` 的非表格行
+# - 取首个 `|` 与第二个 `|` 之间的单元格，去反引号，取首个空白分隔 token
+PROTECTED="$(grep -vE '^[[:space:]]*#' "$REGISTRY" \
+  | grep -vE '^[[:space:]]*$' \
+  | grep -E '\|' \
+  | grep -vE '^\|[[:space:]]*-+\|' \
+  | while IFS= read -r line; do
+      # 第一列: 去掉行首 `|` 与前导空格，截到下一个 `|` 之前
+      cell=$(echo "$line" | sed -E 's/^[[:space:]]*\|[[:space:]]*//; s/[[:space:]]*\|.*$//')
+      cell=$(echo "$cell" | tr -d '`')          # 去反引号
+      tok=$(echo "$cell" | awk '{print $1}')     # 首个 token
+      # 跳过分隔符/空/加粗章节标记(* 或 # 开头)
+      [ -z "$tok" ] && continue
+      [[ "$tok" == -* ]] && continue
+      [[ "$tok" == "*"* || "$tok" == "#"* ]] && continue
+      echo "$tok"
+    done)"
+
+VIOLATIONS=""
+while IFS= read -r tok; do
+  [ -z "$tok" ] && continue
+  while IFS= read -r del; do
+    [ -z "$del" ] && continue
+    if [[ "$tok" == *"*"* ]]; then
+      # 通配符匹配 (如 fetch_*.py)
+      if [[ "$del" == $tok ]]; then
+        VIOLATIONS="${VIOLATIONS}  - ${del}  (匹配保护规则: ${tok})\n"
+      fi
+    elif [[ "$tok" == */ ]]; then
+      # 目录前缀匹配 (如 standalone/)
+      if [[ "$del" == "${tok}"* ]]; then
+        VIOLATIONS="${VIOLATIONS}  - ${del}  (匹配保护目录: ${tok})\n"
+      fi
+    else
+      # 精确匹配
+      if [ "$del" = "$tok" ]; then
+        VIOLATIONS="${VIOLATIONS}  - ${del}\n"
+      fi
+    fi
+  done <<< "$DELETED"
+done <<< "$PROTECTED"
+
+if [ -n "$VIOLATIONS" ]; then
+  echo ""
+  echo "🛑 提交被阻止: 检测到试图删除受保护(不得删除)的文件!"
+  echo "   这些文件在 $REGISTRY 中被标记为严禁删除。"
+  printf "%b" "$VIOLATIONS"
+  echo ""
+  echo "   如需删除,请先编辑 $REGISTRY 移除对应条目,并经确认后再提交。"
+  echo ""
+  exit 1
+fi
+
+exit 0

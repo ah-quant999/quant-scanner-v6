@@ -1,0 +1,32 @@
+name: "🧪 云端数据源连通性测试"
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/test_data_source.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 测试腾讯 GTimg
+        run: |
+          echo "=== GTimg 上证指数 ==="
+          curl -sS --max-time 25 "https://qt.gtimg.cn/q=s_sh000001" | head -c 200 || echo "GTIMG_SINGLE_FAILED"
+          echo ""
+          echo "=== GTimg 多只股票 ==="
+          curl -sS --max-time 25 "https://qt.gtimg.cn/q=sh600001,sh600002,sz000001" | head -c 300 || echo "GTIMG_MULTI_FAILED"
+          echo ""
+
+      - name: 测试新浪 Sina
+        run: |
+          echo "=== Sina 个股行情 ==="
+          curl -sS --max-time 25 "https://hq.sinajs.cn/list=sh600001" | head -c 200 || echo "SINA_FAILED"
+          echo ""
+
+      - name: 测试东方财富
+        run: |
+          echo "=== 东财 spot ==="
+          curl -sS --max-time 25 "https://push2.eastmoney.com/api/qt/stock/get?secid=1.600001&fields=f43,f44,f45,f46,f47,f48,f57,f58,f60,f170" | head -c 200 || echo "EASTMONEY_FAILED"
+          echo ""

@@ -1,0 +1,26 @@
+[11:56:36] 全市场异动速览 v1
+==================================================
+[11:56:44] ✗ akshare指数获取失败(第1次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:56:54] ✗ akshare指数获取失败(第2次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:56:54]   补齐缺失指数: ['上证指数', '深证成指', '创业板指', '科创50', '恒生指数', '恒生科技指数', '韩国KOSPI', '日经225']
+[11:56:55]     ✓ 上证指数 -0.66% (Sina)
+[11:56:55]     ✓ 深证成指 -0.42% (Sina)
+[11:56:55]     ✓ 创业板指 -0.29% (Sina)
+[11:56:55]     ✓ 科创50 -3.45% (Sina)
+[11:56:55]     ✓ 恒生指数 -0.57% (Sina)
+[11:56:56]     ✓ 恒生科技指数 -2.02% (Sina-hkHSTECH)
+[11:56:57]     ✓ 韩国KOSPI +0.61% (akshare)
+[11:56:57]     ✓ 日经225 -0.90% (Sina)
+[11:57:04] ✗ 板块获取失败(第1次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:57:13] ✗ 板块获取失败(第2次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:57:20] ✗ 个股获取失败(第1次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:57:29] ✗ 个股获取失败(第2次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[11:57:29] 📊 美股指数（隔夜收盘）...
+[11:57:30]     ✓ 道琼斯 52,498.64 (-0.26%)
+[11:57:30]     ✓ 纳斯达克 25,873.18 (-1.55%)
+[11:57:30]     ✓ 标普500 7,515.34 (-0.79%)
+[11:57:30] ✓ 完成！总结: 上证指数跌0.66%。
+[11:57:30] ✓ 完成！
+  总结：上证指数跌0.66%。
+  指数：上证指数 -0.66%, 深证成指 -0.42%, 创业板指 -0.29%, 科创50 -3.45%, 恒生指数 -0.57%, 恒生科技指数 -2.02%, 韩国KOSPI +0.61%, 日经225 -0.90%
+  美股：道琼斯 52,498.64 (-0.26%), 纳斯达克 25,873.18 (-1.55%), 标普500 7,515.34 (-0.79%)

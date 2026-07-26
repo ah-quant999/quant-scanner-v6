@@ -1,0 +1,689 @@
+
+============================================================
+选股观测台 - 盘后扫描(活跃股池) 2026-07-07 07:12:58
+============================================================
+[1/3] 获取活跃股池(按成交量排序)...
+  获取创业板成交量Top100...
+[数据源] mootdx 通达信直连 - 已连接
+  0%|          | 0/24 [00:00<?, ?it/s]  4%|4         | 1/24 [00:00<00:02,  7.68it/s] 12%|#2        | 3/24 [00:00<00:01, 14.01it/s] 25%|##5       | 6/24 [00:00<00:00, 18.20it/s] 38%|###7      | 9/24 [00:00<00:00, 19.91it/s] 50%|#####     | 12/24 [00:00<00:00, 21.09it/s] 62%|######2   | 15/24 [00:00<00:00, 22.01it/s] 75%|#######5  | 18/24 [00:00<00:00, 22.43it/s] 88%|########7 | 21/24 [00:01<00:00, 20.74it/s]100%|##########| 24/24 [00:01<00:00, 21.62it/s]100%|##########| 24/24 [00:01<00:00, 20.38it/s]
+    [东财] 批次1获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    创业板: 100 只
+  获取科创板成交量Top100...
+  0%|          | 0/28 [00:00<?, ?it/s]  4%|3         | 1/28 [00:00<00:03,  8.90it/s] 14%|#4        | 4/28 [00:00<00:01, 17.48it/s] 25%|##5       | 7/28 [00:00<00:01, 20.30it/s] 36%|###5      | 10/28 [00:00<00:00, 21.73it/s] 46%|####6     | 13/28 [00:00<00:00, 22.47it/s] 57%|#####7    | 16/28 [00:00<00:00, 22.61it/s] 68%|######7   | 19/28 [00:00<00:00, 22.88it/s] 79%|#######8  | 22/28 [00:01<00:00, 22.83it/s] 89%|########9 | 25/28 [00:01<00:00, 22.69it/s]100%|##########| 28/28 [00:01<00:00, 22.55it/s]100%|##########| 28/28 [00:01<00:00, 21.80it/s]
+    [东财] 批次1获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次2获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    科创板: 100 只
+  获取主板成交量Top100...
+  0%|          | 0/24 [00:00<?, ?it/s]  8%|8         | 2/24 [00:00<00:01, 16.31it/s] 21%|##        | 5/24 [00:00<00:01, 18.74it/s] 33%|###3      | 8/24 [00:00<00:00, 20.51it/s] 46%|####5     | 11/24 [00:00<00:00, 21.71it/s] 58%|#####8    | 14/24 [00:00<00:00, 22.47it/s] 71%|#######   | 17/24 [00:00<00:00, 22.76it/s] 83%|########3 | 20/24 [00:00<00:00, 22.55it/s] 96%|#########5| 23/24 [00:01<00:00, 22.56it/s]100%|##########| 24/24 [00:01<00:00, 21.87it/s]
+    [东财] 批次1获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+  0%|          | 0/28 [00:00<?, ?it/s]  7%|7         | 2/28 [00:00<00:01, 16.53it/s] 18%|#7        | 5/28 [00:00<00:01, 20.80it/s] 29%|##8       | 8/28 [00:00<00:00, 21.67it/s] 39%|###9      | 11/28 [00:00<00:00, 22.16it/s] 50%|#####     | 14/28 [00:00<00:00, 22.63it/s] 61%|######    | 17/28 [00:00<00:00, 22.92it/s] 71%|#######1  | 20/28 [00:00<00:00, 22.83it/s] 82%|########2 | 23/28 [00:01<00:00, 21.94it/s] 93%|#########2| 26/28 [00:01<00:00, 22.01it/s]100%|##########| 28/28 [00:01<00:00, 22.04it/s]
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1648, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1632, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1556, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=844, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=668, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1656, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=892, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1524, family=2, type=1, proto=0, laddr=('192.168.110.42', 55447), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=896, family=2, type=1, proto=0, laddr=('192.168.110.42', 55439), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1604, family=2, type=1, proto=0, laddr=('192.168.110.42', 55458), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1544, family=2, type=1, proto=0, laddr=('192.168.110.42', 55442), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1612, family=2, type=1, proto=0, laddr=('192.168.110.42', 55455), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=900, family=2, type=1, proto=0, laddr=('192.168.110.42', 55446), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1536, family=2, type=1, proto=0, laddr=('192.168.110.42', 55441), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1624, family=2, type=1, proto=0, laddr=('192.168.110.42', 55454), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=876, family=2, type=1, proto=0, laddr=('192.168.110.42', 55444), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1680, family=2, type=1, proto=0, laddr=('192.168.110.42', 55476), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1600, family=2, type=1, proto=0, laddr=('192.168.110.42', 55452), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=904, family=2, type=1, proto=0, laddr=('192.168.110.42', 55445), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1628, family=2, type=1, proto=0, laddr=('192.168.110.42', 55459), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=596, family=2, type=1, proto=0, laddr=('192.168.110.42', 55470), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1520, family=2, type=1, proto=0, laddr=('192.168.110.42', 55462), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1616, family=2, type=1, proto=0, laddr=('192.168.110.42', 55472), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1548, family=2, type=1, proto=0, laddr=('192.168.110.42', 55448), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1584, family=2, type=1, proto=0, laddr=('192.168.110.42', 55451), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1664, family=2, type=1, proto=0, laddr=('192.168.110.42', 55464), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=872, family=2, type=1, proto=0, laddr=('192.168.110.42', 55456), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1636, family=2, type=1, proto=0, laddr=('192.168.110.42', 55449), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1596, family=2, type=1, proto=0, laddr=('192.168.110.42', 55453), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55467), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1684, family=2, type=1, proto=0, laddr=('192.168.110.42', 55475), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1652, family=2, type=1, proto=0, laddr=('192.168.110.42', 55450), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1608, family=2, type=1, proto=0, laddr=('192.168.110.42', 55465), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1540, family=2, type=1, proto=0, laddr=('192.168.110.42', 55466), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1568, family=2, type=1, proto=0, laddr=('192.168.110.42', 55463), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1640, family=2, type=1, proto=0, laddr=('192.168.110.42', 55477), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1644, family=2, type=1, proto=0, laddr=('192.168.110.42', 55469), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=868, family=2, type=1, proto=0, laddr=('192.168.110.42', 55473), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55461), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1676, family=2, type=1, proto=0, laddr=('192.168.110.42', 55474), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1672, family=2, type=1, proto=0, laddr=('192.168.110.42', 55468), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1620, family=2, type=1, proto=0, laddr=('192.168.110.42', 55478), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1576, family=2, type=1, proto=0, laddr=('192.168.110.42', 55460), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1532, family=2, type=1, proto=0, laddr=('192.168.110.42', 55457), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=740, family=2, type=1, proto=0, laddr=('192.168.110.42', 55471), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=580, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1544, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1600, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1640, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=904, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1604, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1588, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1596, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1620, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1672, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1516, family=2, type=1, proto=0, laddr=('192.168.110.42', 55495), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1644, family=2, type=1, proto=0, laddr=('192.168.110.42', 55486), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1708, family=2, type=1, proto=0, laddr=('192.168.110.42', 55500), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55485), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1636, family=2, type=1, proto=0, laddr=('192.168.110.42', 55487), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=876, family=2, type=1, proto=0, laddr=('192.168.110.42', 55482), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1524, family=2, type=1, proto=0, laddr=('192.168.110.42', 55492), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1652, family=2, type=1, proto=0, laddr=('192.168.110.42', 55499), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=872, family=2, type=1, proto=0, laddr=('192.168.110.42', 55483), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=868, family=2, type=1, proto=0, laddr=('192.168.110.42', 55498), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1680, family=2, type=1, proto=0, laddr=('192.168.110.42', 55488), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1576, family=2, type=1, proto=0, laddr=('192.168.110.42', 55481), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1608, family=2, type=1, proto=0, laddr=('192.168.110.42', 55503), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1624, family=2, type=1, proto=0, laddr=('192.168.110.42', 55490), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1664, family=2, type=1, proto=0, laddr=('192.168.110.42', 55491), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1572, family=2, type=1, proto=0, laddr=('192.168.110.42', 55496), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1700, family=2, type=1, proto=0, laddr=('192.168.110.42', 55501), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=888, family=2, type=1, proto=0, laddr=('192.168.110.42', 55509), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=896, family=2, type=1, proto=0, laddr=('192.168.110.42', 55507), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1696, family=2, type=1, proto=0, laddr=('192.168.110.42', 55508), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=900, family=2, type=1, proto=0, laddr=('192.168.110.42', 55504), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1536, family=2, type=1, proto=0, laddr=('192.168.110.42', 55511), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1520, family=2, type=1, proto=0, laddr=('192.168.110.42', 55505), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1540, family=2, type=1, proto=0, laddr=('192.168.110.42', 55497), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1656, family=2, type=1, proto=0, laddr=('192.168.110.42', 55506), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=892, family=2, type=1, proto=0, laddr=('192.168.110.42', 55493), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1616, family=2, type=1, proto=0, laddr=('192.168.110.42', 55484), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1668, family=2, type=1, proto=0, laddr=('192.168.110.42', 55480), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1628, family=2, type=1, proto=0, laddr=('192.168.110.42', 55489), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55510), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1684, family=2, type=1, proto=0, laddr=('192.168.110.42', 55502), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1584, family=2, type=1, proto=0, laddr=('192.168.110.42', 55515), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1556, family=2, type=1, proto=0, laddr=('192.168.110.42', 55514), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=896, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=868, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1652, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1656, family=2, type=1, proto=0, laddr=('192.168.110.42', 55519), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1708, family=2, type=1, proto=0, laddr=('192.168.110.42', 55518), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1640, family=2, type=1, proto=0, laddr=('192.168.110.42', 55523), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1572, family=2, type=1, proto=0, laddr=('192.168.110.42', 55521), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1628, family=2, type=1, proto=0, laddr=('192.168.110.42', 55522), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1520, family=2, type=1, proto=0, laddr=('192.168.110.42', 55529), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1544, family=2, type=1, proto=0, laddr=('192.168.110.42', 55517), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1712, family=2, type=1, proto=0, laddr=('192.168.110.42', 55526), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1668, family=2, type=1, proto=0, laddr=('192.168.110.42', 55542), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1624, family=2, type=1, proto=0, laddr=('192.168.110.42', 55527), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1644, family=2, type=1, proto=0, laddr=('192.168.110.42', 55530), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1620, family=2, type=1, proto=0, laddr=('192.168.110.42', 55524), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=740, family=2, type=1, proto=0, laddr=('192.168.110.42', 55548), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1604, family=2, type=1, proto=0, laddr=('192.168.110.42', 55538), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=872, family=2, type=1, proto=0, laddr=('192.168.110.42', 55525), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1672, family=2, type=1, proto=0, laddr=('192.168.110.42', 55545), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1528, family=2, type=1, proto=0, laddr=('192.168.110.42', 55535), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1540, family=2, type=1, proto=0, laddr=('192.168.110.42', 55547), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1608, family=2, type=1, proto=0, laddr=('192.168.110.42', 55546), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1684, family=2, type=1, proto=0, laddr=('192.168.110.42', 55534), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1596, family=2, type=1, proto=0, laddr=('192.168.110.42', 55537), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55536), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1660, family=2, type=1, proto=0, laddr=('192.168.110.42', 55543), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1700, family=2, type=1, proto=0, laddr=('192.168.110.42', 55541), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1516, family=2, type=1, proto=0, laddr=('192.168.110.42', 55531), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=896, family=2, type=1, proto=0, laddr=('192.168.110.42', 55533), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1568, family=2, type=1, proto=0, laddr=('192.168.110.42', 55539), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1588, family=2, type=1, proto=0, laddr=('192.168.110.42', 55528), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1704, family=2, type=1, proto=0, laddr=('192.168.110.42', 55540), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55544), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1548, family=2, type=1, proto=0, laddr=('192.168.110.42', 55549), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=892, family=2, type=1, proto=0, laddr=('192.168.110.42', 55551), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1636, family=2, type=1, proto=0, laddr=('192.168.110.42', 55550), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1708, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=876, family=2, type=1, proto=0, laddr=('192.168.110.42', 55557), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1696, family=2, type=1, proto=0, laddr=('192.168.110.42', 55555), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=844, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=904, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1520, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=580, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1732, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1560, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1572, family=2, type=1, proto=0, laddr=('192.168.110.42', 55568), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1668, family=2, type=1, proto=0, laddr=('192.168.110.42', 55559), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1568, family=2, type=1, proto=0, laddr=('192.168.110.42', 55560), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1724, family=2, type=1, proto=0, laddr=('192.168.110.42', 55576), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1728, family=2, type=1, proto=0, laddr=('192.168.110.42', 55570), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1540, family=2, type=1, proto=0, laddr=('192.168.110.42', 55562), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1660, family=2, type=1, proto=0, laddr=('192.168.110.42', 55567), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1700, family=2, type=1, proto=0, laddr=('192.168.110.42', 55564), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1532, family=2, type=1, proto=0, laddr=('192.168.110.42', 55582), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1676, family=2, type=1, proto=0, laddr=('192.168.110.42', 55580), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1656, family=2, type=1, proto=0, laddr=('192.168.110.42', 55578), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1528, family=2, type=1, proto=0, laddr=('192.168.110.42', 55566), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1716, family=2, type=1, proto=0, laddr=('192.168.110.42', 55574), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=876, family=2, type=1, proto=0, laddr=('192.168.110.42', 55577), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1592, family=2, type=1, proto=0, laddr=('192.168.110.42', 55575), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1680, family=2, type=1, proto=0, laddr=('192.168.110.42', 55572), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1576, family=2, type=1, proto=0, laddr=('192.168.110.42', 55588), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=896, family=2, type=1, proto=0, laddr=('192.168.110.42', 55569), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1588, family=2, type=1, proto=0, laddr=('192.168.110.42', 55581), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1544, family=2, type=1, proto=0, laddr=('192.168.110.42', 55586), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1628, family=2, type=1, proto=0, laddr=('192.168.110.42', 55590), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=880, family=2, type=1, proto=0, laddr=('192.168.110.42', 55565), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1708, family=2, type=1, proto=0, laddr=('192.168.110.42', 55563), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1636, family=2, type=1, proto=0, laddr=('192.168.110.42', 55585), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1552, family=2, type=1, proto=0, laddr=('192.168.110.42', 55573), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=872, family=2, type=1, proto=0, laddr=('192.168.110.42', 55561), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1640, family=2, type=1, proto=0, laddr=('192.168.110.42', 55571), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1600, family=2, type=1, proto=0, laddr=('192.168.110.42', 55579), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1516, family=2, type=1, proto=0, laddr=('192.168.110.42', 55587), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1736, family=2, type=1, proto=0, laddr=('192.168.110.42', 55583), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1740, family=2, type=1, proto=0, laddr=('192.168.110.42', 55584), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1684, family=2, type=1, proto=0, laddr=('192.168.110.42', 55593), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1580, family=2, type=1, proto=0, laddr=('192.168.110.42', 55597), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1608, family=2, type=1, proto=0, laddr=('192.168.110.42', 55598), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1712, family=2, type=1, proto=0, laddr=('192.168.110.42', 55596), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1664, family=2, type=1, proto=0, laddr=('192.168.110.42', 55592), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+    [东财] 批次1获取失败(1/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(2/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    [东财] 批次1获取失败(3/3): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+    主板: 100 只
+  获取港股成交量Top50...
+  [westock] 导入失败: No module named 'westock_helper'
+[WARN] efinance港股列表失败(已重试1次): HTTPConnectionPool(host='push2.eastmoney.com', port=80): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=200&po=1&np=1&fltt=2&invt=2&fid=f12&fs=m%3A0+t%3A6%2Cm%3A0+t%3A80%2Cm%3A1+t%3A2%2Cm%3A1+t%3A23%2Cm%3A0+t%3A81+s%3A2048&fields=f12%2Cf14%2Cf3%2Cf2%2Cf15%2Cf16%2Cf17%2Cf4%2Cf8%2Cf10%2Cf9%2Cf5%2Cf6%2Cf18%2Cf20%2Cf21%2Cf13%2Cf124%2Cf297 (Caused by ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+[WARN] 东方财富港股列表失败(已重试1次): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[抢救] API全断，使用硬编码港股池 92 只
+    港股: 50 只
+
+  股池汇总: 350 只
+    创业板: 100 只
+    科创板: 100 只
+    主板: 100 只
+    港股: 50 只
+  股池总计: 350 只
+
+[3/3] 开始扫描 350 只股票 (从第1只开始)...
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+'utf-8' codec can't decode byte 0x9a in position 0: invalid start byte
+接收数据异常，请稍后再试。
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+  [1/350] 0.3% - [创业] 300346 南大光电        login success!
+[数据源] BaoStock 证券宝 - 已连接
+Error -3 while decompressing data: invalid distance too far back
+接收数据异常，请稍后再试。
+'utf-8' codec can't decode byte 0xdc in position 3: invalid continuation byte
+接收数据异常，请稍后再试。
+  [2/350] 0.6% - [创业] 300757 罗博特科          [3/350] 0.9% - [创业] 300759 康龙化成        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\mootdx\config.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\HH20210606\\.mootdx\\config.json' mode='r' encoding='utf-8'>
+  options = json.load(open(CONF, 'r', encoding='utf-8'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\mootdx\config.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\HH20210606\\.mootdx\\config.json' mode='r' encoding='utf-8'>
+  options = json.load(open(CONF, 'r', encoding='utf-8'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+'utf-8' codec can't decode byte 0xf5 in position 2: invalid start byte
+接收数据异常，请稍后再试。
+[数据源] mootdx 通达信直连 - 已连接
+[数据源] mootdx 通达信直连 - 已连接
+  [4/350] 1.1% - [创业] 300750 宁德时代        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\baostock\login\loginout.py:65: ResourceWarning: unclosed <socket.socket fd=1732, family=2, type=1, proto=0, laddr=('192.168.110.42', 55595), raddr=('114.94.20.73', 10030)>
+  receive_data = sock.send_msg(
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+login success!
+[数据源] BaoStock 证券宝 - 已连接
+'utf-8' codec can't decode byte 0xbb in position 0: invalid start byte
+接收数据异常，请稍后再试。
+  [5/350] 1.4% - [创业] 300418 昆仑万维        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:60: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1692, family=2, type=1, proto=0, laddr=('192.168.110.42', 55512), raddr=('180.153.18.170', 7709)>
+  current_exception = retry_e
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [6/350] 1.7% - [创业] 300136 信维通信          [7/350] 2.0% - [创业] 300751 迈为股份          [8/350] 2.3% - [创业] 300567 精测电子          [9/350] 2.6% - [创业] 300499 高澜股份          [10/350] 2.9% - [创业] 300602 飞荣达          [11/350] 3.1% - [创业] 300088 长信科技          [12/350] 3.4% - [创业] 300655 晶瑞电材        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=740, family=2, type=1, proto=0, laddr=('192.168.110.42', 55633), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [13/350] 3.7% - [创业] 300776 帝尔激光          [14/350] 4.0% - [创业] 300199 翰宇药业          [15/350] 4.3% - [创业] 300748 金力永磁          [16/350] 4.6% - [创业] 300395 菲利华          [17/350] 4.9% - [创业] 300679 电连技术          [18/350] 5.1% - [创业] 300672 国科微          [19/350] 5.4% - [创业] 300139 晓程科技        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1792, family=2, type=1, proto=0, laddr=('192.168.110.42', 55645), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1788, family=2, type=1, proto=0, laddr=('192.168.110.42', 55648), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [20/350] 5.7% - [创业] 300684 中石科技          [21/350] 6.0% - [创业] 300568 星源材质          [22/350] 6.3% - [创业] 300024 机器人          [23/350] 6.6% - [创业] 300319 麦捷科技          [24/350] 6.9% - [创业] 300953 震裕科技          [25/350] 7.1% - [创业] 300260 新莱应材          [26/350] 7.4% - [创业] 300458 全志科技        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1676, family=2, type=1, proto=0, laddr=('192.168.110.42', 55652), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1832, family=2, type=1, proto=0, laddr=('192.168.110.42', 55654), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1880, family=2, type=1, proto=0, laddr=('192.168.110.42', 55655), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1608, family=2, type=1, proto=0, laddr=('192.168.110.42', 55656), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1620, family=2, type=1, proto=0, laddr=('192.168.110.42', 55658), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1816, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1776, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:60: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=900, family=2, type=1, proto=0, laddr=('192.168.110.42', 55532), raddr=('180.153.18.170', 7709)>
+  current_exception = retry_e
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:60: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1556, family=2, type=1, proto=0, laddr=('192.168.110.42', 55520), raddr=('180.153.18.170', 7709)>
+  current_exception = retry_e
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [27/350] 7.7% - [创业] 300548 长芯博创          [28/350] 8.0% - [创业] 300408 三环集团        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1760, family=2, type=1, proto=0, laddr=('192.168.110.42', 55662), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1768, family=2, type=1, proto=0, laddr=('192.168.110.42', 55661), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1684, family=2, type=1, proto=0, laddr=('192.168.110.42', 55663), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1812, family=2, type=1, proto=0, laddr=('192.168.110.42', 55666), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1844, family=2, type=1, proto=0, laddr=('192.168.110.42', 55665), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1692, family=2, type=1, proto=0, laddr=('192.168.110.42', 55672), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:60: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1624, family=2, type=1, proto=0, laddr=('192.168.110.42', 55664), raddr=('180.153.18.170', 7709)>
+  current_exception = retry_e
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [29/350] 8.3% - [创业] 300085 银之杰          [30/350] 8.6% - [创业] 300718 长盛轴承          [31/350] 8.9% - [创业] 300323 华灿光电          [32/350] 9.1% - [创业] 300209 行云科技          [33/350] 9.4% - [创业] 300450 先导智能          [34/350] 9.7% - [创业] 300145 南方泵业        E:\workspace\stock-scanner\scanner.py:880: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=596, family=2, type=1, proto=0, laddr=('192.168.110.42', 55494), raddr=('180.153.18.170', 7709)>
+  gc.collect()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+E:\workspace\stock-scanner\scanner.py:880: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1720, family=2, type=1, proto=0, laddr=('192.168.110.42', 55556), raddr=('180.153.18.170', 7709)>
+  gc.collect()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+E:\workspace\stock-scanner\scanner.py:880: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1644, family=2, type=1, proto=0, laddr=('192.168.110.42', 55589), raddr=('180.153.18.170', 7709)>
+  gc.collect()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+E:\workspace\stock-scanner\scanner.py:880: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1512, family=2, type=1, proto=0, laddr=('192.168.110.42', 55443), raddr=('180.153.18.170', 7709)>
+  gc.collect()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\mootdx\config.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\HH20210606\\.mootdx\\config.json' mode='r' encoding='utf-8'>
+  options = json.load(open(CONF, 'r', encoding='utf-8'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\mootdx\config.py:33: ResourceWarning: unclosed file <_io.TextIOWrapper name='C:\\Users\\HH20210606\\.mootdx\\config.json' mode='r' encoding='utf-8'>
+  options = json.load(open(CONF, 'r', encoding='utf-8'))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [35/350] 10.0% - [创业] 300806 斯迪克          [36/350] 10.3% - [创业] 300436 广生堂        [数据源] mootdx 通达信直连 - 已连接
+[数据源] mootdx 通达信直连 - 已连接
+  [37/350] 10.6% - [创业] 300342 天银机电        C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1880, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1816, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1728, family=2, type=1, proto=0, laddr=('192.168.110.42', 55687), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:175: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1812, family=2, type=1, proto=0, laddr=('192.168.110.42', 55688), raddr=('180.153.18.170', 7709)>
+  self.client.connect((ip, port))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\HH20210606\.workbuddy\binaries\python\versions\3.13.12\Lib\site-packages\tdxpy\base_socket_client.py:167: ResourceWarning: unclosed <tdxpy.base_socket_client.TrafficStatSocket fd=1828, family=2, type=1, proto=0>
+  self.client.settimeout(time_out)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+  [38/350] 10.9% - [创业] 300102 乾照光电          [39/350] 11.1% - [创业] 300302 同有科技          [40/350] 11.4% - [创业] 300870 欧陆通          [41/350] 11.7% - [创业] 300204 舒泰神          [42/350] 12.0% - [创业] 300131 英唐智控          [43/350] 12.3% - [创业] 300903 科翔股份          [44/350] 12.6% - [创业] 300811 铂科新材          [45/350] 12.9% - [创业] 300782 卓胜微          [46/350] 13.1% - [创业] 300077 国民技术          [47/350] 13.4% - [创业] 300236 上海新阳          [48/350] 13.7% - [创业] 300316 晶盛机电          [49/350] 14.0% - [创业] 300438 鹏辉能源          [50/350] 14.3% - [创业] 300760 迈瑞医疗        

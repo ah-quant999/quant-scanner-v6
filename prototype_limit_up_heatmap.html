@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>涨停板块热力矩阵 — 原型</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: #f5f7fa; color: #333; padding: 16px; max-width: 780px; margin: 0 auto;
+  }
+  h2 { font-size: 17px; color: #333; margin-bottom: 4px; }
+  .sub { font-size: 12px; color: #999; margin-bottom: 12px; }
+
+  .card {
+    background: #fff; border-radius: 12px; border: 1px solid #e8eaed;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04); overflow: hidden; margin-bottom: 16px;
+  }
+  .card-header {
+    background: linear-gradient(135deg, #fff3e0, #ffe082);
+    color: #e65100; padding: 10px 16px; font-size: 14px; font-weight: 700;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-body { padding: 12px; overflow-x: auto; }
+
+  /* ── 热力矩阵表格 ── */
+  .heat-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 600px; }
+  .heat-table th { 
+    padding: 6px 4px; text-align: center; font-weight: 500; color: #888;
+    border-bottom: 2px solid #e0e0e0; font-size: 11px; white-space: nowrap;
+  }
+  .heat-table th:first-child { text-align: left; padding-left: 10px; min-width: 80px; }
+  .heat-table td {
+    padding: 5px 4px; text-align: center; border-bottom: 1px solid #f5f5f5;
+    font-weight: 500; white-space: nowrap;
+  }
+  .heat-table td:first-child { text-align: left; padding-left: 10px; font-weight: 600; color: #333; }
+  .heat-table tr:hover td { background: #fafafa; }
+
+  /* ── 热度色阶 ── */
+  .h0 { color: #ccc; }
+  .h1 { background: #fff5f5; color: #e57373; }
+  .h2 { background: #ffebee; color: #c62828; font-weight: 700; }
+  .h3 { background: #ffcdd2; color: #b71c1c; font-weight: 700; }
+  .h4 { background: #ef9a9a; color: #fff; font-weight: 700; border-radius: 2px; }
+  .h5 { background: #e53935; color: #fff; font-weight: 700; border-radius: 2px; }
+
+  /* ── 启动日标记 ── */
+  .ignite { box-shadow: inset 0 0 0 2px #ff9800; border-radius: 4px; }
+
+  /* ── 分析区域 ── */
+  .analysis { padding: 12px 16px; font-size: 12px; line-height: 1.8; color: #555; border-top: 1px dashed #e8e8e8; }
+  .analysis b { color: #e65100; }
+  .analysis .tag { 
+    display: inline-block; padding: 1px 7px; border-radius: 3px; font-size: 11px;
+    margin: 0 2px; font-weight: 600;
+  }
+  .tag-new { background: #ffcdd2; color: #c62828; }
+  .tag-hot { background: #ef9a9a; color: #fff; }
+  .tag-cold { background: #e8eaf6; color: #5c6bc0; }
+  .tag-warn { background: #fff3e0; color: #e65100; }
+
+  .legend { display: flex; gap: 12px; font-size: 10px; color: #999; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+  .legend-swatch { width: 16px; height: 16px; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-header">🔥 涨停板块热力矩阵 <span style="font-size:11px;font-weight:400;opacity:0.7;">近10个交易日</span></div>
+  <div class="card-body" id="heatmapContainer"></div>
+  <div class="analysis" id="analysisContainer"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════
+// 模拟数据：近10个交易日 × 前12个板块的涨停家数
+// ═══════════════════════════════════
+var mockData = {
+  dates: ['06/12','06/13','06/16','06/17','06/18','06/19','06/20','06/23','06/24','06/25'],
+  sectors: [
+    { name:'新能源车', data:[3,2,5,4,6,3,2,5,7,4] },
+    { name:'光伏',      data:[1,1,3,5,4,6,2,3,5,8] },
+    { name:'军工',      data:[0,1,2,3,5,4,1,2,4,6] },
+    { name:'机器人',    data:[2,1,0,1,3,8,5,3,2,1] },
+    { name:'AI算力',    data:[4,3,2,1,0,1,2,3,2,1] },
+    { name:'半导体',    data:[2,2,1,3,2,1,0,1,3,2] },
+    { name:'医药',      data:[1,0,1,2,1,3,4,2,1,0] },
+    { name:'地产链',    data:[5,4,2,1,0,0,1,2,3,4] },
+    { name:'白酒消费',  data:[0,0,1,2,1,0,0,1,0,1] },
+    { name:'电力',      data:[1,2,3,2,1,0,1,2,1,1] },
+    { name:'通信设备',  data:[2,1,3,4,2,1,0,1,2,2] },
+    { name:'券商',      data:[3,0,1,0,0,1,2,5,3,2] }
+  ],
+  update_time: '2026-06-27 12:55'
+};
+
+// ═══════════════════════════════════
+// 渲染热力矩阵
+// ═══════════════════════════════════
+(function() {
+  var d = mockData;
+  var container = document.getElementById('heatmapContainer');
+  var analysisEl = document.getElementById('analysisContainer');
+  
+  // ── 热度色阶函数 ──
+  function heatClass(n) {
+    if (n >= 8) return 'h5';
+    if (n >= 5) return 'h4';
+    if (n >= 3) return 'h3';
+    if (n >= 2) return 'h2';
+    if (n >= 1) return 'h1';
+    return 'h0';
+  }
+
+  // ── 检测启动日（从前一日0变为≥2）──
+  function isIgnite(sectorData, idx, dates) {
+    if (idx === 0) return sectorData[0] >= 2; // 第一天≥2也算
+    return sectorData[idx] >= 2 && sectorData[idx - 1] === 0;
+  }
+
+  // ── 颜色图例 ──
+  var legendHtml = '<div class="legend">';
+  legendHtml += '<span style="font-weight:500;color:#555;">热度 →</span>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#fff5f5;border:1px solid #eee;"></div>1</div>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#ffebee;"></div>2</div>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#ffcdd2;"></div>3-4</div>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#ef9a9a;"></div>5-7</div>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#e53935;"></div>≥8</div>';
+  legendHtml += '<span style="margin-left:12px;">|</span>';
+  legendHtml += '<div class="legend-item"><div class="legend-swatch" style="background:#fff;border:2px solid #ff9800;box-sizing:border-box;"></div>启动日</div>';
+  legendHtml += '</div>';
+
+  // ── 构建表格 ──
+  var h = legendHtml;
+  h += '<table class="heat-table">';
+
+  // 表头：日期行
+  h += '<thead><tr><th>板块</th>';
+  for (var i = 0; i < d.dates.length; i++) {
+    var date = d.dates[i];
+    var dayLabel = date.split('/')[1];
+    h += '<th>' + dayLabel + '日</th>';
+  }
+  h += '<th style="color:#e65100;">合计</th>';
+  h += '<th style="color:#1565c0;">趋势</th>';
+  h += '</tr></thead>';
+
+  // 表体：板块行
+  // 按合计涨停数降序排列
+  var sorted = d.sectors.slice().sort(function(a, b) {
+    var sumA = a.data.reduce(function(s, n) { return s + n; }, 0);
+    var sumB = b.data.reduce(function(s, n) { return s + n; }, 0);
+    return sumB - sumA;
+  });
+
+  h += '<tbody>';
+  for (var s = 0; s < sorted.length; s++) {
+    var sector = sorted[s];
+    var total = sector.data.reduce(function(sum, n) { return sum + n; }, 0);
+    
+    h += '<tr>';
+    h += '<td>' + sector.name + '</td>';
+    
+    for (var j = 0; j < sector.data.length; j++) {
+      var val = sector.data[j];
+      var cls = heatClass(val);
+      var ignite = isIgnite(sector.data, j, d.dates) ? ' ignite' : '';
+      var display = val === 0 ? '·' : val;
+      h += '<td class="' + cls + ignite + '">' + display + '</td>';
+    }
+    
+    // 合计列
+    h += '<td style="color:#e65100;font-weight:700;">' + total + '</td>';
+    
+    // 趋势列：看最近3天 vs 前3天
+    var recent3 = sector.data.slice(-3).reduce(function(s,n){return s+n;}, 0);
+    var prev3 = sector.data.slice(-6, -3).reduce(function(s,n){return s+n;}, 0);
+    var trend = '';
+    if (recent3 > prev3 * 1.5) trend = '↑升温';
+    else if (recent3 < prev3 * 0.5) trend = '↓降温';
+    else if (recent3 === 0 && prev3 === 0) trend = '—';
+    else trend = recent3 >= prev3 ? '→持平' : '→减弱';
+    var trendColor = trend.indexOf('升') > -1 ? '#c62828' : trend.indexOf('降') > -1 ? '#2e7d32' : '#999';
+    h += '<td style="color:' + trendColor + ';font-size:10px;">' + trend + '</td>';
+    
+    h += '</tr>';
+  }
+  h += '</tbody></table>';
+  
+  // ── 日期完整标注 ──
+  h += '<div style="font-size:10px;color:#999;margin-top:6px;display:flex;gap:12px;flex-wrap:wrap;">';
+  for (var k = 0; k < d.dates.length; k++) {
+    h += '<span>' + d.dates[k] + '</span>';
+  }
+  h += '</div>';
+
+  container.innerHTML = h;
+
+  // ═══════════════════════════════════
+  // 自动分析
+  // ═══════════════════════════════════
+  var analysis = [];
+
+  // 1. 找连续2天以上≥3的板块（持续热点）
+  var sustained = [];
+  for (var si = 0; si < sorted.length; si++) {
+    var sd = sorted[si].data;
+    var streak = 0, maxStreak = 0, maxStart = -1;
+    for (var di = 0; di < sd.length; di++) {
+      if (sd[di] >= 3) {
+        if (streak === 0) maxStart = di;
+        streak++;
+        if (streak > maxStreak) maxStreak = streak;
+      } else {
+        streak = 0;
+      }
+    }
+    if (maxStreak >= 2) {
+      sustained.push({ name: sorted[si].name, days: maxStreak });
+    }
+  }
+  if (sustained.length) {
+    analysis.push('🔥 <b>持续热点：</b>' + sustained.map(function(x){
+      return '<span class="tag tag-hot">' + x.name + '连' + x.days + '天</span>';
+    }).join(' '));
+  }
+
+  // 2. 找最近3天新启动的板块（前几天无，最近突然有）
+  var newIgnites = [];
+  for (var si2 = 0; si2 < sorted.length; si2++) {
+    var sd2 = sorted[si2].data;
+    var earlySum = sd2.slice(0, sd2.length - 3).reduce(function(s,n){return s+n;}, 0);
+    var lateSum = sd2.slice(-3).reduce(function(s,n){return s+n;}, 0);
+    if (earlySum <= 1 && lateSum >= 4) {
+      newIgnites.push(sorted[si2].name);
+    }
+  }
+  if (newIgnites.length) {
+    analysis.push('⚡ <b>新启动方向：</b>' + newIgnites.map(function(n){
+      return '<span class="tag tag-new">' + n + '</span>';
+    }).join(' '));
+  }
+
+  // 3. 找持续降温的板块（最近3天连续0或递减）
+  var cooling = [];
+  for (var si3 = 0; si3 < sorted.length; si3++) {
+    var sd3 = sorted[si3].data;
+    var last3 = sd3.slice(-3);
+    var firstHalf = sd3.slice(0, Math.ceil(sd3.length / 2)).reduce(function(s,n){return s+n;}, 0);
+    var secondHalf = sd3.slice(Math.ceil(sd3.length / 2)).reduce(function(s,n){return s+n;}, 0);
+    if (firstHalf >= 8 && secondHalf <= 3) {
+      cooling.push(sorted[si3].name);
+    }
+  }
+  if (cooling.length) {
+    analysis.push('❄️ <b>热度消退：</b>' + cooling.map(function(n){
+      return '<span class="tag tag-cold">' + n + '</span>';
+    }).join(' ') + ' — 前期热闹近期熄火，谨慎追高');
+  }
+
+  // 4. 当日最热板块
+  var todayIdx = d.dates.length - 1;
+  var todayTop = sorted.slice().sort(function(a,b){
+    return b.data[todayIdx] - a.data[todayIdx];
+  }).slice(0, 3);
+  if (todayTop[0].data[todayIdx] > 0) {
+    analysis.push('📊 <b>今日最强：</b>' + todayTop.map(function(x){
+      return '<span class="tag tag-hot">' + x.name + ' ' + x.data[todayIdx] + '只涨停</span>';
+    }).join(' '));
+  }
+
+  // 5. 全局判断
+  var todayTotal = sorted.reduce(function(s,sec){return s+sec.data[todayIdx];}, 0);
+  var prevTotal = sorted.reduce(function(s,sec){return s+sec.data[todayIdx-2];}, 0);
+  var globalTrend = todayTotal > prevTotal * 1.2 ? '市场涨停效应扩大，短线情绪升温' 
+    : todayTotal < prevTotal * 0.8 ? '涨停效应收缩，短线情绪降温'
+    : '涨停效应平稳，维持当前节奏';
+  analysis.push('💡 <b>全局判断：</b>' + globalTrend + '（当日' + todayTotal + '只 vs 3日前' + prevTotal + '只）');
+
+  // 合并输出
+  var analysisHtml = '';
+  for (var ai = 0; ai < analysis.length; ai++) {
+    analysisHtml += '<div style="margin-bottom:3px;">' + analysis[ai] + '</div>';
+  }
+  analysisHtml += '<div style="margin-top:6px;font-size:10px;color:#bbb;">数据更新：' + d.update_time + '</div>';
+  
+  analysisEl.innerHTML = analysisHtml;
+
+})();
+</script>
+
+</body>
+</html>

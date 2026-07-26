@@ -1,0 +1,57 @@
+=== Start Deploy (GitHub Pages) ===
+   ⚠️ 检测到 冲突标记文件: ['deploy_now.py']
+   ✓ 已精准还原 1 个含冲突标记的已跟踪文件（保留其他本地提交）
+   [CMD] git -c http.version=HTTP/1.1 show origin/main:.deploy_lock... -> fatal: path '.deploy_lock' does not exist in 'origin/main'
+   [LOCK] acquired by LEMONCAT
+   WARN --force: skipping pre-deploy audit
+=======================================================
+0b. Scanning origin/main for conflict markers in data/ ...
+=======================================================
+   ✅ origin/main data 扫描通过 (74 个文件, 0 冲突标记)
+   📝 检测到 15 个源码变更
+      workbuddy/memory/2026-07-21.md
+      _build_cp_gtimg_1009.log
+      batch_update.py
+      data_freshness_watchdog.py
+      report_heartbeat.py
+      ... 共 15 个
+   ✓ 已提交: auto: source sync 07-21 10:18 — 2026-07-21.md, _build_cp_gtimg_1009.log, batch_update.py
+   ✓ 已推送到 main（小九能拉到了）
+   🔄 强制重建 dist（本地模板为权威版本）...
+   📥 拉取最新模板代码 from origin/main ...
+   ✓ 已更新 index_master.html (from origin/main)
+   ✓ 已更新 update_data_v2.py (from origin/main)
+   执行: python update_data_v2.py --fast
+     ✓ 已保存: index.html + index_master.html (1,454,751 字符)
+     ✓ 已同步 data/*.json → dist/data/
+     ✓ 已同步静态资源 → dist/
+   ✅ 数据块更新成功！
+      部署: python deploy_now.py
+      网址: https://ah-quant999.github.io/quant-scanner-v6/
+   ✓ dist 重建成功
+   执行: python enhance_dist.py
+   ✓ enhance_dist 完成
+   🔍 验证 dist/index.html 数据注入...
+   ✓ 验证通过: LHB_DATA, HERRING_DATA, NORTH_FUND_DATA, MAIN_STOCK_DATA
+   🔗 重建并校验独立页（确保与主站同步部署）...
+   =======================================================
+   🔗 主站 ↔ 独立页 同步校验闸门
+   =======================================================
+   ✓ extract_panels_v6.py 重建 standalone/ 成功
+   ✓ 已同步 13 个独立页到 dist/standalone/
+   ✅ 主站/独立页同源同戳校验通过 (标记 51 个, POST_CLOSE_TIME=2026-07-20 15:30:00, 体积 1454751B/1457055B)
+   ✅ 主站与独立页已确认同步，可安全上线
+   ✓ 独立页已与主站同步校验通过
+1. Cloning gh-pages from GitHub to temp dir...
+   Cloned, cleaning old files...
+1.5. Busting CDN cache...
+   Build stamp: 20260721101903
+2. Copying dist/ ...
+   Copied 92 files
+3. Committing and pushing...
+   ✓ ls-remote 校验通过 (head=f32eac21741b)
+4. Waiting for GitHub Pages build...
+
+SUCCESS! Deployed to https://ah-quant999.github.io/quant-scanner-v6/
+   (GitHub Pages build takes 1-2 min)
+   💓 上报本机心跳到 origin/main ...

@@ -1,0 +1,544 @@
+{
+  "update_time": "2026-07-24 19:25",
+  "total": 51,
+  "top_gainers": [
+    {
+      "code": "600617",
+      "name": "国新能源",
+      "pct_chg": 10.06
+    },
+    {
+      "code": "002298",
+      "name": "中电鑫龙",
+      "pct_chg": 10.05
+    },
+    {
+      "code": "002265",
+      "name": "建设工业",
+      "pct_chg": 10.01
+    },
+    {
+      "code": "603580",
+      "name": "艾艾精工",
+      "pct_chg": 10.0
+    },
+    {
+      "code": "000011",
+      "name": "深物业A",
+      "pct_chg": 9.99
+    },
+    {
+      "code": "002879",
+      "name": "长缆科技",
+      "pct_chg": 9.99
+    },
+    {
+      "code": "601606",
+      "name": "长城军工",
+      "pct_chg": 9.99
+    },
+    {
+      "code": "300804",
+      "name": "广康生化",
+      "pct_chg": 9.98
+    },
+    {
+      "code": "600539",
+      "name": "狮头股份",
+      "pct_chg": 9.98
+    },
+    {
+      "code": "603221",
+      "name": "爱丽家居",
+      "pct_chg": 9.98
+    },
+    {
+      "code": "600698",
+      "name": "湖南天雁",
+      "pct_chg": 9.97
+    },
+    {
+      "code": "002218",
+      "name": "拓日新能",
+      "pct_chg": 9.95
+    },
+    {
+      "code": "300779",
+      "name": "惠城环保",
+      "pct_chg": 9.55
+    },
+    {
+      "code": "300261",
+      "name": "雅本化学",
+      "pct_chg": 8.59
+    },
+    {
+      "code": "001258",
+      "name": "立新能源",
+      "pct_chg": 7.6
+    }
+  ],
+  "top_sectors": [],
+  "stocks": [
+    {
+      "code": "000001",
+      "name": "平安银行",
+      "pct_chg": 0.18,
+      "price": 11.1,
+      "prev_high": 11.08,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.59
+    },
+    {
+      "code": "000011",
+      "name": "深物业A",
+      "pct_chg": 9.99,
+      "price": 8.26,
+      "prev_high": 7.51,
+      "prev_high_date": "2026-07-23",
+      "turnover": 4.76
+    },
+    {
+      "code": "000525",
+      "name": "红太阳",
+      "pct_chg": 0.23,
+      "price": 4.36,
+      "prev_high": 4.35,
+      "prev_high_date": "2026-07-23",
+      "turnover": 2.44
+    },
+    {
+      "code": "001258",
+      "name": "立新能源",
+      "pct_chg": 7.6,
+      "price": 13.03,
+      "prev_high": 12.11,
+      "prev_high_date": "2026-07-23",
+      "turnover": 22.08
+    },
+    {
+      "code": "002003",
+      "name": "伟星股份",
+      "pct_chg": 0.4,
+      "price": 10.0,
+      "prev_high": 10.0,
+      "prev_high_date": "2026-07-20",
+      "turnover": 0.85
+    },
+    {
+      "code": "002218",
+      "name": "拓日新能",
+      "pct_chg": 9.95,
+      "price": 4.2,
+      "prev_high": 3.93,
+      "prev_high_date": "2026-07-01",
+      "turnover": 17.96
+    },
+    {
+      "code": "002246",
+      "name": "北化股份",
+      "pct_chg": 3.63,
+      "price": 19.39,
+      "prev_high": 19.38,
+      "prev_high_date": "2026-06-24",
+      "turnover": 4.56
+    },
+    {
+      "code": "002265",
+      "name": "建设工业",
+      "pct_chg": 10.01,
+      "price": 19.34,
+      "prev_high": 18.51,
+      "prev_high_date": "2026-07-06",
+      "turnover": 2.04
+    },
+    {
+      "code": "002298",
+      "name": "中电鑫龙",
+      "pct_chg": 10.05,
+      "price": 8.1,
+      "prev_high": 7.96,
+      "prev_high_date": "2026-06-24",
+      "turnover": 8.31
+    },
+    {
+      "code": "002749",
+      "name": "国光股份",
+      "pct_chg": 2.4,
+      "price": 8.55,
+      "prev_high": 8.4,
+      "prev_high_date": "2026-07-17",
+      "turnover": 1.13
+    },
+    {
+      "code": "002774",
+      "name": "快意电梯",
+      "pct_chg": 4.44,
+      "price": 17.64,
+      "prev_high": 16.89,
+      "prev_high_date": "2026-07-23",
+      "turnover": 8.4
+    },
+    {
+      "code": "002832",
+      "name": "比音勒芬",
+      "pct_chg": 0.97,
+      "price": 22.81,
+      "prev_high": 22.59,
+      "prev_high_date": "2026-07-23",
+      "turnover": 4.63
+    },
+    {
+      "code": "002860",
+      "name": "星帅尔",
+      "pct_chg": 5.2,
+      "price": 17.79,
+      "prev_high": 17.56,
+      "prev_high_date": "2026-07-06",
+      "turnover": 11.53
+    },
+    {
+      "code": "002879",
+      "name": "长缆科技",
+      "pct_chg": 9.99,
+      "price": 18.05,
+      "prev_high": 16.41,
+      "prev_high_date": "2026-07-23",
+      "turnover": 14.91
+    },
+    {
+      "code": "002911",
+      "name": "佛燃能源",
+      "pct_chg": 0.09,
+      "price": 11.13,
+      "prev_high": 11.12,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.83
+    },
+    {
+      "code": "300062",
+      "name": "中能电气",
+      "pct_chg": 7.09,
+      "price": 6.8,
+      "prev_high": 6.35,
+      "prev_high_date": "2026-07-23",
+      "turnover": 25.38
+    },
+    {
+      "code": "300261",
+      "name": "雅本化学",
+      "pct_chg": 8.59,
+      "price": 4.93,
+      "prev_high": 4.72,
+      "prev_high_date": "2026-07-16",
+      "turnover": 6.33
+    },
+    {
+      "code": "300779",
+      "name": "惠城环保",
+      "pct_chg": 9.55,
+      "price": 77.22,
+      "prev_high": 70.49,
+      "prev_high_date": "2026-07-23",
+      "turnover": 10.88
+    },
+    {
+      "code": "300804",
+      "name": "广康生化",
+      "pct_chg": 9.98,
+      "price": 36.15,
+      "prev_high": 35.79,
+      "prev_high_date": "2026-07-15",
+      "turnover": 10.63
+    },
+    {
+      "code": "300847",
+      "name": "中船汉光",
+      "pct_chg": 4.94,
+      "price": 14.23,
+      "prev_high": 13.56,
+      "prev_high_date": "2026-07-23",
+      "turnover": 4.0
+    },
+    {
+      "code": "300996",
+      "name": "普联软件",
+      "pct_chg": 6.51,
+      "price": 12.93,
+      "prev_high": 12.45,
+      "prev_high_date": "2026-07-01",
+      "turnover": 10.09
+    },
+    {
+      "code": "600015",
+      "name": "华夏银行",
+      "pct_chg": 0.43,
+      "price": 7.01,
+      "prev_high": 6.98,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.54
+    },
+    {
+      "code": "600036",
+      "name": "招商银行",
+      "pct_chg": 0.74,
+      "price": 39.2,
+      "prev_high": 38.91,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.48
+    },
+    {
+      "code": "600050",
+      "name": "中国联通",
+      "pct_chg": 0.0,
+      "price": 4.42,
+      "prev_high": 4.42,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.46
+    },
+    {
+      "code": "600377",
+      "name": "宁沪高速",
+      "pct_chg": 0.08,
+      "price": 12.21,
+      "prev_high": 12.2,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.3
+    },
+    {
+      "code": "600539",
+      "name": "狮头股份",
+      "pct_chg": 9.98,
+      "price": 18.51,
+      "prev_high": 17.45,
+      "prev_high_date": "2026-07-09",
+      "turnover": 10.63
+    },
+    {
+      "code": "600617",
+      "name": "国新能源",
+      "pct_chg": 10.06,
+      "price": 3.39,
+      "prev_high": 3.08,
+      "prev_high_date": "2026-07-23",
+      "turnover": 2.74
+    },
+    {
+      "code": "600698",
+      "name": "湖南天雁",
+      "pct_chg": 9.97,
+      "price": 6.84,
+      "prev_high": 6.22,
+      "prev_high_date": "2026-07-23",
+      "turnover": 8.23
+    },
+    {
+      "code": "600722",
+      "name": "金牛化工",
+      "pct_chg": 4.86,
+      "price": 11.43,
+      "prev_high": 10.9,
+      "prev_high_date": "2026-07-23",
+      "turnover": 24.02
+    },
+    {
+      "code": "600741",
+      "name": "华域汽车",
+      "pct_chg": 0.87,
+      "price": 17.35,
+      "prev_high": 17.24,
+      "prev_high_date": "2026-07-21",
+      "turnover": 0.66
+    },
+    {
+      "code": "600919",
+      "name": "江苏银行",
+      "pct_chg": 0.26,
+      "price": 11.57,
+      "prev_high": 11.54,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.34
+    },
+    {
+      "code": "600967",
+      "name": "内蒙一机",
+      "pct_chg": 3.77,
+      "price": 11.56,
+      "prev_high": 11.24,
+      "prev_high_date": "2026-07-03",
+      "turnover": 4.12
+    },
+    {
+      "code": "601288",
+      "name": "农业银行",
+      "pct_chg": 1.06,
+      "price": 6.66,
+      "prev_high": 6.61,
+      "prev_high_date": "2026-07-20",
+      "turnover": 0.12
+    },
+    {
+      "code": "601326",
+      "name": "秦港股份",
+      "pct_chg": 0.59,
+      "price": 3.43,
+      "prev_high": 3.41,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.58
+    },
+    {
+      "code": "601328",
+      "name": "交通银行",
+      "pct_chg": 1.29,
+      "price": 7.04,
+      "prev_high": 7.03,
+      "prev_high_date": "2026-07-20",
+      "turnover": 0.89
+    },
+    {
+      "code": "601398",
+      "name": "工商银行",
+      "pct_chg": 0.91,
+      "price": 7.75,
+      "prev_high": 7.74,
+      "prev_high_date": "2026-07-20",
+      "turnover": 0.14
+    },
+    {
+      "code": "601598",
+      "name": "中国外运",
+      "pct_chg": 1.0,
+      "price": 6.05,
+      "prev_high": 5.99,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.31
+    },
+    {
+      "code": "601606",
+      "name": "长城军工",
+      "pct_chg": 9.99,
+      "price": 32.05,
+      "prev_high": 29.18,
+      "prev_high_date": "2026-07-03",
+      "turnover": 4.18
+    },
+    {
+      "code": "601668",
+      "name": "中国建筑",
+      "pct_chg": 0.0,
+      "price": 4.7,
+      "prev_high": 4.7,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.49
+    },
+    {
+      "code": "601827",
+      "name": "三峰环境",
+      "pct_chg": 0.12,
+      "price": 8.01,
+      "prev_high": 8.0,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.56
+    },
+    {
+      "code": "601857",
+      "name": "中国石油",
+      "pct_chg": 1.38,
+      "price": 11.03,
+      "prev_high": 11.01,
+      "prev_high_date": "2026-07-20",
+      "turnover": 0.15
+    },
+    {
+      "code": "601919",
+      "name": "中远海控",
+      "pct_chg": 0.33,
+      "price": 15.32,
+      "prev_high": 15.27,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.81
+    },
+    {
+      "code": "601998",
+      "name": "中信银行",
+      "pct_chg": 0.8,
+      "price": 7.61,
+      "prev_high": 7.55,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.15
+    },
+    {
+      "code": "603221",
+      "name": "爱丽家居",
+      "pct_chg": 9.98,
+      "price": 14.0,
+      "prev_high": 12.73,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.41
+    },
+    {
+      "code": "603496",
+      "name": "恒为科技",
+      "pct_chg": 3.06,
+      "price": 26.26,
+      "prev_high": 26.01,
+      "prev_high_date": "2026-07-22",
+      "turnover": 10.23
+    },
+    {
+      "code": "603558",
+      "name": "健盛集团",
+      "pct_chg": 0.32,
+      "price": 12.46,
+      "prev_high": 12.42,
+      "prev_high_date": "2026-07-23",
+      "turnover": 1.58
+    },
+    {
+      "code": "603580",
+      "name": "艾艾精工",
+      "pct_chg": 10.0,
+      "price": 46.3,
+      "prev_high": 44.92,
+      "prev_high_date": "2026-07-17",
+      "turnover": 12.05
+    },
+    {
+      "code": "603766",
+      "name": "隆鑫通用",
+      "pct_chg": 0.36,
+      "price": 13.82,
+      "prev_high": 13.77,
+      "prev_high_date": "2026-07-23",
+      "turnover": 0.85
+    },
+    {
+      "code": "603983",
+      "name": "丸美生物",
+      "pct_chg": 3.62,
+      "price": 31.78,
+      "prev_high": 30.87,
+      "prev_high_date": "2026-07-06",
+      "turnover": 2.95
+    },
+    {
+      "code": "605028",
+      "name": "世茂能源",
+      "pct_chg": 4.21,
+      "price": 27.2,
+      "prev_high": 26.1,
+      "prev_high_date": "2026-07-23",
+      "turnover": 5.97
+    },
+    {
+      "code": "605162",
+      "name": "新中港",
+      "pct_chg": 2.25,
+      "price": 8.64,
+      "prev_high": 8.45,
+      "prev_high_date": "2026-07-23",
+      "turnover": 14.55
+    }
+  ],
+  "note": "数据源: akshare stock_rank_cxg_ths(), 板块分析需neodata支持"
+}

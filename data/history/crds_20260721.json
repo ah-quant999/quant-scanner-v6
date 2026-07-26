@@ -1,0 +1,439 @@
+{
+  "update_time": "2026-07-21 19:09:12",
+  "total_scanned": 23,
+  "market_context": {
+    "valid": true,
+    "validity": "较有效",
+    "summary": "上证今日 -1.28%，市场偏弱，CRDS 较有效",
+    "today_pct": -1.28,
+    "prev_pct": 1.86,
+    "trend5_pct": 1.42,
+    "color": "#1D9E75"
+  },
+  "cond1_list": [
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "board_label": "主板"
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "board_label": "主板"
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "board_label": "主板"
+    }
+  ],
+  "cond2_list": [],
+  "cond3_list": [
+    {
+      "code": "300001",
+      "name": "特锐德",
+      "board_label": "创业板"
+    },
+    {
+      "code": "002074",
+      "name": "国轩高科",
+      "board_label": "主板"
+    },
+    {
+      "code": "300496",
+      "name": "中科创达",
+      "board_label": "创业板"
+    },
+    {
+      "code": "000800",
+      "name": "一汽解放",
+      "board_label": "主板"
+    }
+  ],
+  "elite": [],
+  "advanced": [],
+  "watch": [
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "score": 0
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "score": 0
+    },
+    {
+      "code": "300001",
+      "name": "特锐德",
+      "score": 0
+    },
+    {
+      "code": "002074",
+      "name": "国轩高科",
+      "score": 0
+    },
+    {
+      "code": "300496",
+      "name": "中科创达",
+      "score": 0
+    },
+    {
+      "code": "000800",
+      "name": "一汽解放",
+      "score": 0
+    },
+    {
+      "code": "600584",
+      "name": "长电科技",
+      "score": 0
+    }
+  ],
+  "detail": {
+    "688012": {
+      "name": "中微公司",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 1,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.26,
+      "ts_peak": 0,
+      "market_label": "沪",
+      "board_label": "科创板"
+    },
+    "2050": {
+      "name": "三花智控",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.14,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "002371": {
+      "name": "北方华创",
+      "score": 0,
+      "conds": 1,
+      "cond1": true,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 2,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.43,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "002851": {
+      "name": "麦格米特",
+      "score": 0,
+      "conds": 1,
+      "cond1": true,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 2,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.47,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "000338": {
+      "name": "潍柴动力",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 1,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.16,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "300502": {
+      "name": "新易盛",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.35,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "300476": {
+      "name": "胜宏科技",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.21,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "000951": {
+      "name": "中国重汽",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.17,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "002518": {
+      "name": "科士达",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.36,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "300001": {
+      "name": "特锐德",
+      "score": 0,
+      "conds": 1,
+      "cond1": false,
+      "cond2": false,
+      "cond3": true,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.55,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "002074": {
+      "name": "国轩高科",
+      "score": 0,
+      "conds": 1,
+      "cond1": false,
+      "cond2": false,
+      "cond3": true,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 2.23,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "300496": {
+      "name": "中科创达",
+      "score": 0,
+      "conds": 1,
+      "cond1": false,
+      "cond2": false,
+      "cond3": true,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.52,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "002335": {
+      "name": "科华数据",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 0.86,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "002460": {
+      "name": "赣锋锂业",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.24,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "300274": {
+      "name": "阳光电源",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.21,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "300750": {
+      "name": "宁德时代",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.43,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "601099": {
+      "name": "太平洋",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.07,
+      "ts_peak": 0,
+      "market_label": "沪",
+      "board_label": "主板"
+    },
+    "600031": {
+      "name": "三一重工",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.22,
+      "ts_peak": 0,
+      "market_label": "沪",
+      "board_label": "主板"
+    },
+    "000800": {
+      "name": "一汽解放",
+      "score": 0,
+      "conds": 1,
+      "cond1": false,
+      "cond2": false,
+      "cond3": true,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.63,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "主板"
+    },
+    "600584": {
+      "name": "长电科技",
+      "score": 0,
+      "conds": 1,
+      "cond1": true,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 2,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.46,
+      "ts_peak": 0,
+      "market_label": "沪",
+      "board_label": "主板"
+    },
+    "300394": {
+      "name": "天孚通信",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.37,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "300024": {
+      "name": "机器人",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 0.97,
+      "ts_peak": 0,
+      "market_label": "深",
+      "board_label": "创业板"
+    },
+    "601100": {
+      "name": "恒立液压",
+      "score": 0,
+      "conds": 0,
+      "cond1": false,
+      "cond2": false,
+      "cond3": false,
+      "zt_count": 0,
+      "zt_down_count": 0,
+      "af_peak": 0,
+      "vr_peak": 1.01,
+      "ts_peak": 0,
+      "market_label": "沪",
+      "board_label": "主板"
+    }
+  }
+}

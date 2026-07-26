@@ -1,0 +1,10 @@
+[19:31:53] 概念涨跌幅排名 v2
+==================================================
+[19:31:53] 获取概念板块列表（第1次）...
+[19:32:01] ✗ 第1次失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[19:32:03] 获取概念板块列表（第2次）...
+[19:32:11] ✗ 第2次失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[19:32:13] 获取概念板块列表（第3次）...
+[19:32:19] ✗ 第3次失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[19:32:19] ⚠ 获取失败，检查是否需要保留旧数据
+[19:32:19] ✓ 保留上一份有效数据(40条)，不覆盖

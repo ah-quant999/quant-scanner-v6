@@ -1,0 +1,99 @@
+============================================================
+更新数据块 — 快速模式(跳过宏观采集+概念查询+JS验证)
+============================================================
+  母版: 6,875,405 字符
+  ▸ 兜底补全 STOCK_LIST: +155 只（来自金股池+扫描+监控+行业）
+  ▸ GOLD_POOL: 从扫描数据同步 76 只 + fallback 17 只 = 93 只补全latest
+  ▸ GOLD_POOL: 已写回磁盘 (update_time: 2026-07-09 → 2026-07-09, 517只, EMA完整)
+  ✓ 金股池 enrich: 55/95 只有行业标签
+  ▸ 投行覆盖: 1 只
+  ▸ 快速模式：跳过宏观数据刷新
+
+  数据:
+  ▸ SCAN_DATA:  53 条, time=2026-07-09 15:27:56
+  ▸ WATCH_DATA: 76 条
+  ▸ GOLD_POOL:  95 只
+  ▸ STOCK_LIST: 5357 只
+  ▸ RECOMMEND:  1 条推荐
+  ▸ SH_FIB:     7 个窗口
+  ▸ SECTOR_FLOW:40 个板块
+  ▸ SH_SZ_HIST: 61 天历史
+  ▸ MARKET_ALERTS: 有数据
+  ▸ MARGIN_DATA: 60 天两融数据
+  ▸ ETF_SUB: 55 天ETF数据
+  ▸ MACRO_DATA: 更新=2026-07-09 14:29:51
+  ▸ FOMC: 有速览 (会议=2025-10-30)
+  ▸ 行业/概念注入: 更新 53 只股票的 sectors 标签
+  ▸ 快速模式：跳过概念查询
+  ✓ SCAN_DATA: 380,589 → 99,465 字符
+  ✓ WATCH_DATA: 1,194,834 → 132,784 字符
+  ✓ GOLD_POOL: 4,018,310 → 175,303 字符
+  ✓ STOCK_LIST: 325,344 → 301,409 字符
+  ✓ RECOMMEND: 25,961 → 1,751 字符
+  ✓ SH_FIB: 2,429 → 2,197 字符
+  ✓ SZ_FIB: 2,251 → 2,253 字符
+  ✓ SECTOR_FUND_FLOW: 14,369 → 11,632 字符
+  ✓ SH_SZ_HISTORY: 7,283 → 11,038 字符
+  ✓ NT_DATA: 38,325 → 38,947 字符
+  ✓ CONCEPT_RANKING: 1,459 → 1,459 字符
+  ✓ MARKET_ALERTS: 627 → 624 字符
+  ✓ MARGIN_DATA: 7,157 → 7,279 字符
+  ✓ ETF_SUBSCRIPTION: 5,839 → 11,512 字符
+  ✓ MACRO_DATA: 2,205 → 2,155 字符
+  ✓ HERRING_DATA: 2,836 → 2,828 字符
+  ✓ SECTOR_RS: 9,986 → 21,675 字符
+  ✓ IPO_DATA: 470 → 7,076 字符
+  ✓ LHB_DATA: 33,407 → 24,874 字符
+  ✓ MAIN_STOCK: 149 → 149 字符
+  ✓ MAIN_WEEK: 738 → 740 字符
+  ✓ NORTH_FUND: 1,903 → 1,914 字符
+  ✓ MAHORO_COVERAGE: 334 → 109 字符
+  ✓ SUSPENSION_ALERT: 1,161 → 1,163 字符
+  ✓ STOCK_DEVIATION: 119 → 119 字符
+  ✓ FOMC_SUMMARY: 530 → 237 字符
+  ✓ CFFEX_HOLDINGS: 1,471 → 1,482 字符
+  ✓ INST_TRADE: 23,608 → 20,463 字符
+  ⚠️  找不到 WORLD_CUP，跳过
+  ⚠️  找不到 LOTTERY_DATA，跳过
+  ✓ LIMIT_UP_HEATMAP: 1,123 → 1,144 字符
+  ✓ W52_HIGH: 29,087 → 14,744 字符
+  ✓ ANALYST_RATINGS: 1,334 → 347 字符
+  ✓ POLICY_DENSITY: 186 → 476 字符
+  ✓ TOP10_DAILY: 10,105 → 10,276 字符
+  ✓ INDUSTRY_MAP: 182,040 → 12,079 字符
+  ✓ ZHAIXINGGE_DATA: 62 → 62 字符
+  ✓ GUANLAN_REPORTS: 62 → 43,935 字符
+  ✓ CANDIDATE_POOL: 28 → 43,949 字符
+  ✓ NT_DATA.calendar 已注入最新数据 (553 条，含华为HDC、苹果WWDC等)
+  ✓ 密码页完好
+  ✓ 宏观观测表格渲染JS已注入
+  ✓ triple_resonance.html 已嵌入历史数据
+  ✓ 已保存: index.html + index_master.html (1,563,379 字符)
+
+  JS 语法验证:
+  SCAN_DATA: OK
+WATCH_DATA: OK
+GOLD_POOL: OK
+STOCK_LIST: OK
+NT_DATA: OK
+  全量JS检查:
+    ✓ 脚本块2
+    ✓ 脚本块4
+    ✓ 脚本块5
+    ✓ 脚本块6
+    ✓ 脚本块7
+    ✓ 脚本块8
+    检查 6 个脚本块，0 个错误
+  运行时冒烟测试:
+  ⚠️ 运行时冒烟: 2 个异常
+     Mismatched bracket: '{' (line ~41999) vs ')' (line ~42007)
+     Unclosed '[' at script line ~41927
+  ⚠️ 冒烟测试有警告但继续部署
+
+  ✓ 已保存: index.html + index_master.html (1,563,379 字符)
+  ✓ 已同步 data/*.json → dist/data/
+  ✓ 已同步静态资源 → dist/
+
+✅ 数据块更新成功！
+   部署: python deploy_now.py
+   网址: https://ah-quant999.github.io/quant-scanner-v6/

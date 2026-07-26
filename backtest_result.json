@@ -1,0 +1,845 @@
+{
+  "total": 40,
+  "with_price_data": 28,
+  "future_1d": {
+    "up": 10,
+    "down": 18,
+    "flat": 0
+  },
+  "future_3d": {
+    "up": 9,
+    "down": 17,
+    "flat": 2
+  },
+  "future_5d": {
+    "up": 3,
+    "down": 24,
+    "flat": 1
+  },
+  "per_leg": {
+    "缠论买_日K": {
+      "n": 7,
+      "future_1d": {
+        "up": 2,
+        "down": 5,
+        "flat": 0
+      },
+      "future_3d": {
+        "up": 2,
+        "down": 5,
+        "flat": 0
+      },
+      "future_5d": {
+        "up": 1,
+        "down": 6,
+        "flat": 0
+      }
+    },
+    "金钻_黄柱": {
+      "n": 1,
+      "future_1d": {
+        "up": 0,
+        "down": 1,
+        "flat": 0
+      },
+      "future_3d": {
+        "up": 0,
+        "down": 1,
+        "flat": 0
+      },
+      "future_5d": {
+        "up": 0,
+        "down": 1,
+        "flat": 0
+      }
+    },
+    "金钻_起涨": {
+      "n": 0,
+      "future_1d": {
+        "up": 0,
+        "down": 0,
+        "flat": 0
+      },
+      "future_3d": {
+        "up": 0,
+        "down": 0,
+        "flat": 0
+      },
+      "future_5d": {
+        "up": 0,
+        "down": 0,
+        "flat": 0
+      }
+    },
+    "四量图_机构变红": {
+      "n": 27,
+      "future_1d": {
+        "up": 10,
+        "down": 17,
+        "flat": 0
+      },
+      "future_3d": {
+        "up": 9,
+        "down": 16,
+        "flat": 2
+      },
+      "future_5d": {
+        "up": 3,
+        "down": 23,
+        "flat": 1
+      }
+    },
+    "上涨趋势": {
+      "n": 22,
+      "future_1d": {
+        "up": 8,
+        "down": 14,
+        "flat": 0
+      },
+      "future_3d": {
+        "up": 8,
+        "down": 12,
+        "flat": 2
+      },
+      "future_5d": {
+        "up": 2,
+        "down": 19,
+        "flat": 1
+      }
+    }
+  },
+  "details": [
+    {
+      "code": "600172",
+      "name": "黄河旋风",
+      "signal_count": 3,
+      "price_at_signal": 18.55,
+      "price_1d": 18.36,
+      "return_1d": -1.0242587601078235
+    },
+    {
+      "code": "600172",
+      "name": "黄河旋风",
+      "signal_count": 3,
+      "price_at_signal": 18.55,
+      "price_3d": 18.7,
+      "return_3d": 0.8086253369272159
+    },
+    {
+      "code": "600172",
+      "name": "黄河旋风",
+      "signal_count": 3,
+      "price_at_signal": 18.55,
+      "price_5d": 15.3,
+      "return_5d": -17.52021563342318
+    },
+    {
+      "code": "688689",
+      "name": "银河微电",
+      "signal_count": 2,
+      "price_at_signal": 80.75,
+      "price_1d": 75.15,
+      "return_1d": -6.934984520123832
+    },
+    {
+      "code": "688689",
+      "name": "银河微电",
+      "signal_count": 2,
+      "price_at_signal": 80.75,
+      "price_3d": 67.34,
+      "return_3d": -16.606811145510832
+    },
+    {
+      "code": "688689",
+      "name": "银河微电",
+      "signal_count": 2,
+      "price_at_signal": 80.75,
+      "price_5d": 53.17,
+      "return_5d": -34.154798761609904
+    },
+    {
+      "code": "300607",
+      "name": "拓斯达",
+      "signal_count": 2,
+      "price_at_signal": 45.01,
+      "price_1d": 42.96,
+      "return_1d": -4.554543434792262
+    },
+    {
+      "code": "300607",
+      "name": "拓斯达",
+      "signal_count": 2,
+      "price_at_signal": 45.01,
+      "price_3d": 38.82,
+      "return_3d": -13.75249944456787
+    },
+    {
+      "code": "300607",
+      "name": "拓斯达",
+      "signal_count": 2,
+      "price_at_signal": 45.01,
+      "price_5d": 35.41,
+      "return_5d": -21.32859364585648
+    },
+    {
+      "code": "688372",
+      "name": "伟测科技",
+      "signal_count": 2,
+      "price_at_signal": 180.88,
+      "price_1d": 182.14,
+      "return_1d": 0.6965944272445771
+    },
+    {
+      "code": "688372",
+      "name": "伟测科技",
+      "signal_count": 2,
+      "price_at_signal": 180.88,
+      "price_3d": 188.88,
+      "return_3d": 4.42282176028306
+    },
+    {
+      "code": "688372",
+      "name": "伟测科技",
+      "signal_count": 2,
+      "price_at_signal": 180.88,
+      "price_5d": 166.53,
+      "return_5d": -7.933436532507737
+    },
+    {
+      "code": "688702",
+      "name": "盛科通信",
+      "signal_count": 2,
+      "price_at_signal": 357.0,
+      "price_1d": 382.0,
+      "return_1d": 7.002801120448179
+    },
+    {
+      "code": "688702",
+      "name": "盛科通信",
+      "signal_count": 2,
+      "price_at_signal": 357.0,
+      "price_3d": 422.0,
+      "return_3d": 18.207282913165265
+    },
+    {
+      "code": "688702",
+      "name": "盛科通信",
+      "signal_count": 2,
+      "price_at_signal": 357.0,
+      "price_5d": 393.0,
+      "return_5d": 10.084033613445378
+    },
+    {
+      "code": "002056",
+      "name": "横店东磁",
+      "signal_count": 2,
+      "price_at_signal": 30.78,
+      "price_1d": 30.95,
+      "return_1d": 0.5523066926575638
+    },
+    {
+      "code": "002056",
+      "name": "横店东磁",
+      "signal_count": 2,
+      "price_at_signal": 30.78,
+      "price_3d": 27.91,
+      "return_3d": -9.324236517218976
+    },
+    {
+      "code": "002056",
+      "name": "横店东磁",
+      "signal_count": 2,
+      "price_at_signal": 30.78,
+      "price_5d": 24.08,
+      "return_5d": -21.767381416504232
+    },
+    {
+      "code": "300145",
+      "name": "南方泵业",
+      "signal_count": 2,
+      "price_at_signal": 6.03,
+      "price_1d": 6.45,
+      "return_1d": 6.965174129353232
+    },
+    {
+      "code": "300145",
+      "name": "南方泵业",
+      "signal_count": 2,
+      "price_at_signal": 6.03,
+      "price_3d": 6.36,
+      "return_3d": 5.472636815920398
+    },
+    {
+      "code": "300145",
+      "name": "南方泵业",
+      "signal_count": 2,
+      "price_at_signal": 6.03,
+      "price_5d": 5.63,
+      "return_5d": -6.63349917081261
+    },
+    {
+      "code": "01024",
+      "name": "快手-W",
+      "price_data": "N/A"
+    },
+    {
+      "code": "688141",
+      "name": "杰华特",
+      "signal_count": 2,
+      "price_at_signal": 168.26,
+      "price_1d": 162.92,
+      "return_1d": -3.173659812195414
+    },
+    {
+      "code": "688141",
+      "name": "杰华特",
+      "signal_count": 2,
+      "price_at_signal": 168.26,
+      "price_3d": 174.23,
+      "return_3d": 3.548080351836443
+    },
+    {
+      "code": "688141",
+      "name": "杰华特",
+      "signal_count": 2,
+      "price_at_signal": 168.26,
+      "price_5d": 138.35,
+      "return_5d": -17.77606085819565
+    },
+    {
+      "code": "300602",
+      "name": "飞荣达",
+      "signal_count": 2,
+      "price_at_signal": 49.47,
+      "price_1d": 46.73,
+      "return_1d": -5.538710329492626
+    },
+    {
+      "code": "300602",
+      "name": "飞荣达",
+      "signal_count": 2,
+      "price_at_signal": 49.47,
+      "price_3d": 46.87,
+      "return_3d": -5.255710531635337
+    },
+    {
+      "code": "300602",
+      "name": "飞荣达",
+      "signal_count": 2,
+      "price_at_signal": 49.47,
+      "price_5d": 40.37,
+      "return_5d": -18.394986860723677
+    },
+    {
+      "code": "002353",
+      "name": "杰瑞股份",
+      "signal_count": 2,
+      "price_at_signal": 171.11,
+      "price_1d": 168.81,
+      "return_1d": -1.3441645724972304
+    },
+    {
+      "code": "002353",
+      "name": "杰瑞股份",
+      "signal_count": 2,
+      "price_at_signal": 171.11,
+      "price_3d": 168.0,
+      "return_3d": -1.8175442697679935
+    },
+    {
+      "code": "002353",
+      "name": "杰瑞股份",
+      "signal_count": 2,
+      "price_at_signal": 171.11,
+      "price_5d": 138.79,
+      "return_5d": -18.88843434048274
+    },
+    {
+      "code": "002536",
+      "name": "飞龙股份",
+      "signal_count": 2,
+      "price_at_signal": 55.0,
+      "price_1d": 53.05,
+      "return_1d": -3.5454545454545507
+    },
+    {
+      "code": "002536",
+      "name": "飞龙股份",
+      "signal_count": 2,
+      "price_at_signal": 55.0,
+      "price_3d": 52.69,
+      "return_3d": -4.200000000000005
+    },
+    {
+      "code": "002536",
+      "name": "飞龙股份",
+      "signal_count": 2,
+      "price_at_signal": 55.0,
+      "price_5d": 49.15,
+      "return_5d": -10.63636363636364
+    },
+    {
+      "code": "688123",
+      "name": "聚辰股份",
+      "signal_count": 2,
+      "price_at_signal": 214.99,
+      "price_1d": 212.54,
+      "return_1d": -1.1395878878087433
+    },
+    {
+      "code": "688123",
+      "name": "聚辰股份",
+      "signal_count": 2,
+      "price_at_signal": 214.99,
+      "price_3d": 217.12,
+      "return_3d": 0.9907437555235106
+    },
+    {
+      "code": "688123",
+      "name": "聚辰股份",
+      "signal_count": 2,
+      "price_at_signal": 214.99,
+      "price_5d": 185.0,
+      "return_5d": -13.949486022605706
+    },
+    {
+      "code": "02628",
+      "name": "中国人寿",
+      "price_data": "N/A"
+    },
+    {
+      "code": "300199",
+      "name": "翰宇药业",
+      "signal_count": 2,
+      "price_at_signal": 25.8,
+      "price_1d": 24.7,
+      "return_1d": -4.263565891472874
+    },
+    {
+      "code": "300199",
+      "name": "翰宇药业",
+      "signal_count": 2,
+      "price_at_signal": 25.8,
+      "price_3d": 25.78,
+      "return_3d": -0.07751937984495957
+    },
+    {
+      "code": "300199",
+      "name": "翰宇药业",
+      "signal_count": 2,
+      "price_at_signal": 25.8,
+      "price_5d": 23.5,
+      "return_5d": -8.914728682170544
+    },
+    {
+      "code": "688396",
+      "name": "华润微",
+      "signal_count": 2,
+      "price_at_signal": 86.03,
+      "price_1d": 87.3,
+      "return_1d": 1.476229222364287
+    },
+    {
+      "code": "688396",
+      "name": "华润微",
+      "signal_count": 2,
+      "price_at_signal": 86.03,
+      "price_3d": 92.7,
+      "return_3d": 7.753109380448682
+    },
+    {
+      "code": "688396",
+      "name": "华润微",
+      "signal_count": 2,
+      "price_at_signal": 86.03,
+      "price_5d": 77.6,
+      "return_5d": -9.798907357898415
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "signal_count": 2,
+      "price_at_signal": 46.03,
+      "price_1d": 49.0,
+      "return_1d": 6.452313708451007
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "signal_count": 2,
+      "price_at_signal": 46.03,
+      "price_3d": 41.53,
+      "return_3d": -9.77623289159244
+    },
+    {
+      "code": "002747",
+      "name": "埃斯顿",
+      "signal_count": 2,
+      "price_at_signal": 46.03,
+      "price_5d": 38.5,
+      "return_5d": -16.35889637193135
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "signal_count": 2,
+      "price_at_signal": 80.0,
+      "price_1d": 79.12,
+      "return_1d": -1.0999999999999943
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "signal_count": 2,
+      "price_at_signal": 80.0,
+      "price_3d": 79.33,
+      "return_3d": -0.8375000000000021
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "signal_count": 2,
+      "price_at_signal": 80.0,
+      "price_5d": 80.4,
+      "return_5d": 0.5000000000000071
+    },
+    {
+      "code": "603078",
+      "name": "江化微",
+      "signal_count": 2,
+      "price_at_signal": 57.7,
+      "price_1d": 52.97,
+      "return_1d": -8.19757365684576
+    },
+    {
+      "code": "603078",
+      "name": "江化微",
+      "signal_count": 2,
+      "price_at_signal": 57.7,
+      "price_3d": 51.01,
+      "return_3d": -11.594454072790302
+    },
+    {
+      "code": "603078",
+      "name": "江化微",
+      "signal_count": 2,
+      "price_at_signal": 57.7,
+      "price_5d": 41.92,
+      "return_5d": -27.348353552859617
+    },
+    {
+      "code": "00175",
+      "name": "吉利汽车",
+      "price_data": "N/A"
+    },
+    {
+      "code": "09999",
+      "name": "网易-S",
+      "price_data": "N/A"
+    },
+    {
+      "code": "00762",
+      "name": "中国联通",
+      "signal_count": 2,
+      "price_at_signal": 26.67,
+      "price_1d": 26.33,
+      "return_1d": -1.2748406449193976
+    },
+    {
+      "code": "00762",
+      "name": "中国联通",
+      "signal_count": 2,
+      "price_at_signal": 26.67,
+      "price_3d": 23.49,
+      "return_3d": -11.923509561304849
+    },
+    {
+      "code": "00762",
+      "name": "中国联通",
+      "signal_count": 2,
+      "price_at_signal": 26.67,
+      "price_5d": 21.98,
+      "return_5d": -17.585301837270347
+    },
+    {
+      "code": "00941",
+      "name": "中国移动",
+      "price_data": "N/A"
+    },
+    {
+      "code": "03328",
+      "name": "交通银行",
+      "price_data": "N/A"
+    },
+    {
+      "code": "688266",
+      "name": "泽璟制药",
+      "signal_count": 2,
+      "price_at_signal": 143.05,
+      "price_1d": 128.68,
+      "return_1d": -10.045438657811957
+    },
+    {
+      "code": "688266",
+      "name": "泽璟制药",
+      "signal_count": 2,
+      "price_at_signal": 143.05,
+      "price_3d": 136.86,
+      "return_3d": -4.327158336246066
+    },
+    {
+      "code": "688266",
+      "name": "泽璟制药",
+      "signal_count": 2,
+      "price_at_signal": 143.05,
+      "price_5d": 144.55,
+      "return_5d": 1.048584411045089
+    },
+    {
+      "code": "00005",
+      "name": "汇丰控股",
+      "price_data": "N/A"
+    },
+    {
+      "code": "01288",
+      "name": "农业银行",
+      "price_data": "N/A"
+    },
+    {
+      "code": "02359",
+      "name": "药明康德",
+      "price_data": "N/A"
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "signal_count": 2,
+      "price_at_signal": 14.99,
+      "price_1d": 14.7,
+      "return_1d": -1.934623082054709
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "signal_count": 2,
+      "price_at_signal": 14.99,
+      "price_3d": 13.88,
+      "return_3d": -7.4049366244162735
+    },
+    {
+      "code": "600601",
+      "name": "方正科技",
+      "signal_count": 2,
+      "price_at_signal": 14.99,
+      "price_5d": 12.18,
+      "return_5d": -18.745830553702472
+    },
+    {
+      "code": "002850",
+      "name": "科达利",
+      "signal_count": 2,
+      "price_at_signal": 223.91,
+      "price_1d": 214.5,
+      "return_1d": -4.202581394310212
+    },
+    {
+      "code": "002850",
+      "name": "科达利",
+      "signal_count": 2,
+      "price_at_signal": 223.91,
+      "price_3d": 200.29,
+      "return_3d": -10.548881246929572
+    },
+    {
+      "code": "002850",
+      "name": "科达利",
+      "signal_count": 2,
+      "price_at_signal": 223.91,
+      "price_5d": 185.0,
+      "return_5d": -17.37751775266848
+    },
+    {
+      "code": "300503",
+      "name": "昊志机电",
+      "signal_count": 2,
+      "price_at_signal": 109.8,
+      "price_1d": 98.48,
+      "return_1d": -10.309653916211287
+    },
+    {
+      "code": "300503",
+      "name": "昊志机电",
+      "signal_count": 2,
+      "price_at_signal": 109.8,
+      "price_3d": 90.56,
+      "return_3d": -17.52276867030965
+    },
+    {
+      "code": "300503",
+      "name": "昊志机电",
+      "signal_count": 2,
+      "price_at_signal": 109.8,
+      "price_5d": 82.69,
+      "return_5d": -24.690346083788704
+    },
+    {
+      "code": "02015",
+      "name": "理想汽车-W",
+      "price_data": "N/A"
+    },
+    {
+      "code": "300223",
+      "name": "北京君正",
+      "signal_count": 2,
+      "price_at_signal": 253.0,
+      "price_1d": 231.2,
+      "return_1d": -8.616600790513838
+    },
+    {
+      "code": "300223",
+      "name": "北京君正",
+      "signal_count": 2,
+      "price_at_signal": 253.0,
+      "price_3d": 236.02,
+      "return_3d": -6.711462450592881
+    },
+    {
+      "code": "300223",
+      "name": "北京君正",
+      "signal_count": 2,
+      "price_at_signal": 253.0,
+      "price_5d": 190.17,
+      "return_5d": -24.833992094861664
+    },
+    {
+      "code": "300558",
+      "name": "贝达药业",
+      "signal_count": 2,
+      "price_at_signal": 68.68,
+      "price_1d": 64.8,
+      "return_1d": -5.6493884682586035
+    },
+    {
+      "code": "300558",
+      "name": "贝达药业",
+      "signal_count": 2,
+      "price_at_signal": 68.68,
+      "price_3d": 64.82,
+      "return_3d": -5.620267909143875
+    },
+    {
+      "code": "300558",
+      "name": "贝达药业",
+      "signal_count": 2,
+      "price_at_signal": 68.68,
+      "price_5d": 64.5,
+      "return_5d": -6.086196854979625
+    },
+    {
+      "code": "300420",
+      "name": "五洋自控",
+      "signal_count": 2,
+      "price_at_signal": 9.08,
+      "price_1d": 9.25,
+      "return_1d": 1.8722466960352415
+    },
+    {
+      "code": "300420",
+      "name": "五洋自控",
+      "signal_count": 2,
+      "price_at_signal": 9.08,
+      "price_3d": 8.3,
+      "return_3d": -8.590308370044045
+    },
+    {
+      "code": "300420",
+      "name": "五洋自控",
+      "signal_count": 2,
+      "price_at_signal": 9.08,
+      "price_5d": 8.02,
+      "return_5d": -11.674008810572694
+    },
+    {
+      "code": "688596",
+      "name": "正帆科技",
+      "signal_count": 2,
+      "price_at_signal": 71.0,
+      "price_1d": 78.5,
+      "return_1d": 10.56338028169014
+    },
+    {
+      "code": "688596",
+      "name": "正帆科技",
+      "signal_count": 2,
+      "price_at_signal": 71.0,
+      "price_3d": 80.33,
+      "return_3d": 13.140845070422532
+    },
+    {
+      "code": "688596",
+      "name": "正帆科技",
+      "signal_count": 2,
+      "price_at_signal": 71.0,
+      "price_5d": 63.98,
+      "return_5d": -9.887323943661976
+    },
+    {
+      "code": "600641",
+      "name": "先导基电",
+      "signal_count": 2,
+      "price_at_signal": 43.44,
+      "price_1d": 44.35,
+      "return_1d": 2.0948434622467857
+    },
+    {
+      "code": "600641",
+      "name": "先导基电",
+      "signal_count": 2,
+      "price_at_signal": 43.44,
+      "price_3d": 43.24,
+      "return_3d": -0.46040515653774344
+    },
+    {
+      "code": "600641",
+      "name": "先导基电",
+      "signal_count": 2,
+      "price_at_signal": 43.44,
+      "price_5d": 39.38,
+      "return_5d": -9.34622467771638
+    },
+    {
+      "code": "300821",
+      "name": "东岳硅材",
+      "signal_count": 2,
+      "price_at_signal": 22.02,
+      "price_1d": 23.3,
+      "return_1d": 5.812897366030886
+    },
+    {
+      "code": "300821",
+      "name": "东岳硅材",
+      "signal_count": 2,
+      "price_at_signal": 22.02,
+      "price_3d": 30.33,
+      "return_3d": 37.73841961852861
+    },
+    {
+      "code": "300821",
+      "name": "东岳硅材",
+      "signal_count": 2,
+      "price_at_signal": 22.02,
+      "price_5d": 21.92,
+      "return_5d": -0.4541326067211529
+    },
+    {
+      "code": "03988",
+      "name": "中国银行",
+      "price_data": "N/A"
+    },
+    {
+      "code": "02331",
+      "name": "李宁",
+      "price_data": "N/A"
+    }
+  ]
+}

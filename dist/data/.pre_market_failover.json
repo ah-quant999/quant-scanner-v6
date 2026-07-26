@@ -1,0 +1,17 @@
+{
+  "time": "2026-07-23 23:37:46",
+  "status": "OK",
+  "reason": "云端 20260723233202（5 分钟前）晚于计划 16:30，部署正常，无漏跑（API 不可达，降级时刻表判断）",
+  "details": {
+    "build_stamp": "20260723233202",
+    "build_stamp_error": null,
+    "check_time": "20260723233717",
+    "trading_day": true,
+    "api_error": "无 GitHub token（GCM 未缓存），降级时刻表判断",
+    "build_dt": "2026-07-23 23:32:02",
+    "elapsed_min": 5.3,
+    "api_driven": false,
+    "cloud_ok": true,
+    "reason": "云端 20260723233202（5 分钟前）晚于计划 16:30，部署正常，无漏跑（API 不可达，降级时刻表判断）"
+  }
+}

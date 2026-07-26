@@ -1,0 +1,35 @@
+诊断开始 2026-07-10 22:27:05
+COMPUTERNAME=CAT
+
+############################################################
+##### close_p1 PARALLEL_GROUP_22 (数据抓取) (23 tasks) #####
+group_ok=False elapsed=206.0s
+  [OK] fetch_nt_data.py  29.3s
+  [OK] fetch_margin.py  3.1s
+  [OK] fetch_margin_etf.py  83.9s
+  [OK] fetch_etf_subscription.py  82.7s
+  [OK] fetch_suspension_alert.py  4.4s
+  [OK] fetch_stock_deviation.py  109.5s
+  [OK] fetch_sector_fund_flow.py  78.2s
+  [OK] fetch_sector_rs.py  69.8s
+  [OK] fetch_main_week.py  0.1s
+  [OK] fetch_market_alerts.py  53.6s
+  [OK] fetch_concept_ranking.py  26.3s
+  [OK] fetch_main_stock.py  0.8s
+  [OK] fetch_north_fund.py  9.5s
+  [FAIL] fetch_south_individual.py  2.4s  detail=exit=1
+  [OK] fetch_herding_data.py  2.9s
+  [OK] fetch_cffex_holdings.py  2.1s
+  [OK] fetch_inst_trade.py  3.3s
+  [FAIL] fetch_ipo_data.py  120.1s  detail=TIMEOUT
+  [OK] fetch_macro_data.py  53.0s
+  [OK] fetch_fomc.py  11.7s
+  [OK] fetch_sh_sz_history.py  1.2s
+  [OK] fetch_up_down_stats.py  80.3s
+  [OK] fetch_sh_index_fib.py  22.8s
+  >>> 失败子任务: ['fetch_south_individual.py', 'fetch_ipo_data.py']
+Traceback (most recent call last):
+  File "E:\workspace\stock-scanner\diag_parallel.py", line 43, in <module>
+    p2 = [s for s in p2_raw if s[0] != "fetch_industry_map.py"]
+                               ~^^^
+TypeError: 'int' object is not subscriptable

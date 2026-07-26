@@ -1,0 +1,220 @@
+{
+  "2026-07-26": [
+    {
+      "code": "688525",
+      "name": "佰维存储",
+      "market": "sh",
+      "board": "科创板",
+      "close": 238.59,
+      "pct_chg": -4.72,
+      "total_score": 90,
+      "quality_grade": "A",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ],
+      "signal_count": 2,
+      "status": "near"
+    },
+    {
+      "code": "688332",
+      "name": "中科蓝讯",
+      "market": "sh",
+      "board": "科创板",
+      "close": 83.88,
+      "pct_chg": -1.56,
+      "total_score": 78,
+      "quality_grade": "A",
+      "industry": "",
+      "sectors": [
+        "小米概念",
+        "AI眼镜",
+        "半导体概念",
+        "国产芯片",
+        "融资融券",
+        "小盘股",
+        "消费电子概念",
+        "沪股通",
+        "昨日高振幅",
+        "专精特新",
+        "小盘成长",
+        "无线耳机"
+      ],
+      "signal_count": 2,
+      "status": "near"
+    },
+    {
+      "code": "300475",
+      "name": "香农芯创",
+      "market": "sz",
+      "board": "创业板",
+      "close": 160.66,
+      "pct_chg": -1.45,
+      "total_score": 78,
+      "quality_grade": "B",
+      "industry": "批发业",
+      "sectors": [
+        "批发业"
+      ],
+      "signal_count": 2,
+      "status": "near"
+    },
+    {
+      "code": "300548",
+      "name": "长芯博创",
+      "market": "sz",
+      "board": "创业板",
+      "close": 162.28,
+      "pct_chg": -4.02,
+      "total_score": 75,
+      "quality_grade": "B",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ],
+      "signal_count": 2,
+      "status": "near"
+    },
+    {
+      "code": "300001",
+      "name": "特锐德",
+      "market": "深市",
+      "board": "创业板",
+      "close": 37.91,
+      "pct_chg": 9.88,
+      "total_score": 70,
+      "quality_grade": "B",
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ],
+      "signal_count": 1,
+      "status": "near"
+    },
+    {
+      "code": "688702",
+      "name": "盛科通信",
+      "market": "sh",
+      "board": "科创板",
+      "close": 398.99,
+      "pct_chg": 1.52,
+      "total_score": 70,
+      "quality_grade": "D",
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ],
+      "signal_count": 3,
+      "status": "near"
+    },
+    {
+      "code": "002415",
+      "name": "海康威视",
+      "market": "深市",
+      "board": "深市",
+      "close": 35.33,
+      "pct_chg": 0,
+      "total_score": 65,
+      "quality_grade": "B",
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ],
+      "signal_count": 2,
+      "status": "near"
+    }
+  ],
+  "_stock_price_history": {
+    "300001": {
+      "2026-07-26": 35.83
+    },
+    "300475": {
+      "2026-07-26": 160.66
+    },
+    "688332": {
+      "2026-07-26": 83.88
+    },
+    "688702": {
+      "2026-07-26": 398.99
+    },
+    "300548": {
+      "2026-07-26": 162.28
+    },
+    "688525": {
+      "2026-07-26": 238.59
+    },
+    "002415": {
+      "2026-07-26": 35.33
+    }
+  },
+  "_tracking_latest": {
+    "688525": {
+      "enter_date": "2026-07-26",
+      "enter_close": 238.59,
+      "last_date": "2026-07-26",
+      "last_close": 238.59,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "688332": {
+      "enter_date": "2026-07-26",
+      "enter_close": 83.88,
+      "last_date": "2026-07-26",
+      "last_close": 83.88,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "300475": {
+      "enter_date": "2026-07-26",
+      "enter_close": 160.66,
+      "last_date": "2026-07-26",
+      "last_close": 160.66,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "300548": {
+      "enter_date": "2026-07-26",
+      "enter_close": 162.28,
+      "last_date": "2026-07-26",
+      "last_close": 162.28,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "300001": {
+      "enter_date": "2026-07-26",
+      "enter_close": 37.91,
+      "last_date": "2026-07-26",
+      "last_close": 37.91,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "688702": {
+      "enter_date": "2026-07-26",
+      "enter_close": 398.99,
+      "last_date": "2026-07-26",
+      "last_close": 398.99,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    },
+    "002415": {
+      "enter_date": "2026-07-26",
+      "enter_close": 35.33,
+      "last_date": "2026-07-26",
+      "last_close": 35.33,
+      "status": "near",
+      "streak": 1,
+      "total_days": 1
+    }
+  },
+  "_meta": {
+    "track_start": "2026-07-26",
+    "created": "2026-07-26 08:31:57",
+    "last_update": "2026-07-26 08:31:57"
+  }
+}

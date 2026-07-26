@@ -1,0 +1,774 @@
+{
+  "update_time": "2026-07-24 19:27:06",
+  "amount_history": [
+    {
+      "date": "4/28",
+      "sh_amount": 10816.2,
+      "sz_amount": 12926.5,
+      "total": 23742.7
+    },
+    {
+      "date": "4/29",
+      "sh_amount": 11063.2,
+      "sz_amount": 13152.5,
+      "total": 24215.7
+    },
+    {
+      "date": "4/30",
+      "sh_amount": 11832.2,
+      "sz_amount": 13176.1,
+      "total": 25008.3
+    },
+    {
+      "date": "5/6",
+      "sh_amount": 12629.5,
+      "sz_amount": 14757.6,
+      "total": 27387.1
+    },
+    {
+      "date": "5/7",
+      "sh_amount": 12348.4,
+      "sz_amount": 15083.4,
+      "total": 27431.8
+    },
+    {
+      "date": "5/8",
+      "sh_amount": 12554.6,
+      "sz_amount": 14757.1,
+      "total": 27311.6
+    },
+    {
+      "date": "5/11",
+      "sh_amount": 13738.2,
+      "sz_amount": 16282.7,
+      "total": 30020.9
+    },
+    {
+      "date": "5/12",
+      "sh_amount": 12950.2,
+      "sz_amount": 15142.8,
+      "total": 28093.0
+    },
+    {
+      "date": "5/13",
+      "sh_amount": 12698.7,
+      "sz_amount": 14777.1,
+      "total": 27475.8
+    },
+    {
+      "date": "5/14",
+      "sh_amount": 13765.2,
+      "sz_amount": 15602.0,
+      "total": 29367.3
+    },
+    {
+      "date": "5/15",
+      "sh_amount": 13205.6,
+      "sz_amount": 15176.4,
+      "total": 28382.0
+    },
+    {
+      "date": "5/18",
+      "sh_amount": 11297.6,
+      "sz_amount": 13186.9,
+      "total": 24484.5
+    },
+    {
+      "date": "5/19",
+      "sh_amount": 11124.3,
+      "sz_amount": 13060.2,
+      "total": 24184.5
+    },
+    {
+      "date": "5/20",
+      "sh_amount": 11242.1,
+      "sz_amount": 12971.0,
+      "total": 24213.1
+    },
+    {
+      "date": "5/21",
+      "sh_amount": 13098.5,
+      "sz_amount": 15699.5,
+      "total": 28798.0
+    },
+    {
+      "date": "5/22",
+      "sh_amount": 10617.2,
+      "sz_amount": 13629.1,
+      "total": 24246.4
+    },
+    {
+      "date": "5/25",
+      "sh_amount": 11094.0,
+      "sz_amount": 13953.5,
+      "total": 25047.5
+    },
+    {
+      "date": "5/26",
+      "sh_amount": 11793.7,
+      "sz_amount": 14704.5,
+      "total": 26498.2
+    },
+    {
+      "date": "5/27",
+      "sh_amount": 11896.2,
+      "sz_amount": 14572.3,
+      "total": 26468.5
+    },
+    {
+      "date": "5/28",
+      "sh_amount": 11188.6,
+      "sz_amount": 13357.3,
+      "total": 24545.9
+    },
+    {
+      "date": "5/29",
+      "sh_amount": 13177.4,
+      "sz_amount": 15161.8,
+      "total": 28339.2
+    },
+    {
+      "date": "6/1",
+      "sh_amount": 12176.4,
+      "sz_amount": 13581.4,
+      "total": 25757.8
+    },
+    {
+      "date": "6/2",
+      "sh_amount": 11568.0,
+      "sz_amount": 13169.8,
+      "total": 24737.8
+    },
+    {
+      "date": "6/3",
+      "sh_amount": 12040.0,
+      "sz_amount": 14159.1,
+      "total": 26199.1
+    },
+    {
+      "date": "6/4",
+      "sh_amount": 11188.8,
+      "sz_amount": 12841.0,
+      "total": 24029.8
+    },
+    {
+      "date": "6/5",
+      "sh_amount": 11940.4,
+      "sz_amount": 14614.8,
+      "total": 26555.1
+    },
+    {
+      "date": "6/8",
+      "sh_amount": 11875.1,
+      "sz_amount": 14085.9,
+      "total": 25961.0
+    },
+    {
+      "date": "6/9",
+      "sh_amount": 10385.1,
+      "sz_amount": 12825.1,
+      "total": 23210.2
+    },
+    {
+      "date": "6/10",
+      "sh_amount": 10783.6,
+      "sz_amount": 12689.6,
+      "total": 23473.1
+    },
+    {
+      "date": "6/11",
+      "sh_amount": 10240.5,
+      "sz_amount": 11963.6,
+      "total": 22204.1
+    },
+    {
+      "date": "6/12",
+      "sh_amount": 13385.1,
+      "sz_amount": 14151.9,
+      "total": 27537.0
+    },
+    {
+      "date": "6/15",
+      "sh_amount": 12228.3,
+      "sz_amount": 13521.7,
+      "total": 25750.1
+    },
+    {
+      "date": "6/16",
+      "sh_amount": 11089.3,
+      "sz_amount": 13482.0,
+      "total": 24571.3
+    },
+    {
+      "date": "6/17",
+      "sh_amount": 10952.6,
+      "sz_amount": 13322.8,
+      "total": 24275.4
+    },
+    {
+      "date": "6/18",
+      "sh_amount": 11853.9,
+      "sz_amount": 13647.7,
+      "total": 25501.5
+    },
+    {
+      "date": "6/22",
+      "sh_amount": 13395.4,
+      "sz_amount": 15653.0,
+      "total": 29048.4
+    },
+    {
+      "date": "6/23",
+      "sh_amount": 12770.4,
+      "sz_amount": 14421.9,
+      "total": 27192.4
+    },
+    {
+      "date": "6/24",
+      "sh_amount": 11609.1,
+      "sz_amount": 14112.5,
+      "total": 25721.6
+    },
+    {
+      "date": "6/25",
+      "sh_amount": 12076.2,
+      "sz_amount": 14834.0,
+      "total": 26910.2
+    },
+    {
+      "date": "6/26",
+      "sh_amount": 11889.7,
+      "sz_amount": 14940.9,
+      "total": 26830.6
+    },
+    {
+      "date": "6/29",
+      "sh_amount": 11873.4,
+      "sz_amount": 14432.3,
+      "total": 26305.7
+    },
+    {
+      "date": "6/30",
+      "sh_amount": 10778.5,
+      "sz_amount": 13298.9,
+      "total": 24077.4
+    },
+    {
+      "date": "7/1",
+      "sh_amount": 12109.9,
+      "sz_amount": 15595.2,
+      "total": 27705.1
+    },
+    {
+      "date": "7/2",
+      "sh_amount": 11819.9,
+      "sz_amount": 15300.2,
+      "total": 27120.1
+    },
+    {
+      "date": "7/3",
+      "sh_amount": 10843.3,
+      "sz_amount": 14029.5,
+      "total": 24872.8
+    },
+    {
+      "date": "7/6",
+      "sh_amount": 10633.5,
+      "sz_amount": 13710.7,
+      "total": 24344.2
+    },
+    {
+      "date": "7/7",
+      "sh_amount": 9266.2,
+      "sz_amount": 12111.7,
+      "total": 21378.0
+    },
+    {
+      "date": "7/8",
+      "sh_amount": 8938.0,
+      "sz_amount": 11688.8,
+      "total": 20626.8
+    },
+    {
+      "date": "7/9",
+      "sh_amount": 9961.7,
+      "sz_amount": 12791.9,
+      "total": 22753.6
+    },
+    {
+      "date": "7/10",
+      "sh_amount": 11301.5,
+      "sz_amount": 14799.7,
+      "total": 26101.2
+    },
+    {
+      "date": "7/13",
+      "sh_amount": 10643.3,
+      "sz_amount": 13102.0,
+      "total": 23745.4
+    },
+    {
+      "date": "7/14",
+      "sh_amount": 10446.5,
+      "sz_amount": 12051.7,
+      "total": 22498.3
+    },
+    {
+      "date": "7/15",
+      "sh_amount": 10378.6,
+      "sz_amount": 12304.8,
+      "total": 22683.4
+    },
+    {
+      "date": "7/16",
+      "sh_amount": 9641.4,
+      "sz_amount": 11893.1,
+      "total": 21534.5
+    },
+    {
+      "date": "7/17",
+      "sh_amount": 11715.8,
+      "sz_amount": 13641.7,
+      "total": 25357.5
+    },
+    {
+      "date": "7/20",
+      "sh_amount": 12774.6,
+      "sz_amount": 13804.4,
+      "total": 26578.9
+    },
+    {
+      "date": "7/21",
+      "sh_amount": 13239.1,
+      "sz_amount": 14930.2,
+      "total": 28169.3
+    },
+    {
+      "date": "7/22",
+      "sh_amount": 11063.8,
+      "sz_amount": 12169.9,
+      "total": 23233.7
+    },
+    {
+      "date": "7/23",
+      "sh_amount": 10124.8,
+      "sz_amount": 11173.5,
+      "total": 21298.3
+    },
+    {
+      "date": "7/24",
+      "sh_amount": 9153.7,
+      "sz_amount": 10157.7,
+      "total": 19311.4
+    }
+  ],
+  "up_down": {},
+  "daily_stats": [
+    {
+      "date": "4/28",
+      "up": 2338,
+      "down": 2561,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/29",
+      "up": 2833,
+      "down": 2066,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "4/30",
+      "up": 2503,
+      "down": 2396,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/6",
+      "up": 2937,
+      "down": 1962,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/7",
+      "up": 2707,
+      "down": 2192,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/8",
+      "up": 2437,
+      "down": 2462,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/11",
+      "up": 2904,
+      "down": 1995,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/12",
+      "up": 2410,
+      "down": 2489,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/13",
+      "up": 2792,
+      "down": 2107,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/14",
+      "up": 2042,
+      "down": 2857,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/15",
+      "up": 2226,
+      "down": 2673,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/18",
+      "up": 2463,
+      "down": 2436,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/19",
+      "up": 2646,
+      "down": 2253,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/20",
+      "up": 2478,
+      "down": 2421,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/21",
+      "up": 1985,
+      "down": 2914,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/22",
+      "up": 2896,
+      "down": 2003,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/25",
+      "up": 2828,
+      "down": 2071,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/26",
+      "up": 2493,
+      "down": 2406,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/27",
+      "up": 2234,
+      "down": 2665,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/28",
+      "up": 2614,
+      "down": 2285,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "5/29",
+      "up": 2182,
+      "down": 2717,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/1",
+      "up": 2278,
+      "down": 2621,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/2",
+      "up": 2757,
+      "down": 2142,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/3",
+      "up": 2618,
+      "down": 2281,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/4",
+      "up": 2385,
+      "down": 2514,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/5",
+      "up": 2130,
+      "down": 2769,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/8",
+      "up": 1884,
+      "down": 3015,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/9",
+      "up": 3037,
+      "down": 1862,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/10",
+      "up": 2190,
+      "down": 2709,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/11",
+      "up": 2395,
+      "down": 2504,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/12",
+      "up": 2733,
+      "down": 2166,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/15",
+      "up": 3175,
+      "down": 1724,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/16",
+      "up": 2602,
+      "down": 2297,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/17",
+      "up": 2713,
+      "down": 2186,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/18",
+      "up": 2564,
+      "down": 2335,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/22",
+      "up": 2988,
+      "down": 1911,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/23",
+      "up": 1933,
+      "down": 2966,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/24",
+      "up": 2669,
+      "down": 2230,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/25",
+      "up": 2756,
+      "down": 2143,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/26",
+      "up": 1788,
+      "down": 3111,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/29",
+      "up": 2669,
+      "down": 2230,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "6/30",
+      "up": 2873,
+      "down": 2026,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/1",
+      "up": 2488,
+      "down": 2411,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/2",
+      "up": 1765,
+      "down": 3134,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/3",
+      "up": 2625,
+      "down": 2274,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/6",
+      "up": 2347,
+      "down": 2552,
+      "flat": 101,
+      "_note": "reconstructed from index data"
+    },
+    {
+      "date": "7/7",
+      "up": 693,
+      "down": 4796,
+      "flat": 37
+    },
+    {
+      "date": "7/8",
+      "up": 1592,
+      "down": 3790,
+      "flat": 145
+    },
+    {
+      "date": "7/9",
+      "up": 2485,
+      "down": 2888,
+      "flat": 155
+    },
+    {
+      "date": "7/10",
+      "up": 3772,
+      "down": 1677,
+      "flat": 80
+    },
+    {
+      "date": "7/13",
+      "up": 801,
+      "down": 4682,
+      "flat": 46
+    },
+    {
+      "date": "7/14",
+      "up": 4210,
+      "down": 1247,
+      "flat": 70
+    },
+    {
+      "date": "7/15",
+      "up": 3350,
+      "down": 2098,
+      "flat": 79
+    },
+    {
+      "date": "7/16",
+      "up": 2498,
+      "down": 2861,
+      "flat": 169
+    },
+    {
+      "date": "7/17",
+      "up": 1157,
+      "down": 4269,
+      "flat": 101
+    },
+    {
+      "date": "7/20",
+      "up": 1739,
+      "down": 3710,
+      "flat": 78
+    },
+    {
+      "date": "7/21",
+      "up": 3107,
+      "down": 2300,
+      "flat": 121
+    },
+    {
+      "date": "7/22",
+      "up": 1530,
+      "down": 3875,
+      "flat": 124
+    },
+    {
+      "date": "7/23",
+      "up": 4259,
+      "down": 1208,
+      "flat": 62
+    },
+    {
+      "date": "7/24",
+      "up": 555,
+      "down": 4939,
+      "flat": 36
+    }
+  ]
+}

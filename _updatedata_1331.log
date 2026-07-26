@@ -1,0 +1,200 @@
+============================================================
+更新数据块 — 基于 index_master.html（密码页已内置）
+============================================================
+  母版: 2,360,293 字符
+  ▸ 兜底补全 STOCK_LIST: +325 只（来自金股池+扫描+监控+行业）
+  ▸ GOLD_POOL: 从扫描数据同步 232 只 + fallback 31 只 = 263 只补全latest
+  ▸ GOLD_POOL: 已写回磁盘 (update_time: 2026-07-23 → 2026-07-23, 517只, EMA完整)
+  ✓ 金股池 enrich: 208/263 只有行业标签
+  ▸ 投行覆盖: 15 只
+  ▸ 正在刷新宏观数据...
+=== 货币政策 ===
+  10Y国债收益率...
+  0%|          | 0/19 [00:00<?, ?it/s]  5%|▌         | 1/19 [00:00<00:11,  1.56it/s] 11%|█         | 2/19 [00:01<00:10,  1.59it/s] 16%|█▌        | 3/19 [00:01<00:10,  1.60it/s] 21%|██        | 4/19 [00:02<00:09,  1.54it/s] 26%|██▋       | 5/19 [00:03<00:09,  1.54it/s] 32%|███▏      | 6/19 [00:03<00:08,  1.45it/s] 37%|███▋      | 7/19 [00:19<01:07,  5.59s/it] 42%|████▏     | 8/19 [00:20<00:44,  4.01s/it] 47%|████▋     | 9/19 [00:20<00:29,  2.95s/it] 53%|█████▎    | 10/19 [00:21<00:20,  2.29s/it] 58%|█████▊    | 11/19 [00:22<00:14,  1.78s/it] 63%|██████▎   | 12/19 [00:23<00:10,  1.44s/it] 68%|██████▊   | 13/19 [00:23<00:07,  1.20s/it] 74%|███████▎  | 14/19 [00:24<00:05,  1.03s/it] 79%|███████▉  | 15/19 [00:24<00:03,  1.11it/s] 84%|████████▍ | 16/19 [00:25<00:02,  1.22it/s] 89%|████████▉ | 17/19 [00:26<00:01,  1.25it/s] 95%|█████████▍| 18/19 [00:26<00:00,  1.33it/s]                                                 LPR利率...
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:01,  1.53it/s] 50%|█████     | 2/4 [00:01<00:01,  1.55it/s] 75%|███████▌  | 3/4 [00:02<00:00,  1.31it/s]100%|██████████| 4/4 [00:02<00:00,  1.42it/s]                                               Shibor利率...
+  M2/M1货币供应...
+  央行公开市场操作(OMO)...
+  [WARN] OMO获取失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+=== 经济基本面 ===
+  PMI...
+    PMI(Eastmoney): 50.3 (前值: 50.0)
+  CPI...
+    CPI(Eastmoney): 1.0% (前值: 1.2%)
+  PPI...
+    PPI(Eastmoney): 4.1% (前值: 3.9%)
+  社融规模...
+  出口增速...
+    出口增速(Eastmoney): 27.0% (前值: 19.3%)
+  IPO数据...
+    近期IPO: 10只, 募资约0亿
+
+=== 市场情绪 ===
+  新增投资者人数...
+    新增: 99.59万
+
+=== 全球宏观 ===
+  VIX...
+  离岸人民币汇率...
+    USDCNH(Sina): 6.7746 (昨收: 6.7687)
+  美元指数...
+  [WARN] DXY Eastmoney获取失败: Remote end closed connection without response
+    DXY(Sina-DINIW): 100.98 (+0.04%)
+
+=== 大宗商品观测 ===
+  黄金...
+  白银...
+  铜...
+  原油...
+  比特币...
+    [INFO] Binance API失败, 改用CoinGecko... (<urlopen error timed out>)
+    [WARN] CoinGecko也失败: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+    ✓ 宏观数据已更新: 2026-07-23 13:37:21
+  ▸ 正在采集最新宏观数据...
+=== 货币政策 ===
+  10Y国债收益率...
+  0%|          | 0/19 [00:00<?, ?it/s]  5%|▌         | 1/19 [00:00<00:12,  1.43it/s] 11%|█         | 2/19 [00:01<00:11,  1.50it/s] 16%|█▌        | 3/19 [00:02<00:11,  1.34it/s] 21%|██        | 4/19 [00:02<00:10,  1.42it/s] 26%|██▋       | 5/19 [00:03<00:09,  1.41it/s] 32%|███▏      | 6/19 [00:04<00:09,  1.36it/s] 37%|███▋      | 7/19 [00:04<00:08,  1.42it/s] 42%|████▏     | 8/19 [00:05<00:07,  1.48it/s] 47%|████▋     | 9/19 [00:06<00:07,  1.38it/s] 53%|█████▎    | 10/19 [00:07<00:06,  1.37it/s] 58%|█████▊    | 11/19 [00:07<00:05,  1.43it/s] 63%|██████▎   | 12/19 [00:08<00:04,  1.46it/s] 68%|██████▊   | 13/19 [00:09<00:04,  1.49it/s] 74%|███████▎  | 14/19 [00:09<00:03,  1.53it/s] 79%|███████▉  | 15/19 [00:10<00:02,  1.54it/s] 84%|████████▍ | 16/19 [00:10<00:01,  1.54it/s] 89%|████████▉ | 17/19 [00:11<00:01,  1.56it/s] 95%|█████████▍| 18/19 [00:12<00:00,  1.51it/s]                                                 LPR利率...
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:00<00:02,  1.49it/s] 50%|█████     | 2/4 [00:01<00:01,  1.15it/s] 75%|███████▌  | 3/4 [00:02<00:00,  1.31it/s]100%|██████████| 4/4 [00:02<00:00,  1.43it/s]                                               Shibor利率...
+  M2/M1货币供应...
+  央行公开市场操作(OMO)...
+  [WARN] OMO获取失败: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+=== 经济基本面 ===
+  PMI...
+    PMI(Eastmoney): 50.3 (前值: 50.0)
+  CPI...
+    CPI(Eastmoney): 1.0% (前值: 1.2%)
+  PPI...
+    PPI(Eastmoney): 4.1% (前值: 3.9%)
+  社融规模...
+  出口增速...
+    出口增速(Eastmoney): 27.0% (前值: 19.3%)
+  IPO数据...
+    近期IPO: 10只, 募资约0亿
+
+=== 市场情绪 ===
+  新增投资者人数...
+    新增: 99.59万
+
+=== 全球宏观 ===
+  VIX...
+  离岸人民币汇率...
+    USDCNH(Sina): 6.7746 (昨收: 6.7688)
+  美元指数...
+  [WARN] DXY Eastmoney获取失败: Remote end closed connection without response
+    DXY(Sina-DINIW): 100.98 (+0.04%)
+
+=== 大宗商品观测 ===
+  黄金...
+  白银...
+  铜...
+  原油...
+  比特币...
+    [INFO] Binance API失败, 改用CoinGecko... (<urlopen error timed out>)
+    [WARN] CoinGecko也失败: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>
+    ✓ 宏观数据已更新: 2026-07-23 13:38:29
+  ▸ 刷新宏观数据...
+    ✓ 宏观数据已刷新
+
+  数据:
+  ▸ SCAN_DATA:  349 条, time=2026-07-23 13:31:54
+  ▸ WATCH_DATA: 232 条
+  ▸ GOLD_POOL:  263 只
+  ▸ STOCK_LIST: 5524 只
+  ▸ RECOMMEND:  1 条推荐
+  ▸ SH_FIB:     13 个窗口
+  ▸ SECTOR_FLOW:40 个板块
+  ▸ SH_SZ_HIST: 61 天历史
+  ▸ MARKET_ALERTS: 有数据
+  ▸ MARGIN_DATA: 60 天两融数据
+  ▸ ETF_SUB: 55 天ETF数据
+  ▸ MACRO_DATA: 更新=2026-07-23 13:39:26
+  ▸ FOMC: 有速览 (会议=2025-10-30)
+  ▸ 行业/概念注入: 更新 507 只股票的 sectors 标签
+  ⚡ 获取三线共振股票概念...
+  ✓ SCAN_DATA: 73,258 → 679,467 字符
+  ✓ WATCH_DATA: 371,101 → 503,990 字符
+  ✓ GOLD_POOL: 229,599 → 398,743 字符
+  ✓ STOCK_LIST: 546,180 → 645,658 字符
+  ✓ RECOMMEND: 1,751 → 1,751 字符
+  ✓ SH_FIB: 3,227 → 3,227 字符
+  ✓ SZ_FIB: 3,289 → 3,289 字符
+  ✓ SECTOR_FUND_FLOW: 13,543 → 14,348 字符
+  ✓ SH_SZ_HISTORY: 10,656 → 10,607 字符
+  ✓ NT_DATA: 38,782 → 38,678 字符
+  ✓ CONCEPT_RANKING: 1,460 → 1,449 字符
+  ✓ MARKET_ALERTS: 625 → 623 字符
+  ✓ MARGIN_DATA: 7,280 → 7,280 字符
+  ✓ ETF_SUBSCRIPTION: 11,501 → 11,501 字符
+  ✓ MACRO_DATA: 2,216 → 2,240 字符
+  ✓ CRISIS_DATA: 4,275 → 4,275 字符
+  ✓ HERRING_DATA: 2,849 → 2,804 字符
+  ✓ SECTOR_RS: 11,659 → 11,407 字符
+  ✓ IPO_DATA: 11,584 → 11,148 字符
+  ✓ LHB_DATA: 26,343 → 26,343 字符
+  ✓ MAIN_STOCK: 208 → 1,499 字符
+  ✓ MAIN_WEEK: 744 → 744 字符
+  ✓ NORTH_FUND: 1,914 → 1,912 字符
+  ✓ MAHORO_COVERAGE: 152 → 398 字符
+  ✓ SUSPENSION_ALERT: 1,087 → 1,086 字符
+  ✓ STOCK_DEVIATION: 119 → 119 字符
+  ✓ FOMC_SUMMARY: 237 → 237 字符
+  ✓ CFFEX_HOLDINGS: 1,481 → 1,481 字符
+  ✓ INST_TRADE: 17,735 → 17,735 字符
+  ✓ LIMIT_UP_HEATMAP: 1,124 → 1,124 字符
+  ✓ W52_HIGH: 26,632 → 26,632 字符
+  ✓ ANALYST_RATINGS: 709 → 709 字符
+  ✓ POLICY_DENSITY: 185 → 185 字符
+  ✓ TOP10_DAILY: 13,027 → 14,205 字符
+  ✓ INDUSTRY_MAP: 148,008 → 1,203,886 字符
+  ✓ ZHAIXINGGE_DATA: 62 → 62 字符
+  ✓ GUANLAN_REPORTS: 42,081 → 49,059 字符
+  ✓ CANDIDATE_POOL: 42,696 → 46,624 字符
+  ✓ CRDS_CARD_DATA: 38,578 → 38,578 字符
+  ✓ EXPERIMENT_DATA: 864 → 864 字符
+  ✓ VOLATILITY_WATCH_DATA: 2,081 → 2,081 字符
+  ✓ CAPITAL_FLOW_DATA: 2,339 → 2,286 字符
+  ✓ MARKET_FUND_FLOW_DATA: 404 → 25,995 字符
+  ✓ CLOSE_SUMMARY: 3,063 → 3,014 字符
+  ⚠️  找不到 OPS_STATUS，跳过
+  ⚠️  CLOUD_UPDATE_TIME placeholder 未找到
+  ⚠️  POST_CLOSE_TIME placeholder 未找到
+  ⚠️  build-stamp meta placeholder 未找到（CRDS/三重选股卡可能显示未知）
+  ✓ NT_DATA.calendar 已注入最新数据 (553 条，含华为HDC、苹果WWDC等)
+  ✓ 密码页完好
+  ✓ 宏观观测表格渲染JS已注入
+  ✓ triple_resonance.html 已嵌入历史数据
+  ✓ multi_resonance.html 已嵌入历史数据
+  ✓ 已保存: index.html + index_master.html (4,468,965 字符)
+
+  JS 语法验证:
+  SCAN_DATA: OK
+WATCH_DATA: OK
+GOLD_POOL: OK
+STOCK_LIST: OK
+NT_DATA: OK
+  全量JS检查:
+    ✓ 脚本块3
+    ✓ 脚本块5
+    ✓ 脚本块6
+    ✓ 脚本块7
+    ✓ 脚本块8
+    ✓ 脚本块9
+    ✓ 脚本块16
+    ✓ 脚本块17
+    检查 8 个脚本块，0 个错误
+  运行时冒烟测试:
+  ⚠️ 运行时冒烟: 4 个异常
+     Mismatched bracket: '{' (line ~278355) vs ')' (line ~278371)
+     Unclosed '[' at script line ~277905
+     Mismatched bracket: '{' (line ~136) vs ']' (line ~148)
+     Unclosed '{' at script line ~129
+  ⚠️ 冒烟测试有警告但继续部署
+
+  ✓ 已保存: index.html + index_master.html (4,468,965 字符)
+  ✓ 已同步 data/*.json → dist/data/
+  ✓ 已同步静态资源 → dist/
+
+✅ 数据块更新成功！
+   部署: python deploy_now.py
+   网址: https://ah-quant999.github.io/quant-scanner-v6/
