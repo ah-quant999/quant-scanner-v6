@@ -144263,9 +144263,8 @@ function renderTop10Daily() {
     setPostMarketTime('top10DailyTime', tc.update_time, 'main');
   }
 
-  // 分组：严格共识（3/3）| 优先观察（2/3 且 ≥75）| 观察（2/3 且 70≤评分<75）
+  // 分组：严格共识（3/3）| 优先观察（2/3 且 ≥75）；观察（70≤评分<75）已在历史追踪页隐藏，主站同步隐藏以保持口径一致
   var priority = near.filter(function(s){ return (s.total_score || 0) >= 75; });
-  var observation = near.filter(function(s){ var sc = s.total_score || 0; return sc >= 70 && sc < 75; });
 
   // 顶栏统一展示：三重共识 = 严格 + 优先观察
   var tripleDisplayCount = consensus.length + priority.length;
@@ -144329,7 +144328,7 @@ function renderTop10Daily() {
     '</div>';
   }
 
-  if (!consensus.length && !priority.length && !observation.length) {
+  if (!consensus.length && !priority.length) {
     contentEl.innerHTML = '<div style="padding:24px;text-align:center;font-size:12px;color:#999;">当前无三重共识股<br><span style="font-size:11px;">需同时满足：主站TOP10≥70 · 驾驶舱A档 · 基本面A档</span></div>';
     return;
   }
@@ -144348,7 +144347,6 @@ function renderTop10Daily() {
   var h = '';
   h += renderGroup('重点关注（3/3 严格共识）', '#e91e63', consensus, false);
   h += renderGroup('优先观察（2/3 候补 · 主站评分 ≥75）', '#e65100', priority, true);
-  h += renderGroup('观察（2/3 候补 · 评分 ≥70）', '#888', observation, true);
   contentEl.innerHTML = h;
 }
 
