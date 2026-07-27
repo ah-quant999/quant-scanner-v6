@@ -995,7 +995,8 @@ def main():
         scan_data.setdefault("new_triple_count", 0)
         scan_data.setdefault("new_triple_signals", [])
 
-    # 【数据一致性】watch 覆盖 scan，但仅当 watch 不旧于 scan
+    # 【数据一致性】watch 覆盖 scan 的信号计数（watch 通常更晚运行，含尾盘信号），
+    # 但 scan_time 必须保留 scan_result 自己的时间戳，防止 watch 的旧时间污染整站"最后同步"。
     wt = watch_data.get("scan_time", "")
     st = scan_data.get("scan_time", "")
     if wt and (not st or wt >= st):
@@ -1003,8 +1004,8 @@ def main():
         scan_data["triple_signals"] = watch_data.get("triple_signals", [])
         scan_data["double_count"] = watch_data.get("double_count", 0)
         scan_data["double_signals"] = watch_data.get("double_signals", [])
-        scan_data["scan_time"] = wt
-        # 持久化写回，防后续脚本读到旧数据
+        # 不覆盖 scan_time！scan_time 是 scan_result.json 的权威时间，仅由 scanner.py 更新。
+        # 持久化写回，防后续脚本读到旧信号
         try:
             scan_json_path = os.path.join(DATA_DIR, "scan_result.json")
             with open(scan_json_path, "w", encoding="utf-8") as f:

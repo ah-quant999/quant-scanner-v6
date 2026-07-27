@@ -330,6 +330,7 @@ def _data_freshness_gate():
     KEY_FILES = [
         "candidate_pool.json", "limit_up_heatmap.json", "sector_fund_flow.json",
         "north_fund.json", "market_fund_flow.json", "cockpit_backtest.json",
+        "scan_result.json",  # 维护横幅/全站"最后同步"读的是 scan_time，必须同步
     ]
     src_dir = DATA_DIR
     dst_dir = os.path.join(DIST_DIR, "data")
