@@ -1663,7 +1663,7 @@ def main():
     data_objs = [scan_data, watch_data, gold_pool, stock_list, recommend,
                  sh_fib, sz_fib, sector_flow, sh_sz_history, nt_data,
                  concept_ranking, market_alerts, margin_data, etf_subscription, macro_data, crisis_data,                 herding_data,
-                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, cockpit_tier_recommend, triple_consensus, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, volatility_watch, fundamental_quality, capital_flow, market_fund_flow, close_summary, ops_status]
+                 sector_rs, ipo_score, lhb_data, main_stock, main_week, north_fund, mahoro_coverage, suspension_alert, stock_deviation, fomc_summary, cffex_holdings, inst_trade, limit_up_heatmap, w52_high, analyst_ratings, policy_density,                  top10_daily, cockpit_tier_recommend, triple_consensus, industry_map_data, zhaixingge_data, guanlan_reports, candidate_pool_data, crds_data, experiment, volatility_watch, etf_intraday_heat, fundamental_quality, capital_flow, market_fund_flow, close_summary, ops_status]
     replacements = []
 
     for (name, marker, open_ch, close_ch), data in zip(markers, data_objs):
