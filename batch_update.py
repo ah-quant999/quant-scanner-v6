@@ -90,6 +90,10 @@ MODES = {
             ("build_candidate_pool.py", 600),  # 2026-07-24: 300→600，外部源逐只拉取慢日(~6min)易超时→09:20静默失败根因
             ("scanner.py full", 600),
             ("generate_recommend.py", 120),
+            # 2026-07-27 根因修复：盘前全量抓取后必须把新鲜中国源数据推 main，
+            # 否则 deploy_now.py 的 safe_pull(reset) 会把 data/ 回退成 origin/main 陈旧版
+            # —— 正是「08:45 跑了但网站仍 2-3 天前」反复发生的根因（post_close/close_p2 已修正，pre_market 漏了）。
+            ("push_china_data.py", 120),
             ("update_data_v2.py", 300),
             ("enhance_dist.py", 30),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
