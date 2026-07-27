@@ -143332,8 +143332,25 @@ function renderIpoTopStrip() {
   if (!stocks.length) { strip.style.display = 'none'; return; }
   strip.style.display = 'block';
 
+  // 兜底：按当前本地日期重新校正 status，避免数据源停留在昨日导致今日上市/申购漏显
+  var today = d.today || (function(){
+    var n = new Date();
+    var y = n.getFullYear();
+    var m = ('0' + (n.getMonth() + 1)).slice(-2);
+    var day = ('0' + n.getDate()).slice(-2);
+    return '' + y + m + day;
+  })();
+  stocks.forEach(function(s){
+    if (!s) return;
+    var ld = s.listing_date || '';
+    var ad = s.apply_date || '';
+    // 上市日=今天 → 强制今日上市
+    if (ld === today && s.status !== 'listed_today') s.status = 'listed_today';
+    // 申购日=今天 → 确保落在 applying 池（原逻辑已按 apply_date 过滤，这里只修正异常）
+    if (ad === today && s.status === 'pre_listing') s.status = 'applying';
+  });
+
   // 分组：今日申购 → 待定价 → 待申购 → 待上市 → 上市日追踪
-  var today = d.today || '';
   var g = {
     today_applying: stocks.filter(function(s){ return s.status === 'applying' && s.apply_date === today && s.issue_price && s.recommend !== '待定价'; }),
     pricing:        stocks.filter(function(s){ return s.status === 'applying' && (!s.issue_price || s.recommend === '待定价'); }),
