@@ -1325,7 +1325,7 @@ tr:hover td { background: #fafbfc; }
 window.CLOUD_UPDATE_TIME = "2026-07-23 00:00";
 window.POST_CLOSE_TIME = "2026-07-24 15:30:00";
 window.CANDIDATE_POOL = {
-"update_time": "2026-07-27 12:17:08",
+"update_time": "2026-07-27 12:23:28",
 "total": 373,
 "source_dist": {
 "主板成交前100": 97,
@@ -128246,7 +128246,7 @@ false
 },
 "candidate_total": 372,
 "total_count": 295,
-"update_time": "2026-07-27 12:17:17"
+"update_time": "2026-07-27 12:23:35"
 };var SH_FIB = window.SH_FIB = {
 "current": {
 "index": 3827.76,
@@ -132214,7 +132214,7 @@ false
 ],
 "update_time": "2026-07-24 17:37"
 };window.MACRO_DATA = {
-"update_time": "2026-07-27 12:18:27",
+"update_time": "2026-07-27 12:24:46",
 "monetary": {
 "cn_bond_10y": {
 "value": 1.7282,
@@ -132302,8 +132302,8 @@ false
 "source": "Sina实时"
 },
 "dxy": {
-"value": 101.2,
-"pct": 0.08,
+"value": 101.21,
+"pct": 0.1,
 "date": "2026-07-27",
 "source": "Sina-DINIW"
 },
@@ -132324,7 +132324,7 @@ false
 "date": "2026-07-27"
 },
 "oil": {
-"value": 85.07,
+"value": 84.98,
 "unit": "美元/桶",
 "date": "2026-07-27"
 }
@@ -359666,10 +359666,10 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 "neodata_status": "ok",
 "neodata_updated": "2026-07-24 17:20:48",
 "neodata_valid_until": "2026-07-25 17:20:41",
-"updated_at": "2026-07-27 12:18:59",
-"cloud_deploy_time": "20260727121900",
+"updated_at": "2026-07-27 12:25:19",
+"cloud_deploy_time": "20260727122520",
 "failover_status": "OK",
-"failover_time": "2026-07-27 12:09:24",
+"failover_time": "2026-07-27 10:12:19",
 "data_correctness": {
 "status": "PASS",
 "detail": "全站 21 个数据维度业务不变量全部通过",
@@ -359700,7 +359700,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 "xiaojiu": {
 "status": "ok",
-"last_time": "2026-07-27 12:02:45",
+"last_time": "2026-07-27 12:21:48",
 "mode": "deploy"
 },
 "alimi": {
@@ -359713,7 +359713,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 "audit": {
 "severity": "ERROR",
 "error_count": 1,
-"warn_count": 15,
+"warn_count": 8,
 "fixed_count": 1,
 "issues": [
 {
@@ -359774,64 +359774,17 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 },
 {
 "level": "WARN",
-"type": "missing_heartbeat",
-"time": "10:00",
-"task": "candidate_pool_watchdog",
-"msg": "10:00 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
-"type": "missing_heartbeat",
-"time": "10:05",
-"task": "pre_market_deploy_self_heal",
-"msg": "10:05 pre_market_deploy_self_heal 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
-"type": "missing_heartbeat",
-"time": "10:30",
-"task": "candidate_pool_watchdog",
-"msg": "10:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
-"type": "missing_heartbeat",
-"time": "10:31",
-"task": "intraday_10_31",
-"msg": "10:31 intraday_10_31 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
-"type": "missing_heartbeat",
-"time": "11:00",
-"task": "candidate_pool_watchdog",
-"msg": "11:00 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
-"type": "missing_heartbeat",
-"time": "11:30",
-"task": "candidate_pool_watchdog",
-"msg": "11:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-},
-{
-"level": "WARN",
 "type": "ops_neodata_mismatch",
 "msg": "ops_status.json neodata_valid_until=2026-07-25 17:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
 },
 {
-"level": "WARN",
-"type": "xiaojiu_stale",
-"msg": "小九最近部署 1.3 小时前（2026-07-27 10:52:10），盘中应 < 1h"
-},
-{
 "level": "FIXED",
-"type": "silent_failover_activated",
-"msg": "云端沉默 77min，小九-盘中刷新部署 09:30（intraday_09_30）已激活兜底"
+"type": "silent_failover_restored",
+"msg": "云端已恢复（2min），小九-盘中刷新部署 09:30（intraday_09_30）已 PAUSED 回去"
 }
 ],
-"checked_at": "2026-07-27 12:09:17",
-"updated_at": "2026-07-27 12:09:17"
+"checked_at": "2026-07-27 10:10:08",
+"updated_at": "2026-07-27 10:10:08"
 }
 };</script>
 <script>
