@@ -1,8 +1,8 @@
 {
- "update_time": "2026-07-24 19:11",
+ "update_time": "2026-07-27 22:01",
  "total_stocks": 9981,
  "total_sectors": 577,
- "total_associations": 72592,
+ "total_associations": 72600,
  "stocks": {
   "sh_600030": {
    "industry": "资本市场服务",
@@ -33869,7 +33869,7 @@
    ]
   },
   "sh_600941": {
-   "industry": "",
+   "industry": "电信、广播电视和卫星传输服务",
    "concepts": [
     "5G概念",
     "6G概念",
@@ -33904,7 +33904,7 @@
    ]
   },
   "sh_600050": {
-   "industry": "",
+   "industry": "电信、广播电视和卫星传输服务",
    "concepts": [
     "5G概念",
     "HS300_",
@@ -34155,7 +34155,7 @@
    ]
   },
   "sh_688180": {
-   "industry": "",
+   "industry": "医药制造业",
    "concepts": [
     "AH股",
     "MSCI中国",
@@ -49187,7 +49187,7 @@
    ]
   },
   "sh_688585": {
-   "industry": "",
+   "industry": "化学原料和化学制品制造业",
    "concepts": [
     "一带一路",
     "中盘成长",
@@ -58063,7 +58063,7 @@
    ]
   },
   "sh_688775": {
-   "industry": "",
+   "industry": "计算机、通信和其他电子设备制造业",
    "concepts": [
     "大盘成长",
     "大盘股",
@@ -58273,7 +58273,7 @@
    ]
   },
   "sh_688559": {
-   "industry": "",
+   "industry": "专用设备制造业",
    "concepts": [
     "3D打印",
     "BC电池",
@@ -65543,7 +65543,7 @@
    ]
   },
   "sz_002498": {
-   "industry": "",
+   "industry": "电气机械和器材制造业",
    "concepts": [
     "5G概念",
     "IPO受益",
@@ -72128,7 +72128,7 @@
    ]
   },
   "sh_600129": {
-   "industry": "",
+   "industry": "医药制造业",
    "concepts": [
     "AI应用",
     "AI智能体",
