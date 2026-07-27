@@ -1,0 +1,38 @@
+
+============================================================
+  📊 午后扫描 (13:30/14:30/16:30)  —  2026-07-27 16:30:20
+============================================================
+
+  [0/1] 🔄 双机代码同步（强制拉取最新代码）...✓  9.7s
+  🔄 模式不同 (backup vs afternoon)，正常启动
+  ▶️ 正常启动 (xiaojiu, afternoon)
+  [1/15] fetch_overnight_brief.py --news-only ✓  0.2s
+  [2/15] scanner.py                          ✓  2.2s
+  [3/15] gen_cockpit_tier_recommend.py       ✓  0.3s
+  [4/15] fetch_sh_sz_history.py              ✓  3.6s
+  [5/15] fetch_margin.py                     ✓  4.3s
+  [6/15] fetch_concept_ranking.py            ✓  117.4s
+  [7/15] fetch_market_alerts.py              ✓  53.6s
+  [8/15] fetch_sector_fund_flow.py           ✓  15.2s
+  [9/15] fetch_limit_up_heatmap.py           ✓  3.7s
+  [10/15] push_china_data.py                  ✓  10.4s
+  [11/15] update_data_v2.py                   ✓  190.4s
+  [12/15] enhance_dist.py                     ✓  0.2s
+  [13/15] refresh_standalone_and_deploy.py --skip-data --skip-deploy ✓  1.7s
+  [14/15] sync_check.py                       ✓  7.2s
+  🔒 部署前闸门检查 (verify_data_vs_website.py --fast --gate)...
+  🚫 闸门 FAIL → 阻断部署（保留上一版正常数据），跳过: deploy_now.py --force
+     原因: exit=2 | 0<00:00,  7.47it/s]
+                                             
+
+  0%|          | 0/2 [00:00<?, ?it/s]
+100%|██████████| 2/2 [00:00<00:00, 10.90it/s]
+
+============================================================
+  总计: 15  成功: 14  失败: 1
+  ✓ 全部通过
+============================================================
+
+  📝 交接日志已写: xiaojiu afternoon ✓
+  📄 小九交接文档已更新: HANDOVER_小九_2026-07-27.md
+  ✅ 清理心跳 (xiaojiu, afternoon)

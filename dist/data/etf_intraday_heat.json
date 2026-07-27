@@ -1,0 +1,155 @@
+{
+  "update_time": "2026-07-27 15:34:03",
+  "data_date": "2026-07-27",
+  "total": 1528,
+  "top_active": [
+    {
+      "code": "513310",
+      "name": "中韩半导体ETF华泰柏瑞",
+      "pct": 2.47,
+      "amount": 15578074049,
+      "main_net_inflow": 28159616
+    },
+    {
+      "code": "588170",
+      "name": "科创半导体ETF华夏",
+      "pct": 3.95,
+      "amount": 8236085376,
+      "main_net_inflow": -267264656
+    },
+    {
+      "code": "588000",
+      "name": "科创50ETF华夏",
+      "pct": 1.38,
+      "amount": 7625768835,
+      "main_net_inflow": -474802560
+    },
+    {
+      "code": "159915",
+      "name": "创业板ETF易方达",
+      "pct": 2.96,
+      "amount": 6740596949,
+      "main_net_inflow": -106203136
+    },
+    {
+      "code": "513120",
+      "name": "港股创新药ETF广发",
+      "pct": 0.68,
+      "amount": 6434375328,
+      "main_net_inflow": -6854256
+    },
+    {
+      "code": "159516",
+      "name": "半导体设备ETF国泰",
+      "pct": 3.5,
+      "amount": 5152999174,
+      "main_net_inflow": -251690720
+    },
+    {
+      "code": "512100",
+      "name": "中证1000ETF南方",
+      "pct": 3.46,
+      "amount": 4883075466,
+      "main_net_inflow": -99587728
+    },
+    {
+      "code": "510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "pct": 1.11,
+      "amount": 4584814670,
+      "main_net_inflow": 498339952
+    },
+    {
+      "code": "588200",
+      "name": "科创芯片ETF嘉实",
+      "pct": 1.51,
+      "amount": 4568610912,
+      "main_net_inflow": 24543104
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF南方",
+      "pct": 2.4,
+      "amount": 4519820155,
+      "main_net_inflow": -149425920
+    }
+  ],
+  "top_inflow": [
+    {
+      "code": "510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "pct": 1.11,
+      "amount": 4584814670,
+      "main_net_inflow": 498339952
+    },
+    {
+      "code": "159263",
+      "name": "价值ETF易方达",
+      "pct": 0.0,
+      "amount": 431903108,
+      "main_net_inflow": 265358728
+    },
+    {
+      "code": "513750",
+      "name": "港股通非银ETF广发",
+      "pct": 0.39,
+      "amount": 838867462,
+      "main_net_inflow": 255612883
+    },
+    {
+      "code": "515050",
+      "name": "通信ETF华夏",
+      "pct": 3.02,
+      "amount": 1168023202,
+      "main_net_inflow": 206798260
+    },
+    {
+      "code": "515880",
+      "name": "通信ETF国泰",
+      "pct": 3.25,
+      "amount": 2775660459,
+      "main_net_inflow": 197227424
+    },
+    {
+      "code": "159992",
+      "name": "创新药ETF银华",
+      "pct": 2.38,
+      "amount": 1083381755,
+      "main_net_inflow": 142778928
+    },
+    {
+      "code": "159869",
+      "name": "游戏ETF华夏",
+      "pct": 3.02,
+      "amount": 656549842,
+      "main_net_inflow": 128213248
+    },
+    {
+      "code": "513130",
+      "name": "恒生科技ETF华泰柏瑞",
+      "pct": 2.09,
+      "amount": 2649306420,
+      "main_net_inflow": 122482672
+    },
+    {
+      "code": "513050",
+      "name": "中概互联网ETF易方达",
+      "pct": 2.54,
+      "amount": 2054908344,
+      "main_net_inflow": 122342592
+    },
+    {
+      "code": "159326",
+      "name": "电网设备ETF华夏",
+      "pct": 3.06,
+      "amount": 978847602,
+      "main_net_inflow": 116185549
+    }
+  ],
+  "summary": {
+    "up": 1494,
+    "down": 17,
+    "flat": 17,
+    "net_inflow_yi": 24.99
+  }
+}
