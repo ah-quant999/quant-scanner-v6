@@ -395,10 +395,10 @@ CONTENT_FRESHNESS_POLICY = {
     "candidate_pool.json":    {"generator": "build_candidate_pool.py",   "blocking": True},
     "limit_up_heatmap.json":  {"generator": "fetch_limit_up_heatmap.py", "blocking": True},
     "sector_fund_flow.json":  {"generator": "fetch_sector_fund_flow.py", "blocking": True},
-    "north_fund.json":        {"generator": "fetch_north_fund.py",       "blocking": True},
+    "north_fund.json":        {"generator": "fetch_north_fund.py",       "blocking": False, "max_age_h": 8760},  # 港交所2024-05起停披露，结构性无法新鲜，仅告警不阻断
     # 次级日更（漏跑高发，必须阻断以防 2 天前上线）
     "crisis_data.json":       {"generator": "fetch_crisis_data.py",     "blocking": True},
-    "fomc_summary.json":      {"generator": "fetch_fomc.py",            "blocking": True},
+    "fomc_summary.json":      {"generator": "fetch_fomc.py",            "blocking": False, "max_age_h": 720},  # FOMC低频(仅会议前后更新)，非会议期天然陈旧，仅告警不阻断
     # 以下两项易因网络抖动 / 需交互登录而刷新失败，若设为阻断会让整次部署卡死、
     # 反而什么都不发。改为告警级：可见但不阻断，避免「为保一点新鲜度冻结合部更新」。
     "maharo_signals.json":    {"generator": "fetch_maharo_signals.py",  "blocking": False, "max_age_h": 72},
