@@ -1000,6 +1000,23 @@ def main():
                 else:
                     log(f"   ⚠ 未配置 QB_PWD/QB_GUEST_PWD，{fname} 保留 __PWD__ 占位符（fail-closed）")
 
+        # 防挂保险：若密码未注入成功（占位符仍残留），绝不发布"无法登录"的站点，
+        # 直接中止部署并保留上一版可用 gh-pages（fail-safe，不破坏线上）。
+        _idx_ph = os.path.join(DIST_DIR, "index.html")
+        _master_ph = os.path.join(DIST_DIR, "index_master.html")
+        _ph_leak = False
+        for _cf in (_idx_ph, _master_ph):
+            if os.path.exists(_cf):
+                _cc = open(_cf, encoding="utf-8").read()
+                if "__PWD__" in _cc or "__GUEST_PWD__" in _cc:
+                    _ph_leak = True
+                    break
+        if _ph_leak:
+            log("   ❌ 密码未注入（__PWD__/__GUEST_PWD__ 仍残留）→ 中止部署，保留上一版可用站点（绝不发布无法登录的版本）")
+            if tmpdir is not None:
+                shutil.rmtree(tmpdir, ignore_errors=True)
+            return 1
+
         # 2. Copy dist/ to temp dir
         log("2. Copying dist/ ...")
         file_count = 0
@@ -1184,6 +1201,16 @@ def _auto_push_source():
     # 回退工作区 dist，造成「改动被覆盖」的假象。dist 每次部署由 update_data_v2.py 重建，
     # 同步到 main 可彻底消除该 dirty 状态，且 checkout 拿到的总是最新 dist。
     # data/ 仍由 sync_remote_data 专门流程管理（dirty 列表已排除），不在此混入库。
+    # 2026-07-27 防泄露回流保险：同步前强制剔除 dist/data 下的凭据点文件，
+    # 即使本机仍残留旧历史副本，也不会把泄露文件重新 push 回公开 main。
+    for _leak in ("dist/data/.wc_jwt_cache.json", "dist/data/maharo_signals.json"):
+        _lp = os.path.join(git_root, _leak)
+        if os.path.exists(_lp):
+            try:
+                os.remove(_lp)
+                log(f"   🛡 已强制剔除待同步的凭据文件 {_leak}（防泄露回流）")
+            except Exception as _e:
+                log(f"   ⚠ 剔除 {_leak} 失败: {_e}")
     r = run("git add -A", cwd=git_root)
     if r.returncode != 0:
         log(f"   ⚠️ git add 失败: {r.stderr[:200]}")
