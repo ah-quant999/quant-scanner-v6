@@ -957,6 +957,21 @@ def main():
                 open(nojekyll, "w").close()
                 log("   ✓ .nojekyll 已创建")
 
+        # 1.4 注入 _headers 强制 HTML/数据 no-cache（破 GitHub Pages CDN 缓存，根治旧页面问题 2026-07-28）
+        _headers_path = os.path.join(DIST_DIR, "_headers")
+        try:
+            with open(_headers_path, "w", encoding="utf-8") as f:
+                f.write(
+                    "/*.html\n"
+                    "  Cache-Control: no-cache\n"
+                    "\n"
+                    "/data/**\n"
+                    "  Cache-Control: no-cache\n"
+                )
+            log("   ✓ 已注入 _headers（HTML / data 强制 no-cache，破 CDN 缓存）")
+        except Exception as e_h:
+            log(f"   ⚠ _headers 注入失败: {e_h}")
+
         # 1.5 CDN cache busting（改注释 + 改 title + 加 meta 标签，三重确保 CDN 感知文件变化）
         log("1.5. Busting CDN cache...")
         import re
