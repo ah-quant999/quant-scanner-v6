@@ -276,11 +276,12 @@ def run_crisis():
     push_ok, push_detail = _run_subprocess(
         [PYTHON_EXE, "-c",
          "import subprocess,os; cwd=os.getcwd(); "
-         "subprocess.run(['git','pull','--rebase','origin','main'],cwd=cwd); "
          "subprocess.run(['git','add','data/crisis_data.json'],cwd=cwd); "
          "subprocess.run(['git','diff','--cached','--quiet'],cwd=cwd) or "
          "subprocess.run(['git','commit','-m','data: crisis_radar 兜底抓取 '+__import__('datetime').date.today().isoformat()],cwd=cwd); "
-         "subprocess.run(['git','push','origin','main'],cwd=cwd)"],
+         "subprocess.run(['git','push','origin','main'],cwd=cwd); "
+         "subprocess.run(['git','fetch','origin','main'],cwd=cwd); "
+         "subprocess.run(['git','reset','--hard','origin/main'],cwd=cwd)"],
         timeout=120,
         description="push crisis_data.json to origin/main",
     )
@@ -329,9 +330,8 @@ def run_china_source():
         _write_heartbeat(job_name, "FAILED", "all scripts failed")
         return False
 
-    # 拉取远端避免冲突
-    _run_subprocess(["git", "-c", "http.version=HTTP/1.1", "pull", "--rebase", "origin", "main"],
-                    timeout=120, description="git pull --rebase origin main")
+    # 注：拉取对齐已统一到下方 commit/push 之后执行 reset --hard（safe_pull 体制），
+    # 确保本轮数据先推 origin 再对齐，避免 reset 吃掉未提交数据。
 
     # 提交数据回 main
     commit_ok, commit_detail = _run_subprocess(
@@ -347,6 +347,9 @@ def run_china_source():
         timeout=180,
         description="git commit/push china source data",
     )
+    # 对齐远端（safe_pull 体制：先推本地数据，再 reset 拿干净基线）
+    _run_subprocess(["git", "fetch", "origin", "main"], timeout=120, description="git fetch origin main")
+    _run_subprocess(["git", "reset", "--hard", "origin/main"], timeout=120, description="git reset --hard origin/main")
 
     pushed = "PUSHED=true" in commit_detail
     if pushed:
@@ -397,9 +400,7 @@ def run_etf_heat():
             _write_heartbeat(job_name, "FAILED", detail)
             return
 
-        # 拉取远端避免冲突
-        _run_subprocess(["git", "-c", "http.version=HTTP/1.1", "pull", "--rebase", "origin", "main"],
-                        timeout=120, description="git pull --rebase origin main")
+        # 注：拉取对齐已统一到下方 commit/push 之后执行 reset --hard（safe_pull 体制）
         # 推送热度数据
         _run_subprocess(
             [PYTHON_EXE, "-c",
@@ -414,6 +415,9 @@ def run_etf_heat():
             timeout=180,
             description="git commit/push etf heat",
         )
+        # 对齐远端（safe_pull 体制：先推本地数据，再 reset 拿干净基线）
+        _run_subprocess(["git", "fetch", "origin", "main"], timeout=120, description="git fetch origin main")
+        _run_subprocess(["git", "reset", "--hard", "origin/main"], timeout=120, description="git reset --hard origin/main")
         # 重建 dist 并部署，使网站盘中可见最新热度
         _run_subprocess([PYTHON_EXE, "update_data_v2.py"], timeout=300,
                         description="update_data_v2.py rebuild")
