@@ -1,0 +1,65 @@
+=== Start Deploy (GitHub Pages) ===
+   [CMD] git -c http.version=HTTP/1.1 show origin/main:.deploy_lock... -> fatal: path '.deploy_lock' does not exist in 'origin/main'
+   [LOCK] acquired by CAT
+   WARN --force: skipping pre-deploy audit
+=======================================================
+0b. Scanning origin/main for conflict markers in data/ ...
+=======================================================
+   ✅ origin/main data 扫描通过 (121 个文件, 0 冲突标记)
+   🔄 强制重建 dist（本地模板为权威版本）...
+   📥 拉取最新模板代码 from origin/main ...
+   ✓ 已更新 index_master.html (from origin/main)
+   ✓ 已更新 update_data_v2.py (from origin/main)
+   ✓ 已强制刷新 gen_triple_consensus.py (from origin/main)
+   执行: python gen_triple_consensus.py
+     ✅ 三重共识: 0 只
+     ⚠️ 差一步(2/3): 1 只
+        中科蓝讯(688332) 评分79 TOP10+基本面A档
+     输出: E:\workspace\stock-scanner\data\triple_consensus.json
+   ✓ triple_consensus.json 已刷新 (criteria=基本面A档)
+   执行: python update_data_v2.py --fast
+     ✓ 已同步静态资源 → dist/
+   ✅ 数据块更新成功！
+      部署: python deploy_now.py
+      网址: https://ah-quant999.github.io/quant-scanner-v6/
+     ↻ 推送本轮 data/ → origin/main（闭环防覆盖）...
+     ✓ data/ 已推送 origin/main
+   ✓ dist 重建成功
+   执行: python enhance_dist.py
+   ✓ enhance_dist 完成
+   🔍 验证 dist/index.html 数据注入...
+   ✓ 数据新鲜度闸门通过：dist/data 与源 data/ 时间一致
+   🕒 内容新鲜度门槛（最近交易日收盘）: 2026-07-27 18:00 CST
+   🟡 内容偏旧(警告): data/concept_map.json 更新于 2026-07-23 16:53（已 103h）
+   ✓ 验证通过: LHB_DATA, HERRING_DATA, NORTH_FUND_DATA, MAIN_STOCK_DATA
+   🔗 重建并校验独立页（确保与主站同步部署）...
+   =======================================================
+   🔗 主站 ↔ 独立页 同步校验闸门
+   =======================================================
+   ✓ extract_panels_v6.py 重建 standalone/ 成功
+   ✓ 已同步 12 个独立页到 dist/standalone/
+   ✅ 主站/独立页同源同戳校验通过 (标记 59 个, POST_CLOSE_TIME=2026-07-27 15:30:00, 体积 4632364B/4634690B)
+   ✅ 主站与独立页已确认同步，可安全上线
+   ✓ 独立页已与主站同步校验通过
+1. Cloning gh-pages from GitHub to temp dir...
+   Cloned, cleaning old files...
+1.5. Busting CDN cache...
+   Build stamp: 20260727232824
+   ✓ 密码已注入 index.html (admin:1 处, guest:1 处)
+   ✓ 密码已注入 index_master.html (admin:1 处, guest:1 处)
+2. Copying dist/ ...
+   Copied 222 files
+3. Committing and pushing...
+   Push: To github.com:ah-quant999/quant-scanner-v6.git
+ + a7e10a0...031d180 HEAD -> gh-pages (forced update)
+   ✓ ls-remote 校验通过 (head=031d18044b65)
+4. Waiting for GitHub Pages build...
+
+SUCCESS! Deployed to https://ah-quant999.github.io/quant-scanner-v6/
+   (GitHub Pages build takes 1-2 min)
+   💓 上报本机心跳到 origin/main ...
+   💓 心跳文件已写: hb_alimi.json (role=alimi, mode=deploy, time=2026-07-27 23:28:51)
+   ✅ 心跳上报成功: alimi → origin/main
+=======================================================
+0b. Scanning origin/main for conflict markers in data/ ...
+=======================================================
