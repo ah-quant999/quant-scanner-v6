@@ -15,6 +15,32 @@ from datetime import datetime, timedelta, timezone
 from git_safe_sync import safe_pull  # 部署锁重试时同步远端，避免 non-fast-forward 卡死
 CST = timezone(timedelta(hours=8))  # 统一 build-stamp 时区，避免云端(UTC)覆盖本机(CST)
 
+# ── 紧急停机信号：阿狸咪机器读到小九 URGENT 停机指令时立即退出 ──
+def _check_peer_stop_signal():
+    """若本机是阿狸咪，且存在小九今日发出的 URGENT 停机文件，则禁止运行。"""
+    repo = os.path.dirname(os.path.abspath(__file__))
+    role_file = os.path.join(repo, ".machine_role")
+    try:
+        with open(role_file, encoding="utf-8") as f:
+            role = f.read().strip().upper()
+    except Exception:
+        return  # 无角色文件时不误判，避免在未知机器上误停
+    if role not in ("ALIMI", "LEMONCAT"):
+        return
+    import glob as _glob
+    today = datetime.now(CST).strftime("%Y-%m-%d")
+    for f in _glob.glob(os.path.join(repo, "URGENT_小九_*.md")):
+        base = os.path.basename(f)
+        if "停机" in base and today in base:
+            sep = "=" * 55
+            print(f"\n{sep}")
+            print(f"🛑 小九紧急停机指令已送达：{base}")
+            print("   阿狸咪本机立即退出部署，不得与主机冲突。")
+            print(f"{sep}\n")
+            sys.exit(0)
+
+_check_peer_stop_signal()
+
 DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
 OUTPUT_URL = "https://ah-quant999.github.io/quant-scanner-v6/"
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))

@@ -737,7 +737,33 @@ def print_summary(results, still_failed):
     return 0 if not still_failed else 1
 
 
+def _check_peer_stop_signal():
+    """若本机是阿狸咪，且存在小九今日发出的 URGENT 停机文件，则禁止运行。"""
+    role_file = os.path.join(WORKSPACE, ".machine_role")
+    try:
+        with open(role_file, encoding="utf-8") as f:
+            role = f.read().strip().upper()
+    except Exception:
+        return  # 无角色文件时不误判，避免在未知机器上误停
+    if role not in ("ALIMI", "LEMONCAT"):
+        return
+    import glob as _glob
+    import datetime as _dt
+    today = _dt.date.today().isoformat()
+    for f in _glob.glob(os.path.join(WORKSPACE, "URGENT_小九_*.md")):
+        base = os.path.basename(f)
+        if "停机" in base and today in base:
+            sep = "=" * 55
+            print(f"\n{sep}")
+            print(f"🛑 小九紧急停机指令已送达：{base}")
+            print("   阿狸咪本机立即退出 batch_update，不得与主机冲突。")
+            print(f"{sep}\n")
+            sys.exit(0)
+
+
 def main():
+    _check_peer_stop_signal()
+
     if len(sys.argv) < 2 or sys.argv[1] in ("--help", "-h"):
         print("batch_update.py — 九宝量化统一调度脚本")
         print("\n可用模式:")
