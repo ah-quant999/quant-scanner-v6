@@ -212,3 +212,7 @@ nul
 
 # 本地部署密钥（admin/guest 登录口令），绝不进版本库
 .site_pw.json
+# 中国源调度器运行时文件（本机专属，禁入仓库）
+.china_scheduler.pid
+_china_scheduler.out.log
+_scheduler_heartbeat.json
