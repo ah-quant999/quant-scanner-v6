@@ -144263,10 +144263,12 @@ function renderTop10Daily() {
     setPostMarketTime('top10DailyTime', tc.update_time, 'main');
   }
 
-  // 分组：严格共识（3/3）| 优先观察（2/3 且 ≥75，驾驶舱A/B档均计入）；观察（70≤评分<75）已在历史追踪页隐藏，主站同步隐藏以保持口径一致
-  var priority = near.filter(function(s){ return (s.total_score || 0) >= 75; });
+  // 分组：严格共识（3/3）| 优先观察（差1步且 ≥75）| 扩展观察（差2步且 ≥75）。
+  // 驾驶舱B档计入候补，但和A档候选按“差几步”分开展示，避免缺两档的稀释优先观察。
+  var priority = near.filter(function(s){ return (s.total_score || 0) >= 75 && (s.miss_steps || 1) === 1; });
+  var extended = near.filter(function(s){ return (s.total_score || 0) >= 75 && (s.miss_steps || 1) === 2; });
 
-  // 顶栏统一展示：三重共识 = 严格 + 优先观察
+  // 顶栏统一展示：三重共识 = 严格 + 优先观察（差1步）
   var tripleDisplayCount = consensus.length + priority.length;
   var tB = document.getElementById('tripleBadge');
   if (tB) { tB.textContent = '三重共识 ' + tripleDisplayCount + '只'; tB.style.display = ''; }
@@ -144282,12 +144284,15 @@ function renderTop10Daily() {
     else if (qg === 'D') { qColor = '#b71c1c'; qBg = '#ffcdd2'; qLabel = '基本D'; }
     var qBadge = qg ? '<span style="font-size:9px;font-weight:700;color:' + qColor + ';background:' + qBg + ';border-radius:3px;padding:1px 4px;">' + qLabel + '</span>' : '';
 
-    // 重点关注规则：3/3 严格=重点关注；2/3 候补（驾驶舱A/B档+基本面A档）按主站评分≥75 为优先观察
+    // 重点关注规则：3/3 严格=重点关注；2/3 候补按 miss_steps 分“优先观察(差1步)”和“扩展观察(差2步)”。
+    var missSteps = p.miss_steps || 1;
     var tag;
     if (!isNear) {
       tag = '<span style="font-size:9px;font-weight:700;color:#fff;background:#e91e63;border-radius:3px;padding:1px 5px;">重点关注</span>';
-    } else if (score >= 75) {
+    } else if (missSteps === 1 && score >= 75) {
       tag = '<span style="font-size:9px;font-weight:700;color:#e65100;background:#fff3e0;border-radius:3px;padding:1px 5px;">优先观察</span>';
+    } else if (missSteps === 2 && score >= 75) {
+      tag = '<span style="font-size:9px;font-weight:700;color:#6a1b9a;background:#f3e5f5;border-radius:3px;padding:1px 5px;">扩展观察</span>';
     } else {
       tag = '<span style="font-size:9px;font-weight:700;color:#888;background:#eee;border-radius:3px;padding:1px 5px;">观察</span>';
     }
@@ -144299,7 +144304,8 @@ function renderTop10Daily() {
       if (!p.in_tier_a && !p.in_tier_b) m.push('驾驶舱A/B档');
       else if (!p.in_tier_a) m.push('驾驶舱A档');
       if (!p.in_good_fund) m.push('基本面A档');
-      miss = '<span style="font-size:9px;color:#e65100;">差一步 · 缺 ' + m.join(' · ') + '</span>';
+      var stepLabel = missSteps === 2 ? '差两步' : '差一步';
+      miss = '<span style="font-size:9px;color:#e65100;">' + stepLabel + ' · 缺 ' + m.join(' · ') + '</span>';
     }
 
     // 行业/板块/概念标签（精简显示，避免卡片拥挤；概念支持 +N 展开）
@@ -144329,7 +144335,7 @@ function renderTop10Daily() {
     '</div>';
   }
 
-  if (!consensus.length && !priority.length) {
+  if (!consensus.length && !priority.length && !extended.length) {
     contentEl.innerHTML = '<div style="padding:24px;text-align:center;font-size:12px;color:#999;">当前无三重共识股<br><span style="font-size:11px;">需同时满足：主站TOP10≥70 · 驾驶舱A档 · 基本面A档</span></div>';
     return;
   }
@@ -144347,7 +144353,8 @@ function renderTop10Daily() {
 
   var h = '';
   h += renderGroup('重点关注（3/3 严格共识）', '#e91e63', consensus, false);
-  h += renderGroup('优先观察（2/3 候补 · 主站评分 ≥75）', '#e65100', priority, true);
+  h += renderGroup('优先观察（差1步 · 主站评分 ≥75）', '#e65100', priority, true);
+  h += renderGroup('扩展观察（差2步 · 主站评分 ≥75）', '#6a1b9a', extended, true);
   contentEl.innerHTML = h;
 }
 

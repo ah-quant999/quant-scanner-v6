@@ -155,6 +155,9 @@ def main():
                 "in_tier_a": in_a,
                 "in_tier_b": bool(b),
                 "in_good_fund": in_fund,
+                # 距离严格共识还差几步（按质量档位感知）：
+                # A档候选只差1步（缺另一个条件即可严格）；B档候选相当于差2步（B→A一档，再到严格又一档）。
+                "miss_steps": 1 if in_a else (2 if b else 1),
                 "close": src.get("close", 0),
                 "pct_chg": src.get("pct_chg", 0),
                 "pct_chg_20d": src.get("pct_chg_20d", 0),
