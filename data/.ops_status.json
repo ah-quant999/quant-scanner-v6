@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-27 17:49:45",
-  "cloud_deploy_time": "20260727173559",
+  "updated_at": "2026-07-27 23:28:00",
+  "cloud_deploy_time": "20260727232800",
   "failover_status": "OK",
   "failover_time": "2026-07-27 17:49:45",
   "data_correctness": {
@@ -34,17 +34,17 @@
   "three_party": {
     "cloud": {
       "status": "ok",
-      "last_time": "2026-07-27 17:22:36",
-      "mode": "cloud_intraday"
+      "last_time": "2026-07-27 13:31:35",
+      "mode": "cloud_close"
     },
     "xiaojiu": {
       "status": "ok",
-      "last_time": "2026-07-27 17:36:26",
+      "last_time": "2026-07-27 19:18:34",
       "mode": "deploy"
     },
     "alimi": {
       "status": "ok",
-      "last_time": "2026-07-27 07:45:14",
+      "last_time": "2026-07-27 23:19:43",
       "mode": "deploy"
     }
   },

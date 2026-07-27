@@ -36372,11 +36372,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 19.4,
-        "pct_chg": -4.34,
-        "pct_chg_5d": -1.52,
-        "pct_chg_20d": -3.34,
-        "rsi_14": 33.4,
+        "close": 19.65,
+        "pct_chg": 1.29,
+        "pct_chg_5d": -2.63,
+        "pct_chg_20d": -2.24,
+        "rsi_14": 43.2,
         "signal_score": 0.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -36389,7 +36389,7 @@
           false
         ],
         "ema_score": 0,
-        "turnover_rate": 2.31,
+        "turnover_rate": 1.46,
         "缠论买_日K": false,
         "缠论买_次数": 0,
         "金钻_黄柱": false,
@@ -36400,7 +36400,7 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 📉低开低走"
+        "开盘_标签": "⚡低开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -36460,23 +36460,23 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 110.0,
-        "pct_chg": -4.26,
-        "pct_chg_5d": -2.31,
-        "pct_chg_20d": 22.91,
-        "rsi_14": 67.8,
+        "close": 111.0,
+        "pct_chg": 0.91,
+        "pct_chg_5d": -4.97,
+        "pct_chg_20d": 19.35,
+        "rsi_14": 68.8,
         "signal_score": 1.0,
-        "ema_up": 3,
+        "ema_up": 0,
         "ema_dirs": [
           false,
           false,
           false,
           false,
-          true,
-          true,
-          true
+          false,
+          false,
+          false
         ],
-        "ema_score": 3,
+        "ema_score": 0,
         "turnover_rate": 0,
         "缠论买_日K": false,
         "缠论买_次数": 0,
@@ -36488,19 +36488,19 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 📉低开低走"
+        "开盘_标签": "⚠️高开低走"
       },
-      "ema_up": 3,
+      "ema_up": 0,
       "ema_dirs": [
         false,
         false,
         false,
         false,
-        true,
-        true,
-        true
+        false,
+        false,
+        false
       ],
-      "ema_score": 3
+      "ema_score": 0
     },
     "hk_09926": {
       "code": "09926",
@@ -36822,7 +36822,49 @@
       "sources": [
         "三足鼎立",
         "创业板成交前100"
-      ]
+      ],
+      "latest": {
+        "close": 28.91,
+        "pct_chg": 12.14,
+        "pct_chg_5d": 11.88,
+        "pct_chg_20d": 3.14,
+        "rsi_14": 56.2,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "ema_score": 0,
+        "turnover_rate": 11.21,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": true,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+      },
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sh_688213": {
       "code": "688213",
@@ -36867,7 +36909,49 @@
       "sources": [
         "三足鼎立",
         "科创板成交前100"
-      ]
+      ],
+      "latest": {
+        "close": 95.95,
+        "pct_chg": 5.35,
+        "pct_chg_5d": 3.67,
+        "pct_chg_20d": -1.08,
+        "rsi_14": 46.1,
+        "signal_score": 6,
+        "ema_up": 0,
+        "ema_dirs": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 2,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ➖平开"
+      },
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "hk_03690": {
       "code": "03690",
@@ -36912,7 +36996,49 @@
       "sources": [
         "三足鼎立",
         "港股成交前50"
-      ]
+      ],
+      "latest": {
+        "close": 89.3,
+        "pct_chg": 3.0,
+        "pct_chg_5d": 3.48,
+        "pct_chg_20d": 32.0,
+        "rsi_14": 67.7,
+        "signal_score": 5.5,
+        "ema_up": 0,
+        "ema_dirs": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": true,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 🔥高开高走"
+      },
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "hk_06862": {
       "code": "06862",
@@ -36956,7 +37082,49 @@
       ],
       "sources": [
         "三足鼎立"
-      ]
+      ],
+      "latest": {
+        "close": 11.42,
+        "pct_chg": 1.42,
+        "pct_chg_5d": -2.81,
+        "pct_chg_20d": 2.98,
+        "rsi_14": 60.5,
+        "signal_score": 6,
+        "ema_up": 0,
+        "ema_dirs": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": false,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🔥高开高走"
+      },
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     },
     "sz_002156": {
       "code": "002156",
@@ -37001,7 +37169,49 @@
       "sources": [
         "三足鼎立",
         "主板成交前100"
-      ]
+      ],
+      "latest": {
+        "close": 76.67,
+        "pct_chg": 0.04,
+        "pct_chg_5d": 21.7,
+        "pct_chg_20d": 5.64,
+        "rsi_14": 57.3,
+        "signal_score": 6.5,
+        "ema_up": 0,
+        "ema_dirs": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "ema_score": 0,
+        "turnover_rate": 0,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
+        "金钻_起涨": false,
+        "四量图_机构变红": true,
+        "上涨趋势": true,
+        "三线共振": false,
+        "三足鼎立": false,
+        "signal_count": 2,
+        "当日涨停": false,
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+      },
+      "ema_up": 0,
+      "ema_dirs": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "ema_score": 0
     }
   },
   "last_update": "2026-07-27 19:10:53",
@@ -40377,5 +40587,5 @@
   },
   "candidate_total": 372,
   "total_count": 300,
-  "update_time": "2026-07-27 17:43:43"
+  "update_time": "2026-07-27 23:27:59"
 }
