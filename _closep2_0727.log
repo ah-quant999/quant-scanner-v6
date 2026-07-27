@@ -1,0 +1,35 @@
+
+============================================================
+  📊 收盘扫描+生成 (18:30) — 龙虎榜(已出)+scanner全量+各类生成  —  2026-07-27 22:59:41
+============================================================
+
+  [0/1] 🔄 双机代码同步（强制拉取最新代码）...✓  6.3s
+  🔄 模式不同 (backup vs close_p2)，正常启动
+  ▶️ 正常启动 (ALIMI, close_p2)
+  [1/13] fetch_lhb.py                        ✓  101.6s
+  [2/13] build_candidate_pool.py             ✓  224.8s
+  [3/13] scanner.py full                     ✓  125.3s
+  [4/13] 🔀 并行组 (15个任务, 最多6并发)
+  [5/13] capital_flow_summary.py             ✓  0.2s
+  [6/13] gen_triple_consensus.py             ✓  0.2s
+  [7/13] update_triple_resonance_history.py  ✓  0.1s
+  [8/13] push_experiment_files.py            ✗  4.2s  exit=1 | origin main", env=env)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: run() got an unexpected keyword argument 'env'
+  [9/13] cockpit_backtest_now.py             ✓  15.4s
+  [10/13] backtest_comprehensive.py           ✓  98.9s
+  [11/13] gen_triple_track.py                 ✓  0.2s
+  [12/13] push_china_data.py                  ✗  120.1s  TIMEOUT
+  [13/13] report_heartbeat.py --role auto --mode close_p2 ✓  14.1s
+
+  ── 重试 2 个失败步骤 ──
+  [R] push_experiment_files.py            ✓  3.4s
+  [R] push_china_data.py                  ✓  0.4s
+
+============================================================
+  总计: 28  成功: 28  失败: 0
+  ✓ 全部通过
+============================================================
+
+  📝 交接日志已写: ALIMI close_p2 ✓
+  ✅ 清理心跳 (ALIMI, close_p2)
