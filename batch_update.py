@@ -106,6 +106,8 @@ MODES = {
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
             ("scanner.py", 300),
+            # 2026-07-27 根因修复：先推中国源数据，防 update_data_v2 的 safe_pull 回退陈旧版
+            ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
             ("enhance_dist.py", 30),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
@@ -128,6 +130,8 @@ MODES = {
             ("scanner.py", 300),
             # 2026-07-21 接入：三重选股盘中刷新（收盘前先给当日预览，close_p2 给最终版）
             ("triple_select_scan.py", 600),
+            # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
+            ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
             ("enhance_dist.py", 30),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
@@ -149,6 +153,8 @@ MODES = {
             ("fetch_market_alerts.py", 180),
             ("fetch_sector_fund_flow.py", 180),
             ("fetch_limit_up_heatmap.py", 120),
+            # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
+            ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
             ("enhance_dist.py", 30),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
@@ -169,6 +175,8 @@ MODES = {
             ("fetch_market_alerts.py", 180),
             ("fetch_sector_fund_flow.py", 180),
             ("fetch_limit_up_heatmap.py", 120),
+            # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
+            ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
             ("enhance_dist.py", 30),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
