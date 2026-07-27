@@ -1932,6 +1932,24 @@ def main():
     print(f"\n✅ 数据块更新成功！")
     print(f"   部署: python deploy_now.py")
     print(f"   网址: https://ah-quant999.github.io/quant-scanner-v6/")
+
+    # === 闭环修复（2026-07-27）：把本轮产出的 data/*.json 推到 origin/main ===
+    # 背景：safe_pull 体制下每次拉取都 reset --hard origin/main，若不在产出后立即 push，
+    # 本轮新数据下一轮就被洗回 origin 旧版——这就是"数据旧且一直被覆盖"的根因之一。
+    # 复用 push_china_data.py（仅推 data/，不部署 gh-pages，不违反部署铁律）。
+    try:
+        print("  ↻ 推送本轮 data/ → origin/main（闭环防覆盖）...")
+        _push = subprocess.run(
+            [sys.executable, os.path.join(BASE_DIR, "push_china_data.py")],
+            capture_output=True, text=True, timeout=180,
+        )
+        if _push.returncode == 0:
+            print("  ✓ data/ 已推送 origin/main")
+        else:
+            print(f"  [WARN] 推送失败(非致命): {(_push.stderr or _push.stdout)[:200]}")
+    except Exception as e:
+        print(f"  [WARN] 推送异常(非致命): {e}")
+
     return True
 if __name__ == "__main__":
     success = main()
