@@ -1,8 +1,73 @@
 {
-  "update_time": "2026-07-24 18:03",
-  "data_available": false,
-  "top_main_in": [],
-  "top_main_out": [],
-  "status": "no_data_today",
-  "note": "当日无符合阈值(>=0.5亿)的主力异动"
+  "update_time": "2026-07-27 09:44",
+  "data_available": true,
+  "top_main_in": [
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "net_in": 1.0,
+      "unit": "亿",
+      "day_count": 76
+    }
+  ],
+  "top_main_out": [
+    {
+      "code": "300502",
+      "name": "新易盛",
+      "net_out": 15.6,
+      "unit": "亿",
+      "day_count": 3
+    },
+    {
+      "code": "601899",
+      "name": "紫金矿业",
+      "net_out": 13.5,
+      "unit": "亿",
+      "day_count": 1
+    },
+    {
+      "code": "300308",
+      "name": "中际旭创",
+      "net_out": 7.8,
+      "unit": "亿",
+      "day_count": 3
+    },
+    {
+      "code": "600276",
+      "name": "恒瑞医药",
+      "net_out": 3.9,
+      "unit": "亿",
+      "day_count": 7
+    },
+    {
+      "code": "688111",
+      "name": "金山办公",
+      "net_out": 2.2,
+      "unit": "亿",
+      "day_count": 3
+    },
+    {
+      "code": "603259",
+      "name": "药明康德",
+      "net_out": 1.4,
+      "unit": "亿",
+      "day_count": 1
+    },
+    {
+      "code": "603501",
+      "name": "韦尔股份",
+      "net_out": 1.2,
+      "unit": "亿",
+      "day_count": 6
+    },
+    {
+      "code": "600028",
+      "name": "中国石化",
+      "net_out": 0.6,
+      "unit": "亿",
+      "day_count": 4
+    }
+  ],
+  "status": "ok",
+  "note": ""
 }

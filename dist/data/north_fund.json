@@ -1,12 +1,12 @@
 {
-  "update_time": "2026-07-24 19:25:43",
+  "update_time": "2026-07-27 09:47:29",
   "data_date": null,
   "south_flow": {
-    "total": 15.18,
+    "total": 4.52,
     "unit": "亿",
-    "direction": "流出",
-    "sh_net": -5.51,
-    "sz_net": -9.67
+    "direction": "流入",
+    "sh_net": 2.23,
+    "sz_net": 2.29
   },
   "south_week": {
     "total": 29.78,
@@ -141,7 +141,7 @@
   "north_info": {
     "note": "北向净买额自2024年5月起不再披露（港交所新规），仅保留成交总额参考",
     "last_available": "2024-08-16",
-    "date": "2026-07-24",
+    "date": "2026-07-27",
     "status": "北向净买额已停更(2024.5起港交所新规)，仅保留南向资金数据"
   },
   "data_available": true,
