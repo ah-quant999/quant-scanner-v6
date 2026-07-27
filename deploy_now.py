@@ -467,7 +467,7 @@ def _verify_source_freshness(autofix=False):
 
 
 def _rebuild_dist():
-    """调用 update_data_v2.py --fast 重新生成 dist 文件。
+    """调用 update_data_v2.py (full) 重新生成 dist 文件（含全部 data/ 重新生成，不依赖部署前 data 是否新鲜）。
     
     【2026-07-03 修复】：部署前先从 origin/main 拉取最新模板，
     防止本地模板过期导致覆盖他人的修复。
@@ -520,10 +520,10 @@ def _rebuild_dist():
         return False
 
     python_exe = sys.executable
-    log(f"   执行: python update_data_v2.py --fast")
+    log(f"   执行: python update_data_v2.py (full，强制重新生成全部 data 再同步 dist)")
     result = subprocess.run(
-        [python_exe, updater, "--fast"],
-        capture_output=True, text=True, timeout=300,
+        [python_exe, updater],
+        capture_output=True, text=True, timeout=600,
         cwd=PROJECT_ROOT
     )
     # 打印最后几行输出（方便确认数据注入成功）
