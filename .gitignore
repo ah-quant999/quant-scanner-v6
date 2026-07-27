@@ -32,6 +32,9 @@ __pycache__/
 !verify_frontend_deploy.py
 !is_trading_day.py
 !fetch_cffex_holdings.py
+# ETF：净申购(收盘后) + 盘中资金热度(T+0)
+!fetch_etf_subscription.py
+!fetch_etf_intraday_heat.py
 !fetch_inst_trade.py
 !fetch_limit_up_heatmap.py
 !fetch_worldcup.py
