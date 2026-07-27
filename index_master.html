@@ -133730,7 +133730,8 @@ function setChartTime(id, timeStr, source) {
   //   ipo = 事件 (仅申购日前有数据)
   var freshLabels = {
     main:    '盘后更新',
-    etf:     'T+1',
+    etf:     'T+1',  // ETF份额申赎(宽基ETF净申赎) = 真T+1次日披露
+    nt:      '盘中实时',  // 国家队ETF资金估算(nt_data.etfFlow) = 盘中实时
     macro:   '盘后更新',
     sector:  '盘中实时',
     intraday:'盘中实时',
@@ -134033,7 +134034,9 @@ function isYesterdayData(timestamp) {
 }
 function fmtDataTime(timeStr) {
   if (!timeStr) return '';
-  var parts = timeStr.split(' ');
+  // 兼容 ISO-8601（2026-07-25T17:55:07）/ 毫秒 / 带 Z 等格式，统一转成 YYYY-MM-DD HH:MM:SS
+  var normalized = String(timeStr).replace('T', ' ').replace(/(\.\d+)?Z$/, '').trim();
+  var parts = normalized.split(' ');
   var datePart = parts[0] || '';
   var timePart = (parts[1] || '').substring(0, 5);
   var dd = new Date(datePart.replace(/-/g, '/') + ' ' + (parts[1] || ''));
@@ -135552,7 +135555,7 @@ function renderETFFlow() {
     var t = (isAfterClose ? csTime : (nt.update_time || '')) || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
     // 2026-07-22 修复：csTime 可能是 ISO 格式（含 T），需要转空格才能被 fmtDataTime 正确解析出 timePart
     if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
-    if (t) { setPostMarketTime('ntEtfFlowTime', t, 'etf'); }
+    if (t) { setPostMarketTime('ntEtfFlowTime', t, 'nt'); }  // nt=国家队ETF盘中实时(非T+1的ETF申赎)
     // 2026-07-22 收盘后加"📌 收盘后"标签
     if (isAfterClose && csTime) {
       timeEl.textContent = '📌 收盘后 · ' + timeEl.textContent;
@@ -144955,8 +144958,10 @@ function renderMarketFundFlowCard() {
     if (lu) {
       var ft = (typeof fmtDataTime === 'function') ? fmtDataTime(lu) : { text: lu.replace('T', ' ').replace(/(\.\d+)?Z?$/, '').substring(0, 16) };
       tEl.textContent = '更新于 ' + ft.text;
+      tEl.className = 'update-time-badge' + (ft.stale ? ' stale' : '') + (ft.critical ? ' critical' : '');
     } else {
       tEl.textContent = '更新于 未知';
+      tEl.className = 'update-time-badge';
     }
   }
 
