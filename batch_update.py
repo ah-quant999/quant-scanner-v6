@@ -120,7 +120,6 @@ MODES = {
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
             ("fetch_sector_fund_flow.py", 120),
-            ("fetch_etf_subscription.py", 120),
             ("fetch_market_alerts.py", 120),
             ("fetch_concept_ranking.py", 120),
             ("fetch_sector_rs.py", 90),
@@ -203,6 +202,8 @@ MODES = {
             ("fetch_suspension_alert.py", 180),
             ("fetch_analyst_ratings.py", 180),
             ("fetch_policy_density.py", 120),
+            # 2026-07-27 A+B: 收盘快照 ETF 资金热度（T+0 实时），与盘后净申购(T+1)互补
+            ("fetch_etf_intraday_heat.py", 120),
             ("update_data_v2.py", 300),
             ("refresh_standalone_and_deploy.py --skip-data --skip-deploy", 300),
             # 2026-07-24 修复：把刚刷新的中国源数据提交推 main，

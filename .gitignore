@@ -128,6 +128,8 @@ data/*
 !data/sh_index_fib.json
 !data/sz_index_fib.json
 !data/margin_data.json
+!data/etf_subscription.json
+!data/etf_intraday_heat.json
 !data/stock_deviation.json
 !data/cffex_holdings.json
 !data/inst_trade.json

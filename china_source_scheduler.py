@@ -369,6 +369,68 @@ def run_china_source():
         return True
 
 
+def run_etf_heat():
+    """盘中每30分钟：抓取 ETF 资金热度（T+0 实时），弥补净申购 T+1 空窗。
+
+    仅交易日 09:35-15:10 运行（由函数自身守卫），抓取后推送 json 并重建部署。
+    """
+    job_name = "etf_intraday_heat"
+    try:
+        now = datetime.datetime.now()
+        if not _is_trading_day():
+            return
+        # 仅交易日 09:35-15:10 运行
+        in_window = (
+            (now.hour > 9 or (now.hour == 9 and now.minute >= 35))
+            and (now.hour < 15 or (now.hour == 15 and now.minute <= 10))
+        )
+        if not in_window:
+            return
+
+        _write_heartbeat(job_name, "START")
+        ok, detail = _run_subprocess(
+            [PYTHON_EXE, "fetch_etf_intraday_heat.py"],
+            timeout=120,
+            description="etf intraday heat",
+        )
+        if not ok:
+            _write_heartbeat(job_name, "FAILED", detail)
+            return
+
+        # 拉取远端避免冲突
+        _run_subprocess(["git", "-c", "http.version=HTTP/1.1", "pull", "--rebase", "origin", "main"],
+                        timeout=120, description="git pull --rebase origin main")
+        # 推送热度数据
+        _run_subprocess(
+            [PYTHON_EXE, "-c",
+             "import subprocess,os,datetime; cwd=os.getcwd(); "
+             "subprocess.run(['git','config','user.name','xiaojiu-bot'],cwd=cwd); "
+             "subprocess.run(['git','config','user.email','xiaojiu@local'],cwd=cwd); "
+             "subprocess.run(['git','add','data/etf_intraday_heat.json'],cwd=cwd); "
+             "r=subprocess.run(['git','diff','--cached','--quiet'],cwd=cwd); "
+             "print('PUSHED=false' if r.returncode==0 else 'PUSHED=true'); "
+             "subprocess.run(['git','commit','-m','auto: ETF资金热度 '+datetime.datetime.now().strftime('%Y-%m-%d %H:%M')],cwd=cwd); "
+             "subprocess.run(['git','-c','http.version=HTTP/1.1','push','origin','main'],cwd=cwd)"],
+            timeout=180,
+            description="git commit/push etf heat",
+        )
+        # 重建 dist 并部署，使网站盘中可见最新热度
+        _run_subprocess([PYTHON_EXE, "update_data_v2.py"], timeout=300,
+                        description="update_data_v2.py rebuild")
+        _run_subprocess(["git", "fetch", "origin", "gh-pages"], timeout=60,
+                        description="git fetch gh-pages")
+        deploy_ok, deploy_detail = _run_subprocess(
+            [PYTHON_EXE, "deploy_now.py", "--force"],
+            timeout=600,
+            description="deploy_now.py --force",
+        )
+        _run_subprocess(["git", "checkout", "origin/main", "--", "dist/"],
+                        timeout=60, description="restore dist/ from origin/main")
+        _write_heartbeat(job_name, "DEPLOYED" if deploy_ok else "DEPLOY_FAILED", deploy_detail)
+    except Exception as e:
+        _write_heartbeat(job_name, "CRASH", str(e)[:300])
+
+
 # ──────────────────────────────────────────────────────────
 # 调度器骨架
 # ──────────────────────────────────────────────────────────
@@ -418,6 +480,9 @@ def _register_jobs():
             return job
         schedule.every().saturday.at(t).do(make_job())
         schedule.every().sunday.at(t).do(make_job())
+
+    # 盘中 ETF 资金热度：每30分钟（仅交易日 09:35-15:10 内由函数自身守卫）
+    schedule.every(30).minutes.do(run_etf_heat)
 
 
 def _acquire_lock():

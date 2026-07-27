@@ -58662,7 +58662,7 @@ true
 ],
 "sz": [],
 "update_time": "2026-07-22 19:25"
-};var ETF_SUBSCRIPTION = window.ETF_SUBSCRIPTION = {
+};var ETF_INTRADAY_HEAT = window.ETF_INTRADAY_HEAT = {};var ETF_SUBSCRIPTION = window.ETF_SUBSCRIPTION = {
 "sh": [
 {
 "date": "4/30",
@@ -133920,6 +133920,7 @@ function render() {
     // 市场数据渲染（异动提醒 / ETF资金流向 / 日历）
     try { renderAISummary(); } catch(e) { console.error('AI速览渲染失败:', e); catchErr('AI速览', e); }
     try { renderETFFlow(); } catch(e) { console.error('ETF资金流向渲染失败:', e); catchErr('ETF流向', e); }
+    try { renderETFIntradayHeat(); } catch(e) { console.error('ETF资金热度渲染失败:', e); catchErr('ETF热度', e); }
     try { renderSectorFundFlow(); } catch(e) { console.error('板块资金流向渲染失败:', e); catchErr('板块资金', e); }
     try { renderCffex(); } catch(e) { console.error('中信期货持仓渲染失败:', e); catchErr('期货持仓', e); }
     try { renderConceptRanking(); } catch(e) { console.error('概念涨跌幅渲染失败:', e); catchErr('概念排名', e); }
@@ -135645,6 +135646,71 @@ function renderETFFlow() {
 
   content.innerHTML = h;
   card.style.display = 'block';
+}
+
+// ===== ETF资金热度（盘中实时 T+0，fund_etf_spot_em 全市场实时行情） =====
+function renderETFIntradayHeat() {
+  const data = window.ETF_INTRADAY_HEAT || {};
+  const topActive = data.top_active || [];
+  const topInflow = data.top_inflow || [];
+  const summary = data.summary || {};
+  const updateTime = data.update_time || '';
+
+  const card = document.getElementById('etfHeatCard');
+  const content = document.getElementById('etfHeatContent');
+  if (!card || !content) return;
+
+  // 更新时间
+  const timeEl = document.getElementById('etfHeatTime');
+  if (timeEl) {
+    var t = updateTime || '';
+    if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
+    if (t) { setPostMarketTime('etfHeatTime', t, 'etf'); }
+  }
+  // 顶部汇总（涨跌家数 + 主力净流入合计）
+  const sumEl = document.getElementById('etfHeatSummary');
+  if (sumEl) {
+    var parts = [];
+    if (summary.up != null && summary.down != null) parts.push(summary.up + '涨' + summary.down + '跌');
+    if (summary.net_inflow_yi != null) {
+      var v = summary.net_inflow_yi;
+      parts.push((v >= 0 ? '主力净流入 ' : '主力净流出 ') + Math.abs(v).toFixed(1) + '亿');
+    }
+    sumEl.textContent = parts.join(' · ');
+  }
+
+  if (!topActive.length && !topInflow.length) {
+    card.style.display = 'block';
+    content.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:14px;">📭 暂无ETF资金热度数据，等待盘中更新</div>';
+    return;
+  }
+  card.style.display = 'block';
+
+  // 去管理人前缀（对齐 renderETFFlow 口径）
+  function stripName(n){
+    return (n || '').replace(/华夏|华泰柏瑞|易方达|嘉实|南方|博时|广发|天弘|汇添富|富国|银华|华宝|国泰|招商|平安|中欧|工银瑞信|兴全|景顺长城|建信|华安|万家|大成|国投瑞银|融通|诺安|前海开源/g, '');
+  }
+  function fmtAmt(a){ a = a || 0; return a >= 1e8 ? (a/1e8).toFixed(1) + '亿' : Math.round(a/1e4) + '万'; }
+  function color(p){ return (p || 0) >= 0 ? '#c62828' : '#2e7d32'; } // 涨红跌绿（A股惯例）
+
+  // 双列：成交额 TOP | 主力净流入 TOP
+  function colHTML(title, list, valFn) {
+    if (!list.length) return '';
+    var rows = list.map(function(it, i){
+      var nm = stripName(it.name || '');
+      var val = valFn(it);
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px dashed #f0f0f0;font-size:12px;">'
+        + '<span style="color:#333;">' + (i+1) + '. ' + nm + '</span>'
+        + '<span style="color:' + color(it.pct) + ';font-weight:600;">' + val + '</span></div>';
+    }).join('');
+    return '<div style="flex:1;min-width:0;"><div style="font-size:12px;font-weight:700;color:#555;margin-bottom:4px;">' + title + '</div>' + rows + '</div>';
+  }
+
+  var html = '<div style="display:flex;gap:18px;">';
+  html += colHTML('🔥 成交额 TOP', topActive, function(it){ return fmtAmt(it.amount); });
+  html += colHTML('💰 主力净流入 TOP', topInflow, function(it){ var v = it.main_net_inflow || 0; return (v >= 0 ? '+' : '') + fmtAmt(v); });
+  html += '</div>';
+  content.innerHTML = html;
 }
 
 // ===== 板块资金流向（合并资金追踪 + 轮动分析） =====
@@ -144516,6 +144582,7 @@ var HEALTH_SOURCES = [
   {label:'沪深港通资金(北/南向)', icon:'🌏', ts:function(){return (window.NORTH_FUND_DATA||{}).update_time}, maxDays:7,  note:'每周五19:30更新',         cat:'fund',  freq:5},
   {label:'两融数据',          icon:'📊', ts:function(){return (window.MARGIN_DATA||{}).update_time},     maxDays:2,  note:'T+1-盘后更新',             cat:'monitor',freq:3},
   {label:'ETF份额',           icon:'📋', ts:function(){return (window.ETF_SUBSCRIPTION||{}).update_time},maxDays:5,  note:'T+1-盘后更新',             cat:'monitor',freq:3},
+  {label:'ETF资金热度',       icon:'📊', ts:function(){return (window.ETF_INTRADAY_HEAT||{}).update_time},maxDays:1, note:'盘中实时T+0',           cat:'monitor',freq:30},
   {label:'中信期货持仓',      icon:'📊', ts:function(){return (window.CFFEX_HOLDINGS||{}).update_time},  maxDays:5,  note:'T+1-盘后更新',             cat:'monitor',freq:3},
   // ── 月度 ──
   {label:'FOMC速览',          icon:'🏛️', ts:function(){return (window.FOMC_SUMMARY||{}).update_time},   maxDays:45, note:'会议日期(7/28下次)',         cat:'alert', freq:5},
@@ -144545,6 +144612,7 @@ var PAGE_CARDS = [
   {page:'📈 数据监控', card:'📉 斐波那契窗口',    check:function(){return (window.SH_FIB||{}).update_time ? true : false;}},
   {page:'📈 数据监控', card:'📊 两融余额',        check:function(){return (window.MARGIN_DATA||{}).update_time ? true : false;}},
   {page:'📈 数据监控', card:'📊 ETF申赎',         check:function(){return (window.ETF_SUBSCRIPTION||{}).update_time ? true : false;}},
+  {page:'📋 总览', card:'📊 ETF资金热度',       check:function(){var el=document.getElementById('etfHeatCard'); return el && el.style.display !== 'none';}},
   {page:'📈 数据监控', card:'📊 宏观观测',        check:function(){return (window.MACRO_DATA||{}).update_time ? true : false;}},
   {page:'📈 数据监控', card:'⚠️ 异常数据提醒',    check:function(){return !!(window.MARKET_ALERTS&&window.MARKET_ALERTS.update_time);}},
   {page:'📈 数据监控', card:'🚨 CN危机监测',    check:function(){return !!(window.MACRO_DATA&&window.MACRO_DATA.indicator_status);}},

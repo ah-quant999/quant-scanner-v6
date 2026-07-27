@@ -1120,6 +1120,7 @@ def main():
     market_alerts = load_json(os.path.join(DATA_DIR, "market_alerts.json"))
     margin_data  = load_json(os.path.join(DATA_DIR, "margin_data.json"), {"sh": [], "sz": [], "update_time": ""})
     etf_subscription = load_json(os.path.join(DATA_DIR, "etf_subscription.json"), {"sh": [], "update_time": ""})
+    etf_intraday_heat = load_json(os.path.join(DATA_DIR, "etf_intraday_heat.json"), {"update_time": "", "total": 0, "top_active": [], "top_inflow": [], "summary": {}})
     macro_data   = load_json(os.path.join(DATA_DIR, "macro_data.json"), {"update_time": "", "monetary": {}, "economy": {}, "market_sentiment": {}, "global_macro": {}})
     crisis_data  = load_json(os.path.join(DATA_DIR, "crisis_data.json"), {"update_time": "", "indicators": {}})
     herding_data = load_json(os.path.join(DATA_DIR, "herding_data.json"), {"update_time": ""})
@@ -1522,6 +1523,7 @@ def main():
         ("CRDS_CARD_DATA", "window.CRDS_CARD_DATA = ", "{", "}"),
         ("EXPERIMENT_DATA", "window.EXPERIMENT_DATA = ", "{", "}"),
         ("VOLATILITY_WATCH_DATA", "window.VOLATILITY_WATCH_DATA = ", "{", "}"),
+        ("ETF_INTRADAY_HEAT", "var ETF_INTRADAY_HEAT = window.ETF_INTRADAY_HEAT = ", "{", "}"),
         # 2026-07-23 恢复：此前因 data_objs 缺变量导致 zip 错位，已同步补回
         ("FUNDAMENTAL_QUALITY", "window.FUNDAMENTAL_QUALITY = ", "{", "}"),
         ("CAPITAL_FLOW_DATA", "window.CAPITAL_FLOW_DATA = ", "{", "}"),
@@ -1704,7 +1706,7 @@ def main():
         if isinstance(data, dict) and name == "LHB_DATA":
             if not data.get("stocks") and not data.get("update_time") and not data.get("scan_time"):
                 is_empty = True
-        if isinstance(data, dict) and name in ("MARGIN_DATA", "NORTH_FUND", "ETF_SUBSCRIPTION", "FOMC_SUMMARY"):
+        if isinstance(data, dict) and name in ("MARGIN_DATA", "NORTH_FUND", "ETF_SUBSCRIPTION", "FOMC_SUMMARY", "ETF_INTRADAY_HEAT"):
             if not data.get("update_time") and not data.get("available", True):
                 is_empty = True
                 print(f"  ⚠️  {name} 无新数据且不可用，跳过替换")
