@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-27 23:28:18",
-  "cloud_deploy_time": "20260727232818",
+  "updated_at": "2026-07-27 23:29:33",
+  "cloud_deploy_time": "20260727232933",
   "failover_status": "OK",
   "failover_time": "2026-07-27 17:49:45",
   "data_correctness": {
@@ -44,7 +44,7 @@
     },
     "alimi": {
       "status": "ok",
-      "last_time": "2026-07-27 23:19:43",
+      "last_time": "2026-07-27 23:28:51",
       "mode": "deploy"
     }
   },
