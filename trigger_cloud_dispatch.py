@@ -226,12 +226,23 @@ def main():
         if not due:
             continue  # 未到点
 
-        # 幂等判据 1：部署型档位，若 build-stamp 已 >= 档位时间，说明已部署
-        if use_stamp:
-            slot_int = int(slot_dt.strftime("%Y%m%d%H%M%S"))
-            if build_stamp >= slot_int:
-                log(f"⏭️ {wf} slot='{slot}' 已部署(build-stamp {build_stamp} >= {slot_int})，跳过")
-                continue
+        # 幂等判据 1：部署型档位，仅当「本发令枪今日确已发令该档位」且 build-stamp 已 >= 档位时间，
+        #   才判定云端已部署完成并跳过。
+        #   ⚠️ 关键修正（2026-07-27）：旧逻辑仅凭 build-stamp >= 档位时间就跳过，但 build-stamp
+        #      只代表「最后一次部署」，小九本机部署也会顶高它 → 误判「云端已抓数」而永不发令，
+        #      云端真失败时被彻底掩盖。现要求必须存在本枪今日发令记录才允许以 build-stamp 跳过，
+        #      否则（小九先部署 / 云端 cron 失败）一律重新发令，确保云端失败能被兜底重试。
+        if use_stamp and slot in state:
+            last_dt = None
+            try:
+                last_dt = datetime.fromisoformat(state[slot])
+            except Exception:
+                pass
+            if last_dt and last_dt.astimezone(TZ).date() == now.date():
+                slot_int = int(slot_dt.strftime("%Y%m%d%H%M%S"))
+                if build_stamp >= slot_int:
+                    log(f"⏭️ {wf} slot='{slot}' 今日已发令且已部署(build-stamp {build_stamp} >= {slot_int})，跳过")
+                    continue
 
         # 幂等判据 2：今日已触发过该档位则跳过（避免每日重复 dispatch；
         #   真正的失败重试交给 safety-net.yml 兜底重跑）。
