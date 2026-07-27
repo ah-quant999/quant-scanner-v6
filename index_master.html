@@ -136392,11 +136392,12 @@ function renderConceptRanking() {
   const contentEl = document.getElementById('conceptRankingContent');
   if (!contentEl) { card.style.display = 'none'; return; }
 
-  // 涨幅榜前10名 + 跌幅榜前10名
-  const gainers = ranking.filter(x => x.pct > 0).sort((a,b) => b.pct - a.pct).slice(0, 10);
-  const losers  = ranking.filter(x => x.pct < 0).sort((a,b) => a.pct - b.pct).slice(0, 10);
+  // 涨幅榜前10名 + 跌幅榜（涨幅最小的前10名，允许普涨时全为正）
+  const sorted = ranking.slice().sort((a,b) => b.pct - a.pct);
+  const gainers = sorted.slice(0, 10);
+  const losers  = sorted.slice(-10).reverse();
 
-  if (!gainers.length && !losers.length) { card.style.display = 'none';
+  if (!gainers.length) { card.style.display = 'none';
     const contentEl3 = document.getElementById('conceptRankingContent');
     if (contentEl3) contentEl3.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:14px;">📭 暂无概念涨跌数据，等待盘中更新</div>';
     return; }
