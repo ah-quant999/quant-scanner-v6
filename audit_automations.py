@@ -551,9 +551,9 @@ CLOUD_EXPECTED_SLOTS = {
 }
 
 # ─── 小九沉默兜底（peer_failover）───
-# 2026-07-23 新增：小九是主力机（阿狸咪仅为救援船），当小九 heartbeat>90min 沉默，
+# 2026-07-23 新增：小九是主力机（阿狸咪仅为救援船），当小九 heartbeat>60min 沉默，
 # 表示小九停电/断网/系统崩溃，阿狸咪应自动激活救火任务补跑。
-PEER_FAILOVER_THRESHOLD_MIN = 90    # 小九沉默超过 N 分钟→判为掉线
+PEER_FAILOVER_THRESHOLD_MIN = 60    # 小九沉默超过 N 分钟→判为掉线
 # 阿狸咪主机上 PAUSED 的小九救火任务（仅在阿狸咪本机 DB，小九 DB 无这些 ID）
 PEER_FAILOVER_TASKS = {
     "automation-1783525364826": "close_p1_deputy",    # 17:45 收盘一段兜底
