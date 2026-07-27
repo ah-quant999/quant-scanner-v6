@@ -3538,21 +3538,40 @@ def scan_jy共振(target_date=None):
 # ============== 入口 ==============
 
 if __name__ == "__main__":
-    # ── 锁文件防重复：已有 scanner 在跑则跳过 ──
-    import pathlib, atexit
+    # ── 锁文件防重复：已有 scanner 在跑则跳过（PID 检测，崩溃死锁可自动忽略）──
+    import pathlib, atexit, os
     LOCK_FILE = pathlib.Path(__file__).parent / ".scanner.lock"
-    LOCK_TIMEOUT = 1200  # 20分钟，超过则认为僵死锁可覆盖
+    LOCK_TIMEOUT = 1800  # 30分钟，超过则认为僵死锁可覆盖
+    def _pid_alive(pid):
+        if pid <= 0: return False
+        try:
+            os.kill(pid, 0)  # signal 0 = 仅检测是否存在
+            return True
+        except ProcessLookupError:
+            return False
+        except PermissionError:
+            return True  # 进程存在但无权限发信号（Windows 常见）→ 视为存活
+        except Exception:
+            return False
     if LOCK_FILE.exists():
+        try:
+            old_pid = int((LOCK_FILE.read_text() or "0").strip() or 0)
+        except Exception:
+            old_pid = 0
         lock_age = time.time() - LOCK_FILE.stat().st_mtime
-        if lock_age < LOCK_TIMEOUT:
-            print(f"  ⚠️ scanner 锁文件存在({int(lock_age)}秒前)，另一实例可能正在运行，跳过")
+        if old_pid and _pid_alive(old_pid) and lock_age < LOCK_TIMEOUT:
+            print(f"  ⚠️ scanner 锁文件存在(PID {old_pid}, {int(lock_age)}秒前)，另一实例正在运行，跳过")
             sys.exit(0)
         else:
-            print(f"  ℹ️ 锁文件已过期({int(lock_age)}秒)，覆盖继续")
-    LOCK_FILE.write_text(str(time.time()))
+            print(f"  ℹ️ 锁文件已过期/进程已死({int(lock_age)}秒, PID {old_pid})，覆盖继续")
+    LOCK_FILE.write_text(str(os.getpid()))
     def _cleanup_lock():
         if LOCK_FILE.exists():
-            LOCK_FILE.unlink()
+            try:
+                if int((LOCK_FILE.read_text() or "0").strip() or 0) == os.getpid():
+                    LOCK_FILE.unlink()
+            except Exception:
+                pass
     atexit.register(_cleanup_lock)
 
     if len(sys.argv) > 1:
