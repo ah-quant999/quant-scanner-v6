@@ -136,8 +136,10 @@ def main():
             consensus.append(enrich_extra(rec, code, gp_map))
             continue
 
-        # near_miss：满足 2/3（TOP10>=70 / A档 / 基本面>=B）
-        score = sum([in_top, in_a, in_fund])
+        # near_miss：满足 2/3（TOP10>=70 / 驾驶舱A或B档 / 基本面A档）
+        # 2026-07-27 修正：驾驶舱 B 档同样代表机构/技术质量信号，应计入候补条件，
+        # 否则会出现 TOP10≥75 且 tier_b 的个股（如特锐德）被排除在优先观察之外。
+        score = sum([in_top, in_ab, in_fund])
         if score == 2:
             src = top or a or b
             rec = {
@@ -151,6 +153,7 @@ def main():
                 "quality_grade": (top.get("quality_grade") if top else None) or (a.get("quality_grade") if a else None) or (fund_map.get(code) or {}).get("grade", ""),
                 "in_top10": in_top,
                 "in_tier_a": in_a,
+                "in_tier_b": bool(b),
                 "in_good_fund": in_fund,
                 "close": src.get("close", 0),
                 "pct_chg": src.get("pct_chg", 0),
@@ -169,7 +172,7 @@ def main():
         "count": len(consensus),
         "near_miss_count": len(near_miss),
         "criteria": "主站TOP10≥70 · 驾驶舱A档 · 基本面A档",
-        "near_miss_criteria": "以上三条满足任意两条",
+        "near_miss_criteria": "以上三条满足任意两条（驾驶舱A/B档均计入）",
         "stocks": consensus,
         "near_miss": near_miss,
     }
@@ -186,6 +189,7 @@ def main():
         tags = []
         if s["in_top10"]: tags.append("TOP10")
         if s["in_tier_a"]: tags.append("A档")
+        if s.get("in_tier_b"): tags.append("B档")
         if s["in_good_fund"]: tags.append("基本面A档")
         print(f"     {s['name']}({s['code']}) 评分{s['total_score']} {'+'.join(tags)}")
     print(f"\n  输出: {OUTPUT}")
