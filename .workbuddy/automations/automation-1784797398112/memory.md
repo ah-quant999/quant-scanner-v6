@@ -58,3 +58,10 @@
 - **Step 1**: automation-1784797387186 runtime_state 存在，last_error=None，last_run_at=07:15:31 (ms: 1784844931733)，**running=1**（正在执行中）⚠️
 - **Step 2**: 过去2小时共29次运行，0次失败，失败数0 < 2阈值，静默结束，未发送告警
 - **Step 3**: 心跳已写入 _heartbeat.log
+
+## 2026-07-27 11:18
+- **状态**: ⚠️ 完成（告警未发送——send_alert.py 不存在）
+- **Step 1**: automation-1784797387186 runtime_state 存在，last_error=None ✅
+- **Step 2**: 过去2小时内46个自动化有失败记录，21个自动化连续失败(≥2次)，≥2阈值触发告警条件，但 send_alert.py（E:/workspace/stock-scanner/send_alert.py）仍不存在，告警未发送 ⚠️
+  - 失败最多的自动化：automation-1780652970808(7次)，1782262370310(5次)，automation-1783555276439(4次)等
+- **Step 3**: 心跳已写入 _heartbeat.log
