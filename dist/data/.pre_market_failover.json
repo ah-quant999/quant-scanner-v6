@@ -1,17 +1,17 @@
 {
-  "time": "2026-07-27 09:20:13",
+  "time": "2026-07-27 10:12:19",
   "status": "OK",
-  "reason": "今天首个计划部署未到（当前 09:19），云端最后部署 20260727091613，等待盘前部署",
+  "reason": "计划部署 09:20 暂无对应 run 对象，但 build-stamp 20260727101010 已更新（部署成功铁证），OK",
   "details": {
-    "build_stamp": "20260727091613",
+    "build_stamp": "20260727101010",
     "build_stamp_error": null,
-    "check_time": "20260727091943",
+    "check_time": "20260727101116",
     "trading_day": true,
-    "api_error": "无 GitHub token（GCM 未缓存），降级时刻表判断",
-    "build_dt": "2026-07-27 09:16:13",
-    "elapsed_min": 3.5,
-    "api_driven": false,
+    "api_runs_count": 30,
+    "build_dt": "2026-07-27 10:10:10",
+    "elapsed_min": 1.1,
+    "api_driven": true,
     "cloud_ok": true,
-    "reason": "今天首个计划部署未到（当前 09:19），云端最后部署 20260727091613，等待盘前部署"
+    "reason": "计划部署 09:20 暂无对应 run 对象，但 build-stamp 20260727101010 已更新（部署成功铁证），OK"
   }
 }

@@ -2,10 +2,10 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-24 17:20:48",
   "neodata_valid_until": "2026-07-25 17:20:41",
-  "updated_at": "2026-07-27 10:10:00",
-  "cloud_deploy_time": "20260727101001",
+  "updated_at": "2026-07-27 10:12:19",
+  "cloud_deploy_time": "20260727101010",
   "failover_status": "OK",
-  "failover_time": "2026-07-27 09:20:13",
+  "failover_time": "2026-07-27 10:12:19",
   "data_correctness": {
     "status": "PASS",
     "detail": "全站 21 个数据维度业务不变量全部通过",
