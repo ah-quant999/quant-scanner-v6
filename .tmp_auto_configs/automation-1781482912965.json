@@ -1,0 +1,10 @@
+{
+  "id": "automation-1781482912965",
+  "name": "09:45 盘中09:45",
+  "status": "ACTIVE",
+  "schedule_type": "recurring",
+  "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=9;BYMINUTE=45",
+  "cwds": "[\"E:\\\\workspace\\\\stock-scanner\"]",
+  "model_id": "deepseek-v4-flash",
+  "prompt": "在 E:\\workspace\\stock-scanner 目录下，使用 C:\\Users\\Administrator\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe 按顺序执行以下脚本。每个脚本执行完毕后检查是否成功，出错则停止：\n\n1. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe scanner.py\n2. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_concept_ranking.py\n3. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_market_alerts.py\n4. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_sector_fund_flow.py\n5. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe update_data_v2.py\n6. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe deploy_now.py --force"
+}

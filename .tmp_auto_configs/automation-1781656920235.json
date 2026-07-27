@@ -1,0 +1,10 @@
+{
+  "id": "automation-1781656920235",
+  "name": "小九备-19:36 收盘部署",
+  "status": "ACTIVE",
+  "schedule_type": "recurring",
+  "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=19;BYMINUTE=36",
+  "cwds": "[\"E:\\\\workspace\\\\stock-scanner\"]",
+  "model_id": "deepseek-v4-flash",
+  "prompt": "在 E:\\workspace\\stock-scanner 目录下，执行 C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe deploy_now.py --force。部署前会自动从 GitHub 同步远程数据、重新嵌入 HTML、击穿 CDN 缓存后推送。"
+}

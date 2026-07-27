@@ -1,0 +1,10 @@
+{
+  "id": "automation-1783392044878",
+  "name": "小九备-19:30 盘后数据刷新",
+  "status": "ACTIVE",
+  "schedule_type": "recurring",
+  "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=19;BYMINUTE=30",
+  "cwds": "[\"E:\\\\workspace\\\\stock-scanner\"]",
+  "model_id": "deepseek-v4-flash",
+  "prompt": "🐍 先运行 C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe check_trading_day.py，如果输出 SKIP 则结束本次执行。\n\n盘后数据刷新：龙虎榜 + 机游共振 + 52周新高 + 分析师评级 + 政策信号 + 概念排名 + 涨跌家数。\n\n执行策略：并行 fetch → update → deploy\n1) 并行运行：python fetch_lhb.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_main_stock.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_52w_high.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_analyst_ratings.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_policy_density.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_concept_ranking.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_up_down_stats.py | C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_main_week.py\n2) C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe update_data_v2.py --fast\n3) C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe deploy_now.py --force\n⚠️ 网络容错：任何步骤遇到 DNS/502/网络错误，等待 30 秒后重试一次。"
+}

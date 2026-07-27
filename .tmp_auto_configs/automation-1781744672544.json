@@ -1,0 +1,10 @@
+{
+  "id": "automation-1781744672544",
+  "name": "小九备-08:30 早间海外速报",
+  "status": "ACTIVE",
+  "schedule_type": "recurring",
+  "rrule": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;BYHOUR=8;BYMINUTE=30",
+  "cwds": "[\"E:\\\\workspace\\\\stock-scanner\"]",
+  "model_id": "deepseek-v4-flash",
+  "prompt": "🐍 先运行 C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe check_trading_day.py，如果输出 SKIP 则结束本次执行。\n\n=== 早间海外速报：美股/外汇/黄金原油/VIX/隔夜头条 ===\n\n在 E:\\workspace\\stock-scanner 目录下：\n1. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe fetch_overnight_brief.py\n2. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe update_data_v2.py --fast\n3. C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/python.exe deploy_now.py --force\n\n⚠️ 网络容错：任何步骤遇到 DNS/502/网络错误，等待 2 分钟后重试一次。"
+}

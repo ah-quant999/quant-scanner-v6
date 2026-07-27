@@ -1,0 +1,10 @@
+{
+  "id": "automation-1779938687967",
+  "name": "国家队观测台-午间刷新(11:30)",
+  "status": "ACTIVE",
+  "schedule_type": "recurring",
+  "rrule": "FREQ=DAILY;BYDAY=MON,TUE,WED,THU,FRI;BYHOUR=11;BYMINUTE=30",
+  "cwds": "[\"E:\\\\workspace\\\\national-team-monitor\"]",
+  "model_id": "deepseek-v4-flash",
+  "prompt": "运行国家队动向观测台数据刷新：1) 执行命令 cd \"E:\\workspace\\national-team-monitor\" && \"C:\\Users\\Administrator\\.workbuddy\\binaries\\python\\envs\\default\\Scripts\\python.exe\" generate_static.py 生成最新HTML；2) 然后将 C:\\Users\\Administrator\\WorkBuddy\\Claw\\national-team-dist 目录部署到CloudStudio。两个步骤都需要完成。"
+}
