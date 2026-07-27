@@ -50,6 +50,8 @@ __pycache__/
 !t1_self_heal.py
 !industry_map_self_heal.py
 !git_safe_sync.py
+# 中国源确定性调度器（2026-07-27：从 LLM 自动化接管中国源抓取）
+!china_source_scheduler.py
 # 个股行业/概念元数据维护体系（2026-07-23 新增）
 !fetch_concept_map.py
 !maintain_industry_map.py
@@ -72,6 +74,7 @@ __pycache__/
 # 双机发令枪运行时状态（本地写，不进 Git）
 .dispatch_state.json
 *.bat
+!start_china_scheduler.bat
 .wrangler/
 worker/
 backup/
