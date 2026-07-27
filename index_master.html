@@ -649,6 +649,16 @@ tr:hover td { background: #fafbfc; }
       </div>
     </div>
 
+    <!-- 📊 ETF资金热度（盘中实时 T+0，fund_etf_spot_em 全市场实时行情；弥补 ETF净申购 T+1 空窗） -->
+    <div id="etfHeatCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #66bb6a;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
+        <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF资金热度 <span style="font-size:10px;font-weight:400;color:#999;">实时·T+0</span></span>
+        <span style="font-size:12px;color:#999;" id="etfHeatTime"></span>
+        <span style="margin-left:auto;font-size:11px;color:#999;" id="etfHeatSummary"></span>
+      </div>
+      <div id="etfHeatContent" style="padding:10px 14px;"></div>
+    </div>
+
     <!-- 🚀 打新研判（方案A明细卡，已改由顶部速览条 C1 替代展示；结构保留备用） -->
     <div id="ipoScoreCardLegacy" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #f8bbd0;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
       <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
