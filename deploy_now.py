@@ -864,6 +864,100 @@ def _regen_standalone_if_needed():
     log("   ✓ 独立页已与主站同步校验通过")
     return True
 
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 【2026-07-28 防回退闸门】根治「昨天的数据一会儿变回3天前」反复跳变
+#
+# 根因：双机各自部署，某机本地 data 抓取失败 / 被 git reset --hard 清空后，
+#       dist 重建得到陈旧 data，部署时把线上刚更新的数据【回退】到几天前。
+#       用户于是看到「昨天(07-27) → 3天前(07-24)」来回跳变。
+#
+# 修复：部署前比较【本次待推 data 最新时间】与【线上 gh-pages 当前最新时间】，
+#      若本次更旧则【阻断部署】，保留更新的线上版本，要求先补跑 fetch 再部署。
+#      此闸门与机器无关——无论哪台机产出陈旧 data，只要比线上旧就绝不允许覆盖。
+# ─────────────────────────────────────────────────────────────────────────────
+def _data_ts_from_obj(d):
+    """从 data dict 解析最新时间戳(epoch 秒)，无则返回 0。"""
+    import datetime as _dt
+    for key in ("update_time", "scan_time", "time", "timestamp"):
+        t = d.get(key) if isinstance(d, dict) else None
+        if not t:
+            continue
+        s = str(t)
+        try:
+            return _dt.datetime.fromisoformat(s).timestamp()
+        except Exception:
+            try:
+                return _dt.datetime.strptime(s, "%Y-%m-%d %H:%M:%S").timestamp()
+            except Exception:
+                continue
+    return 0
+
+
+def _fmt_ts(ts):
+    import datetime as _dt
+    if not ts:
+        return "(无)"
+    return _dt.datetime.fromtimestamp(ts).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def _max_data_ts_local(files, base_dir):
+    mx = 0.0
+    for fn in files:
+        p = os.path.join(base_dir, "data", fn)
+        if not os.path.exists(p):
+            continue
+        try:
+            d = json.load(open(p, encoding="utf-8"))
+        except Exception:
+            continue
+        mx = max(mx, _data_ts_from_obj(d))
+    return mx
+
+
+def _max_data_ts_live(files):
+    try:
+        run("git fetch origin gh-pages --depth=1", cwd=PROJECT_ROOT)
+    except Exception:
+        pass
+    mx = 0.0
+    for fn in files:
+        r = _git(f"show origin/gh-pages:data/{fn}", cwd=PROJECT_ROOT)
+        if r is None or r.returncode != 0:
+            continue
+        try:
+            d = json.loads(r.stdout)
+        except Exception:
+            continue
+        mx = max(mx, _data_ts_from_obj(d))
+    return mx
+
+
+def _guard_no_downgrade(tmpdir):
+    """比较本次待推 data 与线上 gh-pages data 的最新时间。
+
+    返回 True=可部署, False=阻断(本次比线上旧，会回退线上数据)。
+    """
+    KEY_FILES = ["scan_result.json", "macro_data.json", "candidate_pool.json",
+                 "sector_fund_flow.json", "gold_pool.json", "etf_subscription.json",
+                 "triple_consensus.json"]
+    local_max = _max_data_ts_local(KEY_FILES, tmpdir)
+    live_max = _max_data_ts_live(KEY_FILES)
+    if live_max <= 0:
+        log("   ℹ️ 线上无 data 基线，防回退闸门放行（首次/异常态）")
+        return True
+    if local_max < live_max - 2:  # 留 2s 容差，避免同批次微小抖动误拦
+        log("   🔴🔴🔴 防回退闸门 FAIL")
+        log(f"      本次待推 data 最新 = {_fmt_ts(local_max)}")
+        log(f"      线上 gh-pages 最新 = {_fmt_ts(live_max)}")
+        log("   ⛔ 阻断部署：本次数据比线上旧，推送会把网站回退到更早旧数据！")
+        log("      处置：先补跑对应 fetch 脚本(update_data_v2.py / push_china_data.py)")
+        log("            让本地数据更新到最新，再重试 deploy_now.py。")
+        return False
+    log(f"   ✓ 防回退闸门通过：本次({_fmt_ts(local_max)}) >= 线上({_fmt_ts(live_max)})")
+    return True
+
+
 def main():
     log("=== Start Deploy (GitHub Pages) ===")
     project_root = os.path.dirname(os.path.abspath(__file__))
@@ -1089,6 +1183,12 @@ def main():
         if not os.path.exists(nojekyll_final):
             open(nojekyll_final, "w").close()
             log("   ✓ .nojekyll 最后防线已创建")
+
+        # 2.5 防回退闸门：禁止把比线上更旧的 data 推上去（根治「昨天→3天前」反复回退）
+        if not _guard_no_downgrade(tmpdir):
+            log("\nERROR deploy aborted: 防回退闸门拦截（本次 data 比线上旧，避免回退）")
+            shutil.rmtree(tmpdir, ignore_errors=True)
+            return 1
 
         # 3. Commit and push
         log("3. Committing and pushing...")
