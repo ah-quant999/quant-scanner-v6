@@ -61,7 +61,9 @@ def collect():
     for pat in ("HANDOVER_小九_*.md", "HANDOVER_2026-*.md"):
         for f in glob.glob(os.path.join(WORKSPACE, pat)):
             base = os.path.basename(f)
-            if "阿狸咪" in base:  # 阿狸咪→小九方向，不回读
+            # 仅跳过阿狸咪自己发出、又同步回本机的文件（阿狸咪→小九方向）。
+            # 小九→阿狸咪的文件即使文件名含"给阿狸咪"也必须读。
+            if base.startswith("HANDOVER_阿狸咪_") or base.startswith("URGENT_阿狸咪_"):
                 continue
             regular.append(f)
     return sorted(set(urgent)), sorted(set(regular))
