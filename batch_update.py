@@ -105,7 +105,7 @@ MODES = {
         "desc": "盘中快速扫描 (09:45)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
-            ("scanner.py", 300),
+            ("scanner.py quick", 300),
             # 2026-07-27 根因修复：先推中国源数据，防 update_data_v2 的 safe_pull 回退陈旧版
             ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
@@ -127,7 +127,7 @@ MODES = {
             ("fetch_limit_up_heatmap.py", 120),
             # 10:30 补充成交历史，避免午间金额曲线断崖
             ("fetch_sh_sz_history.py", 120),
-            ("scanner.py", 300),
+            ("scanner.py quick", 300),
             # 2026-07-21 接入：三重选股盘中刷新（收盘前先给当日预览，close_p2 给最终版）
             ("triple_select_scan.py", 600),
             # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
@@ -145,7 +145,7 @@ MODES = {
             ("fetch_overnight_brief.py --news-only", 90),
             ("guanlan_extractor.py", 300),
             ("fetch_mahoro_signals.py --non-interactive", 120),
-            ("scanner.py", 300),
+            ("scanner.py quick", 300),
             # 大盘资金/两融/成交历史需在午间刷新，避免盘中卡片显示0或 stale
             ("fetch_sh_sz_history.py", 120),
             ("fetch_margin.py", 120),
@@ -166,7 +166,7 @@ MODES = {
         "desc": "午后扫描 (13:30/14:30/16:30)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
-            ("scanner.py", 300),
+            ("scanner.py quick", 300),
             # 2026-07-24 接入：基于最新 scan_result 生成 A/B 档推荐（阿狸咪独立 + 小九对照），驾驶舱顶部横幅
             ("gen_cockpit_tier_recommend.py", 30),
             ("fetch_sh_sz_history.py", 120),
@@ -187,7 +187,7 @@ MODES = {
     "post_close": {
         "desc": "收盘后快速更新 (15:20)",
         "steps": [
-            ("scanner.py", 300),
+            ("scanner.py quick", 300),
             ("fetch_sector_fund_flow.py", 180),
             ("fetch_concept_ranking.py", 180),
             ("fetch_market_alerts.py", 180),
