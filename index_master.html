@@ -133740,7 +133740,8 @@ function setChartTime(id, timeStr, source) {
   //   ipo = 事件 (仅申购日前有数据)
   var freshLabels = {
     main:    '盘后更新',
-    etf:     'T+1',  // ETF份额申赎(宽基ETF净申赎) = 真T+1次日披露
+    etf:     'T+1',  // ETF份额申赎(宽基ETF净申赎) = 真T+1次日披露（仅 ETF_SUBSCRIPTION 用）
+    etfHeat: '盘中实时·T+0',  // ETF资金热度(ETF_INTRADAY_HEAT, fund_etf_spot_em 盘中实时) = T+0
     nt:      '盘中实时',  // 国家队ETF资金估算(nt_data.etfFlow) = 盘中实时
     macro:   '盘后更新',
     sector:  '盘中实时',
@@ -135666,7 +135667,7 @@ function renderETFIntradayHeat() {
     var t = updateTime || '';
     if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
     // ETF 资金热度是盘中 T+0 数据：必须显示真实抓取时间，不得回退到昨日 15:30/盘后更新。
-    if (t) { setChartTime('etfHeatTime', t, 'etf'); }
+    if (t) { setChartTime('etfHeatTime', t, 'etfHeat'); }
   }
   // 顶部汇总（涨跌家数 + 主力净流入合计）
   const sumEl = document.getElementById('etfHeatSummary');
