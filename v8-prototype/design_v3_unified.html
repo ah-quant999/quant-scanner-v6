@@ -258,14 +258,19 @@
       <div class="card" style="grid-column:1/-1">
         <h3><span class="ic">🚀</span>打新速览 - 盘中 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
         <div id="ipoAll">
-          <div class="ipo-sec" data-cat="listedToday"><div class="ipo-sec-title">今日上市</div><div class="ipo-grid" id="ipoGrid-listedToday"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
+          <div class="ipo-sec" data-cat="listedToday">
+            <div class="ipo-sec-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+              <span>今日上市</span>
+              <div class="ipo-tabs" id="ipoTabs" style="margin-left:auto;margin-top:0;margin-bottom:0">
+                <button class="ipo-tab active" data-cat="futureApply">待申购</button>
+                <button class="ipo-tab" data-cat="pricing">待定价</button>
+                <button class="ipo-tab" data-cat="preListing">待上市</button>
+              </div>
+            </div>
+            <div class="ipo-grid" id="ipoGrid-listedToday"><div class="note" style="grid-column:1/-1">加载中…</div></div>
+          </div>
           <div class="ipo-sec" data-cat="todayApply"><div class="ipo-sec-title">今日申购</div><div class="ipo-grid" id="ipoGrid-todayApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
           <div class="ipo-sec" data-cat="tracking"><div class="ipo-sec-title">上市日追踪5日</div><div class="ipo-grid" id="ipoGrid-tracking"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
-          <div class="ipo-tabs" id="ipoTabs">
-            <button class="ipo-tab active" data-cat="futureApply">待申购</button>
-            <button class="ipo-tab" data-cat="pricing">待定价</button>
-            <button class="ipo-tab" data-cat="preListing">待上市</button>
-          </div>
           <div class="ipo-tab-body"><div class="ipo-grid" id="ipoTabsGrid"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
         </div>
         <div class="note">双维度 = 套利评分（收益弹性）+ 基本面评分（安全边际）。综合分 = 套利×60% + 基本面×40%。</div>
