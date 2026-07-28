@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-28 08:43:27",
+  "update_time": "2026-07-28 08:47:51",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7337,
@@ -77,12 +77,12 @@
   },
   "global_macro": {
     "vix": {
-      "value": 19.2,
+      "value": 19.15,
       "date": "2026-07-28"
     },
     "usdcnh": {
       "price": 6.7654,
-      "prev_close": 6.7648,
+      "prev_close": 6.7651,
       "date": "2026-07-28",
       "source": "Sina实时"
     },
