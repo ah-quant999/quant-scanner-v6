@@ -821,6 +821,82 @@ def process_listed_and_tracking(candidates):
         })
     return results
 
+def fetch_recent_listed_ths(days=5):
+    """从同花顺获取最近 N 天内已上市新股，填补东方财富申购接口不含已上市股的缺口。
+    这些股票上市后 5 日内进入 tracking 组，供 v8 "上市日追踪5日" 展示。
+    """
+    import akshare as ak
+    from datetime import datetime, timedelta
+
+    today = datetime.now().date()
+    start = today - timedelta(days=days)
+
+    try:
+        df = ak.stock_xgsr_ths()
+    except Exception as e:
+        print(f"  ⚠️ 同花顺上市数据获取失败: {e}")
+        return []
+
+    candidates = []
+    for _, row in df.iterrows():
+        code = str(row.get("股票代码", "")).strip()
+        name = str(row.get("股票简称", "")).strip()
+        listing_date_raw = row.get("上市日期")
+        issue_price = float(row.get("发行价", 0) or 0)
+
+        if not code or not name:
+            continue
+
+        # 统一解析上市日期 -> YYYYMMDD
+        if isinstance(listing_date_raw, str):
+            listing_date = listing_date_raw.replace("-", "")
+        else:
+            try:
+                listing_date = listing_date_raw.strftime("%Y%m%d")
+            except Exception:
+                continue
+
+        if not listing_date or len(listing_date) != 8:
+            continue
+
+        try:
+            list_date = datetime.strptime(listing_date, "%Y%m%d").date()
+        except ValueError:
+            continue
+
+        if not (start <= list_date <= today):
+            continue
+
+        # 与 fetch_ipo_list 保持一致的板块判定
+        if code.startswith("688"): market_code = "KC"
+        elif code.startswith("30"): market_code = "CY"
+        elif code.startswith("92"): market_code = "BJ"
+        elif code.startswith("00") or code.startswith("001"): market_code = "SZ"
+        else: market_code = "SH"
+
+        candidates.append({
+            "code": code,
+            "name": name,
+            "issue_price": round(issue_price, 2) if issue_price > 0 else 0,
+            "issue_pe": 0,
+            "industry_pe": 20,
+            "market_code": market_code,
+            "apply_date": "",
+            "listing_date": listing_date,
+            "status": "tracking",
+            "dec_sumfina": 0,
+            "main_business": "",
+            "industry_name": "",
+            "bvps": 0,
+            "profit": 0,
+            "is_profit": None,
+            "predict_raise_funds": 0,
+        })
+
+    print(f"  ✓ 同花顺最近{days}日上市: {len(candidates)} 只")
+    return candidates
+
+
 def generate_summary(applying, pre_listing, listed, tracking):
     """生成综合打新判断"""
     parts = []
@@ -878,6 +954,15 @@ def main():
     # 1. 获取新股列表
     print("[1/5] 获取新股列表...")
     candidates = fetch_ipo_list()
+
+    # 1.5 补充东方财富申购接口缺失的"已上市"新股（上市后5日内进入 tracking）
+    print("[1.5/5] 补充同花顺已上市新股...")
+    ths_listed = fetch_recent_listed_ths(days=5)
+    existing_codes = {c["code"] for c in candidates}
+    for c in ths_listed:
+        if c["code"] not in existing_codes:
+            candidates.append(c)
+            existing_codes.add(c["code"])
     
     applying_list = [c for c in candidates if c["status"] == "applying"]
     pre_listing_list = [c for c in candidates if c["status"] == "pre_listing"]
