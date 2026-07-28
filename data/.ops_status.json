@@ -10,26 +10,26 @@
     "status": "PASS",
     "detail": "全站 21 个数据维度业务不变量全部通过",
     "issues": [],
-    "time": "2026-07-28 13:09:07"
+    "time": "2026-07-29 07:18:30"
   },
   "freshness_consistency": {
     "status": "FAIL",
-    "detail": "8 项陈旧/失真（扫描 56 文件）",
+    "detail": "10 项陈旧/失真（扫描 58 文件）",
     "issues": [
-      "cffex_holdings.json 陈旧 89.7h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
-      "inst_trade.json 陈旧 89.7h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
-      "maharo_signals.json 陈旧 123.1h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
-      "main_week.json 陈旧 99.8h > 阈值 72h（声明更新=2026-07-24 09:22:52）",
-      "market_fund_flow.json 陈旧 67.2h > 阈值 30h（声明更新=2026-07-25T17:55:07）"
+      "52w_high.json 陈旧 33.3h > 阈值 30h（声明更新=2026-07-27 22:01）",
+      "capital_flow_summary.json 陈旧 45.5h > 阈值 40h（声明更新=2026-07-27 09:47:29）",
+      "crds_result.json 陈旧 33.2h > 阈值 30h（声明更新=2026-07-27 22:05:33）",
+      "maharo_signals.json 陈旧 141.2h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
+      "main_week.json 陈旧 117.9h > 阈值 72h（声明更新=2026-07-24 09:22:52）"
     ],
-    "time": "2026-07-28 13:09:07"
+    "time": "2026-07-29 07:18:30"
   },
-  "monitor_updated_at": "2026-07-28 13:09:07",
+  "monitor_updated_at": "2026-07-29 07:18:30",
   "build_integrity": {
     "status": "PASS",
     "detail": "部署产物 18 个关键数据块均注入且非空",
     "issues": [],
-    "time": "2026-07-28 13:09:07"
+    "time": "2026-07-29 07:18:30"
   },
   "three_party": {
     "cloud": {
@@ -128,6 +128,6 @@
   "monitor_alert": {
     "level": "FAIL",
     "summary": "数据正确性:PASS 新鲜度:FAIL 构建:PASS",
-    "time": "2026-07-28 13:09:07"
+    "time": "2026-07-29 07:18:30"
   }
 }
