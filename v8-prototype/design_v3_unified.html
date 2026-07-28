@@ -484,8 +484,8 @@
   <section id="sec-ph">
     <div class="sec-head"><h2>🌙 盘后数据</h2><span class="tag" id="phTag">T+1 收盘后生成 · 最后更新 --</span></div>
 
-    <!-- 盘后概览：市场温度计 / 六维共振雷达 / 斐波时间窗口 -->
-    <div class="grid g-3" style="margin-bottom:16px">
+    <!-- 盘后概览：市场温度计 / 六维共振雷达 -->
+    <div class="grid g-2" style="margin-bottom:16px">
       <div class="card">
         <h3><span class="ic">🌡️</span>市场温度计 - 盘后 · 更新于 今日 15:20</h3>
         <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
@@ -503,14 +503,6 @@
         <h3><span class="ic">🕸️</span>六维共振雷达 - 盘后 · 更新于 今日 15:20</h3>
         <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
       </div>
-      <div class="card">
-        <h3><span class="ic">🌀</span>斐波时间窗口 - 盘后 · 更新于 今日 15:20</h3>
-        <div style="font-size:13px;color:var(--sub)">下一个变盘窗口</div>
-        <div style="font-size:22px;font-weight:800;color:var(--gold);margin:4px 0 2px">07-30（周四）</div>
-        <div style="font-size:12px;color:var(--dim);margin-bottom:6px">距今天 2 个交易日 · 重合 FOMC 决议</div>
-        <div class="fib" id="fib"></div>
-        <div style="font-size:11px;color:var(--dim);margin-top:6px">▮ 黄金分割节点　▮ 当前</div>
-      </div>
     </div>
 
     <!-- 斐波那契窗口 -->
@@ -523,18 +515,6 @@
         <div class="ph-fib-card"><div class="ph-fib-val" id="phFibNext">--</div><div class="ph-fib-lbl" id="phFibNextLbl">下一窗口跟踪</div></div>
       </div>
       <div class="ph-fib-badge" id="phFibBadge">--</div>
-    </div>
-
-    <!-- 市场温度计 + 六维预警雷达 -->
-    <div class="grid g-2" style="margin-bottom:16px">
-      <div class="card" id="phThermoCard">
-        <h3><span class="ic">🌡️</span>短线/中线市场温度计 - 中长线 · <span class="fresh" id="phThermoTime">更新于 --</span></h3>
-        <div id="phThermoBody"><div class="ipo-empty">加载中…</div></div>
-      </div>
-      <div class="card" id="phCrisisCard">
-        <h3><span class="ic">🛰️</span>六维预警雷达 - 中长线 · <span class="fresh" id="phCrisisTime">更新于 --</span></h3>
-        <div id="phCrisisBody"><div class="ipo-empty">加载中…</div></div>
-      </div>
     </div>
 
     <!-- 资金流时间轴 -->
