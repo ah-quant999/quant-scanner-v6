@@ -153,6 +153,31 @@
   .logic-p{color:var(--sub);font-size:13px;line-height:1.7}
   .code{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--gold);margin:8px 0;overflow:auto}
   .note{font-size:12px;color:var(--dim);margin-top:10px}
+
+  /* ===== 打新速览 v8 ===== */
+  .ipo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .ipo-tab{background:var(--card2);border:1px solid var(--border);color:var(--sub);padding:5px 12px;border-radius:8px;cursor:pointer;font-size:12px;transition:.15s}
+  .ipo-tab:hover{border-color:var(--cyan);color:var(--txt)}
+  .ipo-tab.active{background:var(--cyan);color:#04121f;border-color:var(--cyan);font-weight:700}
+  .ipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+  .ipo-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:9px;transition:.15s}
+  .ipo-card:hover{border-color:var(--border2)}
+  .ipo-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .ipo-title{min-width:0}
+  .ipo-name{font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ipo-meta{font-size:11px;color:var(--dim);margin-top:2px}
+  .ipo-score{text-align:right;flex:0 0 auto}
+  .ipo-score-num{font-size:30px;font-weight:800;color:var(--gold);line-height:1}
+  .ipo-score-label{font-size:10px;color:var(--dim)}
+  .ipo-rec{font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px;display:inline-block;width:fit-content}
+  .ipo-bars{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--sub)}
+  .ipo-bar-row{display:flex;align-items:center;gap:8px}
+  .ipo-bar-row span{width:42px;flex:0 0 auto}
+  .ipo-bar{flex:1;height:7px;background:var(--bg2);border-radius:4px;overflow:hidden}
+  .ipo-bar-fill{height:100%;border-radius:4px}
+  .ipo-highlights{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+  .ipo-tag{font-size:11px;color:var(--sub);background:var(--bg2);padding:3px 7px;border-radius:6px}
+  .ipo-empty{color:var(--dim);padding:20px;text-align:center;font-size:13px}
 </style>
 </head>
 <body>
@@ -181,18 +206,19 @@
 
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 打新速览 -->
-      <div class="card">
-        <h3><span class="ic">🚀</span>打新速览 <span class="fresh">常驻 · 双维度 · 更新于 今日 12:18</span></h3>
-        <table>
-          <thead><tr><th>代码</th><th>名称</th><th>类型</th><th>价格/顶格</th><th>评级</th></tr></thead>
-          <tbody>
-            <tr><td>688xxx</td><td>芯源微电</td><td>科创板</td><td>52.00 元 / 5.5万</td><td><span class="pill buy">积极申购</span></td></tr>
-            <tr><td>301xxx</td><td>智谱新材</td><td>创业板</td><td>28.50 元 / 8.0万</td><td><span class="pill buy">建议申购</span></td></tr>
-            <tr><td>113xxx</td><td>长信转债</td><td>可转债</td><td>100 元 / 100万</td><td><span class="pill">稳健申购</span></td></tr>
-            <tr><td>370xxx</td><td>拓维配债</td><td>配债</td><td>原股东优先</td><td><span class="pill sell">谨慎</span></td></tr>
-          </tbody>
-        </table>
-        <div class="note">双维度 = 新股申购（收益弹性）+ 可转债申购（安全边际）。数据来源：交易所公告 / 新股日历。</div>
+      <div class="card" style="grid-column:1/-1">
+        <h3><span class="ic">🚀</span>打新速览 <span class="fresh" id="ipoFresh">常驻 · 双维度 · 加载中…</span></h3>
+        <div class="ipo-tabs" id="ipoTabs">
+          <button class="ipo-tab active" data-cat="todayApply">今日申购</button>
+          <button class="ipo-tab" data-cat="futureApply">待申购</button>
+          <button class="ipo-tab" data-cat="pricing">待定价</button>
+          <button class="ipo-tab" data-cat="preListing">待上市</button>
+          <button class="ipo-tab" data-cat="tracking">上市日追踪5日</button>
+        </div>
+        <div class="ipo-grid" id="ipoGrid">
+          <div class="note" style="grid-column:1/-1">正在加载 data/ipo_score.json …</div>
+        </div>
+        <div class="note">双维度 = 套利评分（收益弹性）+ 基本面评分（安全边际）。综合分 = 套利×60% + 基本面×40%。数据来源：data/ipo_score.json。</div>
       </div>
 
       <!-- 今日关键事件速览 -->
@@ -703,10 +729,10 @@ const CAT={
   a50:{name:'A50交割',color:'#fb923c',bg:'rgba(251,146,60,.18)',border:'rgba(251,146,60,.40)',desc:'新加坡富时A50期货交割日，外资对冲A股关键窗口',items:['2026年7月 — 倒数第二个工作日','⚠️ 交割前1-2周可能出现提前移仓波动']},
   hk:{name:'港股休市',color:'#ef4444',bg:'rgba(239,68,68,.18)',border:'rgba(239,68,68,.40)',desc:'香港交易所休市日，港股通/沪深股通同步暂停',items:['7/1 🇭🇰 港股休市']},
   ushol:{name:'美股休市',color:'#f87171',bg:'rgba(248,113,113,.18)',border:'rgba(248,113,113,.40)',desc:'NYSE/Nasdaq休市日',items:['7/3 🇺🇸 美股休市']},
+  fomc:{name:'FOMC',color:'#facc15',bg:'rgba(250,204,21,.18)',border:'rgba(250,204,21,.40)',desc:'美联储货币政策会议，全球资本市场核心事件',items:['7/29-30 FOMC利率决议 北京时间7/30凌晨']},
   us:{name:'美股财报',color:'#60a5fa',bg:'rgba(96,165,250,.18)',border:'rgba(96,165,250,.40)',desc:'美股关注股票',items:['特斯拉TSLA','谷歌GOOGL','微软MSFT','苹果AAPL','亚马逊AMZN','Meta','英伟达NVDA','美光MU']},
   tw:{name:'台股财报',color:'#c084fc',bg:'rgba(192,132,252,.18)',border:'rgba(192,132,252,.40)',desc:'台股关注股票',items:['台积电TSMC','联发科MediaTek']},
   phone:{name:'苹果/华为发布',color:'#e879f9',bg:'rgba(232,121,249,.18)',border:'rgba(232,121,249,.40)',desc:'两大科技巨头新品发布/重要财报',items:['苹果Q3财报 — 7月最后一周']},
-  fomc:{name:'FOMC',color:'#facc15',bg:'rgba(250,204,21,.18)',border:'rgba(250,204,21,.40)',desc:'美联储货币政策会议，全球资本市场核心事件',items:['7/29-30 FOMC利率决议 北京时间7/30凌晨']},
   eu:{name:'欧股财报',color:'#2dd4bf',bg:'rgba(45,212,191,.18)',border:'rgba(45,212,191,.40)',desc:'欧股关注股票',items:['ASML阿斯麦']},
   jp:{name:'日股财报',color:'#fbbf24',bg:'rgba(251,191,36,.18)',border:'rgba(251,191,36,.40)',desc:'日股关注股票',items:['铠侠Kioxia','东京电子','爱德万测试']},
   kr:{name:'韩股财报',color:'#c084fc',bg:'rgba(192,132,252,.18)',border:'rgba(192,132,252,.40)',desc:'韩股关注股票',items:['三星电子','SK海力士']},
