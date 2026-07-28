@@ -85,7 +85,7 @@ MODES = {
                 ("fetch_mahoro_signals.py --non-interactive", 120),
                 ("fetch_close_summary.py", 60),  # 昨日收盘汇总，随时可抓
             ],
-            ("build_candidate_pool.py", 600),  # 2026-07-24: 300→600，外部源逐只拉取慢日(~6min)易超时→09:20静默失败根因
+            ("build_candidate_pool.py", 1200),  # 2026-07-28: 600→1200，350只票(含港股50)逐只拉取慢日易超时；并改为非关键(见下方),超时保留上次有效池继续部署
             ("scanner.py full", 600),
             ("generate_recommend.py", 120),
             # 2026-07-27 根因修复：盘前全量抓取后必须把新鲜中国源数据推 main，
@@ -1019,8 +1019,11 @@ def main():
             failed_indices.append(i)
             # 关键数据源失败：立即终止后续步骤，避免用陈旧数据继续扫描/部署
             if cmd_name == "build_candidate_pool.py":
-                print(f"  🚫 关键步骤 {cmd_name} 失败，终止后续步骤（防止陈旧数据上线）")
-                break
+                # 2026-07-28 改为非关键：候选池一日一更，陈旧一天可接受；
+                # 优先保证其余数据(研报/扫描/推荐)上线，而非全盘停滞。
+                # 脚本超时被杀时不写新JSON，自动保留上次有效 candidate_pool.json。
+                print(f"  ⚠️ 关键步骤 {cmd_name} 失败/超时，但允许继续（候选池用上次有效值，避免全盘停滞）")
+                # 不 break：继续后续步骤
 
     # ── Phase 2: 失败步骤重试（仅一次） ──
     still_failed = []
