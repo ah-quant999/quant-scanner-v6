@@ -1,17 +1,17 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25 19:13:58",
+    "last_success": "2026-07-28 22:16:09",
     "last_error": null
   },
   "fetch_nt_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 17:35:57",
+    "last_success": "2026-07-28 09:40:06",
     "last_error": null
   },
   "fetch_suspension_alert": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:03:52",
+    "last_success": "2026-07-28 15:21:43",
     "last_error": null
   },
   "fetch_main_week": {
@@ -21,7 +21,7 @@
   },
   "fetch_main_stock": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:03:49",
+    "last_success": "2026-07-28 15:21:39",
     "last_error": null
   },
   "fetch_south_individual": {
@@ -32,47 +32,47 @@
   },
   "fetch_herding_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:03:26",
+    "last_success": "2026-07-28 15:21:09",
     "last_error": null
   },
   "fetch_up_down_stats": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:27:06",
+    "last_success": "2026-07-28 15:21:01",
     "last_error": null
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:26:21",
+    "last_success": "2026-07-28 15:18:32",
     "last_error": null
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:00:50",
+    "last_success": "2026-07-28 15:17:53",
     "last_error": null
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:02:04",
+    "last_success": "2026-07-28 15:19:27",
     "last_error": null
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 18:02:05",
+    "last_success": "2026-07-28 15:19:28",
     "last_error": null
   },
   "fetch_margin": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:47",
+    "last_success": "2026-07-28 12:59:38",
     "last_error": null
   },
   "fetch_cffex_holdings": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:46",
+    "last_success": "2026-07-28 20:55:23",
     "last_error": null
   },
   "fetch_inst_trade": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:48",
+    "last_success": "2026-07-28 20:55:26",
     "last_error": null
   },
   "fetch_stock_deviation": {
@@ -82,7 +82,7 @@
   },
   "fetch_52w_high": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:53",
+    "last_success": "2026-07-27 22:01:29",
     "last_error": null
   },
   "fetch_sector_rs": {
@@ -92,18 +92,18 @@
   },
   "fetch_crisis_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25 13:15:49",
+    "last_success": "2026-07-28 21:01:55",
     "last_error": null
   },
   "fetch_mahoro_signals": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 08:37:01",
+    "last_success": "2026-07-28 11:40:51",
     "last_error": null,
     "last_failure": "2026-07-21 09:58:43"
   },
   "fetch_lhb": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:27:57",
+    "last_success": "2026-07-28 20:55:18",
     "last_error": null
   },
   "fetch_maharo_signals": {
@@ -119,52 +119,57 @@
   },
   "fetch_etf_subscription": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 17:37:09",
+    "last_success": "2026-07-28 07:08:10",
     "last_error": null
   },
   "fetch_ipo_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25 08:20:27",
+    "last_success": "2026-07-28 12:19:53",
     "last_error": null
   },
   "fetch_north_fund": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:56",
+    "last_success": "2026-07-28 20:55:45",
     "last_error": null
   },
   "fetch_fomc": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25 13:15:40",
+    "last_success": "2026-07-28 20:55:36",
     "last_error": null
   },
   "fetch_sh_index_fib": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 17:42:26",
+    "last_success": "2026-07-27 11:23:14",
     "last_error": null
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:48",
+    "last_success": "2026-07-28 15:21:05",
     "last_error": null
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:10:12",
+    "last_success": "2026-07-28 10:27:01",
     "last_error": null
   },
   "fetch_policy_density": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:25:49",
+    "last_success": "2026-07-27 22:01:40",
     "last_error": null
   },
   "fetch_analyst_ratings": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-24 19:27:20",
+    "last_success": "2026-07-27 22:02:55",
     "last_error": null
   },
   "fetch_stock_names": {
     "consecutive_failures": 0,
     "last_success": "2026-07-26 20:31:15",
+    "last_error": null
+  },
+  "fetch_etf_intraday_heat": {
+    "consecutive_failures": 0,
+    "last_success": "2026-07-28 13:06:29",
     "last_error": null
   }
 }

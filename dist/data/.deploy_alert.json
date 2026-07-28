@@ -1,7 +1,7 @@
 {
   "alert": true,
-  "reason": "新鲜度FAIL: 2 项陈旧/失真（扫描 55 文件）",
+  "reason": "新鲜度FAIL: 8 项陈旧/失真（扫描 56 文件）",
   "source": "verify_data_vs_website.py --gate",
-  "time": "2026-07-24 17:48:07",
-  "host": "CAT"
+  "time": "2026-07-28 13:09:07",
+  "host": "LEMONCAT"
 }

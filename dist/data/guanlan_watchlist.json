@@ -1,65 +1,65 @@
 {
   "version": "2.0",
-  "updated": "2026-07-24 08:37:03",
+  "updated": "2026-07-28 11:40:50",
   "sources": [
     "guanlan"
   ],
-  "total": 8,
+  "total": 23,
   "stocks": [
     {
-      "name": "新华保险",
-      "code": "601336",
-      "full_code": "sh601336",
+      "name": "中国铝业",
+      "code": "601600",
+      "full_code": "sh601600",
       "exchange": "SH",
       "market": "沪市",
-      "institution": "摩根士丹利",
-      "rating": "持有",
+      "institution": "摩根大通",
+      "rating": "增持",
       "source": "观澜台",
-      "added_date": "2026-07-24"
+      "added_date": "2026-07-28"
     },
     {
-      "name": "中国人寿",
-      "code": "601628",
-      "full_code": "sh601628",
-      "exchange": "SH",
-      "market": "沪市",
-      "institution": "摩根士丹利",
-      "rating": "持有",
-      "source": "观澜台",
-      "added_date": "2026-07-24"
-    },
-    {
-      "name": "宁德时代",
-      "code": "300750",
-      "full_code": "sz300750",
+      "name": "华明装备",
+      "code": "002270",
+      "full_code": "sz002270",
       "exchange": "SZ",
       "market": "深市",
-      "institution": "花旗",
-      "rating": "未评级",
+      "institution": "摩根士丹利",
+      "rating": "增持",
       "source": "观澜台",
-      "added_date": "2026-07-24"
+      "added_date": "2026-07-28"
     },
     {
-      "name": "恒立液压",
-      "code": "601100",
-      "full_code": "601100.SH",
-      "exchange": "SH",
-      "market": "沪市",
-      "institution": "花旗",
+      "name": "迪安诊断",
+      "code": "300244",
+      "full_code": "sz300244",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
       "rating": "未评级",
       "source": "观澜台",
-      "added_date": "2026-07-24"
+      "added_date": "2026-07-28"
     },
     {
-      "name": "6481",
-      "code": "6481",
-      "full_code": "6481.HK",
-      "exchange": "HK",
-      "market": "港股",
-      "institution": "花旗",
+      "name": "零点有数",
+      "code": "301169",
+      "full_code": "sz301169",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
       "rating": "未评级",
       "source": "观澜台",
-      "added_date": "2026-07-24"
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "首航新能",
+      "code": "301658",
+      "full_code": "sz301658",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
     },
     {
       "name": "机器人",
@@ -67,10 +67,87 @@
       "full_code": "sz300024",
       "exchange": "SZ",
       "market": "深市",
+      "institution": "摩根大通",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-27"
+    },
+    {
+      "name": "富瀚微",
+      "code": "300613",
+      "full_code": "sz300613",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "阿里巴巴",
+      "code": "09988",
+      "full_code": "09988.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "兆易创新",
+      "code": "603986",
+      "full_code": "603986.SH",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "摩根士丹利",
+      "rating": "减持",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "石药集团",
+      "code": "1093",
+      "full_code": "1093.HK",
+      "exchange": "HK",
+      "market": "港股",
       "institution": "花旗",
       "rating": "未评级",
       "source": "观澜台",
-      "added_date": "2026-07-24"
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "哈尔滨电气",
+      "code": "1133",
+      "full_code": "1133.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "花旗",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "中国核电",
+      "code": "601985",
+      "full_code": "sh601985",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "花旗",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "药明康德",
+      "code": "603259",
+      "full_code": "sh603259",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
     },
     {
       "name": "澜起科技",
@@ -79,9 +156,64 @@
       "exchange": "SH",
       "market": "沪市",
       "institution": "摩根士丹利",
-      "rating": "买入",
+      "rating": "增持",
       "source": "观澜台",
-      "added_date": "2026-07-23"
+      "added_date": "2026-07-27"
+    },
+    {
+      "name": "中微公司",
+      "code": "688012",
+      "full_code": "sh688012",
+      "exchange": "SH",
+      "market": "沪市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "北方华创",
+      "code": "002371",
+      "full_code": "sz002371",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "宁德时代",
+      "code": "300750",
+      "full_code": "sz300750",
+      "exchange": "SZ",
+      "market": "深市",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "腾讯控股",
+      "code": "0700",
+      "full_code": "0700.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
+    },
+    {
+      "name": "中芯国际",
+      "code": "00981",
+      "full_code": "00981.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-28"
     },
     {
       "name": "太平洋",
@@ -89,10 +221,43 @@
       "full_code": "sh601099",
       "exchange": "SH",
       "market": "沪市",
-      "institution": "摩根大通",
-      "rating": "中性",
+      "institution": "摩根士丹利",
+      "rating": "增持",
       "source": "观澜台",
-      "added_date": "2026-07-23"
+      "added_date": "2026-07-27"
+    },
+    {
+      "name": "美团",
+      "code": "03690",
+      "full_code": "03690.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "高盛",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-27"
+    },
+    {
+      "name": "小米集团-W",
+      "code": "1810",
+      "full_code": "1810.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根士丹利",
+      "rating": "未评级",
+      "source": "观澜台",
+      "added_date": "2026-07-27"
+    },
+    {
+      "name": "微创机器人",
+      "code": "02252",
+      "full_code": "02252.HK",
+      "exchange": "HK",
+      "market": "港股",
+      "institution": "摩根大通",
+      "rating": "买入",
+      "source": "观澜台",
+      "added_date": "2026-07-27"
     }
   ]
 }

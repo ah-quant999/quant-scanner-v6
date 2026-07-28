@@ -1,71 +1,133 @@
 {
   "neodata_status": "ok",
-  "neodata_updated": "2026-07-24 17:20:48",
-  "neodata_valid_until": "2026-07-25 17:20:41",
-  "updated_at": "2026-07-27 10:10:00",
-  "cloud_deploy_time": "20260727101001",
+  "neodata_updated": "2026-07-27 17:37:08",
+  "neodata_valid_until": "2026-07-28 16:20:41",
+  "updated_at": "2026-07-28 22:30:25",
+  "cloud_deploy_time": "20260728223025",
   "failover_status": "OK",
-  "failover_time": "2026-07-27 09:20:13",
+  "failover_time": "2026-07-28 12:19:49",
   "data_correctness": {
     "status": "PASS",
     "detail": "全站 21 个数据维度业务不变量全部通过",
     "issues": [],
-    "time": "2026-07-25 17:05:47"
+    "time": "2026-07-28 13:09:07"
   },
   "freshness_consistency": {
-    "status": "WARN",
-    "detail": "2 项待关注（扫描 54 文件）",
+    "status": "FAIL",
+    "detail": "8 项陈旧/失真（扫描 56 文件）",
     "issues": [
-      "sector_fund_flow_westock.json 声明更新(2026-07-21 11:19) 与文件写入(2026-07-23 22:44) 相差 59h（时间戳可能造假）",
-      "signal_backtest.json 声明更新(2026-07-07 18:02:24) 与文件写入(2026-07-23 22:44) 相差 389h（时间戳可能造假）"
+      "cffex_holdings.json 陈旧 89.7h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
+      "inst_trade.json 陈旧 89.7h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
+      "maharo_signals.json 陈旧 123.1h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
+      "main_week.json 陈旧 99.8h > 阈值 72h（声明更新=2026-07-24 09:22:52）",
+      "market_fund_flow.json 陈旧 67.2h > 阈值 30h（声明更新=2026-07-25T17:55:07）"
     ],
-    "time": "2026-07-25 17:05:47"
+    "time": "2026-07-28 13:09:07"
   },
-  "monitor_updated_at": "2026-07-25 17:05:47",
+  "monitor_updated_at": "2026-07-28 13:09:07",
   "build_integrity": {
     "status": "PASS",
     "detail": "部署产物 18 个关键数据块均注入且非空",
     "issues": [],
-    "time": "2026-07-25 17:05:47"
+    "time": "2026-07-28 13:09:07"
   },
   "three_party": {
     "cloud": {
       "status": "ok",
-      "last_time": "2026-07-27 10:08:38",
-      "mode": "cloud_intraday"
+      "last_time": "2026-07-28 12:25:47",
+      "mode": "cloud_close"
     },
     "xiaojiu": {
       "status": "ok",
-      "last_time": "2026-07-27 10:09:50",
+      "last_time": "2026-07-28 15:24:09",
       "mode": "deploy"
     },
     "alimi": {
       "status": "ok",
-      "last_time": "2026-07-27 07:45:14",
+      "last_time": "2026-07-28 22:17:00",
       "mode": "deploy"
     }
   },
   "three_party_summary": "云端=✅ 小九=✅ 阿狸咪=✅",
   "audit": {
     "severity": "ERROR",
-    "error_count": 2,
-    "warn_count": 0,
-    "fixed_count": 0,
+    "error_count": 1,
+    "warn_count": 8,
+    "fixed_count": 1,
     "issues": [
       {
         "level": "ERROR",
         "type": "silent_failure",
-        "id": "automation-1784635394599",
-        "msg": "task last error: Automation prompt stopped before completion: refusal: {\"code\":-32003,\"message\":\"Quota exceeded: 429 您的使用量已超出频率限制，将在 2026",
-        "last_run": 1784854403091
+        "id": "automation-1784516582857",
+        "msg": "task last error: Automation prompt stopped before completion: refusal: {\"code\":-32001,\"message\":\"Network error: 502 网络连接失败：无法解析服务器地址，请检查网",
+        "last_run": 1785205285826
       },
       {
-        "level": "ERROR",
-        "type": "no_neodata_token",
-        "msg": ".neodata_token 文件不存在（路径=E:\\workspace\\stock-scanner\\.neodata_token）；neodata 抓取将全部跳过"
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "08:00",
+        "task": "08_交接检查",
+        "msg": "08:00 08_交接检查 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "08:15",
+        "task": "pre_market_deploy",
+        "msg": "08:15 pre_market_deploy 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "09:25",
+        "task": "IPO打新",
+        "msg": "09:25 IPO打新 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "09:30",
+        "task": "intraday_09_30",
+        "msg": "09:30 intraday_09_30 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:05",
+        "task": "pre_market_deploy_self_heal",
+        "msg": "10:05 pre_market_deploy_self_heal 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:31",
+        "task": "intraday_10_31",
+        "msg": "10:31 intraday_10_31 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "11:46",
+        "task": "intraday_11_46",
+        "msg": "11:46 intraday_11_46 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "ops_neodata_mismatch",
+        "msg": "ops_status.json neodata_valid_until=2026-07-28 16:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
+      },
+      {
+        "level": "FIXED",
+        "type": "silent_failover_activated",
+        "msg": "云端沉默 1387min，小九-盘中刷新部署 11:46（intraday_11_46）已激活兜底"
       }
     ],
-    "checked_at": "2026-07-25 08:50:51",
-    "updated_at": "2026-07-25 08:50:51"
+    "checked_at": "2026-07-28 12:38:31",
+    "updated_at": "2026-07-28 12:38:31"
+  },
+  "monitor_alert": {
+    "level": "FAIL",
+    "summary": "数据正确性:PASS 新鲜度:FAIL 构建:PASS",
+    "time": "2026-07-28 13:09:07"
   }
 }
