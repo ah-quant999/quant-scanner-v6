@@ -10,7 +10,7 @@
 2. **dist 同步**: `dist/` 被 git 跟踪。`deploy_now.py` 的 `_auto_push_source()` **必须在 gh-pages 推送 + dist 重建全部完成后**调用（原 bug：过早调用在 `_ensure_dist_fresh` 之前 + 第5步 `return 0` 漏调用，导致重建后的 dist 永远不进 main、工作区每次残留 dirty）。2026-07-25 已修复（fc50d387）。现在每次部署自动把最新 dist commit+push 到 main，回退源总是最新。**改 deploy_now.py 后必须自测一次：部署后 `git status` 应干净**。
 3. **gh-pages 推送**: 必须用 `subprocess.run([...], cwd=tmpdir)` 列表形式 + `--force`；严禁 `cd ... && git push` shell 形式（cmd 会把 `/U` 当开关，导致假成功/线上不更新）。
 4. **数据新鲜度闸门（2026-07-25 升级）**: `deploy_now.py` 新增**内容级**校验：扫描 `data/*.json` 内部 `update_time` vs 最近交易日收盘，核心源（crisis/fomc/候选池/涨停/板块/北向）过期即阻断；网络易抖（concept_map）/需交互登录（maharo）仅告警不阻断，避免一陈旧就冻结整次部署。
-5. **safe_pull**: 所有 pull 走 `git_safe_sync.py::safe_pull()`；禁止手写 `git pull --autostash`/`stash pop`。`rebase.autoStash=false`。
+5. **safe_pull 坑（2026-07-28 踩）**: `git_safe_sync.py::safe_pull()` 本质是 `git reset --hard origin/main`，**会连本地未推送的 commit 一起清掉**（工作区改动也丢）。云端自动化持续 push（heartbeat/cloud_*），remote 永远在前，一旦本地 commit 未 push 就跑 safe_pull，改动即被吞。**正确推送姿势**：`git add -f` → `git commit` → `git fetch origin` → `git rebase origin/main`（保留本地 commit）→ `git push origin main`。**仅当需要拉取远端他人改动且本地无未推送 commit 时**才用 safe_pull。禁止手写 `git pull --autostash`/`stash pop`。`rebase.autoStash=false`。
 6. **git add -f**: `.gitignore` 用 `!脚本.py` 白名单放行根 .py；新增 .py / HTML / data 必须 `git add -f`，否则静默忽略。
 7. **SSH 超时**: `export GIT_SSH_COMMAND="ssh -o ConnectTimeout=15"`。
 
