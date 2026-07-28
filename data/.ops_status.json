@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-28 07:22:56",
-  "cloud_deploy_time": "20260728072256",
+  "updated_at": "2026-07-28 08:10:38",
+  "cloud_deploy_time": "20260728081038",
   "failover_status": "OK",
   "failover_time": "2026-07-27 17:49:45",
   "data_correctness": {
@@ -44,86 +44,25 @@
     },
     "alimi": {
       "status": "ok",
-      "last_time": "2026-07-28 07:10:50",
+      "last_time": "2026-07-28 07:23:55",
       "mode": "deploy"
     }
   },
   "three_party_summary": "云端=✅ 小九=✅ 阿狸咪=✅",
   "audit": {
-    "severity": "ERROR",
-    "error_count": 1,
-    "warn_count": 8,
-    "fixed_count": 1,
+    "severity": "WARN",
+    "error_count": 0,
+    "warn_count": 1,
+    "fixed_count": 0,
     "issues": [
-      {
-        "level": "ERROR",
-        "type": "silent_failure",
-        "id": "automation-1784796217689",
-        "msg": "task last error: Automation prompt stopped before completion: refusal: {\"code\":-32603,\"message\":\"Internal error\",\"data\":{\"details\":\"500 i",
-        "last_run": 1784874390718
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "08:00",
-        "task": "08_交接检查",
-        "msg": "08:00 08_交接检查 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "08:30",
-        "task": "candidate_pool_watchdog",
-        "msg": "08:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "08:45",
-        "task": "pre_market_deploy",
-        "msg": "08:45 pre_market_deploy 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:00",
-        "task": "candidate_pool_watchdog",
-        "msg": "09:00 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:25",
-        "task": "IPO打新",
-        "msg": "09:25 IPO打新 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:30",
-        "task": "candidate_pool_watchdog",
-        "msg": "09:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:30",
-        "task": "intraday_09_30",
-        "msg": "09:30 intraday_09_30 应跑但 _heartbeat.log 无 DONE"
-      },
       {
         "level": "WARN",
         "type": "ops_neodata_mismatch",
-        "msg": "ops_status.json neodata_valid_until=2026-07-25 17:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
-      },
-      {
-        "level": "FIXED",
-        "type": "silent_failover_restored",
-        "msg": "云端已恢复（2min），小九-盘中刷新部署 09:30（intraday_09_30）已 PAUSED 回去"
+        "msg": "ops_status.json neodata_valid_until=2026-07-28 16:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
       }
     ],
-    "checked_at": "2026-07-27 10:10:08",
-    "updated_at": "2026-07-27 10:10:08"
+    "checked_at": "2026-07-28 08:09:11",
+    "updated_at": "2026-07-28 08:09:11"
   },
   "monitor_alert": {
     "level": "FAIL",
