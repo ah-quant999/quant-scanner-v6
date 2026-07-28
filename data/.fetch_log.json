@@ -47,7 +47,7 @@
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:27:20",
+    "last_success": "2026-07-28 11:44:36",
     "last_error": null
   },
   "fetch_market_alerts": {
@@ -144,7 +144,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:32:35",
+    "last_success": "2026-07-28 11:44:39",
     "last_error": null
   },
   "fetch_overnight_brief": {
@@ -169,7 +169,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:34:57",
+    "last_success": "2026-07-28 11:45:09",
     "last_error": null
   }
 }
