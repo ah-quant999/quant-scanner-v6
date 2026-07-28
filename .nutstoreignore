@@ -22,5 +22,9 @@ __pycache__/
 # 防止坚果云把 index_master.html 覆盖为旧版
 index_master.html
 
+# 禁止坚果云同步 v8 原型页（design_v3_unified.html 等）
+# 代码走 Git：v8 已在 Git 中跟踪，坚果云若同步会双机互相覆盖、冲掉未提交的修复
+v8-prototype/
+
 # 允许同步的数据文件（data/ 目录需要双向同步）
 # data/ 内的文件不受上述规则影响，因为 data/ 在项目根目录下
