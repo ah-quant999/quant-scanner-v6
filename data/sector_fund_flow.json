@@ -1,18 +1,18 @@
 {
-  "update_time": "2026-07-28 11:44",
+  "update_time": "2026-07-28 15:17",
   "data_type": "real",
   "summary": {
     "in_count": 40,
     "out_count": 0,
-    "in_text": "高股息精选(37.2亿)、跨境支付(CIPS)(28.4亿)、银行(27.7亿)、超级品牌(20.6亿)、白酒概念(12.8亿)",
+    "in_text": "高股息精选(90.2亿)、银行(56.0亿)、跨境支付(CIPS)(52.9亿)、超级品牌(30.4亿)、白酒概念(19.9亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 高股息精选+37.2亿(连13天)、跨境支付(CIPS)+28.4亿(连10天)、银行+27.7亿(连12天)"
+    "alert": "🔥 40个板块大幅流入；🚀 高股息精选+90.2亿(连13天)、银行+56.0亿(连12天)、跨境支付(CIPS)+52.9亿(连10天)"
   },
   "sectors_in": [
     {
       "name": "高股息精选",
-      "net": 37.18,
-      "net_5d": 261.12,
+      "net": 90.23,
+      "net_5d": 278.41,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -20,19 +20,9 @@
       "trend": "in"
     },
     {
-      "name": "跨境支付(CIPS)",
-      "net": 28.42,
-      "net_5d": 137.17,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
       "name": "银行",
-      "net": 27.72,
-      "net_5d": 115.38,
+      "net": 55.96,
+      "net_5d": 122.47,
       "net_20d": 0,
       "type": "行业",
       "source": "本地累加",
@@ -40,9 +30,19 @@
       "trend": "in"
     },
     {
+      "name": "跨境支付(CIPS)",
+      "net": 52.89,
+      "net_5d": 144.93,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
       "name": "超级品牌",
-      "net": 20.62,
-      "net_5d": 114.86,
+      "net": 30.4,
+      "net_5d": 124.83,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -51,8 +51,8 @@
     },
     {
       "name": "白酒概念",
-      "net": 12.84,
-      "net_5d": 90.25,
+      "net": 19.91,
+      "net_5d": 98.88,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -61,8 +61,8 @@
     },
     {
       "name": "白酒",
-      "net": 12.49,
-      "net_5d": 80.49,
+      "net": 19.78,
+      "net_5d": 89.27,
       "net_20d": 0,
       "type": "行业",
       "source": "本地累加",
@@ -70,145 +70,110 @@
       "trend": "in"
     },
     {
-      "name": "虚拟数字人",
-      "net": 9.1,
-      "net_5d": 95.02,
+      "name": "同花顺中特估100",
+      "net": 19.44,
+      "net_5d": 355.84,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒",
-      "net": 7.82,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒概念",
-      "net": 6.79,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "IP经济(谷子经济)",
-      "net": 6.72,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
       "name": "汽车整车",
-      "net": 6.43,
+      "net": 7.27,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "白色家电",
+      "net": 6.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 5.64,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "零售",
+      "net": 5.22,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "通信服务",
+      "net": 4.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "预制菜",
+      "net": 3.96,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "公路铁路运输",
+      "net": 3.85,
+      "net_5d": 2.9,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "工程机械",
+      "net": 3.67,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "饮料制造",
+      "net": 3.5,
+      "net_5d": 2.04,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "网红经济",
-      "net": 6.13,
+      "net": 2.9,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "软件开发",
-      "net": 5.84,
-      "net_5d": 41.89,
-      "net_20d": -74.39,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "NFT概念",
-      "net": 5.55,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "财税数字化",
-      "net": 5.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "零售",
-      "net": 5.34,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "职业教育",
-      "net": 4.83,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AI语料",
-      "net": 4.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "工程机械",
-      "net": 4.58,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "预制菜",
-      "net": 4.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "生态农业",
-      "net": 3.99,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "知识产权保护",
-      "net": 3.92,
+      "net": 2.69,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -216,54 +181,55 @@
       "trend": "in"
     },
     {
-      "name": "汽车拆解概念",
-      "net": 3.85,
+      "name": "啤酒概念",
+      "net": 2.59,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "旅游概念",
-      "net": 3.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白色家电",
-      "net": 3.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "饮料制造",
-      "net": 3.63,
-      "net_5d": 1.75,
-      "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "统一大市场",
-      "net": 3.44,
+      "net": 2.49,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "保险",
+      "net": 2.42,
+      "net_5d": 97.03,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "财税数字化",
+      "net": 2.41,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "小家电",
+      "net": 2.26,
+      "net_5d": -1.34,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "食品加工制造",
-      "net": 3.23,
+      "net": 2.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -271,62 +237,17 @@
       "trend": "in"
     },
     {
-      "name": "机场航运",
-      "net": 2.66,
+      "name": "物流",
+      "net": 2.13,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "语音技术",
-      "net": 2.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "乳业",
-      "net": 2.33,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "自由贸易港",
-      "net": 2.23,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "在线教育",
-      "net": 2.1,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "啤酒概念",
-      "net": 1.99,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "数据确权",
-      "net": 1.97,
+      "name": "汽车拆解概念",
+      "net": 2.13,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -335,7 +256,7 @@
     },
     {
       "name": "免税店",
-      "net": 1.88,
+      "net": 2.1,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -343,8 +264,17 @@
       "trend": "in"
     },
     {
-      "name": "ERP概念",
-      "net": 1.83,
+      "name": "自由贸易港",
+      "net": 2.04,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "家庭医生",
+      "net": 1.99,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -352,29 +282,104 @@
       "trend": "in"
     },
     {
-      "name": "DRG/DIP",
-      "net": 1.59,
+      "name": "NFT概念",
+      "net": 1.86,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "农产品加工",
-      "net": 1.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
-      "name": "MLOps概念",
-      "net": 1.4,
+      "name": "生态农业",
+      "net": 1.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "石油加工贸易",
+      "net": 1.61,
+      "net_5d": 30.37,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 8,
+      "trend": "in"
+    },
+    {
+      "name": "乳业",
+      "net": 1.5,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "信托概念",
+      "net": 1.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "轨交设备",
+      "net": 1.32,
+      "net_5d": 2.1,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "职业教育",
+      "net": 1.29,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "机场航运",
+      "net": 1.23,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "供销社",
+      "net": 1.1,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "特色小镇",
+      "net": 1.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "教育",
+      "net": 1.04,
+      "net_5d": 2.74,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 1,
       "trend": "in"
     }
@@ -383,8 +388,8 @@
   "top_list": [
     {
       "name": "高股息精选",
-      "net": 37.18,
-      "net_5d": 261.12,
+      "net": 90.23,
+      "net_5d": 278.41,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -392,19 +397,9 @@
       "trend": "in"
     },
     {
-      "name": "跨境支付(CIPS)",
-      "net": 28.42,
-      "net_5d": 137.17,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
       "name": "银行",
-      "net": 27.72,
-      "net_5d": 115.38,
+      "net": 55.96,
+      "net_5d": 122.47,
       "net_20d": 0,
       "type": "行业",
       "source": "本地累加",
@@ -412,9 +407,19 @@
       "trend": "in"
     },
     {
+      "name": "跨境支付(CIPS)",
+      "net": 52.89,
+      "net_5d": 144.93,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
       "name": "超级品牌",
-      "net": 20.62,
-      "net_5d": 114.86,
+      "net": 30.4,
+      "net_5d": 124.83,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -423,8 +428,8 @@
     },
     {
       "name": "白酒概念",
-      "net": 12.84,
-      "net_5d": 90.25,
+      "net": 19.91,
+      "net_5d": 98.88,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -433,8 +438,8 @@
     },
     {
       "name": "白酒",
-      "net": 12.49,
-      "net_5d": 80.49,
+      "net": 19.78,
+      "net_5d": 89.27,
       "net_20d": 0,
       "type": "行业",
       "source": "本地累加",
@@ -442,145 +447,110 @@
       "trend": "in"
     },
     {
-      "name": "虚拟数字人",
-      "net": 9.1,
-      "net_5d": 95.02,
+      "name": "同花顺中特估100",
+      "net": 19.44,
+      "net_5d": 355.84,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒",
-      "net": 7.82,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "文化传媒概念",
-      "net": 6.79,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "IP经济(谷子经济)",
-      "net": 6.72,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
       "name": "汽车整车",
-      "net": 6.43,
+      "net": 7.27,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "白色家电",
+      "net": 6.07,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "文化传媒",
+      "net": 5.64,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "零售",
+      "net": 5.22,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "通信服务",
+      "net": 4.77,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "预制菜",
+      "net": 3.96,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "公路铁路运输",
+      "net": 3.85,
+      "net_5d": 2.9,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "工程机械",
+      "net": 3.67,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "饮料制造",
+      "net": 3.5,
+      "net_5d": 2.04,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "网红经济",
-      "net": 6.13,
+      "net": 2.9,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "软件开发",
-      "net": 5.84,
-      "net_5d": 41.89,
-      "net_20d": -74.39,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "NFT概念",
-      "net": 5.55,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "财税数字化",
-      "net": 5.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "零售",
-      "net": 5.34,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "职业教育",
-      "net": 4.83,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "AI语料",
-      "net": 4.78,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "工程机械",
-      "net": 4.58,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "预制菜",
-      "net": 4.04,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "生态农业",
-      "net": 3.99,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "知识产权保护",
-      "net": 3.92,
+      "net": 2.69,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -588,54 +558,55 @@
       "trend": "in"
     },
     {
-      "name": "汽车拆解概念",
-      "net": 3.85,
+      "name": "啤酒概念",
+      "net": 2.59,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "旅游概念",
-      "net": 3.75,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "白色家电",
-      "net": 3.64,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "饮料制造",
-      "net": 3.63,
-      "net_5d": 1.75,
-      "net_20d": 0,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "统一大市场",
-      "net": 3.44,
+      "net": 2.49,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "保险",
+      "net": 2.42,
+      "net_5d": 97.03,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "财税数字化",
+      "net": 2.41,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "小家电",
+      "net": 2.26,
+      "net_5d": -1.34,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "食品加工制造",
-      "net": 3.23,
+      "net": 2.14,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -643,62 +614,17 @@
       "trend": "in"
     },
     {
-      "name": "机场航运",
-      "net": 2.66,
+      "name": "物流",
+      "net": 2.13,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "语音技术",
-      "net": 2.44,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "乳业",
-      "net": 2.33,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
       "consecutive_days": 1,
       "trend": "in"
     },
     {
-      "name": "自由贸易港",
-      "net": 2.23,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "在线教育",
-      "net": 2.1,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "啤酒概念",
-      "net": 1.99,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "数据确权",
-      "net": 1.97,
+      "name": "汽车拆解概念",
+      "net": 2.13,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -707,7 +633,7 @@
     },
     {
       "name": "免税店",
-      "net": 1.88,
+      "net": 2.1,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -715,8 +641,17 @@
       "trend": "in"
     },
     {
-      "name": "ERP概念",
-      "net": 1.83,
+      "name": "自由贸易港",
+      "net": 2.04,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "家庭医生",
+      "net": 1.99,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -724,29 +659,104 @@
       "trend": "in"
     },
     {
-      "name": "DRG/DIP",
-      "net": 1.59,
+      "name": "NFT概念",
+      "net": 1.86,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 1,
-      "trend": "in"
-    },
-    {
-      "name": "农产品加工",
-      "net": 1.48,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
       "consecutive_days": 2,
       "trend": "in"
     },
     {
-      "name": "MLOps概念",
-      "net": 1.4,
+      "name": "生态农业",
+      "net": 1.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "石油加工贸易",
+      "net": 1.61,
+      "net_5d": 30.37,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 8,
+      "trend": "in"
+    },
+    {
+      "name": "乳业",
+      "net": 1.5,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "信托概念",
+      "net": 1.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "轨交设备",
+      "net": 1.32,
+      "net_5d": 2.1,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "职业教育",
+      "net": 1.29,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "机场航运",
+      "net": 1.23,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "供销社",
+      "net": 1.1,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "特色小镇",
+      "net": 1.06,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "教育",
+      "net": 1.04,
+      "net_5d": 2.74,
+      "net_20d": 0,
+      "type": "行业",
+      "source": "本地累加",
       "consecutive_days": 1,
       "trend": "in"
     }
@@ -756,12 +766,12 @@
       "days": 13,
       "trend": "in"
     },
-    "跨境支付(CIPS)": {
-      "days": 10,
-      "trend": "in"
-    },
     "银行": {
       "days": 12,
+      "trend": "in"
+    },
+    "跨境支付(CIPS)": {
+      "days": 10,
       "trend": "in"
     },
     "超级品牌": {
@@ -776,23 +786,43 @@
       "days": 11,
       "trend": "in"
     },
-    "虚拟数字人": {
-      "days": 5,
+    "同花顺中特估100": {
+      "days": 12,
+      "trend": "in"
+    },
+    "汽车整车": {
+      "days": 2,
+      "trend": "in"
+    },
+    "白色家电": {
+      "days": 2,
       "trend": "in"
     },
     "文化传媒": {
       "days": 3,
       "trend": "in"
     },
-    "文化传媒概念": {
-      "days": 3,
+    "零售": {
+      "days": 1,
       "trend": "in"
     },
-    "IP经济(谷子经济)": {
+    "通信服务": {
       "days": 4,
       "trend": "in"
     },
-    "汽车整车": {
+    "预制菜": {
+      "days": 3,
+      "trend": "in"
+    },
+    "公路铁路运输": {
+      "days": 1,
+      "trend": "in"
+    },
+    "工程机械": {
+      "days": 1,
+      "trend": "in"
+    },
+    "饮料制造": {
       "days": 2,
       "trend": "in"
     },
@@ -800,63 +830,27 @@
       "days": 2,
       "trend": "in"
     },
-    "软件开发": {
-      "days": 5,
+    "知识产权保护": {
+      "days": 1,
       "trend": "in"
     },
-    "NFT概念": {
-      "days": 2,
+    "啤酒概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "统一大市场": {
+      "days": 1,
+      "trend": "in"
+    },
+    "保险": {
+      "days": 7,
       "trend": "in"
     },
     "财税数字化": {
       "days": 2,
       "trend": "in"
     },
-    "零售": {
-      "days": 1,
-      "trend": "in"
-    },
-    "职业教育": {
-      "days": 1,
-      "trend": "in"
-    },
-    "AI语料": {
-      "days": 3,
-      "trend": "in"
-    },
-    "工程机械": {
-      "days": 1,
-      "trend": "in"
-    },
-    "预制菜": {
-      "days": 3,
-      "trend": "in"
-    },
-    "生态农业": {
-      "days": 1,
-      "trend": "in"
-    },
-    "知识产权保护": {
-      "days": 1,
-      "trend": "in"
-    },
-    "汽车拆解概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "旅游概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "白色家电": {
-      "days": 2,
-      "trend": "in"
-    },
-    "饮料制造": {
-      "days": 2,
-      "trend": "in"
-    },
-    "统一大市场": {
+    "小家电": {
       "days": 1,
       "trend": "in"
     },
@@ -864,31 +858,11 @@
       "days": 3,
       "trend": "in"
     },
-    "机场航运": {
-      "days": 3,
-      "trend": "in"
-    },
-    "语音技术": {
-      "days": 2,
-      "trend": "in"
-    },
-    "乳业": {
+    "物流": {
       "days": 1,
       "trend": "in"
     },
-    "自由贸易港": {
-      "days": 3,
-      "trend": "in"
-    },
-    "在线教育": {
-      "days": 3,
-      "trend": "in"
-    },
-    "啤酒概念": {
-      "days": 1,
-      "trend": "in"
-    },
-    "数据确权": {
+    "汽车拆解概念": {
       "days": 1,
       "trend": "in"
     },
@@ -896,19 +870,55 @@
       "days": 3,
       "trend": "in"
     },
-    "ERP概念": {
+    "自由贸易港": {
+      "days": 3,
+      "trend": "in"
+    },
+    "家庭医生": {
       "days": 1,
       "trend": "in"
     },
-    "DRG/DIP": {
-      "days": 1,
-      "trend": "in"
-    },
-    "农产品加工": {
+    "NFT概念": {
       "days": 2,
       "trend": "in"
     },
-    "MLOps概念": {
+    "生态农业": {
+      "days": 1,
+      "trend": "in"
+    },
+    "石油加工贸易": {
+      "days": 8,
+      "trend": "in"
+    },
+    "乳业": {
+      "days": 1,
+      "trend": "in"
+    },
+    "信托概念": {
+      "days": 1,
+      "trend": "in"
+    },
+    "轨交设备": {
+      "days": 1,
+      "trend": "in"
+    },
+    "职业教育": {
+      "days": 1,
+      "trend": "in"
+    },
+    "机场航运": {
+      "days": 3,
+      "trend": "in"
+    },
+    "供销社": {
+      "days": 1,
+      "trend": "in"
+    },
+    "特色小镇": {
+      "days": 1,
+      "trend": "in"
+    },
+    "教育": {
       "days": 1,
       "trend": "in"
     }
