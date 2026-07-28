@@ -1097,7 +1097,10 @@ def fetch_sector_flow():
         if net_20d_val != 0:
             item["net_20d"] = net_20d_val
             item["net_20d_days"] = min(len(hist), 20)
-        if len(hist) >= 10:
+        # 【2026-07-28 修复】60日累计门槛必须为 >=60 天。原 >=10 会导致 hist 仅11天时
+        # hist[-60:]==hist[-11:]==全部数据，net_60d 恒等于 net_20d（假数据）。
+        # 不足60天则 net_60d=None，前端显示"积累中"（约47天后才有真实60日值）。
+        if len(hist) >= 60:
             item["net_60d"] = round(sum(h["net"] for h in hist[-60:]), 2)
             item["net_60d_days"] = min(len(hist), 60)
         else:
