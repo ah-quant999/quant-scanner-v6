@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-28 08:14:20",
+  "update_time": "2026-07-28 08:18:52",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7337,
@@ -87,8 +87,8 @@
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 101.54,
-      "pct": 0.05,
+      "value": 101.53,
+      "pct": 0.04,
       "date": "2026-07-28",
       "source": "Sina-DINIW"
     },
@@ -104,7 +104,7 @@
         "date": "2026-07-28"
       },
       "copper": {
-        "value": 6.388,
+        "value": 6.379,
         "unit": "美元/磅",
         "date": "2026-07-28"
       },
