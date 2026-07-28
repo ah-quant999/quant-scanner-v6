@@ -100,7 +100,7 @@ HY3_TRACK_WINDOW = 20
 EXPECTED_WORKDAY_TASKS = [
     ("08:00", "08_交接检查"),
     ("08:30", "candidate_pool_watchdog"),  # 整点任务也覆盖
-    ("08:45", "pre_market_deploy"),
+    ("08:15", "pre_market_deploy"),
     ("09:00", "candidate_pool_watchdog"),
     ("09:25", "IPO打新"),
     ("09:30", "candidate_pool_watchdog"),

@@ -8,7 +8,7 @@ batch_update.py — 九宝量化统一调度脚本
 enhance_dist 负责注入 MAHORO_COVERAGE、同步 getScore()、同步逻辑详解页 HTML
 
 用法：
-  python batch_update.py pre_market     09:15 盘前（研报+maharo→全量扫描→增强→部署）
+  python batch_update.py pre_market     08:15 盘前（研报+maharo→全量扫描→增强→部署，提前于原09:20铁律）
   python batch_update.py morning_scan   09:45 盘中快速扫描
   python batch_update.py morning_plus   10:30 扫描+三卡刷新（板块/ETF/AI速览）
   python batch_update.py morning_report 11:45 午间（研报+maharo→扫描→增强→部署）
@@ -25,6 +25,7 @@ import sys
 import time
 import os
 import concurrent.futures
+import datetime
 
 WORKSPACE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, WORKSPACE)
@@ -74,10 +75,11 @@ SYSTEM_PYTHON = _find_system_python()
 # ──────────────────────────────────────────────────────────
 MODES = {
     "pre_market": {
-        "desc": "盘前全量 (08:45)",
+        "desc": "盘前全量 (08:15)",
         "steps": [
             # 并行组：5 个 fetch 同时跑 → wall-time ~5min
-            # 2026-07-20 改：前 5 步并行化 + 启动提前到 08:45，09:21 开盘前部署完毕
+            # 2026-07-28 改：启动提前到 08:15（主人指令，放宽原 09:20 铁律），~08:58 部署完毕。
+            # 注意：概念排名/市场预警为盘前实时数据，09:25 前可能为昨日值，开盘后 morning_scan 修正。
             [
                 ("guanlan_extractor.py", 300),
                 ("fetch_mahoro_signals.py --non-interactive", 120),
@@ -869,6 +871,14 @@ def main():
 
     cfg = MODES[mode]
     print_header(f"📊 {cfg['desc']}")
+
+    # 2026-07-28 主人指令：提前盘前(08:15启动)。诚实标注：概念排名/市场预警是盘前实时源，
+    # 09:25 集合竞价前抓到的可能是昨日收盘值，避免被误读为当日盘前信号。
+    if mode == "pre_market":
+        _now = datetime.now()
+        if _now.hour < 9 or (_now.hour == 9 and _now.minute < 25):
+            print("⚠️ 提前盘前警告：概念排名 / 市场预警 为盘前实时数据，09:25 前可能为【昨日值】；"
+                  "其余卡片(研报/候选池/扫描/推荐)为有效当日数据。09:45 morning_scan 会用当日实时数据修正这两张卡。")
 
     # ── Step 0: 双机代码同步（阿狸咪 ↔ 小九互相识别对方最新版） ──
     _sync_dual_machine_code(WORKSPACE)

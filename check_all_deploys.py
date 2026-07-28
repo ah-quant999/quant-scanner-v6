@@ -69,7 +69,7 @@ HOST = detect_host()
 #       check_weekday（True=仅工作日检查，False=全部检查）
 TASKS = [
     # ─── 盘前/早间 ───
-    {"name": "pre_market_deploy",      "expected": ["xiaojiu"],           "desc": "09:20 盘前更新部署",                     "due": (9, 25, 10,  5), "weekday": True},
+    {"name": "pre_market_deploy",      "expected": ["xiaojiu"],           "desc": "08:15 盘前更新部署",                     "due": (8, 55, 9, 40), "weekday": True},
     {"name": "盘前全盘扫描",           "expected": ["xiaojiu"],           "desc": "09:14 盘前全盘扫描",                     "due": (9, 18, 10,  0), "weekday": True},
     {"name": "pre_market_deploy_self_heal","expected": ["xiaojiu"],       "desc": "10:05 盘前失败自愈兜底",                 "due": (10, 8, 11, 0),  "weekday": True},
     {"name": "08_交接检查",            "expected": ["xiaojiu"],           "desc": "08:00 自动交接检查",                     "due": (8, 5,  9,  0),  "weekday": True},
