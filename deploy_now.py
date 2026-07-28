@@ -41,6 +41,59 @@ def _check_peer_stop_signal():
 
 _check_peer_stop_signal()
 
+# ── 分时双机制闸门（2026-07-28 主人指令）──
+# 白天(工作日 08:00~17:00) = 小九唯一主机，阿狸咪禁止部署；
+# 晚上/周末 = 阿狸咪可自由改版部署。
+# 例外1：小九心跳(origin/main:_heartbeat.log 的 xiaojiu 行)失联 > 90 分钟 → 允许 failover 接管。
+# 例外2：仓库根存在 .allow_alimi_daytime 文件 → 主人手动放行（用完记得删）。
+def _check_daytime_master_gate():
+    repo = os.path.dirname(os.path.abspath(__file__))
+    role_file = os.path.join(repo, ".machine_role")
+    try:
+        with open(role_file, encoding="utf-8") as f:
+            role = f.read().strip().upper()
+    except Exception:
+        return
+    if role not in ("ALIMI", "LEMONCAT"):
+        return
+    now = datetime.now(CST)
+    if now.weekday() >= 5 or not (8 <= now.hour < 17):
+        return  # 周末或夜间：放行
+    if os.path.exists(os.path.join(repo, ".allow_alimi_daytime")):
+        print("⚠️ 检测到 .allow_alimi_daytime 主人放行文件，阿狸咪白天部署被允许。")
+        return
+    # failover 判定：拉取 origin/main 心跳，小九失联 >90min 才允许接管
+    try:
+        subprocess.run(["git", "fetch", "origin", "main", "--quiet"],
+                       cwd=repo, timeout=60, capture_output=True)
+        out = subprocess.run(["git", "show", "origin/main:_heartbeat.log"],
+                             cwd=repo, timeout=30, capture_output=True,
+                             encoding="utf-8", errors="replace").stdout or ""
+        last_ts = None
+        for line in out.splitlines():
+            if "| xiaojiu |" in line:
+                try:
+                    last_ts = datetime.strptime(line.split("|")[0].strip(),
+                                                "%Y-%m-%d %H:%M:%S").replace(tzinfo=CST)
+                except Exception:
+                    pass
+        if last_ts is not None:
+            stale_min = (now - last_ts).total_seconds() / 60
+            if stale_min > 90:
+                print(f"⚠️ 小九心跳已失联 {stale_min:.0f} 分钟(>90)，阿狸咪 failover 接管部署。")
+                return
+    except Exception:
+        pass  # 读不到心跳 → 按白天规则阻断（fail-closed）
+    sep = "=" * 55
+    print(f"\n{sep}")
+    print("🛑 分时双机制：白天(工作日08:00~17:00)小九是唯一主机。")
+    print("   阿狸咪本机白天禁止部署，晚上/周末可自由改版。")
+    print("   如需白天接管：主人在仓库根创建 .allow_alimi_daytime 文件。")
+    print(f"{sep}\n")
+    sys.exit(0)
+
+_check_daytime_master_gate()
+
 DIST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "dist")
 OUTPUT_URL = "https://ah-quant999.github.io/quant-scanner-v6/"
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))

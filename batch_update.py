@@ -770,8 +770,59 @@ def _check_peer_stop_signal():
             sys.exit(0)
 
 
+def _check_daytime_master_gate():
+    """分时双机制（2026-07-28 主人指令）：白天(工作日08:00~17:00)小九唯一主机，
+    阿狸咪禁止跑行情链；晚上/周末放行。例外：小九心跳失联>90min 允许 failover；
+    仓库根 .allow_alimi_daytime 文件 = 主人手动放行。"""
+    role_file = os.path.join(WORKSPACE, ".machine_role")
+    try:
+        with open(role_file, encoding="utf-8") as f:
+            role = f.read().strip().upper()
+    except Exception:
+        return
+    if role not in ("ALIMI", "LEMONCAT"):
+        return
+    import datetime as _dt
+    import subprocess as _sp
+    now = _dt.datetime.now()
+    if now.weekday() >= 5 or not (8 <= now.hour < 17):
+        return
+    if os.path.exists(os.path.join(WORKSPACE, ".allow_alimi_daytime")):
+        print("⚠️ 检测到 .allow_alimi_daytime 主人放行文件，阿狸咪白天运行被允许。")
+        return
+    try:
+        _sp.run(["git", "fetch", "origin", "main", "--quiet"],
+                cwd=WORKSPACE, timeout=60, capture_output=True)
+        out = _sp.run(["git", "show", "origin/main:_heartbeat.log"],
+                      cwd=WORKSPACE, timeout=30, capture_output=True,
+                      encoding="utf-8", errors="replace").stdout or ""
+        last_ts = None
+        for line in out.splitlines():
+            if "| xiaojiu |" in line:
+                try:
+                    last_ts = _dt.datetime.strptime(
+                        line.split("|")[0].strip(), "%Y-%m-%d %H:%M:%S")
+                except Exception:
+                    pass
+        if last_ts is not None:
+            stale_min = (now - last_ts).total_seconds() / 60
+            if stale_min > 90:
+                print(f"⚠️ 小九心跳已失联 {stale_min:.0f} 分钟(>90)，阿狸咪 failover 接管。")
+                return
+    except Exception:
+        pass  # 读不到心跳 → 按白天规则阻断（fail-closed）
+    sep = "=" * 55
+    print(f"\n{sep}")
+    print("🛑 分时双机制：白天(工作日08:00~17:00)小九是唯一主机。")
+    print("   阿狸咪本机白天禁止跑 batch_update，晚上/周末可自由改版。")
+    print("   如需白天接管：主人在仓库根创建 .allow_alimi_daytime 文件。")
+    print(f"{sep}\n")
+    sys.exit(0)
+
+
 def main():
     _check_peer_stop_signal()
+    _check_daytime_master_gate()
 
     if len(sys.argv) < 2 or sys.argv[1] in ("--help", "-h"):
         print("batch_update.py — 九宝量化统一调度脚本")
