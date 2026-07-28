@@ -2,34 +2,34 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-28 11:48:02",
-  "cloud_deploy_time": "20260728114803",
+  "updated_at": "2026-07-28 11:49:47",
+  "cloud_deploy_time": "20260728114947",
   "failover_status": "OK",
   "failover_time": "2026-07-28 11:23:19",
   "data_correctness": {
     "status": "PASS",
     "detail": "全站 21 个数据维度业务不变量全部通过",
     "issues": [],
-    "time": "2026-07-28 10:38:30"
+    "time": "2026-07-28 11:48:40"
   },
   "freshness_consistency": {
     "status": "FAIL",
-    "detail": "9 项陈旧/失真（扫描 56 文件）",
+    "detail": "8 项陈旧/失真（扫描 56 文件）",
     "issues": [
-      "cffex_holdings.json 陈旧 87.2h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
-      "guanlan_reports.json 陈旧 98.0h > 阈值 40h（声明更新=2026-07-24 08:37:03）",
-      "inst_trade.json 陈旧 87.2h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
-      "maharo_signals.json 陈旧 120.6h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
-      "main_week.json 陈旧 97.3h > 阈值 72h（声明更新=2026-07-24 09:22:52）"
+      "cffex_holdings.json 陈旧 88.4h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
+      "inst_trade.json 陈旧 88.4h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
+      "maharo_signals.json 陈旧 121.8h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
+      "main_week.json 陈旧 98.4h > 阈值 72h（声明更新=2026-07-24 09:22:52）",
+      "market_fund_flow.json 陈旧 65.9h > 阈值 30h（声明更新=2026-07-25T17:55:07）"
     ],
-    "time": "2026-07-28 10:38:30"
+    "time": "2026-07-28 11:48:40"
   },
-  "monitor_updated_at": "2026-07-28 10:38:30",
+  "monitor_updated_at": "2026-07-28 11:48:40",
   "build_integrity": {
     "status": "PASS",
     "detail": "部署产物 18 个关键数据块均注入且非空",
     "issues": [],
-    "time": "2026-07-28 10:38:30"
+    "time": "2026-07-28 11:48:40"
   },
   "three_party": {
     "cloud": {
@@ -161,6 +161,6 @@
   "monitor_alert": {
     "level": "FAIL",
     "summary": "数据正确性:PASS 新鲜度:FAIL 构建:PASS",
-    "time": "2026-07-28 10:38:30"
+    "time": "2026-07-28 11:48:40"
   }
 }

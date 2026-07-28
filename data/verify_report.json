@@ -1,135 +1,128 @@
 {
-  "run_time": "2026-07-28 10:38:25",
+  "run_time": "2026-07-28 11:48:26",
   "checks": [
     {
       "source": "north_fund.json",
       "status": "FAIL",
       "detail": "南向资金 流入 4.52亿",
       "issues": [
-        "南向汇总严重偏差 (54.3%)！本地=4.52 API=9.9"
+        "南向汇总严重偏差 (50.8%)！本地=4.52 API=9.18"
       ],
-      "time": "10:38:28"
+      "time": "11:48:29"
     },
     {
       "source": "herding_data.json",
       "status": "FAIL",
       "detail": "抱团3方向 + 接力5个",
       "issues": [
-        "行业TOP1差异大: 本地=半导体 vs API=银行, API_TOP3=['银行', '文化传媒', '软件开发']"
+        "行业TOP1差异大: 本地=半导体 vs API=银行, API_TOP3=['银行', '白酒', '文化传媒']"
       ],
-      "time": "10:38:28"
+      "time": "11:48:32"
     },
     {
       "source": "main_stock.json",
       "status": "SKIP",
       "detail": "westock-data CLI 已弃用(main_stock 改用 akshare)，跳过 CLI 抽样",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:32"
     },
     {
       "source": "sector_fund_flow.json",
       "status": "WARN",
       "detail": "[real] 流入40 流出0",
       "issues": [
-        "板块TOP1差异: 本地=跨境支付(CIPS) vs API=银行, API_TOP3=['银行', '文化传媒', '软件开发']"
+        "板块TOP1差异: 本地=高股息精选 vs API=银行, API_TOP3=['银行', '白酒', '文化传媒']"
       ],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "全量同源交叉验证",
       "status": "SKIP",
       "detail": "快速模式跳过（约5分钟）",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "全量数据文件实质审计",
       "status": "WARN",
-      "detail": "共36文件: ✅31 ⚠️5 ❌0 ⏭️2",
+      "detail": "共36文件: ✅32 ⚠️4 ❌0 ⏭️2",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "north_fund.json [完整]",
       "status": "PASS",
       "detail": "停更=True top_buy=空 data_date=无",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "top10_daily.json [审计]",
       "status": "PASS",
       "detail": "检测20只，虚假标签0处",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "generate_top10.py [审计]",
       "status": "PASS",
       "detail": "检查通过",
       "issues": [],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "fetch日志审计",
       "status": "WARN",
       "detail": "已集成28/28，有问题",
       "issues": [
-        "fetch_suspension_alert: 超过72h未成功运行 (89h)",
-        "fetch_cffex_holdings: 超过72h未成功运行 (87h)",
-        "fetch_inst_trade: 超过72h未成功运行 (87h)",
-        "fetch_stock_deviation: 超过72h未成功运行 (89h)",
-        "fetch_south_individual: 超过72h未成功运行 (179h)",
-        "fetch_mahoro_signals: 超过72h未成功运行 (98h)"
+        "fetch_suspension_alert: 超过72h未成功运行 (90h)",
+        "fetch_cffex_holdings: 超过72h未成功运行 (88h)",
+        "fetch_inst_trade: 超过72h未成功运行 (88h)",
+        "fetch_stock_deviation: 超过72h未成功运行 (90h)",
+        "fetch_south_individual: 超过72h未成功运行 (180h)"
       ],
-      "time": "10:38:28"
+      "time": "11:48:38"
     },
     {
       "source": "数据正确性·不变量",
       "status": "PASS",
       "detail": "全站 21 个数据维度业务不变量全部通过",
       "issues": [],
-      "time": "10:38:29"
+      "time": "11:48:39"
     },
     {
       "source": "新鲜度一致性",
       "status": "FAIL",
-      "detail": "9 项陈旧/失真（扫描 56 文件）",
+      "detail": "8 项陈旧/失真（扫描 56 文件）",
       "issues": [
-        "cffex_holdings.json 陈旧 87.2h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
-        "guanlan_reports.json 陈旧 98.0h > 阈值 40h（声明更新=2026-07-24 08:37:03）",
-        "inst_trade.json 陈旧 87.2h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
-        "maharo_signals.json 陈旧 120.6h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
-        "main_week.json 陈旧 97.3h > 阈值 72h（声明更新=2026-07-24 09:22:52）",
-        "market_fund_flow.json 陈旧 64.7h > 阈值 30h（声明更新=2026-07-25T17:55:07）",
-        "sector_rs.json 陈旧 68.8h > 阈值 30h（声明更新=2026-07-25 13:52）",
-        "stock_deviation.json 陈旧 89.0h > 阈值 40h（声明更新=2026-07-24 17:40:09）",
-        "suspension_alert.json 陈旧 88.6h > 阈值 40h（声明更新=2026-07-24 18:03:52）",
-        "close_summary.json 陈旧 98.0h > 阈值 72h（非核心周期文件，仅告警不阻断）",
+        "cffex_holdings.json 陈旧 88.4h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
+        "inst_trade.json 陈旧 88.4h > 阈值 72h（声明更新=2026-07-24 19:25:48）",
+        "maharo_signals.json 陈旧 121.8h > 阈值 40h（声明更新=2026-07-23 10:03:32）",
+        "main_week.json 陈旧 98.4h > 阈值 72h（声明更新=2026-07-24 09:22:52）",
+        "market_fund_flow.json 陈旧 65.9h > 阈值 30h（声明更新=2026-07-25T17:55:07）",
+        "sector_rs.json 陈旧 69.9h > 阈值 30h（声明更新=2026-07-25 13:52）",
+        "stock_deviation.json 陈旧 90.1h > 阈值 40h（声明更新=2026-07-24 17:40:09）",
+        "suspension_alert.json 陈旧 89.7h > 阈值 40h（声明更新=2026-07-24 18:03:52）",
+        "close_summary.json 陈旧 99.2h > 阈值 72h（非核心周期文件，仅告警不阻断）",
         "close_summary.json 声明更新(2026-07-24T08:37:01) 与文件写入(2026-07-28 10:10) 相差 98h（时间戳可能造假）",
-        "concept_map.json 陈旧 121.7h > 阈值 72h（非核心周期文件，仅告警不阻断）",
+        "concept_map.json 陈旧 122.9h > 阈值 72h（非核心周期文件，仅告警不阻断）",
         "fomc_summary.json 声明更新(2026-07-25 13:15:40) 与文件写入(2026-07-27 17:17) 相差 52h（时间戳可能造假）",
-        "guanlan_reports.json 声明更新(2026-07-24 08:37:03) 与文件写入(2026-07-28 10:10) 相差 98h（时间戳可能造假）",
-        "guanlan_watchlist.json 陈旧 98.0h > 阈值 72h（非核心周期文件，仅告警不阻断）",
-        "guanlan_watchlist.json 声明更新(2026-07-24 08:37:03) 与文件写入(2026-07-28 10:10) 相差 98h（时间戳可能造假）",
         "maharo_signals.json 声明更新(2026-07-23 10:03:32) 与文件写入(2026-07-27 10:27) 相差 96h（时间戳可能造假）",
-        "mahoro_signals.json 陈旧 98.0h > 阈值 72h（非核心周期文件，仅告警不阻断）",
-        "mahoro_signals.json 声明更新(2026-07-24 08:37:01) 与文件写入(2026-07-28 10:10) 相差 98h（时间戳可能造假）",
         "main_week.json 声明更新(2026-07-24 09:22:52) 与文件写入(2026-07-27 10:31) 相差 73h（时间戳可能造假）",
         "sector_rs.json 声明更新(2026-07-25 13:52) 与文件写入(2026-07-27 17:36) 相差 52h（时间戳可能造假）",
-        "signal_backtest.json 陈旧 496.6h > 阈值 72h（非核心周期文件，仅告警不阻断）",
+        "signal_backtest.json 陈旧 497.8h > 阈值 72h（非核心周期文件，仅告警不阻断）",
         "signal_backtest.json 声明更新(2026-07-07 18:02:24) 与文件写入(2026-07-17 18:28) 相差 240h（时间戳可能造假）",
         "stock_deviation.json 声明更新(2026-07-24 17:40:09) 与文件写入(2026-07-27 10:31) 相差 65h（时间戳可能造假）",
         "suspension_alert.json 声明更新(2026-07-24 18:03:52) 与文件写入(2026-07-27 17:17) 相差 71h（时间戳可能造假）"
       ],
-      "time": "10:38:29"
+      "time": "11:48:39"
     },
     {
       "source": "构建完整性",
       "status": "PASS",
       "detail": "部署产物 18 个关键数据块均注入且非空",
       "issues": [],
-      "time": "10:38:30"
+      "time": "11:48:40"
     }
   ],
   "summary": {
