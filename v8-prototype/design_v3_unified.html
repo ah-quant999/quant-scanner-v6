@@ -858,12 +858,12 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
           <div class="ipo-name">${it.name||'—'}</div>
           <div class="ipo-meta">${it.code||''} · ${it.board||'—'}</div>
         </div>
+        <span class="ipo-rec" style="color:${tagColor};background:${bgColor};border:1px solid ${tagColor}">${rec}</span>
         <div class="ipo-score">
           <div class="ipo-score-num" style="color:${scoreColor(score)}">${score}</div>
           <div class="ipo-score-label">综合分</div>
         </div>
       </div>
-      <span class="ipo-rec" style="color:${tagColor};background:${bgColor};border:1px solid ${tagColor}">${rec}</span>
       <div class="ipo-bars">
         <div class="ipo-bar-row"><span>套利</span><div class="ipo-bar"><div class="ipo-bar-fill" style="width:${Math.min(arb,100)}%;background:var(--up)"></div></div><b style="color:var(--txt)">${arb}</b></div>
         <div class="ipo-bar-row"><span>基本面</span><div class="ipo-bar"><div class="ipo-bar-fill" style="width:${Math.min(fund,100)}%;background:var(--cyan)"></div></div><b style="color:var(--txt)">${fund}</b></div>
