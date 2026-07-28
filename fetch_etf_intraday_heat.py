@@ -21,6 +21,105 @@ os.makedirs(DATA_DIR, exist_ok=True)
 EXCLUDE_KW = ['货币', '国债', '国开', '政金', '城投', '信用', '短融', '存单', '理财',
               '转债', '短债', '中债', '企业债', '地方债', '金融债', '同业']
 
+# ETF 分级分类规则：按优先级自上而下匹配，越靠前优先级越高
+# 格式：(category_1, category_2, [keywords])
+CATEGORY_RULES = [
+    # 1) 商品 ETF（名称里常带跨境/行业词，优先判定）
+    ('商品', '贵金属', ['黄金ETF', '白银ETF', '黄金', '白银']),
+    ('商品', '能源', ['原油ETF', '油气ETF', '原油', '油气']),
+    ('商品', '农产品', ['豆粕ETF', '农产品ETF', '豆粕']),
+    ('商品', '有色金属', ['有色ETF', '稀土ETF', '有色金属', '稀土']),
+
+    # 2) 跨境 ETF
+    ('跨境', '港股', ['恒生', '港股', 'H股']),
+    ('跨境', '美股', ['纳斯达克', '标普', '道琼斯', '纳指', '标普500']),
+    ('跨境', '亚太', ['日经', '越南', '印度', '韩国', '东南亚']),
+    ('跨境', '欧洲', ['德国', '法国', '英国', '欧洲']),
+    ('跨境', '其他跨境', ['沙特', '新兴市场', '中概']),
+
+    # 3) 宽基 ETF
+    ('宽基', '大盘宽基', ['沪深300', '上证50', '深证100', '中证A50', '中证A500', 'MSCI中国A50']),
+    ('宽基', '中盘宽基', ['中证500']),
+    ('宽基', '小盘宽基', ['中证1000', '国证2000', '中证2000']),
+    ('宽基', '双创宽基', ['创业板', '科创板', '双创', '科创100', '科创200']),
+    ('宽基', '全市场宽基', ['中证800', '中证全指', '深证成指', '中小板', '中小盘']),
+
+    # 4) 行业 ETF
+    ('行业', '金融地产', ['银行', '券商', '证券', '保险', '地产', '金融科技']),
+    ('行业', '科技', ['半导体', '芯片', '通信', '计算机', '电子', '5G', '人工智能', 'AI', '软件', '云计算', '大数据', '网络安全', '信创', '物联网', '工业互联网']),
+    ('行业', '医药医疗', ['医药', '医疗', '创新药', '生物科技', '医疗器械', '中药', '疫苗', '精准医疗', '细胞治疗']),
+    ('行业', '消费', ['酒ETF', '白酒', '食品饮料', '家电', '汽车', '农业', '养殖', '畜牧', '旅游', '酒店', '传媒', '游戏', '影视', '教育', '商贸零售', '电商']),
+    ('行业', '周期资源', ['煤炭', '钢铁', '有色', '化工', '石油', '石化', '建材', '稀土', '矿产', '资源']),
+    ('行业', '先进制造', ['机械', '电力设备', '新能源', '光伏', '储能', '锂电', '新能源车', '军工', '航天', '船舶', '机器人', '工业母机', '机床', '高端制造', '智能制造']),
+    ('行业', '公用事业', ['电力', '交运', '运输', '环保', '水务', '公用事业']),
+    ('行业', '基建地产', ['基建', '建筑', '建材', '房地产', '城镇化']),
+
+    # 5) 策略 ETF（SmartBeta）
+    ('策略', '红利股息', ['红利', '高股息', '股息']),
+    ('策略', '低波', ['低波', '低波动']),
+    ('策略', '质量价值成长', ['质量', '价值', '成长', '基本面']),
+    ('策略', '等权', ['等权']),
+
+    # 6) 主题 ETF（兜底，但仍做二级细分）
+    ('主题', '红利主题', ['红利', '高股息', '股息']),
+    ('主题', '科技主题', ['人工智能', 'AI', '机器人', '芯片', '半导体', '5G', '通信', '云计算', '大数据', '元宇宙', '区块链', '数字货币', '信创', '物联网']),
+    ('主题', '新能源主题', ['新能源', '光伏', '储能', '锂电', '新能源车', '碳中和', '绿色电力', '环保']),
+    ('主题', '医药主题', ['创新药', '生物科技', '医疗器械', '中药', '疫苗', '精准医疗', '细胞治疗', '养老', '健康']),
+    ('主题', '消费主题', ['新消费', '国潮', '电商', '互联网', '养老', '健康', '旅游', '酒店', '游戏', '影视', '传媒']),
+    ('主题', '资源主题', ['黄金', '白银', '原油', '油气', '有色', '稀土', '豆粕', '农产品', '资源']),
+    ('主题', '跨境主题', ['港股科技', '中概互联', '恒生科技', '互联网']),
+]
+
+
+def classify_etf(name):
+    """返回 (category_1, category_2)，按 CATEGORY_RULES 优先级匹配。"""
+    for c1, c2, kws in CATEGORY_RULES:
+        for kw in kws:
+            if kw in name:
+                return c1, c2
+    return '主题', '其他主题'
+
+
+def aggregate_categories(rows):
+    """按 category_1 / category_2 聚合统计与榜单。"""
+    from collections import defaultdict
+    cat1_map = defaultdict(list)
+    cat2_map = defaultdict(list)
+    for r in rows:
+        cat1_map[r['category_1']].append(r)
+        cat2_map[(r['category_1'], r['category_2'])].append(r)
+
+    def stats(sub_rows):
+        up = sum(1 for x in sub_rows if x['pct'] > 0)
+        down = sum(1 for x in sub_rows if x['pct'] < 0)
+        flat = len(sub_rows) - up - down
+        net = sum(x['main_net_inflow'] for x in sub_rows)
+        active = sorted(sub_rows, key=lambda x: x['amount'], reverse=True)[:5]
+        flow = sorted(sub_rows, key=lambda x: x['main_net_inflow'], reverse=True)
+        inflow = flow[:5]
+        outflow = flow[-5:][::-1]
+        return {
+            'count': len(sub_rows),
+            'up': up, 'down': down, 'flat': flat,
+            'net_inflow_yi': round(net / 1e8, 2),
+            'top_active': active,
+            'top_inflow': inflow,
+            'top_outflow': outflow,
+        }
+
+    categories = {}
+    for c1, c1_rows in cat1_map.items():
+        sub_map = defaultdict(list)
+        for r in c1_rows:
+            sub_map[r['category_2']].append(r)
+        subcategories = {c2: stats(sub_rows) for (c1_key, c2), sub_rows in cat2_map.items() if c1_key == c1}
+        categories[c1] = {
+            **stats(c1_rows),
+            'subcategories': subcategories,
+        }
+    return categories
+
+
 def is_equity_etf(name):
     for kw in EXCLUDE_KW:
         if kw in name:
@@ -84,12 +183,15 @@ def main():
             net = safe_float(r.get(c_net, 0))
         except Exception:
             continue
+        c1, c2 = classify_etf(name)
         rows.append({
             'code': code,
             'name': name,
             'pct': round(pct, 2),
             'amount': int(amt),
             'main_net_inflow': int(net),
+            'category_1': c1,
+            'category_2': c2,
         })
 
     # 排除成交额/净流入异常的（如 0）
@@ -170,7 +272,8 @@ def main():
         'summary': {
             'up': up, 'down': down, 'flat': flat,
             'net_inflow_yi': round(net_total / 1e8, 2),
-        }
+        },
+        'categories': aggregate_categories(rows),
     }
     out = os.path.join(DATA_DIR, 'etf_intraday_heat.json')
     with open(out, 'w', encoding='utf-8') as f:
