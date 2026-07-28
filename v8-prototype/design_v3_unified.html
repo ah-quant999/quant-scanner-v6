@@ -51,6 +51,13 @@
   .card h3 .ic{font-size:16px}
   .card .fresh{font-size:11px;color:var(--dim);font-weight:400}
 
+  /* 实时数据卡片：走势图 + 标题行数字 */
+  .rt-card h3{justify-content:space-between;flex-wrap:wrap;gap:6px 10px}
+  .rt-summary{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .rt-summary b{font-size:14px}
+  .rt-summary small{font-weight:400;color:var(--sub);font-size:12px}
+  .rt-spark{width:100%;height:78px;display:block;margin-top:4px}
+
   .quote{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
   .quote .price{font-size:32px;font-weight:800}
   .quote .meta{color:var(--sub);font-size:13px}
@@ -328,13 +335,37 @@
 
   <!-- ============ 实时数据 ============ -->
   <section id="sec-rt">
-    <div class="sec-head"><h2>📡 实时数据</h2><span class="tag">盘中 T+0 · 数据延迟约 3~5 秒</span></div>
+    <div class="sec-head"><h2>📡 实时数据</h2><span class="fresh">更新于 今日 15:20</span><span class="tag">盘中 T+0 · 数据延迟约 3~5 秒</span></div>
 
     <div class="grid g-4" style="margin-bottom:16px">
-      <div class="card"><h3><span class="ic">🔥</span>沪指 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">3,418.6</span><span class="meta up">+0.82%<br>+27.8</span></div></div>
-      <div class="card"><h3><span class="ic">🔥</span>深成指 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">10,892.3</span><span class="meta up">+1.05%<br>+113.2</span></div></div>
-      <div class="card"><h3><span class="ic">🔥</span>创业板 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price down">2,176.4</span><span class="meta down">-0.31%<br>-6.7</span></div></div>
-      <div class="card"><h3><span class="ic">💱</span>北向资金 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">+42.6亿</span><span class="meta">沪 +28.1 / 深 +14.5</span></div></div>
+      <div class="card rt-card">
+        <h3><span><span class="ic">🔥</span>沪指 - 盘中</span><span class="rt-summary up">3,418.6 <b>+0.82%</b> <small>+27.8</small></span></h3>
+        <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
+          <path d="M0,52 L20,50 L40,48 L60,45 L80,42 L100,40 L120,38 L140,35 L160,32 L180,30 L200,28 L220,25 L240,22 L260,18 L280,15 L300,10 L300,78 L0,78 Z" fill="rgba(244,73,93,0.18)"/>
+          <path d="M0,52 L20,50 L40,48 L60,45 L80,42 L100,40 L120,38 L140,35 L160,32 L180,30 L200,28 L220,25 L240,22 L260,18 L280,15 L300,10" fill="none" stroke="#f4495d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card rt-card">
+        <h3><span><span class="ic">🔥</span>深成指 - 盘中</span><span class="rt-summary up">10,892.3 <b>+1.05%</b> <small>+113.2</small></span></h3>
+        <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
+          <path d="M0,58 L30,54 L60,50 L90,46 L120,42 L150,38 L180,34 L210,28 L240,24 L270,18 L300,12 L300,78 L0,78 Z" fill="rgba(244,73,93,0.18)"/>
+          <path d="M0,58 L30,54 L60,50 L90,46 L120,42 L150,38 L180,34 L210,28 L240,24 L270,18 L300,12" fill="none" stroke="#f4495d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card rt-card">
+        <h3><span><span class="ic">🔥</span>创业板 - 盘中</span><span class="rt-summary down">2,176.4 <b>-0.31%</b> <small>-6.7</small></span></h3>
+        <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
+          <path d="M0,12 L30,16 L60,20 L90,24 L120,28 L150,32 L180,36 L210,40 L240,44 L270,48 L300,52 L300,78 L0,78 Z" fill="rgba(31,209,123,0.18)"/>
+          <path d="M0,12 L30,16 L60,20 L90,24 L120,28 L150,32 L180,36 L210,40 L240,44 L270,48 L300,52" fill="none" stroke="#1fd17b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card rt-card">
+        <h3><span><span class="ic">💱</span>北向资金 - 盘中</span><span class="rt-summary up">+42.6亿 <b>沪 +28.1</b> <small>深 +14.5</small></span></h3>
+        <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
+          <path d="M0,62 L25,58 L50,55 L75,60 L100,50 L125,52 L150,45 L175,48 L200,40 L225,35 L250,38 L275,28 L300,22 L300,78 L0,78 Z" fill="rgba(244,73,93,0.18)"/>
+          <path d="M0,62 L25,58 L50,55 L75,60 L100,50 L125,52 L150,45 L175,48 L200,40 L225,35 L250,38 L275,28 L300,22" fill="none" stroke="#f4495d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
 
     <div class="grid g-3" style="margin-bottom:16px">
