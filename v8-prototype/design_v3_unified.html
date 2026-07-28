@@ -2214,6 +2214,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
 
     cockpitResonanceFilter=cockpitResonanceFilter||'all';
     renderCockpitResonance();
+    renderBacktestTdx();
 
     (function loadCockpitBacktest(){
       var bt=$('cockpitBacktest'); if(!bt) return;
@@ -2509,7 +2510,15 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
       }
     }
     var titleEl=$('cockpitResonanceWinRate');
-    if(titleEl) titleEl.innerHTML='<span style="color:#556;">· 回测样本本原型未接入</span>';
+    if(titleEl){
+      var _bt=window.__BACKTEST_COMPREHENSIVE;
+      if(_bt && _bt.overview && _bt.overview.resonance_gte80){
+        var _o=_bt.overview.resonance_gte80;
+        titleEl.innerHTML='· 共振≥80 回测：'+_o.best_hold_days+'日最优胜率 <b style="color:#5ee0a0;">'+_o.best_win_rate+'%</b>（样本'+_o.valid+' · 均值'+( _o.best_avg_return>=0?'+':'')+_o.best_avg_return+'%）';
+      } else {
+        titleEl.innerHTML='<span style="color:#556;">· 回测样本加载中</span>';
+      }
+    }
 
     var h='';
     if(list.length){
