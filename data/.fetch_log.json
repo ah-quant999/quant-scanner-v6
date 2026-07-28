@@ -57,7 +57,7 @@
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 09:41:05",
+    "last_success": "2026-07-28 10:32:37",
     "last_error": null
   },
   "fetch_margin": {
@@ -144,7 +144,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 09:41:03",
+    "last_success": "2026-07-28 10:32:35",
     "last_error": null
   },
   "fetch_overnight_brief": {
@@ -169,7 +169,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 09:44:11",
+    "last_success": "2026-07-28 10:34:57",
     "last_error": null
   }
 }
