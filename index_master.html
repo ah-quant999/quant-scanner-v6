@@ -135240,7 +135240,9 @@ function renderAISummary() {
     var t = isAfterClose ? csTime : (nt.update_time || sf.update_time || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '');
     // 2026-07-22 修复：csTime 可能是 ISO 格式（含 T），需要转空格才能被 fmtDataTime 正确解析出 timePart
     if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
-    if (t) { setPostMarketTime('aiSummaryTime', t, 'summary'); }
+    // 2026-07-28 修复：盘中时段用 nt/sf 实时数据 → 标签应为"盘中实时"，非"盘后更新"
+    var aiSource = isAfterClose ? 'summary' : 'intraday';
+    if (t) { setPostMarketTime('aiSummaryTime', t, aiSource); }
     // 2026-07-22 收盘后加标签提示
     if (isAfterClose && csTime) {
       timeEl.textContent = '📌 收盘后汇总 · ' + timeEl.textContent;
