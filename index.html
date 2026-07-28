@@ -1243,6 +1243,15 @@ tr:hover td { background: #fafbfc; }
         <!-- 盘中更新 -->
         <div style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);padding:8px 14px;font-size:13px;font-weight:700;color:#e65100;border-radius:8px;margin:10px 0 8px 0;box-shadow:0 1px 3px rgba(0,0,0,0.04);">⚡ 盘中更新</div>
 
+        <!-- 💰 国家队ETF 短线集中（2026-07-28 移暂未上架·已下架区；与 ETF资金热度重复，主界面不再显示） -->
+        <div id="ntEtfFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #42a5f5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
+            <span style="font-size:13px;font-weight:700;color:#1565c0;">💰 国家队ETF <span style="font-size:10px;font-weight:400;color:#999;">短线·盘中</span></span>
+            <span style="font-size:12px;color:#999;" id="ntEtfFlowTime"></span>
+          </div>
+          <div id="ntEtfFlowContent" style="padding:10px 14px;"></div>
+        </div>
+
         <!-- 金股池异动停牌 (事件·盘中) — 2026-07-21 下架：永远0/暂无，无意义 -->
         <div id="suspensionCard" style="background:#fff;border:1px solid #e8eaed;border-left:4px solid #a5d6a7;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:10px;">
           <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
@@ -144833,7 +144842,7 @@ var PAGE_CARDS = [
   {page:'📋 总览', card:'📅 重要日历',       check:function(){return !!document.getElementById('calendarGrid') && document.getElementById('calendarGrid').innerHTML.length > 0;}},
   {page:'📋 总览', card:'🧠 AI市场速览',      check:function(){return !!document.getElementById('aiSummaryContent') && document.getElementById('aiSummaryContent').innerHTML.length > 200;}},
   {page:'📋 总览', card:'🚀 打新研判',        check:function(){return !!(window.IPO_DATA&&window.IPO_DATA.update_time);}},
-  {page:'📋 总览', card:'📊 ETF资金流向',     check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
+  {page:'📦 暂未上架', card:'💰 国家队ETF(已下架)', check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📋 总览', card:'💰 板块资金流向',    check:function(){var el=document.getElementById('sectorFundFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'📈 股指期货升贴水',  check:function(){var el=document.getElementById('cffexCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'⏸️ 金股池停牌',    check:function(){return !!(window.SUSPENSION_ALERT&&window.SUSPENSION_ALERT.update_time);}},
