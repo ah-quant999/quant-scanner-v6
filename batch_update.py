@@ -85,6 +85,10 @@ MODES = {
                 ("fetch_mahoro_signals.py --non-interactive", 120),
                 ("fetch_close_summary.py", 60),  # 昨日收盘汇总，随时可抓
             ],
+            # 2026-07-28 主人要求"盘前就要看到当日上市新股"：
+            # pre_market 之前漏调 fetch_ipo_data，导致 ipo_score.json 一直是昨晚 close_p2 的旧版
+            # → 上市日追踪卡片 09:30 开盘前是空的，加在并行组里以减少耗时
+            ("fetch_ipo_data.py", 120),
             ("build_candidate_pool.py", 1200),  # 2026-07-28: 600→1200，350只票(含港股50)逐只拉取慢日易超时；并改为非关键(见下方),超时保留上次有效池继续部署
             ("scanner.py full", 600),
             ("generate_recommend.py", 120),
@@ -109,6 +113,10 @@ MODES = {
                 ("fetch_market_alerts.py", 120),
                 ("fetch_sector_fund_flow.py", 120),
             ],
+            # 2026-07-28 主人要求"盘前就要看到当日上市新股"：
+            # 08:15 pre_market 抓不到（数据中心归档延迟到 09:30 后才稳定），
+            # 09:45 是 09:30 开盘后第一次补抓，确保 10:00 前卡片显示今日新股
+            ("fetch_ipo_data.py", 120),
             ("scanner.py quick", 300),
             # 2026-07-28 改：ETF资金热度合并到盘中扫描时间线
             ("fetch_etf_intraday_heat.py", 120),
@@ -125,6 +133,8 @@ MODES = {
         "desc": "盘中扫描+三卡刷新 (10:30)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
+            # 2026-07-28 加：IPO 兜底抓取（数据中心归档延迟时 09:45 还可能拿不到当日新股）
+            ("fetch_ipo_data.py", 120),
             ("fetch_sector_fund_flow.py", 120),
             ("fetch_market_alerts.py", 120),
             ("fetch_concept_ranking.py", 120),
@@ -175,6 +185,8 @@ MODES = {
         "desc": "午后扫描 (13:30/14:30/15:30/16:30)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
+            # 2026-07-28 加：IPO 兜底（数据中心 10:40 才归档今日新股的情况，午后仍可追上）
+            ("fetch_ipo_data.py", 120),
             ("scanner.py quick", 300),
             # 2026-07-24 接入：基于最新 scan_result 生成 A/B 档推荐（阿狸咪独立 + 小九对照），驾驶舱顶部横幅
             ("gen_cockpit_tier_recommend.py", 30),
