@@ -772,7 +772,7 @@ def _check_peer_stop_signal():
 
 def _check_daytime_master_gate():
     """分时双机制（2026-07-28 主人指令）：白天(工作日08:00~17:00)小九唯一主机，
-    阿狸咪禁止跑行情链；晚上/周末放行。例外：小九心跳失联>90min 允许 failover；
+    阿狸咪禁止跑行情链；晚上/周末放行。例外：小九心跳失联>60min 允许 failover；
     仓库根 .allow_alimi_daytime 文件 = 主人手动放行。"""
     role_file = os.path.join(WORKSPACE, ".machine_role")
     try:
@@ -806,8 +806,8 @@ def _check_daytime_master_gate():
                     pass
         if last_ts is not None:
             stale_min = (now - last_ts).total_seconds() / 60
-            if stale_min > 90:
-                print(f"⚠️ 小九心跳已失联 {stale_min:.0f} 分钟(>90)，阿狸咪 failover 接管。")
+            if stale_min > 60:
+                print(f"⚠️ 小九心跳已失联 {stale_min:.0f} 分钟(>60)，阿狸咪 failover 接管。")
                 return
     except Exception:
         pass  # 读不到心跳 → 按白天规则阻断（fail-closed）
