@@ -182,8 +182,6 @@ dist/data/*
 !data/.ops_status.json
 # 敏感/瞬时/日志/缓存文件：显式忽略，防止被 git add -A 重新纳入（泄露风险 & 部署噪音）
 data/zsxq_token.json
-data/maharo_signals.json
-!data/maharo_signals.json
 data/.neodata_token
 data/.fetch_errors.json
 data/.fetch_log.json
