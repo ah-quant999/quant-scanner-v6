@@ -231,3 +231,5 @@ nul
 .china_scheduler.pid
 _china_scheduler.out.log
 _scheduler_heartbeat.json
+# v8 原型页：仅本地自看，不进 Git 公开（核心算法与数据产物仍留仓库）
+v8-prototype/
