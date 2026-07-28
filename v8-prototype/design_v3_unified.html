@@ -533,53 +533,71 @@
     </div>
   </section>
 
-  <!-- ============ 选股策略 ============ -->
+  <!-- ============ 选股策略 · 三重共识 + 历史追踪 ============ -->
   <section id="sec-st">
-    <div class="sec-head"><h2>🎯 选股策略</h2><span class="tag">回测基于 2023-01 至今 · 胜率含滑点</span></div>
+    <div class="sec-head"><h2>🎯 选股策略 · 三重共识</h2><span class="tag">主站TOP10≥70 · 驾驶舱A档 · 基本面A档 · 入选即跟踪</span></div>
     <div class="grid g-3">
-      <div class="card">
-        <h3><span class="ic">🌊</span>逆势龙头 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="kv"><span class="k">胜率</span><b class="up">68.4%</b></div>
-        <div class="kv"><span class="k">年化</span><b>41.2%</b></div>
-        <div class="kv"><span class="k">最大回撤</span><b class="down">-18.6%</b></div>
-        <div class="kv"><span class="k">今日信号</span><b>3 只</b></div>
-        <div class="note">大盘下跌时相对抗跌且率先企稳的板块龙头。</div>
+      <div class="card" style="grid-column:1/-1">
+        <h3><span class="ic">🥇</span>严格三重共识 - 盘后 · <span class="fresh" id="tcTime">更新于 --</span></h3>
+        <div id="tcConsensus" class="tp-stocklist"></div>
+        <div class="note">筛选：主站TOP10≥70 且 驾驶舱A档 且 基本面A档。下方「优先/扩展观察」为差1步/差2步备选（主站评分≥75）。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🌀</span>斐波回踩 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="kv"><span class="k">胜率</span><b class="up">61.9%</b></div>
-        <div class="kv"><span class="k">年化</span><b>33.5%</b></div>
-        <div class="kv"><span class="k">最大回撤</span><b class="down">-22.1%</b></div>
-        <div class="kv"><span class="k">今日信号</span><b>5 只</b></div>
-        <div class="note">价格回踩 0.382/0.618 黄金分割位且缩量企稳。</div>
+        <h3><span class="ic">🎯</span>优先观察（差1步）· <span class="fresh" id="tcNearCount">0</span></h3>
+        <div id="tcPriority" class="tp-stocklist"></div>
       </div>
       <div class="card">
-        <h3><span class="ic">🔗</span>量价共振 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="kv"><span class="k">胜率</span><b class="up">64.7%</b></div>
-        <div class="kv"><span class="k">年化</span><b>38.0%</b></div>
-        <div class="kv"><span class="k">最大回撤</span><b class="down">-15.3%</b></div>
-        <div class="kv"><span class="k">今日信号</span><b>4 只</b></div>
-        <div class="note">放量突破平台 + 主力净流入 + 站上多均线。</div>
+        <h3><span class="ic">🔮</span>扩展观察（差2步）· <span class="fresh" id="tcExtCount">0</span></h3>
+        <div id="tcExtended" class="tp-stocklist"></div>
+      </div>
+
+      <div class="card" style="grid-column:1/-1">
+        <h3><span class="ic">📈</span>持仓盈亏跟踪 - <span class="fresh" id="ttTime">更新于 --</span></h3>
+        <div class="note">入选以来涨跌 = 入选首日收盘价 → 最新收盘价；持有/连续天数来自本地逐日累积快照。</div>
+        <table id="ttTrack"><thead><tr><th style="width:22%">名称</th><th>状态</th><th>入选日</th><th>持有</th><th>连续</th><th>入选以来</th><th>基本面</th></tr></thead><tbody id="ttTrackBody"></tbody></table>
+      </div>
+
+      <div class="card">
+        <h3><span class="ic">🔔</span>状态迁移 &amp; 告警 · <span class="fresh" id="ttAlertCount">0</span></h3>
+        <div id="ttAlerts"></div>
       </div>
       <div class="card">
-        <h3><span class="ic">💱</span>北向增持 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="kv"><span class="k">胜率</span><b class="up">59.2%</b></div>
-        <div class="kv"><span class="k">年化</span><b>27.8%</b></div>
-        <div class="kv"><span class="k">最大回撤</span><b class="down">-13.9%</b></div>
-        <div class="kv"><span class="k">今日信号</span><b>2 只</b></div>
-        <div class="note">北向连续增持 + 估值处于历史低位分位。</div>
+        <h3><span class="ic">🧪</span>催化剂兑现追踪</h3>
+        <div class="note">源自基本面季报/重组消息面。已兑现=价涨≥3%；走弱=回撤≥3%；否则观察中。</div>
+        <div id="ttCatalyst"></div>
+      </div>
+
+      <div class="card">
+        <h3><span class="ic">📊</span>回测 N 日胜率（信号层）</h3>
+        <div class="note" id="ttBackNote">加载中…</div>
+        <table id="ttBack"><thead><tr><th>持有期</th><th>样本</th><th>胜率</th><th>平均收益</th><th>夏普</th><th>最佳</th><th>最差</th></tr></thead><tbody id="ttBackBody"></tbody></table>
       </div>
       <div class="card">
-        <h3><span class="ic">🛡️</span>高股息防御 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="kv"><span class="k">胜率</span><b class="up">72.0%</b></div>
-        <div class="kv"><span class="k">年化</span><b>15.4%</b></div>
-        <div class="kv"><span class="k">最大回撤</span><b class="down">-9.2%</b></div>
-        <div class="kv"><span class="k">今日信号</span><b>6 只</b></div>
-        <div class="note">股息率>4% + 分红稳定 + 低波动。</div>
+        <h3><span class="ic">⚖️</span>严格 vs 宽松</h3>
+        <div class="note">严格=总评分≥70共振；宽松=信号≥2。同口径 baostock 真实收盘价滚动回测。</div>
+        <table id="ttSvl"><thead><tr><th>持有期</th><th>严格胜率</th><th>严格均收</th><th>宽松胜率</th><th>宽松均收</th></tr></thead><tbody id="ttSvlBody"></tbody></table>
       </div>
       <div class="card">
-        <h3><span class="ic">📡</span>今日全部信号 - 中长线 · 更新于 今日 15:20</h3>
-        <div class="logic-p">逆势龙头：中芯国际、海康威视、中国船舶<br>斐波回踩：宁德时代、比亚迪、隆基绿能、药明康德、招商银行<br>量价共振：寒武纪、中际旭创、拓维信息、工业富联<br>北向增持：贵州茅台、长江电力<br>高股息：工行、神华、国网、移动、长电、中海油</div>
+        <h3><span class="ic">🎚</span>阈值敏感性</h3>
+        <div class="note">不同总评分门槛的 5 日回测表现（不改动实盘规则，仅测试）。样本少时结论仅供参考。</div>
+        <table id="ttThr"><thead><tr><th>门槛</th><th>样本</th><th>5日胜率</th><th>5日均收</th><th>最佳胜率</th><th>最佳持有</th></tr></thead><tbody id="ttThrBody"></tbody></table>
+      </div>
+
+      <div class="card">
+        <h3><span class="ic">🏭</span>板块聚类（相关性风险）</h3>
+        <div class="note">当前跟踪池行业分布；单一行业占比过高提示同涨同跌相关性风险。</div>
+        <div id="ttCluster"></div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🔗</span>全站精选重叠度</h3>
+        <div class="note">当前跟踪池（严格+差一步）与全站其他精选层的重叠，辅助判断市场共识集中度。</div>
+        <div id="ttOverlap"></div>
+      </div>
+
+      <div class="card" style="grid-column:1/-1">
+        <h3><span class="ic">📅</span>三重入选历史（每日记录）</h3>
+        <div class="note">每日入选三重共识候选的数量与最新跟踪状态（来自 triple_resonance_history.json）。</div>
+        <div id="ttHistory"></div>
       </div>
     </div>
   </section>
@@ -1357,6 +1375,163 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initPostMarket);
   else initPostMarket();
+})();
+</script>
+
+<script>
+/* ===== 选股策略 · 三重共识 + 历史追踪 ===== */
+(function(){
+  const P='../data/';
+  const J=f=>fetch(P+f).then(r=>{if(!r.ok)throw new Error(f);return r.json();});
+  const $=id=>document.getElementById(id);
+  const num=(v,d)=>v==null||isNaN(v)?'--':Number(v).toFixed(d==null?2:d);
+  function rel(ts){
+    if(!ts)return '--';
+    const d=new Date(String(ts).replace('T',' ').replace(/-/g,'/'));
+    if(isNaN(d))return String(ts);
+    const now=new Date();
+    const diff=Math.round((new Date(now.getFullYear(),now.getMonth(),now.getDate())-new Date(d.getFullYear(),d.getMonth(),d.getDate()))/864e5);
+    const hm=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
+    return (diff<=0?'今日':diff===1?'昨日':diff+'天前')+' '+hm;
+  }
+  function setTime(id,ts){const el=$(id);if(el&&ts)el.textContent='更新于 '+rel(ts);}
+  function fmtPct(v){ if(v==null||isNaN(v))return '<span style="color:var(--sub)">—</span>'; const n=Number(v); return '<span class="'+(n>0?'up':n<0?'down':'')+'">'+(n>0?'+':'')+n.toFixed(2)+'%</span>'; }
+  function pnlClass(v){ if(v==null||isNaN(v))return 'style="color:var(--sub)"'; return v>0?'class="up"':v<0?'class="down"':'style="color:var(--sub)"'; }
+  function boardColor(b){
+    const m={'创业板':'rgba(56,189,248,.16);color:var(--cyan)','科创板':'rgba(167,139,250,.16);color:var(--purple)','主板':'rgba(251,191,36,.16);color:var(--gold)','港股':'rgba(244,114,182,.16);color:var(--pink)'};
+    return m[b]||'background:var(--bg2);color:var(--sub)';
+  }
+  function makeTag(text,cls){ return '<span class="tp-tag '+cls+'">'+text+'</span>'; }
+  function renderStock(p,isNear,trackMap){
+    const code=(p.code||'').replace(/^(sh|sz|hk|bj)_/,'');
+    let h='<div class="tp-stock">';
+    h+='<div class="tp-head">';
+    h+='<span class="tp-code">'+code+'</span>';
+    h+='<span class="tp-name">'+(p.name||'')+'</span>';
+    if(p.board)h+='<span class="tp-board" style="'+boardColor(p.board)+'">'+p.board+'</span>';
+    if(isNear){
+      const miss=[]; if(!p.in_top10)miss.push('TOP10'); if(!p.in_tier_a&&!p.in_tier_b)miss.push('驾驶舱A/B档'); else if(!p.in_tier_a)miss.push('驾驶舱A档'); if(!p.in_good_fund)miss.push('基本面A档');
+      const step=((p.miss_steps||1)===2?'差两步':'差一步');
+      h+='<span class="tp-badge near">'+step+' · 缺 '+miss.join(' · ')+'</span>';
+    } else {
+      h+='<span class="tp-badge cons">三重共识</span>';
+    }
+    h+='</div>';
+    h+='<div class="tp-meta"><span class="tp-score">'+(p.total_score||0)+'</span>';
+    h+=' <span>TOP10#'+(p.top10_rank||'-')+' · A档'+(p.a_score||0)+'分 · 基本面'+(p.quality_grade||'-')+'</span></div>';
+    let tags='';
+    if(p.industry)tags+=makeTag('🏭 '+p.industry,'ind');
+    (p.sectors||[]).slice(0,6).forEach(s=>tags+=makeTag(s,'sec'));
+    (p.concepts||[]).slice(0,6).forEach(c=>tags+=makeTag(c,'con'));
+    if(tags)h+='<div class="tp-tags">'+tags+'</div>';
+    h+='<div class="tp-detail">'+fmtPct(p.pct_chg)+' &nbsp; 20日 '+fmtPct(p.pct_chg_20d)+'</div>';
+    const tk=trackMap[code];
+    if(tk){
+      h+='<div class="tp-track">';
+      h+='<span>📅 入选 <b>'+(tk.enter_date||'-')+'</b></span>';
+      h+='<span>⏳ 持有 <b>'+(tk.hold_days||0)+'</b> 日</span>';
+      h+='<span>🔁 连续 <b>'+(tk.consecutive_days||0)+'</b> 日</span>';
+      h+='<span>📈 入选以来 <b '+pnlClass(tk.pnl_pct)+'>'+(tk.pnl_pct==null?'—':(tk.pnl_pct>0?'+':'')+Number(tk.pnl_pct).toFixed(2)+'%')+'</b></span>';
+      h+='</div>';
+      if(tk.catalysts&&tk.catalysts.length){
+        h+='<div class="tp-tags">';
+        tk.catalysts.forEach(c=>{const c2=c.reaction==='已兑现(价涨)'?'ok':c.reaction==='走弱'?'weak':''; h+='<span class="tp-catalyst '+c2+'">'+c.tag+' · '+c.reaction+'</span>';});
+        h+='</div>';
+      }
+    }
+    h+='</div>';
+    return h;
+  }
+  function buildTrackMap(tracked){ const m={}; (tracked||[]).forEach(t=>m[(t.code||'').replace(/^(sh|sz|hk|bj)_/,'')]=t); return m; }
+
+  function renderConsensus(data,track){
+    const stocks=data.stocks||[];
+    const near=data.near_miss||[];
+    const tm=track?buildTrackMap(track.tracked):{};
+    $('tcConsensus').innerHTML = stocks.length ? stocks.map(s=>renderStock(s,false,tm)).join('') : '<div class="tp-empty">当前无严格三重共识股<br><span style="font-size:12px">下方「优先观察」展示满足 2/3 且主站评分≥75 的股票</span></div>';
+    const pri=near.filter(s=>(s.total_score||0)>=75&&(s.miss_steps||1)===1);
+    const ext=near.filter(s=>(s.total_score||0)>=75&&(s.miss_steps||1)===2);
+    $('tcNearCount').textContent=pri.length;
+    $('tcPriority').innerHTML=pri.length?pri.map(s=>renderStock(s,true,tm)).join(''):'<div class="tp-empty">暂无</div>';
+    $('tcExtCount').textContent=ext.length;
+    $('tcExtended').innerHTML=ext.length?ext.map(s=>renderStock(s,true,tm)).join(''):'<div class="tp-empty">暂无</div>';
+    setTime('tcTime',data.update_time);
+  }
+
+  function renderTrack(track){
+    setTime('ttTime',track.update_time);
+    const tb=$('ttTrackBody');
+    if((track.tracked||[]).length){
+      tb.innerHTML=(track.tracked||[]).map(t=>{
+        const st=t.status==='strict'?'<span class="tp-badge cons">严格</span>':t.status==='dropped'?'<span class="tp-badge near" style="background:rgba(244,73,93,.16);color:var(--up)">已掉出</span>':'<span class="tp-badge near">差一步</span>';
+        return '<tr><td style="text-align:left"><b>'+t.name+'</b> <span class="tp-code">'+t.code+'</span></td><td>'+st+'</td><td>'+t.enter_date+'</td><td>'+t.hold_days+'日</td><td>'+t.consecutive_days+'日</td><td '+pnlClass(t.pnl_pct)+'>'+(t.pnl_pct==null?'—':(t.pnl_pct>0?'+':'')+Number(t.pnl_pct).toFixed(2)+'%')+'</td><td>'+(t.quality_grade||'-')+'</td></tr>';
+      }).join('');
+    } else tb.innerHTML='<tr><td colspan="7" style="color:var(--sub);text-align:center">暂无跟踪样本</td></tr>';
+
+    const alerts=track.alerts||[];
+    $('ttAlertCount').textContent=alerts.length;
+    $('ttAlerts').innerHTML=alerts.length?alerts.map(a=>'<div class="tp-alert '+a.level+'">'+a.text+'</div>').join(''):'<div class="tp-empty">当前无状态迁移告警。</div>';
+
+    const catRows=(track.tracked||[]).filter(t=>t.catalysts&&t.catalysts.length);
+    $('ttCatalyst').innerHTML=catRows.length?catRows.map(t=>'<div class="tp-stock" style="padding:8px 0;border:0"><b>'+t.name+'</b> <span class="tp-code">'+t.code+'</span> '+t.catalysts.map(c=>{const c2=c.reaction==='已兑现(价涨)'?'ok':c.reaction==='走弱'?'weak':'';return '<span class="tp-catalyst '+c2+'">'+c.tag+(c.score?' '+(c.score>0?'+':'')+c.score:'')+' · '+c.reaction+'</span>';}).join('')+'</div>').join(''):'<div class="tp-empty">当前跟踪池无催化剂消息面记录。</div>';
+
+    const bs=track.backtest_signal||{};
+    $('ttBackNote').textContent='口径：'+(bs.method||'')+'；样本 '+(bs.total||0)+' 笔；数据截至 '+(bs.latest_date||'-')+'；最优持有 '+(bs.best_hold_days||'-')+' 日。';
+    const per=bs.periods||{};
+    $('ttBackBody').innerHTML=['1d','3d','5d','10d','20d'].map(k=>{const p=per[k];if(!p)return '';return '<tr><td>'+k.replace('d','日')+'</td><td>'+p.count+'</td><td '+pnlClass(p.win_rate)+'>'+p.win_rate+'%</td><td '+pnlClass(p.avg_return)+'>'+(p.avg_return>0?'+':'')+p.avg_return+'%</td><td '+pnlClass(p.sharpe)+'>'+p.sharpe+'</td><td class="up">'+(p.best>0?'+':'')+p.best+'%</td><td class="down">'+(p.worst>0?'+':'')+p.worst+'%</td></tr>';}).join('')||'<tr><td colspan="7" style="color:var(--sub);text-align:center">无回测数据</td></tr>';
+
+    $('ttSvlBody').innerHTML=((track.strict_vs_loose&&track.strict_vs_loose.periods)||[]).map(p=>'<tr><td>'+p.period.replace('d','日')+'</td><td '+pnlClass(p.strict_win)+'>'+p.strict_win+'%</td><td '+pnlClass(p.strict_ret)+'>'+(p.strict_ret>0?'+':'')+p.strict_ret+'%</td><td '+pnlClass(p.loose_win)+'>'+p.loose_win+'%</td><td '+pnlClass(p.loose_ret)+'>'+(p.loose_ret>0?'+':'')+p.loose_ret+'%</td></tr>').join('')||'<tr><td colspan="5" style="color:var(--sub);text-align:center">无数据</td></tr>';
+
+    $('ttThrBody').innerHTML=(track.threshold_sensitivity||[]).map(t=>'<tr><td>'+(t.band||'-')+'</td><td>'+t.count+'</td><td '+pnlClass(t.win_rate_5d)+'>'+t.win_rate_5d+'%</td><td '+pnlClass(t.avg_ret_5d)+'>'+(t.avg_ret_5d>0?'+':'')+t.avg_ret_5d+'%</td><td '+pnlClass(t.best_win_rate)+'>'+t.best_win_rate+'%</td><td>'+(t.best_hold_days||'-')+'日</td></tr>').join('')||'<tr><td colspan="6" style="color:var(--sub);text-align:center">无数据</td></tr>';
+
+    const sc=track.sector_cluster||{}, maxc=(sc.by_industry&&sc.by_industry[0])?sc.by_industry[0].count:1;
+    if(sc.by_industry&&sc.by_industry.length){
+      const conc=sc.concentration||0;
+      const warn=conc>=50?' <span style="color:var(--up);font-weight:700">⚠ 单一行业占比 '+conc+'%，相关性风险偏高</span>':'';
+      $('ttCluster').innerHTML=sc.by_industry.map(x=>{const w=Math.max(8,Math.round(x.count/maxc*180));return '<div class="tp-cluster-row"><span class="tp-cluster-label">'+x.industry+'</span><span class="tp-cluster-bar" style="width:'+w+'px"></span><span class="tp-cluster-num">'+x.count+' 只</span></div>';}).join('')+'<div class="tp-detail" style="margin-top:6px">行业集中度(最高行业占比)：<b>'+conc+'%</b>'+warn+'</div>';
+    } else $('ttCluster').innerHTML='<div class="tp-empty">无行业数据</div>';
+
+    const o=track.overlap||{};
+    if(o.total_tracked!==undefined){
+      let h='跟踪池共 <b>'+o.total_tracked+'</b> 只。';
+      [['TOP10≥70',o.top10_ge70],['驾驶舱A档',o.cockpit_a],['驾驶舱B档',o.cockpit_b]].forEach(pair=>{const key=pair[0],obj=pair[1];h+='<div style="margin-top:8px"><b>'+key+'</b>（全站 '+obj.count+' 只，重叠 <span style="color:var(--down)">'+obj.overlap+'</span> 只）：'+(obj.names&&obj.names.length?obj.names.map(n=>'<span class="tp-pill">'+n+'</span>').join(''):'<span class="tp-empty" style="display:inline">无重叠</span>')+'</div>';});
+      $('ttOverlap').innerHTML=h;
+    } else $('ttOverlap').innerHTML='<div class="tp-empty">无重叠数据</div>';
+  }
+
+  function renderHistory(hist){
+    const dates=Object.keys(hist).filter(k=>k[0]>='0'&&k[0]<='9').sort().reverse();
+    const meta=hist._meta||{};
+    const track=hist._tracking_latest||{};
+    let h='';
+    if(meta.track_start)h+='<div class="tp-detail">追踪起始：'+meta.track_start+(meta.last_update?' · 最后更新 '+rel(meta.last_update):'')+'</div>';
+    if(!dates.length){h+='<div class="tp-empty">暂无每日入选记录。</div>';$('ttHistory').innerHTML=h;return;}
+    dates.forEach(d=>{
+      const arr=hist[d]||[];
+      h+='<div class="tp-hist-date">📅 '+d+' — '+arr.length+' 只入选</div>';
+      arr.forEach(s=>{
+        const t=track[s.code]||{};
+        const stBadge=t.status==='strict'?'<span class="tp-badge cons">严格</span>':t.status==='dropped'?'<span class="tp-badge near" style="background:rgba(244,73,93,.16);color:var(--up)">已掉出</span>':'<span class="tp-badge near">差一步</span>';
+        const pnl=t.pnl_pct==null?'':(' <b '+pnlClass(t.pnl_pct)+'>'+(t.pnl_pct>0?'+':'')+Number(t.pnl_pct).toFixed(2)+'%</b>');
+        h+='<div class="tp-hist-row"><span class="tp-code">'+(s.code||'')+'</span> <b>'+(s.name||'')+'</b> '+stBadge+' <span style="color:var(--sub)">评分'+(s.total_score||'-')+'</span>'+pnl+'</div>';
+      });
+    });
+    $('ttHistory').innerHTML=h;
+  }
+
+  function initTriple(){
+    Promise.allSettled([J('triple_consensus.json'),J('triple_track.json'),J('triple_resonance_history.json')]).then(rs=>{
+      const safe=(fn,...a)=>{try{fn(...a);}catch(e){console.warn('三重模块渲染失败',e);}};
+      const c=rs[0].status==='fulfilled'?rs[0].value:null;
+      const t=rs[1].status==='fulfilled'?rs[1].value:null;
+      const h=rs[2].status==='fulfilled'?rs[2].value:null;
+      if(c)safe(renderConsensus,c,t);
+      if(t)safe(renderTrack,t);
+      if(h)safe(renderHistory,h);
+    });
+  }
+  initTriple();
+  document.querySelectorAll('.tab[data-sec="st"]').forEach(t=>t.addEventListener('click',()=>setTimeout(initTriple,60)));
 })();
 </script>
 </body>
