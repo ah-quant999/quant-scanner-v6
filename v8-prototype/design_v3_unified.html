@@ -157,25 +157,25 @@
   /* ===== 打新速览 v8 ===== */
   .ipo-sec{margin-bottom:16px}
   .ipo-sec:last-child{margin-bottom:0}
-  .ipo-sec-title{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
-  .ipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
-  .ipo-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:9px;transition:.15s}
+  .ipo-sec-title{font-size:13px;font-weight:800;color:var(--cyan);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--border)}
+  .ipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+  .ipo-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:9px;display:flex;flex-direction:column;gap:6px;transition:.15s}
   .ipo-card:hover{border-color:var(--border2)}
-  .ipo-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .ipo-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
   .ipo-title{min-width:0}
-  .ipo-name{font-size:15px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .ipo-meta{font-size:11px;color:var(--dim);margin-top:2px}
+  .ipo-name{font-size:13px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ipo-meta{font-size:10px;color:var(--dim);margin-top:1px}
   .ipo-score{text-align:right;flex:0 0 auto}
-  .ipo-score-num{font-size:30px;font-weight:800;color:var(--gold);line-height:1}
-  .ipo-score-label{font-size:10px;color:var(--dim)}
-  .ipo-rec{font-size:12px;font-weight:700;padding:3px 9px;border-radius:20px;display:inline-block;width:fit-content}
-  .ipo-bars{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--sub)}
-  .ipo-bar-row{display:flex;align-items:center;gap:8px}
-  .ipo-bar-row span{width:42px;flex:0 0 auto}
-  .ipo-bar{flex:1;height:7px;background:var(--bg2);border-radius:4px;overflow:hidden}
+  .ipo-score-num{font-size:22px;font-weight:800;color:var(--gold);line-height:1}
+  .ipo-score-label{font-size:9px;color:var(--dim)}
+  .ipo-rec{font-size:11px;font-weight:700;padding:2px 7px;border-radius:16px;display:inline-block;width:fit-content}
+  .ipo-bars{display:flex;flex-direction:column;gap:4px;font-size:10px;color:var(--sub)}
+  .ipo-bar-row{display:flex;align-items:center;gap:6px}
+  .ipo-bar-row span{width:36px;flex:0 0 auto}
+  .ipo-bar{flex:1;height:6px;background:var(--bg2);border-radius:4px;overflow:hidden}
   .ipo-bar-fill{height:100%;border-radius:4px}
-  .ipo-highlights{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
-  .ipo-tag{font-size:11px;color:var(--sub);background:var(--bg2);padding:3px 7px;border-radius:6px}
+  .ipo-highlights{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto}
+  .ipo-tag{font-size:10px;color:var(--sub);background:var(--bg2);padding:2px 6px;border-radius:5px}
   .ipo-empty{color:var(--dim);padding:20px;text-align:center;font-size:13px}
 </style>
 </head>
@@ -204,6 +204,14 @@
     <div class="sec-head"><h2>📅 今日事件</h2><span class="tag">交易日历 + 打新速览 · 2026-07-28</span></div>
 
     <div class="grid g-2" style="margin-bottom:16px">
+      <!-- 今日关键事件速览 -->
+      <div class="card" style="grid-column:1/-1">
+        <h3><span class="ic">⚡</span>今日关键事件 - 盘中 · <span class="fresh">更新于 今日 15:20</span></h3>
+        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📊</span><div><div class="mt" style="color:var(--cyan)">中国数据</div><div>7月LPR利率报价（1年期/5年期以上）</div><div class="md">每月20日前后公布，影响房贷利率与企业融资成本</div></div></div>
+        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📈</span><div><div class="mt" style="color:#22d3ee">期货交割</div><div>上期所FU2608/能源中心SC/LU2608最后交易日</div><div class="md">交割前后波动加大，注意移仓换月</div></div></div>
+        <div class="mev" style="padding:8px 0"><span class="e">🇺🇸</span><div><div class="mt" style="color:#60a5fa">美股财报</div><div>英伟达(NVDA) 2026年Q2财报（预估）</div><div class="md">AI芯片龙头业绩，影响全球科技股情绪</div></div></div>
+      </div>
+
       <!-- 打新速览 -->
       <div class="card" style="grid-column:1/-1">
         <h3><span class="ic">🚀</span>打新速览 - T+1更新 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
