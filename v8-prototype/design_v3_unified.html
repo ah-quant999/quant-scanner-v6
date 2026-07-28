@@ -110,13 +110,13 @@
   .ev .e{font-size:12px}
   .ev .t{color:var(--txt);opacity:.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .cal-foot{margin-top:22px;border-top:1px solid var(--border);padding-top:16px}
-  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-  @media(max-width:640px){.legend{grid-template-columns:1fr}}
+  .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
   .lg{border-radius:12px;padding:12px 14px;backdrop-filter:blur(4px)}
   .lg .lh{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;margin-bottom:6px}
   .lg .sw{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
   .lg .ld{font-size:11px;line-height:1.45;margin-bottom:8px;opacity:.85;color:var(--txt)}
   .lg .li{list-style:none;padding:0;margin:0}
+  .lg .li.two-col{column-count:2;column-gap:14px}
   .lg .li li{font-size:11px;line-height:1.55;padding:2px 0 2px 12px;position:relative;color:var(--txt)}
   .lg .li li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--bullet)}
 
@@ -774,7 +774,7 @@ const EV={
     return `<div class="lg" style="--bullet:${c.color};background:${c.bg};border:1px solid ${c.border}">
       <div class="lh"><span class="sw" style="background:${c.color}"></span><span style="color:${c.color}">${c.name}</span></div>
       <div class="ld">${c.desc}</div>
-      <ul class="li">${items}</ul>
+      <ul class="li${k==='us'?' two-col':''}">${items}</ul>
     </div>`;
   }).join('');
 })();
@@ -789,6 +789,140 @@ function openCal(d){
   document.getElementById('calMask').classList.add('show');
 }
 function closeCal(){document.getElementById('calMask').classList.remove('show');}
+
+/* ===== 打新速览：从 data/ipo_score.json 动态加载 ===== */
+(function(){
+  let ipoData=[], ipoGrouped={}, currentCat='todayApply';
+  const today='20260728'; // 与页面日期 2026-07-28 保持一致；真实部署时由构建脚本注入
+
+  function fmtDate(d){
+    if(!d || d.length!==8) return '';
+    return `${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}`;
+  }
+  function relDate(d){
+    if(!d || d.length!==8) return '';
+    const y=+d.slice(0,4), m=+d.slice(4,6)-1, day=+d.slice(6,8);
+    const t=new Date(y,m,day), n=new Date(+today.slice(0,4), +today.slice(4,6)-1, +today.slice(6,8));
+    const diff=Math.round((t-n)/86400000);
+    if(diff===0) return '今日';
+    if(diff===1) return '明日';
+    if(diff===-1) return '昨日';
+    if(diff>1) return `${diff}天后`;
+    return `${Math.abs(diff)}天前`;
+  }
+  function scoreColor(s){
+    if(s>=70) return '#fbbf24';
+    if(s>=55) return '#f472b6';
+    if(s>=40) return '#93a4c4';
+    return '#5f7099';
+  }
+
+  function classify(items){
+    const groups={todayApply:[],futureApply:[],pricing:[],preListing:[],tracking:[]};
+    items.forEach(it=>{
+      const status=it.status||'';
+      const apply=String(it.apply_date||'');
+      const price=parseFloat(it.issue_price)||0;
+      if(status==='applying'){
+        if(price===0) groups.pricing.push(it);
+        if(apply===today) groups.todayApply.push(it);
+        else if(apply>today) groups.futureApply.push(it);
+      }else if(status==='pre_listing'){
+        groups.preListing.push(it);
+      }else if(status==='listed_today' || status==='tracking'){
+        groups.tracking.push(it);
+      }
+    });
+    Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>(b.score||0)-(a.score||0)));
+    return groups;
+  }
+
+  function renderCard(it){
+    const isTracking=['listed_today','tracking'].includes(it.status);
+    const score=it.score||0;
+    const arb=it.arbitrage_score||0;
+    const fund=it.fundamental_score||0;
+    const rec=it.recommend||'—';
+    const tagColor=it.tag_color||'#93a4c4';
+    const bgColor=it.bg_color||'rgba(147,164,196,.12)';
+    const highlights=(it.highlights||[]).filter(Boolean).slice(0,4);
+
+    let extra='';
+    if(isTracking){
+      const ret=it.total_return!=null?it.total_return:0;
+      const latest=it.latest_price!=null?it.latest_price:(it.latest||0);
+      extra=`<div style="font-size:11px;color:var(--sub)">较发行 <b class="${ret>=0?'up':'down'}">${ret>=0?'+':''}${ret.toFixed(1)}%</b>　现价 ¥${latest.toFixed(2)}</div>`;
+    }else{
+      const ad=it.apply_date?`申购 ${relDate(it.apply_date)}（${fmtDate(it.apply_date)}）`:'';
+      const ld=it.listing_date?`上市 ${relDate(it.listing_date)}（${fmtDate(it.listing_date)}）`:'';
+      extra=`<div style="font-size:11px;color:var(--sub)">${ad||ld||''}</div>`;
+    }
+
+    return `
+    <div class="ipo-card">
+      <div class="ipo-head">
+        <div class="ipo-title">
+          <div class="ipo-name">${it.name||'—'}</div>
+          <div class="ipo-meta">${it.code||''} · ${it.board||'—'}</div>
+        </div>
+        <div class="ipo-score">
+          <div class="ipo-score-num" style="color:${scoreColor(score)}">${score}</div>
+          <div class="ipo-score-label">综合分</div>
+        </div>
+      </div>
+      <span class="ipo-rec" style="color:${tagColor};background:${bgColor};border:1px solid ${tagColor}">${rec}</span>
+      <div class="ipo-bars">
+        <div class="ipo-bar-row"><span>套利</span><div class="ipo-bar"><div class="ipo-bar-fill" style="width:${Math.min(arb,100)}%;background:var(--up)"></div></div><b style="color:var(--txt)">${arb}</b></div>
+        <div class="ipo-bar-row"><span>基本面</span><div class="ipo-bar"><div class="ipo-bar-fill" style="width:${Math.min(fund,100)}%;background:var(--cyan)"></div></div><b style="color:var(--txt)">${fund}</b></div>
+      </div>
+      ${extra}
+      <div class="ipo-highlights">${highlights.map(h=>`<span class="ipo-tag">${h}</span>`).join('')}</div>
+    </div>`;
+  }
+
+  function render(cat){
+    currentCat=cat;
+    const items=ipoGrouped[cat]||[];
+    const grid=document.getElementById('ipoGrid');
+    if(!items.length){
+      grid.innerHTML=`<div class="ipo-empty" style="grid-column:1/-1">该分类下暂无数据</div>`;
+      return;
+    }
+    grid.innerHTML=items.map(renderCard).join('');
+  }
+
+  function bindTabs(){
+    document.getElementById('ipoTabs').addEventListener('click',e=>{
+      if(!e.target.classList.contains('ipo-tab')) return;
+      document.querySelectorAll('.ipo-tab').forEach(t=>t.classList.remove('active'));
+      e.target.classList.add('active');
+      render(e.target.dataset.cat);
+    });
+  }
+
+  function init(){
+    const fresh=document.getElementById('ipoFresh');
+    fetch('../data/ipo_score.json')
+      .then(r=>r.json())
+      .then(data=>{
+        ipoData=data.stocks||[];
+        ipoGrouped=classify(ipoData);
+        if(fresh && data.update_time){
+          fresh.textContent=`双维度 · 更新于 ${data.update_time}`;
+        }
+        render(currentCat);
+      })
+      .catch(err=>{
+        console.error('IPO加载失败',err);
+        if(fresh) fresh.textContent='双维度 · 加载失败';
+        document.getElementById('ipoGrid').innerHTML=`<div class="note" style="grid-column:1/-1">未能加载 data/ipo_score.json（${err.message}）。本地文件协议请用 http server 打开，或检查路径 ../data/ipo_score.json。</div>`;
+      });
+    bindTabs();
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
 </script>
 </body>
 </html>
