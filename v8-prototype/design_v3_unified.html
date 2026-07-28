@@ -47,8 +47,9 @@
   .g-5{grid-template-columns:repeat(5,1fr)}
   @media(max-width:1080px){.g-2,.g-3,.g-4,.g-5{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
-  .card h3{font-size:14px;color:var(--sub);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-  .card h3 .ic{font-size:16px}
+  .card h3{font-size:14px;color:var(--sub);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;line-height:1.4}
+  .card h3 .ic{font-size:16px;line-height:1}
+  .card h3 .fresh{font-size:11px;color:var(--dim);font-weight:400;white-space:nowrap}
   .card .fresh{font-size:11px;color:var(--dim);font-weight:400}
 
   /* 实时数据卡片：走势图 + 标题行数字 */
@@ -298,7 +299,7 @@
 
       <!-- 打新速览 -->
       <div class="card" style="grid-column:1/-1">
-        <h3><span class="ic">🚀</span>打新速览 - 盘中 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
+        <h3><span class="ic">🚀</span>打新速览 - 盘中 · <span class="fresh" id="ipoFresh">更新于 今日 12:18</span></h3>
         <div id="ipoAll">
           <div class="ipo-sec" data-cat="listedToday">
             <div class="ipo-sec-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
@@ -322,7 +323,7 @@
 
     <!-- 重要事件日历 -->
     <div class="card">
-      <h3><span class="ic">📅</span>重要事件日历（点击当日放大） - 中长线 · 每周日更新 · 月底补全下月</h3>
+      <h3><span class="ic">📅</span>重要事件日历（点击当日放大） - 中长线 · <span class="fresh">每周日更新</span></h3>
       <div class="cal-month">📅 2026年7月 · 重要日历</div>
       <div class="cal-grid" id="calHead" style="margin-bottom:6px"></div>
       <div class="cal-grid" id="calBody"></div>
@@ -371,7 +372,7 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 主力板块 -->
       <div class="card">
-        <h3><span class="ic">🚀</span>主力板块 - 短线盘中 · 更新于 今日 15:17</h3>
+        <h3><span class="ic">🚀</span>主力板块 - 短线盘中 · <span class="fresh">更新于 今日 15:17</span></h3>
         <div class="flow-row"><span class="flow-name">半导体</span><div class="flow-bar"><div class="flow-fill" style="width:92%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+38.2亿</span></div>
         <div class="flow-row"><span class="flow-name">新能源</span><div class="flow-bar"><div class="flow-fill" style="width:72%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+22.7亿</span></div>
         <div class="flow-row"><span class="flow-name">消费电子</span><div class="flow-bar"><div class="flow-fill" style="width:58%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+16.4亿</span></div>
@@ -381,7 +382,7 @@
 
       <!-- 概念涨跌排名 -->
       <div class="card">
-        <h3><span class="ic">📊</span>概念涨跌排名 - 短线盘中 · 更新于 今日 15:18</h3>
+        <h3><span class="ic">📊</span>概念涨跌排名 - 短线盘中 · <span class="fresh">更新于 今日 15:18</span></h3>
         <table>
           <thead><tr><th>概念</th><th>涨幅</th><th>领涨股</th></tr></thead>
           <tbody>
@@ -398,14 +399,14 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 上证+深证成交额 -->
       <div class="card">
-        <h3><span class="ic">📈</span>上证+深证 每日成交金额（亿元） - 短线盘中 · 更新于 今日 15:21</h3>
+        <h3><span class="ic">📈</span>上证+深证 每日成交金额（亿元） - 短线盘中 · <span class="fresh">更新于 今日 15:21</span></h3>
         <div class="chart" id="volChart"></div>
         <div class="note" style="margin-top:16px;line-height:1.7">今日两市合计 11,247 亿元，较前日 +8.7%，温和放大，未过 1.2 万亿警戒线。</div>
       </div>
 
       <!-- 近一月涨跌家数统计 -->
       <div class="card">
-        <h3><span class="ic">🏘️</span>近一月 涨跌家数统计 - 盘中实时 · 更新于 今日 15:21</h3>
+        <h3><span class="ic">🏘️</span>近一月 涨跌家数统计 - 盘中实时 · <span class="fresh">更新于 今日 15:21</span></h3>
         <div class="ad-chart" id="adChart"></div>
         <div class="note">红=上涨家数，绿=下跌家数，灰=平盘。今日涨 2835 / 跌 2521 / 平 176。</div>
       </div>
@@ -414,7 +415,7 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 涨停联动 -->
       <div class="card">
-        <h3><span class="ic">🔥</span>涨停联动 - 盘中实时 · 更新于 今日 15:21</h3>
+        <h3><span class="ic">🔥</span>涨停联动 - 盘中实时 · <span class="fresh">更新于 今日 15:21</span></h3>
         <table>
           <thead><tr><th>连板梯队</th><th>核心股</th><th>题材</th><th>封单额</th></tr></thead>
           <tbody>
@@ -429,7 +430,7 @@
 
       <!-- 个股查询 -->
       <div class="card">
-        <h3><span class="ic">🔍</span>个股实时查询 - 盘中实时 · 更新于 今日 15:20</h3>
+        <h3><span class="ic">🔍</span>个股实时查询 - 盘中实时 · <span class="fresh">更新于 今日 15:20</span></h3>
         <div class="qbox">
           <input id="qInput" placeholder="输入代码或名称，如 600519 或 贵州茅台" onkeydown="if(event.key==='Enter')doQuery()" />
           <button class="btn" onclick="doQuery()">查询</button>
@@ -440,7 +441,7 @@
 
     <!-- ETF 资金热度 -->
     <div class="card" style="margin-bottom:16px">
-      <h3><span class="ic">🔥</span>ETF 资金热度 - 实时·T+0 · 更新于 今日 09:43</h3>
+      <h3><span class="ic">🔥</span>ETF 资金热度 - 实时·T+0 · <span class="fresh">更新于 今日 09:43</span></h3>
       <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-size:13px;color:var(--sub)">
         <span><span style="color:var(--up)">▲ 290</span> 涨</span>
         <span><span style="color:var(--down)">▼ 1168</span> 跌</span>
@@ -487,7 +488,7 @@
     <!-- 盘后概览：市场温度计 / 六维共振雷达 -->
     <div class="grid g-2" style="margin-bottom:16px">
       <div class="card">
-        <h3><span class="ic">🌡️</span>市场温度计 - 盘后 · 更新于 今日 15:20</h3>
+        <h3><span class="ic">🌡️</span>市场温度计 - 盘后 · <span class="fresh">更新于 今日 15:20</span></h3>
         <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
           <svg width="200" height="120" viewBox="0 0 200 120">
             <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#1b2740" stroke-width="14" stroke-linecap="round"/>
@@ -500,7 +501,7 @@
         </div>
       </div>
       <div class="card">
-        <h3><span class="ic">🕸️</span>六维共振雷达 - 盘后 · 更新于 今日 15:20</h3>
+        <h3><span class="ic">🕸️</span>六维共振雷达 - 盘后 · <span class="fresh">更新于 今日 15:20</span></h3>
         <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
       </div>
     </div>
@@ -574,40 +575,40 @@
         <div id="ttAlerts"></div>
       </div>
       <div class="card">
-        <h3><span class="ic">🧪</span>催化剂兑现追踪</h3>
+        <h3><span class="ic">🧪</span>催化剂兑现追踪 - 盘后</h3>
         <div class="note">源自基本面季报/重组消息面。已兑现=价涨≥3%；走弱=回撤≥3%；否则观察中。</div>
         <div id="ttCatalyst"></div>
       </div>
 
       <div class="card">
-        <h3><span class="ic">📊</span>回测 N 日胜率（信号层）</h3>
+        <h3><span class="ic">📊</span>回测 N 日胜率（信号层） - 历史</h3>
         <div class="note" id="ttBackNote">加载中…</div>
         <table id="ttBack"><thead><tr><th>持有期</th><th>样本</th><th>胜率</th><th>平均收益</th><th>夏普</th><th>最佳</th><th>最差</th></tr></thead><tbody id="ttBackBody"></tbody></table>
       </div>
       <div class="card">
-        <h3><span class="ic">⚖️</span>严格 vs 宽松</h3>
+        <h3><span class="ic">⚖️</span>严格 vs 宽松 - 历史</h3>
         <div class="note">严格=总评分≥70共振；宽松=信号≥2。同口径 baostock 真实收盘价滚动回测。</div>
         <table id="ttSvl"><thead><tr><th>持有期</th><th>严格胜率</th><th>严格均收</th><th>宽松胜率</th><th>宽松均收</th></tr></thead><tbody id="ttSvlBody"></tbody></table>
       </div>
       <div class="card">
-        <h3><span class="ic">🎚</span>阈值敏感性</h3>
+        <h3><span class="ic">🎚</span>阈值敏感性 - 历史</h3>
         <div class="note">不同总评分门槛的 5 日回测表现（不改动实盘规则，仅测试）。样本少时结论仅供参考。</div>
         <table id="ttThr"><thead><tr><th>门槛</th><th>样本</th><th>5日胜率</th><th>5日均收</th><th>最佳胜率</th><th>最佳持有</th></tr></thead><tbody id="ttThrBody"></tbody></table>
       </div>
 
       <div class="card">
-        <h3><span class="ic">🏭</span>板块聚类（相关性风险）</h3>
+        <h3><span class="ic">🏭</span>板块聚类（相关性风险） - 盘后</h3>
         <div class="note">当前跟踪池行业分布；单一行业占比过高提示同涨同跌相关性风险。</div>
         <div id="ttCluster"></div>
       </div>
       <div class="card">
-        <h3><span class="ic">🔗</span>全站精选重叠度</h3>
+        <h3><span class="ic">🔗</span>全站精选重叠度 - 盘后</h3>
         <div class="note">当前跟踪池（严格+差一步）与全站其他精选层的重叠，辅助判断市场共识集中度。</div>
         <div id="ttOverlap"></div>
       </div>
 
       <div class="card" style="grid-column:1/-1">
-        <h3><span class="ic">📅</span>三重入选历史（每日记录）</h3>
+        <h3><span class="ic">📅</span>三重入选历史（每日记录） - 历史</h3>
         <div class="note">每日入选三重共识候选的数量与最新跟踪状态（来自 triple_resonance_history.json）。</div>
         <div id="ttHistory"></div>
       </div>
@@ -634,21 +635,21 @@
     <div id="opTab1" class="op-tab-pane active">
     <div class="grid g-2" style="margin-bottom:16px">
       <div class="card">
-        <h3><span class="ic">🚀</span>部署状态</h3>
+        <h3><span class="ic">🚀</span>部署状态 - 运维</h3>
         <div class="kv"><span class="k">站点</span><b>ah-quant999.github.io/quant-scanner-v7</b></div>
         <div class="kv"><span class="k">gh-pages SHA</span><b>223f2a6</b></div>
         <div class="kv"><span class="k">最后部署</span><b>2026-07-28 16:55</b></div>
         <div class="kv"><span class="k">心跳</span><span><span class="status-dot s-ok"></span>正常（5 分钟前）</span></div>
       </div>
       <div class="card">
-        <h3><span class="ic">🤖</span>双机状态</h3>
+        <h3><span class="ic">🤖</span>双机状态 - 运维</h3>
         <div class="kv"><span class="k">小九（本机）</span><span><span class="status-dot s-ok"></span>在线 · 08:15-17:00 主机</span></div>
         <div class="kv"><span class="k">阿狸咪（云端）</span><span><span class="status-dot s-warn"></span>待命 · 夜间/周末接管</span></div>
         <div class="kv"><span class="k">failover 守卫</span><span><span class="status-dot s-ok"></span>活跃</span></div>
       </div>
     </div>
     <div class="card" style="margin-bottom:16px">
-      <h3><span class="ic">⚙️</span>自动化任务（11）</h3>
+      <h3><span class="ic">⚙️</span>自动化任务（11） - 运维</h3>
       <table><thead><tr><th>任务</th><th>周期</th><th>状态</th><th>上次</th></tr></thead>
       <tbody>
         <tr><td>网络健康检查</td><td>每30分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:30</td></tr>
@@ -660,7 +661,7 @@
       </tbody></table>
     </div>
     <div class="card">
-      <h3><span class="ic">💾</span>数据新鲜度</h3>
+      <h3><span class="ic">💾</span>数据新鲜度 - 运维</h3>
       <table><thead><tr><th>文件</th><th>最后更新</th><th>状态</th></tr></thead>
       <tbody>
         <tr><td>盘后扫描</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
@@ -671,8 +672,8 @@
     </div>
     </div>
     <div id="opTab2" class="op-tab-pane">
-      <div class="card"><h3><span class="ic">🎯</span>选股驾驶舱</h3><div class="note">v6 驾驶舱（精选 + 共振 + 验证）精简移植；核心决策块已呈现，回测 / 建议类子面板本原型未接入。</div><div id="stockCockpit"></div></div>
-      <div class="card"><h3><span class="ic">🌐</span>全站精选</h3><div class="note">v6 全站精选（A/B 档）移植。</div><div id="allsitePanel"></div></div>
+      <div class="card"><h3><span class="ic">🎯</span>选股驾驶舱 - v6精选</h3><div class="note">v6 驾驶舱（精选 + 共振 + 验证）精简移植；核心决策块已呈现，回测 / 建议类子面板本原型未接入。</div><div id="stockCockpit"></div></div>
+      <div class="card"><h3><span class="ic">🌐</span>全站精选 - v6精选</h3><div class="note">v6 全站精选（A/B 档）移植。</div><div id="allsitePanel"></div></div>
     </div>
     <div id="opTab3" class="op-tab-pane"><div id="unlistedPanel"></div></div>
     <div id="opTab4" class="op-tab-pane"><div id="delistedPanel"></div></div>
@@ -683,23 +684,23 @@
     <div class="sec-head"><h2>📖 逻辑详解</h2><span class="tag">仅管理员可见 · 指标/策略/安全口径</span></div>
     <div class="grid g-2">
       <div class="card">
-        <h3><span class="ic">🌡️</span>温度计算法</h3>
+        <h3><span class="ic">🌡️</span>温度计算法 - 说明</h3>
         <div class="logic-h">综合打分 0~100</div>
         <div class="logic-p">= 0.3×涨跌家数比 + 0.2×量能分 + 0.2×北向分 + 0.15×涨停跌停比 + 0.15×情绪分。≥70 偏热，≤30 偏冷。</div>
         <div class="code">temp = 0.3*ad_ratio + 0.2*vol_z + 0.2*north_z + 0.15*zt_ratio + 0.15*sentiment</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🕸️</span>六维雷达维度</h3>
+        <h3><span class="ic">🕸️</span>六维雷达维度 - 说明</h3>
         <div class="logic-p">量能 / 情绪 / 资金 / 估值 / 技术 / 外围。各维归一化到 0~100 后绘制多边形。</div>
         <div class="code">dims = [vol, sentiment, fund, valuation, tech, external]
 norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🌀</span>斐波窗口</h3>
+        <h3><span class="ic">🌀</span>斐波窗口 - 说明</h3>
         <div class="logic-p">以显著高低点为基准日，叠加 5/8/13/21/34/55 交易日序列，标注变盘窗口。与宏观事件（如 FOMC）重合时权重提升。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">💰</span>资金流口径</h3>
+        <h3><span class="ic">💰</span>资金流口径 - 说明</h3>
         <div class="logic-p">板块/概念资金流 = 成分股主力净流入合计；北向 = 沪深股通每日净买额；单位统一为亿元。</div>
       </div>
       <div class="card">
@@ -709,7 +710,7 @@ norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
 signal = (RS > 1.2) & (vol < median(sector_vol))</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🔒</span>数据安全口径</h3>
+        <h3><span class="ic">🔒</span>数据安全口径 - 说明</h3>
         <div class="logic-p">铁律：前端面板一律不得暴露具体数据源、脚本路径、本地文件名、机器节点或跑批时间等核心信息。所有口径仅写 HANDOVER/代码注释，不进入用户可见文本。</div>
         <div class="logic-p">盘中数据按固定周期刷新，盘后数据在日终批处理后统一更新。更新时间以面板相对时间（今日/昨日/X天前）为准。</div>
         <div class="note">所有数据仅供参考，不构成投资建议。</div>
@@ -2019,7 +2020,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     var h='';
     var cp=DATA.candidate;
     h+='<div class="card" style="margin-bottom:16px;">';
-    h+='<h3><span class="ic">🧊</span>候选观察池</h3>';
+    h+='<h3><span class="ic">🧊</span>候选观察池 - 暂未上架</h3>';
     if(cp&&cp.stocks){
       var total=cp.total||Object.keys(cp.stocks).length;
       var dist=cp.source_dist||{};
@@ -2042,7 +2043,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     h+='</div>';
 
     h+='<div class="card">';
-    h+='<h3><span class="ic">📭</span>暂未上架的跟踪卡片</h3>';
+    h+='<h3><span class="ic">📭</span>暂未上架的跟踪卡片 - 暂未上架</h3>';
     h+='<div class="note">以下卡片在原 v6 看板中已被移出主视图，数据仍按各自频率采集；本原型仅列出其跟踪项，不渲染明细。</div>';
     var hidden=[
       ['F窗口监测','盘中','菲波那契变盘窗口实时标注'],
@@ -2081,10 +2082,11 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
       ['T+1 盘后更新',[
         ['股指期货升贴水','期指净空/基差结构，中长线参考'],
         ['两融余额走势','融资融券余额变化，方向性参考'],
-        ['宽基ETF净申赎','沪深300/中证500等宽基ETF每日净申赎份额']
+        ['宽基ETF净申赎','沪深300/中证500等宽基ETF每日净申赎份额'],
+        ['国家队ETF资金流向','监测主要宽基ETF涨跌×成交额，估算国家队净流入/流出方向']
       ]]
     ];
-    var h='<div class="card"><h3><span class="ic">🗄️</span>已下架 / 低优先级卡片</h3>';
+    var h='<div class="card"><h3><span class="ic">🗄️</span>已下架 / 低优先级卡片 - 已下架</h3>';
     h+='<div class="note">以下卡片已从主看板下架（数据仍采集），按更新频率分组。本原型仅列出其定位与说明。</div>';
     groups.forEach(function(g){
       h+='<div style="background:linear-gradient(135deg,rgba(108,123,214,.14),rgba(56,189,248,.10));padding:8px 14px;font-size:13px;font-weight:700;color:#cfe3ff;border-radius:8px;margin:14px 0 8px;">'+g[0]+'</div>';
