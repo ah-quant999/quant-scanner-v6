@@ -133794,7 +133794,7 @@ function getStaleNote(ft, source) {
     main:     '盘后更新',
     summary:  '',
     sector:   '',
-    etf:      '盘后更新',
+    etf:      '盘中实时·T+0',
     concept:  '',
     macro:    '',
     gold:     '',
@@ -135665,7 +135665,8 @@ function renderETFIntradayHeat() {
   if (timeEl) {
     var t = updateTime || '';
     if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
-    if (t) { setPostMarketTime('etfHeatTime', t, 'etf'); }
+    // ETF 资金热度是盘中 T+0 数据：必须显示真实抓取时间，不得回退到昨日 15:30/盘后更新。
+    if (t) { setChartTime('etfHeatTime', t, 'etf'); }
   }
   // 顶部汇总（涨跌家数 + 主力净流入合计）
   const sumEl = document.getElementById('etfHeatSummary');

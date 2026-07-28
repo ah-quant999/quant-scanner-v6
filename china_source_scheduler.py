@@ -55,6 +55,18 @@ CHECK_TRADING_DAY = os.path.join(WORKSPACE, "check_trading_day.py")
 SCHEDULE_WEEKDAY = [
     ("08:45", "pre_market",       "run_batch", {"mode": "pre_market"}),
     ("09:45", "morning_scan",     "run_batch", {"mode": "morning_scan"}),
+    # ETF资金热度 T+0：交易时段约每30分钟抓取→推 main→重建→部署。
+    # 避开午休，run_etf_heat() 内还有交易日与 09:35-15:10 双重守卫。
+    ("09:35", "etf_heat_0935",     "run_etf_heat", {}),
+    ("10:05", "etf_heat_1005",     "run_etf_heat", {}),
+    ("10:35", "etf_heat_1035",     "run_etf_heat", {}),
+    ("11:05", "etf_heat_1105",     "run_etf_heat", {}),
+    ("11:35", "etf_heat_1135",     "run_etf_heat", {}),
+    ("13:05", "etf_heat_1305",     "run_etf_heat", {}),
+    ("13:35", "etf_heat_1335",     "run_etf_heat", {}),
+    ("14:05", "etf_heat_1405",     "run_etf_heat", {}),
+    ("14:35", "etf_heat_1435",     "run_etf_heat", {}),
+    ("15:05", "etf_heat_1505",     "run_etf_heat", {}),
     ("10:30", "morning_plus",     "run_batch", {"mode": "morning_plus"}),
     ("11:45", "morning_report",   "run_batch", {"mode": "morning_report"}),
     ("13:30", "afternoon_1330",   "run_batch", {"mode": "afternoon"}),

@@ -133791,7 +133791,7 @@ function setChartTime(id, timeStr, source) {
   if (!timeStr) { el.textContent = ''; return; }
   var ft = fmtDataTime(timeStr);
   var note = getStaleNote(ft, source);
-  var freshLabels = { main:'盘后更新', etf:'盘后更新', macro:'盘中实时', sector:'盘中实时' };
+  var freshLabels = { main:'盘后更新', etf:'盘中实时·T+0', macro:'盘中实时', sector:'盘中实时' };
   var label = note || freshLabels[source] || '';
   el.textContent = '更新于 ' + ft.text + (label ? '（' + label + '）' : '');
   if (ft.stale) el.className = 'update-time-badge stale' + (ft.critical ? ' critical' : '');
@@ -135763,7 +135763,8 @@ function renderETFFlow() {
     var t = (isAfterClose ? csTime : (nt.update_time || '')) || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
     // 2026-07-22 修复：csTime 可能是 ISO 格式（含 T），需要转空格才能被 fmtDataTime 正确解析出 timePart
     if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
-    if (t) { setPostMarketTime('ntEtfFlowTime', t, 'etf'); }
+    // ETF资金流向是盘中实时数据：不再走盘后统一回退逻辑。
+    if (t) { setChartTime('ntEtfFlowTime', t, 'etf'); }
     // 2026-07-22 收盘后加"📌 收盘后"标签
     if (isAfterClose && csTime) {
       timeEl.textContent = '📌 收盘后 · ' + timeEl.textContent;
