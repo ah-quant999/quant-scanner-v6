@@ -110,7 +110,8 @@
   .ev .e{font-size:12px}
   .ev .t{color:var(--txt);opacity:.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .cal-foot{margin-top:22px;border-top:1px solid var(--border);padding-top:16px}
-  .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:640px){.legend{grid-template-columns:1fr}}
   .lg{border-radius:12px;padding:12px 14px;backdrop-filter:blur(4px)}
   .lg .lh{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;margin-bottom:6px}
   .lg .sw{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
