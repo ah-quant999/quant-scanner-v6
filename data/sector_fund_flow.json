@@ -1,12 +1,12 @@
 {
-  "update_time": "2026-07-27 16:42",
+  "update_time": "2026-07-28 08:26",
   "data_type": "real",
   "summary": {
     "in_count": 40,
     "out_count": 0,
     "in_text": "融资融券(1020.0亿)、芯片概念(685.9亿)、小米概念(544.6亿)、阿里巴巴概念(542.6亿)、人民币贬值受益(541.9亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 融资融券+1020.0亿(连10天)、芯片概念+685.9亿(连10天)、小米概念+544.6亿(连7天)"
+    "alert": "🔥 40个板块大幅流入；🚀 融资融券+1020.0亿(连11天)、芯片概念+685.9亿(连11天)、小米概念+544.6亿(连8天)"
   },
   "sectors_in": [
     {
@@ -16,7 +16,7 @@
       "net_20d": -3888.61,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -26,7 +26,7 @@
       "net_20d": -5686.09,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -36,7 +36,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -46,7 +46,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -56,7 +56,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 11,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
@@ -66,7 +66,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -76,7 +76,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -85,7 +85,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -94,7 +94,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
@@ -103,7 +103,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
@@ -112,7 +112,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -122,7 +122,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -132,7 +132,7 @@
       "net_20d": -2517.05,
       "type": "行业",
       "source": "本地累加",
-      "consecutive_days": 12,
+      "consecutive_days": 13,
       "trend": "in"
     },
     {
@@ -142,7 +142,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -152,7 +152,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -162,7 +162,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -172,7 +172,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 11,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
@@ -182,7 +182,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -192,7 +192,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -202,7 +202,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -212,7 +212,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -222,7 +222,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -232,7 +232,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -242,7 +242,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -252,7 +252,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -262,7 +262,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -271,7 +271,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -281,7 +281,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -291,7 +291,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -301,7 +301,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -311,7 +311,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -321,7 +321,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -331,7 +331,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -341,7 +341,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -351,7 +351,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -361,7 +361,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -371,7 +371,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -381,7 +381,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -391,7 +391,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -401,7 +401,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     }
   ],
@@ -414,7 +414,7 @@
       "net_20d": -3888.61,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -424,7 +424,7 @@
       "net_20d": -5686.09,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -434,7 +434,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -444,7 +444,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -454,7 +454,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 11,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
@@ -464,7 +464,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -474,7 +474,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -483,7 +483,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -492,7 +492,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
@@ -501,7 +501,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 4,
       "trend": "in"
     },
     {
@@ -510,7 +510,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -520,7 +520,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -530,7 +530,7 @@
       "net_20d": -2517.05,
       "type": "行业",
       "source": "本地累加",
-      "consecutive_days": 12,
+      "consecutive_days": 13,
       "trend": "in"
     },
     {
@@ -540,7 +540,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -550,7 +550,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -560,7 +560,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -570,7 +570,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 11,
+      "consecutive_days": 12,
       "trend": "in"
     },
     {
@@ -580,7 +580,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -590,7 +590,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -600,7 +600,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -610,7 +610,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -620,7 +620,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -630,7 +630,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -640,7 +640,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -650,7 +650,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -660,7 +660,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -669,7 +669,7 @@
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 4,
+      "consecutive_days": 5,
       "trend": "in"
     },
     {
@@ -679,7 +679,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -689,7 +689,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -699,7 +699,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -709,7 +709,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -719,7 +719,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -729,7 +729,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
@@ -739,7 +739,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 7,
       "trend": "in"
     },
     {
@@ -749,7 +749,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -759,7 +759,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -769,7 +769,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 8,
       "trend": "in"
     },
     {
@@ -779,7 +779,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 9,
+      "consecutive_days": 10,
       "trend": "in"
     },
     {
@@ -789,7 +789,7 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     },
     {
@@ -799,169 +799,169 @@
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 8,
+      "consecutive_days": 9,
       "trend": "in"
     }
   ],
   "consecutive": {
     "融资融券": {
-      "days": 10,
+      "days": 11,
       "trend": "in"
     },
     "芯片概念": {
-      "days": 10,
+      "days": 11,
       "trend": "in"
     },
     "小米概念": {
-      "days": 7,
+      "days": 8,
       "trend": "in"
     },
     "阿里巴巴概念": {
-      "days": 7,
+      "days": 8,
       "trend": "in"
     },
     "人民币贬值受益": {
-      "days": 11,
-      "trend": "in"
-    },
-    "存储芯片": {
-      "days": 10,
-      "trend": "in"
-    },
-    "腾讯概念": {
-      "days": 6,
-      "trend": "in"
-    },
-    "抖音概念(字节概念)": {
-      "days": 4,
-      "trend": "in"
-    },
-    "注册制次新股": {
-      "days": 3,
-      "trend": "in"
-    },
-    "新股与次新股": {
-      "days": 3,
-      "trend": "in"
-    },
-    "科创次新股": {
-      "days": 4,
-      "trend": "in"
-    },
-    "国家大基金持股": {
-      "days": 8,
-      "trend": "in"
-    },
-    "半导体": {
       "days": 12,
       "trend": "in"
     },
-    "深股通": {
-      "days": 10,
-      "trend": "in"
-    },
-    "华为概念": {
-      "days": 10,
-      "trend": "in"
-    },
-    "新能源汽车": {
-      "days": 9,
-      "trend": "in"
-    },
-    "沪股通": {
+    "存储芯片": {
       "days": 11,
       "trend": "in"
     },
-    "国企改革": {
-      "days": 9,
+    "腾讯概念": {
+      "days": 7,
       "trend": "in"
     },
-    "5G": {
-      "days": 10,
+    "抖音概念(字节概念)": {
+      "days": 5,
       "trend": "in"
     },
-    "机器人概念": {
-      "days": 9,
-      "trend": "in"
-    },
-    "储能": {
-      "days": 8,
-      "trend": "in"
-    },
-    "人工智能": {
-      "days": 8,
-      "trend": "in"
-    },
-    "数据中心(AIDC)": {
-      "days": 10,
-      "trend": "in"
-    },
-    "PCB概念": {
-      "days": 9,
-      "trend": "in"
-    },
-    "DeepSeek概念": {
-      "days": 6,
-      "trend": "in"
-    },
-    "一带一路": {
-      "days": 8,
-      "trend": "in"
-    },
-    "军工": {
+    "注册制次新股": {
       "days": 4,
       "trend": "in"
     },
-    "锂电池概念": {
+    "新股与次新股": {
+      "days": 4,
+      "trend": "in"
+    },
+    "科创次新股": {
+      "days": 5,
+      "trend": "in"
+    },
+    "国家大基金持股": {
       "days": 9,
       "trend": "in"
     },
-    "2026中报预增": {
-      "days": 8,
+    "半导体": {
+      "days": 13,
       "trend": "in"
     },
-    "专精特新": {
-      "days": 8,
+    "深股通": {
+      "days": 11,
       "trend": "in"
     },
-    "光伏概念": {
-      "days": 8,
+    "华为概念": {
+      "days": 11,
       "trend": "in"
     },
-    "AI应用": {
-      "days": 6,
-      "trend": "in"
-    },
-    "共封装光学(CPO)": {
+    "新能源汽车": {
       "days": 10,
       "trend": "in"
     },
-    "商业航天": {
-      "days": 6,
+    "沪股通": {
+      "days": 12,
       "trend": "in"
     },
-    "固态电池": {
-      "days": 8,
+    "国企改革": {
+      "days": 10,
       "trend": "in"
     },
-    "工业互联网": {
-      "days": 7,
+    "5G": {
+      "days": 11,
       "trend": "in"
     },
-    "西部大开发": {
-      "days": 7,
+    "机器人概念": {
+      "days": 10,
       "trend": "in"
     },
-    "粤港澳大湾区": {
+    "储能": {
       "days": 9,
       "trend": "in"
     },
-    "风电": {
+    "人工智能": {
+      "days": 9,
+      "trend": "in"
+    },
+    "数据中心(AIDC)": {
+      "days": 11,
+      "trend": "in"
+    },
+    "PCB概念": {
+      "days": 10,
+      "trend": "in"
+    },
+    "DeepSeek概念": {
+      "days": 7,
+      "trend": "in"
+    },
+    "一带一路": {
+      "days": 9,
+      "trend": "in"
+    },
+    "军工": {
+      "days": 5,
+      "trend": "in"
+    },
+    "锂电池概念": {
+      "days": 10,
+      "trend": "in"
+    },
+    "2026中报预增": {
+      "days": 9,
+      "trend": "in"
+    },
+    "专精特新": {
+      "days": 9,
+      "trend": "in"
+    },
+    "光伏概念": {
+      "days": 9,
+      "trend": "in"
+    },
+    "AI应用": {
+      "days": 7,
+      "trend": "in"
+    },
+    "共封装光学(CPO)": {
+      "days": 11,
+      "trend": "in"
+    },
+    "商业航天": {
+      "days": 7,
+      "trend": "in"
+    },
+    "固态电池": {
+      "days": 9,
+      "trend": "in"
+    },
+    "工业互联网": {
       "days": 8,
       "trend": "in"
     },
-    "人形机器人": {
+    "西部大开发": {
       "days": 8,
+      "trend": "in"
+    },
+    "粤港澳大湾区": {
+      "days": 10,
+      "trend": "in"
+    },
+    "风电": {
+      "days": 9,
+      "trend": "in"
+    },
+    "人形机器人": {
+      "days": 9,
       "trend": "in"
     }
   },
@@ -969,101 +969,33 @@
     {
       "name": "融资融券",
       "net": 1020.03,
-      "net_5d": 1777.04,
-      "net_20d": 3961.32,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 3961.32,
-      "net_60d_days": 10
-    },
-    {
-      "name": "芯片概念",
-      "net": 685.94,
-      "net_5d": 1367.58,
-      "net_20d": 2561.47,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 2561.47,
-      "net_60d_days": 10
-    },
-    {
-      "name": "存储芯片",
-      "net": 534.39,
-      "net_5d": 895.01,
-      "net_20d": 1378.45,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1378.45,
-      "net_60d_days": 10
-    },
-    {
-      "name": "小米概念",
-      "net": 544.64,
-      "net_5d": 873.23,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_60d": null
-    },
-    {
-      "name": "阿里巴巴概念",
-      "net": 542.58,
-      "net_5d": 835.36,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_60d": null
-    },
-    {
-      "name": "人民币贬值受益",
-      "net": 541.86,
-      "net_5d": 834.37,
-      "net_20d": 1760.92,
+      "net_5d": 2147.9,
+      "net_20d": 4981.35,
       "type": "概念",
       "source": "本地累加",
       "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
       "net_20d_days": 11,
-      "net_60d": 1760.92,
-      "net_60d_days": 11
+      "net_60d": null
     },
     {
-      "name": "半导体",
-      "net": 489.69,
-      "net_5d": 824.4,
-      "net_20d": 1591.06,
-      "type": "行业",
+      "name": "芯片概念",
+      "net": 685.94,
+      "net_5d": 1541.26,
+      "net_20d": 3247.41,
+      "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 12,
+      "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 12,
-      "net_60d": 1591.06,
-      "net_60d_days": 12
+      "net_20d_days": 11,
+      "net_60d": null
     },
     {
-      "name": "国家大基金持股",
-      "net": 493.63,
-      "net_5d": 814.3,
+      "name": "小米概念",
+      "net": 544.64,
+      "net_5d": 1383.55,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -1073,396 +1005,273 @@
       "net_60d": null
     },
     {
-      "name": "深股通",
-      "net": 364.02,
-      "net_5d": 813.3,
-      "net_20d": 1990.01,
+      "name": "存储芯片",
+      "net": 534.39,
+      "net_5d": 1339.48,
+      "net_20d": 1912.84,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1990.01,
-      "net_60d_days": 10
+      "net_20d_days": 11,
+      "net_60d": null
     },
     {
-      "name": "华为概念",
-      "net": 206.65,
-      "net_5d": 758.55,
-      "net_20d": 1301.69,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1301.69,
-      "net_60d_days": 10
-    },
-    {
-      "name": "腾讯概念",
-      "net": 521.17,
-      "net_5d": 731.36,
+      "name": "阿里巴巴概念",
+      "net": 542.58,
+      "net_5d": 1235.5,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 8,
       "trend": "in",
       "net_5d_days": 5,
       "net_60d": null
     },
     {
-      "name": "数据中心(AIDC)",
-      "net": 120.13,
-      "net_5d": 586.39,
-      "net_20d": 1546.75,
+      "name": "抖音概念(字节概念)",
+      "net": 501.09,
+      "net_5d": 1201.57,
+      "net_20d": 0,
       "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 5,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1546.75,
-      "net_60d_days": 10
+      "net_60d": null
+    },
+    {
+      "name": "人民币贬值受益",
+      "net": 541.86,
+      "net_5d": 1127.35,
+      "net_20d": 2302.78,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 12,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 12,
+      "net_60d": null
+    },
+    {
+      "name": "国家大基金持股",
+      "net": 493.63,
+      "net_5d": 1102.6,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 9,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_60d": null
+    },
+    {
+      "name": "腾讯概念",
+      "net": 521.17,
+      "net_5d": 1102.23,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_60d": null
+    },
+    {
+      "name": "半导体",
+      "net": 489.69,
+      "net_5d": 1098.05,
+      "net_20d": 2080.75,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 13,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 13,
+      "net_60d": null
+    },
+    {
+      "name": "科创次新股",
+      "net": 495.68,
+      "net_5d": 1040.05,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 5,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_60d": null
+    },
+    {
+      "name": "深股通",
+      "net": 364.02,
+      "net_5d": 792.01,
+      "net_20d": 2354.03,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 11,
+      "net_60d": null
     }
   ],
   "trend_20d": [
     {
       "name": "融资融券",
       "net": 1020.03,
-      "net_5d": 1777.04,
-      "net_20d": 3961.32,
+      "net_5d": 2147.9,
+      "net_20d": 4981.35,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 3961.32,
-      "net_60d_days": 10
+      "net_20d_days": 11,
+      "net_60d": null
     },
     {
       "name": "芯片概念",
       "net": 685.94,
-      "net_5d": 1367.58,
-      "net_20d": 2561.47,
+      "net_5d": 1541.26,
+      "net_20d": 3247.41,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 2561.47,
-      "net_60d_days": 10
+      "net_20d_days": 11,
+      "net_60d": null
     },
     {
       "name": "深股通",
       "net": 364.02,
-      "net_5d": 813.3,
-      "net_20d": 1990.01,
+      "net_5d": 792.01,
+      "net_20d": 2354.03,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1990.01,
-      "net_60d_days": 10
+      "net_20d_days": 11,
+      "net_60d": null
     },
     {
       "name": "人民币贬值受益",
       "net": 541.86,
-      "net_5d": 834.37,
-      "net_20d": 1760.92,
+      "net_5d": 1127.35,
+      "net_20d": 2302.78,
       "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 11,
-      "net_60d": 1760.92,
-      "net_60d_days": 11
-    },
-    {
-      "name": "沪股通",
-      "net": 186.75,
-      "net_5d": 522.38,
-      "net_20d": 1650.11,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 11,
-      "net_60d": 1650.11,
-      "net_60d_days": 11
-    },
-    {
-      "name": "半导体",
-      "net": 489.69,
-      "net_5d": 824.4,
-      "net_20d": 1591.06,
-      "type": "行业",
       "source": "本地累加",
       "consecutive_days": 12,
       "trend": "in",
       "net_5d_days": 5,
       "net_20d_days": 12,
-      "net_60d": 1591.06,
-      "net_60d_days": 12
+      "net_60d": null
     },
     {
-      "name": "数据中心(AIDC)",
-      "net": 120.13,
-      "net_5d": 586.39,
-      "net_20d": 1546.75,
-      "type": "概念",
+      "name": "半导体",
+      "net": 489.69,
+      "net_5d": 1098.05,
+      "net_20d": 2080.75,
+      "type": "行业",
       "source": "本地累加",
-      "consecutive_days": 10,
+      "consecutive_days": 13,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1546.75,
-      "net_60d_days": 10
-    },
-    {
-      "name": "5G",
-      "net": 141.04,
-      "net_5d": 504.68,
-      "net_20d": 1442.19,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1442.19,
-      "net_60d_days": 10
-    },
-    {
-      "name": "共封装光学(CPO)",
-      "net": 90.25,
-      "net_5d": 502.89,
-      "net_20d": 1416.32,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1416.32,
-      "net_60d_days": 10
+      "net_20d_days": 13,
+      "net_60d": null
     },
     {
       "name": "存储芯片",
       "net": 534.39,
-      "net_5d": 895.01,
-      "net_20d": 1378.45,
+      "net_5d": 1339.48,
+      "net_20d": 1912.84,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1378.45,
-      "net_60d_days": 10
-    },
-    {
-      "name": "华为概念",
-      "net": 206.65,
-      "net_5d": 758.55,
-      "net_20d": 1301.69,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1301.69,
-      "net_60d_days": 10
-    },
-    {
-      "name": "汽车电子",
-      "net": 0.19,
-      "net_5d": 477.11,
-      "net_20d": 1120.14,
-      "net_60d": 1120.14,
-      "type": "行业",
       "consecutive_days": 11,
       "trend": "in",
       "net_5d_days": 5,
       "net_20d_days": 11,
-      "net_60d_days": 11
+      "net_60d": null
+    },
+    {
+      "name": "沪股通",
+      "net": 186.75,
+      "net_5d": 436.88,
+      "net_20d": 1836.86,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 12,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 12,
+      "net_60d": null
+    },
+    {
+      "name": "数据中心(AIDC)",
+      "net": 120.13,
+      "net_5d": 348.9,
+      "net_20d": 1666.88,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 11,
+      "net_60d": null
+    },
+    {
+      "name": "5G",
+      "net": 141.04,
+      "net_5d": 397.51,
+      "net_20d": 1583.23,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 11,
+      "net_60d": null
+    },
+    {
+      "name": "华为概念",
+      "net": 206.65,
+      "net_5d": 716.94,
+      "net_20d": 1508.34,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 11,
+      "net_60d": null
+    },
+    {
+      "name": "共封装光学(CPO)",
+      "net": 90.25,
+      "net_5d": 315.65,
+      "net_20d": 1506.57,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 11,
+      "net_60d": null
+    },
+    {
+      "name": "新能源汽车",
+      "net": 205.4,
+      "net_5d": 464.73,
+      "net_20d": 1261.32,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in",
+      "net_5d_days": 5,
+      "net_20d_days": 10,
+      "net_60d": null
     }
   ],
-  "trend_60d": [
-    {
-      "name": "融资融券",
-      "net": 1020.03,
-      "net_5d": 1777.04,
-      "net_20d": 3961.32,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 3961.32,
-      "net_60d_days": 10
-    },
-    {
-      "name": "芯片概念",
-      "net": 685.94,
-      "net_5d": 1367.58,
-      "net_20d": 2561.47,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 2561.47,
-      "net_60d_days": 10
-    },
-    {
-      "name": "深股通",
-      "net": 364.02,
-      "net_5d": 813.3,
-      "net_20d": 1990.01,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1990.01,
-      "net_60d_days": 10
-    },
-    {
-      "name": "人民币贬值受益",
-      "net": 541.86,
-      "net_5d": 834.37,
-      "net_20d": 1760.92,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 11,
-      "net_60d": 1760.92,
-      "net_60d_days": 11
-    },
-    {
-      "name": "沪股通",
-      "net": 186.75,
-      "net_5d": 522.38,
-      "net_20d": 1650.11,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 11,
-      "net_60d": 1650.11,
-      "net_60d_days": 11
-    },
-    {
-      "name": "半导体",
-      "net": 489.69,
-      "net_5d": 824.4,
-      "net_20d": 1591.06,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 12,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 12,
-      "net_60d": 1591.06,
-      "net_60d_days": 12
-    },
-    {
-      "name": "数据中心(AIDC)",
-      "net": 120.13,
-      "net_5d": 586.39,
-      "net_20d": 1546.75,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1546.75,
-      "net_60d_days": 10
-    },
-    {
-      "name": "5G",
-      "net": 141.04,
-      "net_5d": 504.68,
-      "net_20d": 1442.19,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1442.19,
-      "net_60d_days": 10
-    },
-    {
-      "name": "共封装光学(CPO)",
-      "net": 90.25,
-      "net_5d": 502.89,
-      "net_20d": 1416.32,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1416.32,
-      "net_60d_days": 10
-    },
-    {
-      "name": "存储芯片",
-      "net": 534.39,
-      "net_5d": 895.01,
-      "net_20d": 1378.45,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1378.45,
-      "net_60d_days": 10
-    },
-    {
-      "name": "华为概念",
-      "net": 206.65,
-      "net_5d": 758.55,
-      "net_20d": 1301.69,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 10,
-      "net_60d": 1301.69,
-      "net_60d_days": 10
-    },
-    {
-      "name": "汽车电子",
-      "net": 0.19,
-      "net_5d": 477.11,
-      "net_20d": 1120.14,
-      "net_60d": 1120.14,
-      "type": "行业",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 11,
-      "net_60d_days": 11
-    }
-  ]
+  "trend_60d": []
 }
