@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 12:57:00",
+    "last_success": "2026-07-28 13:01:22",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -52,17 +52,17 @@
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 11:44:14",
+    "last_success": "2026-07-28 12:59:29",
     "last_error": null
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 11:42:45",
+    "last_success": "2026-07-28 12:59:35",
     "last_error": null
   },
   "fetch_margin": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 11:42:48",
+    "last_success": "2026-07-28 12:59:38",
     "last_error": null
   },
   "fetch_cffex_holdings": {
@@ -144,7 +144,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 11:44:39",
+    "last_success": "2026-07-28 12:59:33",
     "last_error": null
   },
   "fetch_overnight_brief": {
