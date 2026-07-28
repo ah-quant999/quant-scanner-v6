@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-28 15:24:51",
+  "update_time": "2026-07-28 16:29:59",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7337,
@@ -77,39 +77,39 @@
   },
   "global_macro": {
     "vix": {
-      "value": 19.15,
+      "value": 19.1,
       "date": "2026-07-28"
     },
     "usdcnh": {
       "price": 6.7654,
-      "prev_close": 6.7677,
+      "prev_close": 6.7678,
       "date": "2026-07-28",
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 101.5,
+      "value": 101.51,
       "pct": 0.07,
       "date": "2026-07-28",
       "source": "Sina-DINIW"
     },
     "commodities": {
       "gold": {
-        "value": 4109.1,
+        "value": 4108.0,
         "unit": "美元/盎司",
         "date": "2026-07-28"
       },
       "silver": {
-        "value": 57.63,
+        "value": 57.78,
         "unit": "美元/盎司",
         "date": "2026-07-28"
       },
       "copper": {
-        "value": 6.344,
+        "value": 6.329,
         "unit": "美元/磅",
         "date": "2026-07-28"
       },
       "oil": {
-        "value": 81.16,
+        "value": 80.41,
         "unit": "美元/桶",
         "date": "2026-07-28"
       }
