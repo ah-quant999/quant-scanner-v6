@@ -77,17 +77,13 @@ MODES = {
     "pre_market": {
         "desc": "盘前全量 (08:15)",
         "steps": [
-            # 并行组：5 个 fetch 同时跑 → wall-time ~5min
-            # 2026-07-28 改：启动提前到 08:15（主人指令，放宽原 09:20 铁律），~08:58 部署完毕。
-            # 注意：概念排名/市场预警为盘前实时数据，09:25 前可能为昨日值，开盘后 morning_scan 修正。
+            # 并行组：盘前有效数据（研报/信号/收盘汇总），~5min
+            # 2026-07-28 改：概念排名/市场预警/板块资金流为盘中实时源，
+            # 已移至 morning_scan(09:45) 首次刷新，pre_market 不再跑（避免昨日值误导）。
             [
                 ("guanlan_extractor.py", 300),
                 ("fetch_mahoro_signals.py --non-interactive", 120),
-                ("fetch_sector_fund_flow.py", 120),
-                # 2026-07-24 移除：fetch_market_fund_flow.py —— 该卡为「资金流向时间轴·长线盘后」专属，应只跑盘后 close_p1(18:30)，早晨跑会覆盖昨日数据造成误导
-                ("fetch_concept_ranking.py", 120),
-                ("fetch_market_alerts.py", 120),
-                ("fetch_close_summary.py", 60),  # 2026-07-22 新增：15:00 收盘后汇总快照
+                ("fetch_close_summary.py", 60),  # 昨日收盘汇总，随时可抓
             ],
             ("build_candidate_pool.py", 600),  # 2026-07-24: 300→600，外部源逐只拉取慢日(~6min)易超时→09:20静默失败根因
             ("scanner.py full", 600),
@@ -107,7 +103,15 @@ MODES = {
         "desc": "盘中快速扫描 (09:45)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
+            # 2026-07-28 改：3 个盘中实时源从 pre_market 移入，09:25 后首次抓到当日值
+            [
+                ("fetch_concept_ranking.py", 120),
+                ("fetch_market_alerts.py", 120),
+                ("fetch_sector_fund_flow.py", 120),
+            ],
             ("scanner.py quick", 300),
+            # 2026-07-28 改：ETF资金热度合并到盘中扫描时间线
+            ("fetch_etf_intraday_heat.py", 120),
             # 2026-07-27 根因修复：先推中国源数据，防 update_data_v2 的 safe_pull 回退陈旧版
             ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
@@ -129,6 +133,8 @@ MODES = {
             # 10:30 补充成交历史，避免午间金额曲线断崖
             ("fetch_sh_sz_history.py", 120),
             ("scanner.py quick", 300),
+            # 2026-07-28 改：ETF资金热度合并到盘中扫描时间线
+            ("fetch_etf_intraday_heat.py", 120),
             # 2026-07-21 接入：三重选股盘中刷新（收盘前先给当日预览，close_p2 给最终版）
             ("triple_select_scan.py", 600),
             # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
@@ -154,6 +160,8 @@ MODES = {
             ("fetch_market_alerts.py", 180),
             ("fetch_sector_fund_flow.py", 180),
             ("fetch_limit_up_heatmap.py", 120),
+            # 2026-07-28 改：ETF资金热度合并到盘中扫描时间线
+            ("fetch_etf_intraday_heat.py", 120),
             # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
             ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
@@ -164,7 +172,7 @@ MODES = {
         ],
     },
     "afternoon": {
-        "desc": "午后扫描 (13:30/14:30/16:30)",
+        "desc": "午后扫描 (13:30/14:30/15:30/16:30)",
         "steps": [
             ("fetch_overnight_brief.py --news-only", 90),
             ("scanner.py quick", 300),
@@ -176,6 +184,8 @@ MODES = {
             ("fetch_market_alerts.py", 180),
             ("fetch_sector_fund_flow.py", 180),
             ("fetch_limit_up_heatmap.py", 120),
+            # 2026-07-28 改：ETF资金热度合并到盘中扫描时间线
+            ("fetch_etf_intraday_heat.py", 120),
             # 2026-07-27 根因修复：先推中国源数据，防 safe_pull 回退陈旧版
             ("push_china_data.py", 90),
             ("update_data_v2.py", 300),
@@ -871,14 +881,6 @@ def main():
 
     cfg = MODES[mode]
     print_header(f"📊 {cfg['desc']}")
-
-    # 2026-07-28 主人指令：提前盘前(08:15启动)。诚实标注：概念排名/市场预警是盘前实时源，
-    # 09:25 集合竞价前抓到的可能是昨日收盘值，避免被误读为当日盘前信号。
-    if mode == "pre_market":
-        _now = datetime.now()
-        if _now.hour < 9 or (_now.hour == 9 and _now.minute < 25):
-            print("⚠️ 提前盘前警告：概念排名 / 市场预警 为盘前实时数据，09:25 前可能为【昨日值】；"
-                  "其余卡片(研报/候选池/扫描/推荐)为有效当日数据。09:45 morning_scan 会用当日实时数据修正这两张卡。")
 
     # ── Step 0: 双机代码同步（阿狸咪 ↔ 小九互相识别对方最新版） ──
     _sync_dual_machine_code(WORKSPACE)

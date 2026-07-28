@@ -55,22 +55,13 @@ CHECK_TRADING_DAY = os.path.join(WORKSPACE, "check_trading_day.py")
 SCHEDULE_WEEKDAY = [
     ("08:15", "pre_market",       "run_batch", {"mode": "pre_market"}),
     ("09:45", "morning_scan",     "run_batch", {"mode": "morning_scan"}),
-    # ETF资金热度 T+0：交易时段约每30分钟抓取→推 main→重建→部署。
-    # 避开午休，run_etf_heat() 内还有交易日与 09:35-15:10 双重守卫。
-    ("09:35", "etf_heat_0935",     "run_etf_heat", {}),
-    ("10:05", "etf_heat_1005",     "run_etf_heat", {}),
-    ("10:35", "etf_heat_1035",     "run_etf_heat", {}),
-    ("11:05", "etf_heat_1105",     "run_etf_heat", {}),
-    ("11:35", "etf_heat_1135",     "run_etf_heat", {}),
-    ("13:05", "etf_heat_1305",     "run_etf_heat", {}),
-    ("13:35", "etf_heat_1335",     "run_etf_heat", {}),
-    ("14:05", "etf_heat_1405",     "run_etf_heat", {}),
-    ("14:35", "etf_heat_1435",     "run_etf_heat", {}),
-    ("15:05", "etf_heat_1505",     "run_etf_heat", {}),
+    # ETF资金热度 T+0：已合并到盘中扫描时间线（morning_scan/plus/report/afternoon 各带 fetch_etf_intraday_heat.py）
+    # 不再单独每30分钟跑，减少独立部署次数。
     ("10:30", "morning_plus",     "run_batch", {"mode": "morning_plus"}),
     ("11:45", "morning_report",   "run_batch", {"mode": "morning_report"}),
     ("13:30", "afternoon_1330",   "run_batch", {"mode": "afternoon"}),
     ("14:30", "afternoon_1430",   "run_batch", {"mode": "afternoon"}),
+    ("15:30", "afternoon_1530",   "run_batch", {"mode": "afternoon"}),
     ("15:20", "post_close",       "run_batch", {"mode": "post_close"}),
     ("16:30", "afternoon_1630",   "run_batch", {"mode": "afternoon"}),
     ("17:30", "close_p1",         "run_batch", {"mode": "close_p1"}),
@@ -497,8 +488,7 @@ def _register_jobs():
         schedule.every().saturday.at(t).do(make_job())
         schedule.every().sunday.at(t).do(make_job())
 
-    # 盘中 ETF 资金热度：每30分钟（仅交易日 09:35-15:10 内由函数自身守卫）
-    schedule.every(30).minutes.do(run_etf_heat)
+    # ETF 资金热度已合并到盘中扫描时间线，不再独立每30分钟触发
 
 
 def _acquire_lock():
