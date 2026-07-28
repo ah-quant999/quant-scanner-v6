@@ -155,10 +155,9 @@
   .note{font-size:12px;color:var(--dim);margin-top:10px}
 
   /* ===== 打新速览 v8 ===== */
-  .ipo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-  .ipo-tab{background:var(--card2);border:1px solid var(--border);color:var(--sub);padding:5px 12px;border-radius:8px;cursor:pointer;font-size:12px;transition:.15s}
-  .ipo-tab:hover{border-color:var(--cyan);color:var(--txt)}
-  .ipo-tab.active{background:var(--cyan);color:#04121f;border-color:var(--cyan);font-weight:700}
+  .ipo-sec{margin-bottom:16px}
+  .ipo-sec:last-child{margin-bottom:0}
+  .ipo-sec-title{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
   .ipo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
   .ipo-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:9px;transition:.15s}
   .ipo-card:hover{border-color:var(--border2)}
@@ -207,16 +206,13 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 打新速览 -->
       <div class="card" style="grid-column:1/-1">
-        <h3><span class="ic">🚀</span>打新速览 <span class="fresh" id="ipoFresh">常驻 · 双维度 · 加载中…</span></h3>
-        <div class="ipo-tabs" id="ipoTabs">
-          <button class="ipo-tab active" data-cat="todayApply">今日申购</button>
-          <button class="ipo-tab" data-cat="futureApply">待申购</button>
-          <button class="ipo-tab" data-cat="pricing">待定价</button>
-          <button class="ipo-tab" data-cat="preListing">待上市</button>
-          <button class="ipo-tab" data-cat="tracking">上市日追踪5日</button>
-        </div>
-        <div class="ipo-grid" id="ipoGrid">
-          <div class="note" style="grid-column:1/-1">正在加载打新数据 …</div>
+        <h3><span class="ic">🚀</span>打新速览 - T+1更新 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
+        <div id="ipoAll">
+          <div class="ipo-sec" data-cat="todayApply"><div class="ipo-sec-title">今日申购</div><div class="ipo-grid" id="ipoGrid-todayApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
+          <div class="ipo-sec" data-cat="futureApply"><div class="ipo-sec-title">待申购</div><div class="ipo-grid" id="ipoGrid-futureApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
+          <div class="ipo-sec" data-cat="pricing"><div class="ipo-sec-title">待定价</div><div class="ipo-grid" id="ipoGrid-pricing"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
+          <div class="ipo-sec" data-cat="preListing"><div class="ipo-sec-title">待上市</div><div class="ipo-grid" id="ipoGrid-preListing"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
+          <div class="ipo-sec" data-cat="tracking"><div class="ipo-sec-title">上市日追踪5日</div><div class="ipo-grid" id="ipoGrid-tracking"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
         </div>
         <div class="note">双维度 = 套利评分（收益弹性）+ 基本面评分（安全边际）。综合分 = 套利×60% + 基本面×40%。</div>
       </div>
@@ -225,7 +221,7 @@
 
     <!-- 重要事件日历 -->
     <div class="card">
-      <h3><span class="ic">📅</span>重要事件日历（点击当日放大）</h3>
+      <h3><span class="ic">📅</span>重要事件日历（点击当日放大） - 中长线 · 更新于 今日 15:20</h3>
       <div class="cal-month">📅 2026年7月 · 重要日历</div>
       <div class="cal-grid" id="calHead" style="margin-bottom:6px"></div>
       <div class="cal-grid" id="calBody"></div>
@@ -241,15 +237,15 @@
     <div class="sec-head"><h2>📡 实时数据</h2><span class="tag">盘中 T+0 · 数据延迟约 3~5 秒</span></div>
 
     <div class="grid g-4" style="margin-bottom:16px">
-      <div class="card"><h3><span class="ic">🔥</span>沪指</h3><div class="quote"><span class="price up">3,418.6</span><span class="meta up">+0.82%<br>+27.8</span></div></div>
-      <div class="card"><h3><span class="ic">🔥</span>深成指</h3><div class="quote"><span class="price up">10,892.3</span><span class="meta up">+1.05%<br>+113.2</span></div></div>
-      <div class="card"><h3><span class="ic">🔥</span>创业板</h3><div class="quote"><span class="price down">2,176.4</span><span class="meta down">-0.31%<br>-6.7</span></div></div>
-      <div class="card"><h3><span class="ic">💱</span>北向资金</h3><div class="quote"><span class="price up">+42.6亿</span><span class="meta">沪 +28.1 / 深 +14.5</span></div></div>
+      <div class="card"><h3><span class="ic">🔥</span>沪指 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">3,418.6</span><span class="meta up">+0.82%<br>+27.8</span></div></div>
+      <div class="card"><h3><span class="ic">🔥</span>深成指 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">10,892.3</span><span class="meta up">+1.05%<br>+113.2</span></div></div>
+      <div class="card"><h3><span class="ic">🔥</span>创业板 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price down">2,176.4</span><span class="meta down">-0.31%<br>-6.7</span></div></div>
+      <div class="card"><h3><span class="ic">💱</span>北向资金 - 盘中 · 更新于 今日 15:20</h3><div class="quote"><span class="price up">+42.6亿</span><span class="meta">沪 +28.1 / 深 +14.5</span></div></div>
     </div>
 
     <div class="grid g-3" style="margin-bottom:16px">
       <div class="card">
-        <h3><span class="ic">🌡️</span>市场温度计</h3>
+        <h3><span class="ic">🌡️</span>市场温度计 - 短线盘中 · 更新于 今日 15:20</h3>
         <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
           <svg width="200" height="120" viewBox="0 0 200 120">
             <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#1b2740" stroke-width="14" stroke-linecap="round"/>
@@ -262,11 +258,11 @@
         </div>
       </div>
       <div class="card">
-        <h3><span class="ic">🕸️</span>六维共振雷达</h3>
+        <h3><span class="ic">🕸️</span>六维共振雷达 - 短线盘中 · 更新于 今日 15:20</h3>
         <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
       </div>
       <div class="card">
-        <h3><span class="ic">🌀</span>斐波时间窗口</h3>
+        <h3><span class="ic">🌀</span>斐波时间窗口 - 中长线 · 更新于 今日 15:20</h3>
         <div style="font-size:13px;color:var(--sub)">下一个变盘窗口</div>
         <div style="font-size:22px;font-weight:800;color:var(--gold);margin:4px 0 2px">07-30（周四）</div>
         <div style="font-size:12px;color:var(--dim);margin-bottom:6px">距今天 2 个交易日 · 重合 FOMC 决议</div>
@@ -278,7 +274,7 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 主力板块 -->
       <div class="card">
-        <h3><span class="ic">🚀</span>主力板块 <span class="fresh">短线盘中 · 更新于 今日 15:17</span></h3>
+        <h3><span class="ic">🚀</span>主力板块 - 短线盘中 · 更新于 今日 15:17</h3>
         <div class="flow-row"><span class="flow-name">半导体</span><div class="flow-bar"><div class="flow-fill" style="width:92%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+38.2亿</span></div>
         <div class="flow-row"><span class="flow-name">新能源</span><div class="flow-bar"><div class="flow-fill" style="width:72%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+22.7亿</span></div>
         <div class="flow-row"><span class="flow-name">消费电子</span><div class="flow-bar"><div class="flow-fill" style="width:58%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+16.4亿</span></div>
@@ -288,7 +284,7 @@
 
       <!-- 概念涨跌排名 -->
       <div class="card">
-        <h3><span class="ic">📊</span>概念涨跌排名 <span class="fresh">短线盘中 · 更新于 今日 15:18</span></h3>
+        <h3><span class="ic">📊</span>概念涨跌排名 - 短线盘中 · 更新于 今日 15:18</h3>
         <table>
           <thead><tr><th>概念</th><th>涨幅</th><th>领涨股</th></tr></thead>
           <tbody>
@@ -305,14 +301,14 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 上证+深证成交额 -->
       <div class="card">
-        <h3><span class="ic">📈</span>上证+深证 每日成交金额（亿元） <span class="fresh">短线盘中 · 更新于 今日 15:21</span></h3>
+        <h3><span class="ic">📈</span>上证+深证 每日成交金额（亿元） - 短线盘中 · 更新于 今日 15:21</h3>
         <div class="chart" id="volChart"></div>
         <div class="note">今日两市合计 11,247 亿元，较前日 +8.7%，温和放大，未过 1.2 万亿警戒线。</div>
       </div>
 
       <!-- 近一月涨跌家数统计 -->
       <div class="card">
-        <h3><span class="ic">🏘️</span>近一月 涨跌家数统计 <span class="fresh">盘中实时 · 更新于 今日 15:21</span></h3>
+        <h3><span class="ic">🏘️</span>近一月 涨跌家数统计 - 盘中实时 · 更新于 今日 15:21</h3>
         <div class="ad-chart" id="adChart"></div>
         <div class="note">红=上涨家数，绿=下跌家数，灰=平盘。今日涨 2835 / 跌 2521 / 平 176。</div>
       </div>
@@ -321,7 +317,7 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 涨停联动 -->
       <div class="card">
-        <h3><span class="ic">🔥</span>涨停联动 <span class="fresh">盘中实时 · 更新于 今日 15:21</span></h3>
+        <h3><span class="ic">🔥</span>涨停联动 - 盘中实时 · 更新于 今日 15:21</h3>
         <table>
           <thead><tr><th>连板梯队</th><th>核心股</th><th>题材</th><th>封单额</th></tr></thead>
           <tbody>
@@ -336,7 +332,7 @@
 
       <!-- 个股查询 -->
       <div class="card">
-        <h3><span class="ic">🔍</span>个股实时查询</h3>
+        <h3><span class="ic">🔍</span>个股实时查询 - 盘中实时 · 更新于 今日 15:20</h3>
         <div class="qbox">
           <input id="qInput" placeholder="输入代码或名称，如 600519 或 贵州茅台" onkeydown="if(event.key==='Enter')doQuery()" />
           <button class="btn" onclick="doQuery()">查询</button>
@@ -347,7 +343,7 @@
 
     <!-- ETF 资金热度 -->
     <div class="card" style="margin-bottom:16px">
-      <h3><span class="ic">🔥</span>ETF 资金热度 <span class="fresh">实时·T+0 · 更新于 今日 09:43</span></h3>
+      <h3><span class="ic">🔥</span>ETF 资金热度 - 实时·T+0 · 更新于 今日 09:43</h3>
       <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-size:13px;color:var(--sub)">
         <span><span style="color:var(--up)">▲ 290</span> 涨</span>
         <span><span style="color:var(--down)">▼ 1168</span> 跌</span>
@@ -393,7 +389,7 @@
 
     <div class="grid g-2" style="margin-bottom:16px">
       <div class="card">
-        <h3><span class="ic">⭐</span>金股池（精选 8 只）</h3>
+        <h3><span class="ic">⭐</span>金股池（精选 8 只） - T+1更新 · 更新于 今日 15:20</h3>
         <table><thead><tr><th>代码</th><th>名称</th><th>入选理由</th><th>评级</th></tr></thead>
         <tbody>
           <tr><td>688981</td><td>中芯国际</td><td>半导体资金共振+斐波支撑</td><td><span class="pill buy">强推</span></td></tr>
@@ -403,7 +399,7 @@
         </tbody></table>
       </div>
       <div class="card">
-        <h3><span class="ic">🐉</span>龙虎榜（异动 TOP 6）</h3>
+        <h3><span class="ic">🐉</span>龙虎榜（异动 TOP 6） - T+1更新 · 更新于 今日 15:20</h3>
         <table><thead><tr><th>名称</th><th>异动</th><th>净买额</th><th>类型</th></tr></thead>
         <tbody>
           <tr><td>寒武纪</td><td class="up">+19.98%</td><td class="up">+4.82亿</td><td><span class="pill buy">机构净买</span></td></tr>
@@ -415,20 +411,20 @@
 
     <div class="grid g-3">
       <div class="card">
-        <h3><span class="ic">🧲</span>多维共振</h3>
+        <h3><span class="ic">🧲</span>多维共振 - T+1更新 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">共振个股</span><b>14 只</b></div>
         <div class="kv"><span class="k">三因子以上</span><b class="up">9 只</b></div>
         <div class="kv"><span class="k">最强共振</span><b>中芯国际 / 宁德</b></div>
         <div class="note">因子：资金流 + 技术面 + 情绪 + 北向 + 估值</div>
       </div>
       <div class="card">
-        <h3><span class="ic">📈</span>涨停/跌停</h3>
+        <h3><span class="ic">📈</span>涨停/跌停 - T+1更新 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">涨停</span><b class="up">62 家</b></div>
         <div class="kv"><span class="k">跌停</span><b class="down">7 家</b></div>
         <div class="kv"><span class="k">连板最高</span><b>5 连板</b></div>
       </div>
       <div class="card">
-        <h3><span class="ic">📝</span>复盘摘要</h3>
+        <h3><span class="ic">📝</span>复盘摘要 - T+1更新 · 更新于 今日 15:20</h3>
         <div class="logic-p">三大指数分化，半导体全天强势，北向连续 3 日净流入。量能温和放大但未过热，短期关注 7-30 斐波窗口变盘。</div>
       </div>
     </div>
@@ -439,7 +435,7 @@
     <div class="sec-head"><h2>🎯 选股策略</h2><span class="tag">回测基于 2023-01 至今 · 胜率含滑点</span></div>
     <div class="grid g-3">
       <div class="card">
-        <h3><span class="ic">🌊</span>逆势龙头</h3>
+        <h3><span class="ic">🌊</span>逆势龙头 - 中长线 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">胜率</span><b class="up">68.4%</b></div>
         <div class="kv"><span class="k">年化</span><b>41.2%</b></div>
         <div class="kv"><span class="k">最大回撤</span><b class="down">-18.6%</b></div>
@@ -447,7 +443,7 @@
         <div class="note">大盘下跌时相对抗跌且率先企稳的板块龙头。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🌀</span>斐波回踩</h3>
+        <h3><span class="ic">🌀</span>斐波回踩 - 中长线 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">胜率</span><b class="up">61.9%</b></div>
         <div class="kv"><span class="k">年化</span><b>33.5%</b></div>
         <div class="kv"><span class="k">最大回撤</span><b class="down">-22.1%</b></div>
@@ -455,7 +451,7 @@
         <div class="note">价格回踩 0.382/0.618 黄金分割位且缩量企稳。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🔗</span>量价共振</h3>
+        <h3><span class="ic">🔗</span>量价共振 - 中长线 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">胜率</span><b class="up">64.7%</b></div>
         <div class="kv"><span class="k">年化</span><b>38.0%</b></div>
         <div class="kv"><span class="k">最大回撤</span><b class="down">-15.3%</b></div>
@@ -463,7 +459,7 @@
         <div class="note">放量突破平台 + 主力净流入 + 站上多均线。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">💱</span>北向增持</h3>
+        <h3><span class="ic">💱</span>北向增持 - 中长线 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">胜率</span><b class="up">59.2%</b></div>
         <div class="kv"><span class="k">年化</span><b>27.8%</b></div>
         <div class="kv"><span class="k">最大回撤</span><b class="down">-13.9%</b></div>
@@ -471,7 +467,7 @@
         <div class="note">北向连续增持 + 估值处于历史低位分位。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🛡️</span>高股息防御</h3>
+        <h3><span class="ic">🛡️</span>高股息防御 - 中长线 · 更新于 今日 15:20</h3>
         <div class="kv"><span class="k">胜率</span><b class="up">72.0%</b></div>
         <div class="kv"><span class="k">年化</span><b>15.4%</b></div>
         <div class="kv"><span class="k">最大回撤</span><b class="down">-9.2%</b></div>
@@ -479,7 +475,7 @@
         <div class="note">股息率>4% + 分红稳定 + 低波动。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">📡</span>今日全部信号</h3>
+        <h3><span class="ic">📡</span>今日全部信号 - 中长线 · 更新于 今日 15:20</h3>
         <div class="logic-p">逆势龙头：中芯国际、海康威视、中国船舶<br>斐波回踩：宁德时代、比亚迪、隆基绿能、药明康德、招商银行<br>量价共振：寒武纪、中际旭创、拓维信息、工业富联<br>北向增持：贵州茅台、长江电力<br>高股息：工行、神华、国网、移动、长电、中海油</div>
       </div>
     </div>
@@ -552,7 +548,7 @@ norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
         <div class="logic-p">板块/概念资金流 = 成分股主力净流入合计；北向 = 沪深股通每日净买额；单位统一为亿元。</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🎯</span>逆势龙头数学</h3>
+        <h3><span class="ic">🎯</span>逆势龙头数学 - 中长线 · 更新于 今日 15:20</h3>
         <div class="logic-p">大盘回撤期间，个股相对强度 RS = 个股收益 / 沪深300收益；取 RS>1.2 且波动率低于板块中位者，晨星形态优先。</div>
         <div class="code">RS = ret_stock / ret_hs300
 signal = (RS > 1.2) & (vol < median(sector_vol))</div>
@@ -786,7 +782,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
 
 /* ===== 打新速览：动态加载 + 内嵌兜底 ===== */
 (function(){
-  let ipoData=[], ipoGrouped={}, currentCat='todayApply';
+  let ipoData=[], ipoGrouped={};
   const today='20260728'; // 与页面日期 2026-07-28 保持一致；真实部署时由构建脚本注入
 
   function fmtDate(d){
@@ -874,23 +870,36 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     </div>`;
   }
 
-  function render(cat){
-    currentCat=cat;
-    const items=ipoGrouped[cat]||[];
-    const grid=document.getElementById('ipoGrid');
-    if(!items.length){
-      grid.innerHTML=`<div class="ipo-empty" style="grid-column:1/-1">该分类下暂无数据</div>`;
-      return;
-    }
-    grid.innerHTML=items.map(renderCard).join('');
+  const CAT_LABELS={todayApply:'今日申购',futureApply:'待申购',pricing:'待定价',preListing:'待上市',tracking:'上市日追踪5日'};
+  const CAT_ORDER=['todayApply','futureApply','pricing','preListing','tracking'];
+
+  function fmtUpdateTime(ts){
+    if(!ts) return '今日';
+    const s=String(ts).replace(/-/g,'/');
+    const d=new Date(s);
+    if(isNaN(d.getTime())) return ts;
+    const now=new Date();
+    const startOfToday=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    const diff=Math.floor((startOfToday-d)/(24*3600000));
+    let day='今日';
+    if(diff===1) day='昨日';
+    else if(diff>1) day=`${diff}天前`;
+    else if(diff<0) day='未来';
+    const hh=String(d.getHours()).padStart(2,'0');
+    const mm=String(d.getMinutes()).padStart(2,'0');
+    return `${day} ${hh}:${mm}`;
   }
 
-  function bindTabs(){
-    document.getElementById('ipoTabs').addEventListener('click',e=>{
-      if(!e.target.classList.contains('ipo-tab')) return;
-      document.querySelectorAll('.ipo-tab').forEach(t=>t.classList.remove('active'));
-      e.target.classList.add('active');
-      render(e.target.dataset.cat);
+  function renderAll(){
+    CAT_ORDER.forEach(cat=>{
+      const items=ipoGrouped[cat]||[];
+      const grid=document.getElementById(`ipoGrid-${cat}`);
+      if(!grid) return;
+      if(!items.length){
+        grid.innerHTML=`<div class="ipo-empty" style="grid-column:1/-1">${CAT_LABELS[cat]}：暂无数据</div>`;
+        return;
+      }
+      grid.innerHTML=items.map(renderCard).join('');
     });
   }
 
@@ -904,20 +913,19 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
         ipoData=data.stocks||[];
         ipoGrouped=classify(ipoData);
         if(fresh && data.update_time){
-          fresh.textContent=`双维度 · 更新于 ${data.update_time}`;
+          fresh.textContent=`更新于 ${fmtUpdateTime(data.update_time)}`;
         }
-        render(currentCat);
+        renderAll();
       })
       .catch(err=>{
         console.warn('IPO fetch failed, using embedded fallback',err);
         ipoData=IPO_FALLBACK.stocks||[];
         ipoGrouped=classify(ipoData);
         if(fresh){
-          fresh.textContent=`双维度 · 内嵌数据 · ${IPO_FALLBACK.update_time||'本地'}`;
+          fresh.textContent=`更新于 ${fmtUpdateTime(IPO_FALLBACK.update_time)}`;
         }
-        render(currentCat);
+        renderAll();
       });
-    bindTabs();
   }
 
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
