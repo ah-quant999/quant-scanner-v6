@@ -207,14 +207,12 @@
       <!-- 今日关键事件速览 -->
       <div class="card" style="grid-column:1/-1">
         <h3><span class="ic">⚡</span>今日关键事件 - 盘中 · <span class="fresh">更新于 今日 15:20</span></h3>
-        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📊</span><div><div class="mt" style="color:var(--cyan)">中国数据</div><div>7月LPR利率报价（1年期/5年期以上）</div><div class="md">每月20日前后公布，影响房贷利率与企业融资成本</div></div></div>
-        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📈</span><div><div class="mt" style="color:#22d3ee">期货交割</div><div>上期所FU2608/能源中心SC/LU2608最后交易日</div><div class="md">交割前后波动加大，注意移仓换月</div></div></div>
-        <div class="mev" style="padding:8px 0"><span class="e">🇺🇸</span><div><div class="mt" style="color:#60a5fa">美股财报</div><div>英伟达(NVDA) 2026年Q2财报（预估）</div><div class="md">AI芯片龙头业绩，影响全球科技股情绪</div></div></div>
+        <div id="mevToday" style="margin-top:4px"></div>
       </div>
 
       <!-- 打新速览 -->
       <div class="card" style="grid-column:1/-1">
-        <h3><span class="ic">🚀</span>打新速览 - T+1更新 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
+        <h3><span class="ic">🚀</span>打新速览 - 盘中 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
         <div id="ipoAll">
           <div class="ipo-sec" data-cat="listedToday"><div class="ipo-sec-title">今日上市</div><div class="ipo-grid" id="ipoGrid-listedToday"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
           <div class="ipo-sec" data-cat="todayApply"><div class="ipo-sec-title">今日申购</div><div class="ipo-grid" id="ipoGrid-todayApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
@@ -788,6 +786,17 @@ function openCal(d){
   document.getElementById('calMask').classList.add('show');
 }
 function closeCal(){document.getElementById('calMask').classList.remove('show');}
+
+/* 今日关键事件卡片：动态渲染 EV[今日]，与日历弹窗同源 */
+(function(){
+  const TODAY_DAY=28; // 与日历 today 保持一致（页面日期 2026-07-28）
+  const evs=EV[TODAY_DAY]||[];
+  const box=document.getElementById('mevToday');
+  if(!box) return;
+  if(!evs.length){box.innerHTML='<div class="note">当日无标注的重要事件</div>';return;}
+  box.innerHTML=evs.map(e=>`
+    <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">${FLAG[e.cat]}</span><div><div class="mt" style="color:${CAT[e.cat].color}">${CAT[e.cat].name}</div><div>${e.t}</div><div class="md">${CAT[e.cat].desc}</div></div></div>`).join('');
+})();
 
 /* ===== 打新速览：动态加载 + 内嵌兜底 ===== */
 (function(){
