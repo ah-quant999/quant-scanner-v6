@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-07-28 11:56:36",
+  "update_time": "2026-07-28 12:03:56",
   "eligible_count": 3,
   "pre_listing_count": 6,
   "listed_count": 0,
-  "tracking_count": 1,
-  "summary": "3只待评估，6只待上市，1只上市后表现强势。 📋 可转债5待申购",
+  "tracking_count": 0,
+  "summary": "3只待评估，6只待上市。 📋 可转债5待申购",
   "stocks": [
     {
       "code": "920165",
@@ -308,25 +308,6 @@
         "募资2亿"
       ],
       "status": "pre_listing"
-    },
-    {
-      "code": "920176",
-      "name": "维琪科技",
-      "issue_price": 22.16,
-      "latest_price": 108.51,
-      "open_price": 108.51,
-      "change_pct": -30.0,
-      "turnover": 1.13,
-      "total_return": 389.67,
-      "open_return": 389.67,
-      "board": "北交所",
-      "listing_date": "20260727",
-      "score": 0,
-      "recommend": "🟢 已破发或走弱，不建议追",
-      "tag_color": "#2e7d32",
-      "bg_color": "#e8f5e9",
-      "highlights": [],
-      "status": "tracking"
     },
     {
       "type": "bond",
