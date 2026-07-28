@@ -642,25 +642,13 @@ tr:hover td { background: #fafbfc; }
       <div style="padding:0;" id="aiSummaryContent"></div>
     </div>
 
-    <!-- ETF+板块 一行两列 -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
-      <!-- ETF资金流向 -->
-      <div id="ntEtfFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #42a5f5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
-          <span style="font-size:13px;font-weight:700;color:#1565c0;">💰 国家队ETF <span style="font-size:10px;font-weight:400;color:#999;">短线·盘中</span></span>
-          <span style="font-size:12px;color:#999;" id="ntEtfFlowTime"></span>
-        </div>
-        <div id="ntEtfFlowContent" style="padding:10px 14px;"></div>
+    <!-- 主力板块资金流向（总览页：仅流入流出列表，分析在预判信号页） -->
+    <div id="sectorFundFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #f9a825;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
+        <span style="font-size:13px;font-weight:700;color:#7b1fa2;">🚀 主力板块 <span style="font-size:10px;font-weight:400;color:#999;">短线·盘中</span></span>
+        <span style="font-size:12px;color:#999;" id="sectorFlowTime"></span>
       </div>
-
-      <!-- 板块资金流向（总览页：仅流入流出列表，分析在预判信号页） -->
-      <div id="sectorFundFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #f9a825;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
-          <span style="font-size:13px;font-weight:700;color:#7b1fa2;">🚀 主力板块 <span style="font-size:10px;font-weight:400;color:#999;">短线·盘中</span></span>
-          <span style="font-size:12px;color:#999;" id="sectorFlowTime"></span>
-        </div>
-        <div id="sectorFlowContent" style="padding:10px 14px;"></div>
-      </div>
+      <div id="sectorFlowContent" style="padding:10px 14px;"></div>
     </div>
 
     <!-- 🚀 打新研判（方案A明细卡，已改由顶部速览条 C1 替代展示；结构保留备用） -->

@@ -144605,7 +144605,9 @@ var PAGE_CARDS = [
   {page:'📋 总览', card:'📅 重要日历',       check:function(){return !!document.getElementById('calendarGrid') && document.getElementById('calendarGrid').innerHTML.length > 0;}},
   {page:'📋 总览', card:'🧠 AI市场速览',      check:function(){return !!document.getElementById('aiSummaryContent') && document.getElementById('aiSummaryContent').innerHTML.length > 200;}},
   {page:'📋 总览', card:'🚀 打新研判',        check:function(){return !!(window.IPO_DATA&&window.IPO_DATA.update_time);}},
-  {page:'📋 总览', card:'📊 ETF资金流向',     check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
+  // 2026-07-28 移除：国家队ETF资金流向卡片已删除（与 ETF 资金热度重复）
+  // {page:'📋 总览', card:'📊 ETF资金流向',     check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
+  {page:'📋 总览', card:'📊 ETF资金热度',       check:function(){var el=document.getElementById('etfHeatCard'); return el && el.style.display !== 'none';}},
   {page:'📋 总览', card:'💰 板块资金流向',    check:function(){var el=document.getElementById('sectorFundFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'📈 股指期货升贴水',  check:function(){var el=document.getElementById('cffexCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'⏸️ 金股池停牌',    check:function(){return !!(window.SUSPENSION_ALERT&&window.SUSPENSION_ALERT.update_time);}},
