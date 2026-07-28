@@ -5,7 +5,7 @@
       "name": "新易盛",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-21",
       "first_signal": 0,
       "max_signal": 1,
@@ -124,8 +124,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 461.0,
-          "pct_chg": -6.11,
+          "close": 440.02,
+          "pct_chg": -10.38,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -235,7 +235,7 @@
       "name": "天孚通信",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-21",
       "first_signal": 0,
       "max_signal": 1,
@@ -364,8 +364,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 201.18,
-          "pct_chg": -3.83,
+          "close": 194.44,
+          "pct_chg": -7.05,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -878,8 +878,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 228.56,
-          "pct_chg": -4.23,
+          "close": 223.69,
+          "pct_chg": -6.27,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -958,7 +958,7 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "concepts": [
         "5G概念",
         "AH股",
@@ -1150,8 +1150,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 82.14,
-          "pct_chg": -0.26,
+          "close": 80.95,
+          "pct_chg": -1.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1230,7 +1230,7 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "concepts": [
         "2026中报预增",
         "CPO概念",
@@ -1364,8 +1364,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 402.95,
-          "pct_chg": 0.8,
+          "close": 397.9,
+          "pct_chg": -0.47,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1444,7 +1444,7 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "concepts": [
         "HS300_",
         "LED概念",
@@ -2010,8 +2010,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 50.16,
-          "pct_chg": 0.16,
+          "close": 49.28,
+          "pct_chg": -1.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2121,7 +2121,7 @@
         "锂矿概念"
       ],
       "board": "主板",
-      "fund_type": "机构"
+      "fund_type": "混合"
     },
     "sz_300274": {
       "code": "300274",
@@ -2219,8 +2219,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 112.19,
-          "pct_chg": -3.46,
+          "close": 111.66,
+          "pct_chg": -3.92,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2299,7 +2299,7 @@
         false
       ],
       "ema_score": 5,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "concepts": [
         "HS300_",
         "MSCI中国",
@@ -2425,8 +2425,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 393.75,
-          "pct_chg": -1.56,
+          "close": 395.8,
+          "pct_chg": -1.05,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2505,7 +2505,7 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "concepts": [
         "AH股",
         "HS300_",
@@ -3275,8 +3275,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 241.01,
-          "pct_chg": 0.09,
+          "close": 244.67,
+          "pct_chg": 1.61,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3352,7 +3352,7 @@
         true
       ],
       "ema_score": 6,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "industry": "软件和信息技术服务业",
       "sectors": [
         "软件和信息技术服务业",
@@ -3540,6 +3540,34 @@
           "signal_count": 1,
           "close": 92.4,
           "pct_chg": 0.56,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 1
+          }
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 1,
+          "close": 94.04,
+          "pct_chg": 1.77,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3831,8 +3859,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 53.17,
-          "pct_chg": -0.8,
+          "close": 53.02,
+          "pct_chg": -1.08,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3907,7 +3935,7 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "industry": "医药制造业",
       "sectors": [
         "医药制造业"
@@ -4035,8 +4063,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 219.4,
-          "pct_chg": -3.54,
+          "close": 214.14,
+          "pct_chg": -5.85,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4112,7 +4140,7 @@
         false
       ],
       "ema_score": 4,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "industry": "计算机、通信和其他电子设备制造业",
       "sectors": [
         "计算机、通信和其他电子设备制造业",
@@ -4717,8 +4745,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 58.74,
-          "pct_chg": -1.24,
+          "close": 59.14,
+          "pct_chg": -0.57,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4794,7 +4822,7 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "industry": "电气机械和器材制造业",
       "sectors": [
         "电气机械和器材制造业"
@@ -4926,8 +4954,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 309.59,
-          "pct_chg": -0.61,
+          "close": 303.33,
+          "pct_chg": -2.62,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -5002,7 +5030,7 @@
         false
       ],
       "ema_score": 0,
-      "fund_type": "机构",
+      "fund_type": "混合",
       "industry": "通用设备制造业",
       "sectors": [
         "通用设备制造业"
@@ -5459,8 +5487,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 79.96,
-          "pct_chg": 0.63,
+          "close": 79.82,
+          "pct_chg": 0.45,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5563,7 +5591,7 @@
       "name": "北方华创",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -5664,8 +5692,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 763.95,
-          "pct_chg": -0.79,
+          "close": 765.4,
+          "pct_chg": -0.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5943,10 +5971,10 @@
     },
     "sh_688702": {
       "code": "688702",
-      "name": "盛科通信",
+      "name": "盛科通信-U",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 3,
@@ -6047,8 +6075,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 378.8,
-          "pct_chg": -0.7,
+          "close": 375.59,
+          "pct_chg": -1.54,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6150,7 +6178,7 @@
       "name": "深科技",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -6251,8 +6279,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 42.12,
-          "pct_chg": -4.16,
+          "close": 41.4,
+          "pct_chg": -5.8,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6506,7 +6534,7 @@
       "name": "紫光股份",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -6607,8 +6635,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 41.2,
-          "pct_chg": -0.65,
+          "close": 40.66,
+          "pct_chg": -1.95,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6838,8 +6866,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 173.21,
-          "pct_chg": 2.28,
+          "close": 171.98,
+          "pct_chg": 1.55,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7567,7 +7595,7 @@
       "name": "东芯股份",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -7668,8 +7696,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 113.51,
-          "pct_chg": -1.42,
+          "close": 111.34,
+          "pct_chg": -3.31,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -7765,7 +7793,7 @@
       "name": "杰华特",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -7866,8 +7894,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 128.54,
-          "pct_chg": -3.13,
+          "close": 125.74,
+          "pct_chg": -5.24,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8280,7 +8308,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -8376,13 +8404,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 30.13,
-          "pct_chg": -3.74,
+          "signal_count": 0,
+          "close": 29.48,
+          "pct_chg": -5.81,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -8393,13 +8421,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -8603,8 +8631,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 19.08,
-          "pct_chg": 6.47,
+          "close": 18.8,
+          "pct_chg": 4.91,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8710,7 +8738,7 @@
       "name": "香农芯创",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -8811,8 +8839,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 159.51,
-          "pct_chg": -3.82,
+          "close": 154.71,
+          "pct_chg": -6.71,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -9015,8 +9043,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 209.9,
-          "pct_chg": -2.42,
+          "close": 202.5,
+          "pct_chg": -5.86,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9118,7 +9146,7 @@
       "name": "浪潮信息",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -9219,8 +9247,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 82.77,
-          "pct_chg": -2.62,
+          "close": 81.3,
+          "pct_chg": -4.35,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9340,7 +9368,7 @@
       "name": "华工科技",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -9441,8 +9469,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 108.3,
-          "pct_chg": -3.1,
+          "close": 106.21,
+          "pct_chg": -4.97,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -9785,7 +9813,7 @@
       "name": "江丰电子",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -9886,8 +9914,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 238.4,
-          "pct_chg": -1.02,
+          "close": 237.92,
+          "pct_chg": -1.22,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9993,7 +10021,7 @@
       "name": "江海股份",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -10094,8 +10122,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 64.71,
-          "pct_chg": -7.49,
+          "close": 63.4,
+          "pct_chg": -9.36,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10302,8 +10330,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 166.97,
-          "pct_chg": -0.44,
+          "close": 158.42,
+          "pct_chg": -5.53,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10409,7 +10437,7 @@
       "name": "南亚新材",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -10510,8 +10538,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 237.48,
-          "pct_chg": -0.97,
+          "close": 225.68,
+          "pct_chg": -5.89,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10714,8 +10742,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 150.48,
-          "pct_chg": -0.67,
+          "close": 146.94,
+          "pct_chg": -3.01,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10921,8 +10949,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 128.58,
-          "pct_chg": -2.02,
+          "close": 123.95,
+          "pct_chg": -5.55,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11050,7 +11078,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 2,
       "history": [
         {
           "date": "2026-07-22",
@@ -11146,30 +11174,30 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 5.7,
-          "pct_chg": 1.06,
+          "signal_count": 2,
+          "close": 5.89,
+          "pct_chg": 4.43,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": true,
-          "上涨趋势_条件1": false,
+          "上涨趋势_条件1": true,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
           "上涨趋势_条件4": true,
-          "上涨趋势": false,
+          "上涨趋势": true,
           "三线共振": false,
           "latest": {
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": true,
-            "上涨趋势_条件1": false,
+            "上涨趋势_条件1": true,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
-            "上涨趋势": false,
-            "signal_count": 1
+            "上涨趋势": true,
+            "signal_count": 2
           }
         }
       ],
@@ -11391,7 +11419,7 @@
       "name": "中材科技",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -11492,8 +11520,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 48.72,
-          "pct_chg": -6.2,
+          "close": 47.94,
+          "pct_chg": -7.7,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11704,8 +11732,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 61.42,
-          "pct_chg": -3.56,
+          "close": 59.94,
+          "pct_chg": -5.89,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11900,8 +11928,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 77.2,
-          "pct_chg": -1.82,
+          "close": 74.99,
+          "pct_chg": -4.63,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11994,11 +12022,11 @@
       "name": "北京君正",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 1,
       "history": [
         {
           "date": "2026-07-22",
@@ -12094,10 +12122,10 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 2,
-          "close": 137.94,
-          "pct_chg": -5.3,
-          "缠论买_日K": true,
+          "signal_count": 1,
+          "close": 133.85,
+          "pct_chg": -8.11,
+          "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
           "四量图_机构变红": false,
@@ -12108,7 +12136,7 @@
           "上涨趋势": false,
           "三线共振": false,
           "latest": {
-            "缠论买_日K": true,
+            "缠论买_日K": false,
             "金钻_黄柱": true,
             "金钻_起涨": false,
             "四量图_机构变红": false,
@@ -12117,7 +12145,7 @@
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 2
+            "signal_count": 1
           }
         }
       ],
@@ -12635,7 +12663,7 @@
       "name": "天赐材料",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -12736,8 +12764,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 38.33,
-          "pct_chg": 0.1,
+          "close": 37.29,
+          "pct_chg": -2.61,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -12947,8 +12975,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 98.14,
-          "pct_chg": -1.86,
+          "close": 95.25,
+          "pct_chg": -4.75,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13145,8 +13173,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 34.28,
-          "pct_chg": 2.11,
+          "close": 34.84,
+          "pct_chg": 3.78,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -13254,7 +13282,7 @@
       "name": "中科飞测",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -13355,8 +13383,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 394.03,
-          "pct_chg": 1.18,
+          "close": 393.4,
+          "pct_chg": 1.02,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -13711,8 +13739,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 242.05,
-          "pct_chg": -2.35,
+          "close": 240.18,
+          "pct_chg": -3.1,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13929,8 +13957,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 58.91,
-          "pct_chg": 0.43,
+          "close": 56.85,
+          "pct_chg": -3.09,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14140,8 +14168,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 164.47,
-          "pct_chg": -4.03,
+          "close": 158.56,
+          "pct_chg": -7.48,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -14374,7 +14402,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -14439,6 +14467,34 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 0,
+          "close": 56.25,
+          "pct_chg": -8.18,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 0
+          }
         }
       ],
       "sources": [
@@ -14627,8 +14683,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 128.31,
-          "pct_chg": -2.63,
+          "close": 124.58,
+          "pct_chg": -5.46,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15568,8 +15624,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 44.8,
-          "pct_chg": 1.27,
+          "close": 44.24,
+          "pct_chg": 0.0,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15777,8 +15833,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 44.47,
-          "pct_chg": -1.59,
+          "close": 43.78,
+          "pct_chg": -3.12,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15986,8 +16042,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 50.51,
-          "pct_chg": -1.71,
+          "close": 49.89,
+          "pct_chg": -2.92,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -16443,7 +16499,7 @@
       "name": "寒武纪",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -16544,8 +16600,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 1215.5,
-          "pct_chg": -2.06,
+          "close": 1198.25,
+          "pct_chg": -3.45,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -16673,7 +16729,7 @@
       "name": "三环集团",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -16774,8 +16830,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 106.31,
-          "pct_chg": -4.71,
+          "close": 104.72,
+          "pct_chg": -6.14,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -16992,8 +17048,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 80.58,
-          "pct_chg": -1.8,
+          "close": 79.11,
+          "pct_chg": -3.59,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -17340,8 +17396,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 24.88,
-          "pct_chg": -1.54,
+          "close": 23.72,
+          "pct_chg": -6.13,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17544,8 +17600,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 13.1,
-          "pct_chg": -1.73,
+          "close": 12.99,
+          "pct_chg": -2.55,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17659,7 +17715,7 @@
       "name": "百济神州",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -17760,8 +17816,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 268.78,
-          "pct_chg": -1.91,
+          "close": 269.43,
+          "pct_chg": -1.67,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17860,7 +17916,7 @@
       "name": "永鼎股份",
       "market": "sh",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -17961,8 +18017,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 34.94,
-          "pct_chg": -0.74,
+          "close": 33.99,
+          "pct_chg": -3.44,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18178,8 +18234,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 106.2,
-          "pct_chg": -1.88,
+          "close": 103.54,
+          "pct_chg": -4.33,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18410,7 +18466,7 @@
       "name": "沪硅产业",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -18511,8 +18567,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 26.67,
-          "pct_chg": -0.11,
+          "close": 26.01,
+          "pct_chg": -2.58,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -18607,7 +18663,7 @@
       "name": "佰维存储",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -18708,8 +18764,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 231.0,
-          "pct_chg": -4.2,
+          "close": 223.58,
+          "pct_chg": -7.28,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18819,7 +18875,7 @@
       "name": "昊华科技",
       "market": "sh",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -18910,8 +18966,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 44.99,
-          "pct_chg": -2.09,
+          "close": 44.27,
+          "pct_chg": -3.66,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19022,7 +19078,7 @@
       "name": "拓荆科技",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -19123,8 +19179,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 779.52,
-          "pct_chg": -1.56,
+          "close": 765.0,
+          "pct_chg": -3.4,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -19248,7 +19304,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 1,
       "history": [
         {
           "date": "2026-07-22",
@@ -19303,6 +19359,34 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 1,
+          "close": 12.77,
+          "pct_chg": 4.33,
+          "缠论买_日K": false,
+          "金钻_黄柱": true,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": true,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 1
+          }
         }
       ],
       "sources": [
@@ -19482,8 +19566,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 35.28,
-          "pct_chg": -0.23,
+          "close": 34.61,
+          "pct_chg": -2.12,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19592,7 +19676,7 @@
       "name": "京东方A",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -19693,8 +19777,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 5.84,
-          "pct_chg": -2.18,
+          "close": 5.78,
+          "pct_chg": -3.18,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19926,8 +20010,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 58.08,
-          "pct_chg": 4.18,
+          "close": 56.61,
+          "pct_chg": 1.54,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -20034,7 +20118,7 @@
       "name": "芯原股份",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -20135,8 +20219,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 220.81,
-          "pct_chg": -1.68,
+          "close": 215.65,
+          "pct_chg": -3.98,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -20498,8 +20582,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 88.57,
-          "pct_chg": 1.02,
+          "close": 86.86,
+          "pct_chg": -0.94,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -20600,7 +20684,7 @@
       "name": "中国巨石",
       "market": "sh",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -20701,8 +20785,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 39.61,
-          "pct_chg": -3.55,
+          "close": 38.74,
+          "pct_chg": -5.67,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -20809,11 +20893,11 @@
       "name": "先导智能",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -20909,13 +20993,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 33.8,
-          "pct_chg": 0.87,
+          "signal_count": 0,
+          "close": 33.32,
+          "pct_chg": -0.57,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -20926,13 +21010,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -21019,7 +21103,7 @@
       "name": "中际旭创",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -21130,8 +21214,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 1002.4,
-          "pct_chg": -6.92,
+          "close": 975.98,
+          "pct_chg": -9.37,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -21722,7 +21806,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -21777,6 +21861,34 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 0,
+          "close": 401.97,
+          "pct_chg": 5.29,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 0
+          }
         }
       ],
       "sources": [
@@ -21959,8 +22071,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 113.03,
-          "pct_chg": 3.41,
+          "close": 108.24,
+          "pct_chg": -0.97,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -22163,8 +22275,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 61.65,
-          "pct_chg": 3.23,
+          "close": 59.1,
+          "pct_chg": -1.04,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22414,7 +22526,7 @@
       "name": "艾力斯",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -22515,8 +22627,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 118.43,
-          "pct_chg": -2.29,
+          "close": 118.14,
+          "pct_chg": -2.52,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22622,7 +22734,7 @@
       "name": "海光信息",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -22723,8 +22835,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 312.18,
-          "pct_chg": -0.45,
+          "close": 309.03,
+          "pct_chg": -1.45,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22934,8 +23046,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 99.68,
-          "pct_chg": -3.29,
+          "close": 95.67,
+          "pct_chg": -7.18,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -23037,7 +23149,7 @@
       "name": "海康威视",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -23138,8 +23250,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 36.4,
-          "pct_chg": -1.6,
+          "close": 36.5,
+          "pct_chg": -1.32,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -23259,7 +23371,7 @@
       "name": "亨通光电",
       "market": "sh",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -23360,8 +23472,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 54.1,
-          "pct_chg": -2.61,
+          "close": 52.86,
+          "pct_chg": -4.84,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -23478,7 +23590,7 @@
       "name": "有研硅",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -23579,8 +23691,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 41.67,
-          "pct_chg": 4.2,
+          "close": 41.13,
+          "pct_chg": 2.85,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -23680,7 +23792,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -23776,13 +23888,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 64.15,
-          "pct_chg": 0.36,
+          "signal_count": 0,
+          "close": 62.61,
+          "pct_chg": -2.05,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -23793,13 +23905,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -24202,7 +24314,7 @@
       "name": "陇神戎发",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "游资",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -24303,8 +24415,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 14.39,
-          "pct_chg": 7.23,
+          "close": 14.92,
+          "pct_chg": 11.18,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24398,7 +24510,7 @@
       "name": "中船特气",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -24499,8 +24611,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 285.23,
-          "pct_chg": 0.1,
+          "close": 285.0,
+          "pct_chg": 0.02,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24600,7 +24712,7 @@
       "name": "大族激光",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 0,
       "max_signal": 1,
@@ -24701,8 +24813,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 100.41,
-          "pct_chg": -2.82,
+          "close": 98.22,
+          "pct_chg": -4.94,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24822,7 +24934,7 @@
       "name": "圣邦股份",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 0,
       "max_signal": 2,
@@ -24923,8 +25035,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 95.95,
-          "pct_chg": -2.97,
+          "close": 94.26,
+          "pct_chg": -4.68,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -25034,7 +25146,7 @@
       "name": "三花智控",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-22",
       "first_signal": 0,
       "max_signal": 2,
@@ -25107,8 +25219,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 36.17,
-          "pct_chg": 0.39,
+          "close": 36.15,
+          "pct_chg": 0.33,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -25921,8 +26033,8 @@
       "market": "深市",
       "board_label": "创业板",
       "first_date": "2026-07-23",
-      "signal_count": 1,
-      "max_signal": 1,
+      "signal_count": 2,
+      "max_signal": 2,
       "history": [
         {
           "date": "2026-07-23",
@@ -25978,6 +26090,34 @@
             "上涨趋势_条件4": true,
             "上涨趋势": false,
             "signal_count": 1
+          }
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 148.6,
+          "pct_chg": 0.03,
+          "缠论买_日K": true,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": true,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 2
           }
         }
       ],
@@ -26792,8 +26932,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 37.6,
-          "pct_chg": -3.02,
+          "close": 38.07,
+          "pct_chg": -1.81,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -26882,7 +27022,7 @@
       "sectors": [
         "研究和试验发展"
       ],
-      "fund_type": "机构",
+      "fund_type": "混合",
       "ema_up": 6,
       "ema_dirs": [
         false,
@@ -26935,8 +27075,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 138.83,
-          "pct_chg": -8.07,
+          "close": 140.91,
+          "pct_chg": -6.69,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -27047,7 +27187,7 @@
         true
       ],
       "ema_score": 7,
-      "fund_type": "机构"
+      "fund_type": "混合"
     },
     "sz_301217": {
       "code": "301217",
@@ -30216,8 +30356,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 118.38,
-          "pct_chg": -6.04,
+          "close": 115.4,
+          "pct_chg": -8.41,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -30281,7 +30421,7 @@
       },
       "institution": "花旗",
       "rating": "买入",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "ema_up": 0,
       "ema_dirs": [
         false,
@@ -31063,7 +31203,7 @@
       "name": "理想汽车-W",
       "market": "hk",
       "board_label": "港股",
-      "fund_type": "混合",
+      "fund_type": "港股",
       "first_date": "2026-07-23",
       "first_signal": 2,
       "max_signal": 2,
@@ -31114,10 +31254,39 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 1,
+          "close": 50.4,
+          "pct_chg": 4.83,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 1
+          }
         }
       ],
       "sources": [
-        "三足鼎立"
+        "三足鼎立",
+        "港股成交前50"
       ],
       "latest": {
         "close": 48.08,
@@ -31663,8 +31832,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 61.75,
-          "pct_chg": -1.07,
+          "close": 60.2,
+          "pct_chg": -3.56,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -31838,8 +32007,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 161.4,
-          "pct_chg": -0.86,
+          "close": 161.9,
+          "pct_chg": -0.55,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -32622,6 +32791,34 @@
             "上涨趋势": true,
             "signal_count": 2
           }
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 18.59,
+          "pct_chg": 2.14,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": true,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": true,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": true,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": true,
+            "signal_count": 2
+          }
         }
       ],
       "sources": [
@@ -32758,8 +32955,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 29.98,
-          "pct_chg": -0.99,
+          "close": 29.35,
+          "pct_chg": -3.07,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -32880,7 +33077,7 @@
       "first_date": "2026-07-23",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 1,
       "history": [
         {
           "date": "2026-07-23",
@@ -32927,6 +33124,34 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 1,
+          "close": 15.87,
+          "pct_chg": -0.94,
+          "缠论买_日K": false,
+          "金钻_黄柱": true,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": true,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 1
+          }
         }
       ],
       "sources": [
@@ -33296,8 +33521,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 197.7,
-          "pct_chg": -1.0,
+          "close": 198.7,
+          "pct_chg": -0.5,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -33425,10 +33650,39 @@
           "上涨趋势_条件4": true,
           "上涨趋势": false,
           "三线共振": false
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 1,
+          "close": 76.51,
+          "pct_chg": -4.36,
+          "缠论买_日K": false,
+          "金钻_黄柱": true,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": true,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 1
+          }
         }
       ],
       "sources": [
-        "三足鼎立"
+        "三足鼎立",
+        "科创板成交前100"
       ],
       "latest": {
         "close": 77.97,
@@ -33744,8 +33998,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 40.59,
-          "pct_chg": -1.41,
+          "close": 40.15,
+          "pct_chg": -2.48,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -34018,8 +34272,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 124.66,
-          "pct_chg": -1.3,
+          "close": 123.01,
+          "pct_chg": -2.6,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -34274,8 +34528,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 449.0,
-          "pct_chg": 1.35,
+          "close": 451.4,
+          "pct_chg": 1.9,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -34912,8 +35166,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 38.5,
-          "pct_chg": -0.41,
+          "close": 38.7,
+          "pct_chg": 0.1,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35085,8 +35339,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 8.53,
-          "pct_chg": 2.77,
+          "close": 8.5,
+          "pct_chg": 2.41,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35333,8 +35587,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 5.07,
-          "pct_chg": -0.39,
+          "close": 5.08,
+          "pct_chg": -0.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35505,8 +35759,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 7.63,
-          "pct_chg": 1.33,
+          "close": 7.61,
+          "pct_chg": 1.06,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -36965,8 +37219,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 98.38,
-          "pct_chg": -2.57,
+          "close": 94.29,
+          "pct_chg": -6.63,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -37455,8 +37709,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 19.08,
-          "pct_chg": 1.38,
+          "close": 19.16,
+          "pct_chg": 1.81,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -37912,8 +38166,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 10.01,
-          "pct_chg": -6.36,
+          "close": 9.94,
+          "pct_chg": -7.02,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38045,8 +38299,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 24.7,
-          "pct_chg": -1.04,
+          "close": 23.96,
+          "pct_chg": -4.01,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -38119,7 +38373,7 @@
       "name": "长光华芯",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
@@ -38178,8 +38432,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 297.25,
-          "pct_chg": -4.73,
+          "close": 283.11,
+          "pct_chg": -9.26,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -38252,7 +38506,7 @@
       "name": "盛美上海",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
@@ -38311,8 +38565,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 307.0,
-          "pct_chg": 0.0,
+          "close": 304.0,
+          "pct_chg": -0.98,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38539,7 +38793,7 @@
       "name": "富创精密",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
@@ -38598,8 +38852,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 200.97,
-          "pct_chg": 0.99,
+          "close": 194.76,
+          "pct_chg": -2.13,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38672,7 +38926,7 @@
       "name": "燕东微",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
@@ -38731,8 +38985,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 60.0,
-          "pct_chg": 2.13,
+          "close": 58.35,
+          "pct_chg": -0.68,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38809,7 +39063,7 @@
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 2,
       "sources": [
         "三足鼎立",
         "港股成交前50"
@@ -38873,10 +39127,10 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 29.16,
-          "pct_chg": 1.67,
-          "缠论买_日K": false,
+          "signal_count": 2,
+          "close": 29.48,
+          "pct_chg": 2.79,
+          "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": true,
@@ -38887,7 +39141,7 @@
           "上涨趋势": false,
           "三线共振": false,
           "latest": {
-            "缠论买_日K": false,
+            "缠论买_日K": true,
             "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": true,
@@ -38896,7 +39150,7 @@
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 2
           }
         }
       ],
@@ -39007,8 +39261,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 204.21,
-          "pct_chg": -3.9,
+          "close": 197.21,
+          "pct_chg": -7.2,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -39235,7 +39489,7 @@
       "name": "润泽科技",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 2,
       "max_signal": 2,
@@ -39294,8 +39548,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 65.4,
-          "pct_chg": -1.33,
+          "close": 64.86,
+          "pct_chg": -2.14,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -39523,7 +39777,7 @@
       "name": "东方财富",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-24",
       "first_signal": 0,
       "max_signal": 1,
@@ -39560,8 +39814,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 19.51,
-          "pct_chg": -0.71,
+          "close": 19.49,
+          "pct_chg": -0.81,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -39676,8 +39930,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 112.1,
-          "pct_chg": 0.99,
+          "close": 113.5,
+          "pct_chg": 2.25,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40069,8 +40323,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 28.22,
-          "pct_chg": -2.39,
+          "close": 27.7,
+          "pct_chg": -4.19,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40144,14 +40398,14 @@
     },
     "sh_688213": {
       "code": "688213",
-      "name": "思特威",
+      "name": "思特威-W",
       "market": "sh",
       "board_label": "科创板",
       "fund_type": "混合",
       "first_date": "2026-07-27",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-27",
@@ -40179,6 +40433,34 @@
             "上涨趋势_条件4": true,
             "上涨趋势": false,
             "signal_count": 2
+          }
+        },
+        {
+          "date": "2026-07-28",
+          "signal_count": 0,
+          "close": 92.53,
+          "pct_chg": -3.56,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 0
           }
         }
       ],
@@ -40271,8 +40553,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 91.4,
-          "pct_chg": 2.35,
+          "close": 91.75,
+          "pct_chg": 2.74,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40386,8 +40668,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 11.56,
-          "pct_chg": 1.23,
+          "close": 11.65,
+          "pct_chg": 2.01,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40463,11 +40745,11 @@
       "name": "通富微电",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-27",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-27",
@@ -40499,13 +40781,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 73.2,
-          "pct_chg": -4.53,
+          "signal_count": 0,
+          "close": 70.89,
+          "pct_chg": -7.54,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -40516,13 +40798,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -40614,7 +40896,8 @@
         }
       ],
       "sources": [
-        "三足鼎立"
+        "三足鼎立",
+        "主板成交前100"
       ],
       "latest": {
         "close": 2.65,
@@ -40664,43 +40947,44 @@
       "name": "贤丰控股",
       "market": "sz",
       "board_label": "主板",
-      "fund_type": "游资",
+      "fund_type": "混合",
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 1,
       "history": [
         {
           "date": "2026-07-28",
-          "signal_count": 2,
-          "close": 6.3,
-          "pct_chg": 9.95,
+          "signal_count": 1,
+          "close": 5.93,
+          "pct_chg": 3.49,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": true,
-          "上涨趋势_条件1": true,
+          "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
           "上涨趋势_条件4": true,
-          "上涨趋势": true,
+          "上涨趋势": false,
           "三线共振": false,
           "latest": {
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": true,
-            "上涨趋势_条件1": true,
+            "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
-            "上涨趋势": true,
-            "signal_count": 2
+            "上涨趋势": false,
+            "signal_count": 1
           }
         }
       ],
       "sources": [
-        "三足鼎立"
+        "三足鼎立",
+        "主板成交前100"
       ],
       "latest": {
         "close": 6.3,
@@ -40750,7 +41034,7 @@
       "name": "石药创新",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
@@ -40759,8 +41043,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 38.42,
-          "pct_chg": 5.49,
+          "close": 38.55,
+          "pct_chg": 5.85,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40786,7 +41070,8 @@
         }
       ],
       "sources": [
-        "三足鼎立"
+        "三足鼎立",
+        "创业板成交前100"
       ],
       "latest": {
         "close": 38.42,
@@ -40836,7 +41121,7 @@
       "name": "传音控股",
       "market": "sh",
       "board_label": "科创板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
@@ -40845,8 +41130,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 65.07,
-          "pct_chg": 2.83,
+          "close": 65.89,
+          "pct_chg": 4.12,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40932,8 +41217,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 14.85,
-          "pct_chg": 1.64,
+          "close": 14.84,
+          "pct_chg": 1.57,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41018,8 +41303,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 23.36,
-          "pct_chg": 1.3,
+          "close": 23.34,
+          "pct_chg": 1.21,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41095,7 +41380,7 @@
       "name": "招商银行",
       "market": "sh",
       "board_label": "主板",
-      "fund_type": "机构",
+      "fund_type": "混合",
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
@@ -41104,8 +41389,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 39.18,
-          "pct_chg": 0.46,
+          "close": 39.3,
+          "pct_chg": 0.77,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41191,8 +41476,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 376.28,
-          "pct_chg": 0.38,
+          "close": 378.17,
+          "pct_chg": 0.89,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -41269,7 +41554,7 @@
       "name": "日科化学",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "游资",
+      "fund_type": "混合",
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
@@ -41278,8 +41563,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 14.05,
-          "pct_chg": -1.26,
+          "close": 14.2,
+          "pct_chg": -0.21,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41350,23 +41635,237 @@
         false
       ],
       "ema_score": 0
+    },
+    "sz_300795": {
+      "code": "300795",
+      "name": "米奥会展",
+      "market": "sz",
+      "board_label": "创业板",
+      "fund_type": "混合",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 14.01,
+          "pct_chg": 5.5,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": true,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": true,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": true,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": true,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立",
+        "创业板成交前100"
+      ]
+    },
+    "hk_09999": {
+      "code": "09999",
+      "name": "网易",
+      "market": "hk",
+      "board_label": "港股",
+      "fund_type": "港股",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 200.8,
+          "pct_chg": 5.13,
+          "缠论买_日K": true,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": true,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立",
+        "港股成交前50"
+      ]
+    },
+    "hk_09626": {
+      "code": "09626",
+      "name": "哔哩哔哩-W",
+      "market": "hk",
+      "board_label": "港股",
+      "fund_type": "港股",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 142.8,
+          "pct_chg": 2.66,
+          "缠论买_日K": true,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": true,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立"
+      ]
+    },
+    "sz_000333": {
+      "code": "000333",
+      "name": "美的集团",
+      "market": "sz",
+      "board_label": "主板",
+      "fund_type": "混合",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 84.92,
+          "pct_chg": 0.94,
+          "缠论买_日K": false,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": true,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": true,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": false,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": true,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": true,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立"
+      ]
+    },
+    "sh_688166": {
+      "code": "688166",
+      "name": "博瑞医药",
+      "market": "sh",
+      "board_label": "科创板",
+      "fund_type": "混合",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 35.19,
+          "pct_chg": -1.84,
+          "缠论买_日K": true,
+          "金钻_黄柱": false,
+          "金钻_起涨": false,
+          "四量图_机构变红": true,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": true,
+            "金钻_黄柱": false,
+            "金钻_起涨": false,
+            "四量图_机构变红": true,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立",
+        "科创板成交前100"
+      ]
     }
   },
-  "last_update": "2026-07-28 09:42:28",
+  "last_update": "2026-07-28 10:18:40",
   "candidates": {
     "sh_603986": {
       "code": "603986",
       "name": "兆易创新",
       "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002156": {
-      "code": "002156",
-      "name": "通富微电",
-      "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
@@ -41381,10 +41880,55 @@
         "主板成交前100"
       ]
     },
+    "sz_002156": {
+      "code": "002156",
+      "name": "通富微电",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002409": {
+      "code": "002409",
+      "name": "雅克科技",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002407": {
+      "code": "002407",
+      "name": "多氟多",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600667": {
+      "code": "600667",
+      "name": "太极实业",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
     "sz_000938": {
       "code": "000938",
       "name": "紫光股份",
       "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600176": {
+      "code": "600176",
+      "name": "中国巨石",
+      "market": "sh",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
@@ -41399,9 +41943,9 @@
         "主板成交前100"
       ]
     },
-    "sz_002415": {
-      "code": "002415",
-      "name": "海康威视",
+    "sz_000636": {
+      "code": "000636",
+      "name": "风华高科",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -41426,36 +41970,9 @@
         "主板成交前100"
       ]
     },
-    "sz_000725": {
-      "code": "000725",
-      "name": "京东方A",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600176": {
-      "code": "600176",
-      "name": "中国巨石",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002409": {
-      "code": "002409",
-      "name": "雅克科技",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_001309": {
-      "code": "001309",
-      "name": "德明利",
+    "sz_002185": {
+      "code": "002185",
+      "name": "华天科技",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -41471,27 +41988,36 @@
         "主板成交前100"
       ]
     },
-    "sz_002185": {
-      "code": "002185",
-      "name": "华天科技",
+    "sz_000725": {
+      "code": "000725",
+      "name": "京东方A",
       "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
       ]
     },
-    "sh_601899": {
-      "code": "601899",
-      "name": "紫金矿业",
+    "sz_001309": {
+      "code": "001309",
+      "name": "德明利",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600206": {
+      "code": "600206",
+      "name": "有研新材",
       "market": "sh",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
       ]
     },
-    "sz_000977": {
-      "code": "000977",
-      "name": "浪潮信息",
+    "sz_002222": {
+      "code": "002222",
+      "name": "福晶科技",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -41507,19 +42033,91 @@
         "主板成交前100"
       ]
     },
-    "sh_600206": {
-      "code": "600206",
-      "name": "有研新材",
+    "sz_000977": {
+      "code": "000977",
+      "name": "浪潮信息",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002463": {
+      "code": "002463",
+      "name": "沪电股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601138": {
+      "code": "601138",
+      "name": "工业富联",
       "market": "sh",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
       ]
     },
-    "sz_002407": {
-      "code": "002407",
-      "name": "多氟多",
+    "sh_603228": {
+      "code": "603228",
+      "name": "景旺电子",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002281": {
+      "code": "002281",
+      "name": "光迅科技",
       "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601606": {
+      "code": "601606",
+      "name": "长城军工",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002851": {
+      "code": "002851",
+      "name": "麦格米特",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002916": {
+      "code": "002916",
+      "name": "深南电路",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603629": {
+      "code": "603629",
+      "name": "利通电子",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600522": {
+      "code": "600522",
+      "name": "中天科技",
+      "market": "sh",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
@@ -41534,9 +42132,45 @@
         "主板成交前100"
       ]
     },
-    "sz_002281": {
-      "code": "002281",
-      "name": "光迅科技",
+    "sh_603256": {
+      "code": "603256",
+      "name": "宏和科技",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603019": {
+      "code": "603019",
+      "name": "中科曙光",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603893": {
+      "code": "603893",
+      "name": "瑞芯微",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002415": {
+      "code": "002415",
+      "name": "海康威视",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_001248": {
+      "code": "001248",
+      "name": "华润新能",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -41553,118 +42187,9 @@
         "maharo研报"
       ]
     },
-    "sz_000636": {
-      "code": "000636",
-      "name": "风华高科",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603893": {
-      "code": "603893",
-      "name": "瑞芯微",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600522": {
-      "code": "600522",
-      "name": "中天科技",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603019": {
-      "code": "603019",
-      "name": "中科曙光",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002463": {
-      "code": "002463",
-      "name": "沪电股份",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002428": {
-      "code": "002428",
-      "name": "云南锗业",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601138": {
-      "code": "601138",
-      "name": "工业富联",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_000063": {
-      "code": "000063",
-      "name": "中兴通讯",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603629": {
-      "code": "603629",
-      "name": "利通电子",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600396": {
-      "code": "600396",
-      "name": "华电辽能",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002436": {
-      "code": "002436",
-      "name": "兴森科技",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002353": {
-      "code": "002353",
-      "name": "杰瑞股份",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100",
-        "maharo研报"
-      ]
-    },
-    "sh_603228": {
-      "code": "603228",
-      "name": "景旺电子",
+    "sh_601899": {
+      "code": "601899",
+      "name": "紫金矿业",
       "market": "sh",
       "board_label": "主板",
       "sources": [
@@ -41680,14 +42205,104 @@
         "主板成交前100"
       ]
     },
-    "sz_002008": {
-      "code": "002008",
-      "name": "大族激光",
+    "sz_002436": {
+      "code": "002436",
+      "name": "兴森科技",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603127": {
+      "code": "603127",
+      "name": "昭衍新药",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600396": {
+      "code": "600396",
+      "name": "华电辽能",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002594": {
+      "code": "002594",
+      "name": "比亚迪",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_000063": {
+      "code": "000063",
+      "name": "中兴通讯",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603118": {
+      "code": "603118",
+      "name": "共进股份",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603083": {
+      "code": "603083",
+      "name": "剑桥科技",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002353": {
+      "code": "002353",
+      "name": "杰瑞股份",
       "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100",
         "maharo研报"
+      ]
+    },
+    "sh_601179": {
+      "code": "601179",
+      "name": "中国西电",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_001258": {
+      "code": "001258",
+      "name": "立新能源",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601869": {
+      "code": "601869",
+      "name": "长飞光纤",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
       ]
     },
     "sh_600519": {
@@ -41699,9 +42314,9 @@
         "主板成交前100"
       ]
     },
-    "sh_601869": {
-      "code": "601869",
-      "name": "长飞光纤",
+    "sh_600664": {
+      "code": "600664",
+      "name": "哈药股份",
       "market": "sh",
       "board_label": "主板",
       "sources": [
@@ -41717,6 +42332,97 @@
         "主板成交前100"
       ]
     },
+    "sh_603650": {
+      "code": "603650",
+      "name": "彤程新材",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002428": {
+      "code": "002428",
+      "name": "云南锗业",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_000533": {
+      "code": "000533",
+      "name": "顺钠股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002195": {
+      "code": "002195",
+      "name": "岩山科技",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002837": {
+      "code": "002837",
+      "name": "英维克",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002484": {
+      "code": "002484",
+      "name": "江海股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100",
+        "maharo研报"
+      ]
+    },
+    "sz_002709": {
+      "code": "002709",
+      "name": "天赐材料",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_603459": {
+      "code": "603459",
+      "name": "红板科技",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601288": {
+      "code": "601288",
+      "name": "农业银行",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002491": {
+      "code": "002491",
+      "name": "通鼎互联",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
     "sh_600900": {
       "code": "600900",
       "name": "长江电力",
@@ -41726,19 +42432,101 @@
         "主板成交前100"
       ]
     },
-    "sh_601179": {
-      "code": "601179",
-      "name": "中国西电",
+    "sz_002008": {
+      "code": "002008",
+      "name": "大族激光",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100",
+        "maharo研报"
+      ]
+    },
+    "sh_603993": {
+      "code": "603993",
+      "name": "洛阳钼业",
       "market": "sh",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
       ]
     },
-    "sh_603127": {
-      "code": "603127",
-      "name": "昭衍新药",
+    "sz_000676": {
+      "code": "000676",
+      "name": "智度股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_000657": {
+      "code": "000657",
+      "name": "中钨高新",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600105": {
+      "code": "600105",
+      "name": "永鼎股份",
       "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601678": {
+      "code": "601678",
+      "name": "滨化股份",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002938": {
+      "code": "002938",
+      "name": "鹏鼎控股",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601398": {
+      "code": "601398",
+      "name": "工商银行",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600909": {
+      "code": "600909",
+      "name": "华安证券",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002141": {
+      "code": "002141",
+      "name": "贤丰控股",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002080": {
+      "code": "002080",
+      "name": "中材科技",
+      "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
@@ -41753,54 +42541,18 @@
         "主板成交前100"
       ]
     },
-    "sh_603993": {
-      "code": "603993",
-      "name": "洛阳钼业",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601318": {
-      "code": "601318",
-      "name": "中国平安",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603256": {
-      "code": "603256",
-      "name": "宏和科技",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600667": {
-      "code": "600667",
-      "name": "太极实业",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002916": {
-      "code": "002916",
-      "name": "深南电路",
+    "sz_002364": {
+      "code": "002364",
+      "name": "中恒电气",
       "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
       ]
     },
-    "sz_002851": {
-      "code": "002851",
-      "name": "麦格米特",
+    "sz_002310": {
+      "code": "002310",
+      "name": "东方新能",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -41825,187 +42577,6 @@
         "主板成交前100"
       ]
     },
-    "sh_600938": {
-      "code": "600938",
-      "name": "中国海油",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600105": {
-      "code": "600105",
-      "name": "永鼎股份",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002491": {
-      "code": "002491",
-      "name": "通鼎互联",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603083": {
-      "code": "603083",
-      "name": "剑桥科技",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_000657": {
-      "code": "000657",
-      "name": "中钨高新",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601678": {
-      "code": "601678",
-      "name": "滨化股份",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002709": {
-      "code": "002709",
-      "name": "天赐材料",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600276": {
-      "code": "600276",
-      "name": "恒瑞医药",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600030": {
-      "code": "600030",
-      "name": "中信证券",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600664": {
-      "code": "600664",
-      "name": "哈药股份",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601288": {
-      "code": "601288",
-      "name": "农业银行",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600887": {
-      "code": "600887",
-      "name": "伊利股份",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600036": {
-      "code": "600036",
-      "name": "招商银行",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600988": {
-      "code": "600988",
-      "name": "赤峰黄金",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600378": {
-      "code": "600378",
-      "name": "昊华科技",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002484": {
-      "code": "002484",
-      "name": "江海股份",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100",
-        "maharo研报"
-      ]
-    },
-    "sz_002083": {
-      "code": "002083",
-      "name": "孚日股份",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600989": {
-      "code": "600989",
-      "name": "宝丰能源",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601168": {
-      "code": "601168",
-      "name": "西部矿业",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600744": {
-      "code": "600744",
-      "name": "华银电力",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
     "sz_000811": {
       "code": "000811",
       "name": "冰轮环境",
@@ -42015,198 +42586,9 @@
         "主板成交前100"
       ]
     },
-    "sh_601208": {
-      "code": "601208",
-      "name": "东材科技",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_000100": {
-      "code": "000100",
-      "name": "TCL科技",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600909": {
-      "code": "600909",
-      "name": "华安证券",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601857": {
-      "code": "601857",
-      "name": "中国石油",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601398": {
-      "code": "601398",
-      "name": "工商银行",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_601606": {
-      "code": "601606",
-      "name": "长城军工",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600089": {
-      "code": "600089",
-      "name": "特变电工",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002594": {
-      "code": "002594",
-      "name": "比亚迪",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_001248": {
-      "code": "001248",
-      "name": "华润新能",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002636": {
-      "code": "002636",
-      "name": "金安国纪",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_000815": {
-      "code": "000815",
-      "name": "美利云",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002028": {
-      "code": "002028",
-      "name": "思源电气",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_000338": {
-      "code": "000338",
-      "name": "潍柴动力",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002080": {
-      "code": "002080",
-      "name": "中材科技",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002498": {
-      "code": "002498",
-      "name": "汉缆股份",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_603118": {
-      "code": "603118",
-      "name": "共进股份",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600549": {
-      "code": "600549",
-      "name": "厦门钨业",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600460": {
-      "code": "600460",
-      "name": "士兰微",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sh_600498": {
-      "code": "600498",
-      "name": "烽火通信",
-      "market": "sh",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002414": {
-      "code": "002414",
-      "name": "高德红外",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002460": {
-      "code": "002460",
-      "name": "赣锋锂业",
-      "market": "sz",
-      "board_label": "主板",
-      "sources": [
-        "主板成交前100"
-      ]
-    },
-    "sz_002938": {
-      "code": "002938",
-      "name": "鹏鼎控股",
+    "sz_002083": {
+      "code": "002083",
+      "name": "孚日股份",
       "market": "sz",
       "board_label": "主板",
       "sources": [
@@ -42222,10 +42604,145 @@
         "主板成交前100"
       ]
     },
-    "sh_600309": {
-      "code": "600309",
-      "name": "万华化学",
+    "sz_002241": {
+      "code": "002241",
+      "name": "歌尔股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601208": {
+      "code": "601208",
+      "name": "东材科",
       "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601318": {
+      "code": "601318",
+      "name": "中国平安",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600378": {
+      "code": "600378",
+      "name": "昊华科技",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_601727": {
+      "code": "601727",
+      "name": "上海电气",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002536": {
+      "code": "002536",
+      "name": "飞龙股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600036": {
+      "code": "600036",
+      "name": "招商银行",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600276": {
+      "code": "600276",
+      "name": "恒瑞医药",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002747": {
+      "code": "002747",
+      "name": "埃斯顿",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002636": {
+      "code": "002636",
+      "name": "金安国纪",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002498": {
+      "code": "002498",
+      "name": "汉缆股份",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sh_600089": {
+      "code": "600089",
+      "name": "特变电工",
+      "market": "sh",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002050": {
+      "code": "002050",
+      "name": "三花智控",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_000426": {
+      "code": "000426",
+      "name": "兴业银锡",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002487": {
+      "code": "002487",
+      "name": "大金重工",
+      "market": "sz",
+      "board_label": "主板",
+      "sources": [
+        "主板成交前100"
+      ]
+    },
+    "sz_002460": {
+      "code": "002460",
+      "name": "赣锋锂业",
+      "market": "sz",
       "board_label": "主板",
       "sources": [
         "主板成交前100"
@@ -42234,6 +42751,15 @@
     "sz_300308": {
       "code": "300308",
       "name": "中际旭创",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300502": {
+      "code": "300502",
+      "name": "新易盛",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42250,72 +42776,9 @@
         "观澜台"
       ]
     },
-    "sz_300502": {
-      "code": "300502",
-      "name": "新易盛",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300604": {
-      "code": "300604",
-      "name": "长川科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300408": {
-      "code": "300408",
-      "name": "三环集团",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300285": {
-      "code": "300285",
-      "name": "国瓷材料",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301526": {
-      "code": "301526",
-      "name": "国际复材",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300433": {
-      "code": "300433",
-      "name": "蓝思科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300857": {
-      "code": "300857",
-      "name": "协创数据",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300223": {
-      "code": "300223",
-      "name": "北京君正",
+    "sz_300346": {
+      "code": "300346",
+      "name": "南大光电",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42331,9 +42794,27 @@
         "创业板成交前100"
       ]
     },
-    "sz_301308": {
-      "code": "301308",
-      "name": "江波龙",
+    "sz_301526": {
+      "code": "301526",
+      "name": "国际复材",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300285": {
+      "code": "300285",
+      "name": "国瓷材料",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300408": {
+      "code": "300408",
+      "name": "三环集团",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42349,9 +42830,27 @@
         "创业板成交前100"
       ]
     },
-    "sz_300666": {
-      "code": "300666",
-      "name": "江丰电子",
+    "sz_300223": {
+      "code": "300223",
+      "name": "北京君正",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300604": {
+      "code": "300604",
+      "name": "长川科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300260": {
+      "code": "300260",
+      "name": "新莱应材",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42367,18 +42866,9 @@
         "创业板成交前100"
       ]
     },
-    "sz_300458": {
-      "code": "300458",
-      "name": "全志科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301165": {
-      "code": "301165",
-      "name": "锐捷网络",
+    "sz_301308": {
+      "code": "301308",
+      "name": "江波龙",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42394,28 +42884,99 @@
         "创业板成交前100"
       ]
     },
-    "sz_300059": {
-      "code": "300059",
-      "name": "东方财富",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100",
-        "maharo研报"
-      ]
-    },
-    "sz_300136": {
-      "code": "300136",
-      "name": "信维通信",
+    "sz_300857": {
+      "code": "300857",
+      "name": "协创数据",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_301536": {
-      "code": "301536",
-      "name": "星宸科技",
+    "sz_301165": {
+      "code": "301165",
+      "name": "锐捷网络",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300054": {
+      "code": "300054",
+      "name": "鼎龙股份",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300666": {
+      "code": "300666",
+      "name": "江丰电子",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300433": {
+      "code": "300433",
+      "name": "蓝思科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300058": {
+      "code": "300058",
+      "name": "蓝色光标",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300548": {
+      "code": "300548",
+      "name": "长芯博创",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300759": {
+      "code": "300759",
+      "name": "康龙化成",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300458": {
+      "code": "300458",
+      "name": "全志科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300757": {
+      "code": "300757",
+      "name": "罗博特科",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_301293": {
+      "code": "301293",
+      "name": "三博脑科",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42432,54 +42993,18 @@
         "maharo研报"
       ]
     },
-    "sz_300054": {
-      "code": "300054",
-      "name": "鼎龙股份",
+    "sz_300136": {
+      "code": "300136",
+      "name": "信维通信",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300759": {
-      "code": "300759",
-      "name": "康龙化成",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300014": {
-      "code": "300014",
-      "name": "亿纬锂能",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300346": {
-      "code": "300346",
-      "name": "南大光电",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300058": {
-      "code": "300058",
-      "name": "蓝色光标",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300390": {
-      "code": "300390",
-      "name": "天华新能",
+    "sz_301392": {
+      "code": "301392",
+      "name": "汇成真空",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42495,108 +43020,28 @@
         "创业板成交前100"
       ]
     },
-    "sz_300209": {
-      "code": "300209",
-      "name": "行云科技",
+    "sz_300059": {
+      "code": "300059",
+      "name": "东方财富",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100",
+        "maharo研报"
+      ]
+    },
+    "sz_300534": {
+      "code": "300534",
+      "name": "陇神戎发",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_301205": {
-      "code": "301205",
-      "name": "联特科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301396": {
-      "code": "301396",
-      "name": "宏景科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300567": {
-      "code": "300567",
-      "name": "精测电子",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300164": {
-      "code": "300164",
-      "name": "通源石油",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300779": {
-      "code": "300779",
-      "name": "惠城环保",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300757": {
-      "code": "300757",
-      "name": "罗博特科",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300033": {
-      "code": "300033",
-      "name": "同花顺",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300620": {
-      "code": "300620",
-      "name": "光库科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301377": {
-      "code": "301377",
-      "name": "鼎泰高科",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301511": {
-      "code": "301511",
-      "name": "德福科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300438": {
-      "code": "300438",
-      "name": "鹏辉能源",
+    "sz_300390": {
+      "code": "300390",
+      "name": "天华新能",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42612,36 +43057,63 @@
         "创业板成交前100"
       ]
     },
-    "sz_300450": {
-      "code": "300450",
-      "name": "先导智能",
+    "sz_301013": {
+      "code": "301013",
+      "name": "利和兴",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300661": {
-      "code": "300661",
-      "name": "圣邦股份",
+    "sz_300620": {
+      "code": "300620",
+      "name": "光库科技",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300548": {
-      "code": "300548",
-      "name": "长芯博创",
+    "sz_301536": {
+      "code": "301536",
+      "name": "星宸科技",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300806": {
-      "code": "300806",
-      "name": "斯迪克",
+    "sz_301205": {
+      "code": "301205",
+      "name": "联特科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300655": {
+      "code": "300655",
+      "name": "晶瑞电材",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300209": {
+      "code": "300209",
+      "name": "行云科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300567": {
+      "code": "300567",
+      "name": "精测电子",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42657,45 +43129,45 @@
         "创业板成交前100"
       ]
     },
-    "sz_300207": {
-      "code": "300207",
-      "name": "欣旺达",
+    "sz_300014": {
+      "code": "300014",
+      "name": "亿纬锂能",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300489": {
-      "code": "300489",
-      "name": "光智科技",
+    "sz_300331": {
+      "code": "300331",
+      "name": "苏大维格",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300480": {
-      "code": "300480",
-      "name": "光力科技",
+    "sz_301018": {
+      "code": "301018",
+      "name": "申菱环境",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300444": {
-      "code": "300444",
-      "name": "双杰电气",
+    "sz_300779": {
+      "code": "300779",
+      "name": "惠城环保",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300672": {
-      "code": "300672",
-      "name": "国科微",
+    "sz_301511": {
+      "code": "301511",
+      "name": "德福科技",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42711,6 +43183,24 @@
         "创业板成交前100"
       ]
     },
+    "sz_301396": {
+      "code": "301396",
+      "name": "宏景科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300576": {
+      "code": "300576",
+      "name": "容大感光",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
     "sz_301292": {
       "code": "301292",
       "name": "海科新源",
@@ -42720,45 +43210,90 @@
         "创业板成交前100"
       ]
     },
-    "sz_300395": {
-      "code": "300395",
-      "name": "菲利华",
+    "sz_300765": {
+      "code": "300765",
+      "name": "石药创新",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300017": {
-      "code": "300017",
-      "name": "网宿科技",
+    "sz_300214": {
+      "code": "300214",
+      "name": "日科化学",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300037": {
-      "code": "300037",
-      "name": "新宙邦",
+    "sz_300364": {
+      "code": "300364",
+      "name": "中文在线",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300975": {
-      "code": "300975",
-      "name": "商络电子",
+    "sz_300164": {
+      "code": "300164",
+      "name": "通源石油",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
         "创业板成交前100"
       ]
     },
-    "sz_300139": {
-      "code": "300139",
-      "name": "晓程科技",
+    "sz_301377": {
+      "code": "301377",
+      "name": "鼎泰高科",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300450": {
+      "code": "300450",
+      "name": "先导智能",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300454": {
+      "code": "300454",
+      "name": "深信服",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300033": {
+      "code": "300033",
+      "name": "同花顺",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300870": {
+      "code": "300870",
+      "name": "欧陆通",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300489": {
+      "code": "300489",
+      "name": "光智科技",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42774,9 +43309,118 @@
         "创业板成交前100"
       ]
     },
-    "sz_300373": {
-      "code": "300373",
-      "name": "扬杰科技",
+    "sz_300444": {
+      "code": "300444",
+      "name": "双杰电气",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300753": {
+      "code": "300753",
+      "name": "爱朋医疗",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300207": {
+      "code": "300207",
+      "name": "欣旺达",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300124": {
+      "code": "300124",
+      "name": "汇川技术",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100",
+        "maharo研报"
+      ]
+    },
+    "sz_301520": {
+      "code": "301520",
+      "name": "万邦医药",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300806": {
+      "code": "300806",
+      "name": "斯迪克",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300395": {
+      "code": "300395",
+      "name": "菲利华",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_301297": {
+      "code": "301297",
+      "name": "富乐德",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300139": {
+      "code": "300139",
+      "name": "晓程科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300438": {
+      "code": "300438",
+      "name": "鹏辉能源",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300661": {
+      "code": "300661",
+      "name": "圣邦股份",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_301307": {
+      "code": "301307",
+      "name": "美利信",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300456": {
+      "code": "300456",
+      "name": "赛微电子",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42792,9 +43436,72 @@
         "创业板成交前100"
       ]
     },
-    "sz_300260": {
-      "code": "300260",
-      "name": "新莱应材",
+    "sz_300592": {
+      "code": "300592",
+      "name": "华凯易佰",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300672": {
+      "code": "300672",
+      "name": "国科微",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300663": {
+      "code": "300663",
+      "name": "科蓝软件",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300255": {
+      "code": "300255",
+      "name": "常山药业",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300017": {
+      "code": "300017",
+      "name": "网宿科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300497": {
+      "code": "300497",
+      "name": "富祥股份",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300975": {
+      "code": "300975",
+      "name": "商络电子",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_301319": {
+      "code": "301319",
+      "name": "唯特偶",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -42819,217 +43526,9 @@
         "创业板成交前100"
       ]
     },
-    "sz_301293": {
-      "code": "301293",
-      "name": "三博脑科",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300115": {
-      "code": "300115",
-      "name": "长盈精密",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300085": {
-      "code": "300085",
-      "name": "银之杰",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300255": {
-      "code": "300255",
-      "name": "常山药业",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300124": {
-      "code": "300124",
-      "name": "汇川技术",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100",
-        "maharo研报"
-      ]
-    },
-    "sz_300843": {
-      "code": "300843",
-      "name": "胜蓝股份",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301018": {
-      "code": "301018",
-      "name": "申菱环境",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300776": {
-      "code": "300776",
-      "name": "帝尔激光",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300870": {
-      "code": "300870",
-      "name": "欧陆通",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300454": {
-      "code": "300454",
-      "name": "深信服",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300803": {
-      "code": "300803",
-      "name": "指南针",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300088": {
-      "code": "300088",
-      "name": "长信科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300738": {
-      "code": "300738",
-      "name": "奥飞数据",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300684": {
-      "code": "300684",
-      "name": "中石科技",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301319": {
-      "code": "301319",
-      "name": "唯特偶",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300671": {
-      "code": "300671",
-      "name": "富满微",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300214": {
-      "code": "300214",
-      "name": "日科化学",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300199": {
-      "code": "300199",
-      "name": "翰宇药业",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300760": {
-      "code": "300760",
-      "name": "迈瑞医疗",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301200": {
-      "code": "301200",
-      "name": "大族数控",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300613": {
-      "code": "300613",
-      "name": "富瀚微",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300751": {
-      "code": "300751",
-      "name": "迈为股份",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300762": {
-      "code": "300762",
-      "name": "上海瀚讯",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300179": {
-      "code": "300179",
-      "name": "四方达",
+    "sz_300850": {
+      "code": "300850",
+      "name": "新强联",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -43045,18 +43544,9 @@
         "创业板成交前100"
       ]
     },
-    "sz_300534": {
-      "code": "300534",
-      "name": "陇神戎发",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300558": {
-      "code": "300558",
-      "name": "贝达药业",
+    "sz_300593": {
+      "code": "300593",
+      "name": "新雷能",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -43072,9 +43562,81 @@
         "创业板成交前100"
       ]
     },
-    "sz_300497": {
-      "code": "300497",
-      "name": "富祥股份",
+    "sz_300037": {
+      "code": "300037",
+      "name": "新宙邦",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300067": {
+      "code": "300067",
+      "name": "安诺其",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_301234": {
+      "code": "301234",
+      "name": "五洲医疗",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300795": {
+      "code": "300795",
+      "name": "米奥会展",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300480": {
+      "code": "300480",
+      "name": "光力科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300607": {
+      "code": "300607",
+      "name": "拓斯达",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300373": {
+      "code": "300373",
+      "name": "扬杰科技",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300821": {
+      "code": "300821",
+      "name": "东岳硅材",
+      "market": "sz",
+      "board_label": "创业板",
+      "sources": [
+        "创业板成交前100"
+      ]
+    },
+    "sz_300436": {
+      "code": "300436",
+      "name": "广生堂",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -43084,51 +43646,6 @@
     "sz_300420": {
       "code": "300420",
       "name": "五洋自控",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301520": {
-      "code": "301520",
-      "name": "万邦医药",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300045": {
-      "code": "300045",
-      "name": "华力创通",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300184": {
-      "code": "300184",
-      "name": "力源信息",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_301013": {
-      "code": "301013",
-      "name": "利和兴",
-      "market": "sz",
-      "board_label": "创业板",
-      "sources": [
-        "创业板成交前100"
-      ]
-    },
-    "sz_300850": {
-      "code": "300850",
-      "name": "新强联",
       "market": "sz",
       "board_label": "创业板",
       "sources": [
@@ -43146,54 +43663,9 @@
         "maharo研报"
       ]
     },
-    "sh_688256": {
-      "code": "688256",
-      "name": "寒武纪",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
     "sh_688012": {
       "code": "688012",
       "name": "中微公司",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688347": {
-      "code": "688347",
-      "name": "华虹宏力",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688072": {
-      "code": "688072",
-      "name": "拓荆科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688498": {
-      "code": "688498",
-      "name": "源杰科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688525": {
-      "code": "688525",
-      "name": "佰维存储",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43209,18 +43681,45 @@
         "科创板成交前100"
       ]
     },
-    "sh_688041": {
-      "code": "688041",
-      "name": "海光信息",
+    "sh_688498": {
+      "code": "688498",
+      "name": "源杰科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688361": {
-      "code": "688361",
-      "name": "中科飞测",
+    "sh_688347": {
+      "code": "688347",
+      "name": "华虹宏力",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688256": {
+      "code": "688256",
+      "name": "寒武纪",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688525": {
+      "code": "688525",
+      "name": "佰维存储",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688072": {
+      "code": "688072",
+      "name": "拓荆科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43236,171 +43735,18 @@
         "科创板成交前100"
       ]
     },
-    "sh_688702": {
-      "code": "688702",
-      "name": "盛科通信",
+    "sh_688361": {
+      "code": "688361",
+      "name": "中科飞测",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688120": {
-      "code": "688120",
-      "name": "华海清科",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688048": {
-      "code": "688048",
-      "name": "长光华芯",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688549": {
-      "code": "688549",
-      "name": "中巨芯",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688521": {
-      "code": "688521",
-      "name": "芯原股份",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688627": {
-      "code": "688627",
-      "name": "精智达",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688630": {
-      "code": "688630",
-      "name": "芯碁微装",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688629": {
-      "code": "688629",
-      "name": "华丰科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688200": {
-      "code": "688200",
-      "name": "华峰测控",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688019": {
-      "code": "688019",
-      "name": "安集科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688126": {
-      "code": "688126",
-      "name": "沪硅产业",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688141": {
-      "code": "688141",
-      "name": "杰华特",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688017": {
-      "code": "688017",
-      "name": "绿的谐波",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688432": {
-      "code": "688432",
-      "name": "有研硅",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688596": {
-      "code": "688596",
-      "name": "正帆科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688111": {
-      "code": "688111",
-      "name": "金山办公",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688362": {
-      "code": "688362",
-      "name": "甬矽电子",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688797": {
-      "code": "688797",
-      "name": "臻宝科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688099": {
-      "code": "688099",
-      "name": "晶晨股份",
+    "sh_688041": {
+      "code": "688041",
+      "name": "海光信息",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43416,27 +43762,63 @@
         "科创板成交前100"
       ]
     },
-    "sh_688110": {
-      "code": "688110",
-      "name": "东芯股份",
+    "sh_688048": {
+      "code": "688048",
+      "name": "长光华芯",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688249": {
-      "code": "688249",
-      "name": "晶合集成",
+    "sh_688502": {
+      "code": "688502",
+      "name": "茂莱光学",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688002": {
-      "code": "688002",
-      "name": "睿创微纳",
+    "sh_688702": {
+      "code": "688702",
+      "name": "盛科通信",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688630": {
+      "code": "688630",
+      "name": "芯碁微装",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688120": {
+      "code": "688120",
+      "name": "华海清科",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688432": {
+      "code": "688432",
+      "name": "有研硅",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688019": {
+      "code": "688019",
+      "name": "安集科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43452,9 +43834,81 @@
         "科创板成交前100"
       ]
     },
-    "sh_688548": {
-      "code": "688548",
-      "name": "广钢气体",
+    "sh_688549": {
+      "code": "688549",
+      "name": "中巨芯",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688627": {
+      "code": "688627",
+      "name": "精智达",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688111": {
+      "code": "688111",
+      "name": "金山办公",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688629": {
+      "code": "688629",
+      "name": "华丰科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688017": {
+      "code": "688017",
+      "name": "绿的谐波",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688521": {
+      "code": "688521",
+      "name": "芯原股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688126": {
+      "code": "688126",
+      "name": "沪硅产业",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688268": {
+      "code": "688268",
+      "name": "华特气体",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688783": {
+      "code": "688783",
+      "name": "西安奕材",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43470,18 +43924,45 @@
         "科创板成交前100"
       ]
     },
-    "sh_688082": {
-      "code": "688082",
-      "name": "盛美上海",
+    "sh_688110": {
+      "code": "688110",
+      "name": "东芯股份",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688729": {
-      "code": "688729",
-      "name": "屹唐股份",
+    "sh_688200": {
+      "code": "688200",
+      "name": "华峰测控",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688002": {
+      "code": "688002",
+      "name": "睿创微纳",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688362": {
+      "code": "688362",
+      "name": "甬矽电子",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688596": {
+      "code": "688596",
+      "name": "正帆科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43498,33 +43979,6 @@
         "maharo研报"
       ]
     },
-    "sh_688123": {
-      "code": "688123",
-      "name": "聚辰股份",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688036": {
-      "code": "688036",
-      "name": "传音控股",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688268": {
-      "code": "688268",
-      "name": "华特气体",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
     "sh_688167": {
       "code": "688167",
       "name": "炬光科技",
@@ -43534,36 +43988,18 @@
         "科创板成交前100"
       ]
     },
-    "sh_688403": {
-      "code": "688403",
-      "name": "汇成股份",
+    "sh_688141": {
+      "code": "688141",
+      "name": "杰华特",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688353": {
-      "code": "688353",
-      "name": "华盛锂电",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688234": {
-      "code": "688234",
-      "name": "天岳先进",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688235": {
-      "code": "688235",
-      "name": "百济神州",
+    "sh_688082": {
+      "code": "688082",
+      "name": "盛美上海",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43579,18 +44015,54 @@
         "科创板成交前100"
       ]
     },
-    "sh_688802": {
-      "code": "688802",
-      "name": "沐曦股份",
+    "sh_688507": {
+      "code": "688507",
+      "name": "索辰科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688396": {
-      "code": "688396",
-      "name": "华润微",
+    "sh_688797": {
+      "code": "688797",
+      "name": "臻宝科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688249": {
+      "code": "688249",
+      "name": "晶合集成",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688123": {
+      "code": "688123",
+      "name": "聚辰股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688099": {
+      "code": "688099",
+      "name": "晶晨股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688036": {
+      "code": "688036",
+      "name": "传音控股",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43606,162 +44078,9 @@
         "科创板成交前100"
       ]
     },
-    "sh_688372": {
-      "code": "688372",
-      "name": "伟测科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688300": {
-      "code": "688300",
-      "name": "联瑞新材",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688220": {
-      "code": "688220",
-      "name": "翱捷科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688777": {
-      "code": "688777",
-      "name": "中控技术",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688676": {
-      "code": "688676",
-      "name": "金盘科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688578": {
-      "code": "688578",
-      "name": "艾力斯",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688106": {
-      "code": "688106",
-      "name": "金宏气体",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688535": {
-      "code": "688535",
-      "name": "华海诚科",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688652": {
-      "code": "688652",
-      "name": "京仪装备",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688469": {
-      "code": "688469",
-      "name": "芯联集成",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688700": {
-      "code": "688700",
-      "name": "东威科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688172": {
-      "code": "688172",
-      "name": "燕东微",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688545": {
-      "code": "688545",
-      "name": "兴福电子",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688205": {
-      "code": "688205",
-      "name": "德科立",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688333": {
-      "code": "688333",
-      "name": "铂力特",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688213": {
-      "code": "688213",
-      "name": "思特威",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688668": {
-      "code": "688668",
-      "name": "鼎通科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688536": {
-      "code": "688536",
-      "name": "思瑞浦",
+    "sh_688548": {
+      "code": "688548",
+      "name": "广钢气体",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43777,9 +44096,18 @@
         "科创板成交前100"
       ]
     },
-    "sh_688266": {
-      "code": "688266",
-      "name": "泽璟制药",
+    "sh_688172": {
+      "code": "688172",
+      "name": "燕东微",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688668": {
+      "code": "688668",
+      "name": "鼎通科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43795,117 +44123,18 @@
         "科创板成交前100"
       ]
     },
-    "sh_688257": {
-      "code": "688257",
-      "name": "新锐股份",
+    "sh_688353": {
+      "code": "688353",
+      "name": "华盛锂电",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688308": {
-      "code": "688308",
-      "name": "欧科亿",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688322": {
-      "code": "688322",
-      "name": "奥比中光",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688385": {
-      "code": "688385",
-      "name": "复旦微电",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688331": {
-      "code": "688331",
-      "name": "荣昌生物",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688343": {
-      "code": "688343",
-      "name": "云天励飞",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688143": {
-      "code": "688143",
-      "name": "长盈通",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688728": {
-      "code": "688728",
-      "name": "格科微",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688195": {
-      "code": "688195",
-      "name": "腾景科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688388": {
-      "code": "688388",
-      "name": "嘉元科技",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688795": {
-      "code": "688795",
-      "name": "摩尔线程",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688027": {
-      "code": "688027",
-      "name": "国盾量子",
-      "market": "sh",
-      "board_label": "科创板",
-      "sources": [
-        "科创板成交前100"
-      ]
-    },
-    "sh_688503": {
-      "code": "688503",
-      "name": "聚和材料",
+    "sh_688676": {
+      "code": "688676",
+      "name": "金盘科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -43921,72 +44150,279 @@
         "科创板成交前100"
       ]
     },
-    "sh_688593": {
-      "code": "688593",
-      "name": "新相微",
+    "sh_688300": {
+      "code": "688300",
+      "name": "联瑞新材",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688392": {
-      "code": "688392",
-      "name": "骄成超声",
+    "sh_688234": {
+      "code": "688234",
+      "name": "天岳先进",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688202": {
-      "code": "688202",
-      "name": "美迪西",
+    "sh_688371": {
+      "code": "688371",
+      "name": "菲沃泰",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688559": {
-      "code": "688559",
-      "name": "海目星",
+    "sh_688503": {
+      "code": "688503",
+      "name": "聚和材料",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688018": {
-      "code": "688018",
-      "name": "乐鑫科技",
+    "sh_688235": {
+      "code": "688235",
+      "name": "百济神州",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688180": {
-      "code": "688180",
-      "name": "君实生物",
+    "sh_688578": {
+      "code": "688578",
+      "name": "艾力斯",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688608": {
-      "code": "688608",
-      "name": "恒玄科技",
+    "sh_688729": {
+      "code": "688729",
+      "name": "屹唐股份",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688783": {
-      "code": "688783",
-      "name": "西安奕材",
+    "sh_688536": {
+      "code": "688536",
+      "name": "思瑞浦",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688802": {
+      "code": "688802",
+      "name": "沐曦股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688545": {
+      "code": "688545",
+      "name": "兴福电子",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688403": {
+      "code": "688403",
+      "name": "汇成股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688535": {
+      "code": "688535",
+      "name": "华海诚科",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688322": {
+      "code": "688322",
+      "name": "奥比中光",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688469": {
+      "code": "688469",
+      "name": "芯联集成",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688396": {
+      "code": "688396",
+      "name": "华润微",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688106": {
+      "code": "688106",
+      "name": "金宏气体",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688700": {
+      "code": "688700",
+      "name": "东威科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688728": {
+      "code": "688728",
+      "name": "格科微",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688652": {
+      "code": "688652",
+      "name": "京仪装备",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688372": {
+      "code": "688372",
+      "name": "伟测科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688266": {
+      "code": "688266",
+      "name": "泽璟制药",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688660": {
+      "code": "688660",
+      "name": "电气风电",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688220": {
+      "code": "688220",
+      "name": "翱捷科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688143": {
+      "code": "688143",
+      "name": "长盈通",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688765": {
+      "code": "688765",
+      "name": "禾元生物",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688195": {
+      "code": "688195",
+      "name": "腾景科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688308": {
+      "code": "688308",
+      "name": "欧科亿",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688257": {
+      "code": "688257",
+      "name": "新锐股份",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688027": {
+      "code": "688027",
+      "name": "国盾量子",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688777": {
+      "code": "688777",
+      "name": "中控技术",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688333": {
+      "code": "688333",
+      "name": "铂力特",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
@@ -44002,45 +44438,144 @@
         "科创板成交前100"
       ]
     },
-    "sh_688775": {
-      "code": "688775",
-      "name": "影石创新",
+    "sh_688205": {
+      "code": "688205",
+      "name": "德科立",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688507": {
-      "code": "688507",
-      "name": "索辰科技",
+    "sh_688213": {
+      "code": "688213",
+      "name": "思特威-W",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688531": {
-      "code": "688531",
-      "name": "日联科技",
+    "sh_688662": {
+      "code": "688662",
+      "name": "富信科技",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
       ]
     },
-    "sh_688222": {
-      "code": "688222",
-      "name": "成都先导",
+    "sh_688615": {
+      "code": "688615",
+      "name": "合合信息",
       "market": "sh",
       "board_label": "科创板",
       "sources": [
         "科创板成交前100"
+      ]
+    },
+    "sh_688385": {
+      "code": "688385",
+      "name": "复旦微电",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688584": {
+      "code": "688584",
+      "name": "上海合晶",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688388": {
+      "code": "688388",
+      "name": "嘉元科技",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688401": {
+      "code": "688401",
+      "name": "路维光电",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688343": {
+      "code": "688343",
+      "name": "云天励飞-U",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688127": {
+      "code": "688127",
+      "name": "蓝特光学",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688795": {
+      "code": "688795",
+      "name": "摩尔线程-U",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688593": {
+      "code": "688593",
+      "name": "新相微",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "sh_688166": {
+      "code": "688166",
+      "name": "博瑞医药",
+      "market": "sh",
+      "board_label": "科创板",
+      "sources": [
+        "科创板成交前100"
+      ]
+    },
+    "hk_02513": {
+      "code": "02513",
+      "name": "智谱",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00981": {
+      "code": "00981",
+      "name": "中芯国际",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
       ]
     },
     "hk_01810": {
       "code": "01810",
-      "name": "01810",
+      "name": "小米集团-W",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44049,7 +44584,7 @@
     },
     "hk_09988": {
       "code": "09988",
-      "name": "阿里巴巴",
+      "name": "阿里巴巴-W",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44059,7 +44594,7 @@
     },
     "hk_00700": {
       "code": "00700",
-      "name": "腾讯",
+      "name": "腾讯控股",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44067,36 +44602,36 @@
         "maharo研报"
       ]
     },
-    "hk_03690": {
-      "code": "03690",
-      "name": "03690",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_02513": {
-      "code": "02513",
-      "name": "02513",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
     "hk_01347": {
       "code": "01347",
-      "name": "01347",
+      "name": "华虹宏力",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_00981": {
-      "code": "00981",
-      "name": "00981",
+    "hk_03986": {
+      "code": "03986",
+      "name": "兆易创新",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_03690": {
+      "code": "03690",
+      "name": "美团-W",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00939": {
+      "code": "00939",
+      "name": "建设银行",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44113,9 +44648,137 @@
         "maharo研报"
       ]
     },
-    "hk_00939": {
-      "code": "00939",
-      "name": "00939",
+    "hk_06181": {
+      "code": "06181",
+      "name": "老铺黄金",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_06869": {
+      "code": "06869",
+      "name": "长飞光纤光缆",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_09660": {
+      "code": "09660",
+      "name": "地平线机器人-W",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50",
+        "maharo研报"
+      ]
+    },
+    "hk_06809": {
+      "code": "06809",
+      "name": "澜起科技",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50",
+        "maharo研报"
+      ]
+    },
+    "hk_00992": {
+      "code": "00992",
+      "name": "联想集团",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_09887": {
+      "code": "09887",
+      "name": "维立志博-B",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01299": {
+      "code": "01299",
+      "name": "友邦保险",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00148": {
+      "code": "00148",
+      "name": "建滔集团",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00100": {
+      "code": "00100",
+      "name": "MINIMAX-W",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_09992": {
+      "code": "09992",
+      "name": "09992",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01398": {
+      "code": "01398",
+      "name": "01398",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01211": {
+      "code": "01211",
+      "name": "01211",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_09999": {
+      "code": "09999",
+      "name": "09999",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_09903": {
+      "code": "09903",
+      "name": "09903",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_02318": {
+      "code": "02318",
+      "name": "02318",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44125,33 +44788,6 @@
     "hk_03750": {
       "code": "03750",
       "name": "03750",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_06869": {
-      "code": "06869",
-      "name": "06869",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09961": {
-      "code": "09961",
-      "name": "09961",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_03986": {
-      "code": "03986",
-      "name": "03986",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44177,115 +44813,6 @@
         "maharo研报"
       ]
     },
-    "hk_00148": {
-      "code": "00148",
-      "name": "00148",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_06809": {
-      "code": "06809",
-      "name": "澜起科技",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50",
-        "maharo研报"
-      ]
-    },
-    "hk_00100": {
-      "code": "00100",
-      "name": "00100",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09992": {
-      "code": "09992",
-      "name": "09992",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_03939": {
-      "code": "03939",
-      "name": "03939",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_01398": {
-      "code": "01398",
-      "name": "01398",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_00992": {
-      "code": "00992",
-      "name": "00992",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_01024": {
-      "code": "01024",
-      "name": "01024",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_00027": {
-      "code": "00027",
-      "name": "00027",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09903": {
-      "code": "09903",
-      "name": "09903",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_01211": {
-      "code": "01211",
-      "name": "01211",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09887": {
-      "code": "09887",
-      "name": "09887",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
     "hk_02899": {
       "code": "02899",
       "name": "02899",
@@ -44295,36 +44822,18 @@
         "港股成交前50"
       ]
     },
-    "hk_02318": {
-      "code": "02318",
-      "name": "02318",
+    "hk_09961": {
+      "code": "09961",
+      "name": "09961",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_00388": {
-      "code": "00388",
-      "name": "00388",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09999": {
-      "code": "09999",
-      "name": "09999",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_02259": {
-      "code": "02259",
-      "name": "02259",
+    "hk_02328": {
+      "code": "02328",
+      "name": "02328",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44340,54 +44849,126 @@
         "港股成交前50"
       ]
     },
-    "hk_02628": {
-      "code": "02628",
-      "name": "02628",
+    "hk_00027": {
+      "code": "00027",
+      "name": "00027",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_02359": {
-      "code": "02359",
-      "name": "02359",
+    "hk_02556": {
+      "code": "02556",
+      "name": "02556",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_02388": {
-      "code": "02388",
-      "name": "02388",
+    "hk_09618": {
+      "code": "09618",
+      "name": "09618",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_03988": {
-      "code": "03988",
-      "name": "03988",
+    "hk_02015": {
+      "code": "02015",
+      "name": "02015",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_00941": {
-      "code": "00941",
-      "name": "00941",
+    "hk_02685": {
+      "code": "02685",
+      "name": "02685",
       "market": "hk",
       "board_label": "港股",
       "sources": [
         "港股成交前50"
       ]
     },
-    "hk_01299": {
-      "code": "01299",
-      "name": "01299",
+    "hk_06082": {
+      "code": "06082",
+      "name": "06082",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_06166": {
+      "code": "06166",
+      "name": "06166",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00175": {
+      "code": "00175",
+      "name": "00175",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_00388": {
+      "code": "00388",
+      "name": "00388",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_02476": {
+      "code": "02476",
+      "name": "02476",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01548": {
+      "code": "01548",
+      "name": "01548",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01024": {
+      "code": "01024",
+      "name": "01024",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_02727": {
+      "code": "02727",
+      "name": "02727",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "港股成交前50"
+      ]
+    },
+    "hk_01093": {
+      "code": "01093",
+      "name": "01093",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44404,14 +44985,13 @@
         "maharo研报"
       ]
     },
-    "hk_09660": {
-      "code": "09660",
-      "name": "地平线机器人",
+    "hk_02162": {
+      "code": "02162",
+      "name": "02162",
       "market": "hk",
       "board_label": "港股",
       "sources": [
-        "港股成交前50",
-        "maharo研报"
+        "港股成交前50"
       ]
     },
     "hk_09888": {
@@ -44423,73 +45003,9 @@
         "港股成交前50"
       ]
     },
-    "hk_02269": {
-      "code": "02269",
-      "name": "药明生物",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50",
-        "maharo研报"
-      ]
-    },
-    "hk_01093": {
-      "code": "01093",
-      "name": "01093",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_06082": {
-      "code": "06082",
-      "name": "06082",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_02476": {
-      "code": "02476",
-      "name": "02476",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_01801": {
-      "code": "01801",
-      "name": "01801",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_09618": {
-      "code": "09618",
-      "name": "09618",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_00175": {
-      "code": "00175",
-      "name": "00175",
-      "market": "hk",
-      "board_label": "港股",
-      "sources": [
-        "港股成交前50"
-      ]
-    },
-    "hk_01772": {
-      "code": "01772",
-      "name": "01772",
+    "hk_02477": {
+      "code": "02477",
+      "name": "02477",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44552,7 +45068,7 @@
     },
     "hk_01519": {
       "code": "01519",
-      "name": "极兔速递",
+      "name": "极兔速递-W",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44595,6 +45111,15 @@
         "maharo研报"
       ]
     },
+    "hk_02269": {
+      "code": "02269",
+      "name": "药明生物",
+      "market": "hk",
+      "board_label": "港股",
+      "sources": [
+        "maharo研报"
+      ]
+    },
     "hk_03759": {
       "code": "03759",
       "name": "康龙化成",
@@ -44624,7 +45149,7 @@
     },
     "hk_02252": {
       "code": "02252",
-      "name": "微创机器人",
+      "name": "微创机器人-B",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44642,7 +45167,7 @@
     },
     "hk_01833": {
       "code": "01833",
-      "name": "平安健康",
+      "name": "平安好医生",
       "market": "hk",
       "board_label": "港股",
       "sources": [
@@ -44731,7 +45256,7 @@
       ]
     }
   },
-  "candidate_total": 373,
-  "total_count": 309,
+  "candidate_total": 375,
+  "total_count": 314,
   "update_time": "2026-07-28 10:16:08"
 }
