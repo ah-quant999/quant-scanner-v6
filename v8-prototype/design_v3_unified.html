@@ -208,6 +208,7 @@
       <div class="card" style="grid-column:1/-1">
         <h3><span class="ic">🚀</span>打新速览 - T+1更新 · <span id="ipoFresh">更新于 今日 12:18</span></h3>
         <div id="ipoAll">
+          <div class="ipo-sec" data-cat="listedToday"><div class="ipo-sec-title">今日上市</div><div class="ipo-grid" id="ipoGrid-listedToday"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
           <div class="ipo-sec" data-cat="todayApply"><div class="ipo-sec-title">今日申购</div><div class="ipo-grid" id="ipoGrid-todayApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
           <div class="ipo-sec" data-cat="futureApply"><div class="ipo-sec-title">待申购</div><div class="ipo-grid" id="ipoGrid-futureApply"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
           <div class="ipo-sec" data-cat="pricing"><div class="ipo-sec-title">待定价</div><div class="ipo-grid" id="ipoGrid-pricing"><div class="note" style="grid-column:1/-1">加载中…</div></div></div>
@@ -808,7 +809,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
   }
 
   function classify(items){
-    const groups={todayApply:[],futureApply:[],pricing:[],preListing:[],tracking:[]};
+    const groups={listedToday:[],todayApply:[],futureApply:[],pricing:[],preListing:[],tracking:[]};
     items.forEach(it=>{
       const status=it.status||'';
       const apply=String(it.apply_date||'');
@@ -819,11 +820,18 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
         else if(apply>today) groups.futureApply.push(it);
       }else if(status==='pre_listing'){
         groups.preListing.push(it);
-      }else if(status==='listed_today' || status==='tracking'){
+      }else if(status==='listed_today'){
+        groups.listedToday.push(it);
+      }else if(status==='tracking'){
         groups.tracking.push(it);
       }
     });
-    Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>(b.score||0)-(a.score||0)));
+    const isBond=it=>(it.board==='可转债')?1:0;
+    Object.keys(groups).forEach(k=>groups[k].sort((a,b)=>{
+      const ab=isBond(a), bb=isBond(b);
+      if(ab!==bb) return ab-bb;
+      return (b.score||0)-(a.score||0);
+    }));
     return groups;
   }
 
@@ -870,8 +878,8 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     </div>`;
   }
 
-  const CAT_LABELS={todayApply:'今日申购',futureApply:'待申购',pricing:'待定价',preListing:'待上市',tracking:'上市日追踪5日'};
-  const CAT_ORDER=['todayApply','futureApply','pricing','preListing','tracking'];
+  const CAT_LABELS={listedToday:'今日上市',todayApply:'今日申购',futureApply:'待申购',pricing:'待定价',preListing:'待上市',tracking:'上市日追踪5日'};
+  const CAT_ORDER=['listedToday','todayApply','futureApply','pricing','preListing','tracking'];
 
   function fmtUpdateTime(ts){
     if(!ts) return '今日';
