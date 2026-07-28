@@ -12,7 +12,7 @@ import akshare as ak
 import json
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 
 DATA_DIR = 'data'
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -97,9 +97,10 @@ def main():
     active.sort(key=lambda x: x['amount'], reverse=True)
     top_active = active[:10]
 
-    inflow = [x for x in rows if x['main_net_inflow'] != 0]
-    inflow.sort(key=lambda x: x['main_net_inflow'], reverse=True)
-    top_inflow = inflow[:10]
+    flow = [x for x in rows if x['main_net_inflow'] != 0]
+    flow.sort(key=lambda x: x['main_net_inflow'], reverse=True)
+    top_inflow = flow[:10]
+    top_outflow = flow[-10:][::-1]  # 净流出最多，按净流出绝对值从大到小
 
     up = sum(1 for x in rows if x['pct'] > 0)
     down = sum(1 for x in rows if x['pct'] < 0)
@@ -118,12 +119,54 @@ def main():
     except Exception:
         update_time = datetime.now().strftime('%Y-%m-%d %H:%M')
 
+    data_date = (update_time or '')[:10] or datetime.now().strftime('%Y-%m-%d')
+
+    # 维护历史榜单，计算“连续在榜天数”
+    HISTORY_FILE = os.path.join(DATA_DIR, 'etf_intraday_heat_history.json')
+    history = {}
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, 'r', encoding='utf-8') as f:
+                history = json.load(f)
+        except Exception:
+            history = {}
+    if not isinstance(history, dict):
+        history = {}
+    history[data_date] = {
+        'inflow_codes': [x['code'] for x in top_inflow],
+        'outflow_codes': [x['code'] for x in top_outflow],
+    }
+    # 只保留最近 60 天
+    cutoff = (datetime.strptime(data_date, '%Y-%m-%d') - timedelta(days=60)).strftime('%Y-%m-%d')
+    history = {k: v for k, v in history.items() if k >= cutoff}
+    with open(HISTORY_FILE, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
+
+    def calc_streak(code, direction):
+        d = datetime.strptime(data_date, '%Y-%m-%d')
+        days = 0
+        while True:
+            key = d.strftime('%Y-%m-%d')
+            entry = history.get(key, {})
+            if code in entry.get(direction, []):
+                days += 1
+                d -= timedelta(days=1)
+            else:
+                break
+        return days
+
+    for x in top_inflow:
+        x['streak'] = calc_streak(x['code'], 'inflow_codes')
+    for x in top_outflow:
+        x['streak'] = calc_streak(x['code'], 'outflow_codes')
+
     result = {
         'update_time': update_time or datetime.now().strftime('%Y-%m-%d %H:%M'),
-        'data_date': (update_time or '')[:10],
+        'data_date': data_date,
         'total': len(rows),
         'top_active': top_active,
         'top_inflow': top_inflow,
+        'top_outflow': top_outflow,
         'summary': {
             'up': up, 'down': down, 'flat': flat,
             'net_inflow_yi': round(net_total / 1e8, 2),

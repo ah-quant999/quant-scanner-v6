@@ -652,6 +652,35 @@ tr:hover td { background: #fafbfc; }
       </div>
     </div>
 
+    <!-- 📊 ETF盘中资金热度：流入/流出各前10（盘中实时·T+0） -->
+    <div style="background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
+        <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中资金热度<span style="font-size:10px;font-weight:400;color:#999;">盘中实时·T+0</span></span>
+        <span id="etfHeatUpdateTime" class="update-time-badge"></span>
+      </div>
+      <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:6px 14px 0;"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;font-size:10px;color:#888;border-bottom:1px solid #ffebee;background:#fffafa;">
+            <span style="width:56px;">代码</span><span style="flex:1;">名称</span>
+            <span style="width:50px;text-align:right;">涨幅</span>
+            <span style="width:64px;text-align:right;">净流入</span>
+            <span style="width:38px;text-align:center;">连N</span>
+          </div>
+          <div id="etfHeatInflowBody"></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;font-size:10px;color:#888;border-bottom:1px solid #e8f5e9;background:#fafffb;">
+            <span style="width:56px;">代码</span><span style="flex:1;">名称</span>
+            <span style="width:50px;text-align:right;">跌幅</span>
+            <span style="width:64px;text-align:right;">净流出</span>
+            <span style="width:38px;text-align:center;">连N</span>
+          </div>
+          <div id="etfHeatOutflowBody"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- 📊 概念涨跌排名（2026-07-08 从健康看板暂未上架区移回总览页最下方） -->
     <div id="conceptRankingCard" style="background:#fff;border:1px solid #e8eaed;border-left:4px solid #b45309;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
       <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
@@ -1289,22 +1318,6 @@ tr:hover td { background: #fafbfc; }
           </div>
           <div style="font-size:11px;font-weight:400;color:#1565c0;margin:0 0 6px 0;padding:0 14px;">沪深300/中证500/中证1000/创业板ETF等宽基指数ETF每日净申购赎回份额</div>
           <div class="sh-chart-svg" id="etfChart"></div>
-        </div>
-
-        <!-- ETF盘中热度 / 资金流（盘中实时） -->
-        <div style="background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:10px;">
-          <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
-            <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中热度 / 资金流<span style="font-size:10px;font-weight:400;color:#999;">盘中实时</span></span>
-            <span id="etfHeatUpdateTime" class="update-time-badge"></span>
-          </div>
-          <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:6px 14px 0;"></div>
-          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px 2px;font-size:11px;color:#888;border-bottom:1px solid #f0f0f0;">
-            <span style="width:64px;">代码</span><span style="flex:1;">名称</span>
-            <span style="width:62px;text-align:right;">涨跌幅</span>
-            <span style="width:62px;text-align:right;">成交额</span>
-            <span style="width:62px;text-align:right;">主力净流入</span>
-          </div>
-          <div id="etfHeatBody"></div>
         </div>
 
       </div>
@@ -343761,38 +343774,49 @@ var RECOMMEND = window.RECOMMEND = [
     // 渲染 ETF 盘中热度 / 资金流
     function renderEtfHeat() {
       const d = window.ETF_INTRADAY_HEAT || {};
-      const el = document.getElementById('etfHeatBody');
-      if (!el) return;
+      const inEl = document.getElementById('etfHeatInflowBody');
+      const outEl = document.getElementById('etfHeatOutflowBody');
+      if (!inEl || !outEl) return;
       const summaryEl = document.getElementById('etfHeatSummary');
       if (summaryEl) {
         const s = d.summary || {};
         const netYi = (s.net_inflow_yi != null) ? s.net_inflow_yi : 0;
         const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
-        summaryEl.innerHTML = '覆盖 ' + (d.total || 0) + ' 只ETF · 上涨 ' + (s.up || 0) + ' / 下跌 ' + (s.down || 0) + ' · 整体主力净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
+        summaryEl.innerHTML = '覆盖 ' + (d.total || 0) + ' 只权益类ETF · <b style="color:#e53935;">▲ ' + (s.up || 0) + '</b> / <b style="color:#2e7d32;">▼ ' + (s.down || 0) + '</b> · 整体主力净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
       }
-      const list = d.top_active || [];
-      if (!list.length) {
-        el.innerHTML = '<div style="padding:14px;color:#999;font-size:12px;">暂无盘中ETF热度数据</div>';
-      } else {
+      function fmtFlow(v) {
+        const yi = (v || 0) / 1e8;
+        return (yi >= 0 ? '+' : '') + yi.toFixed(2) + '亿';
+      }
+      function renderList(el, list, isInflow) {
+        if (!list || !list.length) {
+          el.innerHTML = '<div style="padding:14px;color:#999;font-size:12px;">暂无数据</div>';
+          return;
+        }
         let rows = '';
-        list.slice(0, 12).forEach(function(it) {
+        list.forEach(function(it, idx) {
           const pct = it.pct || 0;
           const pctColor = pct >= 0 ? '#e53935' : '#2e7d32';
           const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
-          const amt = (it.amount || 0) / 1e8;
-          const net = (it.main_net_inflow || 0) / 1e8;
-          const netColor = net >= 0 ? '#e53935' : '#2e7d32';
-          const netStr = (net >= 0 ? '+' : '') + net.toFixed(2);
-          rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 14px;border-bottom:1px solid #f5f5f5;font-size:12px;">'
-            + '<span style="width:64px;color:#1565c0;">' + it.code + '</span>'
+          const net = it.main_net_inflow || 0;
+          const netColor = isInflow ? '#e53935' : '#2e7d32';
+          const streak = it.streak || 1;
+          const streakBadge = streak >= 2
+            ? '<span style="width:38px;text-align:center;font-size:10px;color:#fff;background:' + (isInflow ? '#e53935' : '#2e7d32') + ';border-radius:8px;padding:1px 3px;font-weight:600;">连' + streak + '天</span>'
+            : '<span style="width:38px;text-align:center;font-size:10px;color:#aaa;">—</span>';
+          rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 10px 5px 14px;border-bottom:1px solid #f5f5f5;font-size:12px;" title="成交额 ' + ((it.amount || 0) / 1e8).toFixed(1) + '亿">'
+            + '<span style="width:30px;color:#999;font-weight:600;">' + (idx + 1) + '</span>'
+            + '<span style="width:56px;color:#1565c0;">' + it.code + '</span>'
             + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
-            + '<span style="width:62px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
-            + '<span style="width:62px;text-align:right;color:#555;">' + amt.toFixed(1) + '亿</span>'
-            + '<span style="width:62px;text-align:right;color:' + netColor + ';">' + netStr + '亿</span>'
+            + '<span style="width:50px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
+            + '<span style="width:64px;text-align:right;color:' + netColor + ';font-weight:600;">' + fmtFlow(net) + '</span>'
+            + streakBadge
             + '</div>';
         });
         el.innerHTML = rows;
       }
+      renderList(inEl, d.top_inflow, true);
+      renderList(outEl, d.top_outflow, false);
       const ut = document.getElementById('etfHeatUpdateTime');
       if (ut && d.update_time) ut.textContent = '更新于 ' + fmtDataTime(d.update_time).text;
     }
