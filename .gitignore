@@ -103,6 +103,10 @@ data/*
 !data/_heartbeat.log
 # 例外：IPO 评分（双机+云端均需，2026-07-28 主人要求"盘前就要看到当日上市新股"——必须入 main 才能推到云端）
 !data/ipo_score.json
+# 例外：上证深证历史成交额+涨跌家数（"近一月 涨跌家数统计"卡 2026-07-28 主人截图显示卡在 7/27，
+# 根因：本文件自 7/17 14:27 后再没被 push——缺白名单则 safe_pull 永远读 origin/main 旧版，
+# 现场 update_time=今日 11:42 是本地刷过但没入仓，线上永远卡在 7/27）
+!data/sh_sz_history.json
 # 例外：波动率观测实验卡数据（calc_volatility_watch.py 输出，构建注入前端）
 !data/experiment/volatility_watch_*.json
 
