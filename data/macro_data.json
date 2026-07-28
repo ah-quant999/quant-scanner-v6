@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-28 15:18:36",
+  "update_time": "2026-07-28 15:21:42",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7337,
@@ -82,13 +82,13 @@
     },
     "usdcnh": {
       "price": 6.7654,
-      "prev_close": 6.7681,
+      "prev_close": 6.7683,
       "date": "2026-07-28",
       "source": "Sina实时"
     },
     "dxy": {
       "value": 101.49,
-      "pct": 0.05,
+      "pct": 0.06,
       "date": "2026-07-28",
       "source": "Sina-DINIW"
     },
@@ -109,7 +109,7 @@
         "date": "2026-07-28"
       },
       "oil": {
-        "value": 80.94,
+        "value": 81.16,
         "unit": "美元/桶",
         "date": "2026-07-28"
       }
