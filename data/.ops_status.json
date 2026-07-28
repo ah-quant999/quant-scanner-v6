@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-28 08:54:25",
-  "cloud_deploy_time": "20260728085425",
+  "updated_at": "2026-07-28 09:11:19",
+  "cloud_deploy_time": "20260728091119",
   "failover_status": "OK",
   "failover_time": "2026-07-28 08:44:19",
   "data_correctness": {
@@ -39,7 +39,7 @@
     },
     "xiaojiu": {
       "status": "ok",
-      "last_time": "2026-07-28 08:30:30",
+      "last_time": "2026-07-28 08:55:13",
       "mode": "deploy"
     },
     "alimi": {
@@ -52,17 +52,38 @@
   "audit": {
     "severity": "WARN",
     "error_count": 0,
-    "warn_count": 1,
+    "warn_count": 4,
     "fixed_count": 0,
     "issues": [
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "08:00",
+        "task": "08_交接检查",
+        "msg": "08:00 08_交接检查 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "08:30",
+        "task": "candidate_pool_watchdog",
+        "msg": "08:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "08:45",
+        "task": "pre_market_deploy",
+        "msg": "08:45 pre_market_deploy 应跑但 _heartbeat.log 无 DONE"
+      },
       {
         "level": "WARN",
         "type": "ops_neodata_mismatch",
         "msg": "ops_status.json neodata_valid_until=2026-07-28 16:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
       }
     ],
-    "checked_at": "2026-07-28 08:09:11",
-    "updated_at": "2026-07-28 08:09:11"
+    "checked_at": "2026-07-28 09:00:19",
+    "updated_at": "2026-07-28 09:00:19"
   },
   "monitor_alert": {
     "level": "FAIL",
