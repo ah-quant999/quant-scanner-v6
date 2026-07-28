@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- build: 20260727101730 -->
-<meta name="build-stamp" content="20260727101730">
+<!-- build: __BUILD_STAMP__ -->
+<meta name="build-stamp" content="__BUILD_STAMP__">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>九宝量化 v6.0 (20260727101730)</title>
+<title>九宝量化 v6.0</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1331,8 +1331,8 @@ tr:hover td { background: #fafbfc; }
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "2026-07-23 00:00";
-window.POST_CLOSE_TIME = "2026-07-24 15:30:00";
+window.CLOUD_UPDATE_TIME = "CLOUD_TIME_PLACEHOLDER";
+window.POST_CLOSE_TIME = "POST_CLOSE_TIME_PLACEHOLDER";
 window.CANDIDATE_POOL = {
 "update_time": "2026-07-27 10:06:16",
 "total": 374,
@@ -344101,20 +344101,20 @@ function setChartTime(id, timeStr, source) {
 }
 
 // 盘后类卡片统一时间戳：归一到交易日收盘 15:30（与健康卡片一致），但严重过期(≥2天)保留真实时间+红标
+// 2026-07-29 修复：POST_CLOSE_TIME 若比 rawTime 还旧，则不再用它归一化，防止出现"4天前 15:30"的脏显示。
 function setPostMarketTime(id, rawTime, source) {
   var ft = rawTime ? fmtDataTime(rawTime) : null;
+  var pcFt = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : null;
   if (ft && ft.daysAgo !== undefined && ft.daysAgo >= 2) {
     setChartTime(id, rawTime, source); // 真实过期，保留红标不掩盖
     return;
   }
-  // 2026-07-17 修复：rawTime 是今天/昨晚盘后时优先用它（如 lhb 00:30 刷 → "今日 00:30"），
-  //   否则才回退到 POST_CLOSE_TIME（"昨日 15:30"）。原来硬性优先 POST_CLOSE_TIME 导致
-  //   4 张卡都显示"昨日 15:30"而主人误判为陈旧。
-  if (rawTime && ft && ft.daysAgo === 0) {
-    setChartTime(id, rawTime, source);
-  } else if (window.POST_CLOSE_TIME) {
+  // POST_CLOSE_TIME 仅用于"同交易日收盘归一化"：它比 rawTime 新/相等，且不超过 1 个交易日
+  if (pcFt && pcFt.ts && ft && ft.ts && pcFt.ts >= ft.ts && pcFt.daysAgo <= 1) {
     setChartTime(id, window.POST_CLOSE_TIME, source);
-  } else if (rawTime) {
+    return;
+  }
+  if (rawTime) {
     setChartTime(id, rawTime, source);
   } else {
     var el = document.getElementById(id);
@@ -344383,12 +344383,17 @@ function isYesterdayData(timestamp) {
 }
 function fmtDataTime(timeStr) {
   if (!timeStr) return '';
-  var parts = timeStr.split(' ');
+  // 2026-07-29 修复：统一处理 ISO 格式（2026-07-28T17:57:47）→ 空格分隔，避免 NaN
+  var normalized = String(timeStr).replace('T', ' ').replace(/(\.\d+)?Z?$/, '').trim();
+  var parts = normalized.split(' ');
   var datePart = parts[0] || '';
   var timePart = (parts[1] || '').substring(0, 5);
   var dd = new Date(datePart.replace(/-/g, '/') + ' ' + (parts[1] || ''));
   var ts = dd.getTime();
-  if (isToday(timeStr)) {
+  if (isNaN(ts)) {
+    return { text: normalized, stale: true, critical: true, daysAgo: NaN, mmdd: '', time: timePart, ts: 0 };
+  }
+  if (isToday(normalized)) {
     // 日期是今天，但时间还没到 → 降级为"昨日"
     var now = new Date();
     if (dd > now) {
@@ -356350,7 +356355,12 @@ function renderIpoScore() {
     if (bodyWrap) bodyWrap.style.display = 'none';
     var timeEl2 = document.getElementById('ipoScoreTime');
     var timeStr = '';
-    if (timeEl2 && d.update_time) { var ft2 = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : fmtDataTime(d.update_time); timeStr = '更新于 ' + ft2.text; }
+    if (timeEl2 && d.update_time) {
+      var _pcFt = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : null;
+      var _rawFt = fmtDataTime(d.update_time);
+      var ft2 = (_pcFt && _pcFt.ts && _rawFt && _rawFt.ts && _pcFt.ts >= _rawFt.ts && _pcFt.daysAgo <= 1) ? _pcFt : _rawFt;
+      timeStr = '更新于 ' + ft2.text;
+    }
     var titleSpan = card.querySelector('div[style*="border-bottom"] span');
     if (titleSpan) {
       titleSpan.innerHTML = '<span style="font-size:14px;font-weight:700;color:#880e4f;">🚀 打新研判</span> <span style="font-size:11px;font-weight:400;color:#999;">申购·上市</span> <span style="font-size:11px;color:#aaa;margin-left:4px;">' + timeStr + '</span> <span style="font-size:11px;color:#bbb;margin-left:auto;">📭 近期无新股</span>';
