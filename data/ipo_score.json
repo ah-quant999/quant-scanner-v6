@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-07-28 11:10:31",
+  "update_time": "2026-07-28 11:56:36",
   "eligible_count": 3,
   "pre_listing_count": 6,
   "listed_count": 0,
-  "tracking_count": 3,
-  "summary": "3只待评估，6只待上市，3只上市后表现强势。 📋 可转债5待申购",
+  "tracking_count": 1,
+  "summary": "3只待评估，6只待上市，1只上市后表现强势。 📋 可转债5待申购",
   "stocks": [
     {
       "code": "920165",
@@ -310,44 +310,6 @@
       "status": "pre_listing"
     },
     {
-      "code": "688825",
-      "name": "长鑫科技",
-      "issue_price": 8.66,
-      "latest_price": 47.38,
-      "open_price": 45.22,
-      "change_pct": -3.31,
-      "turnover": 14.02,
-      "total_return": 447.11,
-      "open_return": 422.17,
-      "board": "科创板",
-      "listing_date": "20260727",
-      "score": 0,
-      "recommend": "⚪ 震荡，建议观望",
-      "tag_color": "#888",
-      "bg_color": "#f5f5f5",
-      "highlights": [],
-      "status": "tracking"
-    },
-    {
-      "code": "920238",
-      "name": "长鹰硬科",
-      "issue_price": 18.89,
-      "latest_price": 65.72,
-      "open_price": 59.0,
-      "change_pct": 2.58,
-      "turnover": 29.27,
-      "total_return": 247.91,
-      "open_return": 212.33,
-      "board": "北交所",
-      "listing_date": "20260724",
-      "score": 0,
-      "recommend": "🟡 表现良好，观望等回调",
-      "tag_color": "#e65100",
-      "bg_color": "#fff3e0",
-      "highlights": [],
-      "status": "tracking"
-    },
-    {
       "code": "920176",
       "name": "维琪科技",
       "issue_price": 22.16,
@@ -603,27 +565,27 @@
       "status": "tracking",
       "market_code": "SZ",
       "dec_sumfina": 5.9,
-      "latest": 1646.1,
-      "open_price": 1652.0,
-      "change_pct": 0.37,
-      "turnover": 63.69,
-      "total_return": 1546.1,
-      "open_return": 1552.0,
-      "score": 66,
-      "arbitrage_score": 80,
-      "fundamental_score": 45,
-      "recommend": "🟡 表现良好，观望等回调",
-      "tag_color": "#e65100",
-      "bg_color": "#fff3e0",
+      "latest": 100.0,
+      "open_price": 100.0,
+      "change_pct": 0,
+      "turnover": 0,
+      "total_return": 0,
+      "open_return": 0,
+      "score": 46,
+      "arbitrage_score": 50,
+      "fundamental_score": 40,
+      "recommend": "⚪ 震荡，建议观望",
+      "tag_color": "#888",
+      "bg_color": "#f5f5f5",
       "fundamentals": {
         "track": "可转债",
-        "total_return": 1546.1,
-        "turnover": 63.69
+        "total_return": 0,
+        "turnover": 0
       },
       "highlights": [
-        "较发行 +1546.1%",
-        "现价 ¥1646.10",
-        "🟡 表现良好，观望等回调"
+        "较发行 +0.0%",
+        "现价 ¥100.00",
+        "⚪ 震荡，建议观望"
       ]
     }
   ]
