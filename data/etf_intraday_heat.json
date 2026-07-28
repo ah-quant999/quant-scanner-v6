@@ -1,155 +1,155 @@
 {
-  "update_time": "2026-07-28 11:44:40",
+  "update_time": "2026-07-28 13:05:40",
   "data_date": "2026-07-28",
   "total": 1528,
   "top_active": [
     {
       "code": "159915",
       "name": "创业板ETF易方达",
-      "pct": -5.32,
-      "amount": 7666740678,
-      "main_net_inflow": -2078815072
+      "pct": -5.92,
+      "amount": 8082555047,
+      "main_net_inflow": -2174241664
     },
     {
       "code": "588000",
       "name": "科创50ETF华夏",
-      "pct": -4.19,
-      "amount": 5968765738,
-      "main_net_inflow": -1322622560
-    },
-    {
-      "code": "588170",
-      "name": "科创半导体ETF华夏",
-      "pct": -3.61,
-      "amount": 5816224057,
-      "main_net_inflow": -453485936
+      "pct": -4.97,
+      "amount": 6238900372,
+      "main_net_inflow": -1439444512
     },
     {
       "code": "513310",
       "name": "中韩半导体ETF华泰柏瑞",
-      "pct": -7.22,
-      "amount": 5799847977,
-      "main_net_inflow": -300366704
+      "pct": -7.85,
+      "amount": 6192369642,
+      "main_net_inflow": -342353824
+    },
+    {
+      "code": "588170",
+      "name": "科创半导体ETF华夏",
+      "pct": -4.46,
+      "amount": 6001158357,
+      "main_net_inflow": -500894880
     },
     {
       "code": "510500",
       "name": "中证500ETF南方",
-      "pct": -2.73,
-      "amount": 4960366848,
-      "main_net_inflow": 96921376
+      "pct": -3.22,
+      "amount": 5007498089,
+      "main_net_inflow": 84861264
     },
     {
       "code": "510300",
       "name": "沪深300ETF华泰柏瑞",
-      "pct": -2.15,
-      "amount": 3948274624,
-      "main_net_inflow": -1206869504
+      "pct": -2.5,
+      "amount": 4239896157,
+      "main_net_inflow": -1240075552
     },
     {
       "code": "513120",
       "name": "港股创新药ETF广发",
-      "pct": -1.1,
-      "amount": 3922638491,
-      "main_net_inflow": -157288128
+      "pct": -1.36,
+      "amount": 4024474461,
+      "main_net_inflow": -163344592
     },
     {
       "code": "159516",
       "name": "半导体设备ETF国泰",
-      "pct": -3.65,
-      "amount": 3743230327,
-      "main_net_inflow": -588505840
+      "pct": -4.56,
+      "amount": 3962282247,
+      "main_net_inflow": -636033408
     },
     {
       "code": "512100",
       "name": "中证1000ETF南方",
-      "pct": -2.25,
-      "amount": 3643531346,
-      "main_net_inflow": -316259664
+      "pct": -2.83,
+      "amount": 3740522931,
+      "main_net_inflow": -334123440
     },
     {
       "code": "515880",
       "name": "通信ETF国泰",
-      "pct": -7.35,
-      "amount": 3232779012,
-      "main_net_inflow": -857119472
+      "pct": -8.4,
+      "amount": 3322683498,
+      "main_net_inflow": -893275344
     }
   ],
   "top_inflow": [
     {
       "code": "510880",
       "name": "红利ETF华泰柏瑞",
-      "pct": -0.71,
-      "amount": 1050618905,
-      "main_net_inflow": 320221963
+      "pct": -0.84,
+      "amount": 1103659398,
+      "main_net_inflow": 342185819
     },
     {
       "code": "510500",
       "name": "中证500ETF南方",
-      "pct": -2.73,
-      "amount": 4960366848,
-      "main_net_inflow": 96921376
+      "pct": -3.22,
+      "amount": 5007498089,
+      "main_net_inflow": 84861264
     },
     {
       "code": "512690",
       "name": "酒ETF鹏华",
-      "pct": 2.14,
-      "amount": 600989277,
-      "main_net_inflow": 46390917
+      "pct": 1.67,
+      "amount": 630948270,
+      "main_net_inflow": 45384434
     },
     {
       "code": "513330",
       "name": "恒生互联网ETF华夏",
       "pct": 1.04,
-      "amount": 1913697172,
-      "main_net_inflow": 41205088
+      "amount": 1986590273,
+      "main_net_inflow": 39205376
     },
     {
       "code": "159309",
       "name": "油气ETF汇添富",
-      "pct": -2.48,
-      "amount": 82671745,
-      "main_net_inflow": 34396341
-    },
-    {
-      "code": "159934",
-      "name": "黄金ETF易方达",
-      "pct": -1.23,
-      "amount": 300103221,
-      "main_net_inflow": 33496798
+      "pct": -2.79,
+      "amount": 83645117,
+      "main_net_inflow": 34662483
     },
     {
       "code": "159792",
       "name": "港股通互联网ETF富国",
-      "pct": 0.34,
-      "amount": 1607644191,
-      "main_net_inflow": 31228048
+      "pct": 0.17,
+      "amount": 1653032891,
+      "main_net_inflow": 32797456
+    },
+    {
+      "code": "159934",
+      "name": "黄金ETF易方达",
+      "pct": -1.31,
+      "amount": 317047061,
+      "main_net_inflow": 32634922
     },
     {
       "code": "159697",
       "name": "石油ETF鹏华",
-      "pct": -2.27,
-      "amount": 79020974,
-      "main_net_inflow": 27109938
+      "pct": -2.74,
+      "amount": 80351314,
+      "main_net_inflow": 27069931
     },
     {
       "code": "516160",
       "name": "新能源ETF南方",
-      "pct": -2.3,
-      "amount": 159332225,
-      "main_net_inflow": 25209779
+      "pct": -2.66,
+      "amount": 162723486,
+      "main_net_inflow": 24997511
     },
     {
       "code": "159922",
       "name": "中证500ETF嘉实",
-      "pct": -2.9,
-      "amount": 623802347,
-      "main_net_inflow": 24373265
+      "pct": -3.38,
+      "amount": 631058927,
+      "main_net_inflow": 23762545
     }
   ],
   "summary": {
-    "up": 269,
-    "down": 1225,
-    "flat": 34,
-    "net_inflow_yi": -168.16
+    "up": 222,
+    "down": 1275,
+    "flat": 31,
+    "net_inflow_yi": -179.24
   }
 }
