@@ -630,6 +630,25 @@ tr:hover td { background: #fafbfc; }
 
     <!-- ETF+板块 一行两列 -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+      <!-- 📊 ETF盘中热度/资金流（盘中实时·T+0） -->
+      <div id="etfHeatOverviewCard" style="display:none;background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
+          <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中热度 / 资金流 <span style="font-size:10px;font-weight:400;color:#999;">盘中实时·T+0</span></span>
+          <span id="etfHeatUpdateTime" class="update-time-badge"></span>
+        </div>
+        <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:6px 14px 0;"></div>
+        <div style="padding:0;">
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;font-size:10px;color:#888;border-bottom:1px solid #e8f5e9;background:#fafffb;">
+            <span style="width:56px;">代码</span>
+            <span style="flex:1;">名称</span>
+            <span style="width:50px;text-align:right;">涨跌幅</span>
+            <span style="width:64px;text-align:right;">成交额</span>
+            <span style="width:64px;text-align:right;">主力净流入</span>
+          </div>
+          <div id="etfHeatActiveBody"></div>
+        </div>
+      </div>
+
       <!-- 板块资金流向（总览页：仅流入流出列表，分析在预判信号页） -->
       <div id="sectorFundFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #f9a825;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
         <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
@@ -649,35 +668,6 @@ tr:hover td { background: #fafbfc; }
       <div style="padding:10px 14px;">
         <div id="ipoJudgment" style="margin-bottom:8px;font-size:12px;color:#555;line-height:1.7;"></div>
         <div id="ipoStockList" style="display:flex;flex-direction:column;gap:8px;"></div>
-      </div>
-    </div>
-
-    <!-- 📊 ETF盘中资金热度：流入/流出各前10（盘中实时·T+0） -->
-    <div style="background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
-        <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中资金热度<span style="font-size:10px;font-weight:400;color:#999;">盘中实时·T+0</span></span>
-        <span id="etfHeatUpdateTime" class="update-time-badge"></span>
-      </div>
-      <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:6px 14px 0;"></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-        <div>
-          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;font-size:10px;color:#888;border-bottom:1px solid #ffebee;background:#fffafa;">
-            <span style="width:56px;">代码</span><span style="flex:1;">名称</span>
-            <span style="width:50px;text-align:right;">涨幅</span>
-            <span style="width:64px;text-align:right;">净流入</span>
-            <span style="width:38px;text-align:center;">连N</span>
-          </div>
-          <div id="etfHeatInflowBody"></div>
-        </div>
-        <div>
-          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;font-size:10px;color:#888;border-bottom:1px solid #e8f5e9;background:#fafffb;">
-            <span style="width:56px;">代码</span><span style="flex:1;">名称</span>
-            <span style="width:50px;text-align:right;">跌幅</span>
-            <span style="width:64px;text-align:right;">净流出</span>
-            <span style="width:38px;text-align:center;">连N</span>
-          </div>
-          <div id="etfHeatOutflowBody"></div>
-        </div>
       </div>
     </div>
 
@@ -343774,9 +343764,10 @@ var RECOMMEND = window.RECOMMEND = [
     // 渲染 ETF 盘中热度 / 资金流
     function renderEtfHeat() {
       const d = window.ETF_INTRADAY_HEAT || {};
+      const activeEl = document.getElementById('etfHeatActiveBody');
       const inEl = document.getElementById('etfHeatInflowBody');
       const outEl = document.getElementById('etfHeatOutflowBody');
-      if (!inEl || !outEl) return;
+      if (!activeEl && (!inEl || !outEl)) return;
       const summaryEl = document.getElementById('etfHeatSummary');
       if (summaryEl) {
         const s = d.summary || {};
@@ -343787,6 +343778,33 @@ var RECOMMEND = window.RECOMMEND = [
       function fmtFlow(v) {
         const yi = (v || 0) / 1e8;
         return (yi >= 0 ? '+' : '') + yi.toFixed(2) + '亿';
+      }
+      function fmtAmount(v) {
+        const yi = (v || 0) / 1e8;
+        return yi.toFixed(1) + '亿';
+      }
+      function renderActiveList(el, list) {
+        if (!list || !list.length) {
+          el.innerHTML = '<div style="padding:14px;color:#999;font-size:12px;">暂无数据</div>';
+          return;
+        }
+        let rows = '';
+        list.forEach(function(it) {
+          const pct = it.pct || 0;
+          const pctColor = pct >= 0 ? '#e53935' : '#2e7d32';
+          const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+          const net = it.main_net_inflow || 0;
+          const netColor = net >= 0 ? '#e53935' : '#2e7d32';
+          const amount = fmtAmount(it.amount);
+          rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 10px 5px 14px;border-bottom:1px solid #f5f5f5;font-size:12px;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
+            + '<span style="width:56px;color:#1565c0;">' + it.code + '</span>'
+            + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
+            + '<span style="width:50px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
+            + '<span style="width:64px;text-align:right;color:#555;">' + amount + '</span>'
+            + '<span style="width:64px;text-align:right;color:' + netColor + ';font-weight:600;">' + fmtFlow(net) + '</span>'
+            + '</div>';
+        });
+        el.innerHTML = rows;
       }
       function renderList(el, list, isInflow) {
         if (!list || !list.length) {
@@ -343815,10 +343833,15 @@ var RECOMMEND = window.RECOMMEND = [
         });
         el.innerHTML = rows;
       }
-      renderList(inEl, d.top_inflow, true);
-      renderList(outEl, d.top_outflow, false);
+      if (activeEl) renderActiveList(activeEl, d.top_active);
+      if (inEl && outEl) {
+        renderList(inEl, d.top_inflow, true);
+        renderList(outEl, d.top_outflow, false);
+      }
       const ut = document.getElementById('etfHeatUpdateTime');
       if (ut && d.update_time) ut.textContent = '更新于 ' + fmtDataTime(d.update_time).text;
+      var ehc = document.getElementById('etfHeatOverviewCard');
+      if (ehc) ehc.style.display = 'block';
     }
 
     // 绘制 ETF 申购赎回柱状图
