@@ -303,8 +303,8 @@
           <div class="ipo-sec" data-cat="listedToday">
             <div class="ipo-sec-title" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
               <span>今日上市</span>
-              <div class="ipo-tabs" id="ipoTabs" style="margin-left:auto;margin-top:0;margin-bottom:0">
-                <button class="ipo-tab active" data-cat="futureApply">待申购</button>
+              <div class="ipo-tabs" id="ipoTabs" style="margin-left:90px;margin-top:0;margin-bottom:0">
+                <button class="ipo-tab" data-cat="futureApply">待申购</button>
                 <button class="ipo-tab" data-cat="pricing">待定价</button>
                 <button class="ipo-tab" data-cat="preListing">待上市</button>
               </div>
@@ -1046,7 +1046,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
   const DIRECT=['listedToday','todayApply','tracking'];
   // 其余分类用按钮 tab 点击查看
   const TAB_CATS=['futureApply','pricing','preListing'];
-  let activeTab='futureApply';
+  let activeTab='';
 
   function fmtUpdateTime(ts){
     if(!ts) return '今日';
@@ -1079,10 +1079,14 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     });
   }
   function renderTab(){
-    const cat=activeTab;
-    const items=ipoGrouped[cat]||[];
     const grid=document.getElementById('ipoTabsGrid');
     if(!grid) return;
+    if(!activeTab){
+      grid.innerHTML=`<div class="ipo-empty" style="grid-column:1/-1">点击上方 tab 查看待申购 / 待定价 / 待上市</div>`;
+      return;
+    }
+    const cat=activeTab;
+    const items=ipoGrouped[cat]||[];
     if(!items.length){
       grid.innerHTML=`<div class="ipo-empty" style="grid-column:1/-1">${CAT_LABELS[cat]}：暂无数据</div>`;
       return;
