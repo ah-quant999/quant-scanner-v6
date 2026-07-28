@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 07:20:43",
+    "last_success": "2026-07-29 07:34:03",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -169,7 +169,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 13:06:29",
+    "last_success": "2026-07-29 07:30:39",
     "last_error": null
   }
 }

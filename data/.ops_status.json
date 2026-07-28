@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-29 07:20:43",
-  "cloud_deploy_time": "20260729072043",
+  "updated_at": "2026-07-29 07:34:03",
+  "cloud_deploy_time": "20260729073404",
   "failover_status": "OK",
   "failover_time": "2026-07-28 12:19:49",
   "data_correctness": {
@@ -44,7 +44,7 @@
     },
     "alimi": {
       "status": "ok",
-      "last_time": "2026-07-29 07:15:26",
+      "last_time": "2026-07-29 07:21:37",
       "mode": "deploy"
     }
   },
@@ -52,78 +52,17 @@
   "audit": {
     "severity": "ERROR",
     "error_count": 1,
-    "warn_count": 8,
-    "fixed_count": 1,
+    "warn_count": 0,
+    "fixed_count": 0,
     "issues": [
       {
         "level": "ERROR",
-        "type": "silent_failure",
-        "id": "automation-1784516582857",
-        "msg": "task last error: Automation prompt stopped before completion: refusal: {\"code\":-32001,\"message\":\"Network error: 502 网络连接失败：无法解析服务器地址，请检查网",
-        "last_run": 1785205285826
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "08:00",
-        "task": "08_交接检查",
-        "msg": "08:00 08_交接检查 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "08:15",
-        "task": "pre_market_deploy",
-        "msg": "08:15 pre_market_deploy 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:25",
-        "task": "IPO打新",
-        "msg": "09:25 IPO打新 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "09:30",
-        "task": "intraday_09_30",
-        "msg": "09:30 intraday_09_30 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "10:05",
-        "task": "pre_market_deploy_self_heal",
-        "msg": "10:05 pre_market_deploy_self_heal 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "10:31",
-        "task": "intraday_10_31",
-        "msg": "10:31 intraday_10_31 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "missing_heartbeat",
-        "time": "11:46",
-        "task": "intraday_11_46",
-        "msg": "11:46 intraday_11_46 应跑但 _heartbeat.log 无 DONE"
-      },
-      {
-        "level": "WARN",
-        "type": "ops_neodata_mismatch",
-        "msg": "ops_status.json neodata_valid_until=2026-07-28 16:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
-      },
-      {
-        "level": "FIXED",
-        "type": "silent_failover_activated",
-        "msg": "云端沉默 1387min，小九-盘中刷新部署 11:46（intraday_11_46）已激活兜底"
+        "type": "no_neodata_token",
+        "msg": ".neodata_token 文件不存在（路径=E:\\workspace\\stock-scanner\\.neodata_token）；neodata 抓取将全部跳过"
       }
     ],
-    "checked_at": "2026-07-28 12:38:31",
-    "updated_at": "2026-07-28 12:38:31"
+    "checked_at": "2026-07-29 07:27:16",
+    "updated_at": "2026-07-29 07:27:16"
   },
   "monitor_alert": {
     "level": "FAIL",
