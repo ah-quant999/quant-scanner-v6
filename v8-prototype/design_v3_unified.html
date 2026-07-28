@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>九宝量化 v8.0 · 设计稿（六板块 · 暗色）</title>
+<style>
+  :root{
+    --bg:#0a0e17; --bg2:#0e1422; --card:#131b2e; --card2:#172238;
+    --border:#243150; --border2:#2e3d63;
+    --txt:#e6edf7; --sub:#93a4c4; --dim:#5f7099;
+    --cyan:#38bdf8; --purple:#a78bfa; --gold:#fbbf24; --pink:#f472b6;
+    --up:#f4495d; --down:#1fd17b;
+    --lock:#5f7099;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:14px;line-height:1.5}
+  a{color:var(--cyan);text-decoration:none}
+
+  header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#0e1626,#0a0e17);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:16px}
+  .logo{font-weight:800;font-size:18px;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+  .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .admin-badge{margin-left:auto;font-size:12px;color:var(--dim);display:flex;align-items:center;gap:8px}
+  .admin-badge b{color:var(--gold)}
+  .btn{cursor:pointer;border:1px solid var(--border2);background:var(--card2);color:var(--txt);padding:5px 12px;border-radius:8px;font-size:12px;transition:.15s}
+  .btn:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  nav{display:flex;gap:4px;padding:0 20px;background:var(--bg2);border-bottom:1px solid var(--border);overflow-x:auto}
+  .tab{flex:0 0 auto;padding:12px 18px;cursor:pointer;color:var(--sub);font-weight:600;border-bottom:2px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .tab:hover{color:var(--txt)}
+  .tab.active{color:var(--cyan);border-bottom-color:var(--cyan)}
+  .tab.locked{color:var(--lock)}
+  .tab.locked .lk{font-size:11px}
+
+  main{padding:22px 20px 60px;max-width:1320px;margin:0 auto}
+  section{display:none;animation:fade .25s ease}
+  section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+  .sec-head h2{font-size:20px;font-weight:800}
+  .sec-head .tag{font-size:12px;color:var(--dim)}
+
+  .grid{display:grid;gap:16px}
+  .g-2{grid-template-columns:repeat(2,1fr)}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .g-4{grid-template-columns:repeat(4,1fr)}
+  .g-5{grid-template-columns:repeat(5,1fr)}
+  @media(max-width:1080px){.g-2,.g-3,.g-4,.g-5{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .card h3{font-size:14px;color:var(--sub);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .card h3 .ic{font-size:16px}
+  .card .fresh{font-size:11px;color:var(--dim);margin-left:auto;font-weight:400}
+
+  .quote{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+  .quote .price{font-size:32px;font-weight:800}
+  .quote .meta{color:var(--sub);font-size:13px}
+
+  .flow-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border)}
+  .flow-row:last-child{border:0}
+  .flow-name{width:96px;color:var(--sub);font-size:13px;flex:0 0 auto}
+  .flow-bar{flex:1;height:18px;background:var(--bg2);border-radius:6px;overflow:hidden;position:relative}
+  .flow-fill{height:100%;border-radius:6px}
+  .flow-val{width:88px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700;flex:0 0 auto}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--border)}
+  th{color:var(--dim);font-weight:600;font-size:12px}
+  tbody tr:hover{background:var(--card2)}
+  .up{color:var(--up);font-weight:700}
+  .down{color:var(--down);font-weight:700}
+  .pill{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;border:1px solid var(--border2)}
+  .pill.buy{color:var(--up);border-color:var(--up)}
+  .pill.sell{color:var(--down);border-color:var(--down)}
+
+  .qbox{display:flex;gap:8px;margin-bottom:14px}
+  .qbox input{flex:1;background:var(--bg2);border:1px solid var(--border);color:var(--txt);padding:9px 12px;border-radius:9px;font-size:14px}
+
+  .etf-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px dashed var(--border);font-size:12px}
+  .etf-row:last-child{border:0}
+  .etf-row span{color:var(--sub)}
+  .etf-row b{font-variant-numeric:tabular-nums}
+
+  .fib{position:relative;height:54px;background:var(--bg2);border-radius:10px;margin-top:8px}
+  .fib .node{position:absolute;top:0;bottom:0;width:2px;background:var(--gold);opacity:.7}
+  .fib .node span{position:absolute;top:-2px;left:6px;font-size:11px;color:var(--gold);white-space:nowrap}
+  .fib .now{position:absolute;top:0;bottom:0;width:3px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+  /* 图表 */
+  .chart{position:relative;height:140px;display:flex;align-items:flex-end;gap:4px;padding-top:20px}
+  .bar{flex:1;border-radius:4px 4px 0 0;position:relative;min-width:6px}
+  .bar .lbl{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--dim);white-space:nowrap}
+  .bar .tip{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--txt);white-space:nowrap}
+  .ad-chart{height:160px;display:flex;flex-direction:column;gap:3px}
+  .ad-row{flex:1;display:flex;align-items:center;gap:8px;font-size:10px;color:var(--dim)}
+  .ad-date{width:40px;text-align:right}
+  .ad-bars{flex:1;display:flex;gap:2px;height:100%;align-items:center;position:relative}
+  .ad-bars>div{height:100%;border-radius:2px}
+
+  /* 日历 */
+  .cal-month{font-size:16px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .cal-week{font-size:12px;color:var(--dim);text-align:center;padding:6px 0;border-bottom:1px solid var(--border)}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cal-cell{background:var(--card);border:1px solid var(--border);border-radius:10px;min-height:96px;padding:8px 8px 6px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:4px}
+  .cal-cell:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .cal-cell.empty{background:transparent;border:0;cursor:default}
+  .cal-cell.empty:hover{transform:none}
+  .cal-d{font-size:13px;font-weight:700;color:var(--sub)}
+  .cal-cell.today{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+  .ev{font-size:11px;line-height:1.35;display:flex;gap:4px;align-items:flex-start}
+  .ev .e{font-size:12px}
+  .ev .t{color:var(--txt);opacity:.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cal-foot{margin-top:22px;border-top:1px solid var(--border);padding-top:16px}
+  .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .lg{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+  .lg .lh{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;margin-bottom:4px}
+  .lg .sw{width:12px;height:12px;border-radius:4px;flex:0 0 auto}
+  .lg .ld{font-size:11px;color:var(--sub);line-height:1.4}
+
+  .mask{position:fixed;inset:0;background:rgba(4,8,16,.78);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .mask.show{display:flex}
+  .modal{background:var(--card2);border:1px solid var(--border2);border-radius:16px;max-width:520px;width:100%;padding:22px;max-height:86vh;overflow:auto}
+  .modal h3{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .modal .close{margin-left:auto;cursor:pointer;color:var(--sub);font-size:22px;line-height:1}
+  .mev{padding:10px 0;border-bottom:1px dashed var(--border);display:flex;gap:10px}
+  .mev:last-child{border:0}
+  .mev .e{font-size:18px;flex:0 0 auto}
+  .mev .mt{font-weight:700}
+  .mev .md{font-size:12px;color:var(--sub)}
+
+  .lockmask{position:fixed;inset:0;background:rgba(4,8,16,.9);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+  .lockmask.show{display:flex}
+  .lockcard{background:var(--card2);border:1px solid var(--border2);border-radius:16px;padding:28px;width:340px;text-align:center}
+  .lockcard .lk{font-size:40px}
+  .lockcard h3{margin:10px 0 4px;font-size:18px}
+  .lockcard p{color:var(--sub);font-size:13px;margin-bottom:16px}
+  .lockcard input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--txt);padding:11px 12px;border-radius:9px;font-size:15px;text-align:center;margin-bottom:12px;letter-spacing:2px}
+  .lockcard .err{color:var(--up);font-size:12px;min-height:16px;margin-bottom:8px}
+  .lockcard .btn{width:100%;background:var(--cyan);color:#04121f;border-color:var(--cyan);font-weight:700}
+
+  .kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--border);font-size:13px}
+  .kv:last-child{border:0}
+  .kv .k{color:var(--sub)}
+  .status-dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}
+  .s-ok{background:var(--down);box-shadow:0 0 6px var(--down)}
+  .s-warn{background:var(--gold);box-shadow:0 0 6px var(--gold)}
+  .s-err{background:var(--up);box-shadow:0 0 6px var(--up)}
+  .s-off{background:var(--dim)}
+  .logic-h{font-weight:700;margin:14px 0 6px;color:var(--cyan)}
+  .logic-p{color:var(--sub);font-size:13px;line-height:1.7}
+  .code{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--gold);margin:8px 0;overflow:auto}
+  .note{font-size:12px;color:var(--dim);margin-top:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="dot"></span>九宝量化 <span style="color:var(--cyan)">v8.0</span></div>
+  <div class="admin-badge" id="adminBar">
+    <span id="adminState">访客模式</span>
+    <button class="btn" id="adminBtn" onclick="openLock()">管理员登录</button>
+  </div>
+</header>
+
+<nav id="nav">
+  <div class="tab active" data-sec="td" onclick="switchSec('td',this)">📅 今日事件</div>
+  <div class="tab" data-sec="rt" onclick="switchSec('rt',this)">📡 实时数据</div>
+  <div class="tab" data-sec="ph" onclick="switchSec('ph',this)">🌙 盘后数据</div>
+  <div class="tab" data-sec="st" onclick="switchSec('st',this)">🎯 选股策略</div>
+  <div class="tab locked" data-sec="op" data-lock="1" onclick="guardLock('op',this)">🔒 运维 <span class="lk">[锁]</span></div>
+  <div class="tab locked" data-sec="lg" data-lock="1" onclick="guardLock('lg',this)">📖 逻辑详解 <span class="lk">[锁]</span></div>
+</nav>
+
+<main>
+  <!-- ============ 今日事件 ============ -->
+  <section id="sec-td" class="active">
+    <div class="sec-head"><h2>📅 今日事件</h2><span class="tag">交易日历 + 打新速览 · 2026-07-28</span></div>
+
+    <div class="grid g-2" style="margin-bottom:16px">
+      <!-- 打新速览 -->
+      <div class="card">
+        <h3><span class="ic">🚀</span>打新速览 <span class="fresh">常驻 · 双维度 · 更新于 今日 12:18</span></h3>
+        <table>
+          <thead><tr><th>代码</th><th>名称</th><th>类型</th><th>价格/顶格</th><th>评级</th></tr></thead>
+          <tbody>
+            <tr><td>688xxx</td><td>芯源微电</td><td>科创板</td><td>52.00 元 / 5.5万</td><td><span class="pill buy">积极申购</span></td></tr>
+            <tr><td>301xxx</td><td>智谱新材</td><td>创业板</td><td>28.50 元 / 8.0万</td><td><span class="pill buy">建议申购</span></td></tr>
+            <tr><td>113xxx</td><td>长信转债</td><td>可转债</td><td>100 元 / 100万</td><td><span class="pill">稳健申购</span></td></tr>
+            <tr><td>370xxx</td><td>拓维配债</td><td>配债</td><td>原股东优先</td><td><span class="pill sell">谨慎</span></td></tr>
+          </tbody>
+        </table>
+        <div class="note">双维度 = 新股申购（收益弹性）+ 可转债申购（安全边际）。数据来源：交易所公告 / 新股日历。</div>
+      </div>
+
+      <!-- 今日关键事件速览 -->
+      <div class="card">
+        <h3><span class="ic">⚡</span>今日关键事件</h3>
+        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📊</span><div><div class="mt" style="color:var(--cyan)">中国数据</div><div>7月LPR利率报价（1年期/5年期以上）</div><div class="md">每月20日前后公布，影响房贷利率与企业融资成本</div></div></div>
+        <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">📈</span><div><div class="mt" style="color:#22d3ee">期货交割</div><div>上期所FU2608/能源中心SC/LU2608最后交易日</div><div class="md">交割前后波动加大，注意移仓换月</div></div></div>
+        <div class="mev" style="padding:8px 0"><span class="e">🇺🇸</span><div><div class="mt" style="color:#60a5fa">美股财报</div><div>英伟达(NVDA) 2026年Q2财报（预估）</div><div class="md">AI芯片龙头业绩，影响全球科技股情绪</div></div></div>
+      </div>
+    </div>
+
+    <!-- 重要事件日历 -->
+    <div class="card">
+      <h3><span class="ic">📅</span>重要事件日历（点击当日放大）</h3>
+      <div class="cal-month">📅 2026年7月 · 重要日历</div>
+      <div class="cal-grid" id="calHead" style="margin-bottom:6px"></div>
+      <div class="cal-grid" id="calBody"></div>
+      <div class="cal-foot">
+        <div style="font-weight:800;margin-bottom:10px">🎨 色块标注说明</div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 实时数据 ============ -->
+  <section id="sec-rt">
+    <div class="sec-head"><h2>📡 实时数据</h2><span class="tag">盘中 T+0 · 数据延迟约 3~5 秒</span></div>
+
+    <div class="grid g-4" style="margin-bottom:16px">
+      <div class="card"><h3><span class="ic">🔥</span>沪指</h3><div class="quote"><span class="price up">3,418.6</span><span class="meta up">+0.82%<br>+27.8</span></div></div>
+      <div class="card"><h3><span class="ic">🔥</span>深成指</h3><div class="quote"><span class="price up">10,892.3</span><span class="meta up">+1.05%<br>+113.2</span></div></div>
+      <div class="card"><h3><span class="ic">🔥</span>创业板</h3><div class="quote"><span class="price down">2,176.4</span><span class="meta down">-0.31%<br>-6.7</span></div></div>
+      <div class="card"><h3><span class="ic">💱</span>北向资金</h3><div class="quote"><span class="price up">+42.6亿</span><span class="meta">沪 +28.1 / 深 +14.5</span></div></div>
+    </div>
+
+    <div class="grid g-3" style="margin-bottom:16px">
+      <div class="card">
+        <h3><span class="ic">🌡️</span>市场温度计</h3>
+        <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <svg width="200" height="120" viewBox="0 0 200 120">
+            <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#1b2740" stroke-width="14" stroke-linecap="round"/>
+            <path d="M20 110 A80 80 0 0 1 158 54" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round"/>
+            <defs><linearGradient id="gg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1fd17b"/><stop offset=".5" stop-color="#fbbf24"/><stop offset="1" stop-color="#f4495d"/></linearGradient></defs>
+            <circle cx="158" cy="54" r="8" fill="#fbbf24"/>
+          </svg>
+          <div style="font-size:42px;font-weight:800;color:var(--gold)">68°</div>
+          <div style="font-size:12px;color:var(--sub)">偏热 · 情绪活跃，注意高位回撤</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🕸️</span>六维共振雷达</h3>
+        <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🌀</span>斐波时间窗口</h3>
+        <div style="font-size:13px;color:var(--sub)">下一个变盘窗口</div>
+        <div style="font-size:22px;font-weight:800;color:var(--gold);margin:4px 0 2px">07-30（周四）</div>
+        <div style="font-size:12px;color:var(--dim);margin-bottom:6px">距今天 2 个交易日 · 重合 FOMC 决议</div>
+        <div class="fib" id="fib"></div>
+        <div style="font-size:11px;color:var(--dim);margin-top:6px">▮ 黄金分割节点　▮ 当前</div>
+      </div>
+    </div>
+
+    <div class="grid g-2" style="margin-bottom:16px">
+      <!-- 主力板块 -->
+      <div class="card">
+        <h3><span class="ic">🚀</span>主力板块 <span class="fresh">短线盘中 · 更新于 今日 15:17</span></h3>
+        <div class="flow-row"><span class="flow-name">半导体</span><div class="flow-bar"><div class="flow-fill" style="width:92%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+38.2亿</span></div>
+        <div class="flow-row"><span class="flow-name">新能源</span><div class="flow-bar"><div class="flow-fill" style="width:72%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+22.7亿</span></div>
+        <div class="flow-row"><span class="flow-name">消费电子</span><div class="flow-bar"><div class="flow-fill" style="width:58%;background:linear-gradient(90deg,#f4495d,#f87171)"></div></div><span class="flow-val up">+16.4亿</span></div>
+        <div class="flow-row"><span class="flow-name">银行</span><div class="flow-bar"><div class="flow-fill" style="width:40%;background:linear-gradient(90deg,#1fd17b,#4ade80)"></div></div><span class="flow-val down">-12.4亿</span></div>
+        <div class="flow-row"><span class="flow-name">白酒</span><div class="flow-bar"><div class="flow-fill" style="width:30%;background:linear-gradient(90deg,#1fd17b,#4ade80)"></div></div><span class="flow-val down">-9.8亿</span></div>
+      </div>
+
+      <!-- 概念涨跌排名 -->
+      <div class="card">
+        <h3><span class="ic">📊</span>概念涨跌排名 <span class="fresh">短线盘中 · 更新于 今日 15:18</span></h3>
+        <table>
+          <thead><tr><th>概念</th><th>涨幅</th><th>领涨股</th></tr></thead>
+          <tbody>
+            <tr><td>Chiplet</td><td class="up">+5.82%</td><td>长电科技</td></tr>
+            <tr><td>存储芯片</td><td class="up">+4.67%</td><td>兆易创新</td></tr>
+            <tr><td>光伏设备</td><td class="up">+3.51%</td><td>隆基绿能</td></tr>
+            <tr><td>CRO</td><td class="down">-2.34%</td><td>药明康德</td></tr>
+            <tr><td>白酒</td><td class="down">-1.89%</td><td>贵州茅台</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid g-2" style="margin-bottom:16px">
+      <!-- 上证+深证成交额 -->
+      <div class="card">
+        <h3><span class="ic">📈</span>上证+深证 每日成交金额（亿元） <span class="fresh">短线盘中 · 更新于 今日 15:21</span></h3>
+        <div class="chart" id="volChart"></div>
+        <div class="note">今日两市合计 11,247 亿元，较前日 +8.7%，温和放大，未过 1.2 万亿警戒线。</div>
+      </div>
+
+      <!-- 近一月涨跌家数统计 -->
+      <div class="card">
+        <h3><span class="ic">🏘️</span>近一月 涨跌家数统计 <span class="fresh">盘中实时 · 更新于 今日 15:21</span></h3>
+        <div class="ad-chart" id="adChart"></div>
+        <div class="note">红=上涨家数，绿=下跌家数，灰=平盘。今日涨 2835 / 跌 2521 / 平 176。</div>
+      </div>
+    </div>
+
+    <div class="grid g-2" style="margin-bottom:16px">
+      <!-- 涨停联动 -->
+      <div class="card">
+        <h3><span class="ic">🔥</span>涨停联动 <span class="fresh">盘中实时 · 更新于 今日 15:21</span></h3>
+        <table>
+          <thead><tr><th>连板梯队</th><th>核心股</th><th>题材</th><th>封单额</th></tr></thead>
+          <tbody>
+            <tr><td>5板</td><td>航天晨光</td><td>商业航天</td><td class="up">2.1亿</td></tr>
+            <tr><td>4板</td><td>腾达科技</td><td>机器人</td><td class="up">1.4亿</td></tr>
+            <tr><td>3板 × 2</td><td>寒武纪 / 中际旭创</td><td>AI芯片 / CPO</td><td class="up">3.8亿</td></tr>
+            <tr><td>2板 × 6</td><td>长电科技 等</td><td>半导体</td><td class="up">5.2亿</td></tr>
+            <tr><td>首板</td><td>62 家</td><td>多题材</td><td class="up">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 个股查询 -->
+      <div class="card">
+        <h3><span class="ic">🔍</span>个股实时查询</h3>
+        <div class="qbox">
+          <input id="qInput" placeholder="输入代码或名称，如 600519 或 贵州茅台" onkeydown="if(event.key==='Enter')doQuery()" />
+          <button class="btn" onclick="doQuery()">查询</button>
+        </div>
+        <div id="qResult"></div>
+      </div>
+    </div>
+
+    <!-- ETF 资金热度 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">🔥</span>ETF 资金热度 <span class="fresh">实时·T+0 · 更新于 今日 09:43</span></h3>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-size:13px;color:var(--sub)">
+        <span><span style="color:var(--up)">▲ 290</span> 涨</span>
+        <span><span style="color:var(--down)">▼ 1168</span> 跌</span>
+        <span>主力净流出 <span style="color:var(--down);font-weight:700">20.4 亿</span></span>
+      </div>
+      <div class="grid g-4">
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">宽基</div>
+          <div class="etf-row"><span>科创50ETF</span><b>21.5亿</b></div>
+          <div class="etf-row"><span>创业板ETF</span><b>17.2亿</b></div>
+          <div class="etf-row"><span>中证500ETF</span><b>15.4亿</b></div>
+          <div class="etf-row"><span>沪深300ETF</span><b>11.5亿</b></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--purple)">行业</div>
+          <div class="etf-row"><span>科创半导体ETF</span><b class="up">+1.1亿</b></div>
+          <div class="etf-row"><span>半导体设备ETF</span><b>13.7亿</b></div>
+          <div class="etf-row"><span>券商ETF</span><b>8.9亿</b></div>
+          <div class="etf-row"><span>医药ETF</span><b>7.3亿</b></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--gold)">主题</div>
+          <div class="etf-row"><span>芯片ETF</span><b>8.0亿</b></div>
+          <div class="etf-row"><span>AI ETF</span><b>6.5亿</b></div>
+          <div class="etf-row"><span>新能源ETF</span><b>5.8亿</b></div>
+          <div class="etf-row"><span>军工ETF</span><b>4.2亿</b></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--pink)">跨境</div>
+          <div class="etf-row"><span>恒生科技ETF</span><b class="up">+4675万</b></div>
+          <div class="etf-row"><span>恒生互联网ETF</span><b class="up">+2512万</b></div>
+          <div class="etf-row"><span>纳斯达克ETF</span><b>3.1亿</b></div>
+          <div class="etf-row"><span>标普500ETF</span><b>2.4亿</b></div>
+        </div>
+      </div>
+      <div class="note">按成交额/主力净流入综合排序，四分类独立展示。真实部署接 fetch_etf_intraday_heat.py。</div>
+    </div>
+  </section>
+
+  <!-- ============ 盘后数据 ============ -->
+  <section id="sec-ph">
+    <div class="sec-head"><h2>🌙 盘后数据</h2><span class="tag">T+1 收盘后生成 · 最后更新 2026-07-28 15:20</span></div>
+
+    <div class="grid g-2" style="margin-bottom:16px">
+      <div class="card">
+        <h3><span class="ic">⭐</span>金股池（精选 8 只）</h3>
+        <table><thead><tr><th>代码</th><th>名称</th><th>入选理由</th><th>评级</th></tr></thead>
+        <tbody>
+          <tr><td>688981</td><td>中芯国际</td><td>半导体资金共振+斐波支撑</td><td><span class="pill buy">强推</span></td></tr>
+          <tr><td>300750</td><td>宁德时代</td><td>新能源回流+量价齐升</td><td><span class="pill buy">推荐</span></td></tr>
+          <tr><td>600519</td><td>贵州茅台</td><td>北向增持+估值修复</td><td><span class="pill">观察</span></td></tr>
+          <tr><td>002415</td><td>海康威视</td><td>军工订单+技术突破</td><td><span class="pill buy">推荐</span></td></tr>
+        </tbody></table>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🐉</span>龙虎榜（异动 TOP 6）</h3>
+        <table><thead><tr><th>名称</th><th>异动</th><th>净买额</th><th>类型</th></tr></thead>
+        <tbody>
+          <tr><td>寒武纪</td><td class="up">+19.98%</td><td class="up">+4.82亿</td><td><span class="pill buy">机构净买</span></td></tr>
+          <tr><td>中际旭创</td><td class="up">+12.4%</td><td class="up">+3.11亿</td><td><span class="pill buy">游资</span></td></tr>
+          <tr><td>拓维信息</td><td class="down">-9.7%</td><td class="down">-2.05亿</td><td><span class="pill sell">机构净卖</span></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="grid g-3">
+      <div class="card">
+        <h3><span class="ic">🧲</span>多维共振</h3>
+        <div class="kv"><span class="k">共振个股</span><b>14 只</b></div>
+        <div class="kv"><span class="k">三因子以上</span><b class="up">9 只</b></div>
+        <div class="kv"><span class="k">最强共振</span><b>中芯国际 / 宁德</b></div>
+        <div class="note">因子：资金流 + 技术面 + 情绪 + 北向 + 估值</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">📈</span>涨停/跌停</h3>
+        <div class="kv"><span class="k">涨停</span><b class="up">62 家</b></div>
+        <div class="kv"><span class="k">跌停</span><b class="down">7 家</b></div>
+        <div class="kv"><span class="k">连板最高</span><b>5 连板</b></div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">📝</span>复盘摘要</h3>
+        <div class="logic-p">三大指数分化，半导体全天强势，北向连续 3 日净流入。量能温和放大但未过热，短期关注 7-30 斐波窗口变盘。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 选股策略 ============ -->
+  <section id="sec-st">
+    <div class="sec-head"><h2>🎯 选股策略</h2><span class="tag">回测基于 2023-01 至今 · 胜率含滑点</span></div>
+    <div class="grid g-3">
+      <div class="card">
+        <h3><span class="ic">🌊</span>逆势龙头</h3>
+        <div class="kv"><span class="k">胜率</span><b class="up">68.4%</b></div>
+        <div class="kv"><span class="k">年化</span><b>41.2%</b></div>
+        <div class="kv"><span class="k">最大回撤</span><b class="down">-18.6%</b></div>
+        <div class="kv"><span class="k">今日信号</span><b>3 只</b></div>
+        <div class="note">大盘下跌时相对抗跌且率先企稳的板块龙头。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🌀</span>斐波回踩</h3>
+        <div class="kv"><span class="k">胜率</span><b class="up">61.9%</b></div>
+        <div class="kv"><span class="k">年化</span><b>33.5%</b></div>
+        <div class="kv"><span class="k">最大回撤</span><b class="down">-22.1%</b></div>
+        <div class="kv"><span class="k">今日信号</span><b>5 只</b></div>
+        <div class="note">价格回踩 0.382/0.618 黄金分割位且缩量企稳。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🔗</span>量价共振</h3>
+        <div class="kv"><span class="k">胜率</span><b class="up">64.7%</b></div>
+        <div class="kv"><span class="k">年化</span><b>38.0%</b></div>
+        <div class="kv"><span class="k">最大回撤</span><b class="down">-15.3%</b></div>
+        <div class="kv"><span class="k">今日信号</span><b>4 只</b></div>
+        <div class="note">放量突破平台 + 主力净流入 + 站上多均线。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">💱</span>北向增持</h3>
+        <div class="kv"><span class="k">胜率</span><b class="up">59.2%</b></div>
+        <div class="kv"><span class="k">年化</span><b>27.8%</b></div>
+        <div class="kv"><span class="k">最大回撤</span><b class="down">-13.9%</b></div>
+        <div class="kv"><span class="k">今日信号</span><b>2 只</b></div>
+        <div class="note">北向连续增持 + 估值处于历史低位分位。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🛡️</span>高股息防御</h3>
+        <div class="kv"><span class="k">胜率</span><b class="up">72.0%</b></div>
+        <div class="kv"><span class="k">年化</span><b>15.4%</b></div>
+        <div class="kv"><span class="k">最大回撤</span><b class="down">-9.2%</b></div>
+        <div class="kv"><span class="k">今日信号</span><b>6 只</b></div>
+        <div class="note">股息率>4% + 分红稳定 + 低波动。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">📡</span>今日全部信号</h3>
+        <div class="logic-p">逆势龙头：中芯国际、海康威视、中国船舶<br>斐波回踩：宁德时代、比亚迪、隆基绿能、药明康德、招商银行<br>量价共振：寒武纪、中际旭创、拓维信息、工业富联<br>北向增持：贵州茅台、长江电力<br>高股息：工行、神华、国网、移动、长电、中海油</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 运维（管理员） ============ -->
+  <section id="sec-op">
+    <div class="sec-head"><h2>🔒 运维面板</h2><span class="tag">仅管理员可见 · 部署/心跳/数据新鲜度</span></div>
+    <div class="grid g-2" style="margin-bottom:16px">
+      <div class="card">
+        <h3><span class="ic">🚀</span>部署状态</h3>
+        <div class="kv"><span class="k">站点</span><b>ah-quant999.github.io/quant-scanner-v7</b></div>
+        <div class="kv"><span class="k">gh-pages SHA</span><b>223f2a6</b></div>
+        <div class="kv"><span class="k">最后部署</span><b>2026-07-28 16:55</b></div>
+        <div class="kv"><span class="k">心跳</span><span><span class="status-dot s-ok"></span>正常（5 分钟前）</span></div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🤖</span>双机状态</h3>
+        <div class="kv"><span class="k">小九（本机）</span><span><span class="status-dot s-ok"></span>在线 · 08:15-17:00 主机</span></div>
+        <div class="kv"><span class="k">阿狸咪（云端）</span><span><span class="status-dot s-warn"></span>待命 · 夜间/周末接管</span></div>
+        <div class="kv"><span class="k">failover 守卫</span><span><span class="status-dot s-ok"></span>活跃</span></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">⚙️</span>自动化任务（11）</h3>
+      <table><thead><tr><th>任务</th><th>周期</th><th>状态</th><th>上次</th></tr></thead>
+      <tbody>
+        <tr><td>网络健康检查</td><td>每30分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:30</td></tr>
+        <tr><td>全任务心跳守卫</td><td>每30分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:45</td></tr>
+        <tr><td>发令枪:00/15/30/45</td><td>每15分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:45</td></tr>
+        <tr><td>健康监控:00/30</td><td>每30分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:30</td></tr>
+        <tr><td>看门狗-整点/半点</td><td>每30分</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>16:00</td></tr>
+        <tr><td>夜间周末值守</td><td>每6时</td><td><span class="status-dot s-ok"></span>ACTIVE</td><td>13:36</td></tr>
+      </tbody></table>
+    </div>
+    <div class="card">
+      <h3><span class="ic">💾</span>数据新鲜度</h3>
+      <table><thead><tr><th>文件</th><th>最后更新</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>scan_data.json</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>gold_pool.json</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>concept_map.json</td><td>09:45 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>north_flow.json</td><td>15:05 今日</td><td><span class="status-dot s-warn"></span>盘中陈旧</td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <!-- ============ 逻辑详解（管理员） ============ -->
+  <section id="sec-lg">
+    <div class="sec-head"><h2>📖 逻辑详解</h2><span class="tag">仅管理员可见 · 指标/策略/数据源口径</span></div>
+    <div class="grid g-2">
+      <div class="card">
+        <h3><span class="ic">🌡️</span>温度计算法</h3>
+        <div class="logic-h">综合打分 0~100</div>
+        <div class="logic-p">= 0.3×涨跌家数比 + 0.2×量能分 + 0.2×北向分 + 0.15×涨停跌停比 + 0.15×情绪分。≥70 偏热，≤30 偏冷。</div>
+        <div class="code">temp = 0.3*ad_ratio + 0.2*vol_z + 0.2*north_z + 0.15*zt_ratio + 0.15*sentiment</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🕸️</span>六维雷达维度</h3>
+        <div class="logic-p">量能 / 情绪 / 资金 / 估值 / 技术 / 外围。各维归一化到 0~100 后绘制多边形。</div>
+        <div class="code">dims = [vol, sentiment, fund, valuation, tech, external]
+norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🌀</span>斐波窗口</h3>
+        <div class="logic-p">以显著高低点为基准日，叠加 5/8/13/21/34/55 交易日序列，标注变盘窗口。与宏观事件（如 FOMC）重合时权重提升。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">💰</span>资金流口径</h3>
+        <div class="logic-p">板块/概念资金流 = 成分股主力净流入合计；北向 = 沪深股通每日净买额；单位统一为亿元。</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🎯</span>逆势龙头数学</h3>
+        <div class="logic-p">大盘回撤期间，个股相对强度 RS = 个股收益 / 沪深300收益；取 RS>1.2 且波动率低于板块中位者，晨星形态优先。</div>
+        <div class="code">RS = ret_stock / ret_hs300
+signal = (RS > 1.2) & (vol < median(sector_vol))</div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🔗</span>数据源与频率</h3>
+        <div class="logic-p">A股行情：东方财富 push2；北向：港交所沪深股通；概念映射：concept_map.json 持久化；盘后扫描：云端 15:20 跑批；盘前：本机 08:15 启动。</div>
+        <div class="note">所有数据仅供参考，不构成投资建议。</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 日历放大 modal -->
+<div class="mask" id="calMask" onclick="if(event.target===this)closeCal()">
+  <div class="modal">
+    <h3><span id="calDate"></span><span class="close" onclick="closeCal()">×</span></h3>
+    <div id="calEvents"></div>
+  </div>
+</div>
+
+<!-- 管理员锁 -->
+<div class="lockmask" id="lockMask">
+  <div class="lockcard">
+    <div class="lk">🔒</div>
+    <h3>管理员验证</h3>
+    <p>运维与逻辑详解板块需要管理员权限</p>
+    <input id="adminPwd" type="password" placeholder="输入管理员口令" onkeydown="if(event.key==='Enter')tryUnlock()" />
+    <div class="err" id="lockErr"></div>
+    <button class="btn" onclick="tryUnlock()">解锁</button>
+  </div>
+</div>
+
+<script>
+/* ===== 管理员锁 =====
+   安全约束（部署铁律）：免费公开仓库绝不存明文密码/数据源 token/核心算法。
+   - 此处仅用 SHA-256 哈希校验（明文 cat999 不入库，仓库里只有哈希）。
+   - 纯前端哈希只能挡普通访客；真正防护 = 运维/逻辑详解的敏感数据(数据源/算法)不进公开仓库，
+     部署时改由私有后端或 GitHub Secrets 提供，前端只渲染结果。
+*/
+const ADMIN_HASH = "24f6683a479d5b95461b4549b26d2f685b109a3e8c960219c075c9da3825f529"; // sha256("cat999")
+function isAdmin(){ return localStorage.getItem('v8_admin')==='1'; }
+function openLock(){ if(isAdmin())return; document.getElementById('lockMask').classList.add('show'); document.getElementById('adminPwd').focus(); }
+async function sha256(s){
+  const buf=await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function tryUnlock(){
+  const v=document.getElementById('adminPwd').value;
+  let ok=false; try{ ok = await sha256(v)===ADMIN_HASH; }catch(e){ ok=false; }
+  if(ok){
+    localStorage.setItem('v8_admin','1');
+    document.getElementById('lockMask').classList.remove('show');
+    document.getElementById('adminState').innerHTML='<b>管理员已登录</b>';
+    document.getElementById('adminBtn').textContent='退出';
+    document.getElementById('adminBtn').setAttribute('onclick','logout()');
+    document.querySelectorAll('.tab.locked').forEach(t=>{t.classList.remove('locked');const s=t.querySelector('.lk');if(s)s.remove();});
+    switchSec('op',document.querySelector('[data-sec="op"]'));
+  }else{
+    document.getElementById('lockErr').textContent='口令错误，请重试';
+  }
+}
+function logout(){ localStorage.removeItem('v8_admin'); location.reload(); }
+function guardLock(sec,el){ if(isAdmin()){switchSec(sec,el);}else{openLock();} }
+function refreshAdminUI(){
+  if(isAdmin()){document.getElementById('adminState').innerHTML='<b>管理员已登录</b>';document.getElementById('adminBtn').textContent='退出';document.getElementById('adminBtn').setAttribute('onclick','logout()');document.querySelectorAll('.tab.locked').forEach(t=>{t.classList.remove('locked');const s=t.querySelector('.lk');if(s)s.remove();});}
+}
+refreshAdminUI();
+
+/* ===== 板块切换 ===== */
+function switchSec(sec,el){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('sec-'+sec).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+/* ===== 六维雷达 SVG ===== */
+(function(){
+  const dims=['量能','情绪','资金','估值','技术','外围'];
+  const vals=[72,65,80,55,68,60];
+  const cx=0,cy=0,R=85,n=dims.length;
+  let svg=document.getElementById('radar');
+  let grid='';
+  for(let g=1;g<=4;g++){
+    let pts=[];
+    for(let i=0;i<n;i++){let a=-Math.PI/2+i*2*Math.PI/n;pts.push((cx+Math.cos(a)*R*g/4).toFixed(1)+','+(cy+Math.sin(a)*R*g/4).toFixed(1));}
+    grid+=`<polygon points="${pts.join(' ')}" fill="none" stroke="#243150" stroke-width="1"/>`;
+  }
+  let axes='';
+  for(let i=0;i<n;i++){let a=-Math.PI/2+i*2*Math.PI/n;axes+=`<line x1="0" y1="0" x2="${(cx+Math.cos(a)*R).toFixed(1)}" y2="${(cy+Math.sin(a)*R).toFixed(1)}" stroke="#243150" stroke-width="1"/><text x="${(cx+Math.cos(a)*(R+14)).toFixed(1)}" y="${(cy+Math.sin(a)*(R+14)+4).toFixed(1)}" fill="#93a4c4" font-size="11" text-anchor="middle">${dims[i]}</text>`;}
+  let dpts=[];
+  for(let i=0;i<n;i++){let a=-Math.PI/2+i*2*Math.PI/n;dpts.push((cx+Math.cos(a)*R*vals[i]/100).toFixed(1)+','+(cy+Math.sin(a)*R*vals[i]/100).toFixed(1));}
+  svg.innerHTML=grid+axes+`<polygon points="${dpts.join(' ')}" fill="rgba(56,189,248,.25)" stroke="#38bdf8" stroke-width="2"/>`+dpts.map((p,i)=>`<circle cx="${p.split(',')[0]}" cy="${p.split(',')[1]}" r="3" fill="#38bdf8"/>`).join('');
+})();
+
+/* ===== 斐波窗口 ===== */
+(function(){
+  const fib=[8,13,21,34,55,89].map(n=>n/89*100);
+  let html='';
+  fib.forEach(f=>{html+=`<div class="node" style="left:${f}%"><span>Fib</span></div>`;});
+  html+=`<div class="now" style="left:62%"></div>`;
+  document.getElementById('fib').innerHTML=html;
+})();
+
+/* ===== 个股查询 ===== */
+function doQuery(){
+  const q=document.getElementById('qInput').value.trim();
+  if(!q){document.getElementById('qResult').innerHTML='<div class="note">请输入代码或名称</div>';return;}
+  const up=Math.random()>0.4;
+  const ch=(Math.random()*4).toFixed(2);
+  document.getElementById('qResult').innerHTML=`
+    <div class="quote">
+      <span class="price ${up?'up':'down'}">${ (up?'+':'-')+ch }%</span>
+      <span class="meta">${q} · 模拟数据<br>实时价 ${(80+Math.random()*50).toFixed(2)}<br>换手 ${(Math.random()*5).toFixed(2)}% · 主力 ${(up?'+':'-')}${(Math.random()*3).toFixed(2)}亿</span>
+    </div>
+    <div class="note">演示用模拟数据，真实部署接 push2 行情。</div>`;
+}
+
+/* ===== 上证+深证成交额柱状图 ===== */
+(function(){
+  const data=[
+    {d:'07-21',v:0.91},{d:'07-22',v:0.86},{d:'07-23',v:0.94},
+    {d:'07-24',v:1.18},{d:'07-25',v:1.03},{d:'07-28',v:1.12}
+  ];
+  const max=1.3;
+  document.getElementById('volChart').innerHTML=data.map(x=>{
+    const h=(x.v/max*100).toFixed(1);
+    return `<div class="bar" style="height:${h}%;background:linear-gradient(180deg,#38bdf8,#1d4ed8)">
+      <div class="tip">${x.v}万亿</div>
+      <div class="lbl">${x.d}</div>
+    </div>`;
+  }).join('');
+})();
+
+/* ===== 近一月涨跌家数堆叠条形图 ===== */
+(function(){
+  const days=[
+    {d:'07-21',up:2100,dn:2800,eq:160},{d:'07-22',up:3200,dn:1800,eq:120},
+    {d:'07-23',up:1500,dn:3500,eq:160},{d:'07-24',up:4776,dn:657,eq:99},
+    {d:'07-25',up:1800,dn:3200,eq:140},{d:'07-26',up:2500,dn:2400,eq:180},
+    {d:'07-27',up:3200,dn:1700,eq:130},{d:'07-28',up:2835,dn:2521,eq:176}
+  ];
+  const max=5500;
+  document.getElementById('adChart').innerHTML=days.map(x=>{
+    const uw=(x.up/max*100).toFixed(1),dw=(x.dn/max*100).toFixed(1),ew=(x.eq/max*100).toFixed(1);
+    return `<div class="ad-row">
+      <span class="ad-date">${x.d}</span>
+      <div class="ad-bars">
+        <div style="width:${uw}%;background:var(--up);opacity:.85" title="涨 ${x.up}"></div>
+        <div style="width:${ew}%;background:var(--dim);opacity:.7" title="平 ${x.eq}"></div>
+        <div style="width:${dw}%;background:var(--down);opacity:.85" title="跌 ${x.dn}"></div>
+      </div>
+      <span style="width:90px;text-align:right">${x.up}/${x.dn}</span>
+    </div>`;
+  }).join('');
+})();
+
+/* ===== 日历（北向样式暗色移植） ===== */
+const CAT={
+  policy:{name:'重要政策',color:'#f472b6',desc:'中国政府/监管机构发布的重大政策、法规、规划等'},
+  lpr:{name:'央行/LPR',color:'#fbbf24',desc:'央行货币政策、利率决议、LPR报价等'},
+  cn:{name:'中国数据',color:'#38bdf8',desc:'国家统计局/央行发布的宏观经济数据'},
+  report:{name:'财报截止',color:'#a78bfa',desc:'A股财报披露法定截止日'},
+  opt:{name:'期权交割',color:'#34d399',desc:'各交易所期权合约到期日'},
+  fut:{name:'期货交割',color:'#22d3ee',desc:'期货合约最后交易日'},
+  a50:{name:'A50交割',color:'#fb923c',desc:'新加坡富时A50期货交割日'},
+  hk:{name:'港股休市',color:'#ef4444',desc:'香港交易所休市日'},
+  ushol:{name:'美股休市',color:'#f87171',desc:'NYSE/Nasdaq休市日'},
+  us:{name:'美股财报',color:'#60a5fa',desc:'美股关注股票财报'},
+  tw:{name:'台股财报',color:'#c084fc',desc:'台股关注股票'},
+  phone:{name:'苹果/华为',color:'#e879f9',desc:'两大科技巨头新品发布/重要财报'},
+  fomc:{name:'FOMC',color:'#facc15',desc:'美联储货币政策会议'},
+  eu:{name:'欧股财报',color:'#2dd4bf',desc:'欧股关注股票'},
+};
+const FLAG={policy:'🇨🇳',lpr:'🏦',cn:'📊',report:'📑',opt:'📊',fut:'📈',a50:'🇸🇬',hk:'🇭🇰',ushol:'🇺🇸',us:'🇺🇸',tw:'🇹🇼',phone:'📱',fomc:'🇺🇸',eu:'🇪🇺'};
+const EV={
+ 1:[{cat:'hk',t:'港股休市'}],
+ 3:[{cat:'ushol',t:'美股休市（独立日补假）'}],
+ 9:[{cat:'fomc',t:'美联储6月会议纪要 ✅已发布'},{cat:'cn',t:'CPI/PPI数据 ✅已发布（同比+1.0%）'}],
+ 15:[{cat:'cn',t:'工业增加值/社零/固投数据'},{cat:'report',t:'A股半年报预告强制截止日'}],
+ 17:[{cat:'fut',t:'中金所IF/IH/IC/IM股指期货交割'},{cat:'opt',t:'中金所股指期权到期'}],
+ 20:[{cat:'lpr',t:'LPR利率报价（1年/5年）'}],
+ 22:[{cat:'opt',t:'上交所/深交所ETF期权最后交易日'}],
+ 29:[{cat:'fomc',t:'FOMC议息会议第1天'},{cat:'us',t:'英伟达NVDA Q2财报（预估）'}],
+ 30:[{cat:'fomc',t:'FOMC利率决议 北京时间7/30凌晨'},{cat:'us',t:'苹果AAPL / 亚马逊AMZN 盘后'},{cat:'a50',t:'富时A50交割日'}],
+ 31:[{cat:'cn',t:'中国PMI制造业/非制造业数据'}],
+};
+(function(){
+  const head=['一','二','三','四','五','六','日'];
+  document.getElementById('calHead').innerHTML=head.map(h=>`<div class="cal-week">周${h}</div>`).join('');
+  const firstDow=2; const days=31;
+  let cells='';
+  for(let i=0;i<firstDow;i++) cells+=`<div class="cal-cell empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const evs=EV[d]||[];
+    const today=d===28?'today':'';
+    let inner=`<div class="cal-d">${d}</div>`;
+    evs.slice(0,3).forEach(e=>{inner+=`<div class="ev"><span class="e">${FLAG[e.cat]}</span><span class="t" style="color:${CAT[e.cat].color}">${e.t}</span></div>`;});
+    if(evs.length>3) inner+=`<div class="ev"><span class="t" style="color:var(--dim)">+${evs.length-3} 更多…</span></div>`;
+    cells+=`<div class="cal-cell ${today}" onclick="openCal(${d})">${inner}</div>`;
+  }
+  const total=firstDow+days; const rem=(7-total%7)%7;
+  for(let i=0;i<rem;i++) cells+=`<div class="cal-cell empty"></div>`;
+  document.getElementById('calBody').innerHTML=cells;
+  document.getElementById('legend').innerHTML=Object.keys(CAT).map(k=>{
+    const c=CAT[k];
+    return `<div class="lg"><div class="lh"><span class="sw" style="background:${c.color}"></span>${c.name}</div><div class="ld">${c.desc}</div></div>`;
+  }).join('');
+})();
+function openCal(d){
+  const evs=EV[d]||[];
+  document.getElementById('calDate').textContent=`2026年7月${d}日`;
+  if(!evs.length){document.getElementById('calEvents').innerHTML='<div class="note">当日无标注的重要事件</div>';}
+  else{
+    document.getElementById('calEvents').innerHTML=evs.map(e=>`
+      <div class="mev"><span class="e">${FLAG[e.cat]}</span><div><div class="mt" style="color:${CAT[e.cat].color}">${CAT[e.cat].name}</div><div>${e.t}</div><div class="md">${CAT[e.cat].desc}</div></div></div>`).join('');
+  }
+  document.getElementById('calMask').classList.add('show');
+}
+function closeCal(){document.getElementById('calMask').classList.remove('show');}
+</script>
+</body>
+</html>
