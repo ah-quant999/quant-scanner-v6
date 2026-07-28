@@ -194,6 +194,8 @@ data/_crisis_hist_cache.json
 data/*.bak
 data/*.bak_strict
 data/*.log
+data/_peer_monitor.log
+data/_tdx_cache/
 # 敏感文件：根目录级（兼容旧配置）
 .neodata_token
 .gh_pat
