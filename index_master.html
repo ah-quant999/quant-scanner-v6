@@ -1077,6 +1077,7 @@ tr:hover td { background: #fafbfc; }
         <button class="health-sub-tab" data-cat="cockpit" onclick="renderHealthDashboard('cockpit')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #1a237e;background:#1a237e;color:#fff;">🎯 驾驶舱</button>
         <button class="health-sub-tab" data-cat="allsite" onclick="renderHealthDashboard('allsite')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #5e35b1;background:#5e35b1;color:#fff;">🌐 全站精选</button>
         <button id="btnShelfUnlisted" onclick="toggleUnlistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">📦 暂未上架</button>
+        <button id="btnShelfDelisted" onclick="toggleDelistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">🗄️ 已下架</button>
       </div>
 
       <!-- 🎯 选股驾驶舱（健康看板子 tab，点击"🎯 驾驶舱"按钮切换显示） -->
@@ -1314,6 +1315,9 @@ tr:hover td { background: #fafbfc; }
 
 
       </div>
+
+      <!-- ============ 已下架独立面板（JS 将 shelf-group 移入）============ -->
+      <div id="delistedPanel" style="display:none;margin-bottom:16px;"></div>
 
   <!-- 机游共振 -->
 
@@ -144612,10 +144616,10 @@ var PAGE_CARDS = [
   {page:'📋 总览', card:'🧠 AI市场速览',      check:function(){return !!document.getElementById('aiSummaryContent') && document.getElementById('aiSummaryContent').innerHTML.length > 200;}},
   {page:'📋 总览', card:'🚀 打新研判',        check:function(){return !!(window.IPO_DATA&&window.IPO_DATA.update_time);}},
   // 2026-07-28 移动：国家队ETF资金流向卡片移到「暂未上架→已下架卡片」区（与 ETF 资金热度重复，主界面不再显示）
-  {page:'📦 暂未上架', card:'💰 国家队ETF(已下架)', check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
+  {page:'🗄️ 已下架', card:'💰 国家队ETF(已下架)', check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📋 总览', card:'📊 ETF资金热度',       check:function(){var el=document.getElementById('etfHeatCard'); return el && el.style.display !== 'none';}},
   {page:'📋 总览', card:'💰 板块资金流向',    check:function(){var el=document.getElementById('sectorFundFlowCard'); return el && el.style.display !== 'none';}},
-  {page:'📦 暂未上架', card:'📈 股指期货升贴水',  check:function(){var el=document.getElementById('cffexCard'); return el && el.style.display !== 'none';}},
+  {page:'🗄️ 已下架', card:'📈 股指期货升贴水',  check:function(){var el=document.getElementById('cffexCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'⏸️ 金股池停牌',    check:function(){return !!(window.SUSPENSION_ALERT&&window.SUSPENSION_ALERT.update_time);}},
   // ===== 数据监控页 =====
   {page:'📈 数据监控', card:'📊 涨跌+成交额历史', check:function(){return (window.SH_SZ_HISTORY||{}).update_time ? true : false;}},
@@ -144629,11 +144633,11 @@ var PAGE_CARDS = [
   {page:'📈 数据监控', card:'🌍 全球危机监测',    check:function(){return !!(window.MACRO_DATA&&(window.MACRO_DATA.global_macro||{}).vix);}},
   // ===== 预判信号页 =====
   {page:'🔮 预判信号', card:'📊 一眼结论',        check:function(){var el=document.getElementById('summaryOverview'); return el && el.style.display !== 'none';}},
-  {page:'📦 暂未上架', card:'🎯 精选预判信号',    check:function(){var el=document.getElementById('selectedSignalsCard'); return el && el.style.display !== 'none';}},
+  {page:'🗄️ 已下架', card:'🎯 精选预判信号',    check:function(){var el=document.getElementById('selectedSignalsCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'🔥 涨停联动',        check:function(){var el=document.getElementById('limitUpHeatCard'); return el && el.style.display !== 'none';}},
   {page:'🔮 预判信号', card:'📊 板块资金三合一', check:function(){var el=document.getElementById('sectorRotationContent'); return el && el.innerHTML.length > 100;}},
   {page:'🔮 预判信号', card:'🐉 龙虎榜监控',      check:function(){return !!(window.LHB_DATA&&window.LHB_DATA.update_time);}},
-  {page:'📦 暂未上架', card:'💰 四路资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
+  {page:'🗄️ 已下架', card:'💰 四路资金流向对比', check:function(){var el=document.getElementById('capitalFlowCard'); return el && el.style.display !== 'none';}},
   // ===== 金股观测页 =====
   {page:'⭐ 金股观测', card:'🌟 个股强烈关注',    check:function(){var el=document.getElementById('goldTable'); return el && el.innerHTML.length > 50;}},
   {page:'⭐ 金股观测', card:'🥇 三重共识',    check:function(){var el=document.getElementById('top10DailyCard'); return el && el.offsetParent !== null;}},
@@ -144648,6 +144652,32 @@ var PAGE_CARDS = [
   {page:'📋 总览',   card:'📊 概念涨跌排名',    check:function(){var el=document.getElementById('conceptRankingCard'); return el && el.style.display !== 'none';}},
 ];
 
+// ===== 已下架面板 =====
+function toggleDelistedPanel() {
+  var panel = document.getElementById('delistedPanel');
+  var btn = document.getElementById('btnShelfDelisted');
+  if (!panel || !btn) return;
+  // 首次点击：把原 unlistedPanel 内的 shelf-group（已下架卡片）移入本面板
+  if (!panel.dataset.moved) {
+    var sg = document.querySelector('.shelf-group');
+    if (sg) { panel.appendChild(sg); panel.dataset.moved = '1'; }
+  }
+  var isShown = panel.style.display !== 'none';
+  if (isShown) {
+    panel.style.display='none';
+    btn.style.background='#fafafa'; btn.style.color='#9e9e9e'; btn.style.borderColor='#bdbdbd';
+    var activeTab=document.querySelector('.health-sub-tab.active');if(!activeTab)activeTab=document.querySelector('.health-sub-tab[data-cat="all"]');
+    if(activeTab) activeTab.click();
+  } else {
+    panel.style.display='block';
+    var dash=document.getElementById('healthDashboard'); if(dash) dash.style.display='none';
+    var cp=document.getElementById('stockCockpit'); if(cp) cp.style.display='none';
+    var un=document.getElementById('unlistedPanel'); if(un) un.style.display='none';
+    var ae=document.getElementById('allsitePanel'); if(ae) ae.style.display='none';
+    btn.style.background='#5d4037'; btn.style.color='#fff'; btn.style.borderColor='#5d4037';
+  }
+}
+
 // ===== 暂未上架面板 =====
 function toggleUnlistedPanel() {
   var panel = document.getElementById('unlistedPanel');
@@ -144661,6 +144691,8 @@ function toggleUnlistedPanel() {
     if(dashboard) dashboard.style.display='';
     if(cockpitEl) cockpitEl.style.display='none';
     var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
+    var _dp=document.getElementById('delistedPanel'); if(_dp) _dp.style.display='none';
+    var _db=document.getElementById('btnShelfDelisted'); if(_db){_db.style.background='#fafafa';_db.style.color='#9e9e9e';_db.style.borderColor='#bdbdbd';}
     btn.style.background='#fafafa'; btn.style.color='#9e9e9e'; btn.style.borderColor='#bdbdbd';
     var activeTab=document.querySelector('.health-sub-tab.active');if(!activeTab)activeTab=document.querySelector('.health-sub-tab[data-cat="all"]');
     if(activeTab) activeTab.click();
@@ -144669,6 +144701,8 @@ function toggleUnlistedPanel() {
     if(dashboard) dashboard.style.display='none';
     if(cockpitEl) cockpitEl.style.display='none';
     var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
+    var _dp=document.getElementById('delistedPanel'); if(_dp) _dp.style.display='none';
+    var _db=document.getElementById('btnShelfDelisted'); if(_db){_db.style.background='#fafafa';_db.style.color='#9e9e9e';_db.style.borderColor='#bdbdbd';}
     btn.style.background='#7b1fa2'; btn.style.color='#fff'; btn.style.borderColor='#7b1fa2';
     moveCardsToShelf();
     // 保险：即使 moveCardsToShelf 出错，也确保 CRDS 渲染
@@ -145240,6 +145274,8 @@ function renderHealthDashboard(cat){
     el.style.display='none';
     if(unlistedEl){ unlistedEl.style.display='none'; }
     if(allsiteEl){ allsiteEl.style.display='none'; }
+    var _dp=document.getElementById('delistedPanel'); if(_dp) _dp.style.display='none';
+    var _db=document.getElementById('btnShelfDelisted'); if(_db){_db.style.background='#fafafa';_db.style.color='#9e9e9e';_db.style.borderColor='#bdbdbd';}
     // 驾驶舱 active 样式（深蓝）
     var cTabs = document.querySelectorAll('.health-sub-tab[data-cat]');
     for(var ci=0;ci<cTabs.length;ci++){
@@ -145257,6 +145293,8 @@ function renderHealthDashboard(cat){
     if(cockpitEl){ cockpitEl.style.display='none'; }
     if(unlistedEl){ unlistedEl.style.display='none'; }
     el.style.display='none';
+    var _dp=document.getElementById('delistedPanel'); if(_dp) _dp.style.display='none';
+    var _db=document.getElementById('btnShelfDelisted'); if(_db){_db.style.background='#fafafa';_db.style.color='#9e9e9e';_db.style.borderColor='#bdbdbd';}
     var ap = document.getElementById('allsitePanel');
     if(ap){ ap.style.display=''; }
     // 全站精选 active 样式（紫）
@@ -145274,7 +145312,10 @@ function renderHealthDashboard(cat){
   } else {
     if(cockpitEl){ cockpitEl.style.display='none'; }
     if(allsiteEl){ allsiteEl.style.display='none'; }
+    if(unlistedEl){ unlistedEl.style.display='none'; }
     el.style.display='';
+    var _dp=document.getElementById('delistedPanel'); if(_dp) _dp.style.display='none';
+    var _db=document.getElementById('btnShelfDelisted'); if(_db){_db.style.background='#fafafa';_db.style.color='#9e9e9e';_db.style.borderColor='#bdbdbd';}
   }
 
   // 更新 sub-tab 按钮样式
