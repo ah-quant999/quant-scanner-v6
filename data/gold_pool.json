@@ -124,8 +124,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 434.55,
-          "pct_chg": -11.5,
+          "close": 431.09,
+          "pct_chg": -12.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -364,8 +364,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 192.21,
-          "pct_chg": -8.12,
+          "close": 188.67,
+          "pct_chg": -9.81,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -878,8 +878,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 220.65,
-          "pct_chg": -7.55,
+          "close": 218.68,
+          "pct_chg": -8.37,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -1150,8 +1150,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 80.01,
-          "pct_chg": -2.84,
+          "close": 78.5,
+          "pct_chg": -4.68,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -1274,7 +1274,7 @@
       "market": "沪市",
       "board_label": "科创板",
       "first_date": "2026-07-21",
-      "signal_count": 1,
+      "signal_count": 0,
       "max_signal": 1,
       "history": [
         {
@@ -1363,13 +1363,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 396.31,
-          "pct_chg": -0.87,
+          "signal_count": 0,
+          "close": 391.81,
+          "pct_chg": -1.99,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -1380,13 +1380,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -2010,8 +2010,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 49.12,
-          "pct_chg": -1.92,
+          "close": 48.92,
+          "pct_chg": -2.32,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2219,8 +2219,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 111.09,
-          "pct_chg": -4.41,
+          "close": 111.68,
+          "pct_chg": -3.9,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -2425,8 +2425,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 394.61,
-          "pct_chg": -1.35,
+          "close": 394.08,
+          "pct_chg": -1.48,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3275,8 +3275,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 244.01,
-          "pct_chg": 1.33,
+          "close": 244.52,
+          "pct_chg": 1.54,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3566,8 +3566,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 93.8,
-          "pct_chg": 1.52,
+          "close": 93.68,
+          "pct_chg": 1.39,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -3769,7 +3769,7 @@
       "market": "沪市",
       "board_label": "主板",
       "first_date": "2026-07-22",
-      "signal_count": 1,
+      "signal_count": 0,
       "max_signal": 1,
       "history": [
         {
@@ -3858,10 +3858,10 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 52.94,
-          "pct_chg": -1.23,
-          "缠论买_日K": true,
+          "signal_count": 0,
+          "close": 53.05,
+          "pct_chg": -1.03,
+          "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": false,
@@ -3872,7 +3872,7 @@
           "上涨趋势": false,
           "三线共振": false,
           "latest": {
-            "缠论买_日K": true,
+            "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": false,
@@ -3881,7 +3881,7 @@
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -4063,8 +4063,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 213.0,
-          "pct_chg": -6.35,
+          "close": 211.55,
+          "pct_chg": -6.99,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4471,6 +4471,7 @@
       ],
       "board": "科创板",
       "sectors": [
+        "铁路、船舶、航空航天和其他运输设备制造业",
         "AH股",
         "IGBT概念",
         "MSCI中国",
@@ -4499,7 +4500,8 @@
         "融资融券",
         "铁路基建",
         "高压快充"
-      ]
+      ],
+      "industry": "铁路、船舶、航空航天和其他运输设备制造业"
     },
     "sz_000425": {
       "code": "000425",
@@ -4745,8 +4747,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 58.84,
-          "pct_chg": -1.08,
+          "close": 59.08,
+          "pct_chg": -0.67,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -4864,7 +4866,7 @@
       "market": "沪市",
       "board_label": "科创板",
       "first_date": "2026-07-21",
-      "signal_count": 1,
+      "signal_count": 0,
       "max_signal": 1,
       "history": [
         {
@@ -4953,11 +4955,11 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 303.02,
-          "pct_chg": -2.72,
+          "signal_count": 0,
+          "close": 299.53,
+          "pct_chg": -3.84,
           "缠论买_日K": false,
-          "金钻_黄柱": true,
+          "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": false,
           "上涨趋势_条件1": false,
@@ -4968,7 +4970,7 @@
           "三线共振": false,
           "latest": {
             "缠论买_日K": false,
-            "金钻_黄柱": true,
+            "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": false,
             "上涨趋势_条件1": false,
@@ -4976,7 +4978,7 @@
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -5212,6 +5214,7 @@
       ],
       "board": "主板",
       "sectors": [
+        "电气机械和器材制造业",
         "5G概念",
         "LED概念",
         "上证380",
@@ -5231,7 +5234,8 @@
         "沪股通",
         "融资融券",
         "通信技术"
-      ]
+      ],
+      "industry": "电气机械和器材制造业"
     },
     "sz_300895": {
       "code": "300895",
@@ -5487,8 +5491,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 79.39,
-          "pct_chg": -0.09,
+          "close": 79.67,
+          "pct_chg": 0.26,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -5595,7 +5599,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-22",
@@ -5691,13 +5695,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 757.5,
-          "pct_chg": -1.62,
+          "signal_count": 0,
+          "close": 741.88,
+          "pct_chg": -3.65,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -5708,13 +5712,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -5971,7 +5975,7 @@
     },
     "sh_688702": {
       "code": "688702",
-      "name": "盛科通信",
+      "name": "盛科通信-U",
       "market": "sh",
       "board_label": "科创板",
       "fund_type": "混合",
@@ -6075,8 +6079,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 367.58,
-          "pct_chg": -3.64,
+          "close": 368.57,
+          "pct_chg": -3.38,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6279,8 +6283,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 41.22,
-          "pct_chg": -6.21,
+          "close": 40.54,
+          "pct_chg": -7.76,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6515,6 +6519,7 @@
       ],
       "board": "科创板",
       "sectors": [
+        "计算机、通信和其他电子设备制造业",
         "AI眼镜",
         "专精特新",
         "半导体概念",
@@ -6527,7 +6532,8 @@
         "沪股通",
         "消费电子概念",
         "融资融券"
-      ]
+      ],
+      "industry": "计算机、通信和其他电子设备制造业"
     },
     "sz_000938": {
       "code": "000938",
@@ -6635,8 +6641,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 40.29,
-          "pct_chg": -2.85,
+          "close": 39.86,
+          "pct_chg": -3.88,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -6866,8 +6872,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 171.5,
-          "pct_chg": 1.27,
+          "close": 170.1,
+          "pct_chg": 0.44,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -7696,8 +7702,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 110.38,
-          "pct_chg": -4.14,
+          "close": 108.64,
+          "pct_chg": -5.65,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -7894,8 +7900,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 123.3,
-          "pct_chg": -7.08,
+          "close": 119.62,
+          "pct_chg": -9.86,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8405,8 +8411,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 29.01,
-          "pct_chg": -7.32,
+          "close": 28.75,
+          "pct_chg": -8.15,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8631,8 +8637,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 18.82,
-          "pct_chg": 5.02,
+          "close": 18.6,
+          "pct_chg": 3.79,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -8839,8 +8845,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 153.38,
-          "pct_chg": -7.51,
+          "close": 151.11,
+          "pct_chg": -8.88,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -9043,8 +9049,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 200.57,
-          "pct_chg": -6.76,
+          "close": 197.44,
+          "pct_chg": -8.21,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9247,8 +9253,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 80.38,
-          "pct_chg": -5.44,
+          "close": 80.15,
+          "pct_chg": -5.71,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -9469,8 +9475,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 104.89,
-          "pct_chg": -6.15,
+          "close": 103.62,
+          "pct_chg": -7.28,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -9914,8 +9920,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 235.2,
-          "pct_chg": -2.35,
+          "close": 227.78,
+          "pct_chg": -5.43,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10122,8 +10128,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 62.99,
-          "pct_chg": -9.95,
+          "close": 62.96,
+          "pct_chg": -9.99,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10330,8 +10336,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 157.18,
-          "pct_chg": -6.27,
+          "close": 156.41,
+          "pct_chg": -6.73,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -10538,8 +10544,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 223.28,
-          "pct_chg": -6.89,
+          "close": 219.81,
+          "pct_chg": -8.34,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10742,8 +10748,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 144.71,
-          "pct_chg": -4.48,
+          "close": 141.02,
+          "pct_chg": -6.92,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -10949,8 +10955,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 122.76,
-          "pct_chg": -6.45,
+          "close": 120.42,
+          "pct_chg": -8.24,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11078,7 +11084,7 @@
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 2,
+      "signal_count": 1,
       "history": [
         {
           "date": "2026-07-22",
@@ -11174,30 +11180,30 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 2,
-          "close": 5.86,
-          "pct_chg": 3.9,
+          "signal_count": 1,
+          "close": 5.68,
+          "pct_chg": 0.71,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
           "四量图_机构变红": true,
-          "上涨趋势_条件1": true,
+          "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
           "上涨趋势_条件4": true,
-          "上涨趋势": true,
+          "上涨趋势": false,
           "三线共振": false,
           "latest": {
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
             "四量图_机构变红": true,
-            "上涨趋势_条件1": true,
+            "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
-            "上涨趋势": true,
-            "signal_count": 2
+            "上涨趋势": false,
+            "signal_count": 1
           }
         }
       ],
@@ -11520,8 +11526,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 47.37,
-          "pct_chg": -8.8,
+          "close": 46.75,
+          "pct_chg": -9.99,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11732,8 +11738,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 59.33,
-          "pct_chg": -6.85,
+          "close": 58.45,
+          "pct_chg": -8.23,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -11928,8 +11934,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 74.71,
-          "pct_chg": -4.99,
+          "close": 74.03,
+          "pct_chg": -5.85,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -12123,8 +12129,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 132.56,
-          "pct_chg": -8.99,
+          "close": 131.29,
+          "pct_chg": -9.87,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -12764,8 +12770,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 37.3,
-          "pct_chg": -2.59,
+          "close": 37.23,
+          "pct_chg": -2.77,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -12975,8 +12981,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 94.52,
-          "pct_chg": -5.48,
+          "close": 93.39,
+          "pct_chg": -6.61,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13173,8 +13179,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 35.0,
-          "pct_chg": 4.26,
+          "close": 34.84,
+          "pct_chg": 3.78,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -13383,8 +13389,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 391.42,
-          "pct_chg": 0.51,
+          "close": 376.12,
+          "pct_chg": -3.42,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -13613,6 +13619,7 @@
       ],
       "board": "科创板",
       "sectors": [
+        "专用设备制造业",
         "PCB",
         "专精特新",
         "人工智能",
@@ -13631,7 +13638,8 @@
         "车联网(车路云)",
         "转债标的",
         "边缘计算"
-      ]
+      ],
+      "industry": "专用设备制造业"
     },
     "sh_688536": {
       "code": "688536",
@@ -13739,8 +13747,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 236.88,
-          "pct_chg": -4.43,
+          "close": 235.34,
+          "pct_chg": -5.06,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -13957,8 +13965,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 56.72,
-          "pct_chg": -3.31,
+          "close": 56.49,
+          "pct_chg": -3.7,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14168,8 +14176,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 155.52,
-          "pct_chg": -9.25,
+          "close": 151.0,
+          "pct_chg": -11.89,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -14471,8 +14479,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 55.48,
-          "pct_chg": -9.44,
+          "close": 55.5,
+          "pct_chg": -9.4,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -14683,8 +14691,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 123.25,
-          "pct_chg": -6.47,
+          "close": 122.19,
+          "pct_chg": -7.28,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15624,8 +15632,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 44.79,
-          "pct_chg": 1.24,
+          "close": 44.25,
+          "pct_chg": 0.02,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -15833,8 +15841,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 43.09,
-          "pct_chg": -4.65,
+          "close": 42.71,
+          "pct_chg": -5.49,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -16042,8 +16050,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 49.69,
-          "pct_chg": -3.31,
+          "close": 49.24,
+          "pct_chg": -4.18,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -16600,8 +16608,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 1186.07,
-          "pct_chg": -4.43,
+          "close": 1165.32,
+          "pct_chg": -6.1,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -16830,8 +16838,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 104.3,
-          "pct_chg": -6.52,
+          "close": 102.97,
+          "pct_chg": -7.71,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17048,8 +17056,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 78.5,
-          "pct_chg": -4.34,
+          "close": 77.71,
+          "pct_chg": -5.3,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -17292,7 +17300,7 @@
     },
     "sh_688549": {
       "code": "688549",
-      "name": "中巨芯",
+      "name": "中巨芯-U",
       "market": "sh",
       "board_label": "科创板",
       "fund_type": "混合",
@@ -17396,8 +17404,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 23.38,
-          "pct_chg": -7.48,
+          "close": 22.89,
+          "pct_chg": -9.42,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17600,8 +17608,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 12.94,
-          "pct_chg": -2.93,
+          "close": 12.96,
+          "pct_chg": -2.78,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -17816,8 +17824,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 267.5,
-          "pct_chg": -2.37,
+          "close": 267.06,
+          "pct_chg": -2.53,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -18017,8 +18025,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 33.57,
-          "pct_chg": -4.63,
+          "close": 32.93,
+          "pct_chg": -6.45,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18234,8 +18242,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 103.69,
-          "pct_chg": -4.19,
+          "close": 102.1,
+          "pct_chg": -5.66,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18567,8 +18575,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 26.03,
-          "pct_chg": -2.51,
+          "close": 25.75,
+          "pct_chg": -3.56,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -18764,8 +18772,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 222.24,
-          "pct_chg": -7.83,
+          "close": 218.68,
+          "pct_chg": -9.31,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -18966,8 +18974,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 43.87,
-          "pct_chg": -4.53,
+          "close": 43.12,
+          "pct_chg": -6.16,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19179,8 +19187,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 761.9,
-          "pct_chg": -3.79,
+          "close": 746.29,
+          "pct_chg": -5.76,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -19363,8 +19371,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 12.72,
-          "pct_chg": 3.92,
+          "close": 12.5,
+          "pct_chg": 2.12,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19465,7 +19473,7 @@
       "name": "飞凯材料",
       "market": "sz",
       "board_label": "创业板",
-      "fund_type": "混合",
+      "fund_type": "游资",
       "first_date": "2026-07-22",
       "first_signal": 2,
       "max_signal": 2,
@@ -19566,8 +19574,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 34.36,
-          "pct_chg": -2.83,
+          "close": 33.72,
+          "pct_chg": -4.64,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -19777,8 +19785,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 5.76,
-          "pct_chg": -3.52,
+          "close": 5.69,
+          "pct_chg": -4.69,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -20010,8 +20018,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 56.36,
-          "pct_chg": 1.09,
+          "close": 55.05,
+          "pct_chg": -1.26,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -20219,8 +20227,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 212.31,
-          "pct_chg": -5.47,
+          "close": 210.93,
+          "pct_chg": -6.08,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -20582,8 +20590,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 86.2,
-          "pct_chg": -1.69,
+          "close": 84.84,
+          "pct_chg": -3.24,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -20785,8 +20793,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 38.34,
-          "pct_chg": -6.65,
+          "close": 38.06,
+          "pct_chg": -7.33,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -20994,8 +21002,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 33.17,
-          "pct_chg": -1.01,
+          "close": 33.16,
+          "pct_chg": -1.04,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -21214,8 +21222,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 964.0,
-          "pct_chg": -10.49,
+          "close": 946.01,
+          "pct_chg": -12.16,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -21865,8 +21873,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 400.09,
-          "pct_chg": 4.8,
+          "close": 399.57,
+          "pct_chg": 4.66,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22071,8 +22079,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 107.42,
-          "pct_chg": -1.72,
+          "close": 105.86,
+          "pct_chg": -3.15,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -22275,8 +22283,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 58.75,
-          "pct_chg": -1.62,
+          "close": 56.43,
+          "pct_chg": -5.51,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22627,8 +22635,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 116.97,
-          "pct_chg": -3.49,
+          "close": 116.94,
+          "pct_chg": -3.51,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -22835,8 +22843,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 304.66,
-          "pct_chg": -2.85,
+          "close": 303.16,
+          "pct_chg": -3.33,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -23046,8 +23054,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 95.93,
-          "pct_chg": -6.93,
+          "close": 94.74,
+          "pct_chg": -8.08,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -23250,8 +23258,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 36.44,
-          "pct_chg": -1.49,
+          "close": 36.48,
+          "pct_chg": -1.38,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -23472,8 +23480,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 52.43,
-          "pct_chg": -5.62,
+          "close": 51.61,
+          "pct_chg": -7.09,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -23691,8 +23699,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 40.76,
-          "pct_chg": 1.93,
+          "close": 40.54,
+          "pct_chg": 1.38,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -23889,8 +23897,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 62.37,
-          "pct_chg": -2.42,
+          "close": 61.77,
+          "pct_chg": -3.36,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24415,8 +24423,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 14.88,
-          "pct_chg": 10.88,
+          "close": 14.69,
+          "pct_chg": 9.46,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24611,8 +24619,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 281.41,
-          "pct_chg": -1.24,
+          "close": 276.91,
+          "pct_chg": -2.82,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -24813,8 +24821,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 97.1,
-          "pct_chg": -6.02,
+          "close": 95.98,
+          "pct_chg": -7.1,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -25035,8 +25043,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 93.25,
-          "pct_chg": -5.7,
+          "close": 93.05,
+          "pct_chg": -5.91,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -25219,8 +25227,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 36.07,
-          "pct_chg": 0.11,
+          "close": 35.9,
+          "pct_chg": -0.36,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -26095,8 +26103,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 149.0,
-          "pct_chg": 0.3,
+          "close": 151.77,
+          "pct_chg": 2.16,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -26428,6 +26436,7 @@
       ],
       "board": "主板",
       "sectors": [
+        "零售业",
         "MSCI中国",
         "上证380",
         "中盘价值",
@@ -26453,7 +26462,8 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "零售业"
     },
     "sh_688271": {
       "code": "688271",
@@ -26628,6 +26638,7 @@
       ],
       "board": "科创板",
       "sectors": [
+        "化学原料和化学制品制造业",
         "中证500",
         "化妆品概念",
         "医疗器械概念",
@@ -26655,7 +26666,8 @@
         true,
         true
       ],
-      "ema_score": 6
+      "ema_score": 6,
+      "industry": "化学原料和化学制品制造业"
     },
     "sz_000999": {
       "code": "000999",
@@ -26932,8 +26944,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 37.73,
-          "pct_chg": -2.68,
+          "close": 37.76,
+          "pct_chg": -2.61,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -27022,7 +27034,7 @@
       "sectors": [
         "研究和试验发展"
       ],
-      "fund_type": "机构",
+      "fund_type": "混合",
       "ema_up": 6,
       "ema_dirs": [
         false,
@@ -27041,7 +27053,7 @@
       "market": "深市",
       "board_label": "主板",
       "first_date": "2026-07-23",
-      "signal_count": 0,
+      "signal_count": 1,
       "max_signal": 1,
       "history": [
         {
@@ -27074,13 +27086,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 0,
-          "close": 138.42,
-          "pct_chg": -8.34,
+          "signal_count": 1,
+          "close": 139.45,
+          "pct_chg": -7.66,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": false,
+          "四量图_机构变红": true,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -27091,13 +27103,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": false,
+            "四量图_机构变红": true,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 0
+            "signal_count": 1
           }
         }
       ],
@@ -28994,6 +29006,7 @@
       ],
       "board": "科创板",
       "sectors": [
+        "铁路、船舶、航空航天和其他运输设备制造业",
         "一带一路",
         "上证380",
         "中盘成长",
@@ -29020,7 +29033,8 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "铁路、船舶、航空航天和其他运输设备制造业"
     },
     "sz_002600": {
       "code": "002600",
@@ -30356,8 +30370,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 114.39,
-          "pct_chg": -9.21,
+          "close": 113.44,
+          "pct_chg": -9.96,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -31258,8 +31272,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 49.84,
-          "pct_chg": 3.66,
+          "close": 49.36,
+          "pct_chg": 2.66,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -31832,8 +31846,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 60.12,
-          "pct_chg": -3.68,
+          "close": 59.98,
+          "pct_chg": -3.91,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -32007,8 +32021,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 161.7,
-          "pct_chg": -0.68,
+          "close": 162.0,
+          "pct_chg": -0.49,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -32795,8 +32809,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 18.65,
-          "pct_chg": 2.47,
+          "close": 18.61,
+          "pct_chg": 2.25,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -32955,8 +32969,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 29.13,
-          "pct_chg": -3.8,
+          "close": 28.62,
+          "pct_chg": -5.48,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -33128,8 +33142,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 15.75,
-          "pct_chg": -1.69,
+          "close": 15.45,
+          "pct_chg": -3.56,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -33521,8 +33535,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 197.3,
-          "pct_chg": -1.2,
+          "close": 196.5,
+          "pct_chg": -1.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -33654,8 +33668,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 75.41,
-          "pct_chg": -5.74,
+          "close": 73.59,
+          "pct_chg": -8.01,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -33998,8 +34012,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 40.02,
-          "pct_chg": -2.79,
+          "close": 40.54,
+          "pct_chg": -1.53,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -34272,8 +34286,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 121.7,
-          "pct_chg": -3.64,
+          "close": 120.47,
+          "pct_chg": -4.62,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -34528,8 +34542,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 447.4,
-          "pct_chg": 0.99,
+          "close": 444.2,
+          "pct_chg": 0.27,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -34712,7 +34726,8 @@
       ],
       "sources": [
         "港股成交前50",
-        "maharo研报"
+        "maharo研报",
+        "投行研报"
       ],
       "latest": {
         "close": 70.05,
@@ -35166,8 +35181,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 38.52,
-          "pct_chg": -0.36,
+          "close": 38.64,
+          "pct_chg": -0.05,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35339,8 +35354,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 8.36,
-          "pct_chg": 0.72,
+          "close": 8.4,
+          "pct_chg": 1.2,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35587,8 +35602,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 5.07,
-          "pct_chg": -0.39,
+          "close": 5.04,
+          "pct_chg": -0.98,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -35759,8 +35774,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 7.52,
-          "pct_chg": -0.13,
+          "close": 7.43,
+          "pct_chg": -1.33,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -37140,7 +37155,7 @@
       "first_date": "2026-07-23",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 0,
       "history": [
         {
           "date": "2026-07-23",
@@ -37218,13 +37233,13 @@
         },
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 94.19,
-          "pct_chg": -6.72,
+          "signal_count": 0,
+          "close": 93.91,
+          "pct_chg": -7.0,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": true,
+          "四量图_机构变红": false,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -37235,13 +37250,13 @@
             "缠论买_日K": false,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": true,
+            "四量图_机构变红": false,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 0
           }
         }
       ],
@@ -37303,6 +37318,7 @@
         "锂电池概念"
       ],
       "sectors": [
+        "化学原料和化学制品制造业",
         "专精特新",
         "固态电池",
         "小盘价值",
@@ -37312,7 +37328,8 @@
         "电池技术",
         "融资融券",
         "锂电池概念"
-      ]
+      ],
+      "industry": "化学原料和化学制品制造业"
     },
     "sz_300919": {
       "code": "300919",
@@ -37709,8 +37726,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 18.97,
-          "pct_chg": 0.8,
+          "close": 19.0,
+          "pct_chg": 0.96,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38054,7 +38071,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "保险业",
+      "sectors": [
+        "保险业"
+      ]
     },
     "hk_6481": {
       "code": "6481",
@@ -38166,8 +38187,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 9.89,
-          "pct_chg": -7.48,
+          "close": 10.09,
+          "pct_chg": -5.61,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38233,7 +38254,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_688403": {
       "code": "688403",
@@ -38299,8 +38324,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 23.57,
-          "pct_chg": -5.57,
+          "close": 23.19,
+          "pct_chg": -7.09,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -38366,7 +38391,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sh_688048": {
       "code": "688048",
@@ -38432,8 +38461,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 280.22,
-          "pct_chg": -10.19,
+          "close": 274.5,
+          "pct_chg": -12.02,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -38499,7 +38528,51 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "concepts": [
+        "MSCI中国",
+        "专精特新",
+        "中盘成长",
+        "中盘股",
+        "光纤概念",
+        "光通信模块",
+        "医美概念",
+        "半导体概念",
+        "可控核聚变",
+        "商业航天",
+        "国产芯片",
+        "数据中心",
+        "无人驾驶",
+        "昨日高振幅",
+        "沪股通",
+        "百元股",
+        "科技风格",
+        "融资融券",
+        "通信技术"
+      ],
+      "sectors": [
+        "计算机、通信和其他电子设备制造业",
+        "MSCI中国",
+        "专精特新",
+        "中盘成长",
+        "中盘股",
+        "光纤概念",
+        "光通信模块",
+        "医美概念",
+        "半导体概念",
+        "可控核聚变",
+        "商业航天",
+        "国产芯片",
+        "数据中心",
+        "无人驾驶",
+        "昨日高振幅",
+        "沪股通",
+        "百元股",
+        "科技风格",
+        "融资融券",
+        "通信技术"
+      ]
     },
     "sh_688082": {
       "code": "688082",
@@ -38565,8 +38638,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 302.16,
-          "pct_chg": -1.58,
+          "close": 294.6,
+          "pct_chg": -4.04,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38632,7 +38705,37 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "专用设备制造业",
+      "concepts": [
+        "HS300_",
+        "MSCI中国",
+        "上证180_",
+        "专精特新",
+        "半导体概念",
+        "大盘成长",
+        "大盘股",
+        "沪股通",
+        "百元股",
+        "科技风格",
+        "融资融券",
+        "高带宽内存"
+      ],
+      "sectors": [
+        "专用设备制造业",
+        "HS300_",
+        "MSCI中国",
+        "上证180_",
+        "专精特新",
+        "半导体概念",
+        "大盘成长",
+        "大盘股",
+        "沪股通",
+        "百元股",
+        "科技风格",
+        "融资融券",
+        "高带宽内存"
+      ]
     },
     "hk_01519": {
       "code": "01519",
@@ -38852,8 +38955,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 192.11,
-          "pct_chg": -3.46,
+          "close": 185.97,
+          "pct_chg": -6.55,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -38919,7 +39022,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sh_688172": {
       "code": "688172",
@@ -38985,8 +39092,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 57.77,
-          "pct_chg": -1.67,
+          "close": 57.14,
+          "pct_chg": -2.74,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -39052,7 +39159,39 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "concepts": [
+        "上证380",
+        "中盘成长",
+        "中盘股",
+        "中证500",
+        "传感器",
+        "光通信模块",
+        "半导体概念",
+        "央国企改革",
+        "沪股通",
+        "科技风格",
+        "第三代半导体",
+        "融资融券",
+        "通信技术"
+      ],
+      "sectors": [
+        "计算机、通信和其他电子设备制造业",
+        "上证380",
+        "中盘成长",
+        "中盘股",
+        "中证500",
+        "传感器",
+        "光通信模块",
+        "半导体概念",
+        "央国企改革",
+        "沪股通",
+        "科技风格",
+        "第三代半导体",
+        "融资融券",
+        "通信技术"
+      ]
     },
     "hk_01810": {
       "code": "01810",
@@ -39066,7 +39205,8 @@
       "signal_count": 1,
       "sources": [
         "三足鼎立",
-        "港股成交前50"
+        "港股成交前50",
+        "投行研报"
       ],
       "history": [
         {
@@ -39128,8 +39268,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 29.06,
-          "pct_chg": 1.32,
+          "close": 28.86,
+          "pct_chg": 0.63,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -39261,8 +39401,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 193.98,
-          "pct_chg": -8.72,
+          "close": 189.18,
+          "pct_chg": -10.97,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -39328,7 +39468,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "hk_03908": {
       "code": "03908",
@@ -39482,7 +39626,11 @@
         true,
         true
       ],
-      "ema_score": 7
+      "ema_score": 7,
+      "industry": "保险业",
+      "sectors": [
+        "保险业"
+      ]
     },
     "sz_300442": {
       "code": "300442",
@@ -39548,8 +39696,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 64.31,
-          "pct_chg": -2.97,
+          "close": 64.26,
+          "pct_chg": -3.05,
           "缠论买_日K": false,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -39615,7 +39763,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ]
     },
     "hk_00669": {
       "code": "00669",
@@ -39886,7 +40038,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "资本市场服务",
+      "sectors": [
+        "资本市场服务"
+      ]
     },
     "hk_09988": {
       "code": "09988",
@@ -39930,8 +40086,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 112.9,
-          "pct_chg": 1.71,
+          "close": 111.7,
+          "pct_chg": 0.63,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -39959,7 +40115,8 @@
       "sources": [
         "港股成交前50",
         "maharo研报",
-        "三足鼎立"
+        "三足鼎立",
+        "投行研报"
       ],
       "latest": {
         "close": 112.9,
@@ -40323,8 +40480,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 27.32,
-          "pct_chg": -5.5,
+          "close": 27.17,
+          "pct_chg": -6.02,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40394,7 +40551,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "零售业",
+      "sectors": [
+        "零售业"
+      ]
     },
     "sh_688213": {
       "code": "688213",
@@ -40438,8 +40599,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 92.3,
-          "pct_chg": -3.8,
+          "close": 92.79,
+          "pct_chg": -3.29,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40509,7 +40670,65 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "软件和信息技术服务业",
+      "concepts": [
+        "2025三季报预增",
+        "AI眼镜",
+        "AI芯片",
+        "MSCI中国",
+        "上证380",
+        "中盘成长",
+        "中盘股",
+        "中证500",
+        "人工智能",
+        "传感器",
+        "医疗器械概念",
+        "半导体概念",
+        "国产芯片",
+        "安防概念",
+        "小米概念",
+        "工业互联",
+        "无人机",
+        "无人驾驶",
+        "智能穿戴",
+        "机器人概念",
+        "机器视觉",
+        "汽车芯片",
+        "沪股通",
+        "消费电子概念",
+        "虚拟现实",
+        "融资融券"
+      ],
+      "sectors": [
+        "软件和信息技术服务业",
+        "2025三季报预增",
+        "AI眼镜",
+        "AI芯片",
+        "MSCI中国",
+        "上证380",
+        "中盘成长",
+        "中盘股",
+        "中证500",
+        "人工智能",
+        "传感器",
+        "医疗器械概念",
+        "半导体概念",
+        "国产芯片",
+        "安防概念",
+        "小米概念",
+        "工业互联",
+        "无人机",
+        "无人驾驶",
+        "智能穿戴",
+        "机器人概念",
+        "机器视觉",
+        "汽车芯片",
+        "沪股通",
+        "消费电子概念",
+        "虚拟现实",
+        "融资融券"
+      ]
     },
     "hk_03690": {
       "code": "03690",
@@ -40553,8 +40772,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 91.3,
-          "pct_chg": 2.24,
+          "close": 90.35,
+          "pct_chg": 1.18,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40581,7 +40800,8 @@
       ],
       "sources": [
         "三足鼎立",
-        "港股成交前50"
+        "港股成交前50",
+        "投行研报"
       ],
       "latest": {
         "close": 91.3,
@@ -40668,8 +40888,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 11.58,
-          "pct_chg": 1.4,
+          "close": 11.61,
+          "pct_chg": 1.66,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40782,8 +41002,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 0,
-          "close": 70.1,
-          "pct_chg": -8.57,
+          "close": 69.44,
+          "pct_chg": -9.43,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -40853,7 +41073,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_002310": {
       "code": "002310",
@@ -40940,7 +41164,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电力、热力生产和供应业",
+      "sectors": [
+        "电力、热力生产和供应业"
+      ]
     },
     "sz_002141": {
       "code": "002141",
@@ -40956,8 +41184,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 5.9,
-          "pct_chg": 2.97,
+          "close": 5.89,
+          "pct_chg": 2.79,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41027,7 +41255,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_300765": {
       "code": "300765",
@@ -41038,17 +41270,17 @@
       "first_date": "2026-07-28",
       "first_signal": 2,
       "max_signal": 2,
-      "signal_count": 1,
+      "signal_count": 2,
       "history": [
         {
           "date": "2026-07-28",
-          "signal_count": 1,
-          "close": 38.17,
-          "pct_chg": 4.81,
+          "signal_count": 2,
+          "close": 38.84,
+          "pct_chg": 6.64,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
-          "四量图_机构变红": false,
+          "四量图_机构变红": true,
           "上涨趋势_条件1": false,
           "上涨趋势_条件2": false,
           "上涨趋势_条件3": false,
@@ -41059,13 +41291,13 @@
             "缠论买_日K": true,
             "金钻_黄柱": false,
             "金钻_起涨": false,
-            "四量图_机构变红": false,
+            "四量图_机构变红": true,
             "上涨趋势_条件1": false,
             "上涨趋势_条件2": false,
             "上涨趋势_条件3": false,
             "上涨趋势_条件4": true,
             "上涨趋势": false,
-            "signal_count": 1
+            "signal_count": 2
           }
         }
       ],
@@ -41114,7 +41346,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "食品制造业",
+      "sectors": [
+        "食品制造业"
+      ]
     },
     "sh_688036": {
       "code": "688036",
@@ -41130,8 +41366,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 66.34,
-          "pct_chg": 4.84,
+          "close": 66.0,
+          "pct_chg": 4.3,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41201,7 +41437,45 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "concepts": [
+        "AIPC",
+        "AI手机",
+        "AI智能体",
+        "AI眼镜",
+        "DeepSeek概念",
+        "HS300_",
+        "MLOps概念",
+        "MSCI中国",
+        "一带一路",
+        "上证180_",
+        "养老金",
+        "大盘股",
+        "沪股通",
+        "深圳特区",
+        "股权激励",
+        "融资融券"
+      ],
+      "sectors": [
+        "计算机、通信和其他电子设备制造业",
+        "AIPC",
+        "AI手机",
+        "AI智能体",
+        "AI眼镜",
+        "DeepSeek概念",
+        "HS300_",
+        "MLOps概念",
+        "MSCI中国",
+        "一带一路",
+        "上证180_",
+        "养老金",
+        "大盘股",
+        "沪股通",
+        "深圳特区",
+        "股权激励",
+        "融资融券"
+      ]
     },
     "hk_02331": {
       "code": "02331",
@@ -41303,8 +41577,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 23.4,
-          "pct_chg": 1.47,
+          "close": 23.46,
+          "pct_chg": 1.73,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41389,8 +41663,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 39.25,
-          "pct_chg": 0.64,
+          "close": 39.37,
+          "pct_chg": 0.95,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41460,7 +41734,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "货币金融服务",
+      "sectors": [
+        "货币金融服务"
+      ]
     },
     "sh_688027": {
       "code": "688027",
@@ -41476,8 +41754,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 381.28,
-          "pct_chg": 1.72,
+          "close": 377.94,
+          "pct_chg": 0.82,
           "缠论买_日K": true,
           "金钻_黄柱": true,
           "金钻_起涨": false,
@@ -41547,7 +41825,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "sectors": [
+        "计算机、通信和其他电子设备制造业"
+      ]
     },
     "sz_300214": {
       "code": "300214",
@@ -41563,8 +41845,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 13.99,
-          "pct_chg": -1.69,
+          "close": 14.2,
+          "pct_chg": -0.21,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41634,7 +41916,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "化学原料和化学制品制造业",
+      "sectors": [
+        "化学原料和化学制品制造业"
+      ]
     },
     "sz_300795": {
       "code": "300795",
@@ -41650,8 +41936,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 13.89,
-          "pct_chg": 4.59,
+          "close": 14.44,
+          "pct_chg": 8.73,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41721,7 +42007,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "商务服务业",
+      "sectors": [
+        "商务服务业"
+      ]
     },
     "hk_09999": {
       "code": "09999",
@@ -41737,8 +42027,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 1,
-          "close": 198.4,
-          "pct_chg": 3.87,
+          "close": 199.1,
+          "pct_chg": 4.24,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41910,8 +42200,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 84.99,
-          "pct_chg": 1.02,
+          "close": 85.48,
+          "pct_chg": 1.6,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -41980,7 +42270,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sh_688166": {
       "code": "688166",
@@ -42067,7 +42361,37 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "医药制造业",
+      "concepts": [
+        "上证380",
+        "中证500",
+        "减肥药",
+        "创新药",
+        "医药医疗风格",
+        "合成生物",
+        "小盘股",
+        "昨日高振幅",
+        "沪股通",
+        "流感",
+        "病原体防治",
+        "融资融券"
+      ],
+      "sectors": [
+        "医药制造业",
+        "上证380",
+        "中证500",
+        "减肥药",
+        "创新药",
+        "医药医疗风格",
+        "合成生物",
+        "小盘股",
+        "昨日高振幅",
+        "沪股通",
+        "流感",
+        "病原体防治",
+        "融资融券"
+      ]
     },
     "sz_300753": {
       "code": "300753",
@@ -42083,8 +42407,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 26.29,
-          "pct_chg": 19.99,
+          "close": 25.52,
+          "pct_chg": 16.48,
           "缠论买_日K": false,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -42154,7 +42478,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "专用设备制造业",
+      "sectors": [
+        "专用设备制造业"
+      ]
     },
     "sz_300369": {
       "code": "300369",
@@ -42240,7 +42568,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ]
     },
     "sh_688169": {
       "code": "688169",
@@ -42256,8 +42588,8 @@
         {
           "date": "2026-07-28",
           "signal_count": 2,
-          "close": 104.72,
-          "pct_chg": 2.31,
+          "close": 104.98,
+          "pct_chg": 2.56,
           "缠论买_日K": true,
           "金钻_黄柱": false,
           "金钻_起涨": false,
@@ -42326,10 +42658,272 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "计算机、通信和其他电子设备制造业",
+      "concepts": [
+        "MSCI中国",
+        "上证380",
+        "中盘股",
+        "中证500",
+        "宁组合",
+        "小米概念",
+        "机器人概念",
+        "沪股通",
+        "消费风格",
+        "百元股",
+        "股权激励",
+        "茅指数",
+        "融资融券"
+      ],
+      "sectors": [
+        "计算机、通信和其他电子设备制造业",
+        "MSCI中国",
+        "上证380",
+        "中盘股",
+        "中证500",
+        "宁组合",
+        "小米概念",
+        "机器人概念",
+        "沪股通",
+        "消费风格",
+        "百元股",
+        "股权激励",
+        "茅指数",
+        "融资融券"
+      ]
+    },
+    "sh_601600": {
+      "code": "601600",
+      "name": "中国铝业",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "摩根大通",
+      "rating": "增持"
+    },
+    "sz_301169": {
+      "code": "301169",
+      "name": "零点有数",
+      "market": "深市",
+      "board_label": "创业板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "摩根士丹利",
+      "rating": "未评级"
+    },
+    "sz_301658": {
+      "code": "301658",
+      "name": "首航新能",
+      "market": "深市",
+      "board_label": "创业板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "摩根士丹利",
+      "rating": "未评级"
+    },
+    "sz_300613": {
+      "code": "300613",
+      "name": "富瀚微",
+      "market": "深市",
+      "board_label": "创业板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "摩根士丹利",
+      "rating": "未评级"
+    },
+    "hk_1133": {
+      "code": "1133",
+      "name": "哈尔滨电气",
+      "market": "港股",
+      "board_label": "港股",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "花旗",
+      "rating": "买入"
+    },
+    "sh_601985": {
+      "code": "601985",
+      "name": "中国核电",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "花旗",
+      "rating": "买入"
+    },
+    "sz_300803": {
+      "code": "300803",
+      "name": "指南针",
+      "market": "sz",
+      "board_label": "创业板",
+      "fund_type": "混合",
+      "first_date": "2026-07-28",
+      "first_signal": 2,
+      "max_signal": 2,
+      "signal_count": 2,
+      "history": [
+        {
+          "date": "2026-07-28",
+          "signal_count": 2,
+          "close": 74.74,
+          "pct_chg": -1.05,
+          "缠论买_日K": true,
+          "金钻_黄柱": true,
+          "金钻_起涨": false,
+          "四量图_机构变红": false,
+          "上涨趋势_条件1": false,
+          "上涨趋势_条件2": false,
+          "上涨趋势_条件3": false,
+          "上涨趋势_条件4": true,
+          "上涨趋势": false,
+          "三线共振": false,
+          "latest": {
+            "缠论买_日K": true,
+            "金钻_黄柱": true,
+            "金钻_起涨": false,
+            "四量图_机构变红": false,
+            "上涨趋势_条件1": false,
+            "上涨趋势_条件2": false,
+            "上涨趋势_条件3": false,
+            "上涨趋势_条件4": true,
+            "上涨趋势": false,
+            "signal_count": 2
+          }
+        }
+      ],
+      "sources": [
+        "三足鼎立"
+      ]
     }
   },
-  "last_update": "2026-07-28 10:34:28",
+  "last_update": "2026-07-28 11:42:43",
   "candidates": {
     "sh_603986": {
       "code": "603986",
@@ -45726,6 +46320,6 @@
     }
   },
   "candidate_total": 375,
-  "total_count": 317,
-  "update_time": "2026-07-28 11:35:03"
+  "total_count": 324,
+  "update_time": "2026-07-28 11:42:35"
 }
