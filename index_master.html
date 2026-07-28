@@ -1290,7 +1290,22 @@ tr:hover td { background: #fafbfc; }
           <div style="font-size:11px;font-weight:400;color:#1565c0;margin:0 0 6px 0;padding:0 14px;">沪深300/中证500/中证1000/创业板ETF等宽基指数ETF每日净申购赎回份额</div>
           <div class="sh-chart-svg" id="etfChart"></div>
         </div>
-        <!-- (T+1卡片放这里) -->
+
+        <!-- ETF盘中热度 / 资金流（盘中实时） -->
+        <div style="background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:10px;">
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
+            <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中热度 / 资金流<span style="font-size:10px;font-weight:400;color:#999;">盘中实时</span></span>
+            <span id="etfHeatUpdateTime" class="update-time-badge"></span>
+          </div>
+          <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:6px 14px 0;"></div>
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 14px 2px;font-size:11px;color:#888;border-bottom:1px solid #f0f0f0;">
+            <span style="width:64px;">代码</span><span style="flex:1;">名称</span>
+            <span style="width:62px;text-align:right;">涨跌幅</span>
+            <span style="width:62px;text-align:right;">成交额</span>
+            <span style="width:62px;text-align:right;">主力净流入</span>
+          </div>
+          <div id="etfHeatBody"></div>
+        </div>
 
       </div>
 
@@ -285931,7 +285946,8 @@ false
 "create_time": "2026-07-23T20:14:00.000+0800"
 }
 ]
-};var STOCK_DEVIATION = window.STOCK_DEVIATION = {
+};var ETF_INTRADAY_HEAT = window.ETF_INTRADAY_HEAT = {};
+var STOCK_DEVIATION = window.STOCK_DEVIATION = {
 "update_time": "2026-07-24 17:40:09",
 "threshold": 20,
 "stocks": {}
@@ -343742,6 +343758,45 @@ var RECOMMEND = window.RECOMMEND = [
     }
     updateMarginAlert();
 
+    // 渲染 ETF 盘中热度 / 资金流
+    function renderEtfHeat() {
+      const d = window.ETF_INTRADAY_HEAT || {};
+      const el = document.getElementById('etfHeatBody');
+      if (!el) return;
+      const summaryEl = document.getElementById('etfHeatSummary');
+      if (summaryEl) {
+        const s = d.summary || {};
+        const netYi = (s.net_inflow_yi != null) ? s.net_inflow_yi : 0;
+        const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
+        summaryEl.innerHTML = '覆盖 ' + (d.total || 0) + ' 只ETF · 上涨 ' + (s.up || 0) + ' / 下跌 ' + (s.down || 0) + ' · 整体主力净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
+      }
+      const list = d.top_active || [];
+      if (!list.length) {
+        el.innerHTML = '<div style="padding:14px;color:#999;font-size:12px;">暂无盘中ETF热度数据</div>';
+      } else {
+        let rows = '';
+        list.slice(0, 12).forEach(function(it) {
+          const pct = it.pct || 0;
+          const pctColor = pct >= 0 ? '#e53935' : '#2e7d32';
+          const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+          const amt = (it.amount || 0) / 1e8;
+          const net = (it.main_net_inflow || 0) / 1e8;
+          const netColor = net >= 0 ? '#e53935' : '#2e7d32';
+          const netStr = (net >= 0 ? '+' : '') + net.toFixed(2);
+          rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 14px;border-bottom:1px solid #f5f5f5;font-size:12px;">'
+            + '<span style="width:64px;color:#1565c0;">' + it.code + '</span>'
+            + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
+            + '<span style="width:62px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
+            + '<span style="width:62px;text-align:right;color:#555;">' + amt.toFixed(1) + '亿</span>'
+            + '<span style="width:62px;text-align:right;color:' + netColor + ';">' + netStr + '亿</span>'
+            + '</div>';
+        });
+        el.innerHTML = rows;
+      }
+      const ut = document.getElementById('etfHeatUpdateTime');
+      if (ut && d.update_time) ut.textContent = '更新于 ' + fmtDataTime(d.update_time).text;
+    }
+
     // 绘制 ETF 申购赎回柱状图
     function drawEtfChart() {
       const data = ETF_SUBSCRIPTION || {};
@@ -343867,7 +343922,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     // 切换到上证数据监控时重绘图表（SVG/ECharts 需可见才能获取尺寸）
     if (tab.dataset.tab === 'shmonitor') {
       setTimeout(() => {
-        try { drawAmountChart(); drawUpDownChart(); drawMarginChart(); drawEtfChart(); updateMarginAlert(); } catch(e) {}
+        try { drawAmountChart(); drawUpDownChart(); drawMarginChart(); drawEtfChart(); renderEtfHeat(); updateMarginAlert(); } catch(e) {}
         if (typeof renderMarketFundFlowCard === 'function') { try { renderMarketFundFlowCard(); } catch(e) {} }
         if (typeof __MFF_CHART_INST !== 'undefined' && __MFF_CHART_INST) { try { __MFF_CHART_INST.resize(); } catch(e) {} }
       }, 100);
@@ -344602,6 +344657,7 @@ function renderShMonitor() {
   // 🔧 两融/ETF图表不依赖SH_FIB数据，始终绘制
   drawMarginChart();
   drawEtfChart();
+  renderEtfHeat();
   updateMarginAlert();
 
   if (!wins.length) { var _ftb = document.getElementById('fibTableBody'); if (_ftb) _ftb.innerHTML = '<tr><td colspan="3" style="color:#999;text-align:center;">暂无数据</td></tr>'; return; }
