@@ -110,11 +110,14 @@
   .ev .e{font-size:12px}
   .ev .t{color:var(--txt);opacity:.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .cal-foot{margin-top:22px;border-top:1px solid var(--border);padding-top:16px}
-  .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-  .lg{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
-  .lg .lh{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;margin-bottom:4px}
-  .lg .sw{width:12px;height:12px;border-radius:4px;flex:0 0 auto}
-  .lg .ld{font-size:11px;color:var(--sub);line-height:1.4}
+  .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .lg{border-radius:12px;padding:12px 14px;backdrop-filter:blur(4px)}
+  .lg .lh{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;margin-bottom:6px}
+  .lg .sw{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
+  .lg .ld{font-size:11px;line-height:1.45;margin-bottom:8px;opacity:.85;color:var(--txt)}
+  .lg .li{list-style:none;padding:0;margin:0}
+  .lg .li li{font-size:11px;line-height:1.55;padding:2px 0 2px 12px;position:relative;color:var(--txt)}
+  .lg .li li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--bullet)}
 
   .mask{position:fixed;inset:0;background:rgba(4,8,16,.78);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
   .mask.show{display:flex}
@@ -688,24 +691,27 @@ function doQuery(){
   }).join('');
 })();
 
-/* ===== 日历（北向样式暗色移植） ===== */
+/* ===== 日历（北向样式暗色移植 · 分色块格） ===== */
 const CAT={
-  policy:{name:'重要政策',color:'#f472b6',desc:'中国政府/监管机构发布的重大政策、法规、规划等'},
-  lpr:{name:'央行/LPR',color:'#fbbf24',desc:'央行货币政策、利率决议、LPR报价等'},
-  cn:{name:'中国数据',color:'#38bdf8',desc:'国家统计局/央行发布的宏观经济数据'},
-  report:{name:'财报截止',color:'#a78bfa',desc:'A股财报披露法定截止日'},
-  opt:{name:'期权交割',color:'#34d399',desc:'各交易所期权合约到期日'},
-  fut:{name:'期货交割',color:'#22d3ee',desc:'期货合约最后交易日'},
-  a50:{name:'A50交割',color:'#fb923c',desc:'新加坡富时A50期货交割日'},
-  hk:{name:'港股休市',color:'#ef4444',desc:'香港交易所休市日'},
-  ushol:{name:'美股休市',color:'#f87171',desc:'NYSE/Nasdaq休市日'},
-  us:{name:'美股财报',color:'#60a5fa',desc:'美股关注股票财报'},
-  tw:{name:'台股财报',color:'#c084fc',desc:'台股关注股票'},
-  phone:{name:'苹果/华为',color:'#e879f9',desc:'两大科技巨头新品发布/重要财报'},
-  fomc:{name:'FOMC',color:'#facc15',desc:'美联储货币政策会议'},
-  eu:{name:'欧股财报',color:'#2dd4bf',desc:'欧股关注股票'},
+  policy:{name:'重要政策',color:'#f472b6',bg:'rgba(244,114,182,.18)',border:'rgba(244,114,182,.40)',desc:'中国政府/监管机构发布的重大政策、法规、规划等',items:['暂无数据，待政策发布后补充']},
+  lpr:{name:'央行/LPR',color:'#fbbf24',bg:'rgba(251,191,36,.18)',border:'rgba(251,191,36,.40)',desc:'央行货币政策、利率决议、LPR报价等',items:['7月 LPR利率报价（1年期/5年期以上）— 每月20日']},
+  cn:{name:'中国数据',color:'#38bdf8',bg:'rgba(56,189,248,.18)',border:'rgba(56,189,248,.40)',desc:'国家统计局/央行发布的宏观经济数据',items:['CPI/PPI — 每月9日前后','工业增加值/社零/固投 — 每月15日前后','PMI — 每月最后一日']},
+  report:{name:'财报截止',color:'#a78bfa',bg:'rgba(167,139,250,.18)',border:'rgba(167,139,250,.40)',desc:'A股财报披露法定截止日',items:['7/15 🇨🇳 A股半年报预告强制截止日']},
+  opt:{name:'期权交割',color:'#34d399',bg:'rgba(52,211,153,.18)',border:'rgba(52,211,153,.40)',desc:'各交易所期权合约到期日，涉及多空博弈',items:['中金所股指期权 — 每月第三个周五','各商品交易所期权到期日 — 每月约13-20日间','暂无具体数据，待各交易所公告后补充']},
+  fut:{name:'期货交割',color:'#22d3ee',bg:'rgba(34,211,238,.18)',border:'rgba(34,211,238,.40)',desc:'期货合约最后交易日，交割前后波动加大',items:['中金所IF/IH/IC/IM股指期货 — 每月第三个周五','各交易所2607合约最后交易日 — 约每月中旬']},
+  a50:{name:'A50交割',color:'#fb923c',bg:'rgba(251,146,60,.18)',border:'rgba(251,146,60,.40)',desc:'新加坡富时A50期货交割日，外资对冲A股关键窗口',items:['2026年7月 — 倒数第二个工作日','⚠️ 交割前1-2周可能出现提前移仓波动']},
+  hk:{name:'港股休市',color:'#ef4444',bg:'rgba(239,68,68,.18)',border:'rgba(239,68,68,.40)',desc:'香港交易所休市日，港股通/沪深股通同步暂停',items:['7/1 🇭🇰 港股休市']},
+  ushol:{name:'美股休市',color:'#f87171',bg:'rgba(248,113,113,.18)',border:'rgba(248,113,113,.40)',desc:'NYSE/Nasdaq休市日',items:['7/3 🇺🇸 美股休市']},
+  us:{name:'美股财报',color:'#60a5fa',bg:'rgba(96,165,250,.18)',border:'rgba(96,165,250,.40)',desc:'美股关注股票',items:['特斯拉TSLA','谷歌GOOGL','微软MSFT','苹果AAPL','亚马逊AMZN','Meta','英伟达NVDA','美光MU']},
+  tw:{name:'台股财报',color:'#c084fc',bg:'rgba(192,132,252,.18)',border:'rgba(192,132,252,.40)',desc:'台股关注股票',items:['台积电TSMC','联发科MediaTek']},
+  phone:{name:'苹果/华为发布',color:'#e879f9',bg:'rgba(232,121,249,.18)',border:'rgba(232,121,249,.40)',desc:'两大科技巨头新品发布/重要财报',items:['苹果Q3财报 — 7月最后一周']},
+  fomc:{name:'FOMC',color:'#facc15',bg:'rgba(250,204,21,.18)',border:'rgba(250,204,21,.40)',desc:'美联储货币政策会议，全球资本市场核心事件',items:['7/29-30 FOMC利率决议 北京时间7/30凌晨']},
+  eu:{name:'欧股财报',color:'#2dd4bf',bg:'rgba(45,212,191,.18)',border:'rgba(45,212,191,.40)',desc:'欧股关注股票',items:['ASML阿斯麦']},
+  jp:{name:'日股财报',color:'#fbbf24',bg:'rgba(251,191,36,.18)',border:'rgba(251,191,36,.40)',desc:'日股关注股票',items:['铠侠Kioxia','东京电子','爱德万测试']},
+  kr:{name:'韩股财报',color:'#c084fc',bg:'rgba(192,132,252,.18)',border:'rgba(192,132,252,.40)',desc:'韩股关注股票',items:['三星电子','SK海力士']},
+  sg:{name:'SG公假',color:'#e879f9',bg:'rgba(232,121,249,.18)',border:'rgba(232,121,249,.40)',desc:'新加坡公共假期',items:['本月新加坡无公共假期']},
 };
-const FLAG={policy:'🇨🇳',lpr:'🏦',cn:'📊',report:'📑',opt:'📊',fut:'📈',a50:'🇸🇬',hk:'🇭🇰',ushol:'🇺🇸',us:'🇺🇸',tw:'🇹🇼',phone:'📱',fomc:'🇺🇸',eu:'🇪🇺'};
+const FLAG={policy:'🇨🇳',lpr:'🏦',cn:'📊',report:'📑',opt:'📊',fut:'📈',a50:'🇸🇬',hk:'🇭🇰',ushol:'🇺🇸',us:'🇺🇸',tw:'🇹🇼',phone:'📱',fomc:'🇺🇸',eu:'🇪🇺',jp:'🇯🇵',kr:'🇰🇷',sg:'🇸🇬'};
 const EV={
  1:[{cat:'hk',t:'港股休市'}],
  3:[{cat:'ushol',t:'美股休市（独立日补假）'}],
@@ -737,7 +743,12 @@ const EV={
   document.getElementById('calBody').innerHTML=cells;
   document.getElementById('legend').innerHTML=Object.keys(CAT).map(k=>{
     const c=CAT[k];
-    return `<div class="lg"><div class="lh"><span class="sw" style="background:${c.color}"></span>${c.name}</div><div class="ld">${c.desc}</div></div>`;
+    const items=(c.items||[]).map(x=>`<li>${x}</li>`).join('');
+    return `<div class="lg" style="--bullet:${c.color};background:${c.bg};border:1px solid ${c.border}">
+      <div class="lh"><span class="sw" style="background:${c.color}"></span><span style="color:${c.color}">${c.name}</span></div>
+      <div class="ld">${c.desc}</div>
+      <ul class="li">${items}</ul>
+    </div>`;
   }).join('');
 })();
 function openCal(d){
