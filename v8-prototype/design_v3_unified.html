@@ -793,7 +793,7 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
   const evs=EV[TODAY_DAY]||[];
   const box=document.getElementById('mevToday');
   if(!box) return;
-  if(!evs.length){box.innerHTML='<div class="note">当日无标注的重要事件</div>';return;}
+  if(!evs.length){box.innerHTML='<div class="ipo-empty">当日无标注的重要事件</div>';return;}
   box.innerHTML=evs.map(e=>`
     <div class="mev" style="border-bottom:1px dashed var(--border);padding:8px 0"><span class="e">${FLAG[e.cat]}</span><div><div class="mt" style="color:${CAT[e.cat].color}">${CAT[e.cat].name}</div><div>${e.t}</div><div class="md">${CAT[e.cat].desc}</div></div></div>`).join('');
 })();
