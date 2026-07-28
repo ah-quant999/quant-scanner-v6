@@ -368,34 +368,6 @@
       </div>
     </div>
 
-    <div class="grid g-3" style="margin-bottom:16px">
-      <div class="card">
-        <h3><span class="ic">🌡️</span>市场温度计 - 短线盘中 · 更新于 今日 15:20</h3>
-        <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
-          <svg width="200" height="120" viewBox="0 0 200 120">
-            <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#1b2740" stroke-width="14" stroke-linecap="round"/>
-            <path d="M20 110 A80 80 0 0 1 158 54" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round"/>
-            <defs><linearGradient id="gg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1fd17b"/><stop offset=".5" stop-color="#fbbf24"/><stop offset="1" stop-color="#f4495d"/></linearGradient></defs>
-            <circle cx="158" cy="54" r="8" fill="#fbbf24"/>
-          </svg>
-          <div style="font-size:42px;font-weight:800;color:var(--gold)">68°</div>
-          <div style="font-size:12px;color:var(--sub)">偏热 · 情绪活跃，注意高位回撤</div>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="ic">🕸️</span>六维共振雷达 - 短线盘中 · 更新于 今日 15:20</h3>
-        <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
-      </div>
-      <div class="card">
-        <h3><span class="ic">🌀</span>斐波时间窗口 - 中长线 · 更新于 今日 15:20</h3>
-        <div style="font-size:13px;color:var(--sub)">下一个变盘窗口</div>
-        <div style="font-size:22px;font-weight:800;color:var(--gold);margin:4px 0 2px">07-30（周四）</div>
-        <div style="font-size:12px;color:var(--dim);margin-bottom:6px">距今天 2 个交易日 · 重合 FOMC 决议</div>
-        <div class="fib" id="fib"></div>
-        <div style="font-size:11px;color:var(--dim);margin-top:6px">▮ 黄金分割节点　▮ 当前</div>
-      </div>
-    </div>
-
     <div class="grid g-2" style="margin-bottom:16px">
       <!-- 主力板块 -->
       <div class="card">
@@ -511,6 +483,35 @@
   <!-- ============ 盘后数据 ============ -->
   <section id="sec-ph">
     <div class="sec-head"><h2>🌙 盘后数据</h2><span class="tag" id="phTag">T+1 收盘后生成 · 最后更新 --</span></div>
+
+    <!-- 盘后概览：市场温度计 / 六维共振雷达 / 斐波时间窗口 -->
+    <div class="grid g-3" style="margin-bottom:16px">
+      <div class="card">
+        <h3><span class="ic">🌡️</span>市场温度计 - 盘后 · 更新于 今日 15:20</h3>
+        <div class="gauge-wrap" style="display:flex;flex-direction:column;align-items:center;gap:8px">
+          <svg width="200" height="120" viewBox="0 0 200 120">
+            <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#1b2740" stroke-width="14" stroke-linecap="round"/>
+            <path d="M20 110 A80 80 0 0 1 158 54" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round"/>
+            <defs><linearGradient id="gg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1fd17b"/><stop offset=".5" stop-color="#fbbf24"/><stop offset="1" stop-color="#f4495d"/></linearGradient></defs>
+            <circle cx="158" cy="54" r="8" fill="#fbbf24"/>
+          </svg>
+          <div style="font-size:42px;font-weight:800;color:var(--gold)">68°</div>
+          <div style="font-size:12px;color:var(--sub)">偏热 · 情绪活跃，注意高位回撤</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🕸️</span>六维共振雷达 - 盘后 · 更新于 今日 15:20</h3>
+        <svg class="radar" style="display:block;margin:0 auto" width="220" height="200" viewBox="-110 -110 220 220" id="radar"></svg>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🌀</span>斐波时间窗口 - 盘后 · 更新于 今日 15:20</h3>
+        <div style="font-size:13px;color:var(--sub)">下一个变盘窗口</div>
+        <div style="font-size:22px;font-weight:800;color:var(--gold);margin:4px 0 2px">07-30（周四）</div>
+        <div style="font-size:12px;color:var(--dim);margin-bottom:6px">距今天 2 个交易日 · 重合 FOMC 决议</div>
+        <div class="fib" id="fib"></div>
+        <div style="font-size:11px;color:var(--dim);margin-top:6px">▮ 黄金分割节点　▮ 当前</div>
+      </div>
+    </div>
 
     <!-- 斐波那契窗口 -->
     <div class="card" style="margin-bottom:16px">
