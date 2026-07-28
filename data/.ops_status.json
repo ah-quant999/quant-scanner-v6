@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-28 13:22:32",
-  "cloud_deploy_time": "20260728132232",
+  "updated_at": "2026-07-28 13:27:09",
+  "cloud_deploy_time": "20260728132709",
   "failover_status": "OK",
   "failover_time": "2026-07-28 12:19:49",
   "data_correctness": {
@@ -39,7 +39,7 @@
     },
     "xiaojiu": {
       "status": "ok",
-      "last_time": "2026-07-28 13:16:21",
+      "last_time": "2026-07-28 13:24:22",
       "mode": "deploy"
     },
     "alimi": {
