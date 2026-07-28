@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:20:17",
+    "last_success": "2026-07-28 10:28:09",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -47,7 +47,7 @@
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:05:38",
+    "last_success": "2026-07-28 10:27:20",
     "last_error": null
   },
   "fetch_market_alerts": {
@@ -149,7 +149,7 @@
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 09:39:10",
+    "last_success": "2026-07-28 10:27:01",
     "last_error": null
   },
   "fetch_policy_density": {
