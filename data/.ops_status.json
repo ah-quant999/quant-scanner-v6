@@ -52,8 +52,8 @@
   "audit": {
     "severity": "WARN",
     "error_count": 0,
-    "warn_count": 8,
-    "fixed_count": 0,
+    "warn_count": 13,
+    "fixed_count": 2,
     "issues": [
       {
         "level": "WARN",
@@ -106,12 +106,57 @@
       },
       {
         "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:00",
+        "task": "candidate_pool_watchdog",
+        "msg": "10:00 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:05",
+        "task": "pre_market_deploy_self_heal",
+        "msg": "10:05 pre_market_deploy_self_heal 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:30",
+        "task": "candidate_pool_watchdog",
+        "msg": "10:30 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "10:31",
+        "task": "intraday_10_31",
+        "msg": "10:31 intraday_10_31 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
+        "type": "missing_heartbeat",
+        "time": "11:00",
+        "task": "candidate_pool_watchdog",
+        "msg": "11:00 candidate_pool_watchdog 应跑但 _heartbeat.log 无 DONE"
+      },
+      {
+        "level": "WARN",
         "type": "ops_neodata_mismatch",
         "msg": "ops_status.json neodata_valid_until=2026-07-28 16:20:41 与 .neodata_token 实际 saved_at+24h 不一致"
+      },
+      {
+        "level": "FIXED",
+        "type": "silent_failover_activated",
+        "msg": "云端沉默 1329min，小九-盘中刷新部署 09:30（intraday_09_30）已激活兜底"
+      },
+      {
+        "level": "FIXED",
+        "type": "silent_failover_activated",
+        "msg": "云端沉默 1329min，小九-盘中刷新部署 10:31（intraday_10_31）已激活兜底"
       }
     ],
-    "checked_at": "2026-07-28 09:53:05",
-    "updated_at": "2026-07-28 09:53:05"
+    "checked_at": "2026-07-28 11:40:52",
+    "updated_at": "2026-07-28 11:40:52"
   },
   "monitor_alert": {
     "level": "FAIL",

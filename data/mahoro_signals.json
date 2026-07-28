@@ -1,6 +1,6 @@
 {
-  "fetch_time": "2026-07-24 08:37:01",
-  "total_signals": 31,
+  "fetch_time": "2026-07-28 11:40:51",
+  "total_signals": 12,
   "banks": [
     "三菱UFJ摩根士丹利",
     "三菱UFJ摩根士丹利证券",
@@ -29,209 +29,20 @@
     "高盛"
   ],
   "stance_counts": {
-    "bullish": 2414,
-    "mixed": 251,
-    "neutral": 303,
-    "bearish": 73
+    "bullish": 2473,
+    "neutral": 319,
+    "bearish": 76,
+    "mixed": 252
   },
   "gold_pool_matches": [
-    {
-      "code": "688008",
-      "name": "澜起科技",
-      "market": "sh",
-      "bank": "摩根士丹利",
-      "stance": "bullish",
-      "key_point": "云端半导体需求强劲，逢低吸纳",
-      "published_at": "2026-07-23 21:25"
-    },
-    {
-      "code": "01888",
-      "name": "建滔积层板",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "bullish",
-      "key_point": "CCL行业景气度回升，建滔积层板估值重塑",
-      "published_at": "2026-07-23 09:08"
-    },
-    {
-      "code": "688519",
-      "name": "南亚新材",
-      "market": "sh",
-      "bank": "花旗",
-      "stance": "bullish",
-      "key_point": "CCL行业景气度回升，建滔积层板估值重塑",
-      "published_at": "2026-07-23 09:08"
-    },
-    {
-      "code": "09660",
-      "name": "地平线机器人-W",
-      "market": "hk",
-      "bank": "摩根士丹利",
-      "stance": "neutral",
-      "key_point": "业绩预警已定价，估值重估取决于客户订单获取",
-      "published_at": "2026-07-23 09:07"
-    },
-    {
-      "code": "00700",
-      "name": "腾讯控股",
-      "market": "hk",
-      "bank": "瑞银",
-      "stance": "bullish",
-      "key_point": "国家队支持提振市场，投资者逢低布局科技股",
-      "published_at": "2026-07-23 09:03"
-    },
-    {
-      "code": "002352",
-      "name": "顺丰控股",
-      "market": "sz",
-      "bank": "摩根大通",
-      "stance": "bullish",
-      "key_point": "物流行业复苏，满帮与极兔领跑",
-      "published_at": "2026-07-23 09:01"
-    },
     {
       "code": "002270",
       "name": "华明装备",
       "market": "sz",
-      "bank": "高盛",
+      "bank": "摩根士丹利",
       "stance": "bullish",
-      "key_point": "华明装备估值具吸引力，上调至买入",
-      "published_at": "2026-07-23 08:56"
-    },
-    {
-      "code": "00005",
-      "name": "汇丰控股",
-      "market": "hk",
-      "bank": "摩根大通",
-      "stance": "bullish",
-      "key_point": "汇丰与渣打基本面稳健，维持增持评级",
-      "published_at": "2026-07-23 08:48"
-    },
-    {
-      "code": "09660",
-      "name": "地平线机器人-W",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "bullish",
-      "key_point": "地平线与大众合作，开启上涨催化剂观察",
-      "published_at": "2026-07-23 08:33"
-    },
-    {
-      "code": "002352",
-      "name": "顺丰控股",
-      "market": "sz",
-      "bank": "摩根大通",
-      "stance": "bullish",
-      "key_point": "极兔速递增长强劲，维持增持评级",
-      "published_at": "2026-07-23 08:31"
-    },
-    {
-      "code": "02269",
-      "name": "药明生物",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "603259",
-      "name": "药明康德",
-      "market": "sh",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "01177",
-      "name": "中国生物制药",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "02252",
-      "name": "微创机器人-B",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "603939",
-      "name": "益丰药房",
-      "market": "sh",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "01530",
-      "name": "三生制药",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "01833",
-      "name": "平安好医生",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "01066",
-      "name": "威高股份",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "688271",
-      "name": "联影医疗",
-      "market": "sh",
-      "bank": "花旗",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29"
-    },
-    {
-      "code": "00700",
-      "name": "腾讯控股",
-      "market": "hk",
-      "bank": "花旗",
-      "stance": "bullish",
-      "key_point": "腾讯游戏基本面稳健，股价回调提供买入机会",
-      "published_at": "2026-07-23 08:27"
-    },
-    {
-      "code": "002353",
-      "name": "杰瑞股份",
-      "market": "sz",
-      "bank": "花旗",
-      "stance": "bullish",
-      "key_point": "杰瑞股份获大额订单，目标价上调至196元",
-      "published_at": "2026-07-23 08:25"
-    },
-    {
-      "code": "301217",
-      "name": "铜冠铜箔",
-      "market": "sz",
-      "bank": "高盛",
-      "stance": "bullish",
-      "key_point": "三井金属铜箔业务竞争优势稳固，维持买入",
-      "published_at": "2026-07-23 08:18"
+      "key_point": "市场过度担忧竞争，重申增持评级，看好长期增长",
+      "published_at": "2026-07-28 09:10"
     },
     {
       "code": "688008",
@@ -239,8 +50,89 @@
       "market": "sh",
       "bank": "摩根士丹利",
       "stance": "bullish",
-      "key_point": "AI存储瓶颈凸显，看好存储生态系统赋能者",
-      "published_at": "2026-07-23 08:14"
+      "key_point": "AI超节点趋势利好国产互连供应链及AI服务器厂商",
+      "published_at": "2026-07-28 08:39"
+    },
+    {
+      "code": "688041",
+      "name": "海光信息",
+      "market": "sh",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "AI超节点趋势利好国产互连供应链及AI服务器厂商",
+      "published_at": "2026-07-28 08:39"
+    },
+    {
+      "code": "688256",
+      "name": "寒武纪",
+      "market": "sh",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "AI超节点趋势利好国产互连供应链及AI服务器厂商",
+      "published_at": "2026-07-28 08:39"
+    },
+    {
+      "code": "603986",
+      "name": "兆易创新",
+      "market": "sh",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "利基型存储价格走强，提供估值支撑。",
+      "published_at": "2026-07-28 08:32"
+    },
+    {
+      "code": "01093",
+      "name": "石药集团",
+      "market": "hk",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "BD收入与成药销售韧性助力利润大幅增长。",
+      "published_at": "2026-07-28 08:31"
+    },
+    {
+      "code": "01093",
+      "name": "石药集团",
+      "market": "hk",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "上半年盈利预喜，BD收入确认推动利润翻倍。",
+      "published_at": "2026-07-28 08:30"
+    },
+    {
+      "code": "300750",
+      "name": "宁德时代",
+      "market": "sz",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "电池产能扩张开启，8月生产计划环比增长。",
+      "published_at": "2026-07-28 08:14"
+    },
+    {
+      "code": "00700",
+      "name": "腾讯控股",
+      "market": "hk",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
+    },
+    {
+      "code": "00981",
+      "name": "中芯国际",
+      "market": "hk",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
+    },
+    {
+      "code": "002371",
+      "name": "北方华创",
+      "market": "sz",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
     },
     {
       "code": "06809",
@@ -248,554 +140,387 @@
       "market": "hk",
       "bank": "摩根士丹利",
       "stance": "bullish",
-      "key_point": "AI存储瓶颈凸显，看好存储生态系统赋能者",
-      "published_at": "2026-07-23 08:14"
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
     },
     {
-      "code": "06078",
-      "name": "海吉亚医疗",
-      "market": "hk",
-      "bank": "摩根士丹利",
-      "stance": "neutral",
-      "key_point": "定价压力持续，下调营收及EPS预测，目标价下调",
-      "published_at": "2026-07-23 08:01"
-    },
-    {
-      "code": "002008",
-      "name": "大族激光",
-      "market": "sz",
-      "bank": "高盛",
-      "stance": "mixed",
-      "key_point": "工业科技行业分化，下调高估值标的，偏好稳健增长",
-      "published_at": "2026-07-23 07:38"
-    },
-    {
-      "code": "002484",
-      "name": "江海股份",
-      "market": "sz",
-      "bank": "高盛",
-      "stance": "mixed",
-      "key_point": "工业科技行业分化，下调高估值标的，偏好稳健增长",
-      "published_at": "2026-07-23 07:38"
-    },
-    {
-      "code": "300124",
-      "name": "汇川技术",
-      "market": "sz",
-      "bank": "高盛",
-      "stance": "mixed",
-      "key_point": "工业科技行业分化，下调高估值标的，偏好稳健增长",
-      "published_at": "2026-07-23 07:38"
-    },
-    {
-      "code": "600885",
-      "name": "宏发股份",
+      "code": "688012",
+      "name": "中微公司",
       "market": "sh",
-      "bank": "高盛",
-      "stance": "mixed",
-      "key_point": "工业科技行业分化，下调高估值标的，偏好稳健增长",
-      "published_at": "2026-07-23 07:38"
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
     }
   ],
   "raw_signals": [
     {
       "index": 3,
+      "bank": "摩根大通",
+      "companies": [
+        {
+          "name": "中国铝业",
+          "ticker": "601600.SH",
+          "rating": "overweight",
+          "target_price": 13.0,
+          "tp_currency": "CNY",
+          "ref_price": 9.38,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3859,
+          "implied_return_pct": "+38.6%"
+        },
+        {
+          "name": "中国铝业",
+          "ticker": "2600.HK",
+          "rating": "overweight",
+          "target_price": 12.0,
+          "tp_currency": "HKD",
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "产能天花板严格执行，看好公司成本优势及分红潜力",
+      "published_at": "2026-07-28 09:11",
+      "date": "2026-07-28",
+      "id": "e0ea62ea15b2",
+      "title": "摩根大通",
+      "summary": "摩根大通\n中国铝业 - A/H\n实地调研要点\n我们于 7 月 23 日至 24 日参观了中国铝业子公司包头铝业的电解铝厂、再生铝及可再生能源业务，并与管理层及中国铝业首席财务官进行了交流。核心要点如下：(1) 管理层预计中国 4500 万吨的原铝产能天花板将被严格执行，认为没有持续突破该上限的基础；(2) 境外直接投资（ODI）审查对中国铝业而言应是可控的，其几内亚 20 万吨氧化铝项目已接近最终审批——更严格的规定可能有利于拥有战略协同项目且合规的参与者；(3) 包头铝业展示了极具竞争力的电力成本，在铝价波动的背景下，中国铝业的目标是通过锁定上游资源和增加清洁能源敞口来降低成本。预计 2026 财年的股息支付将超过 2025 财年。我们重申对中国铝业的“增持”评级，其估值具有吸引力（A/H 股 2027 财年预测市盈率分别为 7.9 倍/6.4 倍），我们预计其与全球同行的估值差距将进一步缩小。\n• 突破 4500 万吨上限是不可持续的。槽体扩大和电流效率的提高可以提升实际产量与注册产能之比，但管理层估计提升幅度仅为 3-5%。持续的超产将需要新的电解槽或更高的电流强度；前者通过审批",
+      "topicId": "82255448512414882",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255448512414882"
+    },
+    {
+      "index": 2,
       "bank": "摩根士丹利",
       "companies": [
         {
-          "name": "信骅",
-          "ticker": "5274.TW",
+          "name": "华明装备",
+          "ticker": "002270.SZ",
           "rating": "overweight",
-          "target_price": 20888.0,
-          "tp_currency": "TWD",
-          "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
+          "target_price": 26.4,
+          "tp_currency": "CNY",
+          "ref_price": 19.86,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3293,
+          "implied_return_pct": "+32.9%"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "市场过度担忧竞争，重申增持评级，看好长期增长",
+      "published_at": "2026-07-28 09:10",
+      "date": "2026-07-28",
+      "id": "334abd2f88ea",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n华明装备 | 亚太地区\n定价源于恐慌，基石在于增长\n我们认为市场过度担忧竞争压力，而低估了华明装备的长期增长潜力。\n在估值回调后，我们重申“增持”评级，并预计优于预期的业绩表现将成为股价上涨的催化剂。\n由于市场对主要竞争对手产能扩张、美国市场开拓慢于预期以及 2026 年第一季度业绩不及预期的担忧，华明装备的股价已从 2026 年初的历史高点回调了多达 54%。\n然而，我们持有不同观点，认为目前 19 倍的 2027 年预测市盈率（P/E）相较于全球同行 30 倍的平均估值具有吸引力。我们将 2026-28 年的净利润预测下调了 5-10%，以反映国内非电网营收增长更为保守、股权激励导致销售及管理费用率上升以及人民币升值带来的汇兑损失。基于 25 倍的一年远期市盈率（此前为 30.5 倍），我们将基于市盈率的目标价从 34.50 元下调至 26.40 元。\nMR 的产能扩张究竟意味着什么？华明的主要竞争对手 Maschinenfabrik Reinhausen (MR) 拥有 50% 的全球市场份额，计划在 2028-30 年前将产能翻倍。市场认为这将加剧竞争，但我们认为这",
+      "topicId": "14422115284118252",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422115284118252"
+    },
+    {
+      "index": 1,
+      "bank": "摩根士丹利",
+      "companies": [],
+      "type": "macro",
+      "stance": "bullish",
+      "key_point": "预测9月南向资金纳入51只股票，剔除13只",
+      "published_at": "2026-07-28 09:08",
+      "date": "2026-07-28",
+      "id": "5df817677305",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n发布日期：2026年7月27日\n研究主题：中国股权策略 | 亚太地区\n报告标题：MSSBT 2026年9月预测：51只纳入与13只剔除\n核心概要\n今年以来，南向资金流量依然保持重要地位，日均净流入量处于历史最高水平之一。在 MSSBT 强大的历史命中率和模拟业绩的支持下，我们预测2026年9月审核将有51只股票纳入和13只股票剔除，并附有实施细节和需要关注的关键日期。\nMSSBT 于2025年8月推出，通过其每半年一次的审核周期预测南向股票纳入。随后在2026年2月升级为 MSSBT V2，将剔除预测也纳入其中，旨在捕获两方面的 Alpha 收益机会。迄今为止，该框架对纳入和剔除预测的命中率均保持在 95% 或以上。在2025年9月的审核周期中，MSSBT 识别出了20只实际纳入候选股中的19只。2026年3月，该模型捕捉到了42只实际纳入股票中的41只，以及25只剔除候选股中的24只。\n模拟业绩显示出强劲的绝对收益以及 Alpha 创造能力（绝对收益 >15%，相对于恒生指数相对收益 ~20%）：2025年9月的纳入名单产生了21%的绝对收益以及相对于恒生指数19%的相对",
+      "topicId": "22255448512481411",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255448512481411"
+    },
+    {
+      "index": 0,
+      "bank": "摩根士丹利",
+      "companies": [
         {
           "name": "澜起科技",
           "ticker": "688008.SH",
-          "rating": "overweight",
+          "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 223.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": 227.45,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "海光信息",
+          "ticker": "688041.SH",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 313.59,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "中科曙光",
+          "ticker": "603019.SH",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 96.74,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "寒武纪",
+          "ticker": "688256.SH",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 1241.02,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "天数智芯",
+          "ticker": null,
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null
         }
       ],
       "type": "sector",
       "stance": "bullish",
-      "key_point": "云端半导体需求强劲，逢低吸纳",
-      "published_at": "2026-07-23 21:25",
-      "date": "2026-07-23",
-      "id": "4b978db91542",
+      "key_point": "AI超节点趋势利好国产互连供应链及AI服务器厂商",
+      "published_at": "2026-07-28 08:39",
+      "date": "2026-07-28",
+      "id": "97b1d2ea391f",
       "title": "摩根士丹利",
-      "summary": "摩根士丹利\n《云端半导体：增速放缓可能性低》完整中文翻译正文\n摩根士丹利研究报告 (Morgan Stanley Research)\n发布日期： 2026年7月22日 10:25 PM GMT\n大中华区半导体 / 亚太区\n云端半导体：增速放缓可能性低\n我们预计 CPU 和 GPU 服务器的总体可寻址市场（TAM）将持续扩大至 2027 年。在财报发布前，我们重申对信骅（Aspeed）和澜起科技（Montage）的“增持”（OW）评级；建议在云端资本支出数据公布期间逢低吸纳。\n核心要点\n我们近期参加中国世界人工智能大会（WAIC）的考察表明，中美芯片厂商的 CPU 服务器市场均呈现持续上行趋势。\n2027 年 GPU 服务器更加多元化的扩展（scale-up）解决方案，将转化为云端半导体强劲的增长动力。\n更优的产品组合将支撑信骅和澜起科技维持高水平的毛利率。\nCPU 服务器板块呈现更多上行空间，在中国市场尤为突出： 我们维持看好观点（云端半导体：未来将迎来大得多的 TAM），并预计将有进一步的上行空间。在 7 月 17 日至 20 日举行的上海 WAIC 考察中，我们注意到 AMD、英伟",
-      "topicId": "45544251252411118",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544251252411118"
-    },
-    {
-      "index": 2,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "Alphabet Inc.",
-          "ticker": "GOOGL.US",
-          "rating": "buy",
-          "target_price": 440.0,
-          "tp_currency": "USD",
-          "ref_price": 342.09,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.2862,
-          "implied_return_pct": "+28.6%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "财报超预期，看好AI资本回报",
-      "published_at": "2026-07-23 21:12",
-      "date": "2026-07-23",
-      "id": "1dd0464436bf",
-      "title": "高盛",
-      "summary": "高盛\nAlphabet Inc. (GOOGL)：2026 财年第二季度财报初评\n根据我们对业绩的初步解读和分析，我们预计市场对 Alphabet 2026 财年第二季度的财报将会有适度的积极反应。一些亮点包括：a) 搜索及其他业务以及 YouTube 广告收入均超过了我们的预测，其中搜索业务同比增长 17%，考虑到该业务的相对成熟度，以及长期以来关于 AI 潜在影响的持续争论，这一增长非常显著；b) Google Cloud 收入同比增长 82%，远超我们 72% 的增长预期（该预期此前已高于 VisibleAlpha 的市场共识预期），结合其 ~ 35% 左右的分部 GAAP EBIT 利润率，这应能成为另一个证明点，表明前期的 AI 支出正在产生稳健的资本回报（针对投资者日益加剧的担忧）；c) 公告中未更新 2026 年资本支出预测，也未对 2027 年及以后的资本支出进行框架性说明——这是投资者持续关注的领域。\n关于即将召开的财报电话会议，我们预计关注焦点将包括：\n1) 从前瞻性资本支出趋势、支持此类支出可能需要的外部资金（债务或股权）以及未来几年资本支出回报规模的可预见性等角",
-      "topicId": "55522458455848254",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522458455848254"
-    },
-    {
-      "index": 1,
-      "bank": "花旗",
-      "companies": [
-        {
-          "name": "ServiceNow, Inc.",
-          "ticker": "NOW.US",
-          "rating": null,
-          "target_price": 156.0,
-          "tp_currency": "USD",
-          "ref_price": 95.46,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.6342,
-          "implied_return_pct": "+63.4%"
-        }
-      ],
-      "type": "stock",
-      "stance": "mixed",
-      "key_point": "业绩达标但指引上调幅度平平",
-      "published_at": "2026-07-23 21:11",
-      "date": "2026-07-23",
-      "id": "65b2b1f17a06",
-      "title": "花旗",
-      "summary": "花旗\nServiceNow, Inc. (NOW.N)\n第二季度业绩达标；上调幅度平平令部分争议依然存在\n花旗观点\nServiceNow 第二季度业绩超出预期，cRPO 表现稳健，超出预期 ~ 200 个基点，同比增长 21.5%（有机增长 19.5%）。订阅收入和盈利能力也大幅超出预期，部分受本地部署（on-premise）收入确认的推动。管理层强调，净新增 ACV 表现优异、AI ACV 超过 10 亿美元以及美国联邦政府需求的强劲增长是本季度的主要贡献因素。虽然这些数据轻松超过了买方的预期，但全年订阅收入的修订幅度却不尽如人意，全年的上调幅度远低于第二季度的超预期额度。\n即使针对更强的本地部署收入组合以及第三季度/第二季度的时间动态进行常态化调整，这仍意味着第四季度订阅收入的退出增长率较低（为 22.5%，而市场预期为 23%）。因此，我们预计股票的正面反应将较为温和。\n第二季度 cRPO 表现亮眼 —— cRPO 同比增长 21.5%（按固定汇率计算），超出市场共识的\n19.4%，高出指引 210 个基点，且高于 19.5% 的指引上限 200 个基点。有机 cRPO 同比增长",
-      "topicId": "82255421422142282",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255421422142282"
-    },
-    {
-      "index": 0,
-      "bank": "瑞银",
-      "companies": [
-        {
-          "name": "Healios K.K.",
-          "ticker": "4593.JP",
-          "rating": "buy",
-          "target_price": 800.0,
-          "tp_currency": "JPY",
-          "ref_price": 254.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 2.1496,
-          "implied_return_pct": "+215.0%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "催化剂丰富，重申买入评级",
-      "published_at": "2026-07-23 21:08",
-      "date": "2026-07-23",
-      "id": "0dfcee69d99b",
-      "title": "瑞银",
-      "summary": "瑞银\nHealios K.K.\n随着病例入组成为催化剂，REVIVE-ARDS 研究正式启动\n执行阶段已开始\n瑞银（UBS）与首席财务官 Richard Kincaid 及北美首席科学官 Dr. 举行了一场线上小型会议。\nSarah Busch，日本标准时间上午 9:00。结论非常明确：Healios 已从规划阶段转向执行阶段。在 2026 年 1 月 20 日提交 PMDA 临床试验通知并完成 14 天的 MDA 审查后，REVIVE-ARDS 研究现已在日本启动，首例患者入组将成为下一个显见的催化剂。该研究是一项全球性、随机、双盲、安慰剂对照的 III 期临床试验，针对肺炎诱发的 ARDS，在确诊 ARDS 后 48 小时内给药，日本将率先启动，随后进行更广泛的全球扩张。\n试验设计符合监管要求且具备投资价值\n试验设计仍然是该项目中最清晰的部分：受试者多达 550 名，在 300 名和 400 名患者时进行中期分析，如果疗效达到统计学显著性则提前停止，主要终点为截至第 28 天的无呼吸机天数（VFD）。\n重要的是，Healios 已披露 FDA 已同意 VFD 终点框架，而 PMDA",
-      "topicId": "45544251255152818",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544251255152818"
+      "summary": "摩根士丹利\n摩根士丹利研究报告 | 大中华区科技半导体\nAI网络：纵向扩展（Scale-up）技术赋能中国AI超节点\n继世界人工智能大会（WAIC）要点总结之后，我们进一步审视中国新兴的纵向扩展技术格局、光互连的作用，以及对国内互连供应链的影响。\n由纵向扩展技术赋能的AI超节点正在成为中国AI计算格局的焦点。结合我们在中国WAIC上的观察与思考，我们对中国纵向扩展技术的发展进行了深入的跟踪研究。正如我们在《中国AI加速器——谁将胜出？》中所指出的，尽管中国AI GPU在芯片层面仍受限于晶圆制程工艺，但在系统层面的光网络和服务器机柜设计上表现出强劲实力。这些芯片层面的限制正在将中国AI计算市场的竞争焦点从单芯片规格转向系统级解决方案。2026年WAIC上的芯片发布有所减少，而超节点解决方案增多。国内领先的加速器厂商展示了机柜级或多机柜超节点，其纵向扩展域达到64个或更多加速器，大部分由自主研发的纵向扩展技术驱动。\n中国纵向扩展竞争格局正在迅速扩大，以自主研发的网络架构（Fabrics）为主导，但涵盖了多种系统架构。一年前，我们的美国半导体团队发布了《半导体：扩展AI机遇：纵向扩展网络初级",
+      "topicId": "22255448518252241",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255448518252241"
     },
     {
       "index": 7,
       "bank": "摩根士丹利",
-      "companies": [],
-      "type": "macro",
-      "stance": "mixed",
-      "key_point": "AI板块降温，市场风格轮动",
-      "published_at": "2026-07-23 21:02",
-      "date": "2026-07-23",
-      "id": "45a58ffb1243",
-      "title": "摩根士丹利",
-      "summary": "摩根士丹利\n纽约时间7月22日周三下午2点，我们开始今天的市场回顾与观点。\n半导体作为市场上较为拥挤的领域之一，近期已经失去动能。需要强调的是，这并不意味着人工智能（AI）周期已经结束；不过股票价格确实反映的是变化速度与增长节奏。\n当盈利修正被推得过高时，资金会寻找下一个基本面改善之处，而仓位通常仍然较轻。这与今年早些时候贵金属和能源等领先板块的表现并无二致。市场在伊朗冲突打断该趋势之前，已经开始意识到这种变化。随着油价上升、以及市场对美联储预期转向更偏鹰派，投资者大量涌入AI相关交易，尤其是半导体板块。\n回溯到六月，我曾指出那些盈利修正可能接近峰值。超大规模云服务商（hyperscalers）股票开始走弱，是首个信号。半导体的业绩最终依赖于超大规模云服务商的资本支出，这种分化通常不会长期持续。这并不意味着大规模基础设施扩建就此终结；不过支出方可能正从盲目乐观转向更有纪律性的阶段，以应对市场对现金流下降的担忧。\n自ChatGPT推出以来，超大规模云服务商与半导体之间的涨跌此消彼长已出现过三次，该模式并非新鲜事。本轮是第四次这种调整周期，在此期间超大规模云服务商股票可能会跑赢半导体。事实",
-      "topicId": "14422148144855512",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422148144855512"
-    },
-    {
-      "index": 6,
-      "bank": "花旗",
       "companies": [
         {
-          "name": "台达电子",
-          "ticker": "2308.TW",
-          "rating": "buy",
-          "target_price": 2280.0,
-          "tp_currency": "TWD",
-          "ref_price": 1880.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.2128,
-          "implied_return_pct": "+21.3%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "短期波动已反映，结构性升级稳健",
-      "published_at": "2026-07-23 20:58",
-      "date": "2026-07-23",
-      "id": "02b768f67fdc",
-      "title": "花旗",
-      "summary": "花旗\n台达电子 (2308.TW)\n短期不确定性已反映在股价中；前景依然稳健\n花旗观点\n由于市场波动以及市场对 800V 部署缓慢的担忧，台达电股价自近期高点已修正超过 20%。虽然我们认为短期动能可能会受到新项目量产进度和组件供应紧张的影响，但结构性的电源解决方案升级趋势依然未变。台达电将于 7 月 30 日举行 2Q24 分析师说明会。由于我们认为短期不确定性已反映在股价中，故维持“买入”评级。\n800V 推迟了？机柜功率价值升级趋势依然稳健 —— 虽然 NVIDIA 的 Vera Rubin NVL72 平台并未强制要求 800V 电源架构，但我们仍将 800V 直流电视为 AI 数据中心供电的长期趋势。\nNVIDIA 的机架电源设计将开始把传统的 PSU 侧柜（sidecar）从简单的 AC/DC 电源架转型为智能机架级电源管理平台。最重要的增项包括集成电池备份单元 (BBU)、双向 DC/DC 转换器、功率平滑电路、先进数字控制器以及面向未来的 800V HVDC 接口。新规范使侧柜能够缓冲快速的功率波动，减轻公用电网的压力，协调多个电源架，并提高整体电源效率。随着未来 AI",
-      "topicId": "45544251255252588",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544251255252588"
-    },
-    {
-      "index": 5,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "铠侠",
-          "ticker": "285A.T",
-          "rating": "overweight",
+          "name": "兆易创新",
+          "ticker": "603986.SH",
+          "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 64270.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": 434.03,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
         {
-          "name": "东京电子",
-          "ticker": "8035.JP",
-          "rating": "overweight",
+          "name": "旺宏",
+          "ticker": "2337.TW",
+          "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 65960.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
         {
-          "name": "爱德万测试",
-          "ticker": "6857.JP",
-          "rating": "overweight",
+          "name": "南亚科",
+          "ticker": "2408.TW",
+          "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 29585.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
         {
-          "name": "SCREEN Holdings",
-          "ticker": "7735.JP",
-          "rating": "overweight",
+          "name": "华邦电",
+          "ticker": "2344.TW",
+          "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 16500.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "日东纺",
-          "ticker": "3110.JP",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 3180.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "JX先进金属",
-          "ticker": "5016.JP",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 3771.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "迪思科",
-          "ticker": "6146.JP",
-          "rating": "neutral",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 68590.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "Lasertec",
-          "ticker": "6920.JP",
-          "rating": "neutral",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 42990.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "理学控股",
-          "ticker": "268A.JP",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 2256.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         }
       ],
       "type": "sector",
       "stance": "bullish",
-      "key_point": "看好半导体设备与材料板块",
-      "published_at": "2026-07-23 20:47",
-      "date": "2026-07-23",
-      "id": "6ba1f5ca1bb2",
-      "title": "摩根大通",
-      "summary": "摩根大通\n亚洲投资者拜访反馈：半导体与科技材料\n发布日期：2026年7月23日\n行业分类：半导体 / 科技材料\n我们将于7月13日当周拜访了亚洲投资者。投资者对基本面保持看多态度，讨论焦点集中在股价何处见底以及寻找相对具备韧性的个股。与我们6月拜访美欧投资者时一致，我们的核心关注股票按顺序依次为：铠侠（Kioxia，285A；高配；与Jay Kwon共同覆盖）、东京电子（Tokyo Electron，8035；高配）、爱德万测试（Advantest，6857；高配）、SCREEN Holdings（7735；高配）、日东纺（Nittobo，3110；高配）以及JX先进金属（JX Advanced Metals，5016；高配；与Yasuhiro Nakada共同覆盖）。讨论主要集中在三个方面：（1）铠侠的盈利前景（定价、长期协议[LTA]及SLC）；（2）前端工艺设备公司产品价格调整的可行性；（3）产能与定价权（主要集中在材料类个股）。在个股方面，除上述股票外，市场对迪思科（Disco，6146；中性）的增长前景、Lasertec（6920；中性）的订单趋势以及理学控股（Rigaku ",
-      "topicId": "22255421422452451",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255421422452451"
+      "key_point": "利基型存储价格走强，提供估值支撑。",
+      "published_at": "2026-07-28 08:32",
+      "date": "2026-07-28",
+      "id": "f1c86164b42e",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n大中华区半导体 | 亚太地区\n旧存储：近期趋势出现分化\n近期关于存储周期的争论、对云服务提供商（CSP）自由现金流（FCF）的担忧，以及中国存储头寸的减持，导致了旧存储股票的估值下调。但我们观察到，进入第三季度，DDR4 价格涨幅更为强劲，且传统闪存（legacy flash）展现出前所未有的定价能力。我们认为 1.0 倍 2028E BVPS（每股净资产）提供了良好的下方支撑。\n主流存储趋势发生变化：根据 Trendforce 的数据（图表 1），预计 3Q26 常规 DRAM 的综合价格将环比上涨 13-18%。\n具体而言，PC DDR5 价格预计环比上涨 15-20%，服务器 DDR5 价格环比上涨 13-18%，移动端 LPDDR5(X) 环比上涨 8-13%，NAND 价格环比上涨 10-15%。\n此外，针对 2026 年第四季度，Trendforce 预计常规 DRAM 的价格环比上涨 3-8%，NAND 的价格环比上涨 0-5%。这些预估增长率似乎低于部分投资者此前的预期。\n然而，近期我们观察到利基型存储器（legacy memory）价格走势更为强劲：正如我",
+      "topicId": "45544228418418258",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544228418418258"
+    },
+    {
+      "index": 6,
+      "bank": "摩根士丹利",
+      "companies": [
+        {
+          "name": "石药集团",
+          "ticker": "1093.HK",
+          "rating": null,
+          "target_price": 11.0,
+          "tp_currency": "HKD",
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "BD收入与成药销售韧性助力利润大幅增长。",
+      "published_at": "2026-07-28 08:31",
+      "date": "2026-07-28",
+      "id": "b39bc2759f2f",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n石药集团 | 亚太地区\nBD 收入确认与成药销售韧性\n助力初步利润增长\n石药集团发布了 2026 年上半年初步净利润范围，预计为 59 亿至 62 亿元人民币，而 2025 年上半年为 25.5 亿元人民币。这意味着 2026 年第二季度的净利润为 50 亿至 53 亿元人民币（2025 年第二季度为 11 亿元人民币）。利润大幅增长归因于：\n1. 来自 AstraZeneca (AZN) 就长效肽类药物一揽子交易支付的 8.4 亿美元（57.4 亿元人民币）首付款已计入业务发展 (BD) 收入。石药集团已于 5 月收到了来自 AZN 的全部 12 亿美元首付款。\n2. 尽管受到新销售代表指南带来的全行业暂时性干扰，2026 年上半年成药销售额仍保持韧性，增长约 ~10%（2026 年第一季度约为 5%）。\nBD 展望：我们预计 2025 年已宣布交易（Madrigal 和之前的 AZN 交易）将带来 ~1.8 亿美元的首付款。最新 AZN 交易中剩余的 3.6 亿美元尚未计入收入。此外，即将触发的里程碑付款包括：AZN 的长效 GLP-1/GIP (SYH2082) 启动",
+      "topicId": "55522441281245824",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441281245824"
+    },
+    {
+      "index": 5,
+      "bank": "花旗",
+      "companies": [
+        {
+          "name": "石药集团",
+          "ticker": "1093.HK",
+          "rating": null,
+          "target_price": 11.5,
+          "tp_currency": "HKD",
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "上半年盈利预喜，BD收入确认推动利润翻倍。",
+      "published_at": "2026-07-28 08:30",
+      "date": "2026-07-28",
+      "id": "7ddb962dcd03",
+      "title": "花旗",
+      "summary": "花旗\n石药集团 (1093.HK)\n2026 年上半年盈利预喜：受阿斯利康首付款确认及制剂销售稳健增长推动，利润同比增长逾一倍\n花旗观点\n石药集团发布了 2026 年上半年盈利预喜，预计归属于股东的净利润为 59 亿至 62 亿元人民币，而 2025 年上半年为 25.5 亿元人民币，这意味着同比增长约 131-143%，大幅超出 Visible Alpha 共识预期的 25 亿元人民币（该预期曾暗示同比小幅下降 3.9%）。业绩超预期主要得益于阿斯利康 12 亿美元首付款中的 8.4 亿美元（约 57.4 亿元人民币）在 2026 年第二季度得到确认。重要的是，除业务发展（BD）收入外，制剂销售额同比增长了~10%，这也高于市场普遍预期的低单位数（LSD）增长。我们认为 2026 年上半年的业绩表现稳健且超预期。石药集团是我们医药行业的首选股之一。\n石药集团\n估值\n我们对石药集团（CSPC Pharma）11.5 港元的目标价是基于分部估值法得出的：1）成品药 10.1 港元；2）原料药 0.8 港元；以及 3）净现金 0.6 港元。我们对各业务板块的净现值（NPV）分析纳入了对 2",
+      "topicId": "55522441281258184",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441281258184"
     },
     {
       "index": 4,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "ServiceNow",
-          "ticker": "NOW.US",
-          "rating": "buy",
-          "target_price": 152.0,
-          "tp_currency": "USD",
-          "ref_price": 95.46,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.5923,
-          "implied_return_pct": "+59.2%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "AI应用场景具体，上调目标价",
-      "published_at": "2026-07-23 20:33",
-      "date": "2026-07-23",
-      "id": "899544930717",
-      "title": "高盛",
-      "summary": "高盛\nServiceNow Inc. (Now)\n2Q26 每股收益：人工智能应用场景正变得更加具体且切合实际\nServiceNow 在经历了一个表现稳健的季度后，股价盘后上涨 5%：第二季度订阅收入同比增长 23%，高出指引 175 个基点。第二季度 cRPO 增长率为 21.5%，高出指引 200 个基点（高于 150 个基点的三年平均 cRPO 超预期水平）。2026 财年订阅收入指引目前预计按固定汇率计算同比增长 21.0%，已上调至区间上限，中值上调了 25 个基点。考虑到需求面临的诸多交叉影响（例如销售周期拉长的风险和挤出效应、联邦业务、以及上季度中东地区的推迟交付），我们认为这次稳健的超预期表现是一个积极信号。\n我们继续认为，股票重新估值的最大驱动因素将在于 ServiceNow 能否证明其在企业级 AI 技术栈中的地位，而有机收入的稳定以及全公司收入预测的上调将有助于证明这种相关性。在我们看来，ServiceNow 执行这一目标最有趣的业务周期是 L1 ITSM（针对 IT 服务台），该产品已于 5 月正式发布（GA），可在无需人工干预的情况下解决 80-85% 的服务",
-      "topicId": "55522458455185154",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522458455185154"
+      "bank": "摩根士丹利",
+      "companies": [],
+      "type": "sector",
+      "stance": "neutral",
+      "key_point": "房地产周度成交数据分化，一线城市销量回升。",
+      "published_at": "2026-07-28 08:25",
+      "date": "2026-07-28",
+      "id": "067b5546c2f3",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n中国房地产 ｜ 亚太地区\n每周数据库追踪报告 30\n核心摘要\n每周一手房登记成交套数同比下降 4%。\n每周二手房登记成交套数同比增长 5%。\n• 上周总体去化率为 50%。\n截至 7 月 26 日的一周，50 个城市的新房周度网签成交量同比下降 4%（前一周为同比上升 3%），使得年初至今的累计销量同比下降 11%：一线城市销量增长 13%（前一周为同比下降 20%）。二线城市销量同比下降 11%（前一周为同比上升 14%）。三线城市销量同比上升 9%（前一周为同比下降 1%）。\n10 个城市的二手房周度网签成交量同比上升 5%（前一周为同比上升 6%），使得年初至今的累计销量同比增长 4%：一线城市二手房周度销量同比上升 6%（前一周为同比上升 9%）。二线城市二手房周度销量同比上升 4%（前一周为同比上升 5%）。\n总去化率为 50%（前一周为 26%）：一线城市去化率为 52%（前一周为 4%）。二线城市去化率为 49%（前一周为 48%）。\n中原地产六城二手房挂牌价追踪指数为 16.0%（前一周为 16.5%），一线城市房地产中介指数为 53.3（前一周为前一周为 ",
+      "topicId": "14422115282818822",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422115282818822"
     },
     {
       "index": 3,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "日立",
-          "ticker": "6501.JP",
-          "rating": "buy",
-          "target_price": 6300.0,
-          "tp_currency": "JPY",
-          "ref_price": 4807.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3106,
-          "implied_return_pct": "+31.1%"
-        }
-      ],
-      "type": "stock",
+      "bank": "摩根士丹利",
+      "companies": [],
+      "type": "macro",
       "stance": "bullish",
-      "key_point": "电网需求强劲，利好日立能源",
-      "published_at": "2026-07-23 20:31",
-      "date": "2026-07-23",
-      "id": "5c3c699a661a",
-      "title": "高盛",
-      "summary": "高盛\n日本科技：硬件 - 工业电子：GEV 第二季度财报解读：强劲的电网需求利好日立能源 (Hitachi Energy)\nGE Vernova（由美国多行业板块分析师 Joe Ritchie 覆盖）于 7 月 22 日公布了其\n2026 财年第二季度业绩（链接）。负责电网产品的电气化业务第二季度销售额为 36.37 亿美元（FactSet 共识预期：34.37 亿美元），EBITDA 为 6.71 亿美元（共识预期：6.30 亿美元），均超出预期。该业务第二季度订单额为 63.47 亿美元，同比增长 93%。GEV 上调了该业务的全年业绩指引，将销售额预期从 140-145 亿美元上调至 145-150 亿美元（包括将 Prolec GE 的指引从 30 亿美元上调至 31 亿美元）；EBITDA 利润率指引维持在 18-20%。\n业绩确认了变压器和开关柜等电网产品的需求环境依然强劲。2026 财年上半年的数据中心相关订单超过 50 亿美元，已超过 2025 财年全年水平，这表明除了传统的基础设施升级需求外，数据中心需求也在强劲增长。据 GEV 称，部分向超大规模业务商交付的固态变压",
-      "topicId": "45544251255822228",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544251255822228"
-    },
-    {
-      "index": 2,
-      "bank": "德银",
-      "companies": [
-        {
-          "name": "ServiceNow",
-          "ticker": "NOW.US",
-          "rating": null,
-          "target_price": 156.0,
-          "tp_currency": "USD",
-          "ref_price": 95.46,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.6342,
-          "implied_return_pct": "+63.4%"
-        }
-      ],
-      "type": "stock",
-      "stance": "neutral",
-      "key_point": "业绩超预期，但指引上调幅度平平",
-      "published_at": "2026-07-23 20:27",
-      "date": "2026-07-23",
-      "id": "a285da255a63",
-      "title": "德银",
-      "summary": "德银\nServiceNow, Inc. (NOW.N)\n第二季度业绩达标；上调幅度平平令部分争议依然存在\n花旗观点\nServiceNow 第二季度业绩超出预期，cRPO 表现稳健，超出预期 ~ 200 个基点，同比增长 21.5%（有机增长 19.5%）。订阅收入和盈利能力也大幅超出预期，部分受本地部署（on-premise）收入确认的推动。管理层强调，净新增 ACV 表现优异、AI ACV 超过 10 亿美元以及美国联邦政府需求的强劲增长是本季度的主要贡献因素。虽然这些数据轻松超过了买方的预期，但全年订阅收入的修订幅度却不尽如人意，全年的上调幅度远低于第二季度的超预期额度。\n即使针对更强的本地部署收入组合以及第三季度/第二季度的时间动态进行常态化调整，这仍意味着第四季度订阅收入的退出增长率较低（为 22.5%，而市场预期为 23%）。因此，我们预计股票的正面反应将较为温和。\n第二季度 cRPO 表现亮眼 —— cRPO 同比增长 21.5%（按固定汇率计算），超出市场共识的\n19.4%，高出指引 210 个基点，且高于 19.5% 的指引上限 200 个基点。有机 cRPO 同比增长",
-      "topicId": "22255421422821541",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255421422821541"
-    },
-    {
-      "index": 1,
-      "bank": "摩根士丹利三菱日联",
-      "companies": [
-        {
-          "name": "太阳诱电",
-          "ticker": "6976.JP",
-          "rating": null,
-          "target_price": 12500.0,
-          "tp_currency": "JPY",
-          "ref_price": 12535.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": -0.0028,
-          "implied_return_pct": "-0.3%"
-        }
-      ],
-      "type": "stock",
-      "stance": "neutral",
-      "key_point": "战术研究观点已关闭",
-      "published_at": "2026-07-23 20:22",
-      "date": "2026-07-23",
-      "id": "72edc7156b22",
-      "title": "摩根士丹利三菱日联",
-      "summary": "摩根士丹利三菱日联\n太阳诱电 Taiyo Yuden (6976) | 日本\n战术研究观点已关闭\n本战术研究观点已关闭。股价走势符合我们的预期。点击此处查看初始战术研究观点。\n即刻生效，2026 年 7 月 7 日发布的关于 6976.T 的战术观点已停止执行，不再具有参考价值。\n太阳诱电 (6976.T) 目标价 日元12,500\n基于基准情形推导。DCF 假设：2.6% 无风险利率，1.35 权益 beta，3.2% 风险溢价，得出 6.5% 的 WACC；自 F3/36 起零增长。\n上行风险\n• 用于 AI/DC 的高端 MLCC 销售额增加。\n• 用于 5G 手机及其他设备的功率电感器销售增长快于预期。\n下行风险\n• 我们估计美元兑日元每波动 1 日元，对年度营业利润的影响约为 ~9 亿日元。欧元兑日元的波动\n影响有限。\n• 由于 MLCC 被广泛应用于各种电子设备中，其需求在一定程度上取决于全球经济增长率，且价格会根据供需平衡情况产生剧烈波动。\n#摩根士丹利三菱日联  #零件材料  #算力服务  #海外",
-      "topicId": "45544251255414858",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544251255414858"
-    },
-    {
-      "index": 0,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "联发科技",
-          "ticker": "2454.TW",
-          "rating": "overweight",
-          "target_price": 5300.0,
-          "tp_currency": "TWD",
-          "ref_price": 3850.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3766,
-          "implied_return_pct": "+37.7%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "ASIC业务强劲，上调EPS预测",
-      "published_at": "2026-07-23 20:14",
-      "date": "2026-07-23",
-      "id": "df8e3a743bfc",
-      "title": "摩根大通",
-      "summary": "摩根大通\n联发科技股份有限公司\n第二季度预览：ASIC 业务走强，智能手机业务疲软，市场每股收益（EPS）预期可能上调；增持评级\n我们预计联发科技在即将举行的第二季度财报电话会议（7 月 31 日）中，对 ASIC 业务的基调将非常乐观，而对短期智能手机需求的态度则会更加谨慎。我们认为，鉴于基板和 CoWoS 晶圆的供应状况有所改善，2027 年的 ASIC 收入（来自 TPU v8t Zebrafish）有望超预期，同时对 TPU v9 Humufish 产能爬坡的信心也可能增强。联发科技可能会提到新的客户合作（我们认为可能是 SpaceX），以及在 TPU v10 项目中与 Google 的持续合作。智能手机需求依然面临挑战，第三季度的智能手机指引可能低于季节性水平，毛利率也将面临一定压力。我们将 2028 年的 EPS 预测上调 20%，以反映更强劲的 TPU v9 前景，并维持增持评级，设定 2027 年 6 月的目标价为 5300 新台币（基于 10 倍 12 个月远期核心业务收益 + 33 倍 12 个月远期 ASIC 相关业务收益）。\n• 2027 年 TPU v8 Ze",
-      "topicId": "22255421422588811",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255421422588811"
+      "key_point": "亚洲资本支出周期强劲，增长逆风可控。",
+      "published_at": "2026-07-28 08:23",
+      "date": "2026-07-28",
+      "id": "62e1bf8fd419",
+      "title": "摩根士丹利",
+      "summary": "摩根士丹利\n视角：人工智能资本支出、石油、美联储、关税与厄尔尼诺现象：攀越担忧之墙\n概要与核心要点\n发布日期： 2026年7月27日\n研究领域： 亚洲宏观经济（亚太地区）\n我们认为，资本支出超级周期的结构性特征以及私营部门资产负债表的健壮性，为正在形成的增长逆风提供了充足的缓冲。即使增长逆风显现，最终结果也可能是周期中期的放缓，而非本轮周期的终结。\n核心要点：\n投资者正担忧人工智能/科技支出的潜在放缓、油价上涨、厄尔尼诺现象、关税以及货币紧缩的影响。\n我们的评估是，这些因素必须结合在一起，才会对增长前景造成显著损害。\n即使这些因素导致放缓，那也将是周期中期的放缓，而非商业周期的终结。\n这是因为亚洲的增长前景得到了由人工智能之外的多个结构性因素驱动的资本支出超级周期的支撑。\n此外，企业资产负债表健康，将有助于延长本轮周期的寿命。\n在本报告中，我们将详细阐述对亚洲出现的五大增长逆风的看法，强调为什么我们认为这些因素不会对增长造成重大损害。\n#摩根士丹利  #策略",
+      "topicId": "55522441282841254",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441282841254"
     },
     {
       "index": 2,
       "bank": "花旗",
       "companies": [
         {
-          "name": "建滔积层板",
-          "ticker": "1888.HK",
+          "name": "哈尔滨电气",
+          "ticker": "1133.HK",
           "rating": "buy",
-          "target_price": 130.0,
+          "target_price": 24.0,
           "tp_currency": "HKD",
-          "ref_price": 40.26,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 2.229,
-          "implied_return_pct": "+222.9%"
-        },
-        {
-          "name": "南亚新材",
-          "ticker": "688519.SH",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 226.65,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         }
       ],
       "type": "stock",
       "stance": "bullish",
-      "key_point": "CCL行业景气度回升，建滔积层板估值重塑",
-      "published_at": "2026-07-23 09:08",
-      "date": "2026-07-23",
-      "id": "0066c7a9ef65",
+      "key_point": "水电核电装机增长，业绩超预期，重申买入。",
+      "published_at": "2026-07-28 08:21",
+      "date": "2026-07-28",
+      "id": "a87f761328a6",
       "title": "花旗",
-      "summary": "花旗\n建滔积层板 (1888.HK)\n花旗银行与南亚新材料电话会议解读\n花旗观点\n在南亚新材（688519）发布 1H26 盈利预告后，我们与其董事会秘书进行了电话会议。核心要点包括：1）预计 2H26E 覆铜板（CCL）和电子级玻璃布的平均售价（ASP）将持续上涨；2）电子级玻璃布的供应紧张局面最早将持续到 2027 年底；3）南亚新材 2H26 的毛利率较 1H26 将继续大幅环比扩张。我们认为此次会议对包括建滔积层板和生益科技在内的 CCL 行业具有积极的参考意义。建滔积层板股价本月较历史高点已下跌 ~ 60%，目前 8-9 倍的市盈率（PE）显得过度回调，甚至低于历史平均的 10 倍出头水平。重申买入评级。\nCCL/PCB 公司 1H26 初步业绩预告显示净利润增长势头强劲——南亚新材发布的 1H26E 业绩预告显示，2Q26E 净利润中值同比激增 369%，环比增长 106%。\n通常而言，季度利润增长率在玻璃布厂商（上游）最高，其次是 CCL，PCB 厂商（下游）最低。\n2H26E 期间 CCL ASP 通胀的影响——南亚新材表示，由于同期上游材料电子级玻璃布成本飙升，其无铅",
-      "topicId": "22255428522214511",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428522214511"
+      "summary": "花旗\n哈尔滨电气 (1133.HK)\n这可能是最被低估的中国主要电力设备标的\n花旗观点\n在 2026 年上半年业绩超预期后，由于营收和利润率的提升，我们将哈尔滨电气（HE）2026-28 年的预测净利润上调了 2-8%。我们重申对哈尔滨电气的“买入”评级，理由包括：(i) 公司拥有超过 40% 的水电市场份额和三分之一的核电市场份额，是“十五五”期间中国水电和核电装机容量增加的主要受益者；(ii) 公司对利润增长势头充满信心，水电和核电贡献的增加将抵消煤电贡献的减少；(iii) 估值具有吸引力，对应 2027 年预测市盈率仅为 8.3 倍，市净率为 1.4 倍，股息率为 3.8%。我们将目标价保守下调 20% 至 24 港元，对应 2027 年预测市盈率 12 倍。哈尔滨电气的覆盖分析师由 Bella Tian 移交给 Pierre Lau。\n2026 年上半年业绩预增 —— 哈尔滨电气于 2026 年 7 月 20 日发布了正面盈利预告，预计 2026 年上半年净利润将达到 ~17 亿元人民币，较 2025 年上半年的 10.5 亿元人民币同比增长 62%，营收和利润率均有所增长。根",
+      "topicId": "22255448515122211",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255448515122211"
     },
     {
       "index": 1,
-      "bank": "摩根士丹利",
+      "bank": "花旗",
       "companies": [
         {
-          "name": "地平线机器人",
-          "ticker": "9660.HK",
+          "name": "宁德时代",
+          "ticker": "300750.SZ",
           "rating": null,
-          "target_price": 8.7,
-          "tp_currency": "HKD",
-          "ref_price": 4.75,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.8316,
-          "implied_return_pct": "+83.2%"
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 400.0,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "中创新航",
+          "ticker": "3931.HK",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "瑞浦兰钧",
+          "ticker": "0666.HK",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         }
       ],
-      "type": "stock",
-      "stance": "neutral",
-      "key_point": "业绩预警已定价，估值重估取决于客户订单获取",
-      "published_at": "2026-07-23 09:07",
-      "date": "2026-07-23",
-      "id": "d245a3965b79",
-      "title": "摩根士丹利",
-      "summary": "摩根士丹利\n地平线机器人 | 亚太地区\n1H26 业绩预警 - 底部已定价，估值重估取决于客户获取情况\n地平线公告 2026 年上半年初步利润为 35 亿至 40 亿元人民币（相比之下，2025 年上半年净亏损为 52 亿元人民币），部分归因于金融负债的公允价值变动。\n剔除股份支付薪酬（SBC）和公允价值变动等非核心项目后，地平线 2026 年上半年\n净亏损为 14 亿至 17 亿元人民币，较 2025 年上半年的 13 亿元人民币同比扩大 5% 至 28%。\n受产品解决方案和授权服务驱动，2026 年上半年初步营收同比增长 25% 至 35%，达到 19.3 亿至 20.8 亿元人民币。公司预计 2026 年上半年毛利率（GPM）为 60% 至 66%，与 2025 年上半年持平或略低，这可能意味着产品解决方案收入的贡献占比更高。2026 年上半年运营支出（OPEX）可能较 2025 年上半年的 26 亿元人民币有所增加，主要由于与 J7 和 HSD 相关的研发费用上升。\n2026 年上半年营收增长放缓并不令人意外，因为管理层已向投资者传达了国内市场疲软、J6 量产进度较慢以及第二季",
-      "topicId": "45544258455525828",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544258455525828"
+      "type": "sector",
+      "stance": "bullish",
+      "key_point": "电池产能扩张开启，8月生产计划环比增长。",
+      "published_at": "2026-07-28 08:14",
+      "date": "2026-07-28",
+      "id": "768ad5ab482d",
+      "title": "花旗",
+      "summary": "花旗\n中国电池材料\n中国电池供应链实地调研：新一轮产能扩张开启\n花旗观点\n正如预期，新一轮电池产能扩张在 2026 年 8 月拉开帷幕。各大电池制造商（包括宁德时代、中创新航、瑞浦兰钧等）正加速提升产能，以迎接即将到来的传统旺季并抢占出口窗口期。ZE Consulting 的渠道调研显示，排名前五的电池制造商 8 月份的生产计划预计环比再增长 8%，同比大幅增长 67%，达到 193GWh 的历史新高。ZE Consulting 同时预计，在宁德时代的引领下，9 月份将有更多电池新产能投产。在电池材料方面，8 月份正极、负极、电解液和锂的产量预计将分别环比增长 4%、6%、8% 和 5%。\n#花旗  #电池材料  #AH",
+      "topicId": "55522441282452584",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441282452584"
     },
     {
       "index": 0,
-      "bank": "瑞银",
+      "bank": "摩根士丹利",
       "companies": [
         {
-          "name": "腾讯",
-          "ticker": "0700.HK",
+          "name": "台积电",
+          "ticker": "2330.TW",
           "rating": null,
           "target_price": null,
           "tp_currency": null,
           "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "阿里巴巴",
-          "ticker": "9988.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
         {
           "name": "三星电子",
@@ -803,768 +528,291 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": 260500.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "海力士",
-          "ticker": "000660.KS",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 1830000.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "台积电",
-          "ticker": "2330.TW",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 2400.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "丰田",
-          "ticker": "7203.JP",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 2939.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "东京电子",
-          "ticker": "8035.JP",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 65960.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "macro",
-      "stance": "bullish",
-      "key_point": "国家队支持提振市场，投资者逢低布局科技股",
-      "published_at": "2026-07-23 09:03",
-      "date": "2026-07-23",
-      "id": "c6aa7c3ea56f",
-      "title": "瑞银",
-      "summary": "瑞银\n• 香港/中国大陆 - “国家队”的支持重新点燃了看涨需求。沪深 300、科创 50 及创业板相关 ETF 录得异常强劲的买入和申购活动，且最新一轮干预相较以往更偏向科技板块。\n衍生品交易台观察到对中证 1000、中证 500 及恒生科技指数看涨期权的后续需求；同时，香港现货市场资金流向普遍正面，涵盖互联网、金融、消费、工业及医疗保健板块，包括对腾讯和阿里巴巴的买入。境内资金流向则较为复杂，AI 概念股录得选择性买入，但科技板块其他领域仍持续遭到抛售。\n• 韩国/台湾 - 投资者正在逢低买入科技股。韩国市场继续保持最活跃的成交，其中科技股占据了交易绝大部分，尤其是三星。\nHynix 仍是关注焦点。尽管多头投资者通过降低持仓集中度表现出明显的套现行为，但衍生品部门报告称，在近期去杠杆化之后，对冲基金对看涨结构的需求有所回升。台湾市场的资金流向较为平衡，台积电（TSMC）的适度净买入被次要科技股的减持所抵消。\n• 日本及整体风险背景 - 市场情绪有所改善，投资者开始选择性地增加看涨头寸。日本市场的资金流向依然波动，但丰田（Toyota）、东京电子（Tokyo Electron）和其他",
-      "topicId": "14422145244512822",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422145244512822"
-    },
-    {
-      "index": 7,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "满帮集团",
-          "ticker": "YMM.US",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 9.09,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "极兔速递",
-          "ticker": "1519.HK",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 9.56,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "中通快递",
-          "ticker": "ZTO.US",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 24.1,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "京东物流",
-          "ticker": "2618.HK",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 13.76,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "顺丰控股",
-          "ticker": "002352.SZ",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 34.17,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "sector",
-      "stance": "bullish",
-      "key_point": "物流行业复苏，满帮与极兔领跑",
-      "published_at": "2026-07-23 09:01",
-      "date": "2026-07-23",
-      "id": "1a586b9af5dd",
-      "title": "J.P. Morgan 亚太区股票研究",
-      "summary": "J.P. Morgan 亚太区股票研究\n2026年7月22日\n中国物流、快递与电商行业\n由质量驱动的渐进式复苏正在进行中，满帮集团与极兔速递领跑行业下一阶段；2026年第二季度前瞻\n6月行业数据及过去1个月的股价走势表明，中国物流行业正迎来建设性但仍处于演变中的背景。整个板块在6月份表现优于恒生指数（HSI）和纳斯达克中国金龙指数（HXC），迎来了难得的单月全面正收益，但这是在今年以来经历明显分化之后发生的——今年以来仍有多个标的处于亏损状态。改善的主要支撑因素包括：行业收入同比增长7.7%（对比包裹量同比增长3.8%）、单票价格（ASP）持续复苏（达到7.77元人民币，同比增长3.8%），以及A股通达系玩家强劲的利润预喜，其中圆通、申通和韵达2Q26的隐含净利润增长分别加速至92%、152%和136%。反内卷举措继续支持理性定价和利润率修复，同时技术升级和业务结构优化正推动进一步分化。在此背景下，我们对2H26维持总体积极的前景展望，但未来3-6个月的推荐顺序已重新打乱：满帮集团（YMM）和极兔速递（J&T）升至我们的首选推荐榜首，其次是中通快递（ZTO）、京东物流（JDL）和顺丰控",
-      "topicId": "82255428522882482",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255428522882482"
-    },
-    {
-      "index": 6,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "华明装备",
-          "ticker": "002270.SZ",
-          "rating": "buy",
-          "target_price": 23.9,
-          "tp_currency": "CNY",
-          "ref_price": 17.5,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3657,
-          "implied_return_pct": "+36.6%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "华明装备估值具吸引力，上调至买入",
-      "published_at": "2026-07-23 08:56",
-      "date": "2026-07-23",
-      "id": "6d9da3b4927f",
-      "title": "高盛",
-      "summary": "高盛\n华明装备 (002270.SZ)\n回调后估值具备吸引力，上调至“买入”评级；全球电网升级驱动的海外业务增长势头依然稳健\n鉴于华明装备 12 个月目标价维持 23.9 元人民币不变，且目前 33% 的上涨空间凸显了极具吸引力的风险回报比，我们将华明装备的评级从“中性”上调至“买入”。在市场担忧 AI 资本支出可见度以及高贝塔（high-beta）AI 基础设施板块估值的背景下，我们认为华明装备提供了一种更具防御性的方式，来参与受益于基础设施老化、可再生能源并网和海外市场份额提升的全球电网多年升级周期（无论是否有 AI 助力）。凭借在国内的领先地位、不断提升的出口占比以及结构性较高的海外利润率，我们预计华明装备将实现稳健的复合利润增长，2026E-30E 年间净利润复合年增长率（CAGR）将达到 17%。\n自 2026 年初以来，该股已回调 36%，其中从峰值到谷底的跌幅达 52%，超过了思源电气和应流股份等同行。这是因为尽管华明装备在基本面上受益较少（考虑到有载分接开关 (OLTC) 并不存在供应短缺），但其股价此前随美国电力短缺题材同步波动。在股价回调后，我们认为其估值已具备相对",
-      "topicId": "82255428525258142",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255428525258142"
-    },
-    {
-      "index": 5,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "汇丰控股",
-          "ticker": "0005.HK",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
           "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
-        {
-          "name": "渣打集团",
-          "ticker": "2888.HK",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 223.6,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "sector",
-      "stance": "bullish",
-      "key_point": "汇丰与渣打基本面稳健，维持增持评级",
-      "published_at": "2026-07-23 08:48",
-      "date": "2026-07-23",
-      "id": "519d0d140239",
-      "title": "摩根大通",
-      "summary": "摩根大通\n2026年第二季度业绩前瞻：净利息收入利好支撑汇丰控股；渣打集团面临高基数挑战，但基本面依然完好\n我们预计汇丰控股（HSBC）2026年第二季度将实现稳定的盈利增长，主要受到净利息收入（NII）和经营杠杆改善的支撑，尽管部分被上升的信贷成本所抵消。对于渣打集团（STAN），我们预计调整后税前利润（clean PBT）将同比下降15%左右，这主要是由于2025年第二季度出售资产收益和偶发性收入导致的高基数，以及前置的营运支出。尽管如此，我们认为渣打因二季度业绩较弱而出现的任何股价回调都可能提供买入机会，因为其潜在的基础经营趋势依然强劲，且我们看到了来自中国企业及投资银行（CIB）与网络收入的利好因素。我们重申对汇丰控股和渣打集团的“增持”（OW）评级。\n收益率曲线上升指向净利息收入上行空间： 远期收益率曲线在过去两个月中向上平移。因此，我们将2026/27/28年的平均美国利率预测分别上调了6个基点/25个基点/25个基点，并将1个月期香港银行同业拆息（1M HIBOR）预测分别上调了21个基点/25个基点/25个基点。此外，我们观察到香港贷款增长有所复苏，香港业务分别占汇丰和",
-      "topicId": "22255428581114281",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428581114281"
-    },
-    {
-      "index": 4,
-      "bank": "花旗",
-      "companies": [
-        {
-          "name": "地平线机器人",
-          "ticker": "9660.HK",
-          "rating": "buy",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 4.75,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "地平线与大众合作，开启上涨催化剂观察",
-      "published_at": "2026-07-23 08:33",
-      "date": "2026-07-23",
-      "id": "daa89aa080b1",
-      "title": "花旗",
-      "summary": "花旗\n地平线机器人 (9660.HK)\n大众汽车合作伙伴关系预示利润增长空间；开启 30 天上涨催化剂观察 (CW)\n花旗观点\n地平线机器人（Horizon Robotics）已与大众汽车中国内部自动驾驶研发部门大众 CARIZON 达成战略合作（路透社，22/7/26）。CARIZON 将在大众基础 AI 底层大模型上采用白盒授权模式，为大众汽车开发统一的自动驾驶堆栈（包括 L3 和 L4 级自动驾驶功能）。我们估计，在其他条件不变的情况下，尽管我们仍在等待有关安排和合作执行的进一步细节，但此次合作有望在未来 3 年内为地平线带来 ~30 亿人民币的授权收入贡献，相当于 10-12% 的毛利增长空间（假设毛利率为 95%）。我们开启一项\n为期 30 天的上涨催化剂观察，其驱动因素包括：大众 CARIZON 公告后投资者情绪的预期改善、在比亚迪“天神之眼”解决方案中渗透率提升带来的预期市场份额增长，以及 2H26E 预期的竞争力增强。\n开启 30 天上涨催化剂观察 —— (1) 在等待进一步细节期间，我们估计新宣布的大众 CARIZON 合作可能在未来 3 年内为地平线带来 ~30 亿",
-      "topicId": "14422145258421482",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422145258421482"
-    },
-    {
-      "index": 3,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "极兔速递",
-          "ticker": "1519.HK",
-          "rating": "overweight",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 9.56,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "满帮集团",
-          "ticker": "YMM.US",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 9.09,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "顺丰控股",
-          "ticker": "002352.SZ",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 34.17,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "极兔速递增长强劲，维持增持评级",
-      "published_at": "2026-07-23 08:31",
-      "date": "2026-07-23",
-      "id": "b1763b57ee1f",
-      "title": "摩根大通",
-      "summary": "摩根大通\n极兔速递 - H\n炉边谈话要点：从建设期到复利期 —— 市场可能忽略了哪些关键点？\n在极兔速递发布 2Q26 运营更新后，我们与公司管理层举行了一场参会人数众多的炉边谈话，客户报名踊跃，反映出投资者的高度关注。尽管宏观波动和板块轮动持续存在，此次讨论进一步坚定了我们的信心，即极兔的中立平台、可复制模式正在实现高质量增长和资本回报。集团 2Q26 包裹量达到 91.8 亿件（同比增长 24.2%），日均单量首次突破 1 亿件 —— 这一里程碑支撑了公司进一步推动成本下降和服务一致性的能力。中国以外市场的包裹量占比达到 32.3%，凸显了极兔全球平台日益增长的广度。管理层重申全年指引保持不变，表明尽管宏观和行业环境波动，他们对业务量和利润率趋势的持久性充满信心。管理层还详细介绍了进入 3Q26 和 4Q26 的东南亚电商需求趋势、中国市场高于行业的增长，以及从“扩张建设”向“生产力提升和资本回报”的持续转型。\n管理层在会议期间回应了投资者关注的几个核心问题，包括在宏观和油价波动背景下东南亚增长的可持续性、新市场扩张的资本密集度、公司利用技术和自动化提升成本效率的能力，以及与顺丰控",
-      "topicId": "22255428581815541",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428581815541"
-    },
-    {
-      "index": 2,
-      "bank": "花旗",
-      "companies": [
-        {
-          "name": "药明生物",
-          "ticker": "2269.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 38.84,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "药明康德",
-          "ticker": "603259.SH",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 125.9,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "康龙化成",
-          "ticker": "3759.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 23.84,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "泰格医药",
-          "ticker": "3347.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 38.16,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "中国生物制药",
-          "ticker": "1177.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 5.35,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "微创机器人",
-          "ticker": "2252.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 21.82,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "益丰药房",
-          "ticker": "603939.SH",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 21.76,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "三生制药",
-          "ticker": "1530.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 17.29,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "平安健康",
-          "ticker": "1833.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 7.55,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "威高股份",
-          "ticker": "1066.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 3.27,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "联影医疗",
-          "ticker": "688271.SH",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 113.84,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "sector",
-      "stance": "mixed",
-      "key_point": "医药行业业绩分化，CDMO表现稳健",
-      "published_at": "2026-07-23 08:29",
-      "date": "2026-07-23",
-      "id": "094abc736e6b",
-      "title": "花旗",
-      "summary": "花旗\n发布日期： 2026 年 7 月 21 日\n研究领域： 中国医疗健康行业（China Healthcare）\n报告主题： 2026年上半年业绩前瞻：BD交易缓解药企销售压力；CDMO表现稳健\n花旗核心观点 (CITI'S TAKE)\n我们预计，得益于强劲的在手订单增长，领先的 CDMO 企业在 2026 年上半年的业绩可能超出预期。尽管偶发性的业务拓展（BD）/对外授权（out-licensing）交易为净利润提供了支撑，但部分头部制药/生物科技企业在 2026 年上半年的营业收入可能会低于预期。医疗器械板块的业绩表现可能喜忧参半——核心影响因素在于外汇损失以及国内平均售价（ASP）面临的压力。受制于医考控费及严格的医保预算管理，医院及医药分销板块继续面临逆风。面向消费者的亚板块（如爱美客、华熙生物等医美企业，爱尔眼科、通策医疗等医疗服务企业，以及东阿阿胶等中药企业）在 2026 年上半年的整体表现持续疲软。\n30/90天催化剂观察（Catalyst Watch）：\n正向（+ve）： 药明生物、药明康德、康龙化成、泰格医药、中国生物制药、微创机器人、益丰药房。\n负向（-ve）： ",
-      "topicId": "55522451218121144",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522451218121144"
-    },
-    {
-      "index": 1,
-      "bank": "花旗",
-      "companies": [
         {
           "name": "腾讯控股",
           "ticker": "0700.HK",
-          "rating": "buy",
-          "target_price": 758.0,
-          "tp_currency": "HKD",
-          "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "腾讯游戏基本面稳健，股价回调提供买入机会",
-      "published_at": "2026-07-23 08:27",
-      "date": "2026-07-23",
-      "id": "ee79e405981c",
-      "title": "花旗",
-      "summary": "花旗\n腾讯控股 (0700.HK)\n关于游戏业务疲软担忧导致股价过度抛售的思考\n花旗观点\n我们认为腾讯股价今日（7 月 22 日）下跌 7%，可能归因于市场资金轮动回流至 AI 硬件板块、对加大 AI 投资拖累利润的担忧重燃，以及对以下情况的恐惧和\n“误读”：即 2Q26 游戏流水放缓将导致收入同比下降。我们认为，此次抛售可能表现为过度反应，尤其是在近几周股价出现可观反弹之后。虽然监测数据表明 2Q 游戏流水出现了季节性常态化回落，但我们预计财报显示的收入将比预期更为平稳，这主要得益于前几个季度的递延收入支撑，以及移动端监测数据未捕捉到的强劲 PC 游戏表现。我们目前预测 2Q26 本土市场游戏收入将同比增长 8%，环比下降 3.9%。短期波动不应掩盖腾讯多元化和全球化游戏业务的基本面实力，这是其年度稳健增长的基石。\n我们重申“买入”评级及 758 港元的目标价，并将此次回调视为更好的买入机会。\n最新动态 - 在今日（7 月 22 日）的亚洲市场交易时段，腾讯股价下跌超过 1%，我们认为这可能是由以下因素驱动的：1）市场资金流向重新转回 AI 硬件领域并产生对冲需求，因此互联网和游戏软",
-      "topicId": "22255428581515241",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428581515241"
-    },
-    {
-      "index": 0,
-      "bank": "花旗",
-      "companies": [
-        {
-          "name": "杰瑞股份",
-          "ticker": "002353.SZ",
-          "rating": "buy",
-          "target_price": 196.0,
-          "tp_currency": "CNY",
-          "ref_price": 122.83,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.5957,
-          "implied_return_pct": "+59.6%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "杰瑞股份获大额订单，目标价上调至196元",
-      "published_at": "2026-07-23 08:25",
-      "date": "2026-07-23",
-      "id": "0a67931abc2a",
-      "title": "花旗",
-      "summary": "花旗\n杰瑞股份\n(002353.SZ)\n斩获逾 1GW 全球 CSP 订单；目标价上调至 196 元\n花旗观点\n杰瑞股份已签署一项具有里程碑意义的 14.65 亿美元合同，将向全球领先的 CSP 供应超过 1GW 的燃气轮机发电机，计划于 2027 年 11 月前交付。因此，我们将 2026/27/28 年预测每股收益（EPS）分别调整 -2%/+56%/+72%。2026 财年预测的微幅下调反映了霍尔木兹海峡关闭导致的中东 EPC 项目延迟。对于 2027/28 财年，我们将发电机出货量预测从 800MW 分别上调至 2.0/2.5GW。基于 26 倍\n2027 年预测市盈率（P/E）——即该股 2021-2022 年平均市盈率加 2 个标准差，我们将目标价从 146 元上调至 196 元。我们认为 26 倍的估值倍数是合理的，反映了杰瑞在 2018-2022 年间的快速增长及其成功进入美国电驱压裂市场。考虑到杰瑞在美国 AIDC 电力业务方面的突破（包括签订了六份新的发电机销售合同），以及我们对美国燃气轮机发电机持续高需求和持久供应短缺的预期，我们认为这一溢价是合理的。维持买入评级",
-      "topicId": "14422145258248512",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422145258248512"
-    },
-    {
-      "index": 7,
-      "bank": "摩根大通",
-      "companies": [
-        {
-          "name": "康方生物",
-          "ticker": "9926.HK",
-          "rating": "overweight",
-          "target_price": 162.0,
-          "tp_currency": "HKD",
-          "ref_price": 98.9,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.638,
-          "implied_return_pct": "+63.8%"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "依沃西临床数据积极，维持增持评级",
-      "published_at": "2026-07-23 08:23",
-      "date": "2026-07-23",
-      "id": "13c570ac5997",
-      "title": "摩根大通",
-      "summary": "摩根大通\n康方生物\nHARMONi OS 临时更新：积极但不太可能从根本上改变局面\n7 月 22 日，Summit 发布了其全球 Ph3 HARMONi 临床试验（依沃西单抗 + 化疗对比化疗治疗 2L+ EGFR 突变非鳞状 NSCLC）的更新版、但属于临时性的总生存期（OS）分析；该试验是其向 FDA 提交 BLA（PDUFA 日期为 2026 年 11 月 14 日）的基础。随着西方患者随访时间的延长以及 2024 年 6 月的数据截止，西方患者现在的 OS HR 为 0.76，这与该全球研究中的 ITT（意向性治疗）人群一致，也与中国 Ph3 试验 HARMONi-A 中的中国人群一致。我们认为这有助于支撑市场情绪，而非从根本上改变局面。更新后的 OS HR 看起来不错，但由于这是原始统计计划之外的临时分析，我们无法断定其是否具有统计学显著性；没有正式的 p 值，仅是一个具有有利趋势的标称 p 值。安全性表现良好，未出现新信号。我们维持对康方生物的“增持”评级。\n• 对 HARMONi 本身的影响——对 BLA 有增量支持作用，但非决定性。\n预设的主要 OS 分析不具有统计学显",
-      "topicId": "14422145258251182",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422145258251182"
-    },
-    {
-      "index": 6,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "三井金属",
-          "ticker": "5706.JP",
-          "rating": "buy",
-          "target_price": 62600.0,
-          "tp_currency": "JPY",
-          "ref_price": 33600.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.8631,
-          "implied_return_pct": "+86.3%"
-        },
-        {
-          "name": "铜冠铜箔",
-          "ticker": "301217.SZ",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 95.36,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "金居开发",
-          "ticker": "8358.TW",
           "rating": null,
           "target_price": null,
           "tp_currency": null,
           "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "stock",
-      "stance": "bullish",
-      "key_point": "三井金属铜箔业务竞争优势稳固，维持买入",
-      "published_at": "2026-07-23 08:18",
-      "date": "2026-07-23",
-      "id": "7244d8ac51f6",
-      "title": "高盛",
-      "summary": "高盛\n三井金属 (5706.T)：同行财报及渠道调研再次确认了包括 VSP™ 在内的铜箔业务的竞争优势与增长潜力\n我们认为，市场对 AI 服务器 PCB 铜箔领域与台湾及中国大陆厂商竞争加剧的担忧，导致三井金属（Mitsui Kinzoku）的股价自 5 月 27 日的近期高点以来出现了大幅回调（-42%，同期 TOPIX 指数为 0%）。然而，根据竞争对手 4-6 月的业绩来看，我们认为这些担忧过虑了。据报道同样生产 HVLP（极低轮廓）等级产品的中国安徽铜冠铜箔集团（301217.SZ）于昨日（7 月 19 日）发布了上半年业绩预告。根据该预告及第一季度 1.06 亿元人民币的净利润，\n我们推算其第二季度净利润指引为 9,900 万至 1.19 亿元人民币，这意味环比增长基本持平（环比变动在 -7% 至 +11% 之间）。该公司股价在周一跌停。此外，根据 6 月销售额计算，台湾金居开发（Co-Tech，8358.TW；由 Chao Wang 覆盖）4-6 月的销售额环比增长 11%，低于我们对三井金属包含 VSP™ 在内的电解铜箔业务第一季度销售额环比增长 27% 的预测。我们重申",
-      "topicId": "22255428584125811",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428584125811"
-    },
-    {
-      "index": 5,
-      "bank": "摩根士丹利",
-      "companies": [
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
         {
-          "name": "澜起科技",
-          "ticker": "688008.SH",
+          "name": "阿里巴巴",
+          "ticker": "BABA.US",
           "rating": null,
-          "target_price": 377.0,
-          "tp_currency": "CNY",
-          "ref_price": 223.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.6906,
-          "implied_return_pct": "+69.1%"
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "铠侠",
+          "ticker": "285A.T",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "联发科",
+          "ticker": "2454.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "台达电子",
+          "ticker": "2308.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "爱德万测试",
+          "ticker": "6857.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "中芯国际",
+          "ticker": "0981.HK",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "鸿海精密",
+          "ticker": "2317.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 253.0,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "村田制作所",
+          "ticker": "6981.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "北方华创",
+          "ticker": "002371.SZ",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 770.0,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "欣兴电子",
+          "ticker": "3037.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         },
         {
           "name": "澜起科技",
           "ticker": "6809.HK",
           "rating": null,
-          "target_price": 432.0,
-          "tp_currency": "HKD",
-          "ref_price": 319.4,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3525,
-          "implied_return_pct": "+35.2%"
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "智邦科技",
+          "ticker": "2345.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "联想集团",
+          "ticker": "0992.HK",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "中微公司",
+          "ticker": "688012.SH",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 399.77,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "纬颖",
+          "ticker": "6669.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "南亚电路板",
+          "ticker": "8046.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "信骅科技",
+          "ticker": "5274.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "纬创",
+          "ticker": "3231.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "荏原制作所",
+          "ticker": "6361.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 5641.0,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "古河电气",
+          "ticker": "5801.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "NEXTDC Ltd",
+          "ticker": "NXT.AX",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 13.7,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "日本微电子",
+          "ticker": "6871.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "金山云",
+          "ticker": "KC.US",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "富世达",
+          "ticker": "6805.TW",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "日本磁性技术",
+          "ticker": "6890.JP",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "世纪互联",
+          "ticker": "VNET.US",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 7.17,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
         }
       ],
       "type": "thematic",
       "stance": "bullish",
-      "key_point": "AI存储瓶颈凸显，看好存储生态系统赋能者",
-      "published_at": "2026-07-23 08:14",
-      "date": "2026-07-23",
-      "id": "3cced5bb8ca3",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54",
+      "date": "2026-07-28",
+      "id": "537b81cfb3a2",
       "title": "摩根士丹利",
-      "summary": "摩根士丹利\n全球科技：下一代存储创新\n不断增长的AI驱动的存储需求有望加速下一代存储的发展。随着AI系统规模持续扩大，瓶颈正日益从算力延伸至数据的高效存储、传输与访问。我们提出了下一轮差异化、增长及超额收益可能涌现的领域。\n核心要点\nAI算力持续快速提升，但存储容量仍然受限，带宽有限且成本高涨。\n本报告围绕一个简单但关键的问题：行业应如何突破存储瓶颈，以支持AI持续扩展？\n这一挑战远不止于HBM。设计、制程、封装、配套芯片、集成及材料等各个环节均需要创新。\n整个存储生态系统的赋能者（涵盖接口、连接、封装、系统设计等）有望迎来估值重估机会——而不仅仅是传统存储厂商。\nAI正进入一个新阶段，关注重点正从算力扩展转向数据效率：生成式AI已推动HBM需求强劲增长，而智能体AI将进一步提升存储需求（Rise of the AI Agent – Global Implications）。若GPU决定AI运行速度，则存储决定其扩展边界。我们认为，随着智能体AI到2030年或将贡献26-77%的新增DRAM需求，存储正成为关键的变现支柱。基于当前预测，到2030年云端存储支出可能达到4,180亿美元，",
-      "topicId": "14422145251822182",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422145251822182"
-    },
-    {
-      "index": 4,
-      "bank": "瑞银",
-      "companies": [],
-      "type": "macro",
-      "stance": "bullish",
-      "key_point": "国家队买入ETF，科技板块成为新焦点",
-      "published_at": "2026-07-23 08:06",
-      "date": "2026-07-23",
-      "id": "acb4649e07e6",
-      "title": "瑞银",
-      "summary": "瑞银\n瑞银 (UBS) | 中国衍生品交易台观察：国家队支持重现，科技成为新焦点\n发布日期：2026年7月21日\n研究机构：瑞银集团 (UBS) 衍生品策略部\n一、干预迹象再现\n在中国A股近期走势疲软的背景下，中国“国家队”（国家支持的基金）的买入行为再次浮现。上周末，几只国家基金宣布注资，以“抵御全球股票市场调整带来的逆风”，尽管干预的迹象在此之前就已经出现。\n国家队干预的典型指标是：在经历一段时间的弱势后，主要宽基指数ETF的日内成交量出现明显激增，同时标的指数出现大幅反转。\n二、大盘股仍是主要焦点，但科技股买入有所增强\n与2024年2月和2025年4月类似，跟踪大盘股指数的ETF（图1中的沪深300和图3中的上证50）仍然是资金流入的主要接收者。\n然而，这一次的买入明显更加偏向于以科技为主的科创50和创业板ETF（分别如图2和图4所示）。这些指数也是近期动量去杠杆/回撤的中心。\n相比之下，跟踪中小盘指数的ETF（图5中的中证500和图6中的中证1000）买入迹象不太明显，尽管与干预相关的资金流可能被同样相当活跃的常规交易所掩盖。\n三、多轮买入\n国家队买入的初步迹象出现在7月14日",
-      "topicId": "82255428584455412",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255428584455412"
-    },
-    {
-      "index": 3,
-      "bank": "摩根士丹利",
-      "companies": [
-        {
-          "name": "海吉亚医疗",
-          "ticker": "6078.HK",
-          "rating": null,
-          "target_price": 14.0,
-          "tp_currency": "HKD",
-          "ref_price": 10.25,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3659,
-          "implied_return_pct": "+36.6%"
-        }
-      ],
-      "type": "stock",
-      "stance": "neutral",
-      "key_point": "定价压力持续，下调营收及EPS预测，目标价下调",
-      "published_at": "2026-07-23 08:01",
-      "date": "2026-07-23",
-      "id": "86cc7020d3af",
-      "title": "摩根士丹利",
-      "summary": "摩根士丹利\n海吉亚医疗控股有限公司 | 亚太地区\n风险回报更新\n海吉亚医疗控股有限公司 (6078.HK) 的风险回报分析\n已更新\n变更原因\n在 2026 年上半年业绩公布前对模型进行调整。我们将 2026/27/28 年的营收预测分别下调 4%/7%/9%，以反映在 DRG/DIP 改革深化背景下持续存在的定价压力。我们目前假设 2026 年上半年营收同比持平，随后几年的营收复合年增长率（CAGR）为中个位数（MSD%），因为就诊量的增长和外延式扩张将被平均售价（ASP）的下降所部分抵消。在盈利能力方面，基于审慎的成本管理以及未来几年有限的减值损失，我们假设毛利率（GPM）和营业利润率（OPM）将小幅上升。因此，我们预计 2026 年上半年调整后利润将基本持平，随后几年的增长率为中至高个位数（MSD-HSD%）。我们将 2026/27/28 年的每股收益（EPS）预测分别下调了 2%/5%/6%，下调幅度小于营收。\n基于更审慎的资本支出假设，我们将基于现金流折现法 (DCF) 得出的目标价小幅下调至 14.0 港元。\n目标价 14.00 港元\n我们采用现金流量折现法，假设加权平均资本",
-      "topicId": "22255428584244521",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255428584244521"
-    },
-    {
-      "index": 2,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "大族激光",
-          "ticker": "002008.SZ",
-          "rating": "neutral",
-          "target_price": 113.0,
-          "tp_currency": "CNY",
-          "ref_price": 104.93,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.0769,
-          "implied_return_pct": "+7.7%"
-        },
-        {
-          "name": "江海股份",
-          "ticker": "002484.SZ",
-          "rating": "sell",
-          "target_price": 54.7,
-          "tp_currency": "CNY",
-          "ref_price": 71.01,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": -0.2297,
-          "implied_return_pct": "-23.0%"
-        },
-        {
-          "name": "杭可科技",
-          "ticker": "688006.SH",
-          "rating": "neutral",
-          "target_price": 22.8,
-          "tp_currency": "CNY",
-          "ref_price": 20.93,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.0893,
-          "implied_return_pct": "+8.9%"
-        },
-        {
-          "name": "汇川技术",
-          "ticker": "300124.SZ",
-          "rating": "buy",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 61.59,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "宏发股份",
-          "ticker": "600885.SH",
-          "rating": "buy",
-          "target_price": 45.0,
-          "tp_currency": "CNY",
-          "ref_price": 33.33,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)",
-          "implied_return": 0.3501,
-          "implied_return_pct": "+35.0%"
-        },
-        {
-          "name": "创科实业",
-          "ticker": "0669.HK",
-          "rating": "buy",
-          "target_price": 152.4,
-          "tp_currency": "HKD",
-          "ref_price": null,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "stock",
-      "stance": "mixed",
-      "key_point": "工业科技行业分化，下调高估值标的，偏好稳健增长",
-      "published_at": "2026-07-23 07:38",
-      "date": "2026-07-23",
-      "id": "de98cf8fd505",
-      "title": "高盛",
-      "summary": "高盛\n中国工业科技\n降级高估股：大族激光降至“中性”，江海股份降至“卖出”；偏好合理估值下的稳健增长；二季度行业前瞻\n发布时间：2026年7月22日\n研究机构：高盛（Goldman Sachs）全球投资研究部\n一、行业总体观点与二季度前瞻\n我们对中国工业科技行业二季度业绩进行前瞻预测，总体预计表现将略好于一季度，行业平均收入和每股收益（EPS）同比增速预计将分别加速至 +18% / +12%（一季度为 +16%）。\n超预期来源：主要来自 AI 基础设施（AI Infrastructure）和工厂自动化（Factory Automation）空间。\n不及预期原因：主要归因于中国传统燃油车（ICE）、新能源汽车（EV）及光伏（Solar）领域的收入敞口，以及持续的成本通胀和汇率（FX）影响。\n年初至今该行业股价走势显著分化（-39% 至 +145%），我们认为市场已很大程度上消化了此类预期，部分股票已脱离基本面跑得过快。当前严格执行估值纪律至关重要。\n评级调整汇总：\n大族激光（002008.SZ）：由“买入”下调至“中性”。年初至今强劲上涨 +145%，市场已充分计入 PCB 设备订单可见",
-      "topicId": "45544258482488448",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544258482488448"
-    },
-    {
-      "index": 1,
-      "bank": "摩根士丹利三菱日联",
-      "companies": [
-        {
-          "name": "Resonac",
-          "ticker": "4004.JP",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 15250.0,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "sector",
-      "stance": "bullish",
-      "key_point": "数据中心存储需求强劲，企业级SSD与HDD并存",
-      "published_at": "2026-07-23 07:31",
-      "date": "2026-07-23",
-      "id": "e05023f4d619",
-      "title": "摩根士丹利三菱日联",
-      "summary": "摩根士丹利三菱日联\n电子元器件 I 日本\nTSR 存储研讨会：数据中心需求强劲\n存储需求有望持续\nTSR 预计企业级 SSD 与 NL 之间的 GB 成本差距\n由于 NAND 闪存采购成本大幅上涨，HDD 的价差预计将进一步扩大。\n核心摘要\n• 数据中心 NL HDD 和企业级 SSD 的出货量及存储容量有望持续增长。\n• TSR 预计 STX 和 WDC 将增加对 TDK 磁头和 Resonac 盘片的采购。\n• 我们预计企业级 SSD 和 NL HDD 将继续并存，并在单位容量成本（cost per GB）、访问速度和能效方面保持差异化。\n• 我们预计企业级 SSD 与 NL HDD 之间的单位容量成本（cost-per-GB）差距将进一步扩大。\n1 TSR 预计 NL HDD 的出货容量和营收增长将快于出货量增长。\n数据中心 NL HDD 和企业级 SSD 的出货量及容量将持续增长：我们于 7 月 22 日邀请了 Techno System Research (TSR) 的 Kengo Ota，共同探讨了：1) HDD/SSD 的生产、出货及单位容量成本展望；2) 企业级 SSD",
-      "topicId": "55522451211118814",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522451211118814"
-    },
-    {
-      "index": 0,
-      "bank": "高盛",
-      "companies": [
-        {
-          "name": "广发证券",
-          "ticker": "1776.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 17.32,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "中金公司",
-          "ticker": "3908.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 22.18,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "东方财富",
-          "ticker": "300059.SZ",
-          "rating": "sell",
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 20.08,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        },
-        {
-          "name": "中信证券",
-          "ticker": "6030.HK",
-          "rating": null,
-          "target_price": null,
-          "tp_currency": null,
-          "ref_price": 28.06,
-          "ref_date": "2026-07-22",
-          "price_note": "T-1收盘价(2026-07-22)"
-        }
-      ],
-      "type": "sector",
-      "stance": "bullish",
-      "key_point": "券商ROE改善，看好中金、广发、中信，看空东方财富",
-      "published_at": "2026-07-23 07:25",
-      "date": "2026-07-23",
-      "id": "b78fc6bd1a24",
-      "title": "高盛",
-      "summary": "高盛\n中国券商与资产管理公司：2H26 把握结构性增长机遇\n2026年二季度，我们覆盖的四家券商的A/H股分别录得 17% / 18% 的回报率，其中广发证券-A（+29%）和中金公司-H（+22%）表现超群，而东方财富（+7%）表现滞后。进入2026年下半年，我们预计股票表现将继续分化，这主要是由香港市场的资本部署、A股科技股IPO、行业并购以及财富管理业务的趋势所推动。\n我们预测，覆盖的三家券商2026-2027年的平均ROE将达到11.2%，较我们先前的预测向上修正了 +145个基点，这得益于结构性因素（香港资本部署、参与科技投资链）与周期性顺风（高A股ADTV、IPO管线）的共同作用，而2025年的ROE为8.9%。我们还预计杠杆率将增加 $0.1\\times - 0.3\\times$，2026年二季度和2026年下半年的净利润同比增速预计分别为 68% / 32%。因此，我们将12个月目标价上调了 12% - 13%。在选股方面，我们维持对中金公司-H、广发证券-A 和 中信证券-A 的积极看法。本报告讨论以下主题：\n向香港部署资本能带来多少ROE增量？我们的情景分析表明，向",
-      "topicId": "45544258488412818",
-      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544258488412818"
+      "summary": "摩根士丹利\n报告题目： 亚洲主题 Alpha | 依然看好人工智能供应链与能源安全\n发布时间： 2026 年 7 月 27 日\n在 6 月下旬以来的回调之后，我们认为人工智能（AI）供应链提供了更好的风险/回报比。但考虑到散户持仓仍有挂顶压力以及中东局势的不确定性，我们建议将多头头寸与能源安全及可再生能源领域的价值标的进行搭配。\n我们对 AI 争议的看法： 在大规模 AI 基础设施股票走势之后，我们的全球主题和行业团队在《Playing the AI Infrastructure Dip: Where to Invest and Where We See Risk》(2026年7月27日) 中回答了关键争议与担忧（中国大模型、tokenmaxxing、政治抵制、“模型封锁”、物理瓶颈）。我们最确信的观点是：未来多年算力需求将显著超过供给。中国大语言模型（LLM）的进步对前沿模型开发商构成了现实的竞争威胁，但这只会增强我们基于“焦文斯悖论”（Jevon's Paradox）对算力需求的看多态度。我们从根本上看好 AI 能力的提升速度、AI 应用的效益以及相关的资本支出。\n联合研究的核心发",
+      "topicId": "45544224122511228",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544224122511228"
     }
   ]
 }
