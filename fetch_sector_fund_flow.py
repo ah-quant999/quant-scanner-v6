@@ -893,7 +893,10 @@ def fetch_sector_flow():
                     item["net_5d"] = net_5d
                 if net_20d != 0:
                     item["net_20d"] = net_20d
-                if net_60d is not None and net_60d != 0:
+                # 【2026-07-28 修复】东财接口 supplement 的 net_60d 字段不可靠（恒等于 net_20d），
+                # 若直接拷贝会污染 60日趋势（与20日完全相同）。仅在 net_60d 与 net_20d 明显不同
+                # （真实60日累加应远大于20日）时才采纳，否则保留真实累加/默认None（前端显示"积累中"）。
+                if net_60d is not None and net_60d != 0 and net_60d != net_20d:
                     item["net_60d"] = net_60d
 
         # ════════════════════════════════════════════════════════
