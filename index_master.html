@@ -135655,11 +135655,11 @@ function renderETFFlow() {
 }
 
 // ===== ETF资金热度（盘中实时 T+0，fund_etf_spot_em 全市场实时行情） =====
+// 2026-07-28 改版：按 宽基/行业/主题/跨境 四类各一列（每列含成交额TOP + 净流入TOP + 类别只数 + 类别主力净流入合计）
 function renderETFIntradayHeat() {
   const data = window.ETF_INTRADAY_HEAT || {};
-  const topActive = data.top_active || [];
-  const topInflow = data.top_inflow || [];
   const summary = data.summary || {};
+  const byCat = data.by_category || {};
   const updateTime = data.update_time || '';
 
   const card = document.getElementById('etfHeatCard');
@@ -135686,9 +135686,10 @@ function renderETFIntradayHeat() {
     sumEl.textContent = parts.join(' · ');
   }
 
-  if (!topActive.length && !topInflow.length) {
+  // 兜底：旧缓存无 by_category → 退回提示（兼容历史 dist 缓存）
+  if (!byCat || !byCat['宽基']) {
     card.style.display = 'block';
-    content.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:14px;">📭 暂无ETF资金热度数据，等待盘中更新</div>';
+    content.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:14px;">📭 暂无ETF资金热度分类数据，等待盘中更新</div>';
     return;
   }
   card.style.display = 'block';
@@ -135700,29 +135701,39 @@ function renderETFIntradayHeat() {
   function fmtAmt(a){ a = a || 0; return a >= 1e8 ? (a/1e8).toFixed(1) + '亿' : Math.round(a/1e4) + '万'; }
   function color(p){ return (p || 0) >= 0 ? '#c62828' : '#2e7d32'; } // 涨红跌绿（A股惯例）
 
-  // 双列：成交额 TOP | 主力净流入 TOP
-  // colorKey 用于染色 + 加符号位的资金方向字段（默认 main_net_inflow：流入红/+, 流出绿/-）
-  // valFn 返回纯金额字符串（不含符号），符号位由本函数统一加 +/-，避免重复拼接
-  function colHTML(title, list, valFn, colorKey) {
-    if (!list.length) return '';
+  // 渲染一组行（名称 + 资金方向染色 + 符号，统一按 main_net_inflow：流入红/+, 流出绿/-）
+  function rowsHTML(list, valFn, colorKey) {
+    if (!list || !list.length) return '<div style="font-size:11px;color:#bbb;padding:2px 0;">—</div>';
     var key = colorKey || 'main_net_inflow';
-    var rows = list.map(function(it, i){
+    return list.map(function(it, i){
       var nm = stripName(it.name || '');
       var val = valFn(it);
       var v = it[key] || 0;
       var sign = v >= 0 ? '+' : '-';
-      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px dashed #f0f0f0;font-size:12px;">'
-        + '<span style="color:#333;">' + (i+1) + '. ' + nm + '</span>'
-        + '<span style="color:' + color(v) + ';font-weight:600;">' + sign + val + '</span></div>';
+      return '<div style="display:flex;justify-content:space-between;align-items:center;padding:2px 0;border-bottom:1px dashed #f2f2f2;font-size:11px;">'
+        + '<span style="color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:116px;">' + (i+1) + '. ' + nm + '</span>'
+        + '<span style="color:' + color(v) + ';font-weight:600;white-space:nowrap;margin-left:6px;">' + sign + val + '</span></div>';
     }).join('');
-    return '<div style="flex:1;min-width:0;"><div style="font-size:12px;font-weight:700;color:#555;margin-bottom:4px;">' + title + '</div>' + rows + '</div>';
   }
 
-  var html = '<div style="display:flex;gap:18px;">';
-  // 左侧 成交额 TOP：颜色+符号按 main_net_inflow（反映该 ETF 资金方向），数字是成交额
-  html += colHTML('🔥 成交额 TOP', topActive, function(it){ return fmtAmt(Math.abs(it.amount || 0)); }, 'main_net_inflow');
-  // 右侧 主力净流入 TOP：颜色+符号按 main_net_inflow，数字是净流入额
-  html += colHTML('💰 主力净流入 TOP', topInflow, function(it){ return fmtAmt(Math.abs(it.main_net_inflow || 0)); }, 'main_net_inflow');
+  // 四列：宽基 / 行业 / 主题 / 跨境，每列含「成交额TOP」+「净流入TOP」，列头显示该类别只数与主力净流入合计
+  var CATS = ['宽基', '行业', '主题', '跨境'];
+  var catCounts = summary.category_counts || {};
+  var catNet = summary.category_net || {};
+  var html = '<div style="display:flex;gap:12px;flex-wrap:wrap;">';
+  CATS.forEach(function(cat){
+    var c = byCat[cat] || {active:[], inflow:[]};
+    var cnt = catCounts[cat] || 0;
+    var net = catNet[cat] || 0;
+    html += '<div style="flex:1;min-width:210px;background:#fafbfc;border:1px solid #eef0f2;border-radius:8px;padding:8px 10px;">';
+    html += '<div style="font-size:13px;font-weight:700;color:#333;">' + cat + ' <span style="color:#999;font-weight:400;font-size:12px;">(' + cnt + '只)</span></div>';
+    html += '<div style="font-size:11px;margin:2px 0 6px;color:' + color(net) + ';font-weight:600;">' + (net >= 0 ? '净流入 ' : '净流出 ') + Math.abs(net).toFixed(1) + '亿</div>';
+    html += '<div style="font-size:11px;font-weight:600;color:#888;margin:4px 0 2px;">🔥 成交额TOP</div>';
+    html += rowsHTML(c.active || [], function(it){ return fmtAmt(Math.abs(it.amount || 0)); }, 'main_net_inflow');
+    html += '<div style="font-size:11px;font-weight:600;color:#888;margin:6px 0 2px;">💰 净流入TOP</div>';
+    html += rowsHTML(c.inflow || [], function(it){ return fmtAmt(Math.abs(it.main_net_inflow || 0)); }, 'main_net_inflow');
+    html += '</div>';
+  });
   html += '</div>';
   content.innerHTML = html;
 }
