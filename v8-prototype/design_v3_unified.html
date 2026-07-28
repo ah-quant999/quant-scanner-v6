@@ -216,9 +216,9 @@
           <button class="ipo-tab" data-cat="tracking">上市日追踪5日</button>
         </div>
         <div class="ipo-grid" id="ipoGrid">
-          <div class="note" style="grid-column:1/-1">正在加载 data/ipo_score.json …</div>
+          <div class="note" style="grid-column:1/-1">正在加载打新数据 …</div>
         </div>
-        <div class="note">双维度 = 套利评分（收益弹性）+ 基本面评分（安全边际）。综合分 = 套利×60% + 基本面×40%。数据来源：data/ipo_score.json。</div>
+        <div class="note">双维度 = 套利评分（收益弹性）+ 基本面评分（安全边际）。综合分 = 套利×60% + 基本面×40%。</div>
       </div>
 
     </div>
@@ -519,17 +519,17 @@
       <h3><span class="ic">💾</span>数据新鲜度</h3>
       <table><thead><tr><th>文件</th><th>最后更新</th><th>状态</th></tr></thead>
       <tbody>
-        <tr><td>scan_data.json</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
-        <tr><td>gold_pool.json</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
-        <tr><td>concept_map.json</td><td>09:45 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
-        <tr><td>north_flow.json</td><td>15:05 今日</td><td><span class="status-dot s-warn"></span>盘中陈旧</td></tr>
+        <tr><td>盘后扫描</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>黄金池</td><td>15:20 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>概念映射</td><td>09:45 今日</td><td><span class="status-dot s-ok"></span>新鲜</td></tr>
+        <tr><td>北向资金</td><td>15:05 今日</td><td><span class="status-dot s-warn"></span>盘中陈旧</td></tr>
       </tbody></table>
     </div>
   </section>
 
   <!-- ============ 逻辑详解（管理员） ============ -->
   <section id="sec-lg">
-    <div class="sec-head"><h2>📖 逻辑详解</h2><span class="tag">仅管理员可见 · 指标/策略/数据源口径</span></div>
+    <div class="sec-head"><h2>📖 逻辑详解</h2><span class="tag">仅管理员可见 · 指标/策略/安全口径</span></div>
     <div class="grid g-2">
       <div class="card">
         <h3><span class="ic">🌡️</span>温度计算法</h3>
@@ -558,8 +558,9 @@ norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
 signal = (RS > 1.2) & (vol < median(sector_vol))</div>
       </div>
       <div class="card">
-        <h3><span class="ic">🔗</span>数据源与频率</h3>
-        <div class="logic-p">A股行情：东方财富 push2；北向：港交所沪深股通；概念映射：concept_map.json 持久化；盘后扫描：云端 15:20 跑批；盘前：本机 08:15 启动。</div>
+        <h3><span class="ic">🔒</span>数据安全口径</h3>
+        <div class="logic-p">铁律：前端面板一律不得暴露具体数据源、脚本路径、本地文件名、机器节点或跑批时间等核心信息。所有口径仅写 HANDOVER/代码注释，不进入用户可见文本。</div>
+        <div class="logic-p">盘中数据按固定周期刷新，盘后数据在日终批处理后统一更新。更新时间以面板相对时间（今日/昨日/X天前）为准。</div>
         <div class="note">所有数据仅供参考，不构成投资建议。</div>
       </div>
     </div>
@@ -669,7 +670,7 @@ function doQuery(){
       <span class="price ${up?'up':'down'}">${ (up?'+':'-')+ch }%</span>
       <span class="meta">${q} · 模拟数据<br>实时价 ${(80+Math.random()*50).toFixed(2)}<br>换手 ${(Math.random()*5).toFixed(2)}% · 主力 ${(up?'+':'-')}${(Math.random()*3).toFixed(2)}亿</span>
     </div>
-    <div class="note">演示用模拟数据，真实部署接 push2 行情。</div>`;
+    <div class="note">演示用模拟数据，真实部署接入实时行情。</div>`;
 }
 
 /* ===== 上证+深证成交额柱状图 ===== */
@@ -783,7 +784,7 @@ function openCal(d){
 }
 function closeCal(){document.getElementById('calMask').classList.remove('show');}
 
-/* ===== 打新速览：从 data/ipo_score.json 动态加载 ===== */
+/* ===== 打新速览：动态加载 + 内嵌兜底 ===== */
 (function(){
   let ipoData=[], ipoGrouped={}, currentCat='todayApply';
   const today='20260728'; // 与页面日期 2026-07-28 保持一致；真实部署时由构建脚本注入

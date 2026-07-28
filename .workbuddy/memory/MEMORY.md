@@ -18,7 +18,7 @@
 - **防误删**: `DO_NOT_DELETE.md` 清单 + pre-commit hook（双机各自 `cp git_hooks/pre-commit .git/hooks/pre-commit && chmod +x`）。
   - ⚠️ **删除受保护文件的正确姿势（2026-07-26 踩坑）**：pre-commit hook 读 `DO_NOT_DELETE.md`，凡删除清单内文件即 `exit 1` 拦截提交。若要从仓库移除某个被清单保护的文件（如误进 dist/ 的凭据），**必须先 edit `DO_NOT_DELETE.md` 移除对应行，再 `git rm`+`git commit`**；否则 commit 会被 hook 静默拦下（且 hook 较慢会让外部工具把 commit 命令后台化截断，误判"提交成功/无改动"）。紧急可用 `git commit --no-verify` 绕过 hook。凭据类文件（`.wc_jwt_cache.json`/`maharo_signals.json`）已从清单移除。
 - **交接文档**: 根目录写 `HANDOVER_小九_YYYY-MM-DD.md` / `HANDOVER_阿狸咪_YYYY-MM-DD_时段.md`；禁用旧 MSG_TO_ALIMI_*.md / repo-temp 下。
-- **内部脚本名**: 禁止在 `standalone/dist/*.html/index_master.html` 暴露；数据流细节只写 HANDOVER + 代码注释。
+- **内部脚本名/数据源铁律（2026-07-28 升级）**: 用户面板、逻辑详解页、任何用户可见文本**一律不得暴露**具体数据源、脚本路径、本地/远端文件名、机器节点、跑批时间或内部 API 名称。原型页（v8-prototype）同样适用。数据流细节只写 HANDOVER + 代码注释；前端仅保留指标口径、相对时间、通用说明。
 - **"更新于"铁律**: 所有面板必须显示相对日期 `今日/昨日/X天前`+时分，绝不写 `MM-DD HH:MM` 裸日期。驾驶舱用 `_fmtCockpitRel(ts)`，其余用 `fmtDataTime`；改模板必须同步全部 15/16 个 HTML。
 - **涨跌色**: 红涨绿跌，空数据 `available=false` 不造假。
 
