@@ -43852,7 +43852,11 @@
         "开盘_标签": ""
       },
       "institution": "德银",
-      "rating": "买入"
+      "rating": "买入",
+      "industry": "电力、热力生产和供应业",
+      "sectors": [
+        "电力、热力生产和供应业"
+      ]
     },
     "sh_601318": {
       "code": "601318",
@@ -43899,7 +43903,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根大通",
-      "rating": "增持"
+      "rating": "增持",
+      "industry": "保险业",
+      "sectors": [
+        "保险业"
+      ]
     },
     "sz_002747": {
       "code": "002747",
@@ -43947,7 +43955,11 @@
         "开盘_标签": ""
       },
       "institution": "高盛",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "通用设备制造业",
+      "sectors": [
+        "通用设备制造业"
+      ]
     },
     "sh_600048": {
       "code": "600048",
@@ -43996,7 +44008,11 @@
         "开盘_标签": ""
       },
       "institution": "高盛",
-      "rating": "中性"
+      "rating": "中性",
+      "industry": "房地产业",
+      "sectors": [
+        "房地产业"
+      ]
     },
     "hk_2328": {
       "code": "2328",
@@ -44136,6 +44152,37 @@
         "当日涨停": false,
         "开盘_标签": ""
       }
+    },
+    "hk_2675": {
+      "code": "2675",
+      "name": "精锋医疗-B",
+      "market": "港股",
+      "board_label": "港股",
+      "first_date": "2026-07-29",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "高盛",
+      "rating": "买入"
     }
   },
   "last_update": "2026-07-29 09:13:11",
@@ -47561,5 +47608,5 @@
   },
   "candidate_total": 378,
   "total_count": 338,
-  "update_time": "2026-07-29 10:23:48"
+  "update_time": "2026-07-29 10:30:04"
 }

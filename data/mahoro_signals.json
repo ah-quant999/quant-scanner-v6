@@ -1,5 +1,5 @@
 {
-  "fetch_time": "2026-07-29 09:04:45",
+  "fetch_time": "2026-07-29 10:27:35",
   "total_signals": 19,
   "banks": [
     "三菱UFJ摩根士丹利",
@@ -63,6 +63,15 @@
       "published_at": "2026-07-28 20:47"
     },
     {
+      "code": "002747",
+      "name": "埃斯顿",
+      "market": "sz",
+      "bank": "高盛",
+      "stance": "bullish",
+      "key_point": "工业自动化市场复苏，本土厂商份额显著提升",
+      "published_at": "2026-07-28 20:47"
+    },
+    {
       "code": "00992",
       "name": "联想集团",
       "market": "hk",
@@ -70,6 +79,15 @@
       "stance": "bullish",
       "key_point": "服务器业务增长强劲，上调评级至增持",
       "published_at": "2026-07-28 20:29"
+    },
+    {
+      "code": "02328",
+      "name": "中国财险",
+      "market": "hk",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "上半年业绩改善，车险与非车险业务结构持续优化",
+      "published_at": "2026-07-28 20:23"
     },
     {
       "code": "601600",
