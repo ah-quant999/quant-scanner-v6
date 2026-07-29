@@ -86,6 +86,11 @@
   .etf-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px dashed var(--border);font-size:12px}
   .etf-row:last-child{border:0}
   .etf-row span{color:var(--sub)}
+.etf-row .pct{width:46px;text-align:right;font-weight:600}
+.etf-row .pct.up{color:#c62828}
+.etf-row .pct.down{color:#2e7d32}
+.etf-row .subtotal{font-size:11px;color:var(--dim);padding:6px 0 0;border-top:1px solid var(--border);margin-top:4px;display:flex;justify-content:space-between}
+.etf-spark{display:inline-block;width:16px;height:4px;border-radius:2px;margin-left:4px;vertical-align:middle}
   .etf-row b{font-variant-numeric:tabular-nums}
 
   .fib{position:relative;height:54px;background:var(--bg2);border-radius:10px;margin-top:8px}
@@ -442,42 +447,59 @@
     <!-- ETF 资金热度 -->
     <div class="card" style="margin-bottom:16px">
       <h3><span class="ic">🔥</span>ETF 资金热度 - 实时·T+0 · <span class="fresh">更新于 今日 09:43</span></h3>
-      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-size:13px;color:var(--sub)">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px;font-size:13px;color:var(--sub)">
         <span><span style="color:var(--up)">▲ 290</span> 涨</span>
         <span><span style="color:var(--down)">▼ 1168</span> 跌</span>
         <span>主力净流出 <span style="color:var(--down);font-weight:700">20.4 亿</span></span>
+        <span style="font-size:11px;color:var(--dim)">宽基-3.2 亿 · 行业+5.1 亿 · 主题+18.2 亿 · 跨境+0.3 亿</span>
       </div>
       <div class="grid g-4">
         <div>
-          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">宽基</div>
-          <div class="etf-row"><span>科创50ETF</span><b>21.5亿</b></div>
-          <div class="etf-row"><span>创业板ETF</span><b>17.2亿</b></div>
-          <div class="etf-row"><span>中证500ETF</span><b>15.4亿</b></div>
-          <div class="etf-row"><span>沪深300ETF</span><b>11.5亿</b></div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan);display:flex;justify-content:space-between">
+            <span>宽基</span>
+            <span style="font-size:11px;color:var(--dim)">TOP4占87%</span>
+          </div>
+          <div class="etf-row"><span>科创50ETF</span><span class="pct up">+2.1%</span><b>21.5亿</b></div>
+          <div class="etf-row"><span>创业板ETF</span><span class="pct up">+1.5%</span><b>17.2亿</b></div>
+          <div class="etf-row"><span>中证500ETF</span><span class="pct up">+0.8%</span><b>15.4亿</b></div>
+          <div class="etf-row"><span>沪深300ETF</span><span class="pct up">+0.6%</span><b>11.5亿</b></div>
+          <div class="subtotal"><span>4只</span><span style="color:var(--up)">+65.6亿</span></div>
         </div>
         <div>
-          <div style="font-weight:700;margin-bottom:8px;color:var(--purple)">行业</div>
-          <div class="etf-row"><span>科创半导体ETF</span><b class="up">+1.1亿</b></div>
-          <div class="etf-row"><span>半导体设备ETF</span><b>13.7亿</b></div>
-          <div class="etf-row"><span>券商ETF</span><b>8.9亿</b></div>
-          <div class="etf-row"><span>医药ETF</span><b>7.3亿</b></div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--purple);display:flex;justify-content:space-between">
+            <span>行业</span>
+            <span style="font-size:11px;color:var(--dim)">TOP4占52%</span>
+          </div>
+          <div class="etf-row"><span>科创半导体ETF</span><span class="pct down">-0.4%</span><b class="up">+1.1亿</b></div>
+          <div class="etf-row"><span>半导体设备ETF</span><span class="pct down">-1.2%</span><b>13.7亿</b></div>
+          <div class="etf-row"><span>券商ETF</span><span class="pct up">+2.3%</span><b>8.9亿</b></div>
+          <div class="etf-row"><span>医药ETF</span><span class="pct down">-0.8%</span><b>7.3亿</b></div>
+          <div class="subtotal"><span>4只</span><span style="color:var(--up)">+31.0亿</span></div>
         </div>
         <div>
-          <div style="font-weight:700;margin-bottom:8px;color:var(--gold)">主题</div>
-          <div class="etf-row"><span>芯片ETF</span><b>8.0亿</b></div>
-          <div class="etf-row"><span>AI ETF</span><b>6.5亿</b></div>
-          <div class="etf-row"><span>新能源ETF</span><b>5.8亿</b></div>
-          <div class="etf-row"><span>军工ETF</span><b>4.2亿</b></div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--gold);display:flex;justify-content:space-between">
+            <span>主题</span>
+            <span style="font-size:11px;color:var(--dim)">TOP4占61%</span>
+          </div>
+          <div class="etf-row"><span>芯片ETF</span><span class="pct down">-1.1%</span><b>8.0亿</b></div>
+          <div class="etf-row"><span>AI ETF</span><span class="pct up">+3.2%</span><b>6.5亿</b></div>
+          <div class="etf-row"><span>新能源ETF</span><span class="pct down">-0.5%</span><b>5.8亿</b></div>
+          <div class="etf-row"><span>军工ETF</span><span class="pct up">+0.3%</span><b>4.2亿</b></div>
+          <div class="subtotal"><span>4只</span><span style="color:var(--up)">+24.5亿</span></div>
         </div>
         <div>
-          <div style="font-weight:700;margin-bottom:8px;color:var(--pink)">跨境</div>
-          <div class="etf-row"><span>恒生科技ETF</span><b class="up">+4675万</b></div>
-          <div class="etf-row"><span>恒生互联网ETF</span><b class="up">+2512万</b></div>
-          <div class="etf-row"><span>纳斯达克ETF</span><b>3.1亿</b></div>
-          <div class="etf-row"><span>标普500ETF</span><b>2.4亿</b></div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--pink);display:flex;justify-content:space-between">
+            <span>跨境</span>
+            <span style="font-size:11px;color:var(--dim)">TOP4占39%</span>
+          </div>
+          <div class="etf-row"><span>恒生科技ETF</span><span class="pct up">+1.8%</span><b class="up">+4675万</b></div>
+          <div class="etf-row"><span>恒生互联网ETF</span><span class="pct down">-1.3%</span><b class="up">+2512万</b></div>
+          <div class="etf-row"><span>纳斯达克ETF</span><span class="pct down">-0.6%</span><b>3.1亿</b></div>
+          <div class="etf-row"><span>标普500ETF</span><span class="pct down">-0.2%</span><b>2.4亿</b></div>
+          <div class="subtotal"><span>4只</span><span style="color:var(--up)">+6.2亿</span></div>
         </div>
       </div>
-      <div class="note">按成交额与主力净流入综合排序，四分类独立展示。</div>
+      <div class="note">按成交额与主力净流入综合排序，四分类独立展示。涨跌幅·红涨绿跌。</div>
     </div>
   </section>
 
