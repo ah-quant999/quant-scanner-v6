@@ -1331,6 +1331,16 @@ tr:hover td { background: #fafbfc; }
         <div id="ntEtfFlowContentDelisted" style="padding:10px 14px;"></div>
       </div>
 
+      <!-- 📈 ETF申赎规模近一年（2026-07-29 新增） -->
+      <div id="etfSubYearCard" style="margin-top:16px;background:#fff;border:1px solid #e0f7fa;border-left:4px solid #00acc1;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e0f7fa;">
+          <span style="font-size:13px;font-weight:700;color:#00838f;">📈 ETF申赎规模 <span style="font-size:10px;font-weight:400;color:#999;">近一年（宽基ETF净申购/赎回·亿份）</span></span>
+          <span style="font-size:12px;color:#999;" id="etfSubYearTime"></span>
+        </div>
+        <div style="font-size:10px;color:#888;padding:0 14px 4px;">⚪ 蓝色=净申购 · 🔴 红色=净赎回</div>
+        <div class="sh-chart-svg" id="etfSubYearChart" style="height:180px;"></div>
+      </div>
+
       </div> <!-- delistedPanel 结束 -->
 
   <!-- 机游共振 -->
@@ -357702,6 +357712,60 @@ function renderNTFlowDelisted() {
   }
 }
 
+// ===== ETF申赎规模近一年柱状图 =====
+function renderEtfSubYear() {
+  const sub = window.ETF_SUBSCRIPTION || {};
+  const sh = sub.sh || [];
+  const el = document.getElementById('etfSubYearChart');
+  const timeEl = document.getElementById('etfSubYearTime');
+  if (!el || !sh.length) return;
+  if (timeEl && sub.update_time) {
+    timeEl.textContent = '更新于 ' + fmtDataTime(sub.update_time).text;
+  }
+  const W = el.offsetWidth || 680, H = 180;
+  const PAD = {top:20, left:45, bottom:24, right:6};
+  const gw = W - PAD.left - PAD.right, gh = H - PAD.top - PAD.bottom;
+  const vals = sh.map(function(d){ return d.net_subscribe_bil || 0; });
+  let minV = Math.min.apply(null, vals), maxV = Math.max.apply(null, vals);
+  if (minV > 0) minV = 0;
+  if (maxV < 0) maxV = 0;
+  const range = maxV - minV || 1;
+  const yScale = function(v){ return PAD.top + gh - (v - minV) / range * gh; };
+  const zeroY = yScale(0);
+  const barW = Math.max(2, Math.floor(gw / sh.length * 0.7));
+  const gap = Math.max(1, Math.floor(gw / sh.length * 0.3));
+  let html = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:100%;">';
+  // 零线
+  html += '<line x1="' + PAD.left + '" y1="' + zeroY.toFixed(1) + '" x2="' + (W-PAD.right) + '" y2="' + zeroY.toFixed(1) + '" stroke="#ccc" stroke-width="1" stroke-dasharray="2"/>';
+  // Y轴分隔线
+  var yticks = 4;
+  for (var yi = 0; yi <= yticks; yi++) {
+    var v = minV + range * yi / yticks;
+    var y = yScale(v);
+    html += '<text x="' + (PAD.left-4) + '" y="' + (y+3) + '" text-anchor="end" font-size="9" fill="#888">' + (v >= 0 ? '' : '') + Math.round(v) + '</text>';
+    html += '<line x1="' + PAD.left + '" y1="' + y.toFixed(1) + '" x2="' + (W-PAD.right) + '" y2="' + y.toFixed(1) + '" stroke="#f0f0f0" stroke-width="1"/>';
+  }
+  // 柱状图
+  sh.forEach(function(d, i){
+    var v = d.net_subscribe_bil || 0;
+    var x = PAD.left + i * (barW + gap) + gap / 2;
+    var y = v >= 0 ? yScale(v) : zeroY;
+    var h = Math.abs(yScale(v) - zeroY);
+    var color = v >= 0 ? '#42a5f5' : '#ef5350';
+    html += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + barW + '" height="' + h.toFixed(1) + '" fill="' + color + '" opacity="0.7" rx="1"/>';
+  });
+  // X轴标签（每5日显示一个日期）
+  var step = Math.max(1, Math.floor(sh.length / 10));
+  for (var si = 0; si < sh.length; si += step) {
+    var dx = PAD.left + si * (barW + gap) + (barW + gap) / 2;
+    var dt = (sh[si].date||'');
+    if (dt && dt.length <= 5 && dt.indexOf('/') === -1 && dt.length >= 3) dt = dt.slice(2);
+    html += '<text x="' + dx.toFixed(1) + '" y="' + (H-4) + '" text-anchor="end" transform="rotate(-45,' + dx.toFixed(1) + ',' + (H-4) + ')" font-size="8" fill="#888">' + dt + '</text>';
+  }
+  html += '</svg>';
+  el.innerHTML = html;
+}
+
 function toggleDelistedPanel() {
   var panel = document.getElementById('delistedPanel');
   var btn = document.getElementById('btnShelfDelisted');
@@ -357729,6 +357793,8 @@ function toggleDelistedPanel() {
     btn.style.background='#4a148c'; btn.style.color='#fff'; btn.style.borderColor='#4a148c';
     // 渲染国家队ETF数据
     if (typeof renderNTFlowDelisted === 'function') { try { renderNTFlowDelisted(); } catch(e) {} }
+    // 渲染ETF申赎近一年
+    if (typeof renderEtfSubYear === 'function') { try { renderEtfSubYear(); } catch(e) {} }
   }
 }
 
