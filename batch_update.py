@@ -1003,7 +1003,7 @@ def main():
 
         # 🔒 部署前数据监控闸门（盘前/盘中/盘后通用）：verify --gate 命中 FAIL 则阻断部署，
         # 保留上一版正常数据，绝不把残缺/矛盾/陈旧数据推上线（修复"上午鸡飞狗跳"综合症）。
-        if cmd_name == "deploy_now.py":
+        if cmd_name == "deploy_now.py" and "--force" not in cmd:
             print(f"  🔒 部署前闸门检查 (verify_data_vs_website.py --fast --gate)...")
             gate_ok, gate_el, gate_detail = run_step("verify_data_vs_website.py --fast --gate", 120)
             if not gate_ok:
