@@ -357690,18 +357690,61 @@ function renderNTFlowDelisted() {
   var flowStr = flowYi >= 1 ? flowYi.toFixed(1)+'亿' : Math.round(Math.abs(netFlow)/1e4)+'万';
   var flowColor = netFlow >= 0 ? '#c62828' : '#2e7d32';
   var upCount = summary.up||0, downCount = summary.down||0;
-  var upEtfs = etfs.filter(function(e){return (e.change_pct||0)>0;}).sort(function(a,b){return Math.abs(b.change_pct||0)-Math.abs(a.change_pct||0);}).slice(0,5);
+  // 上涨 ETF 前 5
+  var upEtfs = etfs.filter(function(e){return (e.change_pct||0)>0;})
+    .sort(function(a,b){return Math.abs(b.change_pct||0)-Math.abs(a.change_pct||0);}).slice(0,5);
+  // 下跌 ETF 前 3
+  var downEtfs = etfs.filter(function(e){return (e.change_pct||0)<0;})
+    .sort(function(a,b){return Math.abs(a.change_pct||0)-Math.abs(b.change_pct||0);}).slice(0,3);
+
   var h = '';
-  h += '<div style="font-size:20px;font-weight:800;color:' + flowColor + ';margin-bottom:2px;">' + (netFlow>0?'+':(netFlow<0?'-':'')) + flowStr + '</div>';
-  h += '<div style="font-size:10px;color:#999;margin-bottom:6px;">估算净' + flowDir + ' · ' + upCount + '涨' + downCount + '跌</div>';
-  h += '<div style="border-top:1px solid #e3f2fd;padding-top:8px;">';
-  h += '<div style="font-size:12px;color:#e53935;font-weight:700;margin-bottom:4px;">▲ 上涨TOP5</div>';
+  // 净流向数值
+  h += '<div style="font-size:22px;font-weight:800;color:' + flowColor + ';margin-bottom:2px;">' + (netFlow>0?'+':(netFlow<0?'-':'')) + flowStr + '</div>';
+  h += '<div style="font-size:10px;color:#999;margin-bottom:6px;">估算净' + flowDir + ' · ' + upCount + '涨' + downCount + '跌 · ' + etfs.length + '只</div>';
+  // 平均涨跌幅 + 情绪
+  var avgChange = etfs.reduce(function(s,e){return s+(e.change_pct||0);},0) / (etfs.length||1);
+  var mood = avgChange > 0.5 ? '🔥 国家队积极' : avgChange > -0.5 ? '😐 情绪中性' : '💧 国家队谨慎';
+  h += '<div style="font-size:11px;color:#555;margin-bottom:8px;padding:4px 0;border-top:1px dashed #eee;border-bottom:1px dashed #eee;">';
+  h += '<span style="color:#555;">' + mood + '</span> · 平均' + (avgChange>=0?'+':'') + avgChange.toFixed(2) + '%';
+  if (upCount + downCount > 0) {
+    h += ' · <span style="color:#c62828;">' + upCount + '只涨</span> / <span style="color:#2e7d32;">' + downCount + '只跌</span>';
+  }
+  var mostActive = etfs.slice().sort(function(a,b){return (b.amount||0)-(a.amount||0);})[0];
+  if (mostActive) {
+    var maName = mostActive.name.replace(/华夏|华泰柏瑞|易方达|嘉实|南方/g,'');
+    h += ' · 最活跃 <b>' + maName + '</b> ' + ((mostActive.amount||0)/1e8).toFixed(1) + '亿';
+  }
+  h += '</div>';
+  // 双列：上涨 + 下跌
+  h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
+  // 上涨
+  h += '<div style="font-size:11px;line-height:1.8;">';
+  h += '<div style="color:#c62828;font-weight:700;margin-bottom:4px;">▲ 上涨ETF</div>';
   if (upEtfs.length > 0) {
     upEtfs.forEach(function(e){
       var a = ((e.amount||0)/1e8).toFixed(1);
-      h += '<div style="display:flex;justify-content:space-between;font-size:11px;padding:3px 0;border-bottom:1px solid #f5f5f5;"><span>' + e.name + '</span> <span style="color:#e53935;">+' + (e.change_pct||0).toFixed(2) + '%</span> <span style="color:#888;">' + a + '亿</span></div>';
+      h += '<div style="display:flex;justify-content:space-between;border-bottom:1px dashed #f5f5f5;padding:2px 0;">'
+        + '<span>' + e.name + ' <span style="color:#999;font-size:10px;">(' + e.code + ')</span></span>'
+        + '<b style="color:#c62828;">+' + (e.change_pct||0).toFixed(2) + '%</b>'
+        + '<span style="color:#999;font-size:10px;">' + a + '亿</span>'
+        + '</div>';
     });
-  } else { h += '<div style="color:#999;font-size:11px;">暂无上涨ETF</div>'; }
+  } else { h += '<div style="color:#999;">—</div>'; }
+  h += '</div>';
+  // 下跌
+  h += '<div style="font-size:11px;line-height:1.8;">';
+  h += '<div style="color:#2e7d32;font-weight:700;margin-bottom:4px;">▼ 下跌ETF</div>';
+  if (downEtfs.length > 0) {
+    downEtfs.forEach(function(e){
+      var a = ((e.amount||0)/1e8).toFixed(1);
+      h += '<div style="display:flex;justify-content:space-between;border-bottom:1px dashed #f5f5f5;padding:2px 0;">'
+        + '<span>' + e.name + ' <span style="color:#999;font-size:10px;">(' + e.code + ')</span></span>'
+        + '<b style="color:#2e7d32;">' + (e.change_pct||0).toFixed(2) + '%</b>'
+        + '<span style="color:#999;font-size:10px;">' + a + '亿</span>'
+        + '</div>';
+    });
+  } else { h += '<div style="color:#999;">—</div>'; }
+  h += '</div>';
   h += '</div>';
   content.innerHTML = h;
   const timeEl = document.getElementById('ntEtfFlowTimeDelisted');
