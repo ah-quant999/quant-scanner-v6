@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 11:37:43",
+    "last_success": "2026-07-29 11:47:50",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -97,9 +97,9 @@
   },
   "fetch_mahoro_signals": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 10:27:35",
+    "last_success": "2026-07-29 11:45:04",
     "last_error": null,
-    "last_failure": "2026-07-21 09:58:43"
+    "last_failure": "2026-07-29 11:44:58"
   },
   "fetch_lhb": {
     "consecutive_failures": 0,

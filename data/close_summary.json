@@ -1,7 +1,7 @@
 {
   "data_date": "2026-07-28",
-  "update_time": "2026-07-29T10:27:34",
-  "generated_at": "2026-07-29T10:27:34",
+  "update_time": "2026-07-29T11:44:43",
+  "generated_at": "2026-07-29T11:44:43",
   "etf_summary": {
     "total": 12,
     "up": 2,
@@ -155,28 +155,28 @@
   "sector_summary": {
     "top_in": [
       {
-        "name": "高股息精选",
-        "net_yi": 90.23
+        "name": "融资融券",
+        "net_yi": 243.51
       },
       {
-        "name": "银行",
-        "net_yi": 55.96
+        "name": "沪股通",
+        "net_yi": 142.65
       },
       {
-        "name": "跨境支付(CIPS)",
-        "net_yi": 52.89
+        "name": "深股通",
+        "net_yi": 90.32
       },
       {
-        "name": "超级品牌",
-        "net_yi": 30.4
+        "name": "人民币贬值受益",
+        "net_yi": 82.62
       },
       {
-        "name": "白酒概念",
-        "net_yi": 19.91
+        "name": "国企改革",
+        "net_yi": 78.16
       }
     ],
     "top_out": [],
-    "update_time": "2026-07-28 15:17"
+    "update_time": "2026-07-29 10:50"
   },
   "market_alerts_summary": {
     "count": 0,
@@ -190,7 +190,7 @@
   },
   "sources": {
     "nt_data": "2026-07-29 10:21",
-    "sector_fund_flow": "2026-07-28 15:17",
+    "sector_fund_flow": "2026-07-29 10:50",
     "market_alerts": "2026-07-28 15:19:26",
     "inst_trade": "2026-07-28 20:55:26"
   }
