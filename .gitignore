@@ -99,6 +99,8 @@ data/*
 !data/concept_history.json
 !data/overnight_timeline.json
 !data/signal_backtest.json
+# 本机心跳日志（不由 git 跟踪，避免 deploy 回滚）
+_heartbeat.log
 # 例外：统一心跳日志（双机+云端写入，commit 到 main 做全局探测）
 !data/_heartbeat.log
 # 例外：IPO 评分（双机+云端均需，2026-07-28 主人要求"盘前就要看到当日上市新股"——必须入 main 才能推到云端）
