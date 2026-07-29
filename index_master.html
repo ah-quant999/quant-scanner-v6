@@ -1092,6 +1092,7 @@ tr:hover td { background: #fafbfc; }
         <button class="health-sub-tab" data-cat="cockpit" onclick="renderHealthDashboard('cockpit')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #1a237e;background:#1a237e;color:#fff;">🎯 驾驶舱</button>
         <button class="health-sub-tab" data-cat="allsite" onclick="renderHealthDashboard('allsite')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #5e35b1;background:#5e35b1;color:#fff;">🌐 全站精选</button>
         <button id="btnShelfUnlisted" onclick="toggleUnlistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">📦 暂未上架</button>
+        <button id="btnShelfDelisted" onclick="toggleDelistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">🗄️ 已下架</button>
       </div>
 
       <!-- 🎯 选股驾驶舱（健康看板子 tab，点击"🎯 驾驶舱"按钮切换显示） -->
@@ -1210,11 +1211,10 @@ tr:hover td { background: #fafbfc; }
 
       <!-- 资金流时间轴已移到涨跌家数统计下方 -->
 
-      <!-- 精选预判信号 — 2026-07-21 已移入 shelf-group 内(已下架卡片区)，原位置清空 -->
+</div> <!-- unlistedPanel 结束（已下架移到下方独立面板） -->
 
-
-      <!-- ============ 已下架/低优先级卡片（按更新频率排序：盘中 → 盘后 → T+1）============ -->
-      <div class="shelf-group" style="margin-top:24px;padding-top:14px;border-top:2px dashed #e0e0e0;">
+      <!-- ============ 🗄️ 已下架面板（独立 Tab，暂未上架右侧） ============ -->
+      <div id="delistedPanel" style="display:none;font-size:13px;">
         <div style="font-weight:700;font-size:14px;color:#666;margin-bottom:4px;">🗄️ 已下架卡片</div>
         <p style="font-size:11px;color:#999;margin-bottom:14px;">已移出主看板（数据仍采集，按更新频率分组）</p>
 
@@ -1315,8 +1315,16 @@ tr:hover td { background: #fafbfc; }
 
       </div>
 
-
+      <!-- 国家队ETF资金流向（已下架最下方） -->
+      <div id="ntEtfFlowCardDelisted" style="margin-top:16px;background:#fff;border:1px solid #e8eaed;border-left:4px solid #42a5f5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e3f2fd;">
+          <span style="font-size:13px;font-weight:700;color:#1565c0;">🏛️ 国家队ETF资金流向 <span style="font-size:10px;font-weight:400;color:#999;">盘中实时</span></span>
+          <span style="font-size:12px;color:#999;" id="ntEtfFlowTimeDelisted"></span>
+        </div>
+        <div id="ntEtfFlowContentDelisted" style="padding:10px 14px;"></div>
       </div>
+
+      </div> <!-- delistedPanel 结束 -->
 
   <!-- 机游共振 -->
 
@@ -357598,6 +357606,8 @@ var PAGE_CARDS = [
 function toggleUnlistedPanel() {
   var panel = document.getElementById('unlistedPanel');
   var btn = document.getElementById('btnShelfUnlisted');
+  var delPanel = document.getElementById('delistedPanel');
+  var delBtn = document.getElementById('btnShelfDelisted');
   var dashboard = document.getElementById('healthDashboard');
   var cockpitEl = document.getElementById('stockCockpit');
   if (!panel || !btn) return;
@@ -357612,6 +357622,8 @@ function toggleUnlistedPanel() {
     if(activeTab) activeTab.click();
   } else {
     panel.style.display='block';
+    if(delPanel) delPanel.style.display='none';
+    if(delBtn) { delBtn.style.background='#fafafa'; delBtn.style.color='#9e9e9e'; delBtn.style.borderColor='#bdbdbd'; }
     if(dashboard) dashboard.style.display='none';
     if(cockpitEl) cockpitEl.style.display='none';
     var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
@@ -357621,6 +357633,86 @@ function toggleUnlistedPanel() {
     if (typeof renderCrdsCard === 'function') { try { renderCrdsCard(); } catch(e) {} }
     if (typeof renderVolatilityCard === 'function') { try { renderVolatilityCard(); } catch(e) {} }
     if (typeof renderMarketFundFlowCard === 'function') { try { renderMarketFundFlowCard(); } catch(e) {} }
+  }
+}
+
+function renderNTFlowDelisted() {
+  const nt = window.NT_DATA || {};
+  const cs = window.CLOSE_SUMMARY || {};
+  const csDate = cs.data_date || '';
+  const csTime = cs.update_time || '';
+  const csHM = csTime.indexOf('T') >= 0 ? csTime.split('T')[1].slice(0,5) : csTime.slice(-5);
+  const today = new Date().toISOString().slice(0,10);
+  const isAfterClose = csDate === today && csHM >= '15:00';
+  const etfFlow = (isAfterClose && cs.etf_flow_snapshot && cs.etf_flow_snapshot.etfs)
+    ? cs.etf_flow_snapshot
+    : (nt.etfFlow || {});
+  const etfs = etfFlow.etfs || [];
+  const summary = etfFlow.summary || {};
+  const card = document.getElementById('ntEtfFlowCardDelisted');
+  const content = document.getElementById('ntEtfFlowContentDelisted');
+  if (!card || !content) return;
+  if (!etfs.length) {
+    content.innerHTML = '<div style="text-align:center;padding:20px;color:#999;font-size:13px;">⏳ 暂无国家队ETF资金数据，等待盘中更新</div>';
+    return;
+  }
+  var upAmt = etfs.filter(function(e){return (e.change_pct||0)>0;}).reduce(function(s,e){return s+(e.amount||0);},0);
+  var downAmt = etfs.filter(function(e){return (e.change_pct||0)<0;}).reduce(function(s,e){return s+(e.amount||0);},0);
+  var netFlow = upAmt - downAmt;
+  var flowYi = Math.abs(netFlow)/1e8;
+  var flowDir = netFlow >= 0 ? '净流入' : '净流出';
+  var flowStr = flowYi >= 1 ? flowYi.toFixed(1)+'亿' : Math.round(Math.abs(netFlow)/1e4)+'万';
+  var flowColor = netFlow >= 0 ? '#c62828' : '#2e7d32';
+  var upCount = summary.up||0, downCount = summary.down||0;
+  var upEtfs = etfs.filter(function(e){return (e.change_pct||0)>0;}).sort(function(a,b){return Math.abs(b.change_pct||0)-Math.abs(a.change_pct||0);}).slice(0,5);
+  var h = '';
+  h += '<div style="font-size:20px;font-weight:800;color:' + flowColor + ';margin-bottom:2px;">' + (netFlow>0?'+':(netFlow<0?'-':'')) + flowStr + '</div>';
+  h += '<div style="font-size:10px;color:#999;margin-bottom:6px;">估算净' + flowDir + ' · ' + upCount + '涨' + downCount + '跌</div>';
+  h += '<div style="border-top:1px solid #e3f2fd;padding-top:8px;">';
+  h += '<div style="font-size:12px;color:#e53935;font-weight:700;margin-bottom:4px;">▲ 上涨TOP5</div>';
+  if (upEtfs.length > 0) {
+    upEtfs.forEach(function(e){
+      var a = ((e.amount||0)/1e8).toFixed(1);
+      h += '<div style="display:flex;justify-content:space-between;font-size:11px;padding:3px 0;border-bottom:1px solid #f5f5f5;"><span>' + e.name + '</span> <span style="color:#e53935;">+' + (e.change_pct||0).toFixed(2) + '%</span> <span style="color:#888;">' + a + '亿</span></div>';
+    });
+  } else { h += '<div style="color:#999;font-size:11px;">暂无上涨ETF</div>'; }
+  h += '</div>';
+  content.innerHTML = h;
+  const timeEl = document.getElementById('ntEtfFlowTimeDelisted');
+  if (timeEl) {
+    var t = (isAfterClose ? csTime : (nt.update_time||'')) || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
+    if (t && t.indexOf('T')>=0) t = t.replace('T',' ');
+    if (t) { setPostMarketTime('ntEtfFlowTimeDelisted', t, 'etf'); }
+  }
+}
+
+function toggleDelistedPanel() {
+  var panel = document.getElementById('delistedPanel');
+  var btn = document.getElementById('btnShelfDelisted');
+  var unlistedPanel = document.getElementById('unlistedPanel');
+  var delBtn2 = document.getElementById('btnShelfUnlisted');
+  var dashboard = document.getElementById('healthDashboard');
+  var cockpitEl = document.getElementById('stockCockpit');
+  if (!panel || !btn) return;
+  var isShown = panel.style.display !== 'none';
+  if (isShown) {
+    panel.style.display='none';
+    if(dashboard) dashboard.style.display='';
+    if(cockpitEl) cockpitEl.style.display='none';
+    var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
+    btn.style.background='#fafafa'; btn.style.color='#9e9e9e'; btn.style.borderColor='#bdbdbd';
+    var activeTab=document.querySelector('.health-sub-tab.active');if(!activeTab)activeTab=document.querySelector('.health-sub-tab[data-cat="all"]');
+    if(activeTab) activeTab.click();
+  } else {
+    panel.style.display='block';
+    if(unlistedPanel) unlistedPanel.style.display='none';
+    if(delBtn2) { delBtn2.style.background='#fafafa'; delBtn2.style.color='#9e9e9e'; delBtn2.style.borderColor='#bdbdbd'; }
+    if(dashboard) dashboard.style.display='none';
+    if(cockpitEl) cockpitEl.style.display='none';
+    var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
+    btn.style.background='#4a148c'; btn.style.color='#fff'; btn.style.borderColor='#4a148c';
+    // 渲染国家队ETF数据
+    if (typeof renderNTFlowDelisted === 'function') { try { renderNTFlowDelisted(); } catch(e) {} }
   }
 }
 
