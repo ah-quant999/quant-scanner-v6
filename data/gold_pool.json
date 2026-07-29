@@ -10367,7 +10367,8 @@
       ],
       "sources": [
         "三足鼎立",
-        "创业板成交前100"
+        "创业板成交前100",
+        "投行研报"
       ],
       "latest": {
         "close": 156.41,
@@ -42777,7 +42778,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根大通",
-      "rating": "增持"
+      "rating": "增持",
+      "industry": "有色金属冶炼和压延加工业",
+      "sectors": [
+        "有色金属冶炼和压延加工业"
+      ]
     },
     "sz_301169": {
       "code": "301169",
@@ -42824,7 +42829,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "商务服务业",
+      "sectors": [
+        "商务服务业"
+      ]
     },
     "sz_301658": {
       "code": "301658",
@@ -42871,7 +42880,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "sz_300613": {
       "code": "300613",
@@ -42918,7 +42931,11 @@
         "开盘_标签": ""
       },
       "institution": "摩根士丹利",
-      "rating": "未评级"
+      "rating": "未评级",
+      "industry": "软件和信息技术服务业",
+      "sectors": [
+        "软件和信息技术服务业"
+      ]
     },
     "hk_1133": {
       "code": "1133",
@@ -43011,7 +43028,11 @@
         "开盘_标签": ""
       },
       "institution": "花旗",
-      "rating": "买入"
+      "rating": "买入",
+      "industry": "电力、热力生产和供应业",
+      "sectors": [
+        "电力、热力生产和供应业"
+      ]
     },
     "sz_300803": {
       "code": "300803",
@@ -43097,7 +43118,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "其他金融业",
+      "sectors": [
+        "其他金融业"
+      ]
     },
     "sz_000651": {
       "code": "000651",
@@ -43183,7 +43208,11 @@
         false,
         false
       ],
-      "ema_score": 0
+      "ema_score": 0,
+      "industry": "电气机械和器材制造业",
+      "sectors": [
+        "电气机械和器材制造业"
+      ]
     },
     "hk_00992": {
       "code": "00992",
@@ -43198,7 +43227,8 @@
       "history": [],
       "sources": [
         "港股成交前50",
-        "maharo研报"
+        "maharo研报",
+        "投行研报"
       ],
       "latest": {
         "close": 0,
@@ -43416,6 +43446,192 @@
         "当日涨停": false,
         "开盘_标签": ""
       }
+    },
+    "hk_2162": {
+      "code": "2162",
+      "name": "康诺亚-B",
+      "market": "港股",
+      "board_label": "港股",
+      "first_date": "2026-07-29",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "高盛",
+      "rating": "买入"
+    },
+    "sh_600900": {
+      "code": "600900",
+      "name": "长江电力",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-29",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "德银",
+      "rating": "买入"
+    },
+    "sh_601318": {
+      "code": "601318",
+      "name": "中国平安",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "摩根大通",
+      "rating": "增持"
+    },
+    "sz_002747": {
+      "code": "002747",
+      "name": "埃斯顿",
+      "market": "深市",
+      "board_label": "主板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "高盛",
+      "rating": "未评级"
+    },
+    "sh_600048": {
+      "code": "600048",
+      "name": "保利发展",
+      "market": "沪市",
+      "board_label": "主板",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "高盛",
+      "rating": "中性"
+    },
+    "hk_2328": {
+      "code": "2328",
+      "name": "中国财险",
+      "market": "港股",
+      "board_label": "港股",
+      "first_date": "2026-07-28",
+      "signal_count": 1,
+      "max_signal": 1,
+      "history": [],
+      "sources": [
+        "投行研报"
+      ],
+      "latest": {
+        "close": 0,
+        "pct_chg": 0,
+        "signal_score": 7.0,
+        "ema_up": 0,
+        "ema_dirs": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "ema_score": 3
+      },
+      "institution": "花旗",
+      "rating": "未评级"
     }
   },
   "last_update": "2026-07-28 15:17:37",
@@ -46689,5 +46905,5 @@
   },
   "candidate_total": 360,
   "total_count": 330,
-  "update_time": "2026-07-29 07:36:00"
+  "update_time": "2026-07-29 09:08:37"
 }

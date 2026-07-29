@@ -1,6 +1,6 @@
 {
-  "fetch_time": "2026-07-28 11:40:51",
-  "total_signals": 12,
+  "fetch_time": "2026-07-29 09:04:45",
+  "total_signals": 19,
   "banks": [
     "三菱UFJ摩根士丹利",
     "三菱UFJ摩根士丹利证券",
@@ -29,12 +29,66 @@
     "高盛"
   ],
   "stance_counts": {
-    "bullish": 2473,
-    "neutral": 319,
+    "bullish": 2479,
+    "neutral": 320,
     "bearish": 76,
     "mixed": 252
   },
   "gold_pool_matches": [
+    {
+      "code": "300548",
+      "name": "长芯博创",
+      "market": "sz",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "签署45亿元长期协议，锁定未来订单",
+      "published_at": "2026-07-28 21:10"
+    },
+    {
+      "code": "01093",
+      "name": "石药集团",
+      "market": "hk",
+      "bank": "高盛",
+      "stance": "bullish",
+      "key_point": "BD收入推动业绩超预期，成药销售稳健",
+      "published_at": "2026-07-28 21:03"
+    },
+    {
+      "code": "300124",
+      "name": "汇川技术",
+      "market": "sz",
+      "bank": "高盛",
+      "stance": "bullish",
+      "key_point": "工业自动化市场复苏，本土厂商份额显著提升",
+      "published_at": "2026-07-28 20:47"
+    },
+    {
+      "code": "00992",
+      "name": "联想集团",
+      "market": "hk",
+      "bank": "摩根大通",
+      "stance": "bullish",
+      "key_point": "服务器业务增长强劲，上调评级至增持",
+      "published_at": "2026-07-28 20:29"
+    },
+    {
+      "code": "601600",
+      "name": "中国铝业",
+      "market": "sh",
+      "bank": "摩根大通",
+      "stance": "bullish",
+      "key_point": "产能天花板严格执行，看好公司成本优势及分红潜力",
+      "published_at": "2026-07-28 09:11"
+    },
+    {
+      "code": "02600",
+      "name": "中国铝业",
+      "market": "hk",
+      "bank": "摩根大通",
+      "stance": "bullish",
+      "key_point": "产能天花板严格执行，看好公司成本优势及分红潜力",
+      "published_at": "2026-07-28 09:11"
+    },
     {
       "code": "002270",
       "name": "华明装备",
@@ -99,9 +153,36 @@
       "published_at": "2026-07-28 08:30"
     },
     {
+      "code": "01133",
+      "name": "哈尔滨电气",
+      "market": "hk",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "水电核电装机增长，业绩超预期，重申买入。",
+      "published_at": "2026-07-28 08:21"
+    },
+    {
       "code": "300750",
       "name": "宁德时代",
       "market": "sz",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "电池产能扩张开启，8月生产计划环比增长。",
+      "published_at": "2026-07-28 08:14"
+    },
+    {
+      "code": "03931",
+      "name": "中创新航",
+      "market": "hk",
+      "bank": "花旗",
+      "stance": "bullish",
+      "key_point": "电池产能扩张开启，8月生产计划环比增长。",
+      "published_at": "2026-07-28 08:14"
+    },
+    {
+      "code": "00666",
+      "name": "瑞浦兰钧",
+      "market": "hk",
       "bank": "花旗",
       "stance": "bullish",
       "key_point": "电池产能扩张开启，8月生产计划环比增长。",
@@ -144,6 +225,15 @@
       "published_at": "2026-07-28 07:54"
     },
     {
+      "code": "00992",
+      "name": "联想集团",
+      "market": "hk",
+      "bank": "摩根士丹利",
+      "stance": "bullish",
+      "key_point": "看好AI供应链，算力需求将长期超过供给。",
+      "published_at": "2026-07-28 07:54"
+    },
+    {
       "code": "688012",
       "name": "中微公司",
       "market": "sh",
@@ -154,6 +244,214 @@
     }
   ],
   "raw_signals": [
+    {
+      "index": 6,
+      "bank": "摩根大通",
+      "companies": [
+        {
+          "name": "陆金所控股",
+          "ticker": "LU.US",
+          "rating": "overweight",
+          "target_price": 2.0,
+          "tp_currency": "USD",
+          "ref_price": 1.46,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3699,
+          "implied_return_pct": "+37.0%"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "基本面触底回升，资产质量改善，上调至超配",
+      "published_at": "2026-07-28 21:22",
+      "date": "2026-07-28",
+      "id": "c8b3084a7f61",
+      "title": "摩根大通",
+      "summary": "摩根大通\n陆金所控股 (Lufax Holding)\n估值触底，经营迎来拐点；上调至“超配”评级\n在陆金所发布 2Q26 运营更新后，我们将评级从“中性”上调至“超配”。贷款增长的改善和领先的资产质量指标，为该公司从低迷估值中复苏提供了更清晰的路径。鉴于其内部收益率 (IRR) 低于同行，陆金所对进一步的贷款定价监管也表现出较强的韧性。我们认为，目前 0.1 倍的远期市净率 (P/B) 以及仅相当于 FY25 底现金水平 37% 的市值，低估了其经营复苏和资产负债表的灵活性。8 月份的中期业绩可能通过提高盈利可见度成为股价催化剂，而任何股东回报计划都将为我们的基准情景带来额外的上行空间。\n• 基本面在估值触底之际出现转机，上调至“超配”。新增贷款增速从 1Q26 的同比下降 14.8% 恢复至 2Q26 的同比增长 4.6%，而贷款余额的环比降幅也收窄至 3%。领先的资产质量指标亦有所改善：C-M3 环比下降 20 个基点至 1.0%，D30 下降 30 个基点至 5.8%，消费金融不良贷款率 (NPL) 小幅下降 10 个基点至 1.3%。我们认为，目前仅 0.1 倍的远期市净率低估",
+      "topicId": "55522441145824814",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441145824814"
+    },
+    {
+      "index": 5,
+      "bank": "花旗",
+      "companies": [
+        {
+          "name": "长芯博创",
+          "ticker": "300548.SZ",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 167.7,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "签署45亿元长期协议，锁定未来订单",
+      "published_at": "2026-07-28 21:10",
+      "date": "2026-07-28",
+      "id": "322ac7bfaedf",
+      "title": "花旗",
+      "summary": "花旗\n花旗快讯 | EverProX Technologies长芯博创 (300548.SZ)\n长芯博创签署 45 亿元光纤产品大客户长期协议\n正面。\n长芯博创宣布其子公司签署了一份至 2030 年的 ~45 亿元人民币光纤产品长期协议（约占花旗对 2026/27/28 年营收预测的 110%/72%/54%），这有助于锁定未来订单。\n#花旗  #零件材料  #算力服务  #AH",
+      "topicId": "22255448842211821",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/22255448842211821"
+    },
+    {
+      "index": 4,
+      "bank": "高盛",
+      "companies": [
+        {
+          "name": "石药集团",
+          "ticker": "1093.HK",
+          "rating": "buy",
+          "target_price": 12.14,
+          "tp_currency": "HKD",
+          "ref_price": 8.3,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.4627,
+          "implied_return_pct": "+46.3%"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "BD收入推动业绩超预期，成药销售稳健",
+      "published_at": "2026-07-28 21:03",
+      "date": "2026-07-28",
+      "id": "9ddaa16f7643",
+      "title": "高盛",
+      "summary": "高盛\n石药集团 (1093.HK)：盈利预告：BD 收入推动业绩超预期；政策逆风下成药销售表现稳健\n阿斯利康首付款确认推动业绩超预期；成药业务增长加速：\n石药集团发布盈喜公告，预计 2024 年上半年净利润为 59 亿至 62 亿元人民币（相比之下\n2025 年上半年为 25.5 亿元人民币），这主要受与阿斯利康（AstraZeneca）长效 GLP-1 合作项目收入确认的推动。公司预计将在 2026 年第二季度将 12 亿美元首付款中的 8.4 亿美元（约 57.4 亿元人民币）确认为授权费收入，这意味着~70%的首付款将在 2026 年上半年入账，超出了我们的预期，并显著提升了盈利水平。更重要的是，成品药销售额在 2026 年上半年同比增长约 10%，高于我们此前+7.3%的预期，且与管理层近期在公司日（Corporate Day）上的表态一致，即 2026 年正增长的销售指引保持不变。这暗示了第二季度销售额显著加速（同比增长约 14%，而第一季度为+6.2%），尽管 5 月份面临反腐政策带来的阻力。我们认为这是一个令人鼓舞的信号，表明阻力对创新药商业化的影响依然可控。特别是，我们",
+      "topicId": "45544228825548818",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544228825548818"
+    },
+    {
+      "index": 3,
+      "bank": "高盛",
+      "companies": [
+        {
+          "name": "汇川技术",
+          "ticker": "300124.SZ",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 59.48,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "埃斯顿",
+          "ticker": "002747.SZ",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 31.55,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "sector",
+      "stance": "bullish",
+      "key_point": "工业自动化市场复苏，本土厂商份额显著提升",
+      "published_at": "2026-07-28 20:47",
+      "date": "2026-07-28",
+      "id": "6f9bc27e5d18",
+      "title": "高盛",
+      "summary": "高盛\n中国工业科技（CHINA INDUSTRIAL TECH）\n2026年第二季度机器人/自动化竞争格局分析器：市场份额如何演变？\n发布日期： 2026年7月27日\n深入洞察塑造更智能、更绿色经济的工业创新\n2026年第二季度中国工业机器人与自动化竞争格局核心观察：\n工业自动化（IA）市场在2026年第二季度同比增长+6%，其中项目/OEM（主要是离散自动化）市场同比分别为-1%/+17%，延续了2026年第一季度观察到的由OEM引领的明显复苏。在这一广阔的市场环境中，汇川技术再次成为最明确的自动化份额获取者：在伺服、低压变频器和SCARA机器人领域保持市场第一地位，其中伺服份额环比+5个百分点/同比+5个百分点至38%，PLC份额同比+4个百分点，SCARA份额同比+6个百分点，且这些增幅集中在其已具备领导地位的品类中，巩固了我们关于市场份额继续向汇川技术最强垂直领域集中的观点。\n2026年第二季度工业机器人（IR）总销量（根据MIR数据） reached 10.1万台，同比/环比增长+17%/+15%，而2026年第一季度为同比/环比+14%/-5%；协作机器人仍是增长最快的细分",
+      "topicId": "82255448842581122",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/82255448842581122"
+    },
+    {
+      "index": 2,
+      "bank": "摩根大通",
+      "companies": [
+        {
+          "name": "联想集团",
+          "ticker": "0992.HK",
+          "rating": "overweight",
+          "target_price": 30.0,
+          "tp_currency": "HKD",
+          "ref_price": null,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "服务器业务增长强劲，上调评级至增持",
+      "published_at": "2026-07-28 20:29",
+      "date": "2026-07-28",
+      "id": "34ca9d8777c6",
+      "title": "摩根大通",
+      "summary": "摩根大通\n联想集团有限公司 (0992)\nISG 增长潜力抵消 PC 市场不确定性；上调至“增持”评级\n我们将联想集团的评级上调至“增持”，并将 2027 年 6 月的目标价设定为 30.00 港元（基于 16 倍市盈率）\n在服务器盈利能力强劲改善、IDG 价格弹性优于预期以及零部件供应紧张背景下的整合利好推动下，12 个月远期稀释后每股收益（EPS）有所增长。继 5 月 21 日发布稳健的 3 月季度财报后，联想股价上涨了 85%（相比之下恒生指数持平）。我们预计 6 月季度业绩公布后股价将有积极反应，上涨动力主要来自服务器业务板块。我们的行业研究表明，在有利定价的支持下，联想正见证与 AI 相关的客户需求快速增长以及健康的服务器盈利能力。因此，我们预计随着运营杠杆的发挥，ISG 的利润率在未来几个季度将进一步扩张。尽管 PC 业务的盈利可见度仍存在不确定性，但我们认为凭借其行业领导地位和规模优势，联想的表现应优于 PC 同行。主要下行风险包括 2027 年 AI 资本支出投资可能放缓，以及零部件成本上升带来的利润率压力超出预期。\n• AI 突破 + 通用服务器的强劲势头推动了有利的",
+      "topicId": "45544228828281818",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/45544228828281818"
+    },
+    {
+      "index": 1,
+      "bank": "高盛",
+      "companies": [
+        {
+          "name": "保利发展",
+          "ticker": "600048.SS",
+          "rating": "neutral",
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 5.01,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        },
+        {
+          "name": "贝壳",
+          "ticker": "BEKE.US",
+          "rating": null,
+          "target_price": null,
+          "tp_currency": null,
+          "ref_price": 16.39,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)"
+        }
+      ],
+      "type": "sector",
+      "stance": "neutral",
+      "key_point": "房地产成交量回升，市场活动总体保持稳定",
+      "published_at": "2026-07-28 20:25",
+      "date": "2026-07-28",
+      "id": "dacc85765be5",
+      "title": "高盛",
+      "summary": "高盛\n中国房地产周报总结\n第 30 周总结 - 成交涨幅扩大，市场活动总体保持稳定\n本周要点回顾：\n市场表现：新房和二手房成交量继续上涨，环比分别增长 12%和 2%，7 月结束时同比分别增长 7%和 3%。市场活跃度同样保持稳定：1）新房搜索活跃度环比提升 1.2%；2）二手房认购销售和带看量环比持平；3）监测城市的成交价格出现小幅改善，这与新挂牌供应量进一步缩减（7 月环比下降 5%，同比下降 16%）以及经纪人价格预期更加积极（连续第二周改善）相呼应。\n关键数据点：\n• 新房成交量环比增长 12%，同比下降 2%，而新房搜索活跃度环比提升 1.2%。\n• 二手房成交量环比增长 2%，同比增长 10%，经纪人的房价上涨预期有所抬升。\n• 7 月：新房成交建筑面积中位数环比下降 8%，同比增长 7%；二手房成交建筑面积中位数环比下降 10%，同比增长 3%。\n• 年初至今：新房成交建筑面积同比平均下降 14%，较 2024/2023 年水平分别下降 16%/39%；二手房成交建筑面积同比平均增长 1%，较 2024/2023 年水平分别增长 15%/12%。\n• 库存余额环比下降 0",
+      "topicId": "55522441141424514",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/55522441141424514"
+    },
+    {
+      "index": 0,
+      "bank": "花旗",
+      "companies": [
+        {
+          "name": "中国财险",
+          "ticker": "2328.HK",
+          "rating": null,
+          "target_price": 20.5,
+          "tp_currency": "HKD",
+          "ref_price": 15.03,
+          "ref_date": "2026-07-27",
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3639,
+          "implied_return_pct": "+36.4%"
+        }
+      ],
+      "type": "stock",
+      "stance": "bullish",
+      "key_point": "上半年业绩改善，车险与非车险业务结构持续优化",
+      "published_at": "2026-07-28 20:23",
+      "date": "2026-07-28",
+      "id": "de0bc0ee1f16",
+      "title": "花旗",
+      "summary": "花旗\n中国财险 (2328.HK)\n管理层更新：2026 年上半年预期保费正增长且综合成本率（CoR）进一步优化；非车险佣金规范化具备持续性\n花旗观点\n我们与中国财险管理层就最新经营趋势及未来展望进行了电话会议，更新要点如下。\n2026 年上半年承保与投资业绩均有望改善 —— 管理层预计，2026 年上半年保险服务业绩和投资业绩均将实现同比改善，原因在于：1）尽管 2025 年上半年已实现历史最佳承保利润，但总保费收入仍录得同比正增长，且综合成本率（CoR）同比进一步改善；2）尽管中国财险的股票配置相对更偏向以公允价值计量且其变动计入其他综合收益（FVOCI）的股票，但其投资表现仍与同行持平或更优。关于自然灾害损失，管理层透露 2026 年 7 月遭受了约 20 亿元人民币的自然灾害损失（相比之下，2025 年第三季度约为 40 亿元人民币），2026 年第三季度可能面临一定的同比压力，但全年整体巨灾损失预计处于可控范围。\n车险：保费增长扭转，综合成本率（CoR）在 2026 年上半年预期进一步优化\n2026 年上半年预测 - 管理层指出，在新车销售疲软的背景下，行业车险保费增长持平，",
+      "topicId": "14422115515125282",
+      "source_url": "https://wx.zsxq.com/group/28882555515111/topic/14422115515125282"
+    },
     {
       "index": 3,
       "bank": "摩根大通",
@@ -176,9 +474,11 @@
           "rating": "overweight",
           "target_price": 12.0,
           "tp_currency": "HKD",
-          "ref_price": null,
+          "ref_price": 8.33,
           "ref_date": "2026-07-27",
-          "price_note": "T-1收盘价(2026-07-27)"
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.4406,
+          "implied_return_pct": "+44.1%"
         }
       ],
       "type": "stock",
@@ -318,7 +618,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 125.5,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -328,7 +628,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 436.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -338,7 +638,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 160.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         }
@@ -364,9 +664,11 @@
           "rating": null,
           "target_price": 11.0,
           "tp_currency": "HKD",
-          "ref_price": null,
+          "ref_price": 8.3,
           "ref_date": "2026-07-27",
-          "price_note": "T-1收盘价(2026-07-27)"
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3253,
+          "implied_return_pct": "+32.5%"
         }
       ],
       "type": "stock",
@@ -390,9 +692,11 @@
           "rating": null,
           "target_price": 11.5,
           "tp_currency": "HKD",
-          "ref_price": null,
+          "ref_price": 8.3,
           "ref_date": "2026-07-27",
-          "price_note": "T-1收盘价(2026-07-27)"
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.3855,
+          "implied_return_pct": "+38.6%"
         }
       ],
       "type": "stock",
@@ -446,9 +750,11 @@
           "rating": "buy",
           "target_price": 24.0,
           "tp_currency": "HKD",
-          "ref_price": null,
+          "ref_price": 16.14,
           "ref_date": "2026-07-27",
-          "price_note": "T-1收盘价(2026-07-27)"
+          "price_note": "T-1收盘价(2026-07-27)",
+          "implied_return": 0.487,
+          "implied_return_pct": "+48.7%"
         }
       ],
       "type": "stock",
@@ -482,7 +788,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 16.85,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -518,7 +824,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 2350.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -528,7 +834,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 254000.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -548,7 +854,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 115.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -558,7 +864,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 54550.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -568,7 +874,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 3680.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -578,7 +884,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 1755.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -588,7 +894,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 28380.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -638,7 +944,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 848.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -648,7 +954,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 322.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -658,7 +964,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 2240.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -688,7 +994,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 5745.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -698,7 +1004,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 1075.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -718,7 +1024,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 177.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -738,7 +1044,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 3277.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -758,7 +1064,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 14810.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -768,7 +1074,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 9.93,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -778,7 +1084,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 1455.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },
@@ -788,7 +1094,7 @@
           "rating": null,
           "target_price": null,
           "tp_currency": null,
-          "ref_price": null,
+          "ref_price": 8620.0,
           "ref_date": "2026-07-27",
           "price_note": "T-1收盘价(2026-07-27)"
         },

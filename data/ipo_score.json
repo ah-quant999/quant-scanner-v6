@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-07-28 21:47:52",
+  "update_time": "2026-07-29 09:04:51",
   "eligible_count": 3,
   "pre_listing_count": 6,
-  "listed_count": 0,
-  "tracking_count": 1,
-  "summary": "3只待评估，6只待上市，1只上市后表现强势。 📋 可转债5待申购",
+  "listed_count": 1,
+  "tracking_count": 3,
+  "summary": "3只待评估，6只待上市，今日1只上市。 📋 可转债4待申购",
   "stocks": [
     {
       "code": "920165",
@@ -77,8 +77,8 @@
       "code": "688828",
       "name": "国仪公司",
       "issue_price": 0,
-      "issue_pe": 57.63,
-      "industry_pe": 67.8,
+      "issue_pe": 57.29,
+      "industry_pe": 67.4,
       "pe_discount": 15.0,
       "board": "科创板",
       "apply_date": "20260731",
@@ -106,6 +106,41 @@
         "募资12亿"
       ],
       "status": "applying"
+    },
+    {
+      "code": "301677",
+      "name": "欣兴工具",
+      "issue_price": 33.58,
+      "issue_pe": 17.17,
+      "industry_pe": 53.5,
+      "pe_discount": 67.9,
+      "board": "科创板",
+      "apply_date": "20260720",
+      "listing_date": "20260730",
+      "score": 72,
+      "recommend": "建议申购",
+      "tag_color": "#e65100",
+      "bg_color": "#fff3e0",
+      "arbitrage_score": 81,
+      "fundamental_score": 59,
+      "fundamentals": {
+        "track_label": "传统/其他赛道",
+        "main_business": "孔加工刀具中钻削刀具产品的研发、生产和销售业务",
+        "industry": "金属制品业",
+        "over_subscription": 1.5,
+        "over_label": "超募1.5倍",
+        "pb": 1.8,
+        "pb_label": "低PB1.8",
+        "profitable": false,
+        "profit_label": "盈利待披露",
+        "data_source": "发行披露(营收/毛利/研发需上市后F10补充)"
+      },
+      "highlights": [
+        "预计07.30上市",
+        "超募1.5倍",
+        "募资8亿"
+      ],
+      "status": "pre_listing"
     },
     {
       "code": "603468",
@@ -209,40 +244,6 @@
       "status": "pre_listing"
     },
     {
-      "code": "920065",
-      "name": "千岸科技",
-      "issue_price": 24.3,
-      "issue_pe": 10.28,
-      "industry_pe": 21.6,
-      "pe_discount": 52.4,
-      "board": "北交所",
-      "apply_date": "20260720",
-      "listing_date": "20260729",
-      "score": 64,
-      "recommend": "谨慎参与",
-      "tag_color": "#f57f17",
-      "bg_color": "#fffde7",
-      "arbitrage_score": 75,
-      "fundamental_score": 48,
-      "fundamentals": {
-        "track_label": "传统/其他赛道",
-        "main_business": "从事自有品牌产品研发、设计并主要通过电商平台和自营网站进行销售",
-        "industry": "",
-        "over_subscription": null,
-        "over_label": "募资待定",
-        "pb": null,
-        "pb_label": "PB待定",
-        "profitable": false,
-        "profit_label": "盈利待披露",
-        "data_source": "发行披露(营收/毛利/研发需上市后F10补充)"
-      },
-      "highlights": [
-        "预计07.29上市",
-        "募资4亿"
-      ],
-      "status": "pre_listing"
-    },
-    {
       "code": "001232",
       "name": "嘉立创",
       "issue_price": 84.46,
@@ -308,6 +309,82 @@
         "募资2亿"
       ],
       "status": "pre_listing"
+    },
+    {
+      "code": "920065",
+      "name": "N千岸",
+      "issue_price": 24.3,
+      "latest_price": 0,
+      "open_price": 0,
+      "change_pct": 0,
+      "turnover": 0,
+      "total_return": -100.0,
+      "open_return": 0,
+      "board": "北交所",
+      "listing_date": "20260729",
+      "score": 0,
+      "recommend": "上市首日",
+      "tag_color": "#1565c0",
+      "bg_color": "#e3f2fd",
+      "highlights": [],
+      "status": "listed_today"
+    },
+    {
+      "code": "688825",
+      "name": "长鑫科技",
+      "issue_price": 8.66,
+      "latest_price": 0,
+      "open_price": 0,
+      "change_pct": 0,
+      "turnover": 0,
+      "total_return": -100.0,
+      "open_return": 0,
+      "board": "科创板",
+      "listing_date": "20260727",
+      "score": 0,
+      "recommend": "数据不足，无法判断",
+      "tag_color": "#999",
+      "bg_color": "#f5f5f5",
+      "highlights": [],
+      "status": "tracking"
+    },
+    {
+      "code": "920238",
+      "name": "长鹰硬科",
+      "issue_price": 18.89,
+      "latest_price": 0,
+      "open_price": 0,
+      "change_pct": 0,
+      "turnover": 0,
+      "total_return": -100.0,
+      "open_return": 0,
+      "board": "北交所",
+      "listing_date": "20260724",
+      "score": 0,
+      "recommend": "数据不足，无法判断",
+      "tag_color": "#999",
+      "bg_color": "#f5f5f5",
+      "highlights": [],
+      "status": "tracking"
+    },
+    {
+      "code": "920176",
+      "name": "维琪科技",
+      "issue_price": 22.16,
+      "latest_price": 0,
+      "open_price": 0,
+      "change_pct": 0,
+      "turnover": 0,
+      "total_return": -100.0,
+      "open_return": 0,
+      "board": "北交所",
+      "listing_date": "20260727",
+      "score": 0,
+      "recommend": "数据不足，无法判断",
+      "tag_color": "#999",
+      "bg_color": "#f5f5f5",
+      "highlights": [],
+      "status": "tracking"
     },
     {
       "type": "bond",
@@ -447,7 +524,7 @@
       "stock_code": "",
       "apply_date": "20260728",
       "listing_date": "",
-      "status": "applying",
+      "status": "pre_listing",
       "market_code": "SH",
       "dec_sumfina": 15.33266,
       "score": 63,
@@ -535,6 +612,38 @@
     },
     {
       "type": "bond",
+      "code": "113707",
+      "name": "科博转债",
+      "issue_price": 100.0,
+      "transfer_price": 45.56,
+      "bond_scale": 14.91,
+      "stock_code": "",
+      "apply_date": "20260703",
+      "listing_date": "20260731",
+      "status": "pre_listing",
+      "market_code": "SH",
+      "dec_sumfina": 14.9074,
+      "score": 66,
+      "arbitrage_score": 70,
+      "fundamental_score": 60,
+      "recommend": "谨慎参与",
+      "tag_color": "#f57f17",
+      "bg_color": "#fffde7",
+      "board": "可转债",
+      "fundamentals": {
+        "track": "可转债",
+        "scale": 14.91,
+        "transfer_price": 45.56,
+        "bond_safety": "高"
+      },
+      "highlights": [
+        "转股价 ¥45.56",
+        "规模 14.9亿",
+        "债底安全 高"
+      ]
+    },
+    {
+      "type": "bond",
       "code": "123275",
       "name": "肇民转债",
       "issue_price": 100.0,
@@ -546,8 +655,8 @@
       "status": "tracking",
       "market_code": "SZ",
       "dec_sumfina": 5.9,
-      "latest": 100.0,
-      "open_price": 100.0,
+      "latest": 0,
+      "open_price": 0,
       "change_pct": 0,
       "turnover": 0,
       "total_return": 0,
@@ -555,8 +664,8 @@
       "score": 46,
       "arbitrage_score": 50,
       "fundamental_score": 40,
-      "recommend": "⚪ 震荡，建议观望",
-      "tag_color": "#888",
+      "recommend": "数据不足，无法判断",
+      "tag_color": "#999",
       "bg_color": "#f5f5f5",
       "fundamentals": {
         "track": "可转债",
@@ -565,28 +674,9 @@
       },
       "highlights": [
         "较发行 +0.0%",
-        "现价 ¥100.00",
-        "⚪ 震荡，建议观望"
+        "现价 ¥0.00",
+        "数据不足，无法判断"
       ]
-    },
-    {
-      "code": "688625",
-      "name": "长鑫科技",
-      "issue_price": 8.66,
-      "latest_price": 53.5,
-      "open_price": 55.5,
-      "change_pct": -6.24,
-      "turnover": 1.96,
-      "total_return": 517.8,
-      "open_return": 540.9,
-      "board": "科创板",
-      "listing_date": "20260727",
-      "score": 0,
-      "recommend": "🟢 已破发或走弱，不建议追",
-      "tag_color": "#2e7d32",
-      "bg_color": "#e8f5e9",
-      "highlights": [],
-      "status": "tracking"
     }
   ]
 }
