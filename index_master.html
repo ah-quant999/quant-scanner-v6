@@ -343774,7 +343774,19 @@ var RECOMMEND = window.RECOMMEND = [
         const s = d.summary || {};
         const netYi = (s.net_inflow_yi != null) ? s.net_inflow_yi : 0;
         const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
+        var catParts = [];
+        var catNames = ['宽基','行业','主题','跨境','商品','策略'];
+        catNames.forEach(function(cn){
+          var cc = (d.categories||{})[cn];
+          if (cc && cc.net_inflow_yi != null) {
+            var y = cc.net_inflow_yi;
+            catParts.push(cn + (y >= 0 ? '+' : '') + y.toFixed(1) + '亿');
+          }
+        });
         summaryEl.innerHTML = '覆盖 ' + (d.total || 0) + ' 只权益类ETF · <b style="color:#e53935;">▲ ' + (s.up || 0) + '</b> / <b style="color:#2e7d32;">▼ ' + (s.down || 0) + '</b> · 整体主力净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
+        if (catParts.length > 0) {
+          summaryEl.innerHTML += '<div style="font-size:10px;color:#888;margin-top:1px;">' + catParts.join(' · ') + '</div>';
+        }
       }
       function fmtFlow(v) {
         const yi = (v || 0) / 1e8;
@@ -343790,6 +343802,7 @@ var RECOMMEND = window.RECOMMEND = [
           return;
         }
         const show = maxRows ? list.slice(0, maxRows) : list;
+        const maxNet = show.reduce(function(a,it){ return Math.max(a, Math.abs(it.main_net_inflow||0)); }, 0);
         let rows = '';
         show.forEach(function(it) {
           const pct = it.pct || 0;
@@ -343798,12 +343811,15 @@ var RECOMMEND = window.RECOMMEND = [
           const net = it.main_net_inflow || 0;
           const netColor = net >= 0 ? '#e53935' : '#2e7d32';
           const amount = fmtAmount(it.amount);
+          const barW = maxNet > 0 ? Math.round(Math.abs(net) / maxNet * 20) : 0;
+          const barColor = net >= 0 ? '#e53935' : '#2e7d32';
           rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 10px 5px 14px;border-bottom:1px solid #f5f5f5;font-size:12px;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
             + '<span style="width:56px;color:#1565c0;">' + it.code + '</span>'
             + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
             + '<span style="width:50px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
             + '<span style="width:64px;text-align:right;color:#555;">' + amount + '</span>'
             + '<span style="width:64px;text-align:right;color:' + netColor + ';font-weight:600;">' + fmtFlow(net) + '</span>'
+            + '<span style="display:inline-block;width:24px;height:4px;border-radius:2px;background:#eee;overflow:hidden;flex:0 0 auto;"><span style="display:block;height:100%;width:' + barW + 'px;background:' + barColor + ';opacity:0.6;border-radius:2px;"></span></span>'
             + '</div>';
         });
         el.innerHTML = rows;
@@ -343884,6 +343900,15 @@ var RECOMMEND = window.RECOMMEND = [
         const curCat2 = window.ETF_HEAT_CAT2 || '全部';
         const label = selCat1 === '全部' ? '全部' : (curCat2 === '全部' ? selCat1 : selCat1 + ' · ' + curCat2);
         catStatsEl.innerHTML = '<span style="color:#1565c0;">' + label + '</span>：' + (stats.count||0) + '只 · <b style="color:#e53935;">▲' + (stats.up||0) + '</b> / <b style="color:#2e7d32;">▼' + (stats.down||0) + '</b> · 净流入 <b style="color:' + (netYi>=0?'#e53935':'#2e7d32') + '">' + netStr + '</b>';
+        // TOP4 集中度
+        if (listSource && listSource.length > 0) {
+          var _top4Sum = listSource.slice(0,4).reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
+          var _totalSum = listSource.reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
+          var _concRate = _totalSum > 0 ? Math.round(_top4Sum / _totalSum * 100) : 0;
+          if (_concRate > 0) {
+            catStatsEl.innerHTML += ' · TOP4集中度 <b style="color:#e65100;">' + _concRate + '%</b>';
+          }
+        }
       }
       renderActiveList(activeEl, listSource, selCat1 === '全部' ? 10 : 5);
 
