@@ -6,7 +6,7 @@
   },
   "fetch_nt_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 09:40:06",
+    "last_success": "2026-07-29 10:21:48",
     "last_error": null
   },
   "fetch_suspension_alert": {
@@ -169,7 +169,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 07:30:39",
+    "last_success": "2026-07-29 10:22:50",
     "last_error": null
   }
 }
