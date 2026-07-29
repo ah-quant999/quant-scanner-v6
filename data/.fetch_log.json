@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 10:49:07",
+    "last_success": "2026-07-29 10:55:49",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -42,12 +42,12 @@
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 15:18:32",
+    "last_success": "2026-07-29 10:50:44",
     "last_error": null
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 15:17:53",
+    "last_success": "2026-07-29 10:50:26",
     "last_error": null
   },
   "fetch_market_alerts": {
@@ -124,7 +124,7 @@
   },
   "fetch_ipo_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 10:28:47",
+    "last_success": "2026-07-29 10:55:48",
     "last_error": null
   },
   "fetch_north_fund": {
@@ -149,7 +149,7 @@
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 10:27:01",
+    "last_success": "2026-07-29 10:50:03",
     "last_error": null
   },
   "fetch_policy_density": {
@@ -169,7 +169,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 10:22:50",
+    "last_success": "2026-07-29 10:58:05",
     "last_error": null
   }
 }
