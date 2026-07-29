@@ -1,9 +1,9 @@
 {
   "neodata_status": "ok",
-  "neodata_updated": "2026-07-27 17:37:08",
-  "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-29 09:23:38",
-  "cloud_deploy_time": "20260729092338",
+  "neodata_updated": "2026-07-29 09:43:12",
+  "neodata_valid_until": "2026-07-30 09:43:03",
+  "updated_at": "2026-07-29 09:43:13",
+  "cloud_deploy_time": "20260729094313",
   "failover_status": "OK",
   "failover_time": "2026-07-28 12:19:49",
   "data_correctness": {
@@ -39,7 +39,7 @@
     },
     "xiaojiu": {
       "status": "ok",
-      "last_time": "2026-07-28 15:24:09",
+      "last_time": "2026-07-29 09:25:07",
       "mode": "deploy"
     },
     "alimi": {
