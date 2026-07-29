@@ -343840,12 +343840,12 @@ var RECOMMEND = window.RECOMMEND = [
           const amount = fmtAmount(it.amount);
           const barW = maxNet > 0 ? Math.round(Math.abs(net) / maxNet * 20) : 0;
           const barColor = net >= 0 ? '#e53935' : '#2e7d32';
-          rows += '<div style="display:flex;align-items:center;gap:4px;padding:5px 0 5px 4px;border-bottom:1px solid #f5f5f5;font-size:12px;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
-            + '<span style="width:46px;color:#1565c0;">' + it.code + '</span>'
+          rows += '<div style="display:flex;align-items:center;gap:4px;padding:5px 0 5px 4px;border-bottom:1px solid #f5f5f5;font-size:12px;white-space:nowrap;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
+            + '<span style="width:46px;color:#1565c0;white-space:nowrap;">' + it.code + '</span>'
             + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
-            + '<span style="width:42px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
-            + '<span style="width:50px;text-align:right;color:#555;">' + amount + '</span>'
-            + '<span style="width:50px;text-align:right;color:' + netColor + ';font-weight:600;">' + fmtFlow(net) + '</span>'
+            + '<span style="width:42px;text-align:right;color:' + pctColor + ';font-weight:600;white-space:nowrap;">' + pctStr + '</span>'
+            + '<span style="width:52px;text-align:right;color:#555;white-space:nowrap;">' + amount + '</span>'
+            + '<span style="width:56px;text-align:right;color:' + netColor + ';font-weight:600;white-space:nowrap;">' + fmtFlow(net) + '</span>'
             + '<span style="display:inline-block;width:18px;height:4px;border-radius:2px;background:#eee;overflow:hidden;flex:0 0 auto;"><span style="display:block;height:100%;width:' + barW + 'px;background:' + barColor + ';opacity:0.6;border-radius:2px;"></span></span>'
             + '</div>';
         });
