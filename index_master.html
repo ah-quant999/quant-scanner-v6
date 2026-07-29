@@ -343774,19 +343774,7 @@ var RECOMMEND = window.RECOMMEND = [
         const s = d.summary || {};
         const netYi = (s.net_inflow_yi != null) ? s.net_inflow_yi : 0;
         const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
-        var catParts = [];
-        var catNames = ['宽基','行业','主题','跨境','商品','策略'];
-        catNames.forEach(function(cn){
-          var cc = (d.categories||{})[cn];
-          if (cc && cc.net_inflow_yi != null) {
-            var y = cc.net_inflow_yi;
-            catParts.push(cn + (y >= 0 ? '+' : '') + y.toFixed(1) + '亿');
-          }
-        });
         summaryEl.innerHTML = '覆盖 ' + (d.total || 0) + ' 只权益类ETF · <b style="color:#e53935;">▲ ' + (s.up || 0) + '</b> / <b style="color:#2e7d32;">▼ ' + (s.down || 0) + '</b> · 整体主力净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
-        if (catParts.length > 0) {
-          summaryEl.innerHTML += '<div style="font-size:10px;color:#888;margin-top:1px;">' + catParts.join(' · ') + '</div>';
-        }
         // 6 大分类 mini-card 网格 — 一眼看清各分类全貌
         var gridHtml = '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-top:8px;">';
         ['宽基','行业','主题','跨境','商品','策略'].forEach(function(cn) {
@@ -343923,7 +343911,9 @@ var RECOMMEND = window.RECOMMEND = [
         const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
         const curCat2 = window.ETF_HEAT_CAT2 || '全部';
         const label = selCat1 === '全部' ? '全部' : (curCat2 === '全部' ? selCat1 : selCat1 + ' · ' + curCat2);
-        catStatsEl.innerHTML = '<span style="color:#1565c0;">' + label + '</span>：' + (stats.count||0) + '只 · <b style="color:#e53935;">▲' + (stats.up||0) + '</b> / <b style="color:#2e7d32;">▼' + (stats.down||0) + '</b> · 净流入 <b style="color:' + (netYi>=0?'#e53935':'#2e7d32') + '">' + netStr + '</b>';
+        // 全部模式用 d.total 作 count（summary 没有 count 字段）
+        const countNum = selCat1 === '全部' ? (d.total || 0) : (stats.count || 0);
+        catStatsEl.innerHTML = '<span style="color:#1565c0;">' + label + '</span>：' + countNum + '只 · <b style="color:#e53935;">▲' + (stats.up||0) + '</b> / <b style="color:#2e7d32;">▼' + (stats.down||0) + '</b> · 净流入 <b style="color:' + (netYi>=0?'#e53935':'#2e7d32') + '">' + netStr + '</b>';
         // TOP4 集中度
         if (listSource && listSource.length > 0) {
           var _top4Sum = listSource.slice(0,4).reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
