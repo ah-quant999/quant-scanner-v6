@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-27 23:13:18",
+  "update_time": "2026-07-30 15:25:54",
   "data_date": "2026-07-27",
   "track_start": "2026-07-26",
   "history_days": 2,
@@ -207,20 +207,19 @@
     "total_tracked": 3,
     "top10_ge70": {
       "count": 20,
-      "overlap": 3,
+      "overlap": 2,
       "names": [
         "中科蓝讯",
-        "思特威",
         "山金国际"
       ]
     },
     "cockpit_a": {
-      "count": 2,
+      "count": 4,
       "overlap": 0,
       "names": []
     },
     "cockpit_b": {
-      "count": 6,
+      "count": 15,
       "overlap": 0,
       "names": []
     }
@@ -228,46 +227,46 @@
   "backtest_signal": {
     "method": "baostock 真实收盘价全面回测",
     "latest_date": "2026-07-27",
-    "total": 65,
+    "total": 53,
     "best_hold_days": 3,
     "periods": {
       "1d": {
         "win_rate": 57.8,
-        "avg_return": 0.46,
-        "sharpe": 0.12,
-        "count": 65,
+        "avg_return": 0.57,
+        "sharpe": 0.14,
+        "count": 53,
         "best": 10.64,
         "worst": -9.93
       },
       "3d": {
         "win_rate": 60.0,
-        "avg_return": 0.71,
-        "sharpe": 0.18,
-        "count": 65,
+        "avg_return": 0.87,
+        "sharpe": 0.21,
+        "count": 53,
         "best": 10.64,
         "worst": -14.4
       },
       "5d": {
         "win_rate": 57.8,
-        "avg_return": 0.51,
-        "sharpe": 0.12,
-        "count": 65,
+        "avg_return": 0.62,
+        "sharpe": 0.14,
+        "count": 53,
         "best": 10.64,
         "worst": -13.74
       },
       "10d": {
         "win_rate": 57.8,
-        "avg_return": 0.77,
-        "sharpe": 0.22,
-        "count": 65,
+        "avg_return": 0.94,
+        "sharpe": 0.25,
+        "count": 53,
         "best": 10.64,
         "worst": -7.64
       },
       "20d": {
         "win_rate": 57.8,
-        "avg_return": 0.77,
-        "sharpe": 0.22,
-        "count": 65,
+        "avg_return": 0.94,
+        "sharpe": 0.25,
+        "count": 53,
         "best": 10.64,
         "worst": -7.64
       }
@@ -276,17 +275,17 @@
   "threshold_sensitivity": [
     {
       "band": "≥80",
-      "count": 9,
+      "count": 4,
       "win_rate_5d": 50.0,
-      "avg_ret_5d": -2.36,
+      "avg_ret_5d": -5.3,
       "best_win_rate": 75.0,
       "best_hold_days": 1
     },
     {
       "band": "70~80",
-      "count": 56,
+      "count": 49,
       "win_rate_5d": 58.5,
-      "avg_ret_5d": 0.97,
+      "avg_ret_5d": 1.11,
       "best_win_rate": 58.5,
       "best_hold_days": 3
     }
@@ -296,8 +295,8 @@
       {
         "period": "1d",
         "strict_win": 57.8,
-        "strict_ret": 0.46,
-        "strict_count": 65,
+        "strict_ret": 0.57,
+        "strict_count": 53,
         "loose_win": 63.9,
         "loose_ret": 1.09,
         "loose_count": 410
@@ -305,8 +304,8 @@
       {
         "period": "3d",
         "strict_win": 60.0,
-        "strict_ret": 0.71,
-        "strict_count": 65,
+        "strict_ret": 0.87,
+        "strict_count": 53,
         "loose_win": 74.7,
         "loose_ret": 2.68,
         "loose_count": 410
@@ -314,8 +313,8 @@
       {
         "period": "5d",
         "strict_win": 57.8,
-        "strict_ret": 0.51,
-        "strict_count": 65,
+        "strict_ret": 0.62,
+        "strict_count": 53,
         "loose_win": 70.8,
         "loose_ret": 1.85,
         "loose_count": 410
@@ -323,8 +322,8 @@
       {
         "period": "10d",
         "strict_win": 57.8,
-        "strict_ret": 0.77,
-        "strict_count": 65,
+        "strict_ret": 0.94,
+        "strict_count": 53,
         "loose_win": 74.2,
         "loose_ret": 2.67,
         "loose_count": 410
@@ -332,8 +331,8 @@
       {
         "period": "20d",
         "strict_win": 57.8,
-        "strict_ret": 0.77,
-        "strict_count": 65,
+        "strict_ret": 0.94,
+        "strict_count": 53,
         "loose_win": 74.2,
         "loose_ret": 2.67,
         "loose_count": 410
