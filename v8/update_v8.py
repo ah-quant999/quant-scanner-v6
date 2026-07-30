@@ -51,6 +51,9 @@ DATA_SOURCES = {
     "COCKPIT_BACKTEST":       "cockpit_backtest.json",
     "BACKTEST_TDX":           "backtest_tdx.json",
     "EXPERIMENT":             "experiment.json",
+    # ===== ETF量能脉冲 + 日监控 =====
+    "ETF_PULSE":              "etf_pulse.json",
+    "ETF_DAILY_MONITOR":      "etf_daily_monitor.json",
 }
 
 # calendar.html 专用数据
