@@ -2843,40 +2843,13 @@ function doQuery(){
     } else { h+='<div style="padding:14px;color:var(--dim);text-align:center;">F窗口数据暂不可用</div>'; }
     h+='</div>';
 
-    /* ═══ 3. 金股池停牌监测 ═══ */
-    var suspNd=(!window.SUSPENSION_ALERT && !window.STOCK_DEVIATION);
-    h+='<div class="card" style="margin-bottom:16px;border-left:4px solid #fbbf24;">';
-    h+=v8CardHeader('⚠️','金股池停牌监测','盘中实时','update_time',window.SUSPENSION_ALERT, suspNd);
-    var susp=window.SUSPENSION_ALERT||{};
-    var devData=(typeof window.STOCK_DEVIATION!=='undefined'&&window.STOCK_DEVIATION&&window.STOCK_DEVIATION.stocks)?window.STOCK_DEVIATION.stocks:{};
-    var hasSusp=susp.alerts&&susp.alerts.length;
-    var devKeys=Object.keys(devData),hasDev=devKeys.some(function(k){return Math.abs((devData[k].deviation||0))>=10;});
-    if(suspNd){
-      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：金股池停牌 / 偏离监测源尚未采集，无法判定是否有异常。</div>';
-    } else if(hasSusp||hasDev){
-      h+='<div style="padding:12px 14px;">';
-      if(hasSusp){
-        h+='<div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;">🛑 停牌 alerts ('+susp.alerts.length+')</div>';
-        susp.alerts.slice(0,8).forEach(function(a){
-          h+='<div style="background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:8px;padding:8px 10px;margin-bottom:6px;font-size:12px;"><b style="color:var(--txt);">'+(a.name||'')+'</b> <span style="color:var(--dim);">'+(a.code||'')+'</span> <span style="color:var(--up);font-weight:600;">'+(a.days||'')+'天</span>'+(a.reason?'<div style="font-size:10px;color:var(--sub);margin-top:2px;">原因：'+a.reason+'</div>':'')+'</div>';
-        });
-      }
-      if(hasDev){
-        h+='<div style="font-size:12px;font-weight:700;color:var(--pink);margin-bottom:8px;margin-top:'+(hasSusp?'10px':'0')+';">⚠️ 偏离预警</div>';
-        devKeys.forEach(function(k){var d=devData[k];if(!d)return;var ad=Math.abs(d.deviation||0);if(ad<10)return;var bc=ad>=18?'var(--up)':ad>=15?'#fbbf24':'var(--gold)',bp=Math.min(100,(ad/(d.threshold||20))*100);
-          h+='<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px dashed var(--border);"><span style="color:var(--txt);font-weight:600;min-width:80px;">'+(d.name||k)+'</span><span style="color:'+bc+';font-weight:700;">'+(d.deviation>0?'+':'')+d.deviation+'%</span><div style="flex:1;height:6px;background:var(--bg2);border-radius:3px;overflow:hidden;"><div style="height:100%;width:'+bp+'%;background:'+bc+';"></div></div>'+(d.gap>0?'<span style="color:var(--dim);font-size:11px;">距触发 '+d.gap+'%</span>':'<span style="color:var(--up);font-weight:600;font-size:11px;">已触发!</span>')+'</div>';});
-      }
-      h+='</div>';
-    } else { h+='<div style="padding:14px;color:var(--dim);text-align:center;">✅ 金股池无异常停牌/偏离</div>'; }
-    h+='</div>';
-
-    /* ═══ 4. 波动率结构观测（VOLATILITY_WATCH_DATA）═══ */
-    var volNd=!window.VOLATILITY_WATCH_DATA;
+    /* ═══ 3. 波动率结构观测（VOLATILITY）═══ */
+    var volNd=!window.VOLATILITY || !window.VOLATILITY.available;
     h+='<div class="card" style="margin-bottom:16px;border-left:4px solid #f472b6;">';
-    h+=v8CardHeader('📉','波动率结构观测','盘后','update_time',window.VOLATILITY_WATCH_DATA, volNd);
-    var vol=window.VOLATILITY_WATCH_DATA||{};
+    h+=v8CardHeader('📉','波动率结构观测','盘后','update_time',window.VOLATILITY, volNd);
+    var vol=window.VOLATILITY||{};
     if(volNd){
-      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：波动率结构监测源尚未采集（文件 volatility_watch.json 缺失）。</div>';
+      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：波动率结构监测源尚未采集（需运行 calc_volatility_watch.py）。</div>';
     } else if(vol.available&&vol.indices&&vol.indices.length){
       var vc=vol.composite||{},rc=vc.regime_color||'#888';
       h+='<div style="padding:12px 14px;"><div style="background:'+rc+';color:#fff;border-radius:10px;padding:12px 14px;margin-bottom:12px;line-height:1.6;"><div style="font-size:18px;font-weight:800;">'+(vc.regime||'—')+'</div>';

@@ -50,6 +50,7 @@ DATA_SOURCES = {
     "LIMIT_UP_HEATMAP":       "limit_up_heatmap.json",
     "HERDING_DATA":           "herding_data.json",
     "VOLATILITY":             "volatility_watch.json",
+    "CAPITAL_FLOW_DATA":      "capital_flow_summary.json",
     "MAHORO":                 "maharo_signals.json",
     "CANDIDATE":              "candidate_pool.json",
     "BACKTEST_COMPREHENSIVE": "backtest_comprehensive.json",
@@ -71,6 +72,17 @@ def load_json(path):
     except:
         return {}
 
+
+def load_latest_volatility():
+    """查找 experiment/ 下最新的 volatility_watch_*.json 并返回"""
+    exp_dir = DATA / "experiment"
+    if not exp_dir.exists():
+        return {}
+    files = sorted(exp_dir.glob("volatility_watch_*.json"), reverse=True)
+    if not files:
+        return {}
+    return load_json(files[0])
+
 def build():
     os.makedirs(V8_DIR / "dist", exist_ok=True)
 
@@ -80,7 +92,11 @@ def build():
     # 在 </head> 前注入数据块
     data_blocks = []
     for var, file in DATA_SOURCES.items():
-        jd = load_json(DATA / file)
+        # 特殊处理：波动率从 experiment/ 目录取最新文件
+        if var == "VOLATILITY":
+            jd = load_latest_volatility()
+        else:
+            jd = load_json(DATA / file)
         json_str = json.dumps(jd, ensure_ascii=False, default=str)
         data_blocks.append(f'<script>window.{var} = {json_str};</script>')
 
