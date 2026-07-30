@@ -1520,7 +1520,7 @@ def main():
         ("INDUSTRY_MAP",  "window.INDUSTRY_MAP = ",   "{", "}"),
         ("ZHAIXINGGE_DATA", "window.ZHAIXINGGE_DATA = ", "{", "}"),
         ("GUANLAN_REPORTS", "window.GUANLAN_REPORTS = ", "{", "}"),
-        ("CANDIDATE_POOL", "window.CANDIDATE_POOL = ", "{", "}"),
+        #("CANDIDATE_POOL", "window.CANDIDATE_POOL = ", "{", "}"),
         ("CRDS_CARD_DATA", "window.CRDS_CARD_DATA = ", "{", "}"),
         ("EXPERIMENT_DATA", "window.EXPERIMENT_DATA = ", "{", "}"),
         ("VOLATILITY_WATCH_DATA", "window.VOLATILITY_WATCH_DATA = ", "{", "}"),
