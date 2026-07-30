@@ -33,6 +33,7 @@
 
 ## 自动化 / 安全
 - **排班状态**: 2026-07-23 起阿狸咪家中机全天断线，**全部定时任务由小九（单位机·全天在线）全面接管**；`standalone/data_responsibility.html` 中「双机」= 小九单机跑双机职责，标注「代阿狸咪/🖥️」的即原属阿狸咪、现由小九顶上的任务。阿狸咪恢复联网后其本机 20+ 救援船任务会自动续跑。
+- **v8 架构真相（2026-07-31 踩坑纠正）**：v8 **不是 v6 的子项目**，是两个独立仓——**v6 仓 `v8/` 子目录 = 开发+构建源**（index.html → update_v8.py 生成 dist/index.html），**`quant-scanner-v8` 独立仓 = 部署+服务**（GitHub Pages 从 main 出）。`v6/v8/deploy_v8.py` 第 11-12 行明写：源=`REPO/v8/dist/index.html`，目标=`git@github.com:ah-quant999:quant-scanner-v8.git` main。用户浏览器/本地 `quant-scanner-v8/index.html` = **部署版**（小九部署的旧版）；**阿狸咪改 v6/v8/index.html 源后必须等小九跑 update_v8 + deploy_v8 才生效**。present_files `v6/v8/index.html` = 预览源 ≠ 部署版。
 - **模型 ID**: 全部自动化统一用 `hy3`（9:00-11:59）/ `deepseek-v4-flash`（12:00 后）。**严禁写入 `ds-V4-FLASH`**；`audit_automations.py` 每日 09:00/19:00 自动审计并修正。
 - **北向资金**: 港交所 2024-05 后停止披露 top_buy，系统多处已标"停止"。
 - **Cloud**: GitHub Actions 7 workflow 覆盖；Secret `ZSXQ_TOKEN`；候选池=主/创/科前 100 + 港前 50 + 观澜台 + maharo。
