@@ -51,6 +51,7 @@ DATA_SOURCES = {
     "HERDING_DATA":           "herding_data.json",
     "VOLATILITY":             "volatility_watch.json",
     "CAPITAL_FLOW_DATA":      "capital_flow_summary.json",
+    "SH_SZ_HISTORY":          "sh_sz_history.json",
     "MAHORO":                 "maharo_signals.json",
     "CANDIDATE":              "candidate_pool.json",
     "BACKTEST_COMPREHENSIVE": "backtest_comprehensive.json",
