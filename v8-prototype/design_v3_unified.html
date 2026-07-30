@@ -343,7 +343,7 @@
   <section id="sec-rt">
     <div class="sec-head"><h2>📡 实时数据</h2><span class="fresh">更新于 今日 15:20</span><span class="tag">盘中 T+0 · 数据延迟约 3~5 秒</span></div>
 
-    <div class="grid g-4" style="margin-bottom:16px">
+    <div class="grid g-3" style="margin-bottom:16px">
       <div class="card rt-card">
         <h3><span><span class="ic">🔥</span>沪指 - 盘中</span><span class="rt-summary up">3,418.6 <b>+0.82%</b> <small>+27.8</small></span></h3>
         <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
@@ -363,13 +363,6 @@
         <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
           <path d="M0,12 L30,16 L60,20 L90,24 L120,28 L150,32 L180,36 L210,40 L240,44 L270,48 L300,52 L300,78 L0,78 Z" fill="rgba(31,209,123,0.18)"/>
           <path d="M0,12 L30,16 L60,20 L90,24 L120,28 L150,32 L180,36 L210,40 L240,44 L270,48 L300,52" fill="none" stroke="#1fd17b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="card rt-card">
-        <h3><span><span class="ic">💱</span>北向资金 - 盘中</span><span class="rt-summary up">+42.6亿 <b>沪 +28.1</b> <small>深 +14.5</small></span></h3>
-        <svg class="rt-spark" viewBox="0 0 300 78" preserveAspectRatio="none">
-          <path d="M0,62 L25,58 L50,55 L75,60 L100,50 L125,52 L150,45 L175,48 L200,40 L225,35 L250,38 L275,28 L300,22 L300,78 L0,78 Z" fill="rgba(244,73,93,0.18)"/>
-          <path d="M0,62 L25,58 L50,55 L75,60 L100,50 L125,52 L150,45 L175,48 L200,40 L225,35 L250,38 L275,28 L300,22" fill="none" stroke="#f4495d" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
@@ -501,6 +494,38 @@
       </div>
       <div class="note">按成交额与主力净流入综合排序，四分类独立展示。涨跌幅·红涨绿跌。</div>
     </div>
+
+    <!-- 2026-07-30 新增：国家队异动告警（盘中 T+0） -->
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">🛡️</span>国家队异动告警 - 实时·T+0 · <span class="fresh">更新于 今日 14:30</span></h3>
+      <div class="note">监测沪深300 / 中证A500 / 上证50 / 科创50 等宽基ETF成交额是否显著高于近 20 日均值，放量即提示国家队可能动手托底或拉升。数据源：宽基ETF盘中成交额 + 申赎份额。</div>
+      <div class="grid g-4" id="etfNationalAlert">
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">沪深300ETF</div>
+          <div class="etf-row"><span>今日成交额</span><b>58.2亿</b></div>
+          <div class="etf-row"><span>20日均</span><b>31.4亿</b></div>
+          <div style="margin-top:6px"><span class="tag" style="background:rgba(244,73,93,.14);color:#ff9aa8">⚠ 放量 +85%</span></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">中证A500ETF</div>
+          <div class="etf-row"><span>今日成交额</span><b>42.7亿</b></div>
+          <div class="etf-row"><span>20日均</span><b>24.1亿</b></div>
+          <div style="margin-top:6px"><span class="tag" style="background:rgba(244,73,93,.14);color:#ff9aa8">⚠ 放量 +77%</span></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">上证50ETF</div>
+          <div class="etf-row"><span>今日成交额</span><b>19.3亿</b></div>
+          <div class="etf-row"><span>20日均</span><b>15.8亿</b></div>
+          <div style="margin-top:6px"><span class="tag" style="background:rgba(251,191,36,.14);color:#ffd97a">▲ 温和 +22%</span></div>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--cyan)">科创50ETF</div>
+          <div class="etf-row"><span>今日成交额</span><b>27.5亿</b></div>
+          <div class="etf-row"><span>20日均</span><b>21.0亿</b></div>
+          <div style="margin-top:6px"><span class="tag" style="background:rgba(251,191,36,.14);color:#ffd97a">▲ 温和 +31%</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ 盘后数据 ============ -->
@@ -561,6 +586,49 @@
       <div id="phSectorBody"><div class="ipo-empty">加载中…</div></div>
     </div>
 
+    <!-- 2026-07-30 新增：板块资金连续天数榜（提早布局新主线） -->
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">📅</span>板块资金连续天数榜 - 中长线 · <span class="fresh" id="phSectorStreakTime">更新于 --</span></h3>
+      <div class="note">按 5/10/20 日累计净流入 + 连续净流入天数排序，区分「真布局（持续流入）」与「一日游（单日脉冲）」，用于提早发现新主线。数据源：板块资金流历史。</div>
+      <table id="phSectorStreak">
+        <thead><tr><th>板块</th><th>5日净流入</th><th>10日</th><th>20日</th><th>连红天数</th><th>研判</th></tr></thead>
+        <tbody>
+          <tr><td>半导体</td><td class="up">+86亿</td><td class="up">+152亿</td><td class="up">+241亿</td><td>12日</td><td><span style="color:#1fd17b;font-weight:700">真布局</span></td></tr>
+          <tr><td>新能源</td><td class="up">+41亿</td><td class="up">+58亿</td><td class="down">-22亿</td><td>3日</td><td><span style="color:#fbbf24">一日游?</span></td></tr>
+          <tr><td>军工</td><td class="up">+33亿</td><td class="up">+71亿</td><td class="up">+104亿</td><td>9日</td><td><span style="color:#1fd17b;font-weight:700">真布局</span></td></tr>
+          <tr><td>白酒</td><td class="down">-18亿</td><td class="down">-39亿</td><td class="down">-67亿</td><td>连绿14日</td><td><span style="color:#f4495d">资金撤离</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2026-07-30 新增：融资余额过热预警（提早感知撤出） -->
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">🔥</span>融资余额过热预警 - 中长线 · <span class="fresh" id="phMarginHeatTime">更新于 --</span></h3>
+      <div class="note">监测各行业/板块融资余额近 5 日增幅与占流通市值比，标记杠杆拥挤度高的方向，作为「该从哪撤出」的提前信号。数据源：两融余额走势。</div>
+      <table id="phMarginHeat">
+        <thead><tr><th>板块</th><th>融资余额(亿)</th><th>5日增幅</th><th>占流通市值</th><th>拥挤度</th></tr></thead>
+        <tbody>
+          <tr><td>AI算力</td><td>312</td><td class="up">+14.2%</td><td>3.8%</td><td><span style="color:#f4495d;font-weight:700">高</span></td></tr>
+          <tr><td>半导体</td><td>268</td><td class="up">+8.1%</td><td>2.9%</td><td><span style="color:#fbbf24">中</span></td></tr>
+          <tr><td>券商</td><td>190</td><td class="up">+3.4%</td><td>2.1%</td><td><span style="color:#1fd17b">低</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2026-07-30 新增：龙虎榜机构连续买入榜（盘后确认主力） -->
+    <div class="card" style="margin-bottom:16px">
+      <h3><span class="ic">🏦</span>龙虎榜机构连续买入榜 - 盘后 · <span class="fresh" id="phLhbInstTime">更新于 --</span></h3>
+      <div class="note">盘后统计机构专用席位连续 N 日净买入的标的，确认主力真实意图与中线方向。数据源：龙虎榜机构席位数据。</div>
+      <table id="phLhbInst">
+        <thead><tr><th>标的</th><th>连续买入</th><th>机构净买(亿)</th><th>方向</th></tr></thead>
+        <tbody>
+          <tr><td>中际旭创</td><td>3日</td><td class="up">+6.2</td><td>CPO</td></tr>
+          <tr><td>寒武纪</td><td>2日</td><td class="up">+4.8</td><td>AI芯片</td></tr>
+          <tr><td>北方华创</td><td>2日</td><td class="up">+3.1</td><td>半导体设备</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- 宏观观测 -->
     <div class="card" style="margin-bottom:16px">
       <h3><span class="ic">🌍</span>宏观观测 - 中长线 · <span class="fresh" id="phMacroTime">更新于 --</span></h3>
@@ -602,21 +670,7 @@
         <div id="ttCatalyst"></div>
       </div>
 
-      <div class="card">
-        <h3><span class="ic">📊</span>回测 N 日胜率（信号层） - 历史</h3>
-        <div class="note" id="ttBackNote">加载中…</div>
-        <table id="ttBack"><thead><tr><th>持有期</th><th>样本</th><th>胜率</th><th>平均收益</th><th>夏普</th><th>最佳</th><th>最差</th></tr></thead><tbody id="ttBackBody"></tbody></table>
-      </div>
-      <div class="card">
-        <h3><span class="ic">⚖️</span>严格 vs 宽松 - 历史</h3>
-        <div class="note">严格=总评分≥70共振；宽松=信号≥2。同口径 baostock 真实收盘价滚动回测。</div>
-        <table id="ttSvl"><thead><tr><th>持有期</th><th>严格胜率</th><th>严格均收</th><th>宽松胜率</th><th>宽松均收</th></tr></thead><tbody id="ttSvlBody"></tbody></table>
-      </div>
-      <div class="card">
-        <h3><span class="ic">🎚</span>阈值敏感性 - 历史</h3>
-        <div class="note">不同总评分门槛的 5 日回测表现（不改动实盘规则，仅测试）。样本少时结论仅供参考。</div>
-        <table id="ttThr"><thead><tr><th>门槛</th><th>样本</th><th>5日胜率</th><th>5日均收</th><th>最佳胜率</th><th>最佳持有</th></tr></thead><tbody id="ttThrBody"></tbody></table>
-      </div>
+      <!-- 三张回测公式卡（回测N日胜率 / 严格vs宽松 / 阈值敏感性）已按主人要求于 2026-07-30 移至 运维面板·暂未上架 -->
 
       <div class="card">
         <h3><span class="ic">🏭</span>板块聚类（相关性风险） - 盘后</h3>
@@ -2636,6 +2690,18 @@ function closeCal(){document.getElementById('calMask').classList.remove('show');
     hidden.forEach(function(r){
       h+='<tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:5px 6px;font-weight:700;color:#e6eefc;">'+r[0]+'</td><td style="padding:5px 6px;color:#9fd0ff;">'+r[1]+'</td><td style="padding:5px 6px;color:#9fb0cc;">'+r[2]+'</td></tr>';
     });
+    h+='</tbody></table>';
+    h+='</div>';
+
+    /* 2026-07-30：原选股策略前台回测公式三卡，按主人要求移至后台·暂未上架 */
+    h+='<div class="card" style="margin-bottom:16px">';
+    h+='<h3><span class="ic">🧮</span>回测公式三卡（已移至后台） - 历史</h3>';
+    h+='<div class="note">原位于选股策略前台，2026-07-30 按主人要求下移至此。以下为回测口径说明，明细数据仍在采集。</div>';
+    h+='<table style="width:100%;border-collapse:collapse;font-size:12px;color:#dbe6f7;">';
+    h+='<thead><tr style="color:#8aa0c2;"><th style="padding:4px 6px;text-align:left;">原卡片</th><th style="padding:4px 6px;text-align:left;">口径</th></tr></thead><tbody>';
+    h+='<tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:5px 6px;font-weight:700;color:#e6eefc;">回测 N 日胜率（信号层）</td><td style="padding:5px 6px;color:#9fb0cc;">按信号入选后持有 N 日的胜率/均值/夏普滚动回测</td></tr>';
+    h+='<tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:5px 6px;font-weight:700;color:#e6eefc;">严格 vs 宽松</td><td style="padding:5px 6px;color:#9fb0cc;">严格=总评分≥70共振；宽松=信号≥2，同口径 baostock 真实收盘价</td></tr>';
+    h+='<tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:5px 6px;font-weight:700;color:#e6eefc;">阈值敏感性</td><td style="padding:5px 6px;color:#9fb0cc;">不同总评分门槛的 5 日回测表现，仅测试不改动实盘规则</td></tr>';
     h+='</tbody></table>';
     h+='</div>';
     el.innerHTML=h;

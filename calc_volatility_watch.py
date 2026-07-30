@@ -333,6 +333,14 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     log(f"已写出 {out_path}")
+    # 同步到标准路径，供 v8 及独立页面直接读取（experiment 下保留日期版本用于回溯）
+    std_path = os.path.join(DATA_DIR, "volatility_watch.json")
+    try:
+        with open(std_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        log(f"已同步 {std_path}")
+    except Exception as e:
+        log(f"同步标准路径失败: {e}")
     log(f"复合信号：{comp['regime']}（平均20日波动 {comp['avg_vol_20d']}%，"
          f"波动5日趋势 {comp['avg_vol_trend_pct']:+.1f}%，指数20日均收益 {comp['idx_20d_avg_ret']:+.1f}%）")
     for m in metrics:
