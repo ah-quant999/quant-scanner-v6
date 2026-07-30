@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- build: __BUILD_STAMP__ -->
-<meta name="build-stamp" content="__BUILD_STAMP__">
+<!-- build: 20260727154633 -->
+<meta name="build-stamp" content="20260727154633">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>九宝量化 v6.0</title>
+<title>九宝量化 v6.0 (20260727154633)</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -628,35 +628,15 @@ tr:hover td { background: #fafbfc; }
       <div style="padding:0;" id="aiSummaryContent"></div>
     </div>
 
-    <!-- 两列：📊 ETF(2/3: 汇总+TOP10并排) | 🚀 主力板块(1/3) -->
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:14px;">
-      <!-- 📊 ETF盘中热度/资金流（盘中实时·T+0） -->
-      <div id="etfHeatOverviewCard" style="display:none;background:#fff;border:1px solid #e8f5e9;border-left:4px solid #43a047;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e8f5e9;">
-          <span style="font-size:13px;font-weight:700;color:#2e7d32;">📊 ETF盘中热度 / 资金流 <span style="font-size:10px;font-weight:400;color:#999;">盘中实时·T+0</span></span>
-          <span id="etfHeatUpdateTime" class="update-time-badge"></span>
+    <!-- ETF+板块 一行两列 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+      <!-- ETF资金流向 -->
+      <div id="ntEtfFlowCard" style="display:none;background:#fff;border:1px solid #e8eaed;border-left:4px solid #42a5f5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #f0f0f0;">
+          <span style="font-size:13px;font-weight:700;color:#1565c0;">💰 国家队ETF <span style="font-size:10px;font-weight:400;color:#999;">短线·盘中</span></span>
+          <span style="font-size:12px;color:#999;" id="ntEtfFlowTime"></span>
         </div>
-        <!-- 内部分两列：左汇总 + 右 TOP10/tabs -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 14px 0;">
-          <div>
-            <div style="font-size:12px;font-weight:700;color:#2e7d32;padding-bottom:4px;border-bottom:1px dashed #e8f5e9;margin-bottom:6px;">📊 6 大分类汇总</div>
-            <div id="etfHeatSummary" style="font-size:11px;font-weight:400;color:#1565c0;margin:0;padding:0;"></div>
-          </div>
-          <div>
-            <div style="font-size:12px;font-weight:700;color:#e65100;padding-bottom:4px;border-bottom:1px dashed #ffe0b2;margin-bottom:6px;">🏆 活跃 TOP10</div>
-            <div id="etfHeatTabs" style="display:flex;gap:4px;padding:0 0 2px;font-size:11px;overflow-x:auto;white-space:nowrap;"></div>
-            <div id="etfHeatSubTabs" style="display:flex;gap:4px;padding:2px 0 2px;font-size:10px;overflow-x:auto;white-space:nowrap;"></div>
-            <div id="etfHeatCatStats" style="font-size:10px;font-weight:600;color:#555;padding:3px 0;border-bottom:1px solid #f0f0f0;"></div>
-            <div style="display:flex;align-items:center;gap:4px;padding:4px 0;font-size:10px;color:#888;border-bottom:1px solid #e8f5e9;background:#fafffb;">
-              <span style="width:46px;">代码</span>
-              <span style="flex:1;">名称</span>
-              <span style="width:42px;text-align:right;">涨跌幅</span>
-              <span style="width:50px;text-align:right;">成交额</span>
-              <span style="width:50px;text-align:right;">净流入</span>
-            </div>
-            <div id="etfHeatActiveBody"></div>
-          </div>
-        </div>
+        <div id="ntEtfFlowContent" style="padding:10px 14px;"></div>
       </div>
 
       <!-- 板块资金流向（总览页：仅流入流出列表，分析在预判信号页） -->
@@ -1099,7 +1079,6 @@ tr:hover td { background: #fafbfc; }
         <button class="health-sub-tab" data-cat="cockpit" onclick="renderHealthDashboard('cockpit')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #1a237e;background:#1a237e;color:#fff;">🎯 驾驶舱</button>
         <button class="health-sub-tab" data-cat="allsite" onclick="renderHealthDashboard('allsite')" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #5e35b1;background:#5e35b1;color:#fff;">🌐 全站精选</button>
         <button id="btnShelfUnlisted" onclick="toggleUnlistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">📦 暂未上架</button>
-        <button id="btnShelfDelisted" onclick="toggleDelistedPanel()" style="padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #bdbdbd;background:#fafafa;color:#9e9e9e;">🗄️ 已下架</button>
       </div>
 
       <!-- 🎯 选股驾驶舱（健康看板子 tab，点击"🎯 驾驶舱"按钮切换显示） -->
@@ -1218,10 +1197,11 @@ tr:hover td { background: #fafbfc; }
 
       <!-- 资金流时间轴已移到涨跌家数统计下方 -->
 
-</div> <!-- unlistedPanel 结束（已下架移到下方独立面板） -->
+      <!-- 精选预判信号 — 2026-07-21 已移入 shelf-group 内(已下架卡片区)，原位置清空 -->
 
-      <!-- ============ 🗄️ 已下架面板（独立 Tab，暂未上架右侧） ============ -->
-      <div id="delistedPanel" style="display:none;font-size:13px;">
+
+      <!-- ============ 已下架/低优先级卡片（按更新频率排序：盘中 → 盘后 → T+1）============ -->
+      <div class="shelf-group" style="margin-top:24px;padding-top:14px;border-top:2px dashed #e0e0e0;">
         <div style="font-weight:700;font-size:14px;color:#666;margin-bottom:4px;">🗄️ 已下架卡片</div>
         <p style="font-size:11px;color:#999;margin-bottom:14px;">已移出主看板（数据仍采集，按更新频率分组）</p>
 
@@ -1319,29 +1299,12 @@ tr:hover td { background: #fafbfc; }
           <div style="font-size:11px;font-weight:400;color:#1565c0;margin:0 0 6px 0;padding:0 14px;">沪深300/中证500/中证1000/创业板ETF等宽基指数ETF每日净申购赎回份额</div>
           <div class="sh-chart-svg" id="etfChart"></div>
         </div>
+        <!-- (T+1卡片放这里) -->
 
       </div>
 
-      <!-- 国家队ETF资金流向（已下架最下方） -->
-      <div id="ntEtfFlowCardDelisted" style="margin-top:16px;background:#fff;border:1px solid #e8eaed;border-left:4px solid #42a5f5;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e3f2fd;">
-          <span style="font-size:13px;font-weight:700;color:#1565c0;">🏛️ 国家队ETF资金流向 <span style="font-size:10px;font-weight:400;color:#999;">盘中实时</span></span>
-          <span style="font-size:12px;color:#999;" id="ntEtfFlowTimeDelisted"></span>
-        </div>
-        <div id="ntEtfFlowContentDelisted" style="padding:10px 14px;"></div>
-      </div>
 
-      <!-- 📈 ETF申赎规模近一年（2026-07-29 新增） -->
-      <div id="etfSubYearCard" style="margin-top:16px;background:#fff;border:1px solid #e0f7fa;border-left:4px solid #00acc1;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-        <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-bottom:1px solid #e0f7fa;">
-          <span style="font-size:13px;font-weight:700;color:#00838f;">📈 ETF申赎规模 <span style="font-size:10px;font-weight:400;color:#999;">近一年（宽基ETF净申购/赎回·亿份）</span></span>
-          <span style="font-size:12px;color:#999;" id="etfSubYearTime"></span>
-        </div>
-        <div style="font-size:10px;color:#888;padding:0 14px 4px;">⚪ 蓝色=净申购 · 🔴 红色=净赎回</div>
-        <div class="sh-chart-svg" id="etfSubYearChart" style="height:180px;"></div>
       </div>
-
-      </div> <!-- delistedPanel 结束 -->
 
   <!-- 机游共振 -->
 
@@ -1359,9 +1322,3390 @@ tr:hover td { background: #fafbfc; }
 <script>
 // ============ 数据 ============
 // CANDIDATE_POOL placeholder (injected by update_data_v2.py)
-window.CLOUD_UPDATE_TIME = "CLOUD_TIME_PLACEHOLDER";
-window.POST_CLOSE_TIME = "POST_CLOSE_TIME_PLACEHOLDER";
-window.CANDIDATE_POOL = {};window.CRDS_CARD_DATA = {
+window.CLOUD_UPDATE_TIME = "2026-07-23 00:00";
+window.POST_CLOSE_TIME = "2026-07-27 15:30:00";
+window.CANDIDATE_POOL = {
+"update_time": "2026-07-27 14:35:57",
+"total": 372,
+"source_dist": {
+"主板成交前100": 97,
+"maharo研报": 37,
+"创业板成交前100": 100,
+"观澜台": 8,
+"科创板成交前100": 100,
+"港股成交前50": 50
+},
+"stocks": {
+"sh_603986": {
+"code": "603986",
+"name": "兆易创新",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002156": {
+"code": "002156",
+"name": "通富微电",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002384": {
+"code": "002384",
+"name": "东山精密",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000938": {
+"code": "000938",
+"name": "紫光股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600584": {
+"code": "600584",
+"name": "长电科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002415": {
+"code": "002415",
+"name": "海康威视",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002371": {
+"code": "002371",
+"name": "北方华创",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002409": {
+"code": "002409",
+"name": "雅克科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000021": {
+"code": "000021",
+"name": "深科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600176": {
+"code": "600176",
+"name": "中国巨石",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000725": {
+"code": "000725",
+"name": "京东方A",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_001309": {
+"code": "001309",
+"name": "德明利",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002185": {
+"code": "002185",
+"name": "华天科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600487": {
+"code": "600487",
+"name": "亨通光电",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601899": {
+"code": "601899",
+"name": "紫金矿业",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600206": {
+"code": "600206",
+"name": "有研新材",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000977": {
+"code": "000977",
+"name": "浪潮信息",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002475": {
+"code": "002475",
+"name": "立讯精密",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002407": {
+"code": "002407",
+"name": "多氟多",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000636": {
+"code": "000636",
+"name": "风华高科",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600183": {
+"code": "600183",
+"name": "生益科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002281": {
+"code": "002281",
+"name": "光迅科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603259": {
+"code": "603259",
+"name": "药明康德",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100",
+"maharo研报"
+]
+},
+"sh_603019": {
+"code": "603019",
+"name": "中科曙光",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603893": {
+"code": "603893",
+"name": "瑞芯微",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600522": {
+"code": "600522",
+"name": "中天科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002428": {
+"code": "002428",
+"name": "云南锗业",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002463": {
+"code": "002463",
+"name": "沪电股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600396": {
+"code": "600396",
+"name": "华电辽能",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000063": {
+"code": "000063",
+"name": "中兴通讯",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002353": {
+"code": "002353",
+"name": "杰瑞股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100",
+"maharo研报"
+]
+},
+"sh_601138": {
+"code": "601138",
+"name": "工业富联",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002436": {
+"code": "002436",
+"name": "兴森科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603228": {
+"code": "603228",
+"name": "景旺电子",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600519": {
+"code": "600519",
+"name": "贵州茅台",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002396": {
+"code": "002396",
+"name": "星网锐捷",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000988": {
+"code": "000988",
+"name": "华工科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002008": {
+"code": "002008",
+"name": "大族激光",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100",
+"maharo研报"
+]
+},
+"sh_601179": {
+"code": "601179",
+"name": "中国西电",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600900": {
+"code": "600900",
+"name": "长江电力",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603256": {
+"code": "603256",
+"name": "宏和科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601869": {
+"code": "601869",
+"name": "长飞光纤",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600667": {
+"code": "600667",
+"name": "太极实业",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603127": {
+"code": "603127",
+"name": "昭衍新药",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603296": {
+"code": "603296",
+"name": "华勤技术",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603993": {
+"code": "603993",
+"name": "洛阳钼业",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603629": {
+"code": "603629",
+"name": "利通电子",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002432": {
+"code": "002432",
+"name": "九安医疗",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600938": {
+"code": "600938",
+"name": "中国海油",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601991": {
+"code": "601991",
+"name": "大唐发电",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601318": {
+"code": "601318",
+"name": "中国平安",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601678": {
+"code": "601678",
+"name": "滨化股份",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002491": {
+"code": "002491",
+"name": "通鼎互联",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600105": {
+"code": "600105",
+"name": "永鼎股份",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600276": {
+"code": "600276",
+"name": "恒瑞医药",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002916": {
+"code": "002916",
+"name": "深南电路",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002709": {
+"code": "002709",
+"name": "天赐材料",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603083": {
+"code": "603083",
+"name": "剑桥科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600887": {
+"code": "600887",
+"name": "伊利股份",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601288": {
+"code": "601288",
+"name": "农业银行",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600030": {
+"code": "600030",
+"name": "中信证券",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600988": {
+"code": "600988",
+"name": "赤峰黄金",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600664": {
+"code": "600664",
+"name": "哈药股份",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002083": {
+"code": "002083",
+"name": "孚日股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000657": {
+"code": "000657",
+"name": "中钨高新",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002484": {
+"code": "002484",
+"name": "江海股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100",
+"maharo研报"
+]
+},
+"sh_600989": {
+"code": "600989",
+"name": "宝丰能源",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601606": {
+"code": "601606",
+"name": "长城军工",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600036": {
+"code": "600036",
+"name": "招商银行",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601168": {
+"code": "601168",
+"name": "西部矿业",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600744": {
+"code": "600744",
+"name": "华银电力",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002851": {
+"code": "002851",
+"name": "麦格米特",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_001248": {
+"code": "001248",
+"name": "华润新能",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600378": {
+"code": "600378",
+"name": "昊华科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601857": {
+"code": "601857",
+"name": "中国石油",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601398": {
+"code": "601398",
+"name": "工商银行",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600909": {
+"code": "600909",
+"name": "华安证券",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600089": {
+"code": "600089",
+"name": "特变电工",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002636": {
+"code": "002636",
+"name": "金安国纪",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000811": {
+"code": "000811",
+"name": "冰轮环境",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002028": {
+"code": "002028",
+"name": "思源电气",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002594": {
+"code": "002594",
+"name": "比亚迪",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000100": {
+"code": "000100",
+"name": "TCL科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000338": {
+"code": "000338",
+"name": "潍柴动力",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_601208": {
+"code": "601208",
+"name": "东材科技",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002498": {
+"code": "002498",
+"name": "汉缆股份",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_000815": {
+"code": "000815",
+"name": "美利云",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_603118": {
+"code": "603118",
+"name": "共进股份",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_605376": {
+"code": "605376",
+"name": "博迁新材",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002414": {
+"code": "002414",
+"name": "高德红外",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600460": {
+"code": "600460",
+"name": "士兰微",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600309": {
+"code": "600309",
+"name": "万华化学",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002080": {
+"code": "002080",
+"name": "中材科技",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600549": {
+"code": "600549",
+"name": "厦门钨业",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002460": {
+"code": "002460",
+"name": "赣锋锂业",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_002938": {
+"code": "002938",
+"name": "鹏鼎控股",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sh_600150": {
+"code": "600150",
+"name": "中国船舶",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"主板成交前100"
+]
+},
+"sz_300308": {
+"code": "300308",
+"name": "中际旭创",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300750": {
+"code": "300750",
+"name": "宁德时代",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100",
+"观澜台"
+]
+},
+"sz_300502": {
+"code": "300502",
+"name": "新易盛",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300604": {
+"code": "300604",
+"name": "长川科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300408": {
+"code": "300408",
+"name": "三环集团",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301526": {
+"code": "301526",
+"name": "国际复材",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300285": {
+"code": "300285",
+"name": "国瓷材料",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300433": {
+"code": "300433",
+"name": "蓝思科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300223": {
+"code": "300223",
+"name": "北京君正",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300857": {
+"code": "300857",
+"name": "协创数据",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301308": {
+"code": "301308",
+"name": "江波龙",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300394": {
+"code": "300394",
+"name": "天孚通信",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300476": {
+"code": "300476",
+"name": "胜宏科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300458": {
+"code": "300458",
+"name": "全志科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300666": {
+"code": "300666",
+"name": "江丰电子",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301165": {
+"code": "301165",
+"name": "锐捷网络",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300274": {
+"code": "300274",
+"name": "阳光电源",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300475": {
+"code": "300475",
+"name": "香农芯创",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300059": {
+"code": "300059",
+"name": "东方财富",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100",
+"maharo研报"
+]
+},
+"sz_300136": {
+"code": "300136",
+"name": "信维通信",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301536": {
+"code": "301536",
+"name": "星宸科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301217": {
+"code": "301217",
+"name": "铜冠铜箔",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100",
+"maharo研报"
+]
+},
+"sz_300759": {
+"code": "300759",
+"name": "康龙化成",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300054": {
+"code": "300054",
+"name": "鼎龙股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300014": {
+"code": "300014",
+"name": "亿纬锂能",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300346": {
+"code": "300346",
+"name": "南大光电",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300058": {
+"code": "300058",
+"name": "蓝色光标",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300390": {
+"code": "300390",
+"name": "天华新能",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301205": {
+"code": "301205",
+"name": "联特科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301583": {
+"code": "301583",
+"name": "托伦斯",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300779": {
+"code": "300779",
+"name": "惠城环保",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300209": {
+"code": "300209",
+"name": "行云科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301396": {
+"code": "301396",
+"name": "宏景科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300164": {
+"code": "300164",
+"name": "通源石油",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300567": {
+"code": "300567",
+"name": "精测电子",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300033": {
+"code": "300033",
+"name": "同花顺",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300757": {
+"code": "300757",
+"name": "罗博特科",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300438": {
+"code": "300438",
+"name": "鹏辉能源",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300620": {
+"code": "300620",
+"name": "光库科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300450": {
+"code": "300450",
+"name": "先导智能",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300418": {
+"code": "300418",
+"name": "昆仑万维",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301377": {
+"code": "301377",
+"name": "鼎泰高科",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300661": {
+"code": "300661",
+"name": "圣邦股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300207": {
+"code": "300207",
+"name": "欣旺达",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301511": {
+"code": "301511",
+"name": "德福科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300806": {
+"code": "300806",
+"name": "斯迪克",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300398": {
+"code": "300398",
+"name": "飞凯材料",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300548": {
+"code": "300548",
+"name": "长芯博创",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300489": {
+"code": "300489",
+"name": "光智科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300444": {
+"code": "300444",
+"name": "双杰电气",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301292": {
+"code": "301292",
+"name": "海科新源",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300672": {
+"code": "300672",
+"name": "国科微",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300037": {
+"code": "300037",
+"name": "新宙邦",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300480": {
+"code": "300480",
+"name": "光力科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300017": {
+"code": "300017",
+"name": "网宿科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300139": {
+"code": "300139",
+"name": "晓程科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300570": {
+"code": "300570",
+"name": "太辰光",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300395": {
+"code": "300395",
+"name": "菲利华",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301358": {
+"code": "301358",
+"name": "湖南裕能",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300975": {
+"code": "300975",
+"name": "商络电子",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300373": {
+"code": "300373",
+"name": "扬杰科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300319": {
+"code": "300319",
+"name": "麦捷科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301293": {
+"code": "301293",
+"name": "三博脑科",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300903": {
+"code": "300903",
+"name": "科翔股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300843": {
+"code": "300843",
+"name": "胜蓝股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300255": {
+"code": "300255",
+"name": "常山药业",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300442": {
+"code": "300442",
+"name": "润泽科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300085": {
+"code": "300085",
+"name": "银之杰",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300214": {
+"code": "300214",
+"name": "日科化学",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300124": {
+"code": "300124",
+"name": "汇川技术",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100",
+"maharo研报"
+]
+},
+"sz_300776": {
+"code": "300776",
+"name": "帝尔激光",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300260": {
+"code": "300260",
+"name": "新莱应材",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300684": {
+"code": "300684",
+"name": "中石科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300454": {
+"code": "300454",
+"name": "深信服",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300803": {
+"code": "300803",
+"name": "指南针",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300534": {
+"code": "300534",
+"name": "陇神戎发",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300115": {
+"code": "300115",
+"name": "长盈精密",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300738": {
+"code": "300738",
+"name": "奥飞数据",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300762": {
+"code": "300762",
+"name": "上海瀚讯",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300613": {
+"code": "300613",
+"name": "富瀚微",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300671": {
+"code": "300671",
+"name": "富满微",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300870": {
+"code": "300870",
+"name": "欧陆通",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300558": {
+"code": "300558",
+"name": "贝达药业",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300088": {
+"code": "300088",
+"name": "长信科技",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301357": {
+"code": "301357",
+"name": "北方长龙",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300760": {
+"code": "300760",
+"name": "迈瑞医疗",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300420": {
+"code": "300420",
+"name": "五洋自控",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301319": {
+"code": "301319",
+"name": "唯特偶",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300751": {
+"code": "300751",
+"name": "迈为股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300045": {
+"code": "300045",
+"name": "华力创通",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300497": {
+"code": "300497",
+"name": "富祥股份",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301200": {
+"code": "301200",
+"name": "大族数控",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301520": {
+"code": "301520",
+"name": "万邦医药",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300236": {
+"code": "300236",
+"name": "上海新阳",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300179": {
+"code": "300179",
+"name": "四方达",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301018": {
+"code": "301018",
+"name": "申菱环境",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300850": {
+"code": "300850",
+"name": "新强联",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300184": {
+"code": "300184",
+"name": "力源信息",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_301127": {
+"code": "301127",
+"name": "武汉天源",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sz_300199": {
+"code": "300199",
+"name": "翰宇药业",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"创业板成交前100"
+]
+},
+"sh_688008": {
+"code": "688008",
+"name": "澜起科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100",
+"观澜台",
+"maharo研报"
+]
+},
+"sh_688256": {
+"code": "688256",
+"name": "寒武纪",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688347": {
+"code": "688347",
+"name": "华虹宏力",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688012": {
+"code": "688012",
+"name": "中微公司",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688072": {
+"code": "688072",
+"name": "拓荆科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688498": {
+"code": "688498",
+"name": "源杰科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688525": {
+"code": "688525",
+"name": "佰维存储",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688041": {
+"code": "688041",
+"name": "海光信息",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688146": {
+"code": "688146",
+"name": "中船特气",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688361": {
+"code": "688361",
+"name": "中科飞测",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688766": {
+"code": "688766",
+"name": "普冉股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688702": {
+"code": "688702",
+"name": "盛科通信",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688120": {
+"code": "688120",
+"name": "华海清科",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688048": {
+"code": "688048",
+"name": "长光华芯",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688549": {
+"code": "688549",
+"name": "中巨芯",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688627": {
+"code": "688627",
+"name": "精智达",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688521": {
+"code": "688521",
+"name": "芯原股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688200": {
+"code": "688200",
+"name": "华峰测控",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688629": {
+"code": "688629",
+"name": "华丰科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688019": {
+"code": "688019",
+"name": "安集科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688126": {
+"code": "688126",
+"name": "沪硅产业",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688141": {
+"code": "688141",
+"name": "杰华特",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688630": {
+"code": "688630",
+"name": "芯碁微装",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688432": {
+"code": "688432",
+"name": "有研硅",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688111": {
+"code": "688111",
+"name": "金山办公",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688362": {
+"code": "688362",
+"name": "甬矽电子",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688797": {
+"code": "688797",
+"name": "臻宝科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688017": {
+"code": "688017",
+"name": "绿的谐波",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688596": {
+"code": "688596",
+"name": "正帆科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688099": {
+"code": "688099",
+"name": "晶晨股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688037": {
+"code": "688037",
+"name": "芯源微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688110": {
+"code": "688110",
+"name": "东芯股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688249": {
+"code": "688249",
+"name": "晶合集成",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688002": {
+"code": "688002",
+"name": "睿创微纳",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688548": {
+"code": "688548",
+"name": "广钢气体",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688313": {
+"code": "688313",
+"name": "仕佳光子",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688082": {
+"code": "688082",
+"name": "盛美上海",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688409": {
+"code": "688409",
+"name": "富创精密",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688729": {
+"code": "688729",
+"name": "屹唐股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688123": {
+"code": "688123",
+"name": "聚辰股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688036": {
+"code": "688036",
+"name": "传音控股",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688519": {
+"code": "688519",
+"name": "南亚新材",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100",
+"maharo研报"
+]
+},
+"sh_688268": {
+"code": "688268",
+"name": "华特气体",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688353": {
+"code": "688353",
+"name": "华盛锂电",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688167": {
+"code": "688167",
+"name": "炬光科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688403": {
+"code": "688403",
+"name": "汇成股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688235": {
+"code": "688235",
+"name": "百济神州",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688234": {
+"code": "688234",
+"name": "天岳先进",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688396": {
+"code": "688396",
+"name": "华润微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688183": {
+"code": "688183",
+"name": "生益电子",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688220": {
+"code": "688220",
+"name": "翱捷科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688372": {
+"code": "688372",
+"name": "伟测科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688233": {
+"code": "688233",
+"name": "神工股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688802": {
+"code": "688802",
+"name": "沐曦股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688777": {
+"code": "688777",
+"name": "中控技术",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688578": {
+"code": "688578",
+"name": "艾力斯",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688676": {
+"code": "688676",
+"name": "金盘科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688652": {
+"code": "688652",
+"name": "京仪装备",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688106": {
+"code": "688106",
+"name": "金宏气体",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688535": {
+"code": "688535",
+"name": "华海诚科",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688300": {
+"code": "688300",
+"name": "联瑞新材",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688469": {
+"code": "688469",
+"name": "芯联集成",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688700": {
+"code": "688700",
+"name": "东威科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688205": {
+"code": "688205",
+"name": "德科立",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688213": {
+"code": "688213",
+"name": "思特威",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688545": {
+"code": "688545",
+"name": "兴福电子",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688333": {
+"code": "688333",
+"name": "铂力特",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688172": {
+"code": "688172",
+"name": "燕东微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688266": {
+"code": "688266",
+"name": "泽璟制药",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688536": {
+"code": "688536",
+"name": "思瑞浦",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688147": {
+"code": "688147",
+"name": "微导纳米",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688668": {
+"code": "688668",
+"name": "鼎通科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688025": {
+"code": "688025",
+"name": "杰普特",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688257": {
+"code": "688257",
+"name": "新锐股份",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688385": {
+"code": "688385",
+"name": "复旦微电",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688331": {
+"code": "688331",
+"name": "荣昌生物",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688343": {
+"code": "688343",
+"name": "云天励飞",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688308": {
+"code": "688308",
+"name": "欧科亿",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688322": {
+"code": "688322",
+"name": "奥比中光",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688195": {
+"code": "688195",
+"name": "腾景科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688585": {
+"code": "688585",
+"name": "上纬新材",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688143": {
+"code": "688143",
+"name": "长盈通",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688728": {
+"code": "688728",
+"name": "格科微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688559": {
+"code": "688559",
+"name": "海目星",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688593": {
+"code": "688593",
+"name": "新相微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688795": {
+"code": "688795",
+"name": "摩尔线程",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688202": {
+"code": "688202",
+"name": "美迪西",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688388": {
+"code": "688388",
+"name": "嘉元科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688503": {
+"code": "688503",
+"name": "聚和材料",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688392": {
+"code": "688392",
+"name": "骄成超声",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688027": {
+"code": "688027",
+"name": "国盾量子",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688052": {
+"code": "688052",
+"name": "纳芯微",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688180": {
+"code": "688180",
+"name": "君实生物",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688775": {
+"code": "688775",
+"name": "影石创新",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688608": {
+"code": "688608",
+"name": "恒玄科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688018": {
+"code": "688018",
+"name": "乐鑫科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688783": {
+"code": "688783",
+"name": "西安奕材",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688328": {
+"code": "688328",
+"name": "深科达",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688531": {
+"code": "688531",
+"name": "日联科技",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"sh_688222": {
+"code": "688222",
+"name": "成都先导",
+"market": "sh",
+"board_label": "科创板",
+"sources": [
+"科创板成交前100"
+]
+},
+"hk_01810": {
+"code": "01810",
+"name": "小米集团-W",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09988": {
+"code": "09988",
+"name": "阿里巴巴-W",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_03690": {
+"code": "03690",
+"name": "美团-W",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02513": {
+"code": "02513",
+"name": "智谱",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00700": {
+"code": "00700",
+"name": "腾讯控股",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_01347": {
+"code": "01347",
+"name": "华虹宏力",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00981": {
+"code": "00981",
+"name": "中芯国际",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_03750": {
+"code": "03750",
+"name": "宁德时代",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00939": {
+"code": "00939",
+"name": "建设银行",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01888": {
+"code": "01888",
+"name": "建滔积层板",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_03986": {
+"code": "03986",
+"name": "兆易创新",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_06869": {
+"code": "06869",
+"name": "长飞光纤光缆",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09961": {
+"code": "09961",
+"name": "携程集团-S",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00883": {
+"code": "00883",
+"name": "中国海洋石油",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_06809": {
+"code": "06809",
+"name": "澜起科技",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_03939": {
+"code": "03939",
+"name": "万国黄金集团",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00005": {
+"code": "00005",
+"name": "汇丰控股",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_09992": {
+"code": "09992",
+"name": "泡泡玛特",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00148": {
+"code": "00148",
+"name": "建滔集团",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00100": {
+"code": "00100",
+"name": "MINIMAX-W",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00992": {
+"code": "00992",
+"name": "联想集团",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09887": {
+"code": "09887",
+"name": "维立志博-B",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02259": {
+"code": "02259",
+"name": "紫金黄金国际",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01024": {
+"code": "01024",
+"name": "快手-W",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00027": {
+"code": "00027",
+"name": "00027",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02899": {
+"code": "02899",
+"name": "02899",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09903": {
+"code": "09903",
+"name": "09903",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02359": {
+"code": "02359",
+"name": "02359",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01398": {
+"code": "01398",
+"name": "01398",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01211": {
+"code": "01211",
+"name": "01211",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09999": {
+"code": "09999",
+"name": "09999",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00857": {
+"code": "00857",
+"name": "00857",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02318": {
+"code": "02318",
+"name": "02318",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00941": {
+"code": "00941",
+"name": "00941",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00669": {
+"code": "00669",
+"name": "创科实业",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_01299": {
+"code": "01299",
+"name": "01299",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_00388": {
+"code": "00388",
+"name": "00388",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02628": {
+"code": "02628",
+"name": "02628",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_03988": {
+"code": "03988",
+"name": "03988",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_02269": {
+"code": "02269",
+"name": "药明生物",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_02388": {
+"code": "02388",
+"name": "02388",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01801": {
+"code": "01801",
+"name": "01801",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09660": {
+"code": "09660",
+"name": "地平线机器人",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_02476": {
+"code": "02476",
+"name": "02476",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_06082": {
+"code": "06082",
+"name": "06082",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01093": {
+"code": "01093",
+"name": "01093",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_01772": {
+"code": "01772",
+"name": "01772",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_03317": {
+"code": "03317",
+"name": "03317",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"hk_09926": {
+"code": "09926",
+"name": "康方生物",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50",
+"maharo研报"
+]
+},
+"hk_01548": {
+"code": "01548",
+"name": "01548",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"港股成交前50"
+]
+},
+"sh_601336": {
+"code": "601336",
+"name": "新华保险",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"观澜台"
+]
+},
+"sh_601628": {
+"code": "601628",
+"name": "中国人寿",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"观澜台"
+]
+},
+"sh_601100": {
+"code": "601100",
+"name": "恒立液压",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"观澜台"
+]
+},
+"hk_06481": {
+"code": "06481",
+"name": "06481",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"观澜台"
+]
+},
+"sz_300024": {
+"code": "300024",
+"name": "机器人",
+"market": "sz",
+"board_label": "创业板",
+"sources": [
+"观澜台"
+]
+},
+"sh_601099": {
+"code": "601099",
+"name": "太平洋",
+"market": "sh",
+"board_label": "主板",
+"sources": [
+"观澜台"
+]
+},
+"hk_01519": {
+"code": "01519",
+"name": "极兔速递",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_02618": {
+"code": "02618",
+"name": "京东物流",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"sz_002352": {
+"code": "002352",
+"name": "顺丰控股",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"maharo研报"
+]
+},
+"sz_002270": {
+"code": "002270",
+"name": "华明装备",
+"market": "sz",
+"board_label": "主板",
+"sources": [
+"maharo研报"
+]
+},
+"hk_02888": {
+"code": "02888",
+"name": "渣打集团",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_03759": {
+"code": "03759",
+"name": "康龙化成",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_03347": {
+"code": "03347",
+"name": "泰格医药",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_01177": {
+"code": "01177",
+"name": "中国生物制药",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_02252": {
+"code": "02252",
+"name": "微创机器人",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_01530": {
+"code": "01530",
+"name": "三生制药",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_01833": {
+"code": "01833",
+"name": "平安健康",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_01066": {
+"code": "01066",
+"name": "威高股份",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_06078": {
+"code": "06078",
+"name": "海吉亚医疗",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_01776": {
+"code": "01776",
+"name": "广发证券",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_03908": {
+"code": "03908",
+"name": "中金公司",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"hk_06030": {
+"code": "06030",
+"name": "中信证券",
+"market": "hk",
+"board_label": "港股",
+"sources": [
+"maharo研报"
+]
+},
+"sh_603939": {
+"code": "603939",
+"name": "益丰药房",
+"market": "sh",
+"board_label": "",
+"sources": [
+"maharo研报"
+]
+},
+"sh_688271": {
+"code": "688271",
+"name": "联影医疗",
+"market": "sh",
+"board_label": "",
+"sources": [
+"maharo研报"
+]
+},
+"sh_600885": {
+"code": "600885",
+"name": "宏发股份",
+"market": "sh",
+"board_label": "",
+"sources": [
+"maharo研报"
+]
+}
+}
+};window.CRDS_CARD_DATA = {
 "update_time": "2026-07-24 19:14:52",
 "total_scanned": 226,
 "market_context": {
@@ -124893,19 +128237,19 @@ false
 },
 "candidate_total": 372,
 "total_count": 295,
-"update_time": "2026-07-27 10:16:12"
+"update_time": "2026-07-27 15:44:48"
 };var SH_FIB = window.SH_FIB = {
 "current": {
-"index": 3814.2,
-"change_pct": 0,
-"change_points": 0,
+"index": 3827.76,
+"change_pct": 0.36,
+"change_points": 13.56,
 "days_down": 52,
-"total_pct": -10.1,
+"total_pct": -9.78,
 "total_points": -428.37,
 "avg_pct": 0.19,
 "peak_date": "2026-05-13",
 "peak_close": 4242.57,
-"date": "2026-07-24",
+"date": "2026-07-27",
 "mode": "阴跌磨底"
 },
 "windows": [
@@ -124913,7 +128257,7 @@ false
 "name": "F(3)",
 "date": "2026-05-25",
 "desc": "小反弹窗口",
-"days_left": -60,
+"days_left": -63,
 "observation": {
 "index": 4152.57,
 "change_pct": -2.3,
@@ -124928,7 +128272,7 @@ false
 "name": "F(5)",
 "date": "2026-05-27",
 "desc": "短期变盘",
-"days_left": -58,
+"days_left": -61,
 "observation": {
 "index": 4152.57,
 "change_pct": -0.2,
@@ -124943,7 +128287,7 @@ false
 "name": "F(8)",
 "date": "2026-05-30",
 "desc": "8日变盘",
-"days_left": -55,
+"days_left": -58,
 "observation": {
 "index": 4098.64,
 "change_pct": -2.4,
@@ -124958,7 +128302,7 @@ false
 "name": "F(13)",
 "date": "2026-06-04",
 "desc": "13日重要窗口",
-"days_left": -50,
+"days_left": -53,
 "observation": {
 "index": 4075.1,
 "change_pct": -1.7,
@@ -124973,7 +128317,7 @@ false
 "name": "F(21)",
 "date": "2026-06-12",
 "desc": "21日大窗口",
-"days_left": -42,
+"days_left": -45,
 "observation": {
 "index": 3993.23,
 "change_pct": 3.3,
@@ -124990,7 +128334,7 @@ false
 "name": "F(34)",
 "date": "2026-06-25",
 "desc": "34日中期窗口",
-"days_left": -29,
+"days_left": -32,
 "observation": {
 "index": 4106.25,
 "change_pct": -2.2,
@@ -125005,7 +128349,7 @@ false
 "name": "F(55)",
 "date": "2026-07-16",
 "desc": "55日长期窗口",
-"days_left": -8,
+"days_left": -11,
 "observation": {
 "index": 3967.13,
 "change_pct": -0.1,
@@ -125019,18 +128363,10 @@ false
 "status": "triggered"
 },
 {
-"name": "F(8)",
-"date": "2026-07-27",
-"desc": "下轮8日",
-"days_left": 3,
-"status": "active",
-"rolled": true
-},
-{
 "name": "F(13)",
 "date": "2026-08-03",
 "desc": "下轮13日",
-"days_left": 10,
+"days_left": 7,
 "status": "future",
 "rolled": true
 },
@@ -125038,7 +128374,7 @@ false
 "name": "F(21)",
 "date": "2026-08-14",
 "desc": "下轮21日",
-"days_left": 21,
+"days_left": 18,
 "status": "future",
 "rolled": true
 },
@@ -125046,7 +128382,7 @@ false
 "name": "F(34)",
 "date": "2026-09-01",
 "desc": "下轮34日",
-"days_left": 39,
+"days_left": 36,
 "status": "future",
 "rolled": true
 },
@@ -125054,17 +128390,12 @@ false
 "name": "F(55)",
 "date": "2026-10-01",
 "desc": "下轮55日",
-"days_left": 69,
+"days_left": 66,
 "status": "future",
 "rolled": true
 }
 ],
 "next_cycle": [
-{
-"name": "F(8)",
-"date": "2026-07-27",
-"desc": "下轮8日"
-},
 {
 "name": "F(13)",
 "date": "2026-08-03",
@@ -125087,10 +128418,10 @@ false
 }
 ],
 "judgement": {
-"summary": "从2026-05-13高点跌52天（-10.1%），阴跌磨底",
+"summary": "从2026-05-13高点跌52天（-9.78%），阴跌磨底",
 "key_window": "🔄 已续命第1轮 → F(13)(2026-08-03)"
 },
-"update_time": "2026-07-24 17:42"
+"update_time": "2026-07-27 11:23"
 };var SZ_FIB = window.SZ_FIB = {
 "current": {
 "index": 13774.68,
@@ -125102,7 +128433,7 @@ false
 "avg_pct": 0.63,
 "peak_date": "2026-06-22",
 "peak_close": 16372.5,
-"date": "2026-07-24",
+"date": "2026-07-27",
 "mode": "阴跌磨底"
 },
 "windows": [
@@ -125110,7 +128441,7 @@ false
 "name": "F(3)",
 "date": "2026-05-25",
 "desc": "小反弹窗口",
-"days_left": -60,
+"days_left": -63,
 "observation": {
 "index": 15856.61,
 "change_pct": -3.3,
@@ -125125,7 +128456,7 @@ false
 "name": "F(5)",
 "date": "2026-05-27",
 "desc": "短期变盘",
-"days_left": -58,
+"days_left": -61,
 "observation": {
 "index": 15856.61,
 "change_pct": -0.2,
@@ -125142,7 +128473,7 @@ false
 "name": "F(8)",
 "date": "2026-05-30",
 "desc": "8日变盘",
-"days_left": -55,
+"days_left": -58,
 "observation": {
 "index": 15861.89,
 "change_pct": -3.4,
@@ -125157,7 +128488,7 @@ false
 "name": "F(13)",
 "date": "2026-06-04",
 "desc": "13日重要窗口",
-"days_left": -50,
+"days_left": -53,
 "observation": {
 "index": 15591.13,
 "change_pct": -5.2,
@@ -125172,7 +128503,7 @@ false
 "name": "F(21)",
 "date": "2026-06-12",
 "desc": "21日大窗口",
-"days_left": -42,
+"days_left": -45,
 "observation": {
 "index": 14954.1,
 "change_pct": 9.4,
@@ -125189,7 +128520,7 @@ false
 "name": "F(34)",
 "date": "2026-06-25",
 "desc": "34日中期窗口",
-"days_left": -29,
+"days_left": -32,
 "observation": {
 "index": 15854.2,
 "change_pct": -5.2,
@@ -125204,7 +128535,7 @@ false
 "name": "F(55)",
 "date": "2026-07-16",
 "desc": "55日长期窗口",
-"days_left": -8,
+"days_left": -11,
 "observation": {
 "index": 14924.87,
 "change_pct": -2.5,
@@ -125218,18 +128549,10 @@ false
 "status": "triggered"
 },
 {
-"name": "F(8)",
-"date": "2026-07-27",
-"desc": "下轮8日",
-"days_left": 3,
-"status": "active",
-"rolled": true
-},
-{
 "name": "F(13)",
 "date": "2026-08-03",
 "desc": "下轮13日",
-"days_left": 10,
+"days_left": 7,
 "status": "future",
 "rolled": true
 },
@@ -125237,7 +128560,7 @@ false
 "name": "F(21)",
 "date": "2026-08-14",
 "desc": "下轮21日",
-"days_left": 21,
+"days_left": 18,
 "status": "future",
 "rolled": true
 },
@@ -125245,7 +128568,7 @@ false
 "name": "F(34)",
 "date": "2026-09-01",
 "desc": "下轮34日",
-"days_left": 39,
+"days_left": 36,
 "status": "future",
 "rolled": true
 },
@@ -125253,17 +128576,12 @@ false
 "name": "F(55)",
 "date": "2026-10-01",
 "desc": "下轮55日",
-"days_left": 69,
+"days_left": 66,
 "status": "future",
 "rolled": true
 }
 ],
 "next_cycle": [
-{
-"name": "F(8)",
-"date": "2026-07-27",
-"desc": "下轮8日"
-},
 {
 "name": "F(13)",
 "date": "2026-08-03",
@@ -125289,32 +128607,42 @@ false
 "summary": "从2026-06-22高点跌25天（-15.87%），阴跌磨底",
 "key_window": "🔄 已续命第1轮 → F(13)(2026-08-03)"
 },
-"update_time": "2026-07-24 17:42"
+"update_time": "2026-07-27 11:23"
 };window.SECTOR_FUND_FLOW = {
-"update_time": "2026-07-27 09:46",
+"update_time": "2026-07-27 15:40",
 "data_type": "real",
 "summary": {
 "in_count": 40,
 "out_count": 0,
-"in_text": "融资融券(271.8亿)、阿里巴巴概念(268.0亿)、科创次新股(257.7亿)、注册制次新股(257.2亿)、新股与次新股(257.1亿)",
+"in_text": "融资融券(1020.0亿)、芯片概念(685.9亿)、小米概念(544.6亿)、阿里巴巴概念(542.6亿)、人民币贬值受益(541.9亿)",
 "out_text": "无",
-"alert": "🔥 40个板块大幅流入；🚀 融资融券+271.8亿(连10天)、阿里巴巴概念+268.0亿(连7天)、科创次新股+257.7亿(连4天)"
+"alert": "🔥 40个板块大幅流入；🚀 融资融券+1020.0亿(连10天)、芯片概念+685.9亿(连10天)、小米概念+544.6亿(连7天)"
 },
 "sectors_in": [
 {
 "name": "融资融券",
-"net": 271.79,
-"net_5d": 1174.07,
-"net_20d": 0,
+"net": 1020.03,
+"net_5d": 1028.8,
+"net_20d": -3888.61,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in"
 },
 {
-"name": "阿里巴巴概念",
-"net": 268.03,
-"net_5d": 322.44,
+"name": "芯片概念",
+"net": 685.94,
+"net_5d": 919.02,
+"net_20d": -5686.09,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "小米概念",
+"net": 544.64,
+"net_5d": 563.8,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125322,8 +128650,48 @@ false
 "trend": "in"
 },
 {
-"name": "科创次新股",
-"net": 257.72,
+"name": "阿里巴巴概念",
+"net": 542.58,
+"net_5d": 560.81,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 7,
+"trend": "in"
+},
+{
+"name": "人民币贬值受益",
+"net": 541.86,
+"net_5d": 345.15,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in"
+},
+{
+"name": "存储芯片",
+"net": 534.39,
+"net_5d": 598.72,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "腾讯概念",
+"net": 521.17,
+"net_5d": 464.5,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "抖音概念(字节概念)",
+"net": 501.09,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125332,7 +128700,7 @@ false
 },
 {
 "name": "注册制次新股",
-"net": 257.18,
+"net": 500.86,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125341,7 +128709,7 @@ false
 },
 {
 "name": "新股与次新股",
-"net": 257.06,
+"net": 500.86,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125349,19 +128717,18 @@ false
 "trend": "in"
 },
 {
-"name": "腾讯概念",
-"net": 254.31,
-"net_5d": 229.05,
+"name": "科创次新股",
+"net": 495.68,
+"net_5d": 0,
 "net_20d": 0,
 "type": "概念",
-"source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 4,
 "trend": "in"
 },
 {
 "name": "国家大基金持股",
-"net": 242.58,
-"net_5d": 347.87,
+"net": 493.63,
+"net_5d": 563.25,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125369,89 +128736,29 @@ false
 "trend": "in"
 },
 {
-"name": "存储芯片",
-"net": 238.1,
-"net_5d": 393.51,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "芯片概念",
-"net": 237.38,
-"net_5d": 852.85,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "小米概念",
-"net": 235.21,
-"net_5d": 386.64,
-"net_20d": -1639.89,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 7,
-"trend": "in"
-},
-{
 "name": "半导体",
-"net": 234.62,
-"net_5d": 398.58,
-"net_20d": -2501.04,
+"net": 489.69,
+"net_5d": 569.33,
+"net_20d": -2517.05,
 "type": "行业",
 "source": "本地累加",
 "consecutive_days": 12,
 "trend": "in"
 },
 {
-"name": "创新药",
-"net": 16.44,
-"net_5d": 239.8,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 6,
-"trend": "in"
-},
-{
 "name": "深股通",
-"net": 13.96,
-"net_5d": 496.83,
+"net": 364.02,
+"net_5d": 463.24,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "同花顺出海50",
-"net": 13.56,
-"net_5d": 287.49,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 9,
-"trend": "in"
-},
-{
-"name": "一带一路",
-"net": 10.76,
-"net_5d": 356.29,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
 "trend": "in"
 },
 {
 "name": "华为概念",
-"net": 9.25,
-"net_5d": 625.91,
+"net": 206.65,
+"net_5d": 561.15,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125459,19 +128766,39 @@ false
 "trend": "in"
 },
 {
-"name": "储能",
-"net": 7.67,
-"net_5d": 437.26,
+"name": "新能源汽车",
+"net": 205.4,
+"net_5d": 418.79,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 8,
+"consecutive_days": 9,
+"trend": "in"
+},
+{
+"name": "沪股通",
+"net": 186.75,
+"net_5d": 683.52,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in"
+},
+{
+"name": "国企改革",
+"net": 144.04,
+"net_5d": 348.38,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 9,
 "trend": "in"
 },
 {
 "name": "5G",
-"net": 7.66,
-"net_5d": 567.04,
+"net": 141.04,
+"net_5d": 371.3,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125479,28 +128806,49 @@ false
 "trend": "in"
 },
 {
-"name": "医疗服务",
-"net": 7.43,
-"net_5d": 47.26,
-"net_20d": -31.63,
-"type": "行业",
+"name": "机器人概念",
+"net": 138.57,
+"net_5d": 343.23,
+"net_20d": 0,
+"type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 9,
 "trend": "in"
 },
 {
-"name": "CRO概念",
-"net": 7.3,
-"net_5d": 0,
+"name": "储能",
+"net": 135.08,
+"net_5d": 333.44,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 5,
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "人工智能",
+"net": 127.94,
+"net_5d": 546.44,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "数据中心(AIDC)",
+"net": 120.13,
+"net_5d": 680.07,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
 "trend": "in"
 },
 {
 "name": "PCB概念",
-"net": 7.28,
-"net_5d": 165.91,
+"net": 115.72,
+"net_5d": 141.63,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125508,86 +128856,9 @@ false
 "trend": "in"
 },
 {
-"name": "固态电池",
-"net": 7.22,
-"net_5d": 292.98,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
-"trend": "in"
-},
-{
-"name": "养老概念",
-"net": 7.21,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 2,
-"trend": "in"
-},
-{
-"name": "医药电商",
-"net": 6.89,
-"net_5d": 72.78,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 4,
-"trend": "in"
-},
-{
-"name": "仿制药一致性评价",
-"net": 6.77,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 5,
-"trend": "in"
-},
-{
-"name": "电池",
-"net": 6.74,
-"net_5d": 169.78,
-"net_20d": 0,
-"type": "行业",
-"source": "本地累加",
-"consecutive_days": 5,
-"trend": "in"
-},
-{
-"name": "锂电池概念",
-"net": 6.71,
-"net_5d": 429.39,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 9,
-"trend": "in"
-},
-{
-"name": "乡村振兴",
-"net": 6.5,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "宁德时代概念",
-"net": 6.28,
-"net_5d": 229.18,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
-"trend": "in"
-},
-{
-"name": "流感",
-"net": 6.24,
-"net_5d": 53.8,
+"name": "DeepSeek概念",
+"net": 112.98,
+"net_5d": 92.27,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125595,97 +128866,152 @@ false
 "trend": "in"
 },
 {
-"name": "元件",
-"net": 6.05,
-"net_5d": 101.23,
+"name": "一带一路",
+"net": 109.45,
+"net_5d": 252.12,
 "net_20d": 0,
-"type": "行业",
+"type": "概念",
 "source": "本地累加",
-"consecutive_days": 13,
+"consecutive_days": 8,
 "trend": "in"
 },
 {
-"name": "肝炎概念",
-"net": 6.02,
+"name": "军工",
+"net": 100.89,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 5,
+"consecutive_days": 4,
 "trend": "in"
 },
 {
-"name": "化学制药",
-"net": 6.01,
-"net_5d": 97.64,
-"net_20d": -78.15,
-"type": "行业",
+"name": "锂电池概念",
+"net": 99.01,
+"net_5d": 364.2,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 9,
+"trend": "in"
+},
+{
+"name": "2026中报预增",
+"net": 95.45,
+"net_5d": 618.77,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "专精特新",
+"net": 95.26,
+"net_5d": 265.76,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "光伏概念",
+"net": 94.6,
+"net_5d": 304.58,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "AI应用",
+"net": 90.95,
+"net_5d": 247.29,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "共封装光学(CPO)",
+"net": 90.25,
+"net_5d": 660.3,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "商业航天",
+"net": 88.1,
+"net_5d": 398.94,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "固态电池",
+"net": 83.44,
+"net_5d": 263.91,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "工业互联网",
+"net": 82.15,
+"net_5d": 437.75,
+"net_20d": 0,
+"type": "概念",
 "source": "本地累加",
 "consecutive_days": 7,
 "trend": "in"
 },
 {
-"name": "AI应用",
-"net": 5.71,
-"net_5d": 283.66,
+"name": "西部大开发",
+"net": 73.68,
+"net_5d": 311.31,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 7,
 "trend": "in"
 },
 {
-"name": "DeepSeek概念",
-"net": 5.65,
-"net_5d": 129.57,
+"name": "粤港澳大湾区",
+"net": 72.4,
+"net_5d": 203.29,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 9,
 "trend": "in"
 },
 {
-"name": "合成生物",
-"net": 5.35,
-"net_5d": 0,
+"name": "风电",
+"net": 71.02,
+"net_5d": 350.24,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 3,
+"source": "本地累加",
+"consecutive_days": 8,
 "trend": "in"
 },
 {
-"name": "福建自贸区",
-"net": 5.34,
-"net_5d": 0,
+"name": "人形机器人",
+"net": 70.82,
+"net_5d": 346.9,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "无人机",
-"net": 4.88,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "低空经济",
-"net": 4.79,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "燃料电池",
-"net": 4.76,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 4,
+"source": "本地累加",
+"consecutive_days": 8,
 "trend": "in"
 }
 ],
@@ -125693,18 +129019,28 @@ false
 "top_list": [
 {
 "name": "融资融券",
-"net": 271.79,
-"net_5d": 1174.07,
-"net_20d": 0,
+"net": 1020.03,
+"net_5d": 1028.8,
+"net_20d": -3888.61,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in"
 },
 {
-"name": "阿里巴巴概念",
-"net": 268.03,
-"net_5d": 322.44,
+"name": "芯片概念",
+"net": 685.94,
+"net_5d": 919.02,
+"net_20d": -5686.09,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "小米概念",
+"net": 544.64,
+"net_5d": 563.8,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125712,8 +129048,48 @@ false
 "trend": "in"
 },
 {
-"name": "科创次新股",
-"net": 257.72,
+"name": "阿里巴巴概念",
+"net": 542.58,
+"net_5d": 560.81,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 7,
+"trend": "in"
+},
+{
+"name": "人民币贬值受益",
+"net": 541.86,
+"net_5d": 345.15,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in"
+},
+{
+"name": "存储芯片",
+"net": 534.39,
+"net_5d": 598.72,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "腾讯概念",
+"net": 521.17,
+"net_5d": 464.5,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "抖音概念(字节概念)",
+"net": 501.09,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125722,7 +129098,7 @@ false
 },
 {
 "name": "注册制次新股",
-"net": 257.18,
+"net": 500.86,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125731,7 +129107,7 @@ false
 },
 {
 "name": "新股与次新股",
-"net": 257.06,
+"net": 500.86,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
@@ -125739,19 +129115,18 @@ false
 "trend": "in"
 },
 {
-"name": "腾讯概念",
-"net": 254.31,
-"net_5d": 229.05,
+"name": "科创次新股",
+"net": 495.68,
+"net_5d": 0,
 "net_20d": 0,
 "type": "概念",
-"source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 4,
 "trend": "in"
 },
 {
 "name": "国家大基金持股",
-"net": 242.58,
-"net_5d": 347.87,
+"net": 493.63,
+"net_5d": 563.25,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125759,89 +129134,29 @@ false
 "trend": "in"
 },
 {
-"name": "存储芯片",
-"net": 238.1,
-"net_5d": 393.51,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "芯片概念",
-"net": 237.38,
-"net_5d": 852.85,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "小米概念",
-"net": 235.21,
-"net_5d": 386.64,
-"net_20d": -1639.89,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 7,
-"trend": "in"
-},
-{
 "name": "半导体",
-"net": 234.62,
-"net_5d": 398.58,
-"net_20d": -2501.04,
+"net": 489.69,
+"net_5d": 569.33,
+"net_20d": -2517.05,
 "type": "行业",
 "source": "本地累加",
 "consecutive_days": 12,
 "trend": "in"
 },
 {
-"name": "创新药",
-"net": 16.44,
-"net_5d": 239.8,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 6,
-"trend": "in"
-},
-{
 "name": "深股通",
-"net": 13.96,
-"net_5d": 496.83,
+"net": 364.02,
+"net_5d": 463.24,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
-"trend": "in"
-},
-{
-"name": "同花顺出海50",
-"net": 13.56,
-"net_5d": 287.49,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 9,
-"trend": "in"
-},
-{
-"name": "一带一路",
-"net": 10.76,
-"net_5d": 356.29,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
 "trend": "in"
 },
 {
 "name": "华为概念",
-"net": 9.25,
-"net_5d": 625.91,
+"net": 206.65,
+"net_5d": 561.15,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125849,19 +129164,39 @@ false
 "trend": "in"
 },
 {
-"name": "储能",
-"net": 7.67,
-"net_5d": 437.26,
+"name": "新能源汽车",
+"net": 205.4,
+"net_5d": 418.79,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 8,
+"consecutive_days": 9,
+"trend": "in"
+},
+{
+"name": "沪股通",
+"net": 186.75,
+"net_5d": 683.52,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in"
+},
+{
+"name": "国企改革",
+"net": 144.04,
+"net_5d": 348.38,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 9,
 "trend": "in"
 },
 {
 "name": "5G",
-"net": 7.66,
-"net_5d": 567.04,
+"net": 141.04,
+"net_5d": 371.3,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125869,28 +129204,49 @@ false
 "trend": "in"
 },
 {
-"name": "医疗服务",
-"net": 7.43,
-"net_5d": 47.26,
-"net_20d": -31.63,
-"type": "行业",
+"name": "机器人概念",
+"net": 138.57,
+"net_5d": 343.23,
+"net_20d": 0,
+"type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 9,
 "trend": "in"
 },
 {
-"name": "CRO概念",
-"net": 7.3,
-"net_5d": 0,
+"name": "储能",
+"net": 135.08,
+"net_5d": 333.44,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 5,
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "人工智能",
+"net": 127.94,
+"net_5d": 546.44,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "数据中心(AIDC)",
+"net": 120.13,
+"net_5d": 680.07,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
 "trend": "in"
 },
 {
 "name": "PCB概念",
-"net": 7.28,
-"net_5d": 165.91,
+"net": 115.72,
+"net_5d": 141.63,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125898,86 +129254,9 @@ false
 "trend": "in"
 },
 {
-"name": "固态电池",
-"net": 7.22,
-"net_5d": 292.98,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
-"trend": "in"
-},
-{
-"name": "养老概念",
-"net": 7.21,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 2,
-"trend": "in"
-},
-{
-"name": "医药电商",
-"net": 6.89,
-"net_5d": 72.78,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 4,
-"trend": "in"
-},
-{
-"name": "仿制药一致性评价",
-"net": 6.77,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 5,
-"trend": "in"
-},
-{
-"name": "电池",
-"net": 6.74,
-"net_5d": 169.78,
-"net_20d": 0,
-"type": "行业",
-"source": "本地累加",
-"consecutive_days": 5,
-"trend": "in"
-},
-{
-"name": "锂电池概念",
-"net": 6.71,
-"net_5d": 429.39,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 9,
-"trend": "in"
-},
-{
-"name": "乡村振兴",
-"net": 6.5,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "宁德时代概念",
-"net": 6.28,
-"net_5d": 229.18,
-"net_20d": 0,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 8,
-"trend": "in"
-},
-{
-"name": "流感",
-"net": 6.24,
-"net_5d": 53.8,
+"name": "DeepSeek概念",
+"net": 112.98,
+"net_5d": 92.27,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -125985,130 +129264,157 @@ false
 "trend": "in"
 },
 {
-"name": "元件",
-"net": 6.05,
-"net_5d": 101.23,
+"name": "一带一路",
+"net": 109.45,
+"net_5d": 252.12,
 "net_20d": 0,
-"type": "行业",
+"type": "概念",
 "source": "本地累加",
-"consecutive_days": 13,
+"consecutive_days": 8,
 "trend": "in"
 },
 {
-"name": "肝炎概念",
-"net": 6.02,
+"name": "军工",
+"net": 100.89,
 "net_5d": 0,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 5,
+"consecutive_days": 4,
 "trend": "in"
 },
 {
-"name": "化学制药",
-"net": 6.01,
-"net_5d": 97.64,
-"net_20d": -78.15,
-"type": "行业",
+"name": "锂电池概念",
+"net": 99.01,
+"net_5d": 364.2,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 9,
+"trend": "in"
+},
+{
+"name": "2026中报预增",
+"net": 95.45,
+"net_5d": 618.77,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "专精特新",
+"net": 95.26,
+"net_5d": 265.76,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "光伏概念",
+"net": 94.6,
+"net_5d": 304.58,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "AI应用",
+"net": 90.95,
+"net_5d": 247.29,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "共封装光学(CPO)",
+"net": 90.25,
+"net_5d": 660.3,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in"
+},
+{
+"name": "商业航天",
+"net": 88.1,
+"net_5d": 398.94,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in"
+},
+{
+"name": "固态电池",
+"net": 83.44,
+"net_5d": 263.91,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 8,
+"trend": "in"
+},
+{
+"name": "工业互联网",
+"net": 82.15,
+"net_5d": 437.75,
+"net_20d": 0,
+"type": "概念",
 "source": "本地累加",
 "consecutive_days": 7,
 "trend": "in"
 },
 {
-"name": "AI应用",
-"net": 5.71,
-"net_5d": 283.66,
+"name": "西部大开发",
+"net": 73.68,
+"net_5d": 311.31,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 7,
 "trend": "in"
 },
 {
-"name": "DeepSeek概念",
-"net": 5.65,
-"net_5d": 129.57,
+"name": "粤港澳大湾区",
+"net": 72.4,
+"net_5d": 203.29,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
-"consecutive_days": 6,
+"consecutive_days": 9,
 "trend": "in"
 },
 {
-"name": "合成生物",
-"net": 5.35,
-"net_5d": 0,
+"name": "风电",
+"net": 71.02,
+"net_5d": 350.24,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 3,
+"source": "本地累加",
+"consecutive_days": 8,
 "trend": "in"
 },
 {
-"name": "福建自贸区",
-"net": 5.34,
-"net_5d": 0,
+"name": "人形机器人",
+"net": 70.82,
+"net_5d": 346.9,
 "net_20d": 0,
 "type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "无人机",
-"net": 4.88,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "低空经济",
-"net": 4.79,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 3,
-"trend": "in"
-},
-{
-"name": "燃料电池",
-"net": 4.76,
-"net_5d": 0,
-"net_20d": 0,
-"type": "概念",
-"consecutive_days": 4,
+"source": "本地累加",
+"consecutive_days": 8,
 "trend": "in"
 }
 ],
 "consecutive": {
 "融资融券": {
-"days": 10,
-"trend": "in"
-},
-"阿里巴巴概念": {
-"days": 7,
-"trend": "in"
-},
-"科创次新股": {
-"days": 4,
-"trend": "in"
-},
-"注册制次新股": {
-"days": 3,
-"trend": "in"
-},
-"新股与次新股": {
-"days": 3,
-"trend": "in"
-},
-"腾讯概念": {
-"days": 6,
-"trend": "in"
-},
-"国家大基金持股": {
-"days": 8,
-"trend": "in"
-},
-"存储芯片": {
 "days": 10,
 "trend": "in"
 },
@@ -126120,246 +129426,203 @@ false
 "days": 7,
 "trend": "in"
 },
-"半导体": {
-"days": 12,
+"阿里巴巴概念": {
+"days": 7,
 "trend": "in"
 },
-"创新药": {
+"人民币贬值受益": {
+"days": 11,
+"trend": "in"
+},
+"存储芯片": {
+"days": 10,
+"trend": "in"
+},
+"腾讯概念": {
 "days": 6,
+"trend": "in"
+},
+"抖音概念(字节概念)": {
+"days": 4,
+"trend": "in"
+},
+"注册制次新股": {
+"days": 3,
+"trend": "in"
+},
+"新股与次新股": {
+"days": 3,
+"trend": "in"
+},
+"科创次新股": {
+"days": 4,
+"trend": "in"
+},
+"国家大基金持股": {
+"days": 8,
+"trend": "in"
+},
+"半导体": {
+"days": 12,
 "trend": "in"
 },
 "深股通": {
 "days": 10,
 "trend": "in"
 },
-"同花顺出海50": {
-"days": 9,
-"trend": "in"
-},
-"一带一路": {
-"days": 8,
-"trend": "in"
-},
 "华为概念": {
 "days": 10,
 "trend": "in"
 },
-"储能": {
-"days": 8,
+"新能源汽车": {
+"days": 9,
+"trend": "in"
+},
+"沪股通": {
+"days": 11,
+"trend": "in"
+},
+"国企改革": {
+"days": 9,
 "trend": "in"
 },
 "5G": {
 "days": 10,
 "trend": "in"
 },
-"医疗服务": {
-"days": 6,
+"机器人概念": {
+"days": 9,
 "trend": "in"
 },
-"CRO概念": {
-"days": 5,
+"储能": {
+"days": 8,
+"trend": "in"
+},
+"人工智能": {
+"days": 8,
+"trend": "in"
+},
+"数据中心(AIDC)": {
+"days": 10,
 "trend": "in"
 },
 "PCB概念": {
 "days": 9,
 "trend": "in"
 },
-"固态电池": {
+"DeepSeek概念": {
+"days": 6,
+"trend": "in"
+},
+"一带一路": {
 "days": 8,
 "trend": "in"
 },
-"养老概念": {
-"days": 2,
-"trend": "in"
-},
-"医药电商": {
+"军工": {
 "days": 4,
-"trend": "in"
-},
-"仿制药一致性评价": {
-"days": 5,
-"trend": "in"
-},
-"电池": {
-"days": 5,
 "trend": "in"
 },
 "锂电池概念": {
 "days": 9,
 "trend": "in"
 },
-"乡村振兴": {
-"days": 3,
-"trend": "in"
-},
-"宁德时代概念": {
+"2026中报预增": {
 "days": 8,
 "trend": "in"
 },
-"流感": {
-"days": 6,
+"专精特新": {
+"days": 8,
 "trend": "in"
 },
-"元件": {
-"days": 13,
-"trend": "in"
-},
-"肝炎概念": {
-"days": 5,
-"trend": "in"
-},
-"化学制药": {
-"days": 7,
+"光伏概念": {
+"days": 8,
 "trend": "in"
 },
 "AI应用": {
 "days": 6,
 "trend": "in"
 },
-"DeepSeek概念": {
+"共封装光学(CPO)": {
+"days": 10,
+"trend": "in"
+},
+"商业航天": {
 "days": 6,
 "trend": "in"
 },
-"合成生物": {
-"days": 3,
+"固态电池": {
+"days": 8,
 "trend": "in"
 },
-"福建自贸区": {
-"days": 3,
+"工业互联网": {
+"days": 7,
 "trend": "in"
 },
-"无人机": {
-"days": 3,
+"西部大开发": {
+"days": 7,
 "trend": "in"
 },
-"低空经济": {
-"days": 3,
+"粤港澳大湾区": {
+"days": 9,
 "trend": "in"
 },
-"燃料电池": {
-"days": 4,
+"风电": {
+"days": 8,
+"trend": "in"
+},
+"人形机器人": {
+"days": 8,
 "trend": "in"
 }
 },
 "trend_5d": [
 {
 "name": "融资融券",
-"net": 271.79,
-"net_5d": 1028.8,
-"net_20d": 3213.08,
+"net": 1020.03,
+"net_5d": 1777.04,
+"net_20d": 3961.32,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 3213.08,
+"net_60d": 3961.32,
 "net_60d_days": 10
 },
 {
 "name": "芯片概念",
-"net": 237.38,
-"net_5d": 919.02,
-"net_20d": 2112.91,
+"net": 685.94,
+"net_5d": 1367.58,
+"net_20d": 2561.47,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 2112.91,
+"net_60d": 2561.47,
 "net_60d_days": 10
-},
-{
-"name": "沪股通",
-"net": 15.59,
-"net_5d": 683.52,
-"net_20d": 1463.36,
-"net_60d": 1463.36,
-"type": "行业",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
-},
-{
-"name": "数据中心(AIDC)",
-"net": 15.01,
-"net_5d": 680.07,
-"net_20d": 0,
-"net_60d": null,
-"type": "行业",
-"consecutive_days": 9,
-"trend": "in",
-"net_5d_days": 5
-},
-{
-"name": "共封装光学(CPO)",
-"net": 36.15,
-"net_5d": 660.3,
-"net_20d": 0,
-"net_60d": null,
-"type": "行业",
-"consecutive_days": 9,
-"trend": "in",
-"net_5d_days": 5
-},
-{
-"name": "2026中报预增",
-"net": 19.32,
-"net_5d": 618.77,
-"net_20d": 0,
-"net_60d": null,
-"type": "行业",
-"consecutive_days": 7,
-"trend": "in",
-"net_5d_days": 5
 },
 {
 "name": "存储芯片",
-"net": 238.1,
-"net_5d": 598.72,
-"net_20d": 1082.16,
+"net": 534.39,
+"net_5d": 895.01,
+"net_20d": 1378.45,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1082.16,
+"net_60d": 1378.45,
 "net_60d_days": 10
 },
 {
-"name": "先进封装",
-"net": 64.25,
-"net_5d": 576.03,
-"net_20d": 0,
-"net_60d": null,
-"type": "行业",
-"consecutive_days": 7,
-"trend": "in",
-"net_5d_days": 5
-},
-{
-"name": "半导体",
-"net": 234.62,
-"net_5d": 569.33,
-"net_20d": 1335.99,
-"type": "行业",
-"source": "本地累加",
-"consecutive_days": 12,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 12,
-"net_60d": 1335.99,
-"net_60d_days": 12
-},
-{
 "name": "小米概念",
-"net": 235.21,
-"net_5d": 563.8,
-"net_20d": -1639.89,
+"net": 544.64,
+"net_5d": 873.23,
+"net_20d": 0,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 7,
@@ -126368,9 +129631,49 @@ false
 "net_60d": null
 },
 {
+"name": "阿里巴巴概念",
+"net": 542.58,
+"net_5d": 835.36,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 7,
+"trend": "in",
+"net_5d_days": 5,
+"net_60d": null
+},
+{
+"name": "人民币贬值受益",
+"net": 541.86,
+"net_5d": 834.37,
+"net_20d": 1760.92,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 11,
+"net_60d": 1760.92,
+"net_60d_days": 11
+},
+{
+"name": "半导体",
+"net": 489.69,
+"net_5d": 824.4,
+"net_20d": 1591.06,
+"type": "行业",
+"source": "本地累加",
+"consecutive_days": 12,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 12,
+"net_60d": 1591.06,
+"net_60d_days": 12
+},
+{
 "name": "国家大基金持股",
-"net": 242.58,
-"net_5d": 563.25,
+"net": 493.63,
+"net_5d": 814.3,
 "net_20d": 0,
 "type": "概念",
 "source": "本地累加",
@@ -126380,115 +129683,213 @@ false
 "net_60d": null
 },
 {
-"name": "华为概念",
-"net": 9.25,
-"net_5d": 561.15,
-"net_20d": 1104.29,
+"name": "深股通",
+"net": 364.02,
+"net_5d": 813.3,
+"net_20d": 1990.01,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1104.29,
+"net_60d": 1990.01,
+"net_60d_days": 10
+},
+{
+"name": "华为概念",
+"net": 206.65,
+"net_5d": 758.55,
+"net_20d": 1301.69,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1301.69,
+"net_60d_days": 10
+},
+{
+"name": "腾讯概念",
+"net": 521.17,
+"net_5d": 731.36,
+"net_20d": 0,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 6,
+"trend": "in",
+"net_5d_days": 5,
+"net_60d": null
+},
+{
+"name": "数据中心(AIDC)",
+"net": 120.13,
+"net_5d": 586.39,
+"net_20d": 1546.75,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1546.75,
 "net_60d_days": 10
 }
 ],
 "trend_20d": [
 {
 "name": "融资融券",
-"net": 271.79,
-"net_5d": 1028.8,
-"net_20d": 3213.08,
+"net": 1020.03,
+"net_5d": 1777.04,
+"net_20d": 3961.32,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 3213.08,
+"net_60d": 3961.32,
 "net_60d_days": 10
 },
 {
 "name": "芯片概念",
-"net": 237.38,
-"net_5d": 919.02,
-"net_20d": 2112.91,
+"net": 685.94,
+"net_5d": 1367.58,
+"net_20d": 2561.47,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 2112.91,
+"net_60d": 2561.47,
 "net_60d_days": 10
 },
 {
 "name": "深股通",
-"net": 13.96,
-"net_5d": 463.24,
-"net_20d": 1639.95,
+"net": 364.02,
+"net_5d": 813.3,
+"net_20d": 1990.01,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1639.95,
+"net_60d": 1990.01,
 "net_60d_days": 10
+},
+{
+"name": "人民币贬值受益",
+"net": 541.86,
+"net_5d": 834.37,
+"net_20d": 1760.92,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 11,
+"net_60d": 1760.92,
+"net_60d_days": 11
 },
 {
 "name": "沪股通",
-"net": 15.59,
-"net_5d": 683.52,
-"net_20d": 1463.36,
-"net_60d": 1463.36,
-"type": "行业",
-"consecutive_days": 10,
+"net": 186.75,
+"net_5d": 522.38,
+"net_20d": 1650.11,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
 "trend": "in",
 "net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
+"net_20d_days": 11,
+"net_60d": 1650.11,
+"net_60d_days": 11
 },
 {
 "name": "半导体",
-"net": 234.62,
-"net_5d": 569.33,
-"net_20d": 1335.99,
+"net": 489.69,
+"net_5d": 824.4,
+"net_20d": 1591.06,
 "type": "行业",
 "source": "本地累加",
 "consecutive_days": 12,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 12,
-"net_60d": 1335.99,
+"net_60d": 1591.06,
 "net_60d_days": 12
 },
 {
-"name": "5G",
-"net": 7.66,
-"net_5d": 371.3,
-"net_20d": 1308.81,
+"name": "数据中心(AIDC)",
+"net": 120.13,
+"net_5d": 586.39,
+"net_20d": 1546.75,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1308.81,
+"net_60d": 1546.75,
 "net_60d_days": 10
 },
 {
-"name": "人民币贬值受益",
-"net": 14.92,
-"net_5d": 345.15,
-"net_20d": 1219.06,
-"net_60d": 1219.06,
-"type": "行业",
+"name": "5G",
+"net": 141.04,
+"net_5d": 504.68,
+"net_20d": 1442.19,
+"type": "概念",
+"source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
+"net_60d": 1442.19,
+"net_60d_days": 10
+},
+{
+"name": "共封装光学(CPO)",
+"net": 90.25,
+"net_5d": 502.89,
+"net_20d": 1416.32,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1416.32,
+"net_60d_days": 10
+},
+{
+"name": "存储芯片",
+"net": 534.39,
+"net_5d": 895.01,
+"net_20d": 1378.45,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1378.45,
+"net_60d_days": 10
+},
+{
+"name": "华为概念",
+"net": 206.65,
+"net_5d": 758.55,
+"net_20d": 1301.69,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1301.69,
 "net_60d_days": 10
 },
 {
@@ -126503,157 +129904,161 @@ false
 "net_5d_days": 5,
 "net_20d_days": 11,
 "net_60d_days": 11
-},
-{
-"name": "华为概念",
-"net": 9.25,
-"net_5d": 561.15,
-"net_20d": 1104.29,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d": 1104.29,
-"net_60d_days": 10
-},
-{
-"name": "存储芯片",
-"net": 238.1,
-"net_5d": 598.72,
-"net_20d": 1082.16,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d": 1082.16,
-"net_60d_days": 10
-},
-{
-"name": "同花顺漂亮100",
-"net": 79.89,
-"net_5d": 419.82,
-"net_20d": 781.12,
-"net_60d": 781.12,
-"type": "行业",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
-},
-{
-"name": "消费电子概念",
-"net": 28.54,
-"net_5d": 312.32,
-"net_20d": 753.49,
-"net_60d": 753.49,
-"type": "概念",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
 }
 ],
 "trend_60d": [
 {
 "name": "融资融券",
-"net": 271.79,
-"net_5d": 1028.8,
-"net_20d": 3213.08,
+"net": 1020.03,
+"net_5d": 1777.04,
+"net_20d": 3961.32,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 3213.08,
+"net_60d": 3961.32,
 "net_60d_days": 10
 },
 {
 "name": "芯片概念",
-"net": 237.38,
-"net_5d": 919.02,
-"net_20d": 2112.91,
+"net": 685.94,
+"net_5d": 1367.58,
+"net_20d": 2561.47,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 2112.91,
+"net_60d": 2561.47,
 "net_60d_days": 10
 },
 {
 "name": "深股通",
-"net": 13.96,
-"net_5d": 463.24,
-"net_20d": 1639.95,
+"net": 364.02,
+"net_5d": 813.3,
+"net_20d": 1990.01,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1639.95,
+"net_60d": 1990.01,
 "net_60d_days": 10
+},
+{
+"name": "人民币贬值受益",
+"net": 541.86,
+"net_5d": 834.37,
+"net_20d": 1760.92,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 11,
+"net_60d": 1760.92,
+"net_60d_days": 11
 },
 {
 "name": "沪股通",
-"net": 15.59,
-"net_5d": 683.52,
-"net_20d": 1463.36,
-"net_60d": 1463.36,
-"type": "行业",
-"consecutive_days": 10,
+"net": 186.75,
+"net_5d": 522.38,
+"net_20d": 1650.11,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 11,
 "trend": "in",
 "net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
+"net_20d_days": 11,
+"net_60d": 1650.11,
+"net_60d_days": 11
 },
 {
 "name": "半导体",
-"net": 234.62,
-"net_5d": 569.33,
-"net_20d": 1335.99,
+"net": 489.69,
+"net_5d": 824.4,
+"net_20d": 1591.06,
 "type": "行业",
 "source": "本地累加",
 "consecutive_days": 12,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 12,
-"net_60d": 1335.99,
+"net_60d": 1591.06,
 "net_60d_days": 12
 },
 {
-"name": "5G",
-"net": 7.66,
-"net_5d": 371.3,
-"net_20d": 1308.81,
+"name": "数据中心(AIDC)",
+"net": 120.13,
+"net_5d": 586.39,
+"net_20d": 1546.75,
 "type": "概念",
 "source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
-"net_60d": 1308.81,
+"net_60d": 1546.75,
 "net_60d_days": 10
 },
 {
-"name": "人民币贬值受益",
-"net": 14.92,
-"net_5d": 345.15,
-"net_20d": 1219.06,
-"net_60d": 1219.06,
-"type": "行业",
+"name": "5G",
+"net": 141.04,
+"net_5d": 504.68,
+"net_20d": 1442.19,
+"type": "概念",
+"source": "本地累加",
 "consecutive_days": 10,
 "trend": "in",
 "net_5d_days": 5,
 "net_20d_days": 10,
+"net_60d": 1442.19,
+"net_60d_days": 10
+},
+{
+"name": "共封装光学(CPO)",
+"net": 90.25,
+"net_5d": 502.89,
+"net_20d": 1416.32,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1416.32,
+"net_60d_days": 10
+},
+{
+"name": "存储芯片",
+"net": 534.39,
+"net_5d": 895.01,
+"net_20d": 1378.45,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1378.45,
+"net_60d_days": 10
+},
+{
+"name": "华为概念",
+"net": 206.65,
+"net_5d": 758.55,
+"net_20d": 1301.69,
+"type": "概念",
+"source": "本地累加",
+"consecutive_days": 10,
+"trend": "in",
+"net_5d_days": 5,
+"net_20d_days": 10,
+"net_60d": 1301.69,
 "net_60d_days": 10
 },
 {
@@ -126668,441 +130073,374 @@ false
 "net_5d_days": 5,
 "net_20d_days": 11,
 "net_60d_days": 11
-},
-{
-"name": "华为概念",
-"net": 9.25,
-"net_5d": 561.15,
-"net_20d": 1104.29,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d": 1104.29,
-"net_60d_days": 10
-},
-{
-"name": "存储芯片",
-"net": 238.1,
-"net_5d": 598.72,
-"net_20d": 1082.16,
-"type": "概念",
-"source": "本地累加",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d": 1082.16,
-"net_60d_days": 10
-},
-{
-"name": "同花顺漂亮100",
-"net": 79.89,
-"net_5d": 419.82,
-"net_20d": 781.12,
-"net_60d": 781.12,
-"type": "行业",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
-},
-{
-"name": "消费电子概念",
-"net": 28.54,
-"net_5d": 312.32,
-"net_20d": 753.49,
-"net_60d": 753.49,
-"type": "概念",
-"consecutive_days": 10,
-"trend": "in",
-"net_5d_days": 5,
-"net_20d_days": 10,
-"net_60d_days": 10
 }
 ]
 };var SH_SZ_HISTORY = window.SH_SZ_HISTORY = {
-"update_time": "2026-07-27 09:34",
+"update_time": "2026-07-27 15:39",
 "amount_history": [
 {
-"date": "4/28",
-"sh_amount": 12872.6,
-"sz_amount": 13020.3,
-"total": 25892.9
-},
-{
 "date": "4/29",
-"sh_amount": 13166.6,
-"sz_amount": 13247.9,
-"total": 26414.5
+"sh_amount": 12546.6,
+"sz_amount": 13472.1,
+"total": 26018.8
 },
 {
 "date": "4/30",
-"sh_amount": 14081.7,
-"sz_amount": 13271.8,
-"total": 27353.5
+"sh_amount": 13418.7,
+"sz_amount": 13496.3,
+"total": 26915.0
 },
 {
 "date": "5/6",
-"sh_amount": 15030.6,
-"sz_amount": 14864.7,
-"total": 29895.3
+"sh_amount": 14322.9,
+"sz_amount": 15116.3,
+"total": 29439.2
 },
 {
 "date": "5/7",
-"sh_amount": 14696.1,
-"sz_amount": 15192.9,
-"total": 29889.0
+"sh_amount": 14004.2,
+"sz_amount": 15450.0,
+"total": 29454.2
 },
 {
 "date": "5/8",
-"sh_amount": 14941.5,
-"sz_amount": 14864.2,
-"total": 29805.6
+"sh_amount": 14237.9,
+"sz_amount": 15115.7,
+"total": 29353.7
 },
 {
 "date": "5/11",
-"sh_amount": 16350.2,
-"sz_amount": 16400.9,
-"total": 32751.1
+"sh_amount": 15580.3,
+"sz_amount": 16678.4,
+"total": 32258.8
 },
 {
 "date": "5/12",
-"sh_amount": 15412.3,
-"sz_amount": 15252.8,
-"total": 30665.1
+"sh_amount": 14686.6,
+"sz_amount": 15510.9,
+"total": 30197.5
 },
 {
 "date": "5/13",
-"sh_amount": 15112.9,
-"sz_amount": 14884.4,
-"total": 29997.3
+"sh_amount": 14401.3,
+"sz_amount": 15136.3,
+"total": 29537.6
 },
 {
 "date": "5/14",
-"sh_amount": 16382.3,
-"sz_amount": 15715.3,
-"total": 32097.6
+"sh_amount": 15611.0,
+"sz_amount": 15981.2,
+"total": 31592.2
 },
 {
 "date": "5/15",
-"sh_amount": 15716.2,
-"sz_amount": 15286.6,
-"total": 31002.8
+"sh_amount": 14976.2,
+"sz_amount": 15545.2,
+"total": 30521.5
 },
 {
 "date": "5/18",
-"sh_amount": 13445.5,
-"sz_amount": 13282.6,
-"total": 26728.1
+"sh_amount": 12812.4,
+"sz_amount": 13507.3,
+"total": 26319.8
 },
 {
 "date": "5/19",
-"sh_amount": 13239.2,
-"sz_amount": 13155.0,
-"total": 26394.3
+"sh_amount": 12615.9,
+"sz_amount": 13377.7,
+"total": 25993.5
 },
 {
 "date": "5/20",
-"sh_amount": 13379.5,
-"sz_amount": 13065.1,
-"total": 26444.6
+"sh_amount": 12749.5,
+"sz_amount": 13286.2,
+"total": 26035.7
 },
 {
 "date": "5/21",
-"sh_amount": 15588.8,
-"sz_amount": 15813.5,
-"total": 31402.3
+"sh_amount": 14854.8,
+"sz_amount": 16081.1,
+"total": 30935.9
 },
 {
 "date": "5/22",
-"sh_amount": 12635.8,
-"sz_amount": 13728.1,
-"total": 26363.8
+"sh_amount": 12040.8,
+"sz_amount": 13960.4,
+"total": 26001.2
 },
 {
 "date": "5/25",
-"sh_amount": 13203.2,
-"sz_amount": 14054.7,
-"total": 27258.0
+"sh_amount": 12581.6,
+"sz_amount": 14292.6,
+"total": 26874.1
 },
 {
 "date": "5/26",
-"sh_amount": 14036.0,
-"sz_amount": 14811.2,
-"total": 28847.2
+"sh_amount": 13375.1,
+"sz_amount": 15061.8,
+"total": 28436.9
 },
 {
 "date": "5/27",
-"sh_amount": 14157.9,
-"sz_amount": 14678.0,
-"total": 28836.0
+"sh_amount": 13491.3,
+"sz_amount": 14926.4,
+"total": 28417.7
 },
 {
 "date": "5/28",
-"sh_amount": 13315.7,
-"sz_amount": 13454.3,
-"total": 26770.0
+"sh_amount": 12688.8,
+"sz_amount": 13682.0,
+"total": 26370.7
 },
 {
 "date": "5/29",
-"sh_amount": 15682.7,
-"sz_amount": 15271.9,
-"total": 30954.6
+"sh_amount": 14944.3,
+"sz_amount": 15530.3,
+"total": 30474.6
 },
 {
 "date": "6/1",
-"sh_amount": 14491.4,
-"sz_amount": 13679.9,
-"total": 28171.4
+"sh_amount": 13809.1,
+"sz_amount": 13911.4,
+"total": 27720.5
 },
 {
 "date": "6/2",
-"sh_amount": 13767.3,
-"sz_amount": 13265.4,
-"total": 27032.7
+"sh_amount": 13119.1,
+"sz_amount": 13489.9,
+"total": 26608.9
 },
 {
 "date": "6/3",
-"sh_amount": 14329.1,
-"sz_amount": 14261.9,
-"total": 28590.9
+"sh_amount": 13654.4,
+"sz_amount": 14503.2,
+"total": 28157.6
 },
 {
 "date": "6/4",
-"sh_amount": 13316.1,
-"sz_amount": 12934.2,
-"total": 26250.2
+"sh_amount": 12689.1,
+"sz_amount": 13153.0,
+"total": 25842.1
 },
 {
 "date": "6/5",
-"sh_amount": 14210.5,
-"sz_amount": 14720.9,
-"total": 28931.3
+"sh_amount": 13541.4,
+"sz_amount": 14970.0,
+"total": 28511.3
 },
 {
 "date": "6/8",
-"sh_amount": 14132.8,
-"sz_amount": 14188.1,
-"total": 28320.9
+"sh_amount": 13467.3,
+"sz_amount": 14428.2,
+"total": 27895.6
 },
 {
 "date": "6/9",
-"sh_amount": 12359.5,
-"sz_amount": 12918.2,
-"total": 25277.7
+"sh_amount": 11777.5,
+"sz_amount": 13136.8,
+"total": 24914.3
 },
 {
 "date": "6/10",
-"sh_amount": 12833.8,
-"sz_amount": 12781.7,
-"total": 25615.4
+"sh_amount": 12229.5,
+"sz_amount": 12998.0,
+"total": 25227.4
 },
 {
 "date": "6/11",
-"sh_amount": 12187.5,
-"sz_amount": 12050.4,
-"total": 24237.9
+"sh_amount": 11613.6,
+"sz_amount": 12254.4,
+"total": 23868.0
 },
 {
 "date": "6/12",
-"sh_amount": 15929.9,
-"sz_amount": 14254.6,
-"total": 30184.5
+"sh_amount": 15179.9,
+"sz_amount": 14495.8,
+"total": 29675.7
 },
 {
 "date": "6/15",
-"sh_amount": 14553.2,
-"sz_amount": 13619.9,
-"total": 28173.1
+"sh_amount": 13868.0,
+"sz_amount": 13850.4,
+"total": 27718.3
 },
 {
 "date": "6/16",
-"sh_amount": 13197.6,
-"sz_amount": 13579.8,
-"total": 26777.4
+"sh_amount": 12576.2,
+"sz_amount": 13809.6,
+"total": 26385.8
 },
 {
 "date": "6/17",
-"sh_amount": 13034.9,
-"sz_amount": 13419.5,
-"total": 26454.4
+"sh_amount": 12421.1,
+"sz_amount": 13646.6,
+"total": 26067.7
 },
 {
 "date": "6/18",
-"sh_amount": 14107.5,
-"sz_amount": 13746.7,
-"total": 27854.3
+"sh_amount": 13443.3,
+"sz_amount": 13979.4,
+"total": 27422.6
 },
 {
 "date": "6/22",
-"sh_amount": 15942.1,
-"sz_amount": 15766.6,
-"total": 31708.7
+"sh_amount": 15191.5,
+"sz_amount": 16033.4,
+"total": 31224.9
 },
 {
 "date": "6/23",
-"sh_amount": 15198.4,
-"sz_amount": 14526.6,
-"total": 29725.0
+"sh_amount": 14482.8,
+"sz_amount": 14772.4,
+"total": 29255.2
 },
 {
 "date": "6/24",
-"sh_amount": 13816.2,
-"sz_amount": 14214.9,
-"total": 28031.2
+"sh_amount": 13165.7,
+"sz_amount": 14455.5,
+"total": 27621.2
 },
 {
 "date": "6/25",
-"sh_amount": 14372.1,
-"sz_amount": 14941.7,
-"total": 29313.8
+"sh_amount": 13695.4,
+"sz_amount": 15194.5,
+"total": 28889.9
 },
 {
 "date": "6/26",
-"sh_amount": 14150.2,
-"sz_amount": 15049.4,
-"total": 29199.6
+"sh_amount": 13484.0,
+"sz_amount": 15304.0,
+"total": 28788.0
 },
 {
 "date": "6/29",
-"sh_amount": 14130.8,
-"sz_amount": 14537.1,
-"total": 28667.8
+"sh_amount": 13465.4,
+"sz_amount": 14783.1,
+"total": 28248.5
 },
 {
 "date": "6/30",
-"sh_amount": 12827.7,
-"sz_amount": 13395.4,
-"total": 26223.1
+"sh_amount": 12223.7,
+"sz_amount": 13622.1,
+"total": 25845.8
 },
 {
 "date": "7/1",
-"sh_amount": 14412.3,
-"sz_amount": 15708.4,
-"total": 30120.6
+"sh_amount": 13733.7,
+"sz_amount": 15974.2,
+"total": 29707.8
 },
 {
 "date": "7/2",
-"sh_amount": 14067.2,
-"sz_amount": 15411.2,
-"total": 29478.4
+"sh_amount": 13404.8,
+"sz_amount": 15672.0,
+"total": 29076.8
 },
 {
 "date": "7/3",
-"sh_amount": 12904.8,
-"sz_amount": 14131.4,
-"total": 27036.2
+"sh_amount": 12297.2,
+"sz_amount": 14370.5,
+"total": 26667.7
 },
 {
 "date": "7/6",
-"sh_amount": 12655.2,
-"sz_amount": 13810.2,
-"total": 26465.4
+"sh_amount": 12059.3,
+"sz_amount": 14043.9,
+"total": 26103.2
 },
 {
 "date": "7/7",
-"sh_amount": 11027.9,
-"sz_amount": 12199.7,
-"total": 23227.6
+"sh_amount": 10508.7,
+"sz_amount": 12406.1,
+"total": 22914.8
 },
 {
 "date": "7/8",
-"sh_amount": 10637.3,
-"sz_amount": 11773.7,
-"total": 22411.0
+"sh_amount": 10136.4,
+"sz_amount": 11972.9,
+"total": 22109.3
 },
 {
 "date": "7/9",
-"sh_amount": 11855.6,
-"sz_amount": 12884.8,
-"total": 24740.4
+"sh_amount": 11297.4,
+"sz_amount": 13102.8,
+"total": 24400.2
 },
 {
 "date": "7/10",
-"sh_amount": 13450.2,
-"sz_amount": 14907.1,
-"total": 28357.3
+"sh_amount": 12816.9,
+"sz_amount": 15159.4,
+"total": 27976.2
 },
 {
 "date": "7/13",
-"sh_amount": 12666.8,
-"sz_amount": 13197.2,
-"total": 25864.0
+"sh_amount": 12070.4,
+"sz_amount": 13420.5,
+"total": 25490.9
 },
 {
 "date": "7/14",
-"sh_amount": 12432.6,
-"sz_amount": 12139.2,
-"total": 24571.8
+"sh_amount": 11847.2,
+"sz_amount": 12344.6,
+"total": 24191.9
 },
 {
 "date": "7/15",
-"sh_amount": 12351.8,
-"sz_amount": 12394.1,
-"total": 24745.9
+"sh_amount": 11770.2,
+"sz_amount": 12603.8,
+"total": 24374.0
 },
 {
 "date": "7/16",
-"sh_amount": 11474.4,
-"sz_amount": 11979.4,
-"total": 23453.8
+"sh_amount": 10934.1,
+"sz_amount": 12182.1,
+"total": 23116.3
 },
 {
 "date": "7/17",
-"sh_amount": 13943.2,
-"sz_amount": 13740.7,
-"total": 27683.9
+"sh_amount": 13286.7,
+"sz_amount": 13973.2,
+"total": 27259.9
 },
 {
 "date": "7/20",
-"sh_amount": 15203.3,
-"sz_amount": 13904.6,
-"total": 29107.9
+"sh_amount": 14487.5,
+"sz_amount": 14139.9,
+"total": 28627.3
 },
 {
 "date": "7/21",
-"sh_amount": 15756.1,
-"sz_amount": 15038.6,
-"total": 30794.7
+"sh_amount": 15014.2,
+"sz_amount": 15293.0,
+"total": 30307.3
 },
 {
 "date": "7/22",
-"sh_amount": 13167.3,
-"sz_amount": 12258.2,
-"total": 25425.5
+"sh_amount": 12547.3,
+"sz_amount": 12465.6,
+"total": 25013.0
 },
 {
 "date": "7/23",
-"sh_amount": 12049.8,
-"sz_amount": 11254.6,
-"total": 23304.3
+"sh_amount": 11482.4,
+"sz_amount": 11445.0,
+"total": 22927.4
 },
 {
 "date": "7/24",
-"sh_amount": 10894.0,
-"sz_amount": 10231.5,
-"total": 21125.4
+"sh_amount": 10381.0,
+"sz_amount": 10404.6,
+"total": 20785.6
 },
 {
 "date": "7/27",
-"sh_amount": 968.4,
-"sz_amount": 1069.3,
-"total": 2037.7
+"sh_amount": 10313.1,
+"sz_amount": 10453.1,
+"total": 20766.2
 }
 ],
 "up_down": {},
 "daily_stats": [
-{
-"date": "4/28",
-"up": 2338,
-"down": 2561,
-"flat": 101,
-"_note": "reconstructed from index data"
-},
 {
 "date": "4/29",
 "up": 2833,
@@ -127501,203 +130839,209 @@ false
 "up": 555,
 "down": 4939,
 "flat": 36
+},
+{
+"date": "7/27",
+"up": 4776,
+"down": 657,
+"flat": 99
 }
 ]
 };var CONCEPT_RANKING = window.CONCEPT_RANKING = {
-"update_time": "2026-07-24 19:26:21",
+"update_time": "2026-07-27 15:39:45",
 "ranking": [
 {
-"name": "兵装重组概念",
-"pct": 9.0
+"name": "脑机接口",
+"pct": 5.54
 },
 {
-"name": "中船系",
-"pct": 0.93
+"name": "PET铜箔",
+"pct": 4.89
 },
 {
-"name": "国家大基金持股",
-"pct": 0.59
-},
-{
-"name": "中芯国际概念",
-"pct": 0.3
-},
-{
-"name": "托育服务",
-"pct": -0.42
-},
-{
-"name": "存储芯片",
-"pct": -0.59
-},
-{
-"name": "光刻机",
-"pct": -0.72
-},
-{
-"name": "赛马概念",
-"pct": -0.75
-},
-{
-"name": "先进封装",
-"pct": -0.8
-},
-{
-"name": "汽车芯片",
-"pct": -1.14
-},
-{
-"name": "氟化工概念",
-"pct": -1.19
-},
-{
-"name": "上海自贸区",
-"pct": -1.25
-},
-{
-"name": "光刻胶",
-"pct": -1.3
-},
-{
-"name": "MCU芯片",
-"pct": -1.4
-},
-{
-"name": "WiFi 6",
-"pct": -1.42
-},
-{
-"name": "摘帽",
-"pct": -1.42
-},
-{
-"name": "第三代半导体",
-"pct": -1.44
-},
-{
-"name": "ST板块",
-"pct": -1.46
-},
-{
-"name": "同花顺果指数",
-"pct": -1.5
-},
-{
-"name": "PM2.5",
-"pct": -1.53
-},
-{
-"name": "青蒿素",
-"pct": -4.68
-},
-{
-"name": "金属铅",
-"pct": -4.61
-},
-{
-"name": "金属锌",
-"pct": -4.49
-},
-{
-"name": "AI视频",
-"pct": -4.47
-},
-{
-"name": "金属钴",
-"pct": -4.27
-},
-{
-"name": "煤炭概念",
-"pct": -4.22
+"name": "拼多多概念",
+"pct": 4.66
 },
 {
 "name": "快手概念",
-"pct": -4.17
+"pct": 4.63
 },
 {
-"name": "黄金概念",
-"pct": -4.11
+"name": "高压氧舱",
+"pct": 4.6
 },
 {
-"name": "细胞免疫治疗",
-"pct": -4.09
+"name": "血氧仪",
+"pct": 4.57
 },
 {
-"name": "创新药",
-"pct": -4.07
+"name": "PCB概念",
+"pct": 4.47
 },
 {
-"name": "金属铜",
-"pct": -4.05
+"name": "富士康概念",
+"pct": 4.41
 },
 {
-"name": "小金属概念",
-"pct": -4.0
+"name": "辅助生殖",
+"pct": 4.35
 },
 {
-"name": "NFT概念",
-"pct": -4.0
+"name": "医美概念",
+"pct": 4.29
 },
 {
-"name": "金属镍",
-"pct": -3.98
+"name": "华为手机",
+"pct": 4.27
 },
 {
-"name": "互联网保险",
-"pct": -3.97
+"name": "牙科医疗",
+"pct": 4.2
 },
 {
-"name": "减肥药",
-"pct": -3.93
+"name": "丙烯酸",
+"pct": 4.18
 },
 {
-"name": "仿制药一致性评价",
-"pct": -3.93
+"name": "中船系",
+"pct": 4.17
 },
 {
-"name": "华为欧拉",
-"pct": -3.92
+"name": "AI视频",
+"pct": 4.16
 },
 {
-"name": "数据确权",
-"pct": -3.91
+"name": "小红书概念",
+"pct": 4.16
 },
 {
-"name": "财税数字化",
-"pct": -3.88
+"name": "超级电容",
+"pct": 4.03
+},
+{
+"name": "氟化工概念",
+"pct": 4.01
+},
+{
+"name": "柔性屏(折叠屏)",
+"pct": 4.01
+},
+{
+"name": "固态电池",
+"pct": 4.0
+},
+{
+"name": "可燃冰",
+"pct": 0.12
+},
+{
+"name": "同花顺中特估100",
+"pct": 0.9
+},
+{
+"name": "俄乌冲突概念",
+"pct": 1.1
+},
+{
+"name": "高股息精选",
+"pct": 1.15
+},
+{
+"name": "赛马概念",
+"pct": 1.2
+},
+{
+"name": "同花顺漂亮100",
+"pct": 1.29
+},
+{
+"name": "页岩气",
+"pct": 1.3
+},
+{
+"name": "天然气",
+"pct": 1.3
+},
+{
+"name": "证金持股",
+"pct": 1.33
+},
+{
+"name": "期货概念",
+"pct": 1.38
+},
+{
+"name": "煤炭概念",
+"pct": 1.41
+},
+{
+"name": "航运概念",
+"pct": 1.52
+},
+{
+"name": "养鸡",
+"pct": 1.54
+},
+{
+"name": "玉米",
+"pct": 1.56
+},
+{
+"name": "水泥概念",
+"pct": 1.6
+},
+{
+"name": "转基因",
+"pct": 1.61
+},
+{
+"name": "农村电商",
+"pct": 1.61
+},
+{
+"name": "超级品牌",
+"pct": 1.63
+},
+{
+"name": "草甘膦",
+"pct": 1.64
+},
+{
+"name": "信托概念",
+"pct": 1.69
 }
 ]
 };var MARKET_ALERTS = window.MARKET_ALERTS = {
-"update_time": "2026-07-24 18:02:04",
-"summary": "上证指数跌1.61%。",
+"update_time": "2026-07-27 15:40:38",
+"summary": "上证指数涨1.15%。",
 "indices": [
 {
 "name": "上证指数",
-"pct": -1.61
+"pct": 1.15
 },
 {
 "name": "深证成指",
-"pct": -2.47
+"pct": 2.72
 },
 {
 "name": "创业板指",
-"pct": -2.65
+"pct": 3.16
 },
 {
 "name": "科创50",
-"pct": -0.14
+"pct": 1.16
 },
 {
 "name": "恒生指数",
-"pct": -0.98
+"pct": 0.97
 },
 {
 "name": "恒生科技指数",
-"pct": -1.47
+"pct": 1.98
 },
 {
 "name": "韩国KOSPI",
-"pct": -5.7
+"pct": -0.9
 },
 {
 "name": "日经225",
@@ -127707,18 +131051,18 @@ false
 "us_indices": [
 {
 "name": "道琼斯",
-"price": 51711.65,
-"pct": -0.97
+"price": 51947.25,
+"pct": 0.46
 },
 {
 "name": "纳斯达克",
-"price": 25137.69,
-"pct": -2.15
+"price": 24975.82,
+"pct": -0.64
 },
 {
 "name": "标普500",
-"price": 7408.3,
-"pct": -1.21
+"price": 7411.98,
+"pct": 0.05
 }
 ],
 "top_sectors": [],
@@ -128208,7 +131552,7 @@ false
 }
 ],
 "sz": [],
-"update_time": "2026-07-27 09:34"
+"update_time": "2026-07-27 15:39"
 };var ETF_SUBSCRIPTION = window.ETF_SUBSCRIPTION = {
 "sh": [
 {
@@ -128888,7 +132232,7 @@ false
 ],
 "update_time": "2026-07-24 17:37"
 };window.MACRO_DATA = {
-"update_time": "2026-07-27 10:11:34",
+"update_time": "2026-07-27 15:07:16",
 "monetary": {
 "cn_bond_10y": {
 "value": 1.7282,
@@ -128907,11 +132251,11 @@ false
 "date": "2026-07-20"
 },
 "shibor": {
-"on": 1.3812,
-"w1": 1.4,
-"m1": 1.418,
-"m3": 1.428,
-"date": "2026-07-24"
+"on": 1.418,
+"w1": 1.4316,
+"m1": 1.42,
+"m3": 1.43,
+"date": "2026-07-27"
 },
 "m2_yoy": {
 "value": 8.0,
@@ -128966,39 +132310,46 @@ false
 },
 "global_macro": {
 "vix": {
-"value": 18.6,
+"value": 18.45,
 "date": "2026-07-27"
 },
 "usdcnh": {
 "price": 6.7708,
-"prev_close": 6.7683,
+"prev_close": 6.7671,
 "date": "2026-07-27",
 "source": "Sina实时"
 },
 "dxy": {
-"value": 101.14,
-"pct": -0.31,
-"date": "2026-07-27"
+"value": 101.2,
+"pct": 0.09,
+"date": "2026-07-27",
+"source": "Sina-DINIW"
 },
 "commodities": {
 "gold": {
-"value": 4112.0,
+"value": 4099.8,
 "unit": "美元/盎司",
 "date": "2026-07-27"
 },
 "silver": {
-"value": 60.09,
+"value": 59.75,
 "unit": "美元/盎司",
 "date": "2026-07-27"
 },
 "copper": {
-"value": 6.3865,
+"value": 6.3595,
 "unit": "美元/磅",
 "date": "2026-07-27"
 },
 "oil": {
-"value": 85.41,
+"value": 83.51,
 "unit": "美元/桶",
+"date": "2026-07-27"
+},
+"bitcoin": {
+"value": 65384,
+"unit": "美元/BTC",
+"change_24h": 1.5764261334758056,
 "date": "2026-07-27"
 }
 }
@@ -129046,7 +132397,7 @@ false
 }
 }
 };window.CRISIS_DATA = {
-"update_time": "2026-07-25 13:15:49",
+"update_time": "2026-07-27 13:09:02",
 "indicators": {
 "shibor_on": {
 "name": "SHIBOR隔夜",
@@ -129055,11 +132406,11 @@ false
 "freq": "日频",
 "unit": "%",
 "dir": "high_bad",
-"value": 1.3812,
-"date": "2026-07-24",
-"percentile": 76.9,
-"trend": "down",
-"score": 76.9,
+"value": 1.418,
+"date": "2026-07-27",
+"percentile": 87.3,
+"trend": "flat",
+"score": 87.3,
 "level": 2,
 "hist_n": 260
 },
@@ -129070,11 +132421,11 @@ false
 "freq": "日频",
 "unit": "万亿",
 "dir": "high_bad",
-"value": 1.3725,
-"date": "2026-07-23",
-"percentile": 72.3,
+"value": 1.3644,
+"date": "2026-07-24",
+"percentile": 70.0,
 "trend": "down",
-"score": 72.3,
+"score": 70.0,
 "level": 2,
 "hist_n": 260
 },
@@ -129220,11 +132571,11 @@ false
 "freq": "日频",
 "unit": "",
 "dir": "high_bad",
-"value": 19.2,
-"date": "2026-07-24",
-"percentile": 61.5,
-"trend": "flat",
-"score": 61.5,
+"value": 18.55,
+"date": "2026-07-27",
+"percentile": 47.3,
+"trend": "down",
+"score": 47.3,
 "level": 1,
 "hist_n": 260
 },
@@ -129235,13 +132586,13 @@ false
 "freq": "日频",
 "unit": "",
 "dir": "high_bad",
-"value": 101.36,
-"date": "2026-07-24",
-"percentile": null,
-"trend": "up",
-"score": 33.199999999999996,
-"level": 0,
-"hist_n": 11
+"value": 101.17,
+"date": "2026-07-27",
+"percentile": 97.7,
+"trend": "flat",
+"score": 97.7,
+"level": 2,
+"hist_n": 260
 },
 "copper_gold": {
 "name": "铜金比",
@@ -129250,11 +132601,11 @@ false
 "freq": "日频",
 "unit": "",
 "dir": "low_bad",
-"value": 3.446,
-"date": "2026-07-24",
-"percentile": 94.6,
-"trend": "flat",
-"score": 5.4,
+"value": 3.417,
+"date": "2026-07-27",
+"percentile": 93.8,
+"trend": "down",
+"score": 6.2,
 "level": 0,
 "hist_n": 260
 },
@@ -129280,11 +132631,11 @@ false
 "freq": "日频",
 "unit": "$",
 "dir": "low_bad",
-"value": 90.47,
-"date": "2026-07-24",
-"percentile": 78.8,
+"value": 84.79,
+"date": "2026-07-27",
+"percentile": 72.3,
 "trend": "up",
-"score": 21.2,
+"score": 27.7,
 "level": 0,
 "hist_n": 260
 },
@@ -129295,13 +132646,13 @@ false
 "freq": "日频",
 "unit": "",
 "dir": "high_bad",
-"value": 6.7776,
-"date": "2026-07-24",
-"percentile": null,
+"value": 6.7688,
+"date": "2026-07-27",
+"percentile": 3.5,
 "trend": "flat",
-"score": 5,
+"score": 3.5,
 "level": 0,
-"hist_n": 11
+"hist_n": 260
 },
 "us_2s10s": {
 "name": "美债10Y-2Y倒挂",
@@ -133197,7 +136548,7 @@ false
 }
 ];
 ;window.LIMIT_UP_HEATMAP = {
-"update_time": "2026-07-27 09:34:48",
+"update_time": "2026-07-27 15:40:59",
 "dates": [
 "07/14",
 "07/15",
@@ -133212,21 +136563,6 @@ false
 ],
 "sectors": [
 {
-"name": "电力",
-"data": [
-3,
-4,
-3,
-6,
-11,
-11,
-10,
-10,
-12,
-10
-]
-},
-{
 "name": "其他",
 "data": [
 19,
@@ -133238,7 +136574,22 @@ false
 15,
 17,
 18,
-9
+19
+]
+},
+{
+"name": "电力",
+"data": [
+3,
+4,
+3,
+6,
+11,
+11,
+10,
+10,
+12,
+11
 ]
 },
 {
@@ -133253,7 +136604,37 @@ false
 10,
 9,
 5,
+8
+]
+},
+{
+"name": "机器人",
+"data": [
+6,
+4,
+2,
+3,
+1,
+0,
+2,
+4,
+6,
 6
+]
+},
+{
+"name": "半导体",
+"data": [
+3,
+4,
+4,
+1,
+0,
+0,
+5,
+3,
+3,
+4
 ]
 },
 {
@@ -133287,33 +136668,18 @@ false
 ]
 },
 {
-"name": "机器人",
+"name": "新能源车",
 "data": [
-6,
-4,
-2,
-3,
 1,
-0,
 2,
-4,
-6,
-3
-]
-},
-{
-"name": "半导体",
-"data": [
-3,
-4,
-4,
 1,
-0,
-0,
-5,
-3,
-3,
-3
+1,
+1,
+1,
+2,
+1,
+1,
+2
 ]
 },
 {
@@ -133332,17 +136698,17 @@ false
 ]
 },
 {
-"name": "新能源车",
+"name": "白酒消费",
 "data": [
+0,
+0,
 1,
 2,
 1,
-1,
-1,
-1,
 2,
-1,
-1,
+0,
+0,
+0,
 1
 ]
 },
@@ -133362,16 +136728,16 @@ false
 ]
 },
 {
-"name": "白酒消费",
+"name": "券商",
 "data": [
 0,
+4,
+0,
 0,
 1,
-2,
+3,
+0,
 1,
-2,
-0,
-0,
 0,
 0
 ]
@@ -133388,21 +136754,6 @@ false
 4,
 4,
 1,
-0
-]
-},
-{
-"name": "券商",
-"data": [
-0,
-4,
-0,
-0,
-1,
-3,
-0,
-1,
-0,
 0
 ]
 }
@@ -134369,7 +137720,7 @@ false
 }
 }
 };window.COCKPIT_TIER_RECOMMEND = {
-"gen_time": "2026-07-25 13:53:07",
+"gen_time": "2026-07-27 15:39:02",
 "source": "阿狸咪-独立计算(主站数据)",
 "data_time": "2026-07-24 19:10:02",
 "method": {
@@ -134761,7 +138112,7 @@ false
 }
 ]
 };window.TRIPLE_CONSENSUS = {
-"update_time": "2026-07-27 10:16:11",
+"update_time": "2026-07-27 15:44:47",
 "data_time": "2026-07-26 21:38:45",
 "count": 0,
 "near_miss_count": 11,
@@ -134827,6 +138178,55 @@ false
 ]
 },
 {
+"code": "688702",
+"name": "盛科通信",
+"market": "sh",
+"board": "科创板",
+"total_score": 76,
+"top10_rank": 3,
+"a_score": 52,
+"quality_grade": "D",
+"in_top10": true,
+"in_tier_a": true,
+"in_tier_b": false,
+"in_good_fund": false,
+"miss_steps": 1,
+"close": 398.99,
+"pct_chg": 1.52,
+"pct_chg_20d": 21.83,
+"signals": {
+"chan": true,
+"jinzuan": false,
+"jigou": true,
+"trend": true,
+"form_A": true
+},
+"sectors": [
+"软件和信息技术服务业"
+],
+"industry": "软件和信息技术服务业",
+"concepts": [
+"MSCI中国",
+"上证380",
+"中证500",
+"半导体概念",
+"历史新高",
+"国产芯片",
+"大盘成长",
+"大盘股",
+"工业互联",
+"数据中心",
+"昨日高振幅",
+"机构重仓",
+"沪股通",
+"百元股",
+"百日新高",
+"科技风格",
+"融资融券",
+"近期新高"
+]
+},
+{
 "code": "300001",
 "name": "特锐德",
 "market": "深市",
@@ -134884,55 +138284,6 @@ false
 ]
 },
 {
-"code": "688702",
-"name": "盛科通信",
-"market": "sh",
-"board": "科创板",
-"total_score": 76,
-"top10_rank": 3,
-"a_score": 52,
-"quality_grade": "D",
-"in_top10": true,
-"in_tier_a": true,
-"in_tier_b": false,
-"in_good_fund": false,
-"miss_steps": 1,
-"close": 398.99,
-"pct_chg": 1.52,
-"pct_chg_20d": 21.83,
-"signals": {
-"chan": true,
-"jinzuan": false,
-"jigou": true,
-"trend": true,
-"form_A": true
-},
-"sectors": [
-"软件和信息技术服务业"
-],
-"industry": "软件和信息技术服务业",
-"concepts": [
-"MSCI中国",
-"上证380",
-"中证500",
-"半导体概念",
-"历史新高",
-"国产芯片",
-"大盘成长",
-"大盘股",
-"工业互联",
-"数据中心",
-"昨日高振幅",
-"机构重仓",
-"沪股通",
-"百元股",
-"百日新高",
-"科技风格",
-"融资融券",
-"近期新高"
-]
-},
-{
 "code": "688332",
 "name": "中科蓝讯",
 "market": "sh",
@@ -134957,18 +138308,18 @@ false
 "form_A": false
 },
 "sectors": [
+"小米概念",
+"无线耳机",
+"小盘股",
+"专精特新",
+"半导体概念",
+"沪股通",
+"融资融券",
 "AI眼镜",
 "消费电子概念",
-"融资融券",
-"专精特新",
 "国产芯片",
-"小盘成长",
-"半导体概念",
 "昨日高振幅",
-"小米概念",
-"沪股通",
-"无线耳机",
-"小盘股"
+"小盘成长"
 ],
 "industry": "",
 "concepts": [
@@ -282580,8 +285931,7 @@ false
 "create_time": "2026-07-23T20:14:00.000+0800"
 }
 ]
-};var ETF_INTRADAY_HEAT = window.ETF_INTRADAY_HEAT = {};
-var STOCK_DEVIATION = window.STOCK_DEVIATION = {
+};var STOCK_DEVIATION = window.STOCK_DEVIATION = {
 "update_time": "2026-07-24 17:40:09",
 "threshold": 20,
 "stocks": {}
@@ -340392,264 +343742,6 @@ var RECOMMEND = window.RECOMMEND = [
     }
     updateMarginAlert();
 
-    // 渲染 ETF 盘中热度 / 资金流（2026-07-29 增加一级/二级分类细分）
-    function renderEtfHeat() {
-      const d = window.ETF_INTRADAY_HEAT || {};
-      const activeEl = document.getElementById('etfHeatActiveBody');
-      if (!activeEl) return;
-      const summaryEl = document.getElementById('etfHeatSummary');
-      if (summaryEl) {
-        const s = d.summary || {};
-        const netYi = (s.net_inflow_yi != null) ? s.net_inflow_yi : 0;
-        const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
-        // 新增：TOP4 集中度（基于 d.top_active 提前计算）
-        let top4ConcRate = 0;
-        if (d.top_active && d.top_active.length > 0) {
-          const _top4Sum = d.top_active.slice(0,4).reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
-          const _totalSum = d.top_active.reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
-          top4ConcRate = _totalSum > 0 ? Math.round(_top4Sum / _totalSum * 100) : 0;
-        }
-        summaryEl.innerHTML = '全部：' + (d.total || 0) + '只 · <b style="color:#e53935;">▲' + (s.up || 0) + '</b> / <b style="color:#2e7d32;">▼' + (s.down || 0) + '</b> · 净流入 <b style="color:' + (netYi >= 0 ? '#e53935' : '#2e7d32') + '">' + netStr + '</b>';
-        if (top4ConcRate > 0) {
-          summaryEl.innerHTML += ' · TOP4集中度 <b style="color:#e65100;">' + top4ConcRate + '%</b>';
-        }
-        // 6 大分类 mini-card 网格 — 一眼看清各分类全貌
-        var gridHtml = '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-top:8px;">';
-        ['宽基','行业','主题','跨境','商品','策略'].forEach(function(cn) {
-          var c = (d.categories || {})[cn];
-          if (!c) {
-            gridHtml += '<div style="border-left:3px solid #ddd;padding:5px 6px;background:#fafafa;border-radius:3px;">'
-              + '<div style="color:#999;font-size:11px;font-weight:700;">' + cn + '</div>'
-              + '<div style="color:#bbb;font-size:10px;margin-top:2px;">暂无数据</div></div>';
-            return;
-          }
-          var cnt = c.count || 0;
-          var up = c.up || 0;
-          var dn = c.down || 0;
-          var yi = (c.net_inflow_yi != null) ? c.net_inflow_yi : 0;
-          var color = yi >= 0 ? '#e53935' : '#2e7d32';
-          var yiStr = (yi >= 0 ? '+' : '') + yi.toFixed(1) + '亿';
-          gridHtml += '<div style="border-left:3px solid ' + color + ';padding:6px 4px;background:#fafffb;border-radius:3px;min-width:0;text-align:center;">'
-            + '<div style="color:#1565c0;font-size:11px;font-weight:700;white-space:nowrap;margin-bottom:3px;">' + cn + '</div>'
-            + '<div style="color:#666;font-size:10px;white-space:nowrap;">' + cnt + '只</div>'
-            + '<div style="font-size:10px;color:#e53935;font-weight:600;white-space:nowrap;">▲' + up + '</div>'
-            + '<div style="font-size:10px;color:#2e7d32;font-weight:600;white-space:nowrap;">▼' + dn + '</div>'
-            + '<div style="color:' + color + ';font-size:13px;font-weight:800;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + yiStr + '</div>'
-            + '</div>';
-        });
-        gridHtml += '</div>';
-        summaryEl.innerHTML += gridHtml;
-      }
-      function fmtFlow(v) {
-        const yi = (v || 0) / 1e8;
-        return (yi >= 0 ? '+' : '') + yi.toFixed(2) + '亿';
-      }
-      function fmtAmount(v) {
-        const yi = (v || 0) / 1e8;
-        return yi.toFixed(1) + '亿';
-      }
-      function renderActiveList(el, list, maxRows) {
-        if (!list || !list.length) {
-          el.innerHTML = '<div style="padding:14px;color:#999;font-size:12px;">暂无数据</div>';
-          return;
-        }
-        const show = maxRows ? list.slice(0, maxRows) : list;
-        const maxNet = show.reduce(function(a,it){ return Math.max(a, Math.abs(it.main_net_inflow||0)); }, 0);
-        let rows = '';
-        show.forEach(function(it) {
-          const pct = it.pct || 0;
-          const pctColor = pct >= 0 ? '#e53935' : '#2e7d32';
-          const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
-          const net = it.main_net_inflow || 0;
-          const netColor = net >= 0 ? '#e53935' : '#2e7d32';
-          const amount = fmtAmount(it.amount);
-          const barW = maxNet > 0 ? Math.round(Math.abs(net) / maxNet * 20) : 0;
-          const barColor = net >= 0 ? '#e53935' : '#2e7d32';
-          rows += '<div style="display:flex;align-items:center;gap:4px;padding:5px 0 5px 4px;border-bottom:1px solid #f5f5f5;font-size:12px;white-space:nowrap;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
-            + '<span style="width:46px;color:#1565c0;white-space:nowrap;">' + it.code + '</span>'
-            + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
-            + '<span style="width:42px;text-align:right;color:' + pctColor + ';font-weight:600;white-space:nowrap;">' + pctStr + '</span>'
-            + '<span style="width:52px;text-align:right;color:#555;white-space:nowrap;">' + amount + '</span>'
-            + '<span style="width:56px;text-align:right;color:' + netColor + ';font-weight:600;white-space:nowrap;">' + fmtFlow(net) + '</span>'
-            + '<span style="display:inline-block;width:18px;height:4px;border-radius:2px;background:#eee;overflow:hidden;flex:0 0 auto;"><span style="display:block;height:100%;width:' + barW + 'px;background:' + barColor + ';opacity:0.6;border-radius:2px;"></span></span>'
-            + '</div>';
-        });
-        el.innerHTML = rows;
-      }
-
-      // 同 renderActiveList 但返回 HTML 字符串（用于并排布局）
-      function renderActiveListHTML(list, maxRows) {
-        if (!list || !list.length) return '<div style="padding:14px;color:#999;font-size:12px;">暂无数据</div>';
-        const show = maxRows ? list.slice(0, maxRows) : list;
-        const maxNet = show.reduce(function(a,it){ return Math.max(a, Math.abs(it.main_net_inflow||0)); }, 0);
-        let rows = '';
-        show.forEach(function(it) {
-          const pct = it.pct || 0;
-          const pctColor = pct >= 0 ? '#e53935' : '#2e7d32';
-          const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
-          const net = it.main_net_inflow || 0;
-          const netColor = net >= 0 ? '#e53935' : '#2e7d32';
-          const amount = fmtAmount(it.amount);
-          const barW = maxNet > 0 ? Math.round(Math.abs(net) / maxNet * 20) : 0;
-          const barColor = net >= 0 ? '#e53935' : '#2e7d32';
-          rows += '<div style="display:flex;align-items:center;gap:6px;padding:5px 2px;font-size:12px;border-bottom:1px solid #f5f5f5;" title="连涨/连跌 ' + (it.streak || 1) + ' 天">'
-            + '<span style="width:56px;color:#1565c0;">' + it.code + '</span>'
-            + '<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + it.name + '</span>'
-            + '<span style="width:50px;text-align:right;color:' + pctColor + ';font-weight:600;">' + pctStr + '</span>'
-            + '<span style="width:60px;text-align:right;color:#555;">' + amount + '</span>'
-            + '<span style="width:60px;text-align:right;color:' + netColor + ';font-weight:600;">' + fmtFlow(net) + '</span>'
-            + '<span style="display:inline-block;width:24px;height:4px;border-radius:2px;background:#eee;overflow:hidden;flex:0 0 auto;"><span style="display:block;height:100%;width:' + barW + 'px;background:' + barColor + ';opacity:0.6;border-radius:2px;"></span></span>'
-            + '</div>';
-        });
-        return rows;
-      }
-
-      // 6 大分类对比表 — 用于"全部"Tab 一眼看清分类全貌
-      function renderCategoryCompareTable(d) {
-        const cats = d.categories || {};
-        const compareNames = ['宽基','行业','主题','跨境','商品','策略'];
-        let html = '<div style="font-size:11px;color:#1565c0;font-weight:700;padding:0 0 4px;border-bottom:1px dashed #e8f5e9;margin-bottom:4px;">6 大分类对比</div>';
-        html += '<div style="display:grid;grid-template-columns:1fr;gap:0;font-size:12px;">';
-        compareNames.forEach(function(cn) {
-          const c = cats[cn];
-          if (!c) {
-            html += '<div style="padding:4px 0;border-bottom:1px solid #f5f5f5;color:#bbb;">' + cn + '：暂无数据</div>';
-            return;
-          }
-          const cnt = c.count || 0;
-          const up = c.up || 0;
-          const dn = c.down || 0;
-          const yi = (c.net_inflow_yi != null) ? c.net_inflow_yi : 0;
-          const yiColor = yi >= 0 ? '#e53935' : '#2e7d32';
-          const yiStr = (yi >= 0 ? '+' : '') + yi.toFixed(1) + '亿';
-          // 找该分类下最活跃的 ETF（聚合 subcategories）
-          let top1 = null;
-          const subs = c.subcategories || {};
-          for (const sk in subs) {
-            const sub = subs[sk];
-            if (sub && sub.top_active && sub.top_active.length > 0) {
-              const t = sub.top_active[0];
-              if (!top1 || (Math.abs(t.main_net_inflow || 0)) > Math.abs(top1.main_net_inflow || 0)) top1 = t;
-            }
-          }
-          let top1Html = '<span style="color:#bbb;font-size:10px;">—</span>';
-          if (top1) {
-            const tPct = top1.pct || 0;
-            const tPctColor = tPct >= 0 ? '#e53935' : '#2e7d32';
-            const tPctStr = (tPct >= 0 ? '+' : '') + tPct.toFixed(2) + '%';
-            top1Html = '<span style="color:#333;">' + top1.name + '</span> <span style="font-size:10px;color:' + tPctColor + ';">' + tPctStr + '</span>';
-          }
-          html += '<div style="display:flex;align-items:center;gap:6px;padding:5px 2px;border-bottom:1px solid #f5f5f5;line-height:1.4;">'
-            + '<div style="width:38px;color:#1565c0;font-weight:700;flex:0 0 auto;">' + cn + '</div>'
-            + '<div style="width:90px;color:#888;font-size:10px;flex:0 0 auto;">' + cnt + '只 ▲' + up + ' ▼' + dn + '</div>'
-            + '<div style="width:62px;text-align:right;color:' + yiColor + ';font-weight:700;flex:0 0 auto;">' + yiStr + '</div>'
-            + '<div style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;">' + top1Html + '</div>'
-            + '</div>';
-        });
-        html += '</div>';
-        return html;
-      }
-
-      // ---- 分类标签渲染 ----
-      const cats = d.categories || {};
-      const cat1Order = ['全部', '宽基', '行业', '主题', '跨境', '商品', '策略'];
-      const cat1Keys = cat1Order.filter(function(c){ return c === '全部' || cats[c]; });
-      if (!window.ETF_HEAT_CAT1 || cat1Keys.indexOf(window.ETF_HEAT_CAT1) < 0) window.ETF_HEAT_CAT1 = '全部';
-      const selCat1 = window.ETF_HEAT_CAT1;
-      const selCat2 = window.ETF_HEAT_CAT2 || '全部';
-
-      function tabStyle(selected) {
-        return selected
-          ? 'display:inline-block;padding:3px 10px;border-radius:12px;background:#43a047;color:#fff;font-weight:600;cursor:pointer;'
-          : 'display:inline-block;padding:3px 10px;border-radius:12px;background:#e8f5e9;color:#2e7d32;cursor:pointer;';
-      }
-      function chipStyle(selected) {
-        return selected
-          ? 'display:inline-block;padding:2px 8px;border-radius:10px;background:#1565c0;color:#fff;cursor:pointer;'
-          : 'display:inline-block;padding:2px 8px;border-radius:10px;background:#e3f2fd;color:#1565c0;cursor:pointer;';
-      }
-
-      const tabsEl = document.getElementById('etfHeatTabs');
-      if (tabsEl) {
-        tabsEl.innerHTML = cat1Keys.map(function(c1){
-          return '<span style="' + tabStyle(c1 === selCat1) + '" onclick="window.ETF_HEAT_CAT1=\'' + c1 + '\';window.ETF_HEAT_CAT2=\'全部\';window.renderEtfHeat();">' + c1 + '</span>';
-        }).join('');
-      }
-      const subTabsEl = document.getElementById('etfHeatSubTabs');
-      if (subTabsEl) {
-        if (selCat1 === '全部' || !cats[selCat1]) {
-          subTabsEl.style.display = 'none';
-          subTabsEl.innerHTML = '';
-        } else {
-          subTabsEl.style.display = 'flex';
-          const subs = cats[selCat1].subcategories || {};
-          const subKeys = Object.keys(subs);
-          const ordered = ['全部'].concat(subKeys);
-          if (subKeys.indexOf(selCat2) < 0) window.ETF_HEAT_CAT2 = '全部';
-          const curCat2 = window.ETF_HEAT_CAT2 || '全部';
-          subTabsEl.innerHTML = ordered.map(function(c2){
-            return '<span style="' + chipStyle(c2 === curCat2) + '" onclick="window.ETF_HEAT_CAT2=\'' + c2 + '\';window.renderEtfHeat();">' + c2 + '</span>';
-          }).join('');
-        }
-      }
-
-      // ---- 按选中分类聚合统计与榜单 ----
-      let stats, listSource;
-      if (selCat1 === '全部') {
-        stats = d.summary || {};
-        listSource = d.top_active || [];
-      } else {
-        const c1Data = cats[selCat1] || {};
-        const curCat2 = window.ETF_HEAT_CAT2 || '全部';
-        if (curCat2 === '全部') {
-          stats = c1Data;
-          var allRows = [];
-          var subs = c1Data.subcategories || {};
-          for (var sk in subs) {
-            if (subs[sk] && subs[sk].top_active) {
-              allRows = allRows.concat(subs[sk].top_active);
-            }
-          }
-          allRows.sort(function(a,b){ return (b.amount||0) - (a.amount||0); });
-          listSource = allRows.slice(0, 10);
-        } else {
-          const sub = (c1Data.subcategories || {})[curCat2] || {};
-          stats = sub;
-          listSource = sub.top_active || [];
-        }
-      }
-      const catStatsEl = document.getElementById('etfHeatCatStats');
-      if (catStatsEl) {
-        // 全部模式：信息已合并到 summary 第一行，此处隐藏避免重复
-        if (selCat1 === '全部') {
-          catStatsEl.innerHTML = '';
-          catStatsEl.style.display = 'none';
-        } else {
-          catStatsEl.style.display = '';
-          const netYi = (stats.net_inflow_yi != null) ? stats.net_inflow_yi : 0;
-          const netStr = (netYi >= 0 ? '+' : '') + netYi.toFixed(2) + '亿';
-          const curCat2 = window.ETF_HEAT_CAT2 || '全部';
-          const label = curCat2 === '全部' ? selCat1 : selCat1 + ' · ' + curCat2;
-          catStatsEl.innerHTML = '<span style="color:#1565c0;">' + label + '</span>：' + (stats.count||0) + '只 · <b style="color:#e53935;">▲' + (stats.up||0) + '</b> / <b style="color:#2e7d32;">▼' + (stats.down||0) + '</b> · 净流入 <b style="color:' + (netYi>=0?'#e53935':'#2e7d32') + '">' + netStr + '</b>';
-          // TOP4 集中度
-          if (listSource && listSource.length > 0) {
-            var _top4Sum = listSource.slice(0,4).reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
-            var _totalSum = listSource.reduce(function(s,it){ return s + Math.abs(it.main_net_inflow||0); }, 0);
-            var _concRate = _totalSum > 0 ? Math.round(_top4Sum / _totalSum * 100) : 0;
-          if (_concRate > 0) {
-            catStatsEl.innerHTML += ' · TOP4集中度 <b style="color:#e65100;">' + _concRate + '%</b>';
-          }
-        }
-      }
-      renderActiveList(activeEl, listSource, selCat1 === '全部' ? 10 : 5);
-
-      const ut = document.getElementById('etfHeatUpdateTime');
-      if (ut && d.update_time) ut.textContent = '更新于 ' + fmtDataTime(d.update_time).text;
-      var ehc = document.getElementById('etfHeatOverviewCard');
-      if (ehc) ehc.style.display = 'block';
-    }
-    window.renderEtfHeat = renderEtfHeat;
-
     // 绘制 ETF 申购赎回柱状图
     function drawEtfChart() {
       const data = ETF_SUBSCRIPTION || {};
@@ -340775,7 +343867,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     // 切换到上证数据监控时重绘图表（SVG/ECharts 需可见才能获取尺寸）
     if (tab.dataset.tab === 'shmonitor') {
       setTimeout(() => {
-        try { drawAmountChart(); drawUpDownChart(); drawMarginChart(); drawEtfChart(); renderEtfHeat(); updateMarginAlert(); } catch(e) {}
+        try { drawAmountChart(); drawUpDownChart(); drawMarginChart(); drawEtfChart(); updateMarginAlert(); } catch(e) {}
         if (typeof renderMarketFundFlowCard === 'function') { try { renderMarketFundFlowCard(); } catch(e) {} }
         if (typeof __MFF_CHART_INST !== 'undefined' && __MFF_CHART_INST) { try { __MFF_CHART_INST.resize(); } catch(e) {} }
       }, 100);
@@ -340887,7 +343979,8 @@ function setChartTime(id, timeStr, source) {
   //   ipo = 事件 (仅申购日前有数据)
   var freshLabels = {
     main:    '盘后更新',
-    etf:     'T+1',
+    etf:     'T+1',  // ETF份额申赎(宽基ETF净申赎) = 真T+1次日披露
+    nt:      '盘中实时',  // 国家队ETF资金估算(nt_data.etfFlow) = 盘中实时
     macro:   '盘后更新',
     sector:  '盘中实时',
     intraday:'盘中实时',
@@ -340907,20 +344000,20 @@ function setChartTime(id, timeStr, source) {
 }
 
 // 盘后类卡片统一时间戳：归一到交易日收盘 15:30（与健康卡片一致），但严重过期(≥2天)保留真实时间+红标
-// 2026-07-29 修复：POST_CLOSE_TIME 若比 rawTime 还旧，则不再用它归一化，防止出现"4天前 15:30"的脏显示。
 function setPostMarketTime(id, rawTime, source) {
   var ft = rawTime ? fmtDataTime(rawTime) : null;
-  var pcFt = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : null;
   if (ft && ft.daysAgo !== undefined && ft.daysAgo >= 2) {
     setChartTime(id, rawTime, source); // 真实过期，保留红标不掩盖
     return;
   }
-  // POST_CLOSE_TIME 仅用于"同交易日收盘归一化"：它比 rawTime 新/相等，且不超过 1 个交易日
-  if (pcFt && pcFt.ts && ft && ft.ts && pcFt.ts >= ft.ts && pcFt.daysAgo <= 1) {
+  // 2026-07-17 修复：rawTime 是今天/昨晚盘后时优先用它（如 lhb 00:30 刷 → "今日 00:30"），
+  //   否则才回退到 POST_CLOSE_TIME（"昨日 15:30"）。原来硬性优先 POST_CLOSE_TIME 导致
+  //   4 张卡都显示"昨日 15:30"而主人误判为陈旧。
+  if (rawTime && ft && ft.daysAgo === 0) {
+    setChartTime(id, rawTime, source);
+  } else if (window.POST_CLOSE_TIME) {
     setChartTime(id, window.POST_CLOSE_TIME, source);
-    return;
-  }
-  if (rawTime) {
+  } else if (rawTime) {
     setChartTime(id, rawTime, source);
   } else {
     var el = document.getElementById(id);
@@ -341065,6 +344158,7 @@ function render() {
 
     // 市场数据渲染（异动提醒 / ETF资金流向 / 日历）
     try { renderAISummary(); } catch(e) { console.error('AI速览渲染失败:', e); catchErr('AI速览', e); }
+    try { renderETFFlow(); } catch(e) { console.error('ETF资金流向渲染失败:', e); catchErr('ETF流向', e); }
     try { renderSectorFundFlow(); } catch(e) { console.error('板块资金流向渲染失败:', e); catchErr('板块资金', e); }
     try { renderCffex(); } catch(e) { console.error('中信期货持仓渲染失败:', e); catchErr('期货持仓', e); }
     try { renderConceptRanking(); } catch(e) { console.error('概念涨跌幅渲染失败:', e); catchErr('概念排名', e); }
@@ -341189,17 +344283,14 @@ function isYesterdayData(timestamp) {
 }
 function fmtDataTime(timeStr) {
   if (!timeStr) return '';
-  // 2026-07-29 修复：统一处理 ISO 格式（2026-07-28T17:57:47）→ 空格分隔，避免 NaN
-  var normalized = String(timeStr).replace('T', ' ').replace(/(\.\d+)?Z?$/, '').trim();
+  // 兼容 ISO-8601（2026-07-25T17:55:07）/ 毫秒 / 带 Z 等格式，统一转成 YYYY-MM-DD HH:MM:SS
+  var normalized = String(timeStr).replace('T', ' ').replace(/(\.\d+)?Z$/, '').trim();
   var parts = normalized.split(' ');
   var datePart = parts[0] || '';
   var timePart = (parts[1] || '').substring(0, 5);
   var dd = new Date(datePart.replace(/-/g, '/') + ' ' + (parts[1] || ''));
   var ts = dd.getTime();
-  if (isNaN(ts)) {
-    return { text: normalized, stale: true, critical: true, daysAgo: NaN, mmdd: '', time: timePart, ts: 0 };
-  }
-  if (isToday(normalized)) {
+  if (isToday(timeStr)) {
     // 日期是今天，但时间还没到 → 降级为"昨日"
     var now = new Date();
     if (dd > now) {
@@ -341515,7 +344606,6 @@ function renderShMonitor() {
   // 🔧 两融/ETF图表不依赖SH_FIB数据，始终绘制
   drawMarginChart();
   drawEtfChart();
-  renderEtfHeat();
   updateMarginAlert();
 
   if (!wins.length) { var _ftb = document.getElementById('fibTableBody'); if (_ftb) _ftb.innerHTML = '<tr><td colspan="3" style="color:#999;text-align:center;">暂无数据</td></tr>'; return; }
@@ -342683,6 +345773,116 @@ function renderAISummary() {
   if (rows.length === 0) { card.style.display = 'none'; return; }
 
   content.innerHTML = rows.join('');
+  card.style.display = 'block';
+}
+
+// ===== ETF资金流向（纯数据卡片，分析归AI速览；2026-07-22 升级：15:00后用 close_summary 收盘快照） =====
+function renderETFFlow() {
+  const nt = window.NT_DATA || {};
+  // 2026-07-22: 15:00 后优先用 close_summary 快照
+  const cs = window.CLOSE_SUMMARY || {};
+  const csDate = cs.data_date || '';
+  const csTime = cs.update_time || '';
+  const csHM = csTime.indexOf('T') >= 0 ? csTime.split('T')[1].slice(0,5) : csTime.slice(-5);
+  const today = new Date().toISOString().slice(0,10);
+  const isAfterClose = csDate === today && csHM >= '15:00';
+  // 收盘后用 close_summary.etf_flow_snapshot, 否则用 nt_data.etfFlow
+  const etfFlow = (isAfterClose && cs.etf_flow_snapshot && cs.etf_flow_snapshot.etfs)
+    ? cs.etf_flow_snapshot
+    : (nt.etfFlow || {});
+  const etfs = etfFlow.etfs || [];
+  const summary = etfFlow.summary || {};
+
+  const card = document.getElementById('ntEtfFlowCard');
+  const content = document.getElementById('ntEtfFlowContent');
+  if (!card || !content) return;
+  if (!etfs.length) { card.style.display = 'block'; content.innerHTML = '<div style="text-align:center;padding:30px;color:#999;font-size:14px;">📭 暂无ETF资金数据，等待盘中更新</div>'; return; }
+
+  // 更新时间：收盘后用 close_summary 更新时间
+  const timeEl = document.getElementById('ntEtfFlowTime');
+  if (timeEl) {
+    var t = (isAfterClose ? csTime : (nt.update_time || '')) || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
+    // 2026-07-22 修复：csTime 可能是 ISO 格式（含 T），需要转空格才能被 fmtDataTime 正确解析出 timePart
+    if (t && t.indexOf('T') >= 0) t = t.replace('T', ' ');
+    if (t) { setPostMarketTime('ntEtfFlowTime', t, 'nt'); }  // nt=国家队ETF盘中实时(非T+1的ETF申赎)
+    // 2026-07-22 收盘后加"📌 收盘后"标签
+    if (isAfterClose && csTime) {
+      timeEl.textContent = '📌 收盘后 · ' + timeEl.textContent;
+    }
+  }
+
+  var upAmt = etfs.filter(function(e){return (e.change_pct || 0) > 0;}).reduce(function(s,e){return s+(e.amount||0);},0);
+  var downAmt = etfs.filter(function(e){return (e.change_pct || 0) < 0;}).reduce(function(s,e){return s+(e.amount||0);},0);
+  var netFlow = upAmt - downAmt;
+  var flowYi = Math.abs(netFlow) / 1e8;
+  var flowDir = netFlow > 0 ? '净流入' : '净流出';
+  var flowStr = flowYi >= 1 ? flowYi.toFixed(1) + '亿' : Math.round(Math.abs(netFlow)/1e4) + '万';
+  var flowColor = netFlow >= 0 ? '#c62828' : '#2e7d32';
+  var upCount = summary.up || 0, downCount = summary.down || 0;
+
+  // 上涨ETF（前5）
+  var upEtfs = etfs.filter(function(e){return (e.change_pct || 0) > 0;})
+                   .sort(function(a,b){return Math.abs(b.change_pct||0) - Math.abs(a.change_pct||0);})
+                   .slice(0, 5);
+  // 下跌ETF（前3）
+  var downEtfs = etfs.filter(function(e){return (e.change_pct || 0) < 0;})
+                     .sort(function(a,b){return Math.abs(a.change_pct||0) - Math.abs(b.change_pct||0);})
+                     .slice(0, 3);
+
+  var h = '';
+
+  // 净流向数值
+  h += '<div style="font-size:22px;font-weight:800;color:' + flowColor + ';margin-bottom:2px;">' + (netFlow > 0 ? '+' : (netFlow < 0 ? '-' : '')) + flowStr + '</div>';
+  h += '<div style="font-size:10px;color:#999;margin-bottom:6px;">估算净' + flowDir + ' · ' + upCount + '涨' + downCount + '跌 · ' + etfs.length + '只</div>';
+
+  // ── 增强：ETF平均涨跌幅 + 情绪判断 ──
+  var avgChange = etfs.reduce(function(s,e){return s+(e.change_pct||0);},0) / (etfs.length || 1);
+  var mood = avgChange > 0.5 ? '🔥 国家队积极' : avgChange > -0.5 ? '😐 情绪中性' : '💧 国家队谨慎';
+  h += '<div style="font-size:11px;color:#555;margin-bottom:8px;padding:4px 0;border-top:1px dashed #eee;border-bottom:1px dashed #eee;">';
+  h += '<span style="color:#555;">' + mood + '</span> · 平均' + (avgChange >= 0 ? '+' : '') + avgChange.toFixed(2) + '%';
+  if (upCount + downCount > 0) {
+    h += ' · <span style="color:#c62828;">' + upCount + '只涨</span> / <span style="color:#2e7d32;">' + downCount + '只跌</span>';
+  }
+  // 最活跃ETF（成交额最大）
+  var mostActive = etfs.slice().sort(function(a,b){return (b.amount||0) - (a.amount||0);})[0];
+  if (mostActive) {
+    var maName = mostActive.name.replace(/华夏|华泰柏瑞|易方达|嘉实|南方/g,'');
+    h += ' · 最活跃 <b>' + maName + '</b> ' + ((mostActive.amount||0)/1e8).toFixed(1) + '亿';
+  }
+  h += '</div>';
+
+  // ── 双列并排：上涨 | 下跌 ──
+  h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
+
+  // 上涨列
+  h += '<div style="font-size:11px;line-height:1.8;">';
+  h += '<div style="color:#c62828;font-weight:700;margin-bottom:4px;">▲ 上涨ETF</div>';
+  if (upEtfs.length > 0) {
+    for (var ui = 0; ui < upEtfs.length; ui++) {
+      var ue = upEtfs[ui];
+      var uAmt = (ue.amount || 0) / 1e8;
+      var uName = ue.name + ' <span style="color:#999;font-size:10px;">(' + ue.code + ')</span>';
+      h += '<div>' + uName + ' <b style="color:#c62828;">+' + (ue.change_pct||0).toFixed(2) + '%</b> <span style="color:#999;font-size:10px;">' + uAmt.toFixed(1) + '亿</span></div>';
+    }
+  } else { h += '<div style="color:#999;">—</div>'; }
+  h += '</div>';
+
+  // 下跌列
+  h += '<div style="font-size:11px;line-height:1.8;">';
+  h += '<div style="color:#2e7d32;font-weight:700;margin-bottom:4px;">▼ 下跌ETF</div>';
+  if (downEtfs.length > 0) {
+    for (var di = 0; di < downEtfs.length; di++) {
+      var de = downEtfs[di];
+      var dAmt = (de.amount || 0) / 1e8;
+      var dName = de.name + ' <span style="color:#999;font-size:10px;">(' + de.code + ')</span>';
+      h += '<div>' + dName + ' <b style="color:#2e7d32;">' + (de.change_pct||0).toFixed(2) + '%</b> <span style="color:#999;font-size:10px;">' + dAmt.toFixed(1) + '亿</span></div>';
+    }
+  } else { h += '<div style="color:#999;">—</div>'; }
+  h += '</div>';
+
+  h += '</div>';
+
+  content.innerHTML = h;
   card.style.display = 'block';
 }
 
@@ -344423,7 +347623,7 @@ function renderGoldPool(gp, activeData) {
     html += '<div style="display:flex;align-items:center;color:#cbd5e1;font-size:16px;font-weight:300;">/</div>';
     html += '<div style="flex:1;min-width:180px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:10px 12px;">';
     html += '<div style="display:flex;align-items:center;gap:7px;margin-bottom:3px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#e0f2fe;color:#0288d1;font-size:12px;font-weight:700;flex-shrink:0;">②</span><span style="font-weight:700;color:#1e293b;font-size:12px;">技术形态 A 档</span></div>';
-    html += '<div style="color:#64748b;font-size:10px;padding-left:29px;line-height:1.35;">驾驶舱独立筛选：上涨趋势 + 机构红 + RSI&lt;68 + 20日涨幅&lt;35% + EMA≥5 + 非涨停</div>';
+    html += '<div style="color:#64748b;font-size:10px;padding-left:29px;line-height:1.35;">形态筛选：上涨趋势 + 机构红 + RSI&lt;68 + 20日涨幅&lt;35% + EMA≥5 + 非涨停</div>';
     html += '</div>';
     html += '<div style="display:flex;align-items:center;color:#cbd5e1;font-size:16px;font-weight:300;">/</div>';
     html += '<div style="flex:1;min-width:180px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:10px 12px;">';
@@ -353161,12 +356361,7 @@ function renderIpoScore() {
     if (bodyWrap) bodyWrap.style.display = 'none';
     var timeEl2 = document.getElementById('ipoScoreTime');
     var timeStr = '';
-    if (timeEl2 && d.update_time) {
-      var _pcFt = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : null;
-      var _rawFt = fmtDataTime(d.update_time);
-      var ft2 = (_pcFt && _pcFt.ts && _rawFt && _rawFt.ts && _pcFt.ts >= _rawFt.ts && _pcFt.daysAgo <= 1) ? _pcFt : _rawFt;
-      timeStr = '更新于 ' + ft2.text;
-    }
+    if (timeEl2 && d.update_time) { var ft2 = window.POST_CLOSE_TIME ? fmtDataTime(window.POST_CLOSE_TIME) : fmtDataTime(d.update_time); timeStr = '更新于 ' + ft2.text; }
     var titleSpan = card.querySelector('div[style*="border-bottom"] span');
     if (titleSpan) {
       titleSpan.innerHTML = '<span style="font-size:14px;font-weight:700;color:#880e4f;">🚀 打新研判</span> <span style="font-size:11px;font-weight:400;color:#999;">申购·上市</span> <span style="font-size:11px;color:#aaa;margin-left:4px;">' + timeStr + '</span> <span style="font-size:11px;color:#bbb;margin-left:auto;">📭 近期无新股</span>';
@@ -354198,6 +357393,7 @@ var PAGE_CARDS = [
   {page:'📋 总览', card:'📅 重要日历',       check:function(){return !!document.getElementById('calendarGrid') && document.getElementById('calendarGrid').innerHTML.length > 0;}},
   {page:'📋 总览', card:'🧠 AI市场速览',      check:function(){return !!document.getElementById('aiSummaryContent') && document.getElementById('aiSummaryContent').innerHTML.length > 200;}},
   {page:'📋 总览', card:'🚀 打新研判',        check:function(){return !!(window.IPO_DATA&&window.IPO_DATA.update_time);}},
+  {page:'📋 总览', card:'📊 ETF资金流向',     check:function(){var el=document.getElementById('ntEtfFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📋 总览', card:'💰 板块资金流向',    check:function(){var el=document.getElementById('sectorFundFlowCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'📈 股指期货升贴水',  check:function(){var el=document.getElementById('cffexCard'); return el && el.style.display !== 'none';}},
   {page:'📦 暂未上架', card:'⏸️ 金股池停牌',    check:function(){return !!(window.SUSPENSION_ALERT&&window.SUSPENSION_ALERT.update_time);}},
@@ -354235,8 +357431,6 @@ var PAGE_CARDS = [
 function toggleUnlistedPanel() {
   var panel = document.getElementById('unlistedPanel');
   var btn = document.getElementById('btnShelfUnlisted');
-  var delPanel = document.getElementById('delistedPanel');
-  var delBtn = document.getElementById('btnShelfDelisted');
   var dashboard = document.getElementById('healthDashboard');
   var cockpitEl = document.getElementById('stockCockpit');
   if (!panel || !btn) return;
@@ -354251,8 +357445,6 @@ function toggleUnlistedPanel() {
     if(activeTab) activeTab.click();
   } else {
     panel.style.display='block';
-    if(delPanel) delPanel.style.display='none';
-    if(delBtn) { delBtn.style.background='#fafafa'; delBtn.style.color='#9e9e9e'; delBtn.style.borderColor='#bdbdbd'; }
     if(dashboard) dashboard.style.display='none';
     if(cockpitEl) cockpitEl.style.display='none';
     var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
@@ -354262,185 +357454,6 @@ function toggleUnlistedPanel() {
     if (typeof renderCrdsCard === 'function') { try { renderCrdsCard(); } catch(e) {} }
     if (typeof renderVolatilityCard === 'function') { try { renderVolatilityCard(); } catch(e) {} }
     if (typeof renderMarketFundFlowCard === 'function') { try { renderMarketFundFlowCard(); } catch(e) {} }
-  }
-}
-
-function renderNTFlowDelisted() {
-  const nt = window.NT_DATA || {};
-  const cs = window.CLOSE_SUMMARY || {};
-  const csDate = cs.data_date || '';
-  const csTime = cs.update_time || '';
-  const csHM = csTime.indexOf('T') >= 0 ? csTime.split('T')[1].slice(0,5) : csTime.slice(-5);
-  const today = new Date().toISOString().slice(0,10);
-  const isAfterClose = csDate === today && csHM >= '15:00';
-  const etfFlow = (isAfterClose && cs.etf_flow_snapshot && cs.etf_flow_snapshot.etfs)
-    ? cs.etf_flow_snapshot
-    : (nt.etfFlow || {});
-  const etfs = etfFlow.etfs || [];
-  const summary = etfFlow.summary || {};
-  const card = document.getElementById('ntEtfFlowCardDelisted');
-  const content = document.getElementById('ntEtfFlowContentDelisted');
-  if (!card || !content) return;
-  if (!etfs.length) {
-    content.innerHTML = '<div style="text-align:center;padding:20px;color:#999;font-size:13px;">⏳ 暂无国家队ETF资金数据，等待盘中更新</div>';
-    return;
-  }
-  var upAmt = etfs.filter(function(e){return (e.change_pct||0)>0;}).reduce(function(s,e){return s+(e.amount||0);},0);
-  var downAmt = etfs.filter(function(e){return (e.change_pct||0)<0;}).reduce(function(s,e){return s+(e.amount||0);},0);
-  var netFlow = upAmt - downAmt;
-  var flowYi = Math.abs(netFlow)/1e8;
-  var flowDir = netFlow >= 0 ? '净流入' : '净流出';
-  var flowStr = flowYi >= 1 ? flowYi.toFixed(1)+'亿' : Math.round(Math.abs(netFlow)/1e4)+'万';
-  var flowColor = netFlow >= 0 ? '#c62828' : '#2e7d32';
-  var upCount = summary.up||0, downCount = summary.down||0;
-  // 上涨 ETF 前 5
-  var upEtfs = etfs.filter(function(e){return (e.change_pct||0)>0;})
-    .sort(function(a,b){return Math.abs(b.change_pct||0)-Math.abs(a.change_pct||0);}).slice(0,5);
-  // 下跌 ETF 前 3
-  var downEtfs = etfs.filter(function(e){return (e.change_pct||0)<0;})
-    .sort(function(a,b){return Math.abs(a.change_pct||0)-Math.abs(b.change_pct||0);}).slice(0,3);
-
-  var h = '';
-  // 净流向数值
-  h += '<div style="font-size:22px;font-weight:800;color:' + flowColor + ';margin-bottom:2px;">' + (netFlow>0?'+':(netFlow<0?'-':'')) + flowStr + '</div>';
-  h += '<div style="font-size:10px;color:#999;margin-bottom:6px;">估算净' + flowDir + ' · ' + upCount + '涨' + downCount + '跌 · ' + etfs.length + '只</div>';
-  // 平均涨跌幅 + 情绪
-  var avgChange = etfs.reduce(function(s,e){return s+(e.change_pct||0);},0) / (etfs.length||1);
-  var mood = avgChange > 0.5 ? '🔥 国家队积极' : avgChange > -0.5 ? '😐 情绪中性' : '💧 国家队谨慎';
-  h += '<div style="font-size:11px;color:#555;margin-bottom:8px;padding:4px 0;border-top:1px dashed #eee;border-bottom:1px dashed #eee;">';
-  h += '<span style="color:#555;">' + mood + '</span> · 平均' + (avgChange>=0?'+':'') + avgChange.toFixed(2) + '%';
-  if (upCount + downCount > 0) {
-    h += ' · <span style="color:#c62828;">' + upCount + '只涨</span> / <span style="color:#2e7d32;">' + downCount + '只跌</span>';
-  }
-  var mostActive = etfs.slice().sort(function(a,b){return (b.amount||0)-(a.amount||0);})[0];
-  if (mostActive) {
-    var maName = mostActive.name.replace(/华夏|华泰柏瑞|易方达|嘉实|南方/g,'');
-    h += ' · 最活跃 <b>' + maName + '</b> ' + ((mostActive.amount||0)/1e8).toFixed(1) + '亿';
-  }
-  h += '</div>';
-  // 双列：上涨 + 下跌
-  h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
-  // 上涨
-  h += '<div style="font-size:11px;line-height:1.8;">';
-  h += '<div style="color:#c62828;font-weight:700;margin-bottom:4px;">▲ 上涨ETF</div>';
-  if (upEtfs.length > 0) {
-    upEtfs.forEach(function(e){
-      var a = ((e.amount||0)/1e8).toFixed(1);
-      h += '<div style="display:flex;justify-content:space-between;border-bottom:1px dashed #f5f5f5;padding:2px 0;">'
-        + '<span>' + e.name + ' <span style="color:#999;font-size:10px;">(' + e.code + ')</span></span>'
-        + '<b style="color:#c62828;">+' + (e.change_pct||0).toFixed(2) + '%</b>'
-        + '<span style="color:#999;font-size:10px;">' + a + '亿</span>'
-        + '</div>';
-    });
-  } else { h += '<div style="color:#999;">—</div>'; }
-  h += '</div>';
-  // 下跌
-  h += '<div style="font-size:11px;line-height:1.8;">';
-  h += '<div style="color:#2e7d32;font-weight:700;margin-bottom:4px;">▼ 下跌ETF</div>';
-  if (downEtfs.length > 0) {
-    downEtfs.forEach(function(e){
-      var a = ((e.amount||0)/1e8).toFixed(1);
-      h += '<div style="display:flex;justify-content:space-between;border-bottom:1px dashed #f5f5f5;padding:2px 0;">'
-        + '<span>' + e.name + ' <span style="color:#999;font-size:10px;">(' + e.code + ')</span></span>'
-        + '<b style="color:#2e7d32;">' + (e.change_pct||0).toFixed(2) + '%</b>'
-        + '<span style="color:#999;font-size:10px;">' + a + '亿</span>'
-        + '</div>';
-    });
-  } else { h += '<div style="color:#999;">—</div>'; }
-  h += '</div>';
-  h += '</div>';
-  content.innerHTML = h;
-  const timeEl = document.getElementById('ntEtfFlowTimeDelisted');
-  if (timeEl) {
-    var t = (isAfterClose ? csTime : (nt.update_time||'')) || (window.SCAN_DATA && window.SCAN_DATA.scan_time) || '';
-    if (t && t.indexOf('T')>=0) t = t.replace('T',' ');
-    if (t) { setPostMarketTime('ntEtfFlowTimeDelisted', t, 'etf'); }
-  }
-}
-
-// ===== ETF申赎规模近一年柱状图 =====
-function renderEtfSubYear() {
-  const sub = window.ETF_SUBSCRIPTION || {};
-  const sh = sub.sh || [];
-  const el = document.getElementById('etfSubYearChart');
-  const timeEl = document.getElementById('etfSubYearTime');
-  if (!el || !sh.length) return;
-  if (timeEl && sub.update_time) {
-    timeEl.textContent = '更新于 ' + fmtDataTime(sub.update_time).text;
-  }
-  const W = el.offsetWidth || 680, H = 180;
-  const PAD = {top:20, left:45, bottom:24, right:6};
-  const gw = W - PAD.left - PAD.right, gh = H - PAD.top - PAD.bottom;
-  const vals = sh.map(function(d){ return d.net_subscribe_bil || 0; });
-  let minV = Math.min.apply(null, vals), maxV = Math.max.apply(null, vals);
-  if (minV > 0) minV = 0;
-  if (maxV < 0) maxV = 0;
-  const range = maxV - minV || 1;
-  const yScale = function(v){ return PAD.top + gh - (v - minV) / range * gh; };
-  const zeroY = yScale(0);
-  const barW = Math.max(2, Math.floor(gw / sh.length * 0.7));
-  const gap = Math.max(1, Math.floor(gw / sh.length * 0.3));
-  let html = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:100%;">';
-  // 零线
-  html += '<line x1="' + PAD.left + '" y1="' + zeroY.toFixed(1) + '" x2="' + (W-PAD.right) + '" y2="' + zeroY.toFixed(1) + '" stroke="#ccc" stroke-width="1" stroke-dasharray="2"/>';
-  // Y轴分隔线
-  var yticks = 4;
-  for (var yi = 0; yi <= yticks; yi++) {
-    var v = minV + range * yi / yticks;
-    var y = yScale(v);
-    html += '<text x="' + (PAD.left-4) + '" y="' + (y+3) + '" text-anchor="end" font-size="9" fill="#888">' + (v >= 0 ? '' : '') + Math.round(v) + '</text>';
-    html += '<line x1="' + PAD.left + '" y1="' + y.toFixed(1) + '" x2="' + (W-PAD.right) + '" y2="' + y.toFixed(1) + '" stroke="#f0f0f0" stroke-width="1"/>';
-  }
-  // 柱状图
-  sh.forEach(function(d, i){
-    var v = d.net_subscribe_bil || 0;
-    var x = PAD.left + i * (barW + gap) + gap / 2;
-    var y = v >= 0 ? yScale(v) : zeroY;
-    var h = Math.abs(yScale(v) - zeroY);
-    var color = v >= 0 ? '#42a5f5' : '#ef5350';
-    html += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + barW + '" height="' + h.toFixed(1) + '" fill="' + color + '" opacity="0.7" rx="1"/>';
-  });
-  // X轴标签（每5日显示一个日期）
-  var step = Math.max(1, Math.floor(sh.length / 10));
-  for (var si = 0; si < sh.length; si += step) {
-    var dx = PAD.left + si * (barW + gap) + (barW + gap) / 2;
-    var dt = (sh[si].date||'');
-    if (dt && dt.length <= 5 && dt.indexOf('/') === -1 && dt.length >= 3) dt = dt.slice(2);
-    html += '<text x="' + dx.toFixed(1) + '" y="' + (H-4) + '" text-anchor="end" transform="rotate(-45,' + dx.toFixed(1) + ',' + (H-4) + ')" font-size="8" fill="#888">' + dt + '</text>';
-  }
-  html += '</svg>';
-  el.innerHTML = html;
-}
-
-function toggleDelistedPanel() {
-  var panel = document.getElementById('delistedPanel');
-  var btn = document.getElementById('btnShelfDelisted');
-  var unlistedPanel = document.getElementById('unlistedPanel');
-  var delBtn2 = document.getElementById('btnShelfUnlisted');
-  var dashboard = document.getElementById('healthDashboard');
-  var cockpitEl = document.getElementById('stockCockpit');
-  if (!panel || !btn) return;
-  var isShown = panel.style.display !== 'none';
-  if (isShown) {
-    panel.style.display='none';
-    if(dashboard) dashboard.style.display='';
-    if(cockpitEl) cockpitEl.style.display='none';
-    var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
-    btn.style.background='#fafafa'; btn.style.color='#9e9e9e'; btn.style.borderColor='#bdbdbd';
-    var activeTab=document.querySelector('.health-sub-tab.active');if(!activeTab)activeTab=document.querySelector('.health-sub-tab[data-cat="all"]');
-    if(activeTab) activeTab.click();
-  } else {
-    panel.style.display='block';
-    if(unlistedPanel) unlistedPanel.style.display='none';
-    if(delBtn2) { delBtn2.style.background='#fafafa'; delBtn2.style.color='#9e9e9e'; delBtn2.style.borderColor='#bdbdbd'; }
-    if(dashboard) dashboard.style.display='none';
-    if(cockpitEl) cockpitEl.style.display='none';
-    var _ae=document.getElementById('allsitePanel'); if(_ae) _ae.style.display='none';
-    btn.style.background='#4a148c'; btn.style.color='#fff'; btn.style.borderColor='#4a148c';
-    // 渲染国家队ETF数据
-    if (typeof renderNTFlowDelisted === 'function') { try { renderNTFlowDelisted(); } catch(e) {} }
-    // 渲染ETF申赎近一年
-    if (typeof renderEtfSubYear === 'function') { try { renderEtfSubYear(); } catch(e) {} }
   }
 }
 
@@ -354813,8 +357826,10 @@ function renderMarketFundFlowCard() {
     if (lu) {
       var ft = (typeof fmtDataTime === 'function') ? fmtDataTime(lu) : { text: lu.replace('T', ' ').replace(/(\.\d+)?Z?$/, '').substring(0, 16) };
       tEl.textContent = '更新于 ' + ft.text;
+      tEl.className = 'update-time-badge' + (ft.stale ? ' stale' : '') + (ft.critical ? ' critical' : '');
     } else {
       tEl.textContent = '更新于 未知';
+      tEl.className = 'update-time-badge';
     }
   }
 
@@ -356675,44 +359690,44 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 "neodata_status": "ok",
 "neodata_updated": "2026-07-24 17:20:48",
 "neodata_valid_until": "2026-07-25 17:20:41",
-"updated_at": "2026-07-27 10:16:12",
-"cloud_deploy_time": "20260727101613",
+"updated_at": "2026-07-27 15:44:48",
+"cloud_deploy_time": "20260727154449",
 "failover_status": "OK",
-"failover_time": "2026-07-27 10:13:55",
+"failover_time": "2026-07-27 10:12:19",
 "data_correctness": {
 "status": "PASS",
 "detail": "全站 21 个数据维度业务不变量全部通过",
 "issues": [],
-"time": "2026-07-27 10:14:00"
+"time": "2026-07-27 15:43:57"
 },
 "freshness_consistency": {
 "status": "FAIL",
-"detail": "19 项陈旧/失真（扫描 55 文件）",
+"detail": "14 项陈旧/失真（扫描 55 文件）",
 "issues": [
-"52w_high.json 陈旧 62.8h > 阈值 30h（声明更新=2026-07-24 19:25）",
-"capital_flow_summary.json 陈旧 64.6h > 阈值 40h（声明更新=2026-07-24 17:38:32）",
-"cffex_holdings.json 陈旧 62.8h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
-"concept_ranking.json 陈旧 62.8h > 阈值 30h（声明更新=2026-07-24 19:26:21）",
-"crds_result.json 陈旧 63.0h > 阈值 30h（声明更新=2026-07-24 19:14:52）"
+"52w_high.json 陈旧 68.3h > 阈值 30h（声明更新=2026-07-24 19:25）",
+"capital_flow_summary.json 陈旧 70.1h > 阈值 40h（声明更新=2026-07-24 17:38:32）",
+"cffex_holdings.json 陈旧 68.3h > 阈值 40h（声明更新=2026-07-24 19:25:46）",
+"crds_result.json 陈旧 68.5h > 阈值 30h（声明更新=2026-07-24 19:14:52）",
+"etf_subscription.json 陈旧 70.1h > 阈值 40h（声明更新=2026-07-24 17:37）"
 ],
-"time": "2026-07-27 10:14:00"
+"time": "2026-07-27 15:43:57"
 },
-"monitor_updated_at": "2026-07-27 10:14:00",
+"monitor_updated_at": "2026-07-27 15:43:57",
 "build_integrity": {
 "status": "PASS",
 "detail": "部署产物 18 个关键数据块均注入且非空",
 "issues": [],
-"time": "2026-07-27 10:14:00"
+"time": "2026-07-27 15:43:57"
 },
 "three_party": {
 "cloud": {
 "status": "ok",
-"last_time": "2026-07-27 10:08:38",
+"last_time": "2026-07-27 15:05:53",
 "mode": "cloud_intraday"
 },
 "xiaojiu": {
 "status": "ok",
-"last_time": "2026-07-27 10:12:11",
+"last_time": "2026-07-27 15:34:41",
 "mode": "deploy"
 },
 "alimi": {
@@ -356801,7 +359816,7 @@ if (window.NT_DATA && window.NT_DATA.calendar && window.NT_DATA.calendar.events)
 "monitor_alert": {
 "level": "FAIL",
 "summary": "数据正确性:PASS 新鲜度:FAIL 构建:PASS",
-"time": "2026-07-27 10:14:00"
+"time": "2026-07-27 15:43:57"
 }
 };</script>
 <script>
