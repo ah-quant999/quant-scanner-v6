@@ -20,29 +20,28 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 
 def fetch_via_westock():
-    """尝试通过 westock MCP 工具拉取ETF数据。
-    如果MCP不可用，返回None（不造假）。
+    """通过 akshare fund_etf_spot_em 拉取全市场ETF主力净流入数据。
+    数据含：名称/代码/最新价/涨跌幅/主力净流入-净额/成交额等
     """
     try:
-        # 尝试导入 MCP 客户端
-        # 在自动化环境中，我们直接用 HTTP API 或 akshare 作为后备
-        import urllib.request
-        import urllib.parse
-
-        # 方案1：如果 westock MCP 可用，直接调用
-        # 这里用 akshare 的 fund_etf_fund_daily_rank 作为数据源（与westock数据一致）
         import akshare as ak
 
-        print("  [etf_daily] 使用 akshare fund_etf_fund_daily_rank 拉取ETF日排名...")
-        df = ak.fund_etf_fund_daily_rank(symbol="当日")
+        print("  [etf_daily] 使用 akshare fund_etf_spot_em 拉取ETF全量数据...")
+        df = ak.fund_etf_spot_em()
         if df is not None and len(df) > 0:
+            # 转换为记录列表，保留关键字段
             records = []
-            for _, row in df.head(30).iterrows():
+            for _, row in df.iterrows():
+                net = row.get("主力净流入-净额")
+                if net is None or (isinstance(net, float) and str(net) == 'nan'):
+                    continue
                 records.append({
-                    "name": str(row.get("基金名称", "")),
-                    "code": str(row.get("基金代码", "")),
-                    "net_inflow": float(row.get("净流入", 0)) if row.get("净流入") else 0,
+                    "name": str(row.get("名称", "")),
+                    "code": str(row.get("代码", "")),
+                    "net_inflow": float(net) / 1e4,  # 元→万元
                     "pct_chg": float(row.get("涨跌幅", 0)) if row.get("涨跌幅") else 0,
+                    "amount": float(row.get("成交额", 0)) / 1e8 if row.get("成交额") else 0,  # 元→亿
+                    "turnover": float(row.get("换手率", 0)) if row.get("换手率") else 0,
                 })
             return records
     except ImportError:
@@ -50,7 +49,6 @@ def fetch_via_westock():
     except Exception as e:
         print(f"  [etf_daily] 拉取失败: {e}")
 
-    # 后备：尝试读取本地 lhb/sector 数据做交叉验证
     return None
 
 

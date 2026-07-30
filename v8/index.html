@@ -528,7 +528,7 @@
 
     <!-- ====== 股票型ETF日监控（华宝风格） ====== -->
     <div class="card" style="margin-bottom:16px" id="etfDailyCard">
-      <h3><span class="ic">📊</span>股票型ETF日监控 <span style="color:#fff;font-size:11px;font-weight:700;background:#ff5252;border-radius:6px;padding:2px 8px;margin-left:4px;">⚠️ 无数据</span> · <span class="fresh" id="etfDailyTime">--</span> <span class="tag" style="font-size:11px">T+1 盘后更新</span></h3>
+      <h3><span class="ic">📊</span>股票型ETF日监控 · <span class="fresh" id="etfDailyTime">--</span> <span class="tag" style="font-size:11px">T+1 盘后更新</span></h3>
       <div id="etfDailyBody"><div class="note">正在加载日监控数据...</div></div>
     </div>
   </section>
@@ -702,9 +702,9 @@
                 <span style="width:10px;height:10px;border-radius:50%;background:#1D9E75;"></span>
                 <span style="font-size:12px;font-weight:600;color:var(--txt);">三项全满足</span>
                 <span style="margin-left:auto;font-size:13px;font-weight:700;color:#1D9E75;"><span id="stcrdsEliteCnt">0</span><span style="font-size:10px;color:var(--dim);">只</span></span>
-                <span id="stcrdsEliteArr" style="font-size:10px;color:var(--dim);">▾</span>
+                <span id="stcrdsEliteArr" style="font-size:10px;color:var(--dim);">▴</span>
               </div>
-              <div id="stcrdsEliteBody" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:160px;overflow-y:auto;"></div>
+              <div id="stcrdsEliteBody" style="display:block;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:300px;overflow-y:auto;"></div>
             </div>
             <div style="border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--card);overflow:hidden;">
               <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;" onclick="tsToggle('stcrdsAdvBody','crdsAdvArr')">
@@ -712,9 +712,9 @@
                 <span style="font-size:12px;font-weight:600;color:var(--txt);">两项满足</span>
                 <span style="margin-left:auto;font-size:13px;font-weight:700;color:#BA7517;"><span id="stcrdsAdvCnt">0</span><span style="font-size:10px;color:var(--dim);">只</span></span>
                 <span id="stcrdsAdvHint"></span>
-                <span id="stcrdsAdvArr" style="font-size:10px;color:var(--dim);">▾</span>
+                <span id="stcrdsAdvArr" style="font-size:10px;color:var(--dim);">▴</span>
               </div>
-              <div id="stcrdsAdvBody" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+              <div id="stcrdsAdvBody" style="display:block;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:300px;overflow-y:auto;"></div>
             </div>
           </div>
           <div>
@@ -723,27 +723,27 @@
                 <span style="width:10px;height:10px;border-radius:50%;background:#185FA5;"></span>
                 <span style="font-size:12px;font-weight:600;color:var(--txt);">10日≥2板</span>
                 <span style="margin-left:auto;font-size:13px;font-weight:700;color:#185FA5;"><span id="stcrdsCnt1">0</span><span style="font-size:10px;color:var(--dim);">只</span></span>
-                <span id="stcrdsArr1" style="font-size:10px;color:var(--dim);">▾</span>
+                <span id="stcrdsArr1" style="font-size:10px;color:var(--dim);">▴</span>
               </div>
-              <div id="stcrdsList1" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:280px;overflow-y:auto;"></div>
+              <div id="stcrdsList1" style="display:block;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:360px;overflow-y:auto;"></div>
             </div>
             <div style="border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--card);overflow:hidden;">
               <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;" onclick="tsToggle('stcrdsList2','crdsArr2')">
                 <span style="width:10px;height:10px;border-radius:50%;background:#C62828;"></span>
                 <span style="font-size:12px;font-weight:600;color:var(--txt);">大跌日逆势板</span>
                 <span style="margin-left:auto;font-size:13px;font-weight:700;color:#C62828;"><span id="stcrdsCnt2">0</span><span style="font-size:10px;color:var(--dim);">只</span></span>
-                <span id="stcrdsArr2" style="font-size:10px;color:var(--dim);">▾</span>
+                <span id="stcrdsArr2" style="font-size:10px;color:var(--dim);">▴</span>
               </div>
-              <div id="stcrdsList2" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:160px;overflow-y:auto;"></div>
+              <div id="stcrdsList2" style="display:block;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:300px;overflow-y:auto;"></div>
             </div>
             <div style="border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--card);overflow:hidden;">
               <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;cursor:pointer;user-select:none;" onclick="tsToggle('stcrdsList3','crdsArr3')">
                 <span style="width:10px;height:10px;border-radius:50%;background:#3B6D11;"></span>
                 <span style="font-size:12px;font-weight:600;color:var(--txt);">量能确认</span>
                 <span style="margin-left:auto;font-size:13px;font-weight:700;color:#3B6D11;"><span id="stcrdsCnt3">0</span><span style="font-size:10px;color:var(--dim);">只</span></span>
-                <span id="stcrdsArr3" style="font-size:10px;color:var(--dim);">▾</span>
+                <span id="stcrdsArr3" style="font-size:10px;color:var(--dim);">▴</span>
               </div>
-              <div id="stcrdsList3" style="display:none;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:200px;overflow-y:auto;"></div>
+              <div id="stcrdsList3" style="display:block;padding:0 10px 8px 10px;font-size:11px;color:var(--sub);line-height:1.7;max-height:300px;overflow-y:auto;"></div>
             </div>
           </div>
         </div>
@@ -939,7 +939,37 @@
         <div class="logic-h">个股实时查询</div>
         <div class="logic-p">输入代码或名称，聚合多维共振评分、金股池状态、主力资金、近10日走势等。</div>
         <div class="logic-h">ETF资金热度</div>
-        <div class="logic-p">宽基指数ETF每日净申购赎回份额折线图，T+0实时估算国家队动向。</div>
+        <div class="logic-p">宽基指数ETF每日净申购赎回份额折线图，T+0实时估算国家队动向。数据源：etf_intraday_heat.json（akshare fund_etf_hist_em）。展示沪深300/中证500/创业板/科创50/上证50等主要宽基ETF。</div>
+      </div>
+
+      <div class="card">
+        <h3><span class="ic">⚡</span>ETF 5分钟量能脉冲监测 - 说明</h3>
+        <div class="logic-h">定位</div>
+        <div class="logic-p">盘中T+0实时监控4只核心宽基ETF（沪深300/中证500/创业板/科创50）的5分钟级别成交额切片，判断主力护盘/出货节奏。</div>
+        <div class="logic-h">数据来源</div>
+        <div class="logic-p">westock MCP data_minute 接口拉取4只ETF的分钟级成交额，取最近4个5分钟切片。每日约16:00~17:00自动抓取一次（fetch_etf_pulse.py），写入 etf_pulse.json。</div>
+        <div class="logic-h">判读规则</div>
+        <table class="lg-table">
+          <tr><th>模式</th><th>特征</th><th>含义</th></tr>
+          <tr><td style="color:var(--up);">买力持续加码</td><td>连续切片成交额递增 + 价格守住或拉升</td><td>主力积极承接，抛压被吸收</td></tr>
+          <tr><td style="color:var(--down);">缩量衰减</td><td>连续切片成交额递减</td><td>买力消退，观望为主</td></tr>
+          <tr><td style="color:var(--gold);">放量横盘</td><td>成交额高但价格不涨</td><td>多空分歧大，方向待选择</td></tr>
+          <tr><td style="color:var(--dim);">缩量阴跌</td><td>成交额和价格双降</td><td>无护盘，自由落体</td></tr>
+        </table>
+        <div class="logic-h">与「ETF资金热度」的区别</div>
+        <div class="logic-p"><b>ETF资金热度</b>（🔥卡）：宽基ETF<b>净申赎份额</b>（T+0估算），看长期申购赎回趋势，判断国家队动向。<br><b>ETF量能脉冲</b>（⚡卡）：核心宽基ETF<b>5分钟成交额切片</b>（盘中T+0），看当日主力买卖节奏。两者维度不同、互补不重复。</div>
+      </div>
+
+      <div class="card">
+        <h3><span class="ic">📊</span>股票型ETF日监控（华宝风格）- 说明</h3>
+        <div class="logic-h">定位</div>
+        <div class="logic-p">全市场1559只ETF按当日主力净流入排名，TOP10流入/流出，分类统计（宽基/行业主题/跨境）。T+1盘后更新。</div>
+        <div class="logic-h">数据来源</div>
+        <div class="logic-p">akshare fund_etf_spot_em（东方财富ETF实时行情），取「主力净流入-净额」字段排序。由 fetch_etf_daily_monitor.py 每日收盘后自动采集。</div>
+        <div class="logic-h">分类规则</div>
+        <div class="logic-p">关键词匹配：宽基=含300/500/50/180/创业板/科创/沪深/中证；跨境=含港股/恒生/纳指/标普/MSCI；其余=行业/主题。</div>
+        <div class="logic-h">与「ETF资金热度」的区别</div>
+        <div class="logic-p"><b>ETF资金热度</b>：少数几只<b>宽基指数ETF</b>的净申赎趋势（周/月级视角）。<br><b>ETF日监控</b>：全市场<b>1559只ETF</b>的当日主力净流入排名（日级视角）。覆盖范围和数据维度完全不同。</div>
       </div>
     </div>
 
@@ -1073,6 +1103,45 @@ norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
           <tr><td>基本面质量分</td><td>-10~+25</td><td>A级15-25/B级5/C级0/D级-10</td></tr>
         </table>
       </div>
+
+      <div class="card">
+        <h3><span class="ic">📊</span>CRDS 逆势龙头 - 算法说明</h3>
+        <div class="logic-h">定位</div>
+        <div class="logic-p">在大盘大跌/震荡市中，捕捉「逆势涨停」的强势龙头股。<b>盘后看</b>(基于日K) · <b>短线</b>捕捉逆势龙头 · <b>日频</b>(每日盘后跑)。逆势龙头只在大跌/震荡市有效，若今日大涨则信号参考意义极低。</div>
+        <div class="logic-h">输入与数据源</div>
+        <div class="logic-p">· 个股池：<b>watch_result.json</b>（来自 scanner.py watch 模式，即金股池/观察池股票），按数字代码去重。<br>· 个股K线：<b>mootdx 通达信直连 bars()</b> 为主（不受 BaoStock 封禁影响），<b>东方财富 push2his K线</b> 为兜底。<br>· 大盘：<b>上证指数 000001</b> 近10日K线。<br>· 注：mootdx.bars() 每约50次调用重建客户端+gc 以规避 socket 泄漏；CRDS 约需 176 次调用，必须周期重置。</div>
+        <div class="logic-h">三个核心条件（满足越多越好）</div>
+        <table class="lg-table">
+          <tr><th>条件</th><th>判定</th><th>阈值/口径</th></tr>
+          <tr><td><b>① 10日≥2板</b></td><td>近10个交易日涨停次数 ≥ 2</td><td>主板涨停阈值 9%（留1%误差）；创业板/科创板 18%</td></tr>
+          <tr><td><b>② 大跌日逆势板</b></td><td>至少1个涨停日对应大盘当日跌超阈值</td><td>MARKET_DOWN_THRESHOLD = <b>-1.5%</b></td></tr>
+          <tr><td><b>③ 量能确认</b></td><td>量价比 VR 峰值 ≥ 1.5</td><td>VR = 当日成交额 / 近20日均成交额</td></tr>
+        </table>
+        <div class="logic-h">打分公式</div>
+        <div class="code">AF = max(涨停且大盘跌那天的 个股涨幅 / |大盘当日跌幅|)  # 大盘跌幅需 &gt; 0.5% 才计
+VR_peak = max(近10日成交额 / 近20日均成交额)
+TS_peak = max(近10日换手率 / 近20日均换手率)
+逆势板占比 = zt_on_down / zt_count
+CRDS_raw = AF × min(VR_peak, 3) × (1 + 逆势板占比) / 3
+CRDS_score = round(CRDS_raw × 10)   # 归一化 0~100</div>
+        <div class="logic-h">分层（按满足条件个数 conds 0~3）</div>
+        <div class="logic-p">· <b style="color:#1D9E75">精选级 (3/3)</b>：elite，无条件优先看<br>· <b style="color:#BA7517">进阶级 (2/3)</b>：advanced，差1步<br>· <b style="color:var(--dim)">关注级 (1/3)</b>：watch，仅放量2连板/非逆势（评分均0时前端标注折叠去噪）</div>
+        <div class="logic-h">大盘环境有效性判断（决定信号可信度）</div>
+        <table class="lg-table">
+          <tr><th>上证今日涨跌幅</th><th>有效性</th><th>含义</th></tr>
+          <tr><td>≥ +2.0%</td><td>失效</td><td>大涨市无需逆势龙头，信号参考意义极低</td></tr>
+          <tr><td>+1.0% ~ +2.0%</td><td>低效</td><td>市场偏强，CRDS 有效性降低</td></tr>
+          <tr><td>-0.5% ~ +1.0%</td><td>有效</td><td>震荡市，CRDS 可正常参考</td></tr>
+          <tr><td>-2.0% ~ -0.5%</td><td>较有效</td><td>市场偏弱，CRDS 较有效</td></tr>
+          <tr><td>&lt; -2.0%</td><td>高有效</td><td>暴跌恐慌市信号最强，但需防系统性风险</td></tr>
+        </table>
+        <div class="logic-h">名字清洗（防研报/新闻稿污染名）</div>
+        <div class="logic-p">卡片绝不出「看好/完成/给予」等研报词垃圾名。优先级：东财 f58 权威名 &gt; 通达信名字(仅股票段且非指数/债) &gt; raw 干净名 &gt; 退化代码兜底。</div>
+        <div class="logic-h">与「涨停联动」的区别</div>
+        <div class="logic-p"><b>涨停联动</b>：10日<b>概念板块</b>涨停家数热力矩阵，看板块热点持续性。<br><b>CRDS 逆势龙头</b>：<b>单只个股</b>的逆势涨停强度评分，看个股逆大盘的龙头成色。维度不同、不重复。</div>
+        <div class="logic-h">输出链路</div>
+        <div class="logic-p">calc_crds.py → <b>data/crds_result.json</b> → update_v8.py 注入 <b>window.CRDS_CARD_DATA</b> → 前端「逆势龙头」tab 渲染（含历史扫描累积追踪）。</div>
+      </div>
     </div>
 
     <!-- === 运维 === -->
@@ -1114,7 +1183,7 @@ norm = clip((x - lo)/(hi - lo) * 100, 0, 100)</div>
 
       <div class="card">
         <h3><span class="ic">🛠️</span>运维面板内部模块 - 说明</h3>
-        <div class="logic-p">· <b>v6精选</b>：选股驾驶舱+全站精选（15个JSON映射到DATA.*）<br>· <b>暂未上架</b>：候选观察池 + V6卡片真实渲染（F窗口/金股池停牌/波动率/精选预判/四路资金/大盘资金流/期指/两融/ETF申赎）<br>· <b>已下架</b>：原9张卡已归入暂未上架并接入数据，此区保留旧版清单参考</div>
+        <div class="logic-p">· <b>v6精选</b>：选股驾驶舱+全站精选（15个JSON映射到DATA.*）<br>· <b>暂未上架</b>：候选观察池 + V6卡片真实渲染（F窗口/金股池停牌/波动率/精选预判/四路资金/大盘资金流/期指/两融/ETF申赎）<br>· <b>已下架</b>：2026-07-30 起已<b>全面接入真实数据（10张卡）</b>，分别来自 F窗口实时监测(SH_FIB) / 金股池停牌监测(GOLD_POOL) / 波动率结构观测(VOLATILITY) / 精选预判信号(W52_HIGH·LIMIT_UP_HEATMAP·HERDING_DATA) / 四路资金流向对比(CAPITAL_FLOW_DATA) / 上交所大盘资金流时间轴(MARKET_FUND_FLOW_DATA) / 股指期货升贴水(CFFEX_HOLDINGS) / 两融余额走势(MARGIN_DATA) / 宽基ETF净申赎(ETF_SUBSCRIPTION) / 国家队ETF资金流向(ETF_INTRADAY_HEAT)；数据缺失时显示友好提示而非空白。</div>
       </div>
     </div>
   </section>
@@ -1798,6 +1867,10 @@ function doQuery(){
       if(d['sector_fund_flow.json'])safe(renderSector,d['sector_fund_flow.json']);
       if(d['macro_data.json'])safe(renderMacro,d['macro_data.json']);
       // ETF量能脉冲 + 日监控（实时数据板块）
+      /* v8：DATA 从 window 注入变量读取，不 fetch */
+      if(typeof DATA==='undefined') window.DATA={};
+      DATA.etf_pulse = window.ETF_PULSE||null;
+      DATA.etf_daily = window.ETF_DAILY_MONITOR||null;
       safe(renderEtfPulse);
       safe(renderEtfDaily);
     });
@@ -2530,86 +2603,78 @@ function doQuery(){
   function renderCockpitAdvice() {
     var con = $('cockpitAdviceBanner');
     if (!con) return;
-    con.innerHTML = '<div style="padding:10px 14px;text-align:center;color:#8aa0c2;font-size:12px;background:#0f1a2e;border-radius:10px;">📊 加载回测建议...</div>';
-    J('cockpit_advice.json?v='+Date.now()).then(function(d){
-      window.COCKPIT_ADVICE = d;
-      con.innerHTML = buildCockpitAdviceHTML(d);
-    }).catch(function(e){
-      var errMsg = (e && e.message) ? e.message : String(e);
-      con.innerHTML = '<div style="padding:10px 14px;font-size:11px;color:#ff6b81;background:#0f1a2e;border-radius:10px;border:1px solid rgba(255,107,129,.3);line-height:1.6;">⚠️ 回测建议加载失败：<code style="font-size:10px;background:rgba(255,107,129,.12);padding:1px 4px;border-radius:3px;">'+errMsg+'</code><br><span style="color:#8aa0c2;font-size:10px;">路径：cockpit_advice.json · 硬刷新可清缓存</span></div>';
-    });
+    /* v8 铁律：不发布 data/ 目录，禁止 fetch。从 update_v8.py 注入的 window.COCKPIT_ADVICE 读取 */
+    var d = window.COCKPIT_ADVICE || null;
+    if (!d) {
+      con.innerHTML = '<div style="padding:10px 14px;text-align:center;color:#ffb74d;font-size:12px;background:#0f1a2e;border-radius:10px;border:1px solid rgba(255,183,77,.3);line-height:1.6;">⏳ 回测建议数据尚未生成（cockpit_advice.json 为空或不存在）<br><span style="color:#8aa0c2;font-size:10px;">每日盘后 batch_update 跑选股时自动生成</span></div>';
+      return;
+    }
+    con.innerHTML = buildCockpitAdviceHTML(d);
   }
   function renderBacktestTdx() {
     var con = $('cockpitBacktest60');
     if (!con) return;
-    if (con.innerHTML.indexOf('加载回测数据') === -1 && con.innerHTML.indexOf('rank-tbody') > -1 && con.getAttribute('data-fetched')) return;
-    var cacheBuster = '?v=' + Date.now();
-    var safetyTimer = setTimeout(function(){
-      if (con && con.innerHTML.indexOf('加载回测数据') > -1) {
-        con.innerHTML = '<div style="text-align:center;padding:14px;color:#ffb74d;">⏳ 数据加载超时（>15s）<br><span style="font-size:10px;color:#8aa0c2;">大文件(2MB)首次加载可能较慢，请 Ctrl+F5 硬刷新</span></div>';
-      }
-    }, 15000);
-    J('backtest_tdx.json'+cacheBuster).then(function(d){
-      clearTimeout(safetyTimer);
-      var sm = d.summary || {};
-      var items = [];
-      Object.keys(sm).forEach(function(k){
-        if (sm[k] && sm[k].total > 0) items.push(Object.assign({}, sm[k], {key:k}));
-      });
-      items.sort(function(a, b){ return (b.win_rate_5d || 0) - (a.win_rate_5d || 0); });
-      var periods = [1,3,5,10,20];
-      if (!items.length) {
-        con.innerHTML = '<div style="text-align:center;padding:14px;color:#8aa0c2;">📭 暂无可用信号样本（summary为空）<br><span style="font-size:10px;">'+(d.calc_time||'数据已拉取')+'</span></div>';
-        return;
-      }
-      var labels = {trend_up:'📈上涨趋势', trend_down:'📉下跌趋势', chan_buy:'🟣缠论买点',
-        contrarian:'🔴逆势红色', breakout_5d:'🚀5日突破', volume_surge:'💥放量上涨',
-        divergence:'⚠️量价背离', ge2_signals:'🎯双信号', ge3_signals:'🎯三信号'};
-      var lowSampleCount = items.filter(function(s){return (s.total||0)<30;}).length;
-      var html = '<div style="font-size:10px;color:#8aa0c2;margin-bottom:6px;">'+d.gold_pool_size+'只金池股×60日 · '+(d.calc_time||'')+' · 按T+5胜率降序</div>';
-      if (lowSampleCount > 0) {
-        html += '<div style="font-size:10px;color:#ff6b81;background:rgba(255,107,129,.12);padding:4px 8px;border-radius:4px;margin-bottom:6px;">⚠️ <b>'+lowSampleCount+' 个信号样本<30</b>，胜率参考性低，红色行已标出。仅作排序参考，不作决策依据。</div>';
-      }
-      html += '<table style="width:100%;font-size:11px;border-collapse:collapse;color:#dbe6f7;"><thead><tr style="background:#0c1626;">'+
-        '<th style="padding:3px 4px;text-align:left;">信号</th><th style="padding:3px 4px;text-align:center;">样本</th>';
-      periods.forEach(function(pd){
-        html += '<th style="padding:3px 2px;text-align:center;font-size:10px;">T+'+pd+'胜</th><th style="padding:3px 2px;text-align:center;font-size:10px;">T+'+pd+'收益</th>';
-      });
-      html += '</tr></thead>';
-      html += '<tbody id="rank-tbody">';
-      items.forEach(function(s, i){
-        var rank = i + 1;
-        var lowSample = (s.total || 0) < 30;
-        var rankBadge = rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':'';
-        var rowBg = lowSample ? 'rgba(255,107,129,.1)' : (rank<=3 ? 'rgba(255,183,77,.1)' : '');
-        var labelText = (rankBadge?rankBadge+' ':'') + (labels[s.key]||s.key);
-        if (lowSample) labelText = '🚫 ' + labelText;
-        var sampleText = lowSample ? '🚫 '+s.total+'（无效）' : s.total;
-        html += '<tr style="border-bottom:1px solid rgba(255,255,255,.06);background:'+rowBg+';"><td style="padding:2px 4px;white-space:nowrap;'+(lowSample?'color:#ff6b81;':'')+'">'+labelText+'</td>'+
-          '<td style="padding:2px 4px;text-align:center;color:'+(lowSample?'#ff6b81':'#dbe6f7')+';font-weight:'+(lowSample?'700':'400')+';">'+sampleText+'</td>';
-        periods.forEach(function(pd){
-          var wr = s['win_rate_'+pd+'d'];
-          var ar = s['avg_return_'+pd+'d'];
-          var hasData = wr !== undefined && wr !== null;
-          var arC = !hasData ? '#556' : (ar >= 0 ? '#ff6b81' : '#5ee0a0');
-          var wrC = lowSample ? '#556' : arC;
-          var retStr = hasData ? ((ar>=0?'+':'')+ar+'%') : '—';
-          var wrStr = hasData ? (wr+'%') : '—';
-          html += '<td style="padding:2px 3px;text-align:center;color:'+wrC+';font-weight:600;'+(lowSample?'text-decoration:line-through;':'')+'">'+wrStr+'</td>'+
-            '<td style="padding:2px 3px;text-align:center;color:'+arC+';font-weight:600;">'+retStr+'</td>';
-        });
-        html += '</tr>';
-      });
-      html += '</tbody></table><div style="font-size:9px;color:#556;margin-top:4px;">⚠️ 熊市60日内全信号负收益。持续每日累积样本，30天后回测更具参考性。</div>';
-      con.innerHTML = html;
-      con.setAttribute('data-fetched', '1');
-      window.__BACKTEST_TDX = d;
-      try { renderCockpitResonance(); } catch(e) { }
-    }).catch(function(err){
-      clearTimeout(safetyTimer);
-      var errMsg = (err && err.name === 'AbortError') ? '加载超时，网络可能太慢' : (err && err.message ? err.message : '网络错误');
-      con.innerHTML = '<div style="text-align:center;padding:14px;color:#ff6b81;">❌ 回测数据加载失败<br><span style="font-size:10px;color:#8aa0c2;">'+ errMsg +' · 请 Ctrl+F5 硬刷新</span></div>';
+    if (con.getAttribute('data-fetched')) return;
+    /* v8 铁律：不发布 data/ 目录，禁止 fetch。从 update_v8.py 注入的 window.BACKTEST_TDX 读取 */
+    var d = window.BACKTEST_TDX || null;
+    if (!d) {
+      con.innerHTML = '<div style="text-align:center;padding:14px;color:#ffb74d;">⏳ 回测数据尚未生成（backtest_tdx.json 为空或不存在）<br><span style="font-size:10px;color:#8aa0c2;">每日盘后 scanner.py 跑完自动生成，约 2MB</span></div>';
+      return;
+    }
+    var sm = d.summary || {};
+    var items = [];
+    Object.keys(sm).forEach(function(k){
+      if (sm[k] && sm[k].total > 0) items.push(Object.assign({}, sm[k], {key:k}));
     });
+    items.sort(function(a, b){ return (b.win_rate_5d || 0) - (a.win_rate_5d || 0); });
+    var periods = [1,3,5,10,20];
+    if (!items.length) {
+      con.innerHTML = '<div style="text-align:center;padding:14px;color:#8aa0c2;">📭 暂无可用信号样本（summary为空）<br><span style="font-size:10px;">'+(d.calc_time||'数据已拉取')+'</span></div>';
+      return;
+    }
+    var labels = {trend_up:'📈上涨趋势', trend_down:'📉下跌趋势', chan_buy:'🟣缠论买点',
+      contrarian:'🔴逆势红色', breakout_5d:'🚀5日突破', volume_surge:'💥放量上涨',
+      divergence:'⚠️量价背离', ge2_signals:'🎯双信号', ge3_signals:'🎯三信号'};
+    var lowSampleCount = items.filter(function(s){return (s.total||0)<30;}).length;
+    var html = '<div style="font-size:10px;color:#8aa0c2;margin-bottom:6px;">'+d.gold_pool_size+'只金池股×60日 · '+(d.calc_time||'')+' · 按T+5胜率降序</div>';
+    if (lowSampleCount > 0) {
+      html += '<div style="font-size:10px;color:#ff6b81;background:rgba(255,107,129,.12);padding:4px 8px;border-radius:4px;margin-bottom:6px;">⚠️ <b>'+lowSampleCount+' 个信号样本<30</b>，胜率参考性低，红色行已标出。仅作排序参考，不作决策依据。</div>';
+    }
+    html += '<table style="width:100%;font-size:11px;border-collapse:collapse;color:#dbe6f7;"><thead><tr style="background:#0c1626;">'+
+      '<th style="padding:3px 4px;text-align:left;">信号</th><th style="padding:3px 4px;text-align:center;">样本</th>';
+    periods.forEach(function(pd){
+      html += '<th style="padding:3px 2px;text-align:center;font-size:10px;">T+'+pd+'胜</th><th style="padding:3px 2px;text-align:center;font-size:10px;">T+'+pd+'收益</th>';
+    });
+    html += '</tr></thead>';
+    html += '<tbody id="rank-tbody">';
+    items.forEach(function(s, i){
+      var rank = i + 1;
+      var lowSample = (s.total || 0) < 30;
+      var rankBadge = rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':'';
+      var rowBg = lowSample ? 'rgba(255,107,129,.1)' : (rank<=3 ? 'rgba(255,183,77,.1)' : '');
+      var labelText = (rankBadge?rankBadge+' ':'') + (labels[s.key]||s.key);
+      if (lowSample) labelText = '🚫 ' + labelText;
+      var sampleText = lowSample ? '🚫 '+s.total+'（无效）' : s.total;
+      html += '<tr style="border-bottom:1px solid rgba(255,255,255,.06);background:'+rowBg+';"><td style="padding:2px 4px;white-space:nowrap;'+(lowSample?'color:#ff6b81;':'')+'">'+labelText+'</td>'+
+        '<td style="padding:2px 4px;text-align:center;color:'+(lowSample?'#ff6b81':'#dbe6f7')+';font-weight:'+(lowSample?'700':'400')+';">'+sampleText+'</td>';
+      periods.forEach(function(pd){
+        var wr = s['win_rate_'+pd+'d'];
+        var ar = s['avg_return_'+pd+'d'];
+        var hasData = wr !== undefined && wr !== null;
+        var arC = !hasData ? '#556' : (ar >= 0 ? '#ff6b81' : '#5ee0a0');
+        var wrC = lowSample ? '#556' : arC;
+        var retStr = hasData ? ((ar>=0?'+':'')+ar+'%') : '—';
+        var wrStr = hasData ? (wr+'%') : '—';
+        html += '<td style="padding:2px 3px;text-align:center;color:'+wrC+';font-weight:600;'+(lowSample?'text-decoration:line-through;':'')+'">'+wrStr+'</td>'+
+          '<td style="padding:2px 3px;text-align:center;color:'+arC+';font-weight:600;">'+retStr+'</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table><div style="font-size:9px;color:#556;margin-top:4px;">⚠️ 熊市60日内全信号负收益。持续每日累积样本，30天后回测更具参考性。</div>';
+    con.innerHTML = html;
+    con.setAttribute('data-fetched', '1');
+    window.__BACKTEST_TDX = d;
+    try { renderCockpitResonance(); } catch(e) { }
   }
 
 
@@ -3006,38 +3071,174 @@ function doQuery(){
   function renderDelisted(){
     var el=$('delistedPanel');
     if(!el) return;
-    var groups=[
-      ['盘中（实时）',[
-        ['F窗口实时监测','菲波那契变盘窗口盘中实时标注与触发提醒'],
-        ['金股池停牌监测','黄金池成分股停牌/复牌异动跟踪']
-      ]],
-      ['盘后更新',[
-        ['波动率结构观测','指数短长端波动率与 regime 判断'],
-        ['精选预判信号','事件型盘后信号：52周新高、涨停梯队、资金抱团强度'],
-        ['四路资金流向对比','席位口径四路资金净买卖方向与偏好风格对比'],
-        ['上交所大盘资金流时间轴','大盘主力资金分时流向（120日滚动）']
-      ]],
-      ['T+1 盘后更新',[
-        ['股指期货升贴水','期指净空/基差结构，中长线参考'],
-        ['两融余额走势','融资融券余额变化，方向性参考'],
-        ['宽基ETF净申赎','沪深300/中证500等宽基ETF每日净申赎份额'],
-        ['国家队ETF资金流向','监测主要宽基ETF涨跌×成交额，估算国家队净流入/流出方向']
-      ]]
-    ];
-    var h='<div class="card"><h3><span class="ic">🗄️</span>已下架 / 低优先级卡片 - 已下架</h3>';
-    h+='<div class="note">以下卡片已从主看板下架（数据仍采集），按更新频率分组。本原型仅列出其定位与说明。</div>';
-    groups.forEach(function(g){
-      h+='<div style="background:linear-gradient(135deg,rgba(108,123,214,.14),rgba(56,189,248,.10));padding:8px 14px;font-size:13px;font-weight:700;color:#cfe3ff;border-radius:8px;margin:14px 0 8px;">'+g[0]+'</div>';
-      h+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;">';
-      g[1].forEach(function(c){
-        h+='<div style="background:#0f1a2e;border:1px solid rgba(255,255,255,.08);border-left:4px solid #6c7bd6;border-radius:8px;padding:10px 12px;">'
-          +'<div style="font-weight:700;color:#e6eefc;font-size:13px;">'+c[0]+'</div>'
-          +'<div style="font-size:11px;color:#9fb0cc;margin-top:4px;line-height:1.5;">'+c[1]+'</div>'
-          +'</div>';
+    var h='';
+
+    /* ═══ 辅助：数据预取 ═══ */
+    var fib=window.SH_FIB||{}, vol=window.VOLATILITY||{},
+      w52=window.W52_HIGH||{}, lu=window.LIMIT_UP_HEATMAP||{}, hd=window.HERDING_DATA||{},
+      cfd=window.CAPITAL_FLOW_DATA||{}, mff=window.MARKET_FUND_FLOW_DATA||{},
+      cffex=window.CFFEX_HOLDINGS||{}, margin=window.MARGIN_DATA||{},
+      etfSub=window.ETF_SUBSCRIPTION||{};
+    var volHas=vol.available&&vol.indices&&vol.indices.length>0;
+    var _ts=function(o){ return (o&&(o.update_time||o.scan_time))?String(o.update_time||o.scan_time).slice(0,16):'—'; };
+    var _pct=function(v,c){ if(v==null||isNaN(v)) return '—'; var n=Number(v); return (n>=0?'+':'')+n.toFixed(2)+'%'; };
+
+    /* ═══ 1. F窗口实时监测（SH_FIB）═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #a78bfa;">';
+    h+=v8CardHeader('⏱️','F窗口实时监测','盘中实时·菲波那契变盘窗口','update_time',fib,!fib.wins);
+    if(fib.wins&&fib.wins.length){
+      var tr=[],ac=[],fu=[];
+      fib.wins.forEach(function(w){if(w.status==='triggered'||w.status==='tracking')tr.push(w);else if(w.status==='active')ac.push(w);else fu.push(w);});
+      h+='<div style="padding:10px 12px;font-size:11px;line-height:1.9;">';
+      if(tr.length) h+='<div style="color:#1D9E75;margin-bottom:4px;">⚡ 已触发：'+tr.slice(0,3).map(function(w){return '<b>'+w.name+'</b>('+(w.date||'')+')';}).join(' / ')+'</div>';
+      if(ac.length) h+='<div style="color:var(--gold);margin-bottom:4px;">🔴 活跃中：'+ac.slice(0,3).map(function(w){return '<b>'+w.name+'</b>('+(w.date||'')+')';}).join(' / ')+'</div>';
+      if(fu.length) h+='<div style="color:var(--dim);">📅 待观：'+fu.slice(0,3).map(function(w){return w.name;}).join(' → ')+'</div>';
+      if(fib.current) h+='<div style="margin-top:6px;padding-top:6px;border-top:1px dashed var(--border);color:var(--sub);">从 <b>'+(fib.current.peak_date||'--')+'</strong> 回调 <b>'+(fib.current.days_down||'-')+'日</b> ('+_pct(fib.current.total_pct)+')</div>';
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">暂无窗口数据</div>'; }
+    h+='</div>';
+
+    /* ═══ 2. 金股池停牌监测 ═══ */
+    var gp=window.GOLD_POOL||{};
+    var gpStocks=(gp.stocks||[]).filter(function(s){ return s.suspended||s.stop_reason; });
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #c62828;">';
+    h+=v8CardHeader('🛑','金股池停牌监测','盘中实时·538只金股池成分股停牌/复牌异动','',gp,!gp.stocks);
+    if(gpStocks.length){
+      h+='<div style="padding:10px 12px;"><span style="color:#c62828;font-weight:700;font-size:13px;">⚠️ '+gpStocks.length+' 只停牌</span></div>';
+      h+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;">';
+      gpStocks.slice(0,20).forEach(function(s){
+        h+='<div style="background:#0f1a2e;border-radius:6px;padding:6px 8px;font-size:11px;"><b style="color:#e6eefc;">'+s.name+'</b> <span style="color:#8aa0c2;">'+s.code+'</span><br><span style="color:#c62828;font-size:10px;">'+(s.stop_reason||'停牌')+'</span></div>';
       });
       h+='</div>';
-    });
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--down);">✅ 全部正常交易，无停牌</div>'; }
     h+='</div>';
+
+    /* ═══ 3. 波动率结构观测 ═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #f472b6;">';
+    h+=v8CardHeader('📉','波动率结构观测','盘后·指数短长端波动率与regime判断','update_time',vol,!volHas);
+    if(volHas){
+      var vc=vol.composite||{};
+      h+='<div style="padding:10px 12px;"><div style="font-size:18px;font-weight:800;color:'+(vc.regime_color||'#888')+';">'+(vc.regime||'—')+'</div>';
+      if(vc.signal_summary) h+='<div style="font-size:11px;color:var(--sub);margin-top:3px;">'+vc.signal_summary+'</div>';
+      h+='<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">';
+      h+='<div style="background:var(--bg2);border-radius:6px;padding:6px 10px;text-align:center;"><div style="font-size:9px;color:var(--dim);">20日波动</div><div style="font-weight:700;font-size:13px;">'+(vc.avg_vol_20d!=null?vc.avg_vol_20d.toFixed(1)+'%':'—')+'</div></div>';
+      h+='<div style="background:var(--bg2);border-radius:6px;padding:6px 10px;text-align:center;"><div style="font-size:9px;color:var(--dim);">5日波动</div><div style="font-weight:700;font-size:13px;">'+(vc.avg_vol_5d!=null?vc.avg_vol_5d.toFixed(1)+'%':'—')+'</div></div>';
+      var svl=vc.vol_short_vs_long_pct;
+      h+='<div style="background:var(--bg2);border-radius:6px;padding:6px 10px;text-align:center;"><div style="font-size:9px;color:var(--dim);">短长差</div><div style="font-weight:700;font-size:13px;color:'+(svl<0?'var(--down)':'var(--up)')+';">'+(svl!=null?(svl>=0?'+':'')+svl.toFixed(1)+'%':'—')+'</div></div>';
+      h+='</div></div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--down);">⚠️ 波动率数据未采集（需 calc_volatility_watch.py），不展示估算值</div>'; }
+    h+='</div>';
+
+    /* ═══ 4. 精选预判信号（52周新高/涨停梯队/资金抱团）═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #a78bfa;">';
+    h+=v8CardHeader('🎯','精选预判信号','事件型盘后·52周新高+涨停梯队+抱团强度','',w52.update_time?w52:null);
+    h+='<div style="padding:10px 12px;display:flex;gap:14px;flex-wrap:wrap;">';
+    var n52=w52.total||0;
+    h+='<div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:var(--up);">'+n52+'</div><div style="font-size:10px;color:var(--dim);">52周新高</div></div>';
+    var luTotal=0;if(lu.sectors&&lu.dates){var li=lu.dates.length-1;lu.sectors.forEach(function(s){luTotal+=(s.data&&s.data[li])||0;});}
+    h+='<div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:var(--gold);">'+luTotal+'</div><div style="font-size:10px;color:var(--dim);">今日涨停</div></div>';
+    if(hd.current_clusters&&hd.current_clusters[0]){
+      var topHd=hd.current_clusters[0];
+      h+='<div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:var(--purple);">'+topHd.sector+'</div><div style="font-size:10px;color:var(--dim);">最强抱团 · '+(topHd.direction||'流入')+'</div></div>';
+    }
+    h+='</div>';
+    if(n52===0&&!luTotal) h+='<div class="note" style="margin-top:8px;text-align:center;color:var(--dim);">三个监测源均无数据或尚未采集</div>';
+    h+='</div>';
+
+    /* ═══ 5. 四路资金流向对比 ═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #a78bfa;">';
+    h+=v8CardHeader('💰','四路资金流向对比','席位口径·四路资金净买卖方向与偏好风格对比','update_time',cfd,!cfd||!cfd.channels);
+    if(cfd&&cfd.channels){
+      h+='<div style="padding:10px 12px;">';
+      (cfd.channels||[]).forEach(function(ch){
+        var net=ch.net_inflow||0, nc=net>=0?'var(--up)':'var(--down)';
+        h+='<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--border);"><span style="font-weight:600;font-size:12px;">'+ch.name+'</span><span style="font-weight:700;color:'+nc+'; font-size:13px;">'+(net>=0?'+':'')+Math.round(net/1e8)+'亿</span></div>';
+        if(ch.top_stocks&&ch.top_stocks.length){
+          h+='<div style="font-size:10px;color:var(--dim);margin-top:2px;padding-left:4px;">TOP3：'+ch.top_stocks.slice(0,3).map(function(s){return s.name+'('+s.code+')';}).join(' / ')+'</div>';
+        }
+      });
+      if(cfd.summary) h+='<div style="margin-top:8px;padding:6px 8px;background:rgba(56,189,248,.06);border-radius:6px;font-size:11px;line-height:1.6;color:var(--cyan);">'+cfd.summary+'</div>';
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">四路资金数据暂不可用</div>'; }
+    h+='</div>';
+
+    /* ═══ 6. 上交所大盘资金流时间轴 ═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #38bdf8;">';
+    h+=v8CardHeader('📊','上交所大盘资金流时间轴','大盘主力资金分时流向（120日滚动）','update_time',mff,!mff||!mff.timeline);
+    if(mff&&mff.timeline){
+      var tl=mff.timeline.slice(-5), lastT=tl[tl.length-1]||{};
+      h+='<div style="padding:10px 12px;">';
+      h+='<div style="font-size:12px;margin-bottom:6px;">近5个交易日：</div>';
+      tl.forEach(function(t){
+        var n=t.net_inflow||0, nc=n>=0?'var(--up)':'var(--down)';
+        h+='<div style="display:flex;justify-content:space-between;padding:4px 0;font-size:11px;border-bottom:1px solid rgba(255,255,255,.04);"><span style="color:var(--sub);">'+t.date+'</span><span style="font-weight:600;color:'+nc+';">'+(n>=0?'+':'')+Math.round(n/1e8)+'亿</span></div>';
+      });
+      if(lastT) h+='<div style="margin-top:6px;font-size:11px;color:var(--sub);">最新趋势：'+(lastT.summary||(lastT.net_inflow>=0?'净流入':'净流出'))+'</div>';
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">大盘资金流时间轴数据暂不可用</div>'; }
+    h+='</div>';
+
+    /* ═══ 7. 股指期货升贴水（CFFEX）═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #fbbf24;">';
+    h+=v8CardHeader('📈','股指期货升贴水','T+1·期指净空/基差结构，中长线参考','update_time',cffex,!cffex||!cffex.holdings);
+    if(cffex&&cffex.holdings){
+      h+='<div style="padding:10px 12px;">';
+      (cffex.holdings||[]).forEach(function(hi){
+        var basis=hi.basis||0, bc=basis>=0?'var(--up)':'var(--down)';
+        h+='<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--border);font-size:11px;"><span style="font-weight:600;">'+hi.name+'</span><span style="color:'+bc+';">基差 '+(basis>=0?'+':'')+basis.toFixed(1)+'</span><span style="color:var(--sub);">净空 '+((hi.net_short||0)/1e4).toFixed(0)+'手</span></div>';
+      });
+      if(cffex.summary) h+='<div style="margin-top:6px;font-size:10px;color:var(--dim);">'+cffex.summary+'</div>';
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">期指持仓数据暂不可用</div>'; }
+    h+='</div>';
+
+    /* ═══ 8. 两融余额走势 ═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #f472b6;">';
+    h+=v8CardHeader('📊','两融余额走势','T+1·融资融券余额变化，方向性参考','update_time',margin,!margin||!margin.balance_trend);
+    if(margin&&margin.balance_trend){
+      h+='<div style="padding:10px 12px;">';
+      var mb=margin.balance_trend||[];
+      if(mb.length){
+        var lastM=mb[mb.length-1]||{}, prevM=mb.length>1?mb[mb.length-2]:{};
+        h+='<div style="font-size:16px;font-weight:800;">'+((lastM.balance||0)/1e12).toFixed(2)+'<small style="font-size:11px;color:var(--dim);"> 万亿</small></div>';
+        h+='<div style="font-size:11px;color:var(--sub);margin-top:2px;">融资 <b style="color:var(--up);">'+((lastM.margin_buy||0)/1e12).toFixed(3)+'万亿</b> · 融券 <b style="color:var(--down);">'+((lastM.short_sell||0)/1e12).toFixed(3)+'万亿</b></div>';
+        if(prevM.balance){
+          var dBal=lastM.balance-prevM.balance, dPct=dBal/prevM.balance*100;
+          h+='<div style="margin-top:4px;font-size:11px;color:'+(dBal>=0?'var(--up)':'var(--down')+';">较前值 '+(dBal>=0?'+':'')+Math.round(dBal/1e8)+'亿 ('+dPct.toFixed(2)+'%)</div>';
+        }
+      }
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">两融数据暂不可用</div>'; }
+    h+='</div>';
+
+    /* ═══ 9. 宽基ETF净申赎 ═══ */
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #38bdf8;">';
+    h+=v8CardHeader('🔄','宽基ETF净申赎','T+1·沪深300/中证500等宽基ETF每日净申赎份额','update_time',etfSub,!etfSub||!etfSub.items);
+    if(etfSub&&etfSub.items){
+      h+='<div style="padding:10px 12px;">';
+      (etfSub.items||[]).forEach(function(e){
+        var nv=e.net_subscription||0, nc=nv>=0?'var(--up)':'var(--down)';
+        h+='<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--border);font-size:11px;"><span style="font-weight:600;">'+e.name+'</span><span style="font-weight:700;color:'+nc+';">'+(nv>=0?'+':'')+Math.round(nv/1e8)+'亿份</span></div>';
+      });
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">ETF申赎数据暂不可用</div>'; }
+    h+='</div>';
+
+    /* ═══ 10. 国家队ETF资金流向 ═══ */
+    var etfHeat=window.ETF_INTRADAY_HEAT||{};
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #f59e0b;">';
+    h+=v8CardHeader('🔥','国家队ETF资金流向','T+0·主要宽基ETF涨跌×成交额估算净流入方向','update_time',etfHeat,!etfHeat||!etfHeat.etfs);
+    if(etfHeat&&etfHeat.etfs){
+      h+='<div style="padding:10px 12px;">';
+      (etfHeat.etfs||[]).slice(0,8).forEach(function(e){
+        var chg=e.change_pct||0, c=chg>=0?'var(--up)':'var(--down)';
+        h+='<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px;"><span>'+e.name+'</span><span style="color:'+c+';font-weight:600;">'+_pct(chg)+'</span><span style="color:var(--sub);">'+(e.amount||0).toFixed(1)+'亿</span></div>';
+      });
+      if(etfHeat.summary) h+='<div style="margin-top:6px;font-size:10px;color:var(--dim);">'+etfHeat.summary+'</div>';
+      h+='</div>';
+    } else { h+='<div class="note" style="padding:12px;text-align:center;color:var(--dim);">ETF热度数据暂不可用</div>'; }
+    h+='</div>';
+
     el.innerHTML=h;
   }
 
