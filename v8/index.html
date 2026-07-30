@@ -528,7 +528,7 @@
 
     <!-- ====== 股票型ETF日监控（华宝风格） ====== -->
     <div class="card" style="margin-bottom:16px" id="etfDailyCard">
-      <h3><span class="ic">📊</span>股票型ETF日监控 · <span class="fresh" id="etfDailyTime">--</span> <span class="tag" style="font-size:11px">T+1 盘后更新</span></h3>
+      <h3><span class="ic">📊</span>股票型ETF日监控 <span style="color:#fff;font-size:11px;font-weight:700;background:#ff5252;border-radius:6px;padding:2px 8px;margin-left:4px;">⚠️ 无数据</span> · <span class="fresh" id="etfDailyTime">--</span> <span class="tag" style="font-size:11px">T+1 盘后更新</span></h3>
       <div id="etfDailyBody"><div class="note">正在加载日监控数据...</div></div>
     </div>
   </section>
@@ -2697,13 +2697,14 @@ function doQuery(){
   function genericSourceList(arr){ return (arr||[]).map(genericSource).join('、')||'—'; }
 
   /* ── 辅助：暗色主题卡片头 ── */
-  function v8CardHeader(icon, title, subtitle, timeKey, dataObj){
+  function v8CardHeader(icon, title, subtitle, timeKey, dataObj, nodata){
     var t = '';
     if(timeKey && dataObj && dataObj.update_time){
       try { var ft=fmtDataTime(dataObj.update_time); t='更新于 '+ft.text; }catch(e){}
     }
     return '<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);border-radius:12px 12px 0 0;">'
       +'<span style="font-size:14px;font-weight:800;color:var(--cyan);">'+icon+' '+title+'</span>'
+      +(nodata?'<span style="color:#fff;font-size:11px;font-weight:700;background:#ff5252;border-radius:6px;padding:2px 8px;margin-left:4px;">⚠️ 无数据</span>':'')
       +(subtitle?'<span style="font-size:11px;color:var(--dim);font-weight:400;">'+subtitle+'</span>':'')
       +'<span style="font-size:11px;color:var(--dim);margin-left:auto;">'+t+'</span>'
       +'</div>';
@@ -2753,7 +2754,7 @@ function doQuery(){
     var el=$('etfDailyBody');
     if(!el) return;
     var d=DATA.etf_daily;
-    if(!d){ el.innerHTML='<div class="note">日监控数据暂不可用（收盘后更新）</div>'; return; }
+    if(!d||d.no_data){ el.innerHTML='<div class="note" style="color:var(--down);font-weight:600;">⚠️ 无数据：ETF 资金流 TOP10 数据源尚未接入（非模拟数据）。</div>'; return; }
     var h='';
     // 概览卡片
     h+='<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;">';
@@ -2842,13 +2843,16 @@ function doQuery(){
     h+='</div>';
 
     /* ═══ 3. 金股池停牌监测 ═══ */
+    var suspNd=(!window.SUSPENSION_ALERT && !window.STOCK_DEVIATION);
     h+='<div class="card" style="margin-bottom:16px;border-left:4px solid #fbbf24;">';
-    h+=v8CardHeader('⚠️','金股池停牌监测','盘中实时','update_time',window.SUSPENSION_ALERT);
+    h+=v8CardHeader('⚠️','金股池停牌监测','盘中实时','update_time',window.SUSPENSION_ALERT, suspNd);
     var susp=window.SUSPENSION_ALERT||{};
     var devData=(typeof window.STOCK_DEVIATION!=='undefined'&&window.STOCK_DEVIATION&&window.STOCK_DEVIATION.stocks)?window.STOCK_DEVIATION.stocks:{};
     var hasSusp=susp.alerts&&susp.alerts.length;
     var devKeys=Object.keys(devData),hasDev=devKeys.some(function(k){return Math.abs((devData[k].deviation||0))>=10;});
-    if(hasSusp||hasDev){
+    if(suspNd){
+      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：金股池停牌 / 偏离监测源尚未采集，无法判定是否有异常。</div>';
+    } else if(hasSusp||hasDev){
       h+='<div style="padding:12px 14px;">';
       if(hasSusp){
         h+='<div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;">🛑 停牌 alerts ('+susp.alerts.length+')</div>';
@@ -2866,10 +2870,13 @@ function doQuery(){
     h+='</div>';
 
     /* ═══ 4. 波动率结构观测（VOLATILITY_WATCH_DATA）═══ */
+    var volNd=!window.VOLATILITY_WATCH_DATA;
     h+='<div class="card" style="margin-bottom:16px;border-left:4px solid #f472b6;">';
-    h+=v8CardHeader('📉','波动率结构观测','盘后','update_time',window.VOLATILITY_WATCH_DATA);
+    h+=v8CardHeader('📉','波动率结构观测','盘后','update_time',window.VOLATILITY_WATCH_DATA, volNd);
     var vol=window.VOLATILITY_WATCH_DATA||{};
-    if(vol.available&&vol.indices&&vol.indices.length){
+    if(volNd){
+      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：波动率结构监测源尚未采集（文件 volatility_watch.json 缺失）。</div>';
+    } else if(vol.available&&vol.indices&&vol.indices.length){
       var vc=vol.composite||{},rc=vc.regime_color||'#888';
       h+='<div style="padding:12px 14px;"><div style="background:'+rc+';color:#fff;border-radius:10px;padding:12px 14px;margin-bottom:12px;line-height:1.6;"><div style="font-size:18px;font-weight:800;">'+(vc.regime||'—')+'</div>';
       if(vc.signal_summary) h+='<div style="font-size:11.5px;opacity:.96;margin-top:3px;">'+vc.signal_summary+'</div>';
@@ -2891,11 +2898,15 @@ function doQuery(){
     h+='</div>';
 
     /* ═══ 5. 精选预判信号（W52_HIGH / LIMIT_UP / HERDING）═══ */
+    var sigNd=(!window.W52_HIGH && !window.LIMIT_UP_HEATMAP && !window.HERDING_DATA);
     h+='<div class="card" style="margin-bottom:16px;border-left:4px solid var(--purple);">';
     var sigT=(window.W52_HIGH&&window.W52_HIGH.update_time)?window.W52_HIGH.update_time:(window.LIMIT_UP_HEATMAP&&window.LIMIT_UP_HEATMAP.dates?window.LIMIT_UP_HEATMAP.dates[window.LIMIT_UP_HEATMAP.dates.length-1]:'');
-    h+=v8CardHeader('🎯','精选预判信号','事件·盘外','',sigT?{update_time:sigT}:null);
+    h+=v8CardHeader('🎯','精选预判信号','事件·盘外','',sigT?{update_time:sigT}:null, sigNd);
     var w52=window.W52_HIGH||{},lu=window.LIMIT_UP_HEATMAP||{},hd=window.HERDING_DATA||{};
     h+='<div style="padding:12px 14px;">';
+    if(sigNd){
+      h+='<div class="note" style="color:var(--down);font-weight:600;text-align:center;padding:20px 0;">⚠️ 数据未接入：52周新高 / 涨停梯队 / 资金抱团 三个监测源尚未采集。</div>';
+    } else {
     var n52=w52.total||0;
     h+='<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap;"><div><span style="font-size:22px;font-weight:800;color:var(--up);">'+n52+'</span><span style="font-size:13px;color:var(--dim);">只 52周新高</span></div>';
     var totalA=5500;try{var sl=window.STOCK_LIST;if(Array.isArray(sl)){totalA=0;sl.forEach(function(s){if(/^\d{6}$/.test(s.code))totalA++;});}}catch(e){}
@@ -2919,13 +2930,16 @@ function doQuery(){
     else if(n52<30&&luTotal<30) items.push('🌫️ <b>信号清淡：</b>新高与涨停均不明显，缺乏明确主线。多看少动。');
     else items.push('🌫️ <b>信号混合：</b>新高'+n52+'只/涨停'+luTotal+'只，建议综合判断。');
     if(hergingTop&&hergingTop!=='--') items.push('🥇 <b>抱团方向：</b>'+hergingTop+'，资金'+herdingDir);
-    h+='<div style="background:rgba(56,189,248,.06);border-left:3px solid var(--cyan);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;line-height:1.75;"><b style="color:var(--cyan);">📊 判断：</b>'+items.join('<br>')+'</div></div></div>';
+    h+='<div style="background:rgba(56,189,248,.06);border-left:3px solid var(--cyan);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;line-height:1.75;"><b style="color:var(--cyan);">📊 判断：</b>'+items.join('<br>')+'</div></div></div>'; }
 
     /* ═══ 6. 四路资金流向对比（CAPITAL_FLOW_DATA）═══ */
+    var cfdNd=!window.CAPITAL_FLOW_DATA;
     h+='<div class="card" style="margin-bottom:16px;border-left:4px solid var(--purple);">';
-    h+=v8CardHeader('💰','四路资金流向对比','席位口径','update_time',window.CAPITAL_FLOW_DATA);
+    h+=v8CardHeader('💰','四路资金流向对比','席位口径','update_time',window.CAPITAL_FLOW_DATA, cfdNd);
     var cfd=window.CAPITAL_FLOW_DATA||{};
-    if(cfd.north_south||cfd.inst||cfd.hot_money){
+    if(cfdNd){
+      h+='<div class="note" style="color:var(--down);font-weight:600;padding:14px;text-align:center;">⚠️ 数据未接入：四路资金（机构 / 游资 / 北向龙虎榜 / 南向）席位口径源尚未采集。</div>';
+    } else if(cfd.north_south||cfd.inst||cfd.hot_money){
       h+='<div style="padding:12px 14px;">';
       function dirCls(ds){if(!ds)return '';if(ds.indexOf('流入')!==-1||ds.indexOf('买入')!==-1)return 'var(--up)';if(ds.indexOf('流出')!==-1||ds.indexOf('卖出')!==-1)return 'var(--down)';return 'var(--sub)';}
       function cfRow(label,data,bgColor){if(!data)return '';var dir=data.direction||'-',st=data.style||'-',cb=data.common_buy&&data.common_buy.length?data.common_buy.slice(0,3).join('、'):'-',cs=data.common_sell&&data.common_sell.length?data.common_sell.slice(0,3).join('、'):'-',dc=dirCls(dir);
