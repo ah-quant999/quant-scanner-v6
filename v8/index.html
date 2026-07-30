@@ -749,6 +749,7 @@
         </div>
         <div id="stcrdsHistory" style="font-size:11px;color:var(--dim);"></div>
       </div></div><!--/st-crds-->
+  </section>
 
   <!-- ============ 运维（管理员） ============ -->
   <section id="sec-op">
@@ -787,9 +788,9 @@
     <div class="grid g-2" style="margin-bottom:16px">
       <div class="card">
         <h3><span class="ic">🚀</span>部署状态 - 运维</h3>
-        <div class="kv"><span class="k">站点</span><b>ah-quant999.github.io/quant-scanner-v7</b></div>
-        <div class="kv"><span class="k">gh-pages SHA</span><b>223f2a6</b></div>
-        <div class="kv"><span class="k">最后部署</span><b>2026-07-28 16:55</b></div>
+        <div class="kv"><span class="k">站点</span><b>ah-quant999.github.io/quant-scanner-v8</b></div>
+        <div class="kv"><span class="k">部署 SHA</span><b>5db8d32</b></div>
+        <div class="kv"><span class="k">最后部署</span><b>2026-07-30 17:10</b></div>
         <div class="kv"><span class="k">心跳</span><span><span class="status-dot s-ok"></span>正常（5 分钟前）</span></div>
       </div>
       <div class="card">
@@ -2923,13 +2924,13 @@ function doQuery(){
       if(top1.leader) h+='<div style="font-size:11px;color:var(--sub);margin-top:2px;">龙头：'+top1.leader+'</div>';h+='</div>';}
     var luTotal=0;try{if(window.LIMIT_UP_HEATMAP&&window.LIMIT_UP_HEATMAP.sectors){var li2=window.LIMIT_UP_HEATMAP.dates.length-1;window.LIMIT_UP_HEATMAP.sectors.forEach(function(s){luTotal+=(s.data&&s.data[li2])||0;});}}catch(e){}
     var herdingTop='',herdingDir='流入';try{if(window.HERDING_DATA&&window.HERDING_DATA.current_clusters&&window.HERDING_DATA.current_clusters[0]){herdingTop=window.HERDING_DATA.current_clusters[0].sector;herdingDir=window.HERDING_DATA.current_clusters[0].direction||'流入';}}catch(e){}
-    var items=[];if(n52>=100&&luTotal>=50) items.push('⚡ <b>强势股独立行情：</b>52周新高活跃（'+n52+'只）+今日涨停爆量（'+luTotal+'只），抱团偏'+herdingDir+'（'+hergingTop+'）。短线可追但需快进快出。');
+    var items=[];if(n52>=100&&luTotal>=50) items.push('⚡ <b>强势股独立行情：</b>52周新高活跃（'+n52+'只）+今日涨停爆量（'+luTotal+'只），抱团偏'+herdingDir+'（'+herdingTop+'）。短线可追但需快进快出。');
     else if(n52>=100&&luTotal<50) items.push('📊 <b>新高多但涨停少：</b>'+n52+'只创新高但涨停仅'+luTotal+'只，跟风盘不热。抱团：'+herdingTop);
     else if(n52>=30&&n52<100&&luTotal>=30) items.push('📈 <b>温和偏多：</b>52周新高温和（'+n52+'只）+涨停'+luTotal+'只，结构性行情。抱团'+herdingDir+'：'+herdingTop);
     else if(n52<30&&luTotal>=50) items.push('🔥 <b>短线热炒：</b>新高少（'+n52+'只）但涨停爆量（'+luTotal+'只），游资主导，严格止损。');
     else if(n52<30&&luTotal<30) items.push('🌫️ <b>信号清淡：</b>新高与涨停均不明显，缺乏明确主线。多看少动。');
     else items.push('🌫️ <b>信号混合：</b>新高'+n52+'只/涨停'+luTotal+'只，建议综合判断。');
-    if(hergingTop&&hergingTop!=='--') items.push('🥇 <b>抱团方向：</b>'+hergingTop+'，资金'+herdingDir);
+    if(herdingTop&&herdingTop!=='--') items.push('🥇 <b>抱团方向：</b>'+herdingTop+'，资金'+herdingDir);
     h+='<div style="background:rgba(56,189,248,.06);border-left:3px solid var(--cyan);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;line-height:1.75;"><b style="color:var(--cyan);">📊 判断：</b>'+items.join('<br>')+'</div></div></div>'; }
 
     /* ═══ 6. 四路资金流向对比（CAPITAL_FLOW_DATA）═══ */

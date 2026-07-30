@@ -24,17 +24,19 @@ def run(cmd, cwd=None, fatal=False):
     return r.stdout.strip()
 
 def deploy():
-    # Iron rule: always pull latest template before building+deploying
-    # This picks up any code changes 阿狸咪 pushed the night before
-    log("📥 Pulling latest from origin/main (阿狸咪's code changes)...")
+    # Iron rule: always rebase latest template before building+deploying
+    # 关键双机保护：小九部署前先 git pull --rebase，继承阿狸咪夜间推送的新版代码，
+    # 绝不用本地旧版覆盖她 18:00~07:00 的改动（满足「明早7点前阿狸咪新版不被小九旧版覆盖」）。
+    log("📥 Pulling latest from origin/main (阿狸咪's code changes, --rebase)...")
     try:
-        pull_result = run("git fetch origin && git merge --ff-only origin/main", cwd=REPO)
-        if pull_result:
-            log(f"   Pulled: {pull_result[:80]}")
+        run("git fetch origin", cwd=REPO)
+        rb = run("git rebase origin/main", cwd=REPO)
+        if rb:
+            log(f"   Rebased: {rb[:80]}")
         else:
             log("   Already up to date (no new code changes)")
     except RuntimeError as e:
-        log(f"   ⚠️ 拉取代码失败，使用本地版本继续: {e}")
+        log(f"   ⚠️ rebase 失败（可能本地有未提交改动），使用本地版本继续: {e}")
 
     tmp = tempfile.mkdtemp(prefix="v8deploy_")
     try:
