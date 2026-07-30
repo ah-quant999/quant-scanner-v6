@@ -17,6 +17,15 @@ def run(cmd, cwd=None):
     return r.stdout.strip()
 
 def deploy():
+    # Iron rule: always pull latest template before building+deploying
+    # This picks up any code changes 阿狸咪 pushed the night before
+    log("📥 Pulling latest from origin/main (阿狸咪's code changes)...")
+    pull_result = run("git fetch origin && git merge --ff-only origin/main", cwd=REPO)
+    if pull_result:
+        log(f"   Pulled: {pull_result[:80]}")
+    else:
+        log("   Already up to date (no new code changes)")
+
     tmp = tempfile.mkdtemp(prefix="v8deploy_")
     try:
         log("📥 克隆 main 分支...")
