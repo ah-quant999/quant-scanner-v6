@@ -1,0 +1,10 @@
+docs: handover to xiaojiu 2026-07-31 late night
+
+- v6/v8 separation confirmed (v6/v8 subdir removed, owner decided v6 untouched)
+- A-stage AI dashboard already done by xiaojiu 6c9d341
+- 7-31 scheduling: 4 new cloud workflows pending (08:30/15:05/17:00/Sunday 23:00)
+- intraday 4 missing cron slots (10/11/13/14 CST)
+- 17:00 algorithm confirmed 0-token (no LLM call) cloud-ready
+- B (alimi) + B+ (xiaojiu) parallel execution
+- data whitelist attached
+- owner asleep, xiaojiu to do B+ first thing tomorrow
