@@ -3064,6 +3064,28 @@ function doQuery(){
     } else { h+='<div style="padding:14px;color:var(--dim);text-align:center;">ETF申赎数据暂不可用</div>'; }
     h+='</div>';
 
+    /* ═══ 11. 回测公式三卡（已移至后台·暂未上架）═══ */
+    h+='<div style="margin:24px 0 8px;padding:6px 12px;background:rgba(123,31,162,.12);border-left:4px solid #7b1fa2;border-radius:6px;font-size:12px;font-weight:700;color:#ce93d8;">🧪 回测公式说明卡（后台口径 · 暂不进入选股前台）</div>';
+    var btComp=window.BACKTEST_COMPREHENSIVE||{}, btCock=window.COCKPIT_BACKTEST||{}, btTdx=window.BACKTEST_TDX||{};
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #7b1fa2;">';
+    h+=v8CardHeader('📊','回测 N 日胜率（信号层）','历史滚动回测 · 不同持有期胜率/收益/夏普','update_time',btComp,!btComp||!btComp.rows);
+    h+='<div style="padding:10px 14px;font-size:11px;line-height:1.8;color:var(--sub);">'
+      +'基于历史信号层统计：样本数、胜率、平均收益、夏普比率、最佳/最差区间。用于验证信号有效性，不直接生成买卖建议。'
+      +(btComp.rows?'<br><span style="color:var(--cyan);">当前数据行数：'+btComp.rows.length+'</span>':'<br><span style="color:var(--dim);">数据未采集</span>')
+      +'</div></div>';
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #7b1fa2;">';
+    h+=v8CardHeader('⚖️','严格 vs 宽松','同口径滚动回测 · 总评分≥70 共振 vs 信号≥2','update_time',btCock,!btCock||!btCock.strict_rows);
+    h+='<div style="padding:10px 14px;font-size:11px;line-height:1.8;color:var(--sub);">'
+      +'严格=总评分≥70 的多因子共振；宽松=触发信号≥2。对照真实收盘价滚动回测，观察不同门槛下的胜率与均收差异。'
+      +(btCock.strict_rows?'<br><span style="color:var(--cyan);">严格样本：'+btCock.strict_rows.length+' · 宽松样本：'+(btCock.loose_rows||[]).length+'</span>':'<br><span style="color:var(--dim);">数据未采集</span>')
+      +'</div></div>';
+    h+='<div class="card" style="margin-bottom:14px;border-left:4px solid #7b1fa2;">';
+    h+=v8CardHeader('🎚','阈值敏感性','不同总评分门槛的 5 日回测表现','update_time',btTdx,!btTdx||!btTdx.thresholds);
+    h+='<div style="padding:10px 14px;font-size:11px;line-height:1.8;color:var(--sub);">'
+      +'测试不同总评分门槛在 5 日持有期下的样本量、胜率、均收。仅用于后台参数调优，不改动实盘规则。'
+      +(btTdx.thresholds?'<br><span style="color:var(--cyan);">已测试门槛数：'+btTdx.thresholds.length+'</span>':'<br><span style="color:var(--dim);">数据未采集</span>')
+      +'</div></div>';
+
     el.innerHTML=h;
   }
 

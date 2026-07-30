@@ -262,6 +262,18 @@ def main():
     for x in top_outflow:
         x['streak'] = calc_streak(x['code'], 'outflow_codes')
 
+    # 兼容 v8 已下架面板「国家队ETF资金流向」渲染：需要 etfs 数组（与 top_active 同构）
+    etfs_for_v8 = [{
+        'code': x['code'],
+        'name': x['name'],
+        'type': x.get('category_1', '主题'),
+        'price': 0.0,  # 盘中快照未保留价格，v8 当前不展示该字段
+        'change_pct': x['pct'],
+        'volume': 0,
+        'amount': round(x['amount'] / 1e8, 3),  # v8 renderDelisted 以亿为单位展示成交额
+        'amplitude': 0.0,
+    } for x in top_active]
+
     result = {
         'update_time': update_time or datetime.now().strftime('%Y-%m-%d %H:%M'),
         'data_date': data_date,
@@ -274,6 +286,7 @@ def main():
             'net_inflow_yi': round(net_total / 1e8, 2),
         },
         'categories': aggregate_categories(rows),
+        'etfs': etfs_for_v8,
     }
     out = os.path.join(DATA_DIR, 'etf_intraday_heat.json')
     with open(out, 'w', encoding='utf-8') as f:

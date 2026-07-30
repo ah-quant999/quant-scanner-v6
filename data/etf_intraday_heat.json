@@ -5210,5 +5210,107 @@
         }
       }
     }
-  }
+  },
+  "etfs": [
+    {
+      "code": "588000",
+      "name": "科创50ETF华夏",
+      "type": "主题",
+      "price": 0.0,
+      "change_pct": -4.37,
+      "volume": 0,
+      "amount": 72.279,
+      "amplitude": 0.0
+    },
+    {
+      "code": "159915",
+      "name": "创业板ETF易方达",
+      "type": "宽基",
+      "price": 0.0,
+      "change_pct": -0.77,
+      "volume": 0,
+      "amount": 68.407,
+      "amplitude": 0.0
+    },
+    {
+      "code": "588170",
+      "name": "科创半导体ETF华夏",
+      "type": "行业",
+      "price": 0.0,
+      "change_pct": -7.23,
+      "volume": 0,
+      "amount": 52.395,
+      "amplitude": 0.0
+    },
+    {
+      "code": "513120",
+      "name": "港股创新药ETF广发",
+      "type": "跨境",
+      "price": 0.0,
+      "change_pct": 0.69,
+      "volume": 0,
+      "amount": 42.096,
+      "amplitude": 0.0
+    },
+    {
+      "code": "159516",
+      "name": "半导体设备ETF国泰",
+      "type": "行业",
+      "price": 0.0,
+      "change_pct": -7.78,
+      "volume": 0,
+      "amount": 38.315,
+      "amplitude": 0.0
+    },
+    {
+      "code": "513310",
+      "name": "中韩半导体ETF华泰柏瑞",
+      "type": "行业",
+      "price": 0.0,
+      "change_pct": -5.73,
+      "volume": 0,
+      "amount": 35.436,
+      "amplitude": 0.0
+    },
+    {
+      "code": "512100",
+      "name": "中证1000ETF南方",
+      "type": "宽基",
+      "price": 0.0,
+      "change_pct": -1.33,
+      "volume": 0,
+      "amount": 31.41,
+      "amplitude": 0.0
+    },
+    {
+      "code": "510300",
+      "name": "沪深300ETF华泰柏瑞",
+      "type": "宽基",
+      "price": 0.0,
+      "change_pct": -0.41,
+      "volume": 0,
+      "amount": 31.362,
+      "amplitude": 0.0
+    },
+    {
+      "code": "588200",
+      "name": "科创芯片ETF嘉实",
+      "type": "行业",
+      "price": 0.0,
+      "change_pct": -5.53,
+      "volume": 0,
+      "amount": 30.4,
+      "amplitude": 0.0
+    },
+    {
+      "code": "510500",
+      "name": "中证500ETF南方",
+      "type": "宽基",
+      "price": 0.0,
+      "change_pct": -1.06,
+      "volume": 0,
+      "amount": 27.879,
+      "amplitude": 0.0
+    }
+  ]
 }
