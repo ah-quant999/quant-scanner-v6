@@ -6,12 +6,12 @@
   },
   "fetch_nt_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-29 10:21:48",
+    "last_success": "2026-08-01 07:18:09",
     "last_error": null
   },
   "fetch_suspension_alert": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 15:21:43",
+    "last_success": "2026-08-01 07:16:55",
     "last_error": null
   },
   "fetch_main_week": {
@@ -54,9 +54,9 @@
     "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-28 15:19:27",
-    "last_error": "'gbk' codec can't encode character '\\u2717' in position 11: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-01 07:17:44",
+    "last_error": null,
     "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
@@ -112,7 +112,7 @@
   },
   "fetch_lhb": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 20:55:18",
+    "last_success": "2026-08-01 07:15:08",
     "last_error": null
   },
   "fetch_maharo_signals": {
@@ -149,9 +149,9 @@
     "last_error": null
   },
   "fetch_sh_index_fib": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-27 11:23:14",
-    "last_error": "'gbk' codec can't encode character '\\U0001f4ca' in position 2: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-01 07:12:57",
+    "last_error": null,
     "last_failure": "2026-07-31 17:45:30"
   },
   "fetch_limit_up_heatmap": {
@@ -176,7 +176,7 @@
   },
   "fetch_stock_names": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-26 20:31:15",
+    "last_success": "2026-08-01 07:19:33",
     "last_error": null
   },
   "fetch_etf_intraday_heat": {

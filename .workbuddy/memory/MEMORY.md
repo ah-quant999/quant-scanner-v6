@@ -33,18 +33,23 @@
 
 ## 自动化 / 安全
 - **排班状态**: 2026-07-23 起阿狸咪家中机全天断线，**全部定时任务由小九（单位机·全天在线）全面接管**；`standalone/data_responsibility.html` 中「双机」= 小九单机跑双机职责，标注「代阿狸咪/🖥️」的即原属阿狸咪、现由小九顶上的任务。阿狸咪恢复联网后其本机 20+ 救援船任务会自动续跑。
-- **v8 架构真相（2026-07-31 踩坑→已分离）**：v8 与 v6 是**两个独立仓**。**`quant-scanner-v8` 独立仓 = v8 唯一开发+部署源**（GitHub Pages 从 main 出，自身 deploy_v8.py 推 index.html+data/*）。**2026-07-31 已删除 v6 仓 `v8/` 子目录**（原小九在 v6 仓的开发工作区，与独立仓重复），从此 v6 是 v6、v8 是 v8。**必须通知小九：以后 v8 只在 quant-scanner-v8 独立仓开发**，不再用 v6/v8/。git 历史保留可恢复。
+- **v8 架构真相（2026-07-31 踩坑→已分离，2026-08-01 收尾分支）**：v8 与 v6 是**两个独立仓**。**`quant-scanner-v8` 独立仓 = v8 唯一开发+部署源**（GitHub Pages 从 main 出，自身 deploy_v8.py 推 index.html+data/*）。**2026-07-31 已删除 v6 仓 `v8/` 子目录**；**2026-08-01 已删除** `stock-scanner` 的 `origin/v8-temp` 与 `quant-scanner-v8` 的 `v8` 快照分支，两仓现均**只保留 `main` 作为 v8 真相源**。从此 v6 是 v6、v8 是 v8，任何 v8 模板/数据改动必须进 `quant-scanner-v8/main`。git 历史保留可恢复。
 - **模型 ID**: 全部自动化统一用 `hy3`（9:00-11:59）/ `deepseek-v4-flash`（12:00 后）。**严禁写入 `ds-V4-FLASH`**；`audit_automations.py` 每日 09:00/19:00 自动审计并修正。
 - **北向资金**: 港交所 2024-05 后停止披露 top_buy，系统多处已标"停止"。
-- **Cloud**: GitHub Actions 7 workflow 覆盖；Secret `ZSXQ_TOKEN`；候选池=主/创/科前 100 + 港前 50 + 观澜台 + maharo。
+- **Cloud**: GitHub Actions 8 workflow 覆盖（v8 侧：`v8_cn_fetch` / `v8_build_deploy` / `v8_algo` / `v8_sync_v6_data` / `cloud_weekly_cleanup`）；Secret `ZSXQ_TOKEN`；候选池=主/创/科前 100 + 港前 50 + 观澜台 + mahoro。
+- **v8 数据源双轨（2026-08-01）**: cloud_fetch（akshare/东财）覆盖 22 个实时/盘前模块；`sync_v6_to_v8.py` 同步桥覆盖 22 个 v6 算法/盘后模块。原 21 个冻结模块全部接上生产者。
 
-## 7-31 排程架构升级（v6 退役 / 云端优先 / 盘中 30 分钟）
-- **v6 退役铁律**: 2026-07-31 起 **v6 模板不再改动**（`index_master.html` 不动），等 v8 运行稳定后**整 v6 删除**。双机铁律同步：v6 deploy 仅小九跑。
+## 8-01 v8 分时段 + v6 同步桥架构（轻量/防臃肿）
+- **v8 定时任务矩阵（北京时间）**:
+  - 08:25 `v8_cn_fetch.yml` 盘前（akshare）+ 08:40 `v8_sync_v6_data.yml` 盘前（v6 预警）
+  - 10:30/11:30/13:05/14:00/15:05 `v8_cn_fetch.yml` 盘中（含 ETF_DAILY_MONITOR）
+  - 15:30 `v8_cn_fetch.yml` 收盘数据（EXPERIMENT）
+  - 16:45 `v8_sync_v6_data.yml` 盘后（v6 算法数据同步到 raw_data）
+  - 17:00 `v8_build_deploy.yml` 盘后算法换算部署 + `v8_algo.yml` 数据体检
+  - 周日 23:00 `cloud_weekly_cleanup.yml` 清理 orphan
+- **selective build**: `update_v8.py --category/--detect-changes` 只构建目标时段或变化 raw_data 所属类别，避免每次全站重部署。
+- **v6 同步桥**: `sync_v6_to_v8.py` 读取 `stock-scanner/data/` 的盘后/盘前 JSON，推送到 v8 `raw_data/`，触发自动构建。本周末已一次性解决 21 个原冻结模块。
 - **北向资金升级版（2026-07-31）**: **仅展示删**（v8 主页大卡 + 运维"数据新鲜度"表 + 异动监控表），**数据/脚本保留**（`fetch_north_fund.py` / `data/north_fund_*.json` 留作权重计算用），**计算权重里北向分仍保留**（仅标"停更"）。v6 旧 v6 上的北向大卡和运维行**保持原样不动**（v6 不再改）。
-- **17:00 算法上云端**（2026-07-31）: `generate_recommend.py` grep 无 LLM 调用（openai/dashscope/qwen/llm 等），是普通计算+重建+部署——**完全能上 GitHub Actions**，**不耗 AI token**。
-- **云端盘中扫描不齐**（2026-07-31）: `cloud_intraday.yml` 现有 cron = 9:30 / 10:31 / 11:46 / 13:31 / 14:31，**不是 30 分钟一次**。**缺 4 个整点**（10:00 / 11:00 / 13:00 / 14:00）。B+ 阶段需补。
-- **云端已能部署**（2026-07-31 确认）: `cloud_scanner.yml`（18:31）+ `cloud_post_close.yml`（15:30/16:15/16:30）**内部已含 build + 推 gh-pages 步骤**，**不依赖** `pages.yml.disabled`（那个是 push 触发、已禁用）。
-- **待 B / B+ 阶段**（2026-07-31 起）:
-  - **B**: v8 `index.html` JS 改造，AI 速览 7 行读 JSON
-  - **B+**: 新建 3 个云端 workflow（`cloud_premarket.yml` 08:30 / `cloud_close_ultralight.yml` 15:05 / `cloud_weekly_cleanup.yml` 周日 23:00）+ 改 `cloud_intraday.yml` 补 4 个整点
-- **A 阶段已落地**（commit 90f75656, 2026-07-31 00:24）: v8 sec-rt 顶部插入 v6 风格 AI 速览 5 行（情绪/健康/指数/异动/期货；ETF+板块跳过因已有同类卡）+ 删运维北向行 + 删异动监控北向行；数字写死用 v6 周一 15:46 真实快照，**B 阶段接 JSON**。
+- **待 B / B+ 阶段**:
+  - **B**: v8 `index.html` JS 改造，AI 速览 7 行读 JSON；给 44 个 `<script>` 加 defer/首屏优先级。
+  - **B+**: 处理 SH_SZ_HISTORY 硬编码内联；给 5 个模块补时间戳；cloud_fetch 加备用源。
