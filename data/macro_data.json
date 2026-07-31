@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-31 09:59:15",
+  "update_time": "2026-07-31 10:04:06",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7196,
@@ -35,10 +35,10 @@
   },
   "economy": {
     "pmi": {
-      "value": 50.3,
+      "value": 49.2,
       "forecast": null,
-      "previous": 50.0,
-      "date": "2026-06-01"
+      "previous": 50.3,
+      "date": "2026-07-01"
     },
     "cpi": {
       "value": 1.0,
@@ -77,18 +77,18 @@
   },
   "global_macro": {
     "vix": {
-      "value": 18.5,
+      "value": 18.55,
       "date": "2026-07-31"
     },
     "usdcnh": {
       "price": 6.7475,
-      "prev_close": 6.7468,
+      "prev_close": 6.7464,
       "date": "2026-07-31",
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 100.2,
-      "pct": 0.26,
+      "value": 100.18,
+      "pct": 0.25,
       "date": "2026-07-31",
       "source": "Sina-DINIW"
     },
@@ -99,7 +99,7 @@
         "date": "2026-07-31"
       },
       "silver": {
-        "value": 58.93,
+        "value": 58.92,
         "unit": "美元/盎司",
         "date": "2026-07-31"
       },
@@ -109,7 +109,7 @@
         "date": "2026-07-31"
       },
       "oil": {
-        "value": 82.38,
+        "value": 82.77,
         "unit": "美元/桶",
         "date": "2026-07-31"
       }
