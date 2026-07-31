@@ -169,15 +169,17 @@ def _carry_forward_history(today):
         if not hist:
             continue
         last_net = hist[-1].get("net", 0)
+        # 【2026-07-31 修复】carry-forward 条目打标，避免被累加到 5/20/60 日趋势窗口
+        carried_entry = {"date": today, "net": last_net, "carried": True}
         if hist and hist[-1].get("date") == today:
-            hist[-1] = {"date": today, "net": last_net}
+            hist[-1] = carried_entry
         else:
-            hist.append({"date": today, "net": last_net})
+            hist.append(carried_entry)
             history[name] = hist[-60:]
         cf += 1
     if cf:
         save_history(history)
-        print(f"  🔄 [历史carry-forward] {cf} 个板块沿用上次净额追加今日，累积窗口继续推进（不造假）")
+        print(f"  🔄 [历史carry-forward] {cf} 个板块沿用上次净额追加今日（已标记 carried，不计入趋势累加）")
 
 
 def calc_consecutive_days(records):
@@ -915,7 +917,9 @@ def fetch_sector_flow():
             for item in top_list:
                 name = item["name"]
                 if name in hist_data and len(hist_data[name]) >= 2:
-                    nets = [x.get("net", 0) for x in hist_data[name]]
+                    # 【2026-07-31 修复】本地history累加排除 carry-forward 条目
+                    real_entries = [x for x in hist_data[name] if not x.get("carried")]
+                    nets = [x.get("net", 0) for x in real_entries]
                     if len(nets) >= 5:
                         item["net_5d"] = round(sum(nets[-5:]), 2)
                         item["source"] = "本地累加"
@@ -1089,20 +1093,26 @@ def fetch_sector_flow():
         name = item["name"]
         hist = history.get(name, [])
         # 5日/20日/60日累计（从历史数据累加，按可用数据动态）
-        net_5d_val = round(sum(h["net"] for h in hist[-5:]), 2) if len(hist) >= 5 else 0
-        net_20d_val = round(sum(h["net"] for h in hist[-20:]), 2) if len(hist) >= 10 else 0
-        if net_5d_val != 0:
+        # 【2026-07-31 修复】剔除 carry-forward 标记的条目，避免重复值虚增趋势窗口
+        def _real_n(hist, n):
+            arr = [h for h in hist[-n:] if not h.get("carried")]
+            return arr, round(sum(h["net"] for h in arr), 2)
+        real_5, net_5d_val = _real_n(hist, 5)
+        real_20, net_20d_val = _real_n(hist, 20)
+        real_60, net_60d_val = _real_n(hist, 60)
+        if net_5d_val != 0 and len(real_5) >= 5:
             item["net_5d"] = net_5d_val
-            item["net_5d_days"] = min(len(hist), 5)
-        if net_20d_val != 0:
+            item["net_5d_days"] = len(real_5)
+        if net_20d_val != 0 and len(real_20) >= 10:
             item["net_20d"] = net_20d_val
-            item["net_20d_days"] = min(len(hist), 20)
+            item["net_20d_days"] = len(real_20)
         # 【2026-07-28 修复】60日累计门槛必须为 >=60 天。原 >=10 会导致 hist 仅11天时
         # hist[-60:]==hist[-11:]==全部数据，net_60d 恒等于 net_20d（假数据）。
         # 不足60天则 net_60d=None，前端显示"积累中"（约47天后才有真实60日值）。
-        if len(hist) >= 60:
-            item["net_60d"] = round(sum(h["net"] for h in hist[-60:]), 2)
-            item["net_60d_days"] = min(len(hist), 60)
+        # 【2026-07-31】同样要求真实交易日 >=60 天
+        if len(real_60) >= 60:
+            item["net_60d"] = net_60d_val
+            item["net_60d_days"] = len(real_60)
         else:
             item["net_60d"] = None  # 数据不足，前端显示"积累中"
     
