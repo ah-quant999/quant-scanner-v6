@@ -82,5 +82,12 @@
     "job": "backup",
     "status": "CRASH",
     "detail": "run_batch() missing 1 required positional argument: 'mode'"
+  },
+  {
+    "time": "2026-07-31 17:35:00",
+    "host": "xiaojiu",
+    "job": "crisis_radar",
+    "status": "START",
+    "detail": ""
   }
 ]
