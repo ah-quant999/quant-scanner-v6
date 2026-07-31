@@ -81,13 +81,14 @@
     "last_error": null
   },
   "fetch_52w_high": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-31 17:27:57",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u26a0' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:31:05"
   },
   "fetch_sector_rs": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-25 13:52:48",
+    "last_success": "2026-07-31 17:31:05",
     "last_error": null
   },
   "fetch_crisis_data": {
