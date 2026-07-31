@@ -455,11 +455,11 @@ def _register_jobs():
                     _log(f"✗ {n} 未捕获异常: {e}\n{traceback.format_exc()}")
                     _write_heartbeat(n, "CRASH", str(e)[:300])
             return job
-        schedule.every().monday.at(t).do(make_job())
-        schedule.every().tuesday.at(t).do(make_job())
-        schedule.every().wednesday.at(t).do(make_job())
-        schedule.every().thursday.at(t).do(make_job())
-        schedule.every().friday.at(t).do(make_job())
+        schedule.every().monday.at(t).do(make_job(**kwargs))
+        schedule.every().tuesday.at(t).do(make_job(**kwargs))
+        schedule.every().wednesday.at(t).do(make_job(**kwargs))
+        schedule.every().thursday.at(t).do(make_job(**kwargs))
+        schedule.every().friday.at(t).do(make_job(**kwargs))
 
     for t, name, func_name, kwargs in SCHEDULE_DAILY:
         func = globals()[func_name]
@@ -472,7 +472,7 @@ def _register_jobs():
                     _log(f"✗ {n} 未捕获异常: {e}\n{traceback.format_exc()}")
                     _write_heartbeat(n, "CRASH", str(e)[:300])
             return job
-        schedule.every().day.at(t).do(make_job())
+        schedule.every().day.at(t).do(make_job(**kwargs))
 
     for t, name, func_name, kwargs in SCHEDULE_WEEKEND:
         func = globals()[func_name]
@@ -485,8 +485,8 @@ def _register_jobs():
                     _log(f"✗ {n} 未捕获异常: {e}\n{traceback.format_exc()}")
                     _write_heartbeat(n, "CRASH", str(e)[:300])
             return job
-        schedule.every().saturday.at(t).do(make_job())
-        schedule.every().sunday.at(t).do(make_job())
+        schedule.every().saturday.at(t).do(make_job(**kwargs))
+        schedule.every().sunday.at(t).do(make_job(**kwargs))
 
     # ETF 资金热度已合并到盘中扫描时间线，不再独立每30分钟触发
 
