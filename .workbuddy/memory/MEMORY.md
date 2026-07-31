@@ -44,7 +44,7 @@
   - 08:25 `v8_cn_fetch.yml` 盘前（akshare）+ 08:40 `v8_sync_v6_data.yml` 盘前（v6 预警）
   - 10:30/11:30/13:05/14:00/15:05 `v8_cn_fetch.yml` 盘中（含 ETF_DAILY_MONITOR）
   - 15:30 `v8_cn_fetch.yml` 收盘数据（EXPERIMENT）
-  - 16:45 `v8_sync_v6_data.yml` 盘后（v6 算法数据同步到 raw_data）
+  - 19:00 `v8_sync_v6_data.yml` 盘后（v6 算法数据同步到 raw_data；从原 16:45 推迟，等待 v6 close_p2 18:30 产出）
   - 17:00 `v8_build_deploy.yml` 盘后算法换算部署 + `v8_algo.yml` 数据体检
   - 周日 23:00 `cloud_weekly_cleanup.yml` 清理 orphan
 - **selective build**: `update_v8.py --category/--detect-changes` 只构建目标时段或变化 raw_data 所属类别，避免每次全站重部署。
