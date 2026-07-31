@@ -436,3 +436,18 @@
 - 日志输出：`2026-07-31 06:58:13 🛌 非交易时段，看门狗跳过`
 - 写统一心跳：`2026-07-31 06:58:xx | xiaojiu | candidate_pool_watchdog | DONE`。
 - 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-07-31 18:04
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 18:04 已过交易时段(>15:00)，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-07-31 18:04:51 🛌 非交易时段，看门狗跳过`
+- 写统一心跳：`2026-07-31 18:04:55 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-07-31 19:00
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 19:00 已过交易时段(>15:00)，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-07-31 19:00:25 🛌 非交易时段，看门狗跳过`
+- 写统一心跳：`2026-07-31 19:00:28 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+- ⚠️ 顺带观察：`_heartbeat.log` 显示 `2026-07-31 18:30:00 | xiaojiu | close_p2 | CRASH | run_batch() missing 1 required positional argument: 'mode'`，close_p2 任务 18:30 崩溃，建议排查（非本次看门狗职责）。

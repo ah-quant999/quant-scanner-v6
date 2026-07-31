@@ -512,3 +512,20 @@
 - 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
 - 心跳：`2026-07-31 06:24:XX | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`。
 - 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-07-31 18:18 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 18:18 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 18:18:55），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 18:18:58 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-07-31 19:14 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 19:14 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 19:14:54），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 19:14:57 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+- 备注：heartbeat 日志中可见 `2026-07-31 18:30:00 | close_p2 | CRASH | run_batch() missing 1 required positional argument: 'mode'`，close_p2 任务存在崩溃，非本次看门狗职责，供运维排查。

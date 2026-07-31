@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-07-30 17:41:33",
+  "update_time": "2026-07-31 17:41:47",
   "amount_history": [
     {
       "date": "4/29",
@@ -370,13 +370,6 @@
   ],
   "up_down": {},
   "daily_stats": [
-    {
-      "date": "5/6",
-      "up": 2937,
-      "down": 1962,
-      "flat": 101,
-      "_note": "reconstructed from index data"
-    },
     {
       "date": "5/7",
       "up": 2707,
@@ -772,6 +765,12 @@
       "up": 1767,
       "down": 3635,
       "flat": 131
+    },
+    {
+      "date": "7/31",
+      "up": 4690,
+      "down": 728,
+      "flat": 115
     }
   ]
 }

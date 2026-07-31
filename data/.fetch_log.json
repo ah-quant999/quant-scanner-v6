@@ -36,49 +36,57 @@
     "last_error": null
   },
   "fetch_up_down_stats": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 15:21:01",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2705' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:41:47"
   },
   "fetch_concept_ranking": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-29 10:50:44",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2713' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:45:12"
   },
   "fetch_sector_fund_flow": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-31 17:28:14",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\U0001f4ca' in position 0: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 15:19:27",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2717' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 15:19:28",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\U0001f4ca' in position 2: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:40:05"
   },
   "fetch_margin": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 12:59:38",
+    "last_success": "2026-07-31 17:40:04",
     "last_error": null
   },
   "fetch_cffex_holdings": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 20:55:23",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2705' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:45:15"
   },
   "fetch_inst_trade": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 20:55:26",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2705' in position 11: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:45:20"
   },
   "fetch_stock_deviation": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-24 17:40:09",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2705' in position 2: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:44:36"
   },
   "fetch_52w_high": {
     "consecutive_failures": 1,
@@ -119,9 +127,10 @@
     "last_error": null
   },
   "fetch_etf_subscription": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 07:08:10",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\U0001f535' in position 0: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:40:07"
   },
   "fetch_ipo_data": {
     "consecutive_failures": 0,
@@ -129,9 +138,10 @@
     "last_error": null
   },
   "fetch_north_fund": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-28 20:55:45",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\u2705' in position 2: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:42:06"
   },
   "fetch_fomc": {
     "consecutive_failures": 0,
@@ -139,9 +149,10 @@
     "last_error": null
   },
   "fetch_sh_index_fib": {
-    "consecutive_failures": 0,
+    "consecutive_failures": 1,
     "last_success": "2026-07-27 11:23:14",
-    "last_error": null
+    "last_error": "'gbk' codec can't encode character '\\U0001f4ca' in position 2: illegal multibyte sequence",
+    "last_failure": "2026-07-31 17:45:30"
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,

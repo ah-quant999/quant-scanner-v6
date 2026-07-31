@@ -89,5 +89,33 @@
     "job": "crisis_radar",
     "status": "START",
     "detail": ""
+  },
+  {
+    "time": "2026-07-31 17:40:00",
+    "host": "xiaojiu",
+    "job": "china_source_fetch",
+    "status": "START",
+    "detail": ""
+  },
+  {
+    "time": "2026-07-31 17:45:30",
+    "host": "xiaojiu",
+    "job": "china_source_fetch",
+    "status": "DONE",
+    "detail": "no changes to push | failed scripts: 13"
+  },
+  {
+    "time": "2026-07-31 18:30:00",
+    "host": "xiaojiu",
+    "job": "close_p2",
+    "status": "CRASH",
+    "detail": "run_batch() missing 1 required positional argument: 'mode'"
+  },
+  {
+    "time": "2026-07-31 19:30:00",
+    "host": "xiaojiu",
+    "job": "close_deploy",
+    "status": "CRASH",
+    "detail": "run_batch() missing 1 required positional argument: 'mode'"
   }
 ]
