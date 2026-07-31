@@ -2,8 +2,8 @@
   "neodata_status": "ok",
   "neodata_updated": "2026-07-27 17:37:08",
   "neodata_valid_until": "2026-07-28 16:20:41",
-  "updated_at": "2026-07-31 15:00:47",
-  "cloud_deploy_time": "20260731150048",
+  "updated_at": "2026-07-31 16:48:38",
+  "cloud_deploy_time": "20260731164839",
   "failover_status": "OK",
   "failover_time": "2026-07-28 12:19:49",
   "data_correctness": {
@@ -34,7 +34,7 @@
   "three_party": {
     "cloud": {
       "status": "ok",
-      "last_time": "2026-07-31 14:59:10",
+      "last_time": "2026-07-31 16:46:42",
       "mode": "cloud_intraday"
     },
     "xiaojiu": {
