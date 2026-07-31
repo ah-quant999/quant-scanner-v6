@@ -163,7 +163,9 @@ def _sync_candidate_pool_to_main():
 def _rebuild_and_deploy():
     """重建候选池 → 推到 main → 前端构建 → 强制部署。"""
     # 1) 重建候选池
-    ok, out, err = _run(["build_candidate_pool.py"], 300, "重建候选池")
+    #    超时 600s：完整构建实测 ~6min（mootdx 全量 A股 + 新浪港股 99 页），
+    #    300s 在慢网络下必被误杀（2026-07-31 盘中两次失败即此因）。
+    ok, out, err = _run(["build_candidate_pool.py"], 600, "重建候选池")
     if not ok:
         tail = (err or out).strip().splitlines()
         tail = " | ".join(tail[-3:]) if tail else "unknown"
