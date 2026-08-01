@@ -117,5 +117,12 @@
     "job": "close_deploy",
     "status": "CRASH",
     "detail": "run_batch() missing 1 required positional argument: 'mode'"
+  },
+  {
+    "time": "2026-07-31 21:00:36",
+    "host": "xiaojiu",
+    "job": "batch_backup",
+    "status": "DONE",
+    "detail": ""
   }
 ]

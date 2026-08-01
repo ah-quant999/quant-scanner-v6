@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-08-01 07:28:31",
+  "update_time": "2026-08-01 15:30:13",
   "data_date": "2026-07-30",
   "track_start": "2026-07-26",
   "history_days": 3,
@@ -391,7 +391,7 @@
   "overlap": {
     "total_tracked": 8,
     "top10_ge70": {
-      "count": 20,
+      "count": 10,
       "overlap": 3,
       "names": [
         "山金国际",

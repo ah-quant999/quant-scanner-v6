@@ -451,3 +451,143 @@
 - 写统一心跳：`2026-07-31 19:00:28 | xiaojiu | candidate_pool_watchdog | DONE`。
 - 未删除任何数据源/备份文件（纯检查）。
 - ⚠️ 顺带观察：`_heartbeat.log` 显示 `2026-07-31 18:30:00 | xiaojiu | close_p2 | CRASH | run_batch() missing 1 required positional argument: 'mode'`，close_p2 任务 18:30 崩溃，建议排查（非本次看门狗职责）。
+
+## 2026-07-31 21:48
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 21:48 已过交易时段(>15:00)，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-07-31 21:48:27 🛌 非交易时段，看门狗跳过`。
+- 写统一心跳：`2026-07-31 21:48:30 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-07-31 22:44
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 22:44 已过交易时段(>15:00)，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-07-31 22:44:28 🛌 非交易时段，看门狗跳过`。
+- 写统一心跳：`2026-07-31 22:44:32 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-07-31 23:40
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 23:40 已过交易时段(>15:00)，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-07-31 23:40:28 🛌 非交易时段，看门狗跳过`。
+- 写统一心跳：`2026-07-31 23:40:31 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 00:36
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 00:36 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 00:36:32 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 00:36:35 | xiaojiu | candidate_pool_watchdog | DONE`。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 01:32
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 01:32 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 01:32:31 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 01:32:34 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 02:28
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 02:28 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 02:28:30 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 02:28:33 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 03:24
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 03:24 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 03:24:01 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 03:24:04 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 04:20
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 04:20 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 04:20:02 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 04:20:05 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 05:16
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 05:16 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 05:16:03 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 05:16:06 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 06:12
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 06:12 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 06:12:03 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 06:12:06 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 07:09
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 07:09 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 07:09:53 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 07:09:56 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 08:02
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 08:02 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 08:02:44 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 08:02:47 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 08:55
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 08:55 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 08:55:36 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 08:55:39 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认，上一条 08:14 亦为 DONE）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 09:46
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 09:46 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 09:46:38 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 09:46:41 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 10:37
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 10:37 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 10:37:42 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 10:37:46 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 11:33
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 11:33 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 11:33:39 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 11:33:42 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 12:29
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 12:29 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 12:29:39 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 12:29:42 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认，上一条 11:44 亦为 DONE）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 13:25
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 13:25 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 13:25:40 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 13:25:43 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 14:21
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 14:21 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 14:21:38 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 14:21:42 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认，上一条 13:36 亦为 DONE）。
+- 未删除任何数据源/备份文件（纯检查）。
+
+## 2026-08-01 15:17
+- 运行 `watch_candidate_pool.py`（用户指令 `check_candidate_pool.py` 不存在，沿用 `watch_candidate_pool.py`）。
+- 当前 15:17 周六非交易日，看门狗按设计跳过重建，exit 0（安全）。
+- 日志输出：`2026-08-01 15:17:13 🛌 非交易日，看门狗跳过`。
+- 写统一心跳：`2026-08-01 15:17:17 | xiaojiu | candidate_pool_watchdog | DONE`（已写入 _heartbeat.log 并 tail 确认）。
+- 未删除任何数据源/备份文件（纯检查）。

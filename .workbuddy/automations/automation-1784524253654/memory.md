@@ -529,3 +529,163 @@
 - 心跳：`2026-07-31 19:14:57 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`。
 - 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
 - 备注：heartbeat 日志中可见 `2026-07-31 18:30:00 | close_p2 | CRASH | run_batch() missing 1 required positional argument: 'mode'`，close_p2 任务存在崩溃，非本次看门狗职责，供运维排查。
+
+## 2026-07-31 21:07 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本；该文件今日 10:07 有更新）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 21:06 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 21:06:58），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 21:07:01 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 21:00 batch_backup 心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-07-31 22:02 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本；今日 10:07 更新）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 22:02 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 22:02:59），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 22:03:03 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 21:48 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-07-31 22:58 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 22:58 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 22:58:58），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 22:59:02 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 22:44 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-07-31 23:55 运行（周五·收盘后）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 23:54 > 15:00 收盘边界，`_is_trading_hours()` 返回 False。
+- 结果：`🛌 非交易时段，看门狗跳过`（2026-07-31 23:54:59），exit 0 直接休眠。
+- 候选池现状：未读取（非交易时段直接跳过），未触发重建/部署。
+- 心跳：`2026-07-31 23:55:02 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 00:51 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 00:51 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 00:51:00），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 00:51:03 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 00:36 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 01:47 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 01:47 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 01:47:00），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 01:47:03 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 01:40 夜间周末值守心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 02:43 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 02:42 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 02:43:02），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 02:43:05 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 02:28 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 03:39 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 03:39 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 03:39:03），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 03:39:05 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 03:24 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 04:35 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 04:35 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 04:35:03），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 04:35:06 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 04:20 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 05:30 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 05:31 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 05:31:05），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 05:31:08 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 05:16 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 06:27 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 06:27 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 06:27:04），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 06:27:07 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 06:12 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 07:23 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全���径执行。
+- 检测：当前 2026-08-01 07:23 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 07:23:05），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 07:23:08 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 07:09 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 08:14 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 08:14 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 08:14:07），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 08:14:10 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 08:02 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 09:05 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 09:05 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 09:05:45），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 09:05:49 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 08:55 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 09:57 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 09:57 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 09:57:49），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 09:57:53 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 09:46 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 10:48 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 10:48 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 10:48:39），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 10:48:42 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 10:37 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 11:44 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本；今日 10:07 有更新）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 11:44 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 11:44:40），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 11:44:43 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 11:33 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 12:40 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 12:40 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 12:40:41），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 12:40:44 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 12:29 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 13:36 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 13:36 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 13:36:42），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 13:36:46 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 13:31 夜间周末值守心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
+
+## 2026-08-01 14:32 运行（周六·非交易日）
+- 触发：自动化半点调度（本机小九），`watch_candidate_pool.py`（自动化指令中的 `check_candidate_pool.py` 不存在，沿用历史同名脚本）。使用系统 Python 3.14.3 全路径执行。
+- 检测：当前 2026-08-01 14:32 为周六，`_is_trading_day()` 返回 False。
+- 结果：`🛌 非交易日，看门狗跳过`（2026-08-01 14:32:47），exit 0 直接休眠。
+- 候选池现状：未读取（非交易日直接跳过），未触发重建/部署。
+- 心跳：`2026-08-01 14:32:50 | xiaojiu | candidate_pool_watchdog | DONE` 已写入 `_heartbeat.log`（与 14:21 档心跳相邻，均在档）。
+- 纯修复型运行，未触碰任何 data/*.json 数据源或 backup_* 备份（无删除）。
