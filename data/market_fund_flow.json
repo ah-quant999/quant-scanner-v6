@@ -1239,6 +1239,36 @@
       "small_yi": -382.25,
       "main_pct": -4.6,
       "small_pct": 2.57
+    },
+    {
+      "date": "2026-07-29",
+      "net_yi": -48.37,
+      "super_large_yi": 116.21,
+      "large_yi": -67.83,
+      "medium_yi": -36.28,
+      "small_yi": -12.09,
+      "main_pct": -0.44,
+      "small_pct": 1.07
+    },
+    {
+      "date": "2026-07-30",
+      "net_yi": -256.23,
+      "super_large_yi": 224.14,
+      "large_yi": 32.09,
+      "medium_yi": -44.41,
+      "small_yi": -211.82,
+      "main_pct": -2.32,
+      "small_pct": 2.03
+    },
+    {
+      "date": "2026-07-31",
+      "net_yi": 225.21,
+      "super_large_yi": -25.97,
+      "large_yi": -199.24,
+      "medium_yi": -71.16,
+      "small_yi": 296.37,
+      "main_pct": 1.9,
+      "small_pct": -0.22
     }
   ],
   "cumulative": [
@@ -1737,13 +1767,25 @@
     {
       "date": "2026-07-28",
       "cum_yi": -25408.23
+    },
+    {
+      "date": "2026-07-29",
+      "cum_yi": -25456.6
+    },
+    {
+      "date": "2026-07-30",
+      "cum_yi": -25712.83
+    },
+    {
+      "date": "2026-07-31",
+      "cum_yi": -25487.62
     }
   ],
-  "last_update": "2026-07-28T17:57:47",
+  "last_update": "2026-08-02T17:42:23",
   "range": {
     "start": "2026-01-21",
-    "end": "2026-07-28",
-    "count": 124
+    "end": "2026-07-31",
+    "count": 127
   },
   "fetch_status": "ok_push2his"
 }
