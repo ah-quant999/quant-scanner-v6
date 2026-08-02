@@ -132,7 +132,7 @@
 | `.machine_role` | 双机角色标记 | 区分阿狸咪/小九的运行时标记，误删导致日志/心跳判定错乱 | 双机各一 |
 | `README.md` | 项目说明 | 项目文档 | 不定期 |
 | `DO_NOT_DELETE.md` (本文件) | 禁止删除清单 | 防止误删的核心文档 | 持续更新 |
-| `.github/workflows/*.yml` | 云端 GitHub Actions (9 个) | **此前完全无保护！** 云端自动运行的数据抓取/部署/备份 workflow，丢失则整个云端链路断裂 | 每日运行 |
+| ~~`.github/workflows/*.yml`~~ | **2026-08-02 主动退役 v6**：9 个 v6 GitHub Actions 定时任务已全部删除（git 历史可恢复），此保护行作废。v8 仓的 workflow 在 `quant-scanner-v8` 仓、不受本文件约束。 | 已删 |
 
 ---
 
