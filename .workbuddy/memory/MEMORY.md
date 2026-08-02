@@ -27,12 +27,14 @@
 - **板块资金流**: 东财(akshare)主 → neodata 备 → westock 第三源。
 - **基本面质量分**: `data/fundamental_quality.json`；A=+40/B=+5/D=-10/C=0；key=`{market}_{code}`。A档阈值已对齐真实上限 70（原 80 死档）。
 - **危机雷达**: 货币0.40+经济0.35+全球0.25；档位 0-30/30-50/50-70/70-100。
+- **v8 数据结构陷阱（2026-08-02 踩）**：`candidate.json`/`gold_pool.json` 的 `stocks` 永远是 **dict**（`{market}_{code}→obj`）**不是 array**。直接 `.slice/.filter/.map` 全 `TypeError`。v8 `index.html` 已加 `_rcArr()` 工具（array 直传、dict 转 `Object.values`、其他返 `[]`），**新写渲染代码前先验证数据结构 + 用 _rcArr 包一层**。LHB/MAHORO/INST_TRADE 的 `stocks` 才是 array。
+- **v8 前端数据源口径（防踩坑）**: `candidate.json.stocks` 仅含 `code/name/market/board_label/sources/industry/concepts/board/sectors`，**无 `score/inst_net_万/yz_net_万/reasons/tags`**；机游共振真实数据在 `lhb_data.json.stocks`（`inst_net_万`+`yz_net_万`+`pct`+`category`+`seats`）。前端 render 要取机构/游资净买必须走 `lhb_data`，不能走 `candidate`。板块资金流看 `sector_fund_flow.json.top_list`（type=行业/概念，net 单位亿）。
 - **波动率观测**: `calc_volatility_watch.py`；20日年化波动率；5日 vs 20日；复合信号四色分类。
 - **看门狗**: `data_freshness_watchdog.py` 监控 27 核心数据；market 类盘后 15:30 查。**每日 20:30 自动化自修复**(automation-1785047388251)：safe_pull → 重跑陈旧 fetch → update_data_v2.py --fast → push_china_data.py → deploy_now.py --force。
 - **缺失待补**: `fetch_sector_rs.py` / `enhance_dist.py` 从未被调用；`fetch_concept_ranking.py` 一天仅 1 次；`fetch_etf_flow.py` 缺失导致 ETF 资金卡不更新。
 
 ## 自动化 / 安全
-- **排班状态**: 2026-07-23 起阿狸咪家中机全天断线，**全部定时任务由小九（单位机·全天在线）全面接管**；`standalone/data_responsibility.html` 中「双机」= 小九单机跑双机职责，标注「代阿狸咪/🖥️」的即原属阿狸咪、现由小九顶上的任务。阿狸咪恢复联网后其本机 20+ 救援船任务会自动续跑。
+- **排班状态（2026-08-03 锁定·长期架构）**: 彻底改为**「小九单机（单位机）+ GitHub Actions 云端」**，**阿狸咪（家里机）即使恢复联网也绝不接手任何生产任务**，避免双机重复跑的麻烦。`standalone/data_responsibility.html` 中「双机」= 小九单机跑双机职责，标注「代阿狸咪/🖥️」的即原属阿狸咪、现由小九顶上的任务（长期生效，不再恢复双机分工）。阿狸咪本机 23 个 automation 现已全部 PAUSED（含原"周末云端监督与兜底部署" automation-1785510427927），仅保留"紧急指令监听"(automation-1783696499491) 作为主人的兜底呼叫通道（监听≠接手生产，不会与小九重复）。**若阿狸咪误上线导致其任务跑起来，立即 PAUSE 她本机 automation**。
 - **v8 架构真相（2026-07-31 踩坑→已分离，2026-08-01 收尾分支）**：v8 与 v6 是**两个独立仓**。**`quant-scanner-v8` 独立仓 = v8 唯一开发+部署源**（GitHub Pages 从 main 出，自身 deploy_v8.py 推 index.html+data/*）。**2026-07-31 已删除 v6 仓 `v8/` 子目录**；**2026-08-01 已删除** `stock-scanner` 的 `origin/v8-temp` 与 `quant-scanner-v8` 的 `v8` 快照分支，两仓现均**只保留 `main` 作为 v8 真相源**。从此 v6 是 v6、v8 是 v8，任何 v8 模板/数据改动必须进 `quant-scanner-v8/main`。git 历史保留可恢复。
 - **模型 ID**: 全部自动化统一用 `hy3`（9:00-11:59）/ `deepseek-v4-flash`（12:00 后）。**严禁写入 `ds-V4-FLASH`**；`audit_automations.py` 每日 09:00/19:00 自动审计并修正。
 - **北向资金**: 港交所 2024-05 后停止披露 top_buy，系统多处已标"停止"。
@@ -46,7 +48,7 @@
   - 15:30 `v8_cn_fetch.yml` 收盘数据（EXPERIMENT）
   - 19:00 `v8_sync_v6_data.yml` 盘后（v6 算法数据同步到 raw_data；从原 16:45 推迟，等待 v6 close_p2 18:30 产出）
   - 17:00 `v8_build_deploy.yml` 盘后算法换算部署 + `v8_algo.yml` 数据体检
-  - 周日 23:00 `cloud_weekly_cleanup.yml` 清理 orphan
+  - 周六 21:00 `cloud_weekly_cleanup.yml` 清理 orphan（并入周六 T+1 维护窗口）+ 周日 23:00 `v8_cleanup.yml` 清缓存/修剪心跳日志（删除无用记录）
 - **selective build**: `update_v8.py --category/--detect-changes` 只构建目标时段或变化 raw_data 所属类别，避免每次全站重部署。
 - **v6 同步桥**: `sync_v6_to_v8.py` 读取 `stock-scanner/data/` 的盘后/盘前 JSON，推送到 v8 `raw_data/`，触发自动构建。本周末已一次性解决 21 个原冻结模块。
 - **北向资金升级版（2026-07-31）**: **仅展示删**（v8 主页大卡 + 运维"数据新鲜度"表 + 异动监控表），**数据/脚本保留**（`fetch_north_fund.py` / `data/north_fund_*.json` 留作权重计算用），**计算权重里北向分仍保留**（仅标"停更"）。v6 旧 v6 上的北向大卡和运维行**保持原样不动**（v6 不再改）。
