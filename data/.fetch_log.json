@@ -43,25 +43,25 @@
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:34:55",
+    "last_success": "2026-08-03 15:25:05",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:12"
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:36:32",
+    "last_success": "2026-08-03 15:24:26",
     "last_error": null,
     "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:36:05",
+    "last_success": "2026-08-03 15:25:59",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:34:13",
+    "last_success": "2026-08-03 15:26:01",
     "last_error": null,
     "last_failure": "2026-07-31 17:40:05"
   },
