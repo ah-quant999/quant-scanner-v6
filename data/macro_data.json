@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-08-03 14:41:30",
+  "update_time": "2026-08-03 14:44:32",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7141,
@@ -87,10 +87,9 @@
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 99.78,
-      "pct": 0.37,
-      "date": "2026-08-03",
-      "source": "Sina-DINIW"
+      "value": 99.79,
+      "pct": 0.01,
+      "date": "2026-08-03"
     },
     "commodities": {
       "gold": {
