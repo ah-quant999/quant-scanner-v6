@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 15:32:31",
+    "last_success": "2026-08-03 15:35:45",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -89,9 +89,9 @@
     "last_failure": "2026-07-31 17:44:36"
   },
   "fetch_52w_high": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-31 17:27:57",
-    "last_error": "'gbk' codec can't encode character '\\u26a0' in position 11: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-03 15:34:00",
+    "last_error": null,
     "last_failure": "2026-07-31 17:31:05"
   },
   "fetch_sector_rs": {
@@ -127,9 +127,9 @@
     "last_error": null
   },
   "fetch_etf_subscription": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-28 07:08:10",
-    "last_error": "'gbk' codec can't encode character '\\U0001f535' in position 0: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-03 15:33:48",
+    "last_error": null,
     "last_failure": "2026-07-31 17:40:07"
   },
   "fetch_ipo_data": {
@@ -156,7 +156,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 15:27:42",
+    "last_success": "2026-08-03 15:34:06",
     "last_error": null
   },
   "fetch_overnight_brief": {
