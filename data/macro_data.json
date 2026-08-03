@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-08-03 16:41:41",
+  "update_time": "2026-08-03 16:44:50",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7141,
@@ -77,18 +77,18 @@
   },
   "global_macro": {
     "vix": {
-      "value": 17.95,
+      "value": 17.9,
       "date": "2026-08-03"
     },
     "usdcnh": {
       "price": 6.7516,
-      "prev_close": 6.7543,
+      "prev_close": 6.7545,
       "date": "2026-08-03",
       "source": "Sina实时"
     },
     "dxy": {
       "value": 99.81,
-      "pct": 0.39,
+      "pct": 0.4,
       "date": "2026-08-03",
       "source": "Sina-DINIW"
     },
