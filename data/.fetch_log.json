@@ -43,31 +43,31 @@
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:35:34",
+    "last_success": "2026-08-03 14:34:55",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:12"
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:37:01",
+    "last_success": "2026-08-03 14:36:32",
     "last_error": null,
     "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:36:36",
+    "last_success": "2026-08-03 14:36:05",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:34:45",
+    "last_success": "2026-08-03 14:34:13",
     "last_error": null,
     "last_failure": "2026-07-31 17:40:05"
   },
   "fetch_margin": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:34:48",
+    "last_success": "2026-08-03 14:34:16",
     "last_error": null
   },
   "fetch_cffex_holdings": {
@@ -134,7 +134,7 @@
   },
   "fetch_ipo_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:32:03",
+    "last_success": "2026-08-03 14:31:52",
     "last_error": null
   },
   "fetch_north_fund": {
@@ -156,12 +156,12 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:37:06",
+    "last_success": "2026-08-03 14:36:37",
     "last_error": null
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:30:13",
+    "last_success": "2026-08-03 14:30:14",
     "last_error": null
   },
   "fetch_policy_density": {
@@ -181,7 +181,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 13:37:32",
+    "last_success": "2026-08-03 14:37:06",
     "last_error": null
   }
 }
