@@ -24090,11 +24090,11 @@
         "观澜台"
       ],
       "latest": {
-        "close": 36.12,
-        "pct_chg": -1.85,
-        "pct_chg_5d": -6.84,
-        "pct_chg_20d": 17.27,
-        "rsi_14": 47.8,
+        "close": 36.17,
+        "pct_chg": -1.71,
+        "pct_chg_5d": -6.71,
+        "pct_chg_20d": 17.44,
+        "rsi_14": 47.9,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -24262,11 +24262,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 131.8,
-        "pct_chg": -2.15,
-        "pct_chg_5d": -12.73,
-        "pct_chg_20d": -22.97,
-        "rsi_14": 44.5,
+        "close": 130.27,
+        "pct_chg": -3.29,
+        "pct_chg_5d": -13.74,
+        "pct_chg_20d": -23.87,
+        "rsi_14": 43.9,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -24712,11 +24712,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 24.98,
-        "pct_chg": 2.59,
-        "pct_chg_5d": 4.52,
-        "pct_chg_20d": 7.86,
-        "rsi_14": 77.3,
+        "close": 25.05,
+        "pct_chg": 2.87,
+        "pct_chg_5d": 4.81,
+        "pct_chg_20d": 8.16,
+        "rsi_14": 77.6,
         "signal_score": 2.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -25566,11 +25566,11 @@
         "观澜台"
       ],
       "latest": {
-        "close": 28.12,
-        "pct_chg": -1.09,
-        "pct_chg_5d": -0.5,
-        "pct_chg_20d": -3.8,
-        "rsi_14": 51.3,
+        "close": 28.24,
+        "pct_chg": -0.67,
+        "pct_chg_5d": -0.07,
+        "pct_chg_20d": -3.39,
+        "rsi_14": 52.7,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -25594,7 +25594,7 @@
         "三足鼎立": false,
         "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "📉低开低走"
+        "开盘_标签": "⚡低开高走"
       },
       "institution": "高盛",
       "rating": "卖出",
@@ -26655,11 +26655,11 @@
         "maharo研报"
       ],
       "latest": {
-        "close": 102.08,
-        "pct_chg": -3.37,
-        "pct_chg_5d": -18.98,
-        "pct_chg_20d": -33.83,
-        "rsi_14": 28.2,
+        "close": 101.14,
+        "pct_chg": -4.26,
+        "pct_chg_5d": -19.72,
+        "pct_chg_20d": -34.44,
+        "rsi_14": 28.0,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -26683,7 +26683,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "institution": "花旗",
       "rating": "买入",
@@ -27428,11 +27428,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 27.41,
-        "pct_chg": 0.33,
-        "pct_chg_5d": 0.96,
-        "pct_chg_20d": -6.29,
-        "rsi_14": 64.4,
+        "close": 27.38,
+        "pct_chg": 0.22,
+        "pct_chg_5d": 0.85,
+        "pct_chg_20d": -6.39,
+        "rsi_14": 64.2,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -27901,11 +27901,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 61.07,
-        "pct_chg": -2.44,
-        "pct_chg_5d": -2.16,
-        "pct_chg_20d": -28.26,
-        "rsi_14": 38.2,
+        "close": 60.77,
+        "pct_chg": -2.92,
+        "pct_chg_5d": -2.64,
+        "pct_chg_20d": -28.62,
+        "rsi_14": 37.8,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -28437,12 +28437,12 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 0,
-        "pct_chg": 0,
-        "pct_chg_5d": 0,
-        "pct_chg_20d": 0,
-        "rsi_14": 50,
-        "signal_score": 0,
+        "close": 14.35,
+        "pct_chg": 0.56,
+        "pct_chg_5d": -10.42,
+        "pct_chg_20d": -34.83,
+        "rsi_14": 15.0,
+        "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -28455,9 +28455,9 @@
         ],
         "ema_score": 0,
         "turnover_rate": 0,
-        "缠论买_日K": false,
-        "缠论买_次数": 0,
-        "金钻_黄柱": false,
+        "缠论买_日K": true,
+        "缠论买_次数": 1,
+        "金钻_黄柱": true,
         "金钻_起涨": false,
         "四量图_机构变红": false,
         "上涨趋势": false,
@@ -28465,7 +28465,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": ""
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -28919,11 +28919,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 95.36,
-        "pct_chg": -3.72,
-        "pct_chg_5d": -20.7,
-        "pct_chg_20d": -42.81,
-        "rsi_14": 22.9,
+        "close": 94.77,
+        "pct_chg": -4.31,
+        "pct_chg_5d": -21.19,
+        "pct_chg_20d": -43.17,
+        "rsi_14": 22.8,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -29128,11 +29128,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 32.43,
-        "pct_chg": -3.31,
-        "pct_chg_5d": -21.23,
-        "pct_chg_20d": -12.63,
-        "rsi_14": 38.4,
+        "close": 32.24,
+        "pct_chg": -3.88,
+        "pct_chg_5d": -21.69,
+        "pct_chg_20d": -13.15,
+        "rsi_14": 38.2,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -30047,11 +30047,11 @@
         }
       ],
       "latest": {
-        "close": 10.72,
-        "pct_chg": 2.88,
-        "pct_chg_5d": 0.28,
-        "pct_chg_20d": -10.89,
-        "rsi_14": 66.9,
+        "close": 10.81,
+        "pct_chg": 3.74,
+        "pct_chg_5d": 1.12,
+        "pct_chg_20d": -10.14,
+        "rsi_14": 67.3,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -30231,11 +30231,11 @@
         }
       ],
       "latest": {
-        "close": 236.25,
-        "pct_chg": 3.9,
-        "pct_chg_5d": -24.28,
-        "pct_chg_20d": -44.48,
-        "rsi_14": 19.4,
+        "close": 235.9,
+        "pct_chg": 3.75,
+        "pct_chg_5d": -24.39,
+        "pct_chg_20d": -44.56,
+        "rsi_14": 19.3,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -30418,11 +30418,11 @@
         }
       ],
       "latest": {
-        "close": 249.77,
-        "pct_chg": -8.14,
-        "pct_chg_5d": -18.64,
-        "pct_chg_20d": -33.04,
-        "rsi_14": 24.8,
+        "close": 250.94,
+        "pct_chg": -7.71,
+        "pct_chg_5d": -18.26,
+        "pct_chg_20d": -32.72,
+        "rsi_14": 24.9,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -30598,10 +30598,10 @@
         }
       ],
       "latest": {
-        "close": 171.12,
-        "pct_chg": -3.15,
-        "pct_chg_5d": -19.47,
-        "pct_chg_20d": -41.8,
+        "close": 171.29,
+        "pct_chg": -3.05,
+        "pct_chg_5d": -19.39,
+        "pct_chg_20d": -41.74,
         "rsi_14": 27.8,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -30894,11 +30894,11 @@
         }
       ],
       "latest": {
-        "close": 63.24,
-        "pct_chg": -0.02,
-        "pct_chg_5d": -4.59,
-        "pct_chg_20d": -21.88,
-        "rsi_14": 36.4,
+        "close": 63.06,
+        "pct_chg": -0.3,
+        "pct_chg_5d": -4.86,
+        "pct_chg_20d": -22.1,
+        "rsi_14": 36.2,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -31064,11 +31064,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 19.95,
-        "pct_chg": -1.09,
-        "pct_chg_5d": 1.53,
-        "pct_chg_20d": -5.81,
-        "rsi_14": 54.1,
+        "close": 19.99,
+        "pct_chg": -0.89,
+        "pct_chg_5d": 1.73,
+        "pct_chg_20d": -5.62,
+        "rsi_14": 54.6,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -31245,12 +31245,12 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 27.05,
-        "pct_chg": -3.05,
-        "pct_chg_5d": -6.43,
-        "pct_chg_20d": 8.63,
-        "rsi_14": 44.3,
-        "signal_score": 0.5,
+        "close": 27.87,
+        "pct_chg": -0.11,
+        "pct_chg_5d": -3.6,
+        "pct_chg_20d": 11.93,
+        "rsi_14": 45.6,
+        "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -31267,13 +31267,13 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 0,
+        "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 📉低开低走"
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -31406,11 +31406,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 52.09,
-        "pct_chg": -8.18,
-        "pct_chg_5d": -32.06,
-        "pct_chg_20d": -21.29,
-        "rsi_14": 30.7,
+        "close": 51.51,
+        "pct_chg": -9.2,
+        "pct_chg_5d": -32.82,
+        "pct_chg_20d": -22.17,
+        "rsi_14": 30.4,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -31879,12 +31879,12 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 63.28,
-        "pct_chg": -1.85,
-        "pct_chg_5d": 0.0,
-        "pct_chg_20d": 4.42,
-        "rsi_14": 52.0,
-        "signal_score": 0,
+        "close": 63.49,
+        "pct_chg": -1.52,
+        "pct_chg_5d": 0.33,
+        "pct_chg_20d": 4.77,
+        "rsi_14": 52.5,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -31901,11 +31901,11 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 0,
+        "signal_count": 1,
         "当日涨停": false,
         "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
@@ -32017,11 +32017,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 40.22,
-        "pct_chg": 1.51,
-        "pct_chg_5d": 3.13,
-        "pct_chg_20d": 6.6,
-        "rsi_14": 70.8,
+        "close": 40.37,
+        "pct_chg": 1.89,
+        "pct_chg_5d": 3.51,
+        "pct_chg_20d": 7.0,
+        "rsi_14": 71.4,
         "signal_score": 5.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -32159,11 +32159,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 403.49,
-        "pct_chg": 4.75,
-        "pct_chg_5d": 7.64,
-        "pct_chg_20d": -7.35,
-        "rsi_14": 42.2,
+        "close": 405.02,
+        "pct_chg": 5.15,
+        "pct_chg_5d": 8.05,
+        "pct_chg_20d": -7.0,
+        "rsi_14": 42.7,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -32267,11 +32267,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 12.64,
-        "pct_chg": 8.13,
-        "pct_chg_5d": -11.17,
-        "pct_chg_20d": 23.32,
-        "rsi_14": 47.4,
+        "close": 12.5,
+        "pct_chg": 6.93,
+        "pct_chg_5d": -12.16,
+        "pct_chg_20d": 21.95,
+        "rsi_14": 46.9,
         "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -32397,11 +32397,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 14.2,
-        "pct_chg": -13.63,
-        "pct_chg_5d": 6.93,
-        "pct_chg_20d": 61.55,
-        "rsi_14": 66.6,
+        "close": 14.15,
+        "pct_chg": -13.93,
+        "pct_chg_5d": 6.55,
+        "pct_chg_20d": 60.98,
+        "rsi_14": 66.4,
         "signal_score": 3.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -32540,11 +32540,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 86.23,
-        "pct_chg": -1.56,
-        "pct_chg_5d": 2.5,
-        "pct_chg_20d": 7.79,
-        "rsi_14": 68.5,
+        "close": 86.1,
+        "pct_chg": -1.71,
+        "pct_chg_5d": 2.34,
+        "pct_chg_20d": 7.62,
+        "rsi_14": 67.9,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -33300,10 +33300,10 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 82.05,
-        "pct_chg": -0.44,
-        "pct_chg_5d": 8.63,
-        "pct_chg_20d": -3.47,
+        "close": 82.06,
+        "pct_chg": -0.42,
+        "pct_chg_5d": 8.65,
+        "pct_chg_20d": -3.46,
         "rsi_14": 54.8,
         "signal_score": 6,
         "ema_up": 0,
@@ -33438,11 +33438,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 41.11,
-        "pct_chg": -2.81,
-        "pct_chg_5d": 1.78,
-        "pct_chg_20d": 5.41,
-        "rsi_14": 67.3,
+        "close": 41.04,
+        "pct_chg": -2.98,
+        "pct_chg_5d": 1.61,
+        "pct_chg_20d": 5.23,
+        "rsi_14": 66.4,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -33466,7 +33466,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "📉低开低走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -33638,11 +33638,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 27.08,
-        "pct_chg": -0.07,
-        "pct_chg_5d": 3.91,
-        "pct_chg_20d": 8.02,
-        "rsi_14": 65.9,
+        "close": 27.04,
+        "pct_chg": -0.22,
+        "pct_chg_5d": 3.76,
+        "pct_chg_20d": 7.86,
+        "rsi_14": 65.4,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -33758,11 +33758,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 28.46,
-        "pct_chg": -0.21,
-        "pct_chg_5d": -12.86,
-        "pct_chg_20d": -40.75,
-        "rsi_14": 20.5,
+        "close": 28.4,
+        "pct_chg": -0.42,
+        "pct_chg_5d": -13.04,
+        "pct_chg_20d": -40.87,
+        "rsi_14": 20.4,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -34288,11 +34288,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 159.9,
-        "pct_chg": -0.5,
-        "pct_chg_5d": 1.85,
-        "pct_chg_20d": 2.83,
-        "rsi_14": 52.5,
+        "close": 160.8,
+        "pct_chg": 0.06,
+        "pct_chg_5d": 2.42,
+        "pct_chg_20d": 3.41,
+        "rsi_14": 53.8,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -34316,7 +34316,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 ➖平开"
+        "开盘_标签": "🦵长腿收阳 ➖平开"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -34375,11 +34375,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 41.63,
-        "pct_chg": -3.63,
-        "pct_chg_5d": 9.06,
-        "pct_chg_20d": -3.3,
-        "rsi_14": 42.7,
+        "close": 41.6,
+        "pct_chg": -3.7,
+        "pct_chg_5d": 8.99,
+        "pct_chg_20d": -3.37,
+        "rsi_14": 42.6,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -34466,12 +34466,12 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 16.84,
-        "pct_chg": -9.56,
-        "pct_chg_5d": 30.24,
-        "pct_chg_20d": 49.16,
-        "rsi_14": 77.2,
-        "signal_score": 4.5,
+        "close": 17.05,
+        "pct_chg": -8.43,
+        "pct_chg_5d": 31.86,
+        "pct_chg_20d": 51.02,
+        "rsi_14": 78.8,
+        "signal_score": 2.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -34556,10 +34556,10 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 77.43,
-        "pct_chg": -4.74,
-        "pct_chg_5d": -14.91,
-        "pct_chg_20d": -49.08,
+        "close": 77.46,
+        "pct_chg": -4.7,
+        "pct_chg_5d": -14.88,
+        "pct_chg_20d": -49.06,
         "rsi_14": 22.7,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -34643,11 +34643,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 31.33,
-        "pct_chg": 1.82,
-        "pct_chg_5d": 4.68,
-        "pct_chg_20d": -6.76,
-        "rsi_14": 41.4,
+        "close": 31.49,
+        "pct_chg": 2.34,
+        "pct_chg_5d": 5.21,
+        "pct_chg_20d": -6.28,
+        "rsi_14": 41.9,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -34821,11 +34821,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 93.93,
-        "pct_chg": 3.88,
-        "pct_chg_5d": 6.98,
-        "pct_chg_20d": -7.27,
-        "rsi_14": 41.9,
+        "close": 93.26,
+        "pct_chg": 3.14,
+        "pct_chg_5d": 6.22,
+        "pct_chg_20d": -7.93,
+        "rsi_14": 41.1,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -34999,11 +34999,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 105.04,
-        "pct_chg": -3.52,
-        "pct_chg_5d": -16.83,
-        "pct_chg_20d": -41.93,
-        "rsi_14": 24.0,
+        "close": 103.46,
+        "pct_chg": -4.97,
+        "pct_chg_5d": -18.08,
+        "pct_chg_20d": -42.8,
+        "rsi_14": 23.7,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35086,11 +35086,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 53.88,
-        "pct_chg": -5.29,
-        "pct_chg_5d": -18.88,
-        "pct_chg_20d": -33.05,
-        "rsi_14": 20.9,
+        "close": 54.38,
+        "pct_chg": -4.41,
+        "pct_chg_5d": -18.13,
+        "pct_chg_20d": -32.43,
+        "rsi_14": 21.1,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35173,11 +35173,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 1155.22,
-        "pct_chg": 5.78,
-        "pct_chg_5d": -21.57,
-        "pct_chg_20d": -29.56,
-        "rsi_14": 27.3,
+        "close": 1144.9,
+        "pct_chg": 4.83,
+        "pct_chg_5d": -22.27,
+        "pct_chg_20d": -30.19,
+        "rsi_14": 26.8,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35260,10 +35260,10 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 79.85,
-        "pct_chg": -7.51,
-        "pct_chg_5d": -32.46,
-        "pct_chg_20d": -40.9,
+        "close": 79.71,
+        "pct_chg": -7.67,
+        "pct_chg_5d": -32.57,
+        "pct_chg_20d": -41.0,
         "rsi_14": 25.1,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -35350,10 +35350,10 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 13.18,
-        "pct_chg": 4.03,
-        "pct_chg_5d": -12.37,
-        "pct_chg_20d": -30.23,
+        "close": 13.17,
+        "pct_chg": 3.95,
+        "pct_chg_5d": -12.43,
+        "pct_chg_20d": -30.28,
         "rsi_14": 26.2,
         "signal_score": 1.5,
         "ema_up": 0,
@@ -35441,11 +35441,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 157.86,
-        "pct_chg": -2.34,
-        "pct_chg_5d": -18.14,
-        "pct_chg_20d": -24.48,
-        "rsi_14": 24.7,
+        "close": 156.48,
+        "pct_chg": -3.2,
+        "pct_chg_5d": -18.86,
+        "pct_chg_20d": -25.14,
+        "rsi_14": 24.5,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35532,11 +35532,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 165.3,
-        "pct_chg": -3.6,
-        "pct_chg_5d": -21.99,
-        "pct_chg_20d": -26.36,
-        "rsi_14": 24.1,
+        "close": 163.46,
+        "pct_chg": -4.68,
+        "pct_chg_5d": -22.86,
+        "pct_chg_20d": -27.18,
+        "rsi_14": 23.8,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35560,7 +35560,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -35623,11 +35623,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 22.26,
-        "pct_chg": -0.45,
-        "pct_chg_5d": 3.58,
-        "pct_chg_20d": 12.42,
-        "rsi_14": 63.4,
+        "close": 22.31,
+        "pct_chg": -0.22,
+        "pct_chg_5d": 3.82,
+        "pct_chg_20d": 12.68,
+        "rsi_14": 63.7,
         "signal_score": 7.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -35804,11 +35804,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 18.33,
-        "pct_chg": -7.28,
-        "pct_chg_5d": -26.56,
-        "pct_chg_20d": -49.01,
-        "rsi_14": 21.5,
+        "close": 18.01,
+        "pct_chg": -8.9,
+        "pct_chg_5d": -27.84,
+        "pct_chg_20d": -49.9,
+        "rsi_14": 21.2,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -35977,11 +35977,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 63.82,
-        "pct_chg": -3.49,
-        "pct_chg_5d": -20.23,
-        "pct_chg_20d": -47.97,
-        "rsi_14": 25.8,
+        "close": 64.5,
+        "pct_chg": -2.46,
+        "pct_chg_5d": -19.37,
+        "pct_chg_20d": -47.41,
+        "rsi_14": 26.0,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -36064,11 +36064,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 32.83,
-        "pct_chg": -7.0,
-        "pct_chg_5d": -24.41,
-        "pct_chg_20d": -38.78,
-        "rsi_14": 19.9,
+        "close": 32.39,
+        "pct_chg": -8.24,
+        "pct_chg_5d": -25.42,
+        "pct_chg_20d": -39.6,
+        "rsi_14": 19.6,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -36242,10 +36242,10 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 52.22,
-        "pct_chg": -10.06,
-        "pct_chg_5d": -32.41,
-        "pct_chg_20d": -45.56,
+        "close": 52.18,
+        "pct_chg": -10.13,
+        "pct_chg_5d": -32.46,
+        "pct_chg_20d": -45.61,
         "rsi_14": 22.6,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -36416,11 +36416,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 232.44,
-        "pct_chg": -1.07,
-        "pct_chg_5d": 6.36,
-        "pct_chg_20d": -5.13,
-        "rsi_14": 58.5,
+        "close": 230.79,
+        "pct_chg": -1.77,
+        "pct_chg_5d": 5.6,
+        "pct_chg_20d": -5.8,
+        "rsi_14": 57.4,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -36507,11 +36507,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 34.87,
-        "pct_chg": -6.39,
-        "pct_chg_5d": -21.43,
-        "pct_chg_20d": -43.28,
-        "rsi_14": 26.3,
+        "close": 34.81,
+        "pct_chg": -6.55,
+        "pct_chg_5d": -21.56,
+        "pct_chg_20d": -43.38,
+        "rsi_14": 26.2,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -36594,10 +36594,10 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 219.0,
-        "pct_chg": -7.94,
-        "pct_chg_5d": -28.99,
-        "pct_chg_20d": -29.28,
+        "close": 219.17,
+        "pct_chg": -7.87,
+        "pct_chg_5d": -28.93,
+        "pct_chg_20d": -29.23,
         "rsi_14": 29.6,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -36681,11 +36681,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 116.23,
-        "pct_chg": -9.46,
-        "pct_chg_5d": -24.23,
-        "pct_chg_20d": -42.68,
-        "rsi_14": 23.6,
+        "close": 115.2,
+        "pct_chg": -10.27,
+        "pct_chg_5d": -24.9,
+        "pct_chg_20d": -43.19,
+        "rsi_14": 23.5,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -36767,11 +36767,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 42.41,
-        "pct_chg": -2.01,
-        "pct_chg_5d": -1.83,
-        "pct_chg_20d": 1.12,
-        "rsi_14": 46.1,
+        "close": 42.9,
+        "pct_chg": -0.88,
+        "pct_chg_5d": -0.69,
+        "pct_chg_20d": 2.29,
+        "rsi_14": 47.4,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -36945,12 +36945,12 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 167.0,
-        "pct_chg": -0.71,
-        "pct_chg_5d": 2.58,
-        "pct_chg_20d": 9.87,
-        "rsi_14": 83.3,
-        "signal_score": 5.5,
+        "close": 167.3,
+        "pct_chg": -0.54,
+        "pct_chg_5d": 2.76,
+        "pct_chg_20d": 10.07,
+        "rsi_14": 84.5,
+        "signal_score": 6.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -37122,11 +37122,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 384.8,
-        "pct_chg": 3.22,
-        "pct_chg_5d": 11.15,
-        "pct_chg_20d": 14.66,
-        "rsi_14": 68.5,
+        "close": 383.8,
+        "pct_chg": 2.95,
+        "pct_chg_5d": 10.86,
+        "pct_chg_20d": 14.36,
+        "rsi_14": 68.1,
         "signal_score": 7.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -37209,12 +37209,12 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 7.68,
-        "pct_chg": -1.54,
-        "pct_chg_5d": 1.45,
-        "pct_chg_20d": -16.34,
-        "rsi_14": 39.6,
-        "signal_score": 0,
+        "close": 7.75,
+        "pct_chg": -0.64,
+        "pct_chg_5d": 2.38,
+        "pct_chg_20d": -15.58,
+        "rsi_14": 40.3,
+        "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -37231,13 +37231,13 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": false,
+        "四量图_机构变红": true,
         "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 0,
+        "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 📉低开低走"
+        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -37295,11 +37295,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 8.4,
-        "pct_chg": -2.04,
-        "pct_chg_5d": 1.27,
-        "pct_chg_20d": 2.13,
-        "rsi_14": 55.2,
+        "close": 8.42,
+        "pct_chg": -1.86,
+        "pct_chg_5d": 1.45,
+        "pct_chg_20d": 2.31,
+        "rsi_14": 55.5,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -37472,10 +37472,10 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 93.15,
-        "pct_chg": 0.7,
-        "pct_chg_5d": 4.31,
-        "pct_chg_20d": 24.28,
+        "close": 93.1,
+        "pct_chg": 0.65,
+        "pct_chg_5d": 4.26,
+        "pct_chg_20d": 24.22,
         "rsi_14": 75.0,
         "signal_score": 6.0,
         "ema_up": 0,
@@ -37558,11 +37558,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 50.4,
-        "pct_chg": -0.98,
-        "pct_chg_5d": 2.94,
-        "pct_chg_20d": 11.11,
-        "rsi_14": 79.1,
+        "close": 50.65,
+        "pct_chg": -0.49,
+        "pct_chg_5d": 3.45,
+        "pct_chg_20d": 11.66,
+        "rsi_14": 81.7,
         "signal_score": 6.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -37644,12 +37644,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 77.15,
-        "pct_chg": -2.28,
-        "pct_chg_5d": 1.38,
-        "pct_chg_20d": 3.56,
-        "rsi_14": 63.1,
-        "signal_score": 6,
+        "close": 76.5,
+        "pct_chg": -3.1,
+        "pct_chg_5d": 0.53,
+        "pct_chg_20d": 2.68,
+        "rsi_14": 59.9,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -37666,13 +37666,13 @@
         "缠论买_次数": 0,
         "金钻_黄柱": false,
         "金钻_起涨": false,
-        "四量图_机构变红": true,
-        "上涨趋势": true,
+        "四量图_机构变红": false,
+        "上涨趋势": false,
         "三线共振": false,
         "三足鼎立": false,
-        "signal_count": 2,
+        "signal_count": 0,
         "当日涨停": false,
-        "开盘_标签": "⚠️高开低走"
+        "开盘_标签": "🦵长腿收阴 ⚠️高开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -37818,11 +37818,11 @@
         "港股成交前50"
       ],
       "latest": {
-        "close": 7.44,
-        "pct_chg": -0.93,
-        "pct_chg_5d": 2.06,
-        "pct_chg_20d": 15.71,
-        "rsi_14": 73.8,
+        "close": 7.47,
+        "pct_chg": -0.53,
+        "pct_chg_5d": 2.47,
+        "pct_chg_20d": 16.17,
+        "rsi_14": 75.6,
         "signal_score": 6.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -37904,11 +37904,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 18.53,
-        "pct_chg": -1.96,
-        "pct_chg_5d": 1.81,
-        "pct_chg_20d": 5.89,
-        "rsi_14": 66.9,
+        "close": 18.59,
+        "pct_chg": -1.64,
+        "pct_chg_5d": 2.14,
+        "pct_chg_20d": 6.23,
+        "rsi_14": 68.0,
         "signal_score": 6.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -38362,11 +38362,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 58.2,
-        "pct_chg": -0.77,
-        "pct_chg_5d": 2.74,
-        "pct_chg_20d": 10.12,
-        "rsi_14": 83.6,
+        "close": 58.45,
+        "pct_chg": -0.34,
+        "pct_chg_5d": 3.18,
+        "pct_chg_20d": 10.6,
+        "rsi_14": 86.8,
         "signal_score": 3.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -38451,11 +38451,11 @@
         "投行研报"
       ],
       "latest": {
-        "close": 408.2,
-        "pct_chg": -0.1,
-        "pct_chg_5d": 1.95,
-        "pct_chg_20d": 8.45,
-        "rsi_14": 70.9,
+        "close": 408.4,
+        "pct_chg": -0.05,
+        "pct_chg_5d": 2.0,
+        "pct_chg_20d": 8.5,
+        "rsi_14": 71.2,
         "signal_score": 5.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -38539,11 +38539,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 28.74,
-        "pct_chg": -1.58,
-        "pct_chg_5d": 0.28,
-        "pct_chg_20d": -2.64,
-        "rsi_14": 50.8,
+        "close": 28.9,
+        "pct_chg": -1.03,
+        "pct_chg_5d": 0.84,
+        "pct_chg_20d": -2.1,
+        "rsi_14": 52.0,
         "signal_score": 3,
         "ema_up": 0,
         "ema_dirs": [
@@ -38866,11 +38866,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 32.86,
-        "pct_chg": -1.02,
-        "pct_chg_5d": 0.24,
-        "pct_chg_20d": 2.24,
-        "rsi_14": 46.6,
+        "close": 33.04,
+        "pct_chg": -0.48,
+        "pct_chg_5d": 0.79,
+        "pct_chg_20d": 2.8,
+        "rsi_14": 47.6,
         "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
@@ -39199,12 +39199,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 30.32,
-        "pct_chg": -0.79,
-        "pct_chg_5d": 0.8,
-        "pct_chg_20d": 7.21,
-        "rsi_14": 69.5,
-        "signal_score": 3.5,
+        "close": 30.6,
+        "pct_chg": 0.13,
+        "pct_chg_5d": 1.73,
+        "pct_chg_20d": 8.2,
+        "rsi_14": 72.5,
+        "signal_score": 2.5,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -39227,7 +39227,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "📉低开低走"
+        "开盘_标签": "⚡低开高走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -39461,10 +39461,10 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 26.79,
-        "pct_chg": 6.73,
-        "pct_chg_5d": 2.92,
-        "pct_chg_20d": -10.01,
+        "close": 26.78,
+        "pct_chg": 6.69,
+        "pct_chg_5d": 2.88,
+        "pct_chg_20d": -10.04,
         "rsi_14": 47.6,
         "signal_score": 6,
         "ema_up": 0,
@@ -39552,10 +39552,10 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 103.24,
-        "pct_chg": 0.53,
-        "pct_chg_5d": -0.95,
-        "pct_chg_20d": -10.72,
+        "close": 103.29,
+        "pct_chg": 0.57,
+        "pct_chg_5d": -0.9,
+        "pct_chg_20d": -10.68,
         "rsi_14": 37.7,
         "signal_score": 3,
         "ema_up": 0,
@@ -39642,10 +39642,10 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 39.5,
-        "pct_chg": 1.54,
-        "pct_chg_5d": 3.89,
-        "pct_chg_20d": 17.14,
+        "close": 39.52,
+        "pct_chg": 1.59,
+        "pct_chg_5d": 3.95,
+        "pct_chg_20d": 17.2,
         "rsi_14": 72.8,
         "signal_score": 6.0,
         "ema_up": 0,
@@ -39733,11 +39733,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 30.23,
-        "pct_chg": 1.44,
-        "pct_chg_5d": 3.1,
-        "pct_chg_20d": -32.84,
-        "rsi_14": 33.9,
+        "close": 30.15,
+        "pct_chg": 1.17,
+        "pct_chg_5d": 2.83,
+        "pct_chg_20d": -33.01,
+        "rsi_14": 33.7,
         "signal_score": 1.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -39823,11 +39823,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 15.56,
-        "pct_chg": 3.18,
-        "pct_chg_5d": 5.71,
-        "pct_chg_20d": 3.25,
-        "rsi_14": 57.6,
+        "close": 15.59,
+        "pct_chg": 3.38,
+        "pct_chg_5d": 5.91,
+        "pct_chg_20d": 3.45,
+        "rsi_14": 57.8,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -39913,11 +39913,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 7.52,
-        "pct_chg": 0.4,
-        "pct_chg_5d": 5.62,
-        "pct_chg_20d": 43.79,
-        "rsi_14": 71.4,
+        "close": 7.59,
+        "pct_chg": 1.34,
+        "pct_chg_5d": 6.6,
+        "pct_chg_20d": 45.12,
+        "rsi_14": 71.8,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -40096,10 +40096,10 @@
       ],
       "latest": {
         "close": 5.47,
-        "pct_chg": -0.64,
-        "pct_chg_5d": 1.77,
-        "pct_chg_20d": 13.59,
-        "rsi_14": 76.1,
+        "pct_chg": -0.73,
+        "pct_chg_5d": 1.67,
+        "pct_chg_20d": 13.49,
+        "rsi_14": 75.6,
         "signal_score": 6.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -40182,11 +40182,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 114.5,
-        "pct_chg": -4.35,
-        "pct_chg_5d": 11.71,
-        "pct_chg_20d": 27.0,
-        "rsi_14": 56.4,
+        "close": 114.79,
+        "pct_chg": -4.11,
+        "pct_chg_5d": 11.99,
+        "pct_chg_20d": 27.32,
+        "rsi_14": 56.6,
         "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -40273,11 +40273,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 1353.03,
-        "pct_chg": 0.18,
-        "pct_chg_5d": 4.93,
-        "pct_chg_20d": 12.11,
-        "rsi_14": 76.6,
+        "close": 1355.47,
+        "pct_chg": 0.36,
+        "pct_chg_5d": 5.12,
+        "pct_chg_20d": 12.31,
+        "rsi_14": 76.9,
         "signal_score": 6.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -40537,11 +40537,11 @@
         "主板成交前100"
       ],
       "latest": {
-        "close": 304.86,
-        "pct_chg": -1.02,
-        "pct_chg_5d": -13.74,
-        "pct_chg_20d": -30.75,
-        "rsi_14": 28.6,
+        "close": 302.0,
+        "pct_chg": -1.95,
+        "pct_chg_5d": -14.55,
+        "pct_chg_20d": -31.39,
+        "rsi_14": 28.3,
         "signal_score": 1.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -40565,7 +40565,7 @@
         "三足鼎立": false,
         "signal_count": 1,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阳 ⚡低开高走"
+        "开盘_标签": "🦵长腿收阴 📉低开低走"
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -40714,12 +40714,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 57.78,
-        "pct_chg": -7.4,
-        "pct_chg_5d": -25.4,
-        "pct_chg_20d": -27.96,
-        "rsi_14": 22.0,
-        "signal_score": 4.5,
+        "close": 0,
+        "pct_chg": 0,
+        "pct_chg_5d": 0,
+        "pct_chg_20d": 0,
+        "rsi_14": 50,
+        "signal_score": 0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -40732,9 +40732,9 @@
         ],
         "ema_score": 0,
         "turnover_rate": 0,
-        "缠论买_日K": true,
-        "缠论买_次数": 1,
-        "金钻_黄柱": true,
+        "缠论买_日K": false,
+        "缠论买_次数": 0,
+        "金钻_黄柱": false,
         "金钻_起涨": false,
         "四量图_机构变红": false,
         "上涨趋势": false,
@@ -40742,7 +40742,7 @@
         "三足鼎立": false,
         "signal_count": 2,
         "当日涨停": false,
-        "开盘_标签": "🦵长腿收阴 📉低开低走"
+        "开盘_标签": ""
       },
       "ema_up": 0,
       "ema_dirs": [
@@ -40801,11 +40801,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 21.76,
-        "pct_chg": -6.61,
-        "pct_chg_5d": -24.23,
-        "pct_chg_20d": -41.86,
-        "rsi_14": 25.2,
+        "close": 21.48,
+        "pct_chg": -7.81,
+        "pct_chg_5d": -25.21,
+        "pct_chg_20d": -42.61,
+        "rsi_14": 25.0,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -41061,11 +41061,11 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 209.19,
-        "pct_chg": -4.26,
-        "pct_chg_5d": 8.64,
-        "pct_chg_20d": 4.89,
-        "rsi_14": 58.0,
+        "close": 206.06,
+        "pct_chg": -5.69,
+        "pct_chg_5d": 7.01,
+        "pct_chg_20d": 3.32,
+        "rsi_14": 55.9,
         "signal_score": 6,
         "ema_up": 0,
         "ema_dirs": [
@@ -41239,11 +41239,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 148.38,
-        "pct_chg": -10.08,
-        "pct_chg_5d": -25.44,
-        "pct_chg_20d": -39.92,
-        "rsi_14": 23.8,
+        "close": 147.4,
+        "pct_chg": -10.67,
+        "pct_chg_5d": -25.93,
+        "pct_chg_20d": -40.32,
+        "rsi_14": 23.7,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -41326,11 +41326,11 @@
         "创业板成交前100"
       ],
       "latest": {
-        "close": 167.84,
-        "pct_chg": -12.13,
-        "pct_chg_5d": -27.64,
-        "pct_chg_20d": -37.04,
-        "rsi_14": 32.2,
+        "close": 167.35,
+        "pct_chg": -12.38,
+        "pct_chg_5d": -27.85,
+        "pct_chg_20d": -37.22,
+        "rsi_14": 32.1,
         "signal_score": 4.0,
         "ema_up": 0,
         "ema_dirs": [
@@ -41417,11 +41417,11 @@
         "科创板成交前100"
       ],
       "latest": {
-        "close": 319.8,
-        "pct_chg": -9.89,
-        "pct_chg_5d": -13.98,
-        "pct_chg_20d": -57.92,
-        "rsi_14": 20.7,
+        "close": 315.3,
+        "pct_chg": -11.16,
+        "pct_chg_5d": -15.19,
+        "pct_chg_20d": -58.51,
+        "rsi_14": 20.5,
         "signal_score": 4.5,
         "ema_up": 0,
         "ema_dirs": [
@@ -41503,12 +41503,12 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 70.0,
-        "pct_chg": 4.43,
-        "pct_chg_5d": 36.8,
-        "pct_chg_20d": 19.97,
-        "rsi_14": 70.5,
-        "signal_score": 6.0,
+        "close": 69.18,
+        "pct_chg": 3.21,
+        "pct_chg_5d": 35.2,
+        "pct_chg_20d": 18.56,
+        "rsi_14": 69.8,
+        "signal_score": 7.0,
         "ema_up": 0,
         "ema_dirs": [
           false,
@@ -41679,10 +41679,10 @@
         "三足鼎立"
       ],
       "latest": {
-        "close": 78.43,
-        "pct_chg": -9.33,
-        "pct_chg_5d": -29.88,
-        "pct_chg_20d": -58.48,
+        "close": 78.9,
+        "pct_chg": -8.79,
+        "pct_chg_5d": -29.46,
+        "pct_chg_20d": -58.23,
         "rsi_14": 17.8,
         "signal_score": 4.5,
         "ema_up": 0,
@@ -44985,5 +44985,5 @@
   },
   "candidate_total": 359,
   "total_count": 306,
-  "update_time": "2026-08-03 13:43:48"
+  "update_time": "2026-08-03 14:37:16"
 }
