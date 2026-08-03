@@ -1269,6 +1269,16 @@
       "small_yi": 296.37,
       "main_pct": 1.9,
       "small_pct": -0.22
+    },
+    {
+      "date": "2026-08-03",
+      "net_yi": -197.49,
+      "super_large_yi": 150.13,
+      "large_yi": 47.36,
+      "medium_yi": -28.22,
+      "small_yi": -169.26,
+      "main_pct": null,
+      "small_pct": null
     }
   ],
   "cumulative": [
@@ -1779,13 +1789,17 @@
     {
       "date": "2026-07-31",
       "cum_yi": -25487.62
+    },
+    {
+      "date": "2026-08-03",
+      "cum_yi": -25685.11
     }
   ],
-  "last_update": "2026-08-02T17:42:23",
+  "last_update": "2026-08-03T17:38:25",
   "range": {
     "start": "2026-01-21",
-    "end": "2026-07-31",
-    "count": 127
+    "end": "2026-08-03",
+    "count": 128
   },
-  "fetch_status": "ok_push2his"
+  "fetch_status": "ok_push2"
 }
