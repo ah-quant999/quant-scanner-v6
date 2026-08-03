@@ -1,7 +1,7 @@
 {
   "fetch_macro_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:45:06",
+    "last_success": "2026-08-03 15:32:31",
     "last_error": null
   },
   "fetch_nt_data": {
@@ -11,7 +11,7 @@
   },
   "fetch_suspension_alert": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-01 07:16:55",
+    "last_success": "2026-08-03 15:28:24",
     "last_error": null
   },
   "fetch_main_week": {
@@ -21,7 +21,7 @@
   },
   "fetch_main_stock": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 15:21:39",
+    "last_success": "2026-08-03 15:28:18",
     "last_error": null
   },
   "fetch_south_individual": {
@@ -32,13 +32,13 @@
   },
   "fetch_herding_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-28 15:21:09",
+    "last_success": "2026-08-03 15:28:30",
     "last_error": null
   },
   "fetch_up_down_stats": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-28 15:21:01",
-    "last_error": "'gbk' codec can't encode character '\\u2705' in position 11: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-03 15:27:35",
+    "last_error": null,
     "last_failure": "2026-07-31 17:41:47"
   },
   "fetch_concept_ranking": {
@@ -71,10 +71,10 @@
     "last_error": null
   },
   "fetch_cffex_holdings": {
-    "consecutive_failures": 1,
+    "consecutive_failures": 2,
     "last_success": "2026-07-28 20:55:23",
-    "last_error": "'gbk' codec can't encode character '\\u2705' in position 11: illegal multibyte sequence",
-    "last_failure": "2026-07-31 17:45:15"
+    "last_error": "No module named 'akshare'",
+    "last_failure": "2026-08-03 15:28:25"
   },
   "fetch_inst_trade": {
     "consecutive_failures": 1,
@@ -123,7 +123,7 @@
   },
   "fetch_margin_etf": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-20 23:33:38",
+    "last_success": "2026-08-03 15:32:26",
     "last_error": null
   },
   "fetch_etf_subscription": {
@@ -156,7 +156,7 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:36:37",
+    "last_success": "2026-08-03 15:27:42",
     "last_error": null
   },
   "fetch_overnight_brief": {
@@ -166,12 +166,12 @@
   },
   "fetch_policy_density": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27 22:01:40",
+    "last_success": "2026-08-03 15:30:15",
     "last_error": null
   },
   "fetch_analyst_ratings": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-27 22:02:55",
+    "last_success": "2026-08-03 15:30:10",
     "last_error": null
   },
   "fetch_stock_names": {
@@ -181,7 +181,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 14:37:06",
+    "last_success": "2026-08-03 15:30:47",
     "last_error": null
   }
 }
