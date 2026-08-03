@@ -1,0 +1,18 @@
+[vol-watch] baostock 000001 失败: No module named 'baostock'
+[vol-watch] akshare 000001 失败: No module named 'akshare'
+[vol-watch] baostock 000300 失败: No module named 'baostock'
+[vol-watch] akshare 000300 失败: No module named 'akshare'
+[vol-watch] baostock 399006 失败: No module named 'baostock'
+[vol-watch] akshare 399006 失败: No module named 'akshare'
+[vol-watch] baostock 000905 失败: No module named 'baostock'
+[vol-watch] akshare 000905 失败: No module named 'akshare'
+[vol-watch] baostock 000852 失败: No module named 'baostock'
+[vol-watch] akshare 000852 失败: No module named 'akshare'
+[vol-watch] 已写出 D:\stock-scanner-repo\repo-temp\data\experiment\volatility_watch_20260803.json
+[vol-watch] 已同步 D:\stock-scanner-repo\repo-temp\data\volatility_watch.json
+[vol-watch] 复合信号：恐慌下行（平均20日波动 38.42%，波动5日趋势 -0.3%，指数20日均收益 -13.2%）
+[vol-watch]   上证指数: 收 3804.69 今 -0.62% | 20日波动 20.98% (分位 85.4) 趋势 -6.9% | 20日收益 -5.6%
+[vol-watch]   沪深300: 收 4549.72 今 -1.10% | 20日波动 28.48% (分位 92.9) 趋势 -5.2% | 20日收益 -5.5%
+[vol-watch]   创业板指: 收 3244.62 今 -4.05% | 20日波动 58.89% (分位 98.8) 趋势 +5.6% | 20日收益 -19.2%
+[vol-watch]   中证500: 收 7309.58 今 -2.90% | 20日波动 41.71% (分位 96.2) 趋势 +1.1% | 20日收益 -15.9%
+[vol-watch]   中证1000: 收 6900.66 今 -2.78% | 20日波动 42.03% (分位 98.8) 趋势 +4.0% | 20日收益 -20.0%
