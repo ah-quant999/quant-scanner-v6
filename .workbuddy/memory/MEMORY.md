@@ -39,18 +39,19 @@
 - **模型 ID**: 全部自动化统一用 `hy3`（9:00-11:59）/ `deepseek-v4-flash`（12:00 后）。**严禁写入 `ds-V4-FLASH`**；`audit_automations.py` 每日 09:00/19:00 自动审计并修正。
 - **北向资金**: 港交所 2024-05 后停止披露 top_buy，系统多处已标"停止"。
 - **Cloud**: GitHub Actions 8 workflow 覆盖（v8 侧：`v8_cn_fetch` / `v8_build_deploy` / `v8_algo` / `v8_sync_v6_data` / `cloud_weekly_cleanup`）；Secret `ZSXQ_TOKEN`；候选池=主/创/科前 100 + 港前 50 + 观澜台 + mahoro。
-- **v8 数据源双轨（2026-08-01）**: cloud_fetch（akshare/东财）覆盖 22 个实时/盘前模块；`sync_v6_to_v8.py` 同步桥覆盖 22 个 v6 算法/盘后模块。原 21 个冻结模块全部接上生产者。
+- **v8 已完全脱离 v6（2026-08-03 锁定·最终状态）**: v8 **自包含**,正常运营无任何 v6 运行时依赖。数据生产 = `cloud_fetch_v8.py`(实时/盘前 22 模块) + `algorithms/run_algorithms.py` 原生算法链(盘后/选股/共振)。原 `sync_v6_to_v8.py` 同步桥仅作 `V6_TO_V8` 映射辅助(被 `stage_to_raw.py` 导入,不读 v6);两条拉 v6 工作流 `v8_sync_v6_data.yml`/`v8_sync_legacy.yml` 已 `if:false` 变 inert。**v6 仓已可退役**(git 归档/只读)。分支 `feat/v8-detach-v6`(bb17bf7) 待小九验证全链自包含后 merge 到 main。
+- **⚠️ v8 算法铁律(2026-08-03 新增)**: **v8 的算法脚本是带原生钩子的增强版(比 v6 新、含多处修复),任何 v8 算法改动只在 `quant-scanner-v8` 仓做;严禁把 v6 的算法代码覆盖/复制回 v8**(`migrate_v6_algos.py` 已警告"切勿重跑覆盖")。v8 缺资产只补"v8 真没有的"(如 westock 拉取器、历史累加器),不整体搬 v6。
 
 ## 8-01 v8 分时段 + v6 同步桥架构（轻量/防臃肿）
 - **v8 定时任务矩阵（北京时间）**:
-  - 08:25 `v8_cn_fetch.yml` 盘前（akshare）+ 08:40 `v8_sync_v6_data.yml` 盘前（v6 预警）
+  - 08:25 `v8_cn_fetch.yml` 盘前（akshare）【注:`v8_sync_v6_data.yml` 已于 08-03 `if:false` 停用,不再跑】
   - 10:30/11:30/13:05/14:00/15:05 `v8_cn_fetch.yml` 盘中（含 ETF_DAILY_MONITOR）
   - 15:30 `v8_cn_fetch.yml` 收盘数据（EXPERIMENT）
-  - 19:00 `v8_sync_v6_data.yml` 盘后（v6 算法数据同步到 raw_data；从原 16:45 推迟，等待 v6 close_p2 18:30 产出）
+  - 19:00 【原 `v8_sync_v6_data.yml` 盘后同步,已于 08-03 停用;盘后数据现由 `v8_algo_run` 18:30 原生算法链产出】
   - 17:00 `v8_build_deploy.yml` 盘后算法换算部署 + `v8_algo.yml` 数据体检
   - 周六 21:00 `cloud_weekly_cleanup.yml` 清理 orphan（并入周六 T+1 维护窗口）+ 周日 23:00 `v8_cleanup.yml` 清缓存/修剪心跳日志（删除无用记录）
 - **selective build**: `update_v8.py --category/--detect-changes` 只构建目标时段或变化 raw_data 所属类别，避免每次全站重部署。
-- **v6 同步桥**: `sync_v6_to_v8.py` 读取 `stock-scanner/data/` 的盘后/盘前 JSON，推送到 v8 `raw_data/`，触发自动构建。本周末已一次性解决 21 个原冻结模块。
+- **v6 同步桥(已退役·2026-08-03)**: `sync_v6_to_v8.py` 仅作 `V6_TO_V8` 映射辅助(被 `stage_to_raw.py` 导入复用,自身 `sync()` 不再被调用);`v8_sync_v6_data.yml`/`v8_sync_legacy.yml` 已 `if:false` 变 inert。v8 全量数据现由原生链自产,v6 仓可退役。
 - **北向资金升级版（2026-07-31）**: **仅展示删**（v8 主页大卡 + 运维"数据新鲜度"表 + 异动监控表），**数据/脚本保留**（`fetch_north_fund.py` / `data/north_fund_*.json` 留作权重计算用），**计算权重里北向分仍保留**（仅标"停更"）。v6 旧 v6 上的北向大卡和运维行**保持原样不动**（v6 不再改）。
 - **待 B / B+ 阶段**:
   - **B**: v8 `index.html` JS 改造，AI 速览 7 行读 JSON；给 44 个 `<script>` 加 defer/首屏优先级。
