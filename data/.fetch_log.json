@@ -43,26 +43,26 @@
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:46:08",
+    "last_success": "2026-08-03 10:34:08",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:12"
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:45:45",
+    "last_success": "2026-08-03 10:32:19",
     "last_error": null,
     "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:46:15",
+    "last_success": "2026-08-03 10:33:22",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
-    "consecutive_failures": 1,
-    "last_success": "2026-07-28 15:19:28",
-    "last_error": "'gbk' codec can't encode character '\\U0001f4ca' in position 2: illegal multibyte sequence",
+    "consecutive_failures": 0,
+    "last_success": "2026-08-03 10:37:19",
+    "last_error": null,
     "last_failure": "2026-07-31 17:40:05"
   },
   "fetch_margin": {
@@ -134,7 +134,7 @@
   },
   "fetch_ipo_data": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:48:02",
+    "last_success": "2026-08-03 10:31:53",
     "last_error": null
   },
   "fetch_north_fund": {
@@ -156,12 +156,12 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-02 17:48:41",
+    "last_success": "2026-08-03 10:37:17",
     "last_error": null
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:45:16",
+    "last_success": "2026-08-03 10:30:07",
     "last_error": null
   },
   "fetch_policy_density": {
@@ -181,7 +181,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 09:51:16",
+    "last_success": "2026-08-03 10:40:47",
     "last_error": null
   }
 }
