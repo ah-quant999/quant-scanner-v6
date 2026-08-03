@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-08-03 10:43:49",
+  "update_time": "2026-08-03 10:47:06",
   "monetary": {
     "cn_bond_10y": {
       "value": 1.7141,
@@ -51,8 +51,8 @@
       "date": "2026-06-01"
     },
     "social_financing": {
-      "value": 3324,
-      "change_pct": -8.5,
+      "value": 3327,
+      "change_pct": -8.4,
       "date": "2026-07-01"
     },
     "export_yoy": {
@@ -82,13 +82,13 @@
     },
     "usdcnh": {
       "price": 6.7516,
-      "prev_close": 6.7503,
+      "prev_close": 6.7507,
       "date": "2026-08-03",
       "source": "Sina实时"
     },
     "dxy": {
-      "value": 99.7,
-      "pct": -0.08,
+      "value": 99.72,
+      "pct": -0.06,
       "date": "2026-08-03"
     },
     "commodities": {
@@ -98,7 +98,7 @@
         "date": "2026-08-03"
       },
       "silver": {
-        "value": 58.31,
+        "value": 58.24,
         "unit": "美元/盎司",
         "date": "2026-08-03"
       },
