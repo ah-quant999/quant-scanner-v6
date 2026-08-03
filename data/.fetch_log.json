@@ -43,31 +43,31 @@
   },
   "fetch_concept_ranking": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:34:08",
+    "last_success": "2026-08-03 11:50:34",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:12"
   },
   "fetch_sector_fund_flow": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:32:19",
+    "last_success": "2026-08-03 11:52:00",
     "last_error": null,
     "last_failure": "2026-07-31 17:44:39"
   },
   "fetch_market_alerts": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:33:22",
+    "last_success": "2026-08-03 11:51:40",
     "last_error": null,
     "last_failure": "2026-07-31 17:45:03"
   },
   "fetch_sh_sz_history": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:37:19",
+    "last_success": "2026-08-03 11:49:39",
     "last_error": null,
     "last_failure": "2026-07-31 17:40:05"
   },
   "fetch_margin": {
     "consecutive_failures": 0,
-    "last_success": "2026-07-31 17:40:04",
+    "last_success": "2026-08-03 11:49:43",
     "last_error": null
   },
   "fetch_cffex_holdings": {
@@ -106,7 +106,7 @@
   },
   "fetch_mahoro_signals": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 08:15:06",
+    "last_success": "2026-08-03 11:45:30",
     "last_error": null,
     "last_failure": "2026-07-29 11:44:58"
   },
@@ -156,12 +156,12 @@
   },
   "fetch_limit_up_heatmap": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:37:17",
+    "last_success": "2026-08-03 11:52:05",
     "last_error": null
   },
   "fetch_overnight_brief": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:30:07",
+    "last_success": "2026-08-03 11:45:17",
     "last_error": null
   },
   "fetch_policy_density": {
@@ -181,7 +181,7 @@
   },
   "fetch_etf_intraday_heat": {
     "consecutive_failures": 0,
-    "last_success": "2026-08-03 10:40:47",
+    "last_success": "2026-08-03 11:52:41",
     "last_error": null
   }
 }

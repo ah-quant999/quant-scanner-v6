@@ -1,18 +1,18 @@
 {
-  "update_time": "2026-08-03 10:31",
+  "update_time": "2026-08-03 11:51",
   "data_type": "real",
   "summary": {
     "in_count": 40,
     "out_count": 0,
-    "in_text": "核电(38.0亿)、国企改革(35.4亿)、储能(32.7亿)、央企国企改革(30.5亿)、绿色电力(29.9亿)",
+    "in_text": "核电(31.6亿)、通信设备(25.4亿)、水利(22.3亿)、绿色电力(21.4亿)、电力(18.7亿)",
     "out_text": "无",
-    "alert": "🔥 40个板块大幅流入；🚀 核电+38.0亿(连7天)、国企改革+35.4亿(连12天)、储能+32.7亿(连11天)"
+    "alert": "🔥 40个板块大幅流入；🚀 核电+31.6亿(连7天)、通信设备+25.4亿(连12天)、水利+22.3亿(连2天)"
   },
   "sectors_in": [
     {
       "name": "核电",
-      "net": 38.01,
-      "net_5d": 132.47,
+      "net": 31.58,
+      "net_5d": 157.39,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -20,39 +20,28 @@
       "trend": "in"
     },
     {
-      "name": "国企改革",
-      "net": 35.41,
-      "net_5d": 325.58,
-      "net_20d": 0,
-      "type": "概念",
+      "name": "通信设备",
+      "net": 25.45,
+      "net_5d": 54.68,
+      "net_20d": -834.88,
+      "type": "行业",
       "source": "本地累加",
       "consecutive_days": 12,
       "trend": "in"
     },
     {
-      "name": "储能",
-      "net": 32.67,
-      "net_5d": 293.25,
+      "name": "水利",
+      "net": 22.34,
+      "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in"
-    },
-    {
-      "name": "央企国企改革",
-      "net": 30.5,
-      "net_5d": 175.81,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "绿色电力",
-      "net": 29.86,
-      "net_5d": 136.93,
+      "net": 21.35,
+      "net_5d": 143.06,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -60,9 +49,47 @@
       "trend": "in"
     },
     {
-      "name": "风电",
-      "net": 29.07,
-      "net_5d": 278.72,
+      "name": "电力",
+      "net": 18.74,
+      "net_5d": -24.72,
+      "net_20d": -119.19,
+      "type": "行业",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "央企国企改革",
+      "net": 17.24,
+      "net_5d": 174.23,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "同花顺新质50",
+      "net": 15.83,
+      "net_5d": 195.05,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
+      "name": "超超临界发电",
+      "net": 14.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "储能",
+      "net": 13.73,
+      "net_5d": 322.88,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -70,82 +97,17 @@
       "trend": "in"
     },
     {
-      "name": "电力",
-      "net": 23.19,
-      "net_5d": -25.86,
-      "net_20d": -120.33,
-      "type": "行业",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 22.32,
-      "net_5d": 169.56,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
-      "name": "水利",
-      "net": 21.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
       "name": "海工装备",
-      "net": 20.7,
+      "net": 13.5,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "低空经济",
-      "net": 19.82,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "超超临界发电",
-      "net": 19.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "西部大开发",
-      "net": 18.61,
-      "net_5d": 244.63,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
-      "name": "碳交易",
-      "net": 17.61,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
       "trend": "in"
     },
     {
       "name": "抽水蓄能",
-      "net": 17.45,
+      "net": 13.4,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -153,8 +115,18 @@
       "trend": "in"
     },
     {
-      "name": "乡村振兴",
-      "net": 17.08,
+      "name": "电网设备",
+      "net": 13.21,
+      "net_5d": 61.6,
+      "net_20d": -69.49,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "卫星导航",
+      "net": 12.91,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -162,8 +134,18 @@
       "trend": "in"
     },
     {
-      "name": "碳中和",
-      "net": 16.42,
+      "name": "高端装备",
+      "net": 12.61,
+      "net_5d": 119.42,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 8,
+      "trend": "in"
+    },
+    {
+      "name": "碳交易",
+      "net": 12.5,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -171,27 +153,17 @@
       "trend": "in"
     },
     {
-      "name": "军工",
-      "net": 15.93,
+      "name": "污水处理",
+      "net": 12.44,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "电网设备",
-      "net": 15.06,
-      "net_5d": 49.76,
-      "net_20d": -70.23,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "雅下水电概念",
-      "net": 13.32,
+      "net": 11.42,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -199,8 +171,37 @@
       "trend": "in"
     },
     {
-      "name": "军民融合",
-      "net": 12.54,
+      "name": "氢能源",
+      "net": 10.72,
+      "net_5d": 188.43,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
+      "name": "高股息精选",
+      "net": 10.63,
+      "net_5d": 364.59,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 15,
+      "trend": "in"
+    },
+    {
+      "name": "PPP概念",
+      "net": 10.57,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "新型城镇化",
+      "net": 10.23,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -208,35 +209,64 @@
       "trend": "in"
     },
     {
-      "name": "小金属概念",
-      "net": 12.5,
-      "net_5d": 0,
+      "name": "风电",
+      "net": 10.22,
+      "net_5d": 291.05,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 7,
+      "source": "本地累加",
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
-      "name": "污水处理",
-      "net": 12.47,
+      "name": "柔性直流输电",
+      "net": 9.6,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 3,
       "trend": "in"
     },
     {
-      "name": "卫星导航",
-      "net": 11.7,
+      "name": "光伏设备",
+      "net": 8.84,
       "net_5d": 0,
       "net_20d": 0,
-      "type": "概念",
+      "type": "行业",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "大飞机",
-      "net": 11.29,
+      "name": "小金属概念",
+      "net": 8.65,
+      "net_5d": 262.07,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "光热发电",
+      "net": 8.33,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "碳中和",
+      "net": 7.41,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "地下管网",
+      "net": 7.19,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -244,35 +274,26 @@
       "trend": "in"
     },
     {
-      "name": "光伏设备",
-      "net": 11.25,
-      "net_5d": -39.46,
-      "net_20d": -180.88,
+      "name": "建筑装饰",
+      "net": 6.98,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "行业",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "PPP概念",
-      "net": 11.16,
+      "name": "大飞机",
+      "net": 6.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "可控核聚变",
-      "net": 10.74,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "柔性直流输电",
-      "net": 10.53,
+      "net": 6.76,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -281,7 +302,7 @@
     },
     {
       "name": "航空发动机",
-      "net": 10.13,
+      "net": 6.63,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -289,8 +310,8 @@
       "trend": "in"
     },
     {
-      "name": "智能电网",
-      "net": 9.47,
+      "name": "钒电池",
+      "net": 6.38,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -298,64 +319,18 @@
       "trend": "in"
     },
     {
-      "name": "商业航天",
-      "net": 9.4,
-      "net_5d": 220.42,
+      "name": "银行",
+      "net": 6.3,
+      "net_5d": 194.27,
       "net_20d": 0,
-      "type": "概念",
+      "type": "行业",
       "source": "本地累加",
-      "consecutive_days": 8,
-      "trend": "in"
-    },
-    {
-      "name": "煤化工概念",
-      "net": 9.37,
-      "net_5d": 84.46,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "新型城镇化",
-      "net": 8.85,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "燃料电池",
-      "net": 8.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "高压快充",
-      "net": 8.53,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "光热发电",
-      "net": 8.42,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 14,
       "trend": "in"
     },
     {
       "name": "风电设备",
-      "net": 7.49,
+      "net": 6.24,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -363,20 +338,47 @@
       "trend": "in"
     },
     {
-      "name": "汽车零部件",
-      "net": 7.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
       "name": "土壤修复",
-      "net": 7.18,
+      "net": 6.16,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "军民融合",
+      "net": 6.12,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "能源金属",
+      "net": 5.81,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "小金属",
+      "net": 5.63,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "钢铁",
+      "net": 5.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
       "consecutive_days": 1,
       "trend": "in"
     }
@@ -385,8 +387,8 @@
   "top_list": [
     {
       "name": "核电",
-      "net": 38.01,
-      "net_5d": 132.47,
+      "net": 31.58,
+      "net_5d": 157.39,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -394,39 +396,28 @@
       "trend": "in"
     },
     {
-      "name": "国企改革",
-      "net": 35.41,
-      "net_5d": 325.58,
-      "net_20d": 0,
-      "type": "概念",
+      "name": "通信设备",
+      "net": 25.45,
+      "net_5d": 54.68,
+      "net_20d": -834.88,
+      "type": "行业",
       "source": "本地累加",
       "consecutive_days": 12,
       "trend": "in"
     },
     {
-      "name": "储能",
-      "net": 32.67,
-      "net_5d": 293.25,
+      "name": "水利",
+      "net": 22.34,
+      "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in"
-    },
-    {
-      "name": "央企国企改革",
-      "net": 30.5,
-      "net_5d": 175.81,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
+      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "绿色电力",
-      "net": 29.86,
-      "net_5d": 136.93,
+      "net": 21.35,
+      "net_5d": 143.06,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -434,9 +425,47 @@
       "trend": "in"
     },
     {
-      "name": "风电",
-      "net": 29.07,
-      "net_5d": 278.72,
+      "name": "电力",
+      "net": 18.74,
+      "net_5d": -24.72,
+      "net_20d": -119.19,
+      "type": "行业",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "央企国企改革",
+      "net": 17.24,
+      "net_5d": 174.23,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "同花顺新质50",
+      "net": 15.83,
+      "net_5d": 195.05,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
+      "name": "超超临界发电",
+      "net": 14.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "储能",
+      "net": 13.73,
+      "net_5d": 322.88,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -444,82 +473,17 @@
       "trend": "in"
     },
     {
-      "name": "电力",
-      "net": 23.19,
-      "net_5d": -25.86,
-      "net_20d": -120.33,
-      "type": "行业",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "氢能源",
-      "net": 22.32,
-      "net_5d": 169.56,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
-      "name": "水利",
-      "net": 21.27,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
       "name": "海工装备",
-      "net": 20.7,
+      "net": 13.5,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
       "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "低空经济",
-      "net": 19.82,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 4,
-      "trend": "in"
-    },
-    {
-      "name": "超超临界发电",
-      "net": 19.2,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "西部大开发",
-      "net": 18.61,
-      "net_5d": 244.63,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 10,
-      "trend": "in"
-    },
-    {
-      "name": "碳交易",
-      "net": 17.61,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
       "trend": "in"
     },
     {
       "name": "抽水蓄能",
-      "net": 17.45,
+      "net": 13.4,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -527,8 +491,18 @@
       "trend": "in"
     },
     {
-      "name": "乡村振兴",
-      "net": 17.08,
+      "name": "电网设备",
+      "net": 13.21,
+      "net_5d": 61.6,
+      "net_20d": -69.49,
+      "type": "行业",
+      "source": "本地累加",
+      "consecutive_days": 6,
+      "trend": "in"
+    },
+    {
+      "name": "卫星导航",
+      "net": 12.91,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -536,8 +510,18 @@
       "trend": "in"
     },
     {
-      "name": "碳中和",
-      "net": 16.42,
+      "name": "高端装备",
+      "net": 12.61,
+      "net_5d": 119.42,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 8,
+      "trend": "in"
+    },
+    {
+      "name": "碳交易",
+      "net": 12.5,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -545,27 +529,17 @@
       "trend": "in"
     },
     {
-      "name": "军工",
-      "net": 15.93,
+      "name": "污水处理",
+      "net": 12.44,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 6,
-      "trend": "in"
-    },
-    {
-      "name": "电网设备",
-      "net": 15.06,
-      "net_5d": 49.76,
-      "net_20d": -70.23,
-      "type": "行业",
-      "source": "本地累加",
-      "consecutive_days": 6,
+      "consecutive_days": 2,
       "trend": "in"
     },
     {
       "name": "雅下水电概念",
-      "net": 13.32,
+      "net": 11.42,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -573,8 +547,37 @@
       "trend": "in"
     },
     {
-      "name": "军民融合",
-      "net": 12.54,
+      "name": "氢能源",
+      "net": 10.72,
+      "net_5d": 188.43,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 10,
+      "trend": "in"
+    },
+    {
+      "name": "高股息精选",
+      "net": 10.63,
+      "net_5d": 364.59,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 15,
+      "trend": "in"
+    },
+    {
+      "name": "PPP概念",
+      "net": 10.57,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "新型城镇化",
+      "net": 10.23,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -582,35 +585,64 @@
       "trend": "in"
     },
     {
-      "name": "小金属概念",
-      "net": 12.5,
-      "net_5d": 0,
+      "name": "风电",
+      "net": 10.22,
+      "net_5d": 291.05,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 7,
+      "source": "本地累加",
+      "consecutive_days": 11,
       "trend": "in"
     },
     {
-      "name": "污水处理",
-      "net": 12.47,
+      "name": "柔性直流输电",
+      "net": 9.6,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 3,
       "trend": "in"
     },
     {
-      "name": "卫星导航",
-      "net": 11.7,
+      "name": "光伏设备",
+      "net": 8.84,
       "net_5d": 0,
       "net_20d": 0,
-      "type": "概念",
+      "type": "行业",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "大飞机",
-      "net": 11.29,
+      "name": "小金属概念",
+      "net": 8.65,
+      "net_5d": 262.07,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in"
+    },
+    {
+      "name": "光热发电",
+      "net": 8.33,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "碳中和",
+      "net": 7.41,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 3,
+      "trend": "in"
+    },
+    {
+      "name": "地下管网",
+      "net": 7.19,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -618,35 +650,26 @@
       "trend": "in"
     },
     {
-      "name": "光伏设备",
-      "net": 11.25,
-      "net_5d": -39.46,
-      "net_20d": -180.88,
+      "name": "建筑装饰",
+      "net": 6.98,
+      "net_5d": 0,
+      "net_20d": 0,
       "type": "行业",
       "consecutive_days": 4,
       "trend": "in"
     },
     {
-      "name": "PPP概念",
-      "net": 11.16,
+      "name": "大飞机",
+      "net": 6.77,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
-      "consecutive_days": 3,
+      "consecutive_days": 1,
       "trend": "in"
     },
     {
       "name": "可控核聚变",
-      "net": 10.74,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
-      "name": "柔性直流输电",
-      "net": 10.53,
+      "net": 6.76,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -655,7 +678,7 @@
     },
     {
       "name": "航空发动机",
-      "net": 10.13,
+      "net": 6.63,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -663,8 +686,8 @@
       "trend": "in"
     },
     {
-      "name": "智能电网",
-      "net": 9.47,
+      "name": "钒电池",
+      "net": 6.38,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
@@ -672,64 +695,18 @@
       "trend": "in"
     },
     {
-      "name": "商业航天",
-      "net": 9.4,
-      "net_5d": 220.42,
+      "name": "银行",
+      "net": 6.3,
+      "net_5d": 194.27,
       "net_20d": 0,
-      "type": "概念",
+      "type": "行业",
       "source": "本地累加",
-      "consecutive_days": 8,
-      "trend": "in"
-    },
-    {
-      "name": "煤化工概念",
-      "net": 9.37,
-      "net_5d": 84.46,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 7,
-      "trend": "in"
-    },
-    {
-      "name": "新型城镇化",
-      "net": 8.85,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
-      "trend": "in"
-    },
-    {
-      "name": "燃料电池",
-      "net": 8.68,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "高压快充",
-      "net": 8.53,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 5,
-      "trend": "in"
-    },
-    {
-      "name": "光热发电",
-      "net": 8.42,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "概念",
-      "consecutive_days": 2,
+      "consecutive_days": 14,
       "trend": "in"
     },
     {
       "name": "风电设备",
-      "net": 7.49,
+      "net": 6.24,
       "net_5d": 0,
       "net_20d": 0,
       "type": "行业",
@@ -737,20 +714,47 @@
       "trend": "in"
     },
     {
-      "name": "汽车零部件",
-      "net": 7.29,
-      "net_5d": 0,
-      "net_20d": 0,
-      "type": "行业",
-      "consecutive_days": 3,
-      "trend": "in"
-    },
-    {
       "name": "土壤修复",
-      "net": 7.18,
+      "net": 6.16,
       "net_5d": 0,
       "net_20d": 0,
       "type": "概念",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "军民融合",
+      "net": 6.12,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "概念",
+      "consecutive_days": 2,
+      "trend": "in"
+    },
+    {
+      "name": "能源金属",
+      "net": 5.81,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 4,
+      "trend": "in"
+    },
+    {
+      "name": "小金属",
+      "net": 5.63,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
+      "consecutive_days": 1,
+      "trend": "in"
+    },
+    {
+      "name": "钢铁",
+      "net": 5.38,
+      "net_5d": 0,
+      "net_20d": 0,
+      "type": "行业",
       "consecutive_days": 1,
       "trend": "in"
     }
@@ -760,95 +764,115 @@
       "days": 7,
       "trend": "in"
     },
-    "国企改革": {
+    "通信设备": {
       "days": 12,
-      "trend": "in"
-    },
-    "储能": {
-      "days": 11,
-      "trend": "in"
-    },
-    "央企国企改革": {
-      "days": 7,
-      "trend": "in"
-    },
-    "绿色电力": {
-      "days": 8,
-      "trend": "in"
-    },
-    "风电": {
-      "days": 11,
-      "trend": "in"
-    },
-    "电力": {
-      "days": 7,
-      "trend": "in"
-    },
-    "氢能源": {
-      "days": 10,
       "trend": "in"
     },
     "水利": {
       "days": 2,
       "trend": "in"
     },
-    "海工装备": {
-      "days": 4,
+    "绿色电力": {
+      "days": 8,
       "trend": "in"
     },
-    "低空经济": {
-      "days": 4,
+    "电力": {
+      "days": 7,
+      "trend": "in"
+    },
+    "央企国企改革": {
+      "days": 7,
+      "trend": "in"
+    },
+    "同花顺新质50": {
+      "days": 10,
       "trend": "in"
     },
     "超超临界发电": {
       "days": 6,
       "trend": "in"
     },
-    "西部大开发": {
-      "days": 10,
+    "储能": {
+      "days": 11,
       "trend": "in"
     },
-    "碳交易": {
-      "days": 3,
+    "海工装备": {
+      "days": 4,
       "trend": "in"
     },
     "抽水蓄能": {
       "days": 5,
       "trend": "in"
     },
-    "乡村振兴": {
-      "days": 4,
-      "trend": "in"
-    },
-    "碳中和": {
-      "days": 3,
-      "trend": "in"
-    },
-    "军工": {
-      "days": 6,
-      "trend": "in"
-    },
     "电网设备": {
       "days": 6,
       "trend": "in"
     },
-    "雅下水电概念": {
-      "days": 5,
+    "卫星导航": {
+      "days": 4,
       "trend": "in"
     },
-    "军民融合": {
-      "days": 2,
+    "高端装备": {
+      "days": 8,
       "trend": "in"
     },
-    "小金属概念": {
-      "days": 7,
+    "碳交易": {
+      "days": 3,
       "trend": "in"
     },
     "污水处理": {
       "days": 2,
       "trend": "in"
     },
-    "卫星导航": {
+    "雅下水电概念": {
+      "days": 5,
+      "trend": "in"
+    },
+    "氢能源": {
+      "days": 10,
+      "trend": "in"
+    },
+    "高股息精选": {
+      "days": 15,
+      "trend": "in"
+    },
+    "PPP概念": {
+      "days": 3,
+      "trend": "in"
+    },
+    "新型城镇化": {
+      "days": 2,
+      "trend": "in"
+    },
+    "风电": {
+      "days": 11,
+      "trend": "in"
+    },
+    "柔性直流输电": {
+      "days": 3,
+      "trend": "in"
+    },
+    "光伏设备": {
+      "days": 4,
+      "trend": "in"
+    },
+    "小金属概念": {
+      "days": 7,
+      "trend": "in"
+    },
+    "光热发电": {
+      "days": 2,
+      "trend": "in"
+    },
+    "碳中和": {
+      "days": 3,
+      "trend": "in"
+    },
+    "地下管网": {
+      "days": 1,
+      "trend": "in"
+    },
+    "建筑装饰": {
       "days": 4,
       "trend": "in"
     },
@@ -856,19 +880,7 @@
       "days": 1,
       "trend": "in"
     },
-    "光伏设备": {
-      "days": 4,
-      "trend": "in"
-    },
-    "PPP概念": {
-      "days": 3,
-      "trend": "in"
-    },
     "可控核聚变": {
-      "days": 3,
-      "trend": "in"
-    },
-    "柔性直流输电": {
       "days": 3,
       "trend": "in"
     },
@@ -876,43 +888,35 @@
       "days": 1,
       "trend": "in"
     },
-    "智能电网": {
+    "钒电池": {
       "days": 3,
       "trend": "in"
     },
-    "商业航天": {
-      "days": 8,
-      "trend": "in"
-    },
-    "煤化工概念": {
-      "days": 7,
-      "trend": "in"
-    },
-    "新型城镇化": {
-      "days": 2,
-      "trend": "in"
-    },
-    "燃料电池": {
-      "days": 5,
-      "trend": "in"
-    },
-    "高压快充": {
-      "days": 5,
-      "trend": "in"
-    },
-    "光热发电": {
-      "days": 2,
+    "银行": {
+      "days": 14,
       "trend": "in"
     },
     "风电设备": {
       "days": 1,
       "trend": "in"
     },
-    "汽车零部件": {
-      "days": 3,
+    "土壤修复": {
+      "days": 1,
       "trend": "in"
     },
-    "土壤修复": {
+    "军民融合": {
+      "days": 2,
+      "trend": "in"
+    },
+    "能源金属": {
+      "days": 4,
+      "trend": "in"
+    },
+    "小金属": {
+      "days": 1,
+      "trend": "in"
+    },
+    "钢铁": {
       "days": 1,
       "trend": "in"
     }
@@ -952,18 +956,6 @@
       "net_5d_days": 5
     },
     {
-      "name": "高股息精选",
-      "net": 194.04,
-      "net_5d": 364.59,
-      "net_20d": 856.91,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 14,
-      "trend": "in",
-      "net_5d_days": 5,
-      "net_20d_days": 12
-    },
-    {
       "name": "汽车芯片",
       "net": 16.53,
       "net_5d": 350.28,
@@ -975,15 +967,27 @@
       "net_5d_days": 5
     },
     {
-      "name": "国企改革",
-      "net": 35.41,
-      "net_5d": 325.58,
-      "net_20d": 805.37,
+      "name": "高股息精选",
+      "net": 10.63,
+      "net_5d": 337.12,
+      "net_20d": 867.54,
       "type": "概念",
       "source": "本地累加",
-      "consecutive_days": 12,
+      "consecutive_days": 15,
       "trend": "in",
-      "net_20d_days": 10,
+      "net_5d_days": 5,
+      "net_20d_days": 13,
+      "net_60d": null
+    },
+    {
+      "name": "储能",
+      "net": 13.73,
+      "net_5d": 322.88,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 11,
+      "trend": "in",
       "net_60d": null
     },
     {
@@ -1010,20 +1014,9 @@
       "net_20d_days": 10
     },
     {
-      "name": "储能",
-      "net": 32.67,
-      "net_5d": 293.25,
-      "net_20d": 0,
-      "type": "概念",
-      "source": "本地累加",
-      "consecutive_days": 11,
-      "trend": "in",
-      "net_60d": null
-    },
-    {
       "name": "风电",
-      "net": 29.07,
-      "net_5d": 278.72,
+      "net": 10.22,
+      "net_5d": 291.05,
       "net_20d": 0,
       "type": "概念",
       "source": "本地累加",
@@ -1041,6 +1034,17 @@
       "consecutive_days": 6,
       "trend": "in",
       "net_5d_days": 5
+    },
+    {
+      "name": "小金属概念",
+      "net": 8.65,
+      "net_5d": 262.07,
+      "net_20d": 0,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 7,
+      "trend": "in",
+      "net_60d": null
     },
     {
       "name": "区块链",
@@ -1178,15 +1182,16 @@
     },
     {
       "name": "高股息精选",
-      "net": 194.04,
-      "net_5d": 364.59,
-      "net_20d": 856.91,
-      "net_60d": null,
-      "type": "行业",
-      "consecutive_days": 14,
+      "net": 10.63,
+      "net_5d": 337.12,
+      "net_20d": 867.54,
+      "type": "概念",
+      "source": "本地累加",
+      "consecutive_days": 15,
       "trend": "in",
       "net_5d_days": 5,
-      "net_20d_days": 12
+      "net_20d_days": 13,
+      "net_60d": null
     }
   ],
   "trend_60d": []

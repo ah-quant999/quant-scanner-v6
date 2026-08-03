@@ -487,8 +487,16 @@
       "rz_buy": 1012,
       "rq_balance_amt": 142,
       "total": 13364
+    },
+    {
+      "date": "7/31",
+      "date_raw": "20260731",
+      "rz_balance": 13274,
+      "rz_buy": 1294,
+      "rq_balance_amt": 142,
+      "total": 13416
     }
   ],
   "sz": [],
-  "update_time": "2026-07-31 17:40"
+  "update_time": "2026-08-03 11:49"
 }
