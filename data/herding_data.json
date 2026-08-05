@@ -1,86 +1,86 @@
 {
-  "update_time": "2026-08-03 17:41:14",
+  "update_time": "2026-08-04 15:37:57",
   "current_clusters": [
     {
       "rank": 1,
       "medal": "🥇",
-      "sector": "银行",
-      "amount": 23.38,
+      "sector": "半导体",
+      "amount": 219.35,
       "unit": "亿",
       "direction": "流入",
-      "leader": "瑞丰银行",
-      "pct": 0.79
+      "leader": "和林微纳",
+      "pct": 6.01
     },
     {
       "rank": 2,
       "medal": "🥈",
-      "sector": "电力",
-      "amount": 21.61,
+      "sector": "通信设备",
+      "amount": 182.8,
       "unit": "亿",
       "direction": "流入",
-      "leader": "乐山电力",
-      "pct": 2.28
+      "leader": "蘅东光",
+      "pct": 5.4
     },
     {
       "rank": 3,
       "medal": "🥉",
-      "sector": "通信设备",
-      "amount": 20.26,
+      "sector": "元件",
+      "amount": 81.68,
       "unit": "亿",
       "direction": "流入",
-      "leader": "欣天科技",
-      "pct": 1.55
+      "leader": "嘉立创",
+      "pct": 7.07
     }
   ],
   "high_prob": [
     {
-      "sector": "核电",
-      "net": 33.43,
+      "sector": "芯片概念",
+      "net": 625.31,
       "unit": "亿",
-      "leader": "久盛电气",
-      "pct": 2.68
+      "leader": "光库科技",
+      "pct": 4.43
     },
     {
-      "sector": "水利",
-      "net": 23.65,
+      "sector": "融资融券",
+      "net": 521.69,
       "unit": "亿",
-      "leader": "*ST航图",
-      "pct": 2.43
+      "leader": "嘉立创",
+      "pct": 1.99
     },
     {
-      "sector": "高股息精选",
-      "net": 22.3,
+      "sector": "深股通",
+      "net": 466.55,
       "unit": "亿",
-      "leader": "锦和商管",
-      "pct": 0.52
+      "leader": "行云科技",
+      "pct": 2.17
     },
     {
-      "sector": "抽水蓄能",
-      "net": 17.6,
+      "sector": "共封装光学(CPO)",
+      "net": 425.43,
       "unit": "亿",
-      "leader": "百利电气",
-      "pct": 2.78
+      "leader": "蘅东光",
+      "pct": 6.76
     },
     {
-      "sector": "同花顺新质50",
-      "net": 17.5,
+      "sector": "数据中心(AIDC)",
+      "net": 398.18,
       "unit": "亿",
-      "leader": "奥比中光",
-      "pct": 0.52
+      "leader": "蘅东光",
+      "pct": 3.63
     }
   ],
   "cautious": [
     {
-      "sector": "半导体",
-      "reason": "主力净流出-110.83亿"
+      "sector": "银行",
+      "reason": "主力净流出-70.13亿"
     },
     {
-      "sector": "消费电子",
-      "reason": "主力净流出-25.69亿"
+      "sector": "电力",
+      "reason": "主力净流出-32.77亿"
     },
     {
-      "sector": "建筑材料",
-      "reason": "主力净流出-22.54亿"
+      "sector": "汽车整车",
+      "reason": "主力净流出-27.8亿"
     }
   ],
   "catalysts": [],
@@ -88,162 +88,162 @@
   "industry_flow": {
     "inflow": [
       {
-        "name": "银行",
-        "net": 23.38,
-        "pct": 0.79,
-        "leader": "瑞丰银行"
-      },
-      {
-        "name": "电力",
-        "net": 21.61,
-        "pct": 2.28,
-        "leader": "乐山电力"
+        "name": "半导体",
+        "net": 219.35,
+        "pct": 6.01,
+        "leader": "和林微纳"
       },
       {
         "name": "通信设备",
-        "net": 20.26,
-        "pct": 1.55,
-        "leader": "欣天科技"
+        "net": 182.8,
+        "pct": 5.4,
+        "leader": "蘅东光"
       },
       {
-        "name": "电网设备",
-        "net": 16.73,
-        "pct": 3.52,
-        "leader": "久盛电气"
+        "name": "元件",
+        "net": 81.68,
+        "pct": 7.07,
+        "leader": "嘉立创"
       },
       {
-        "name": "光伏设备",
-        "net": 8.74,
-        "pct": 2.91,
-        "leader": "福莱特"
+        "name": "消费电子",
+        "net": 47.95,
+        "pct": 3.55,
+        "leader": "胜蓝股份"
+      },
+      {
+        "name": "光学光电子",
+        "net": 47.58,
+        "pct": 3.62,
+        "leader": "光智科技"
       }
     ],
     "outflow": [
       {
-        "name": "半导体",
-        "net": -110.83,
-        "pct": -3.46,
-        "leader": "富瀚微"
+        "name": "银行",
+        "net": -70.13,
+        "pct": -2.69,
+        "leader": "平安银行"
       },
       {
-        "name": "消费电子",
-        "net": -25.69,
-        "pct": 0.37,
-        "leader": "凯旺科技"
+        "name": "电力",
+        "net": -32.77,
+        "pct": 0.2,
+        "leader": "新能股份"
       },
       {
-        "name": "建筑材料",
-        "net": -22.54,
-        "pct": 1.3,
-        "leader": "雄塑科技"
+        "name": "汽车整车",
+        "net": -27.8,
+        "pct": -1.69,
+        "leader": "千里科技"
       },
       {
-        "name": "IT服务",
-        "net": -21.02,
-        "pct": 0.98,
-        "leader": "ST荣科"
+        "name": "保险",
+        "net": -26.48,
+        "pct": -2.46,
+        "leader": "新华保险"
       },
       {
-        "name": "电子化学品",
-        "net": -20.06,
-        "pct": -3.63,
-        "leader": "西陇科学"
+        "name": "证券",
+        "net": -22.09,
+        "pct": 0.04,
+        "leader": "湘财股份"
       }
     ]
   },
   "concept_flow": {
     "inflow": [
       {
-        "name": "核电",
-        "net": 33.43,
-        "pct": 2.68,
-        "leader": "久盛电气"
+        "name": "芯片概念",
+        "net": 625.31,
+        "pct": 4.43,
+        "leader": "光库科技"
       },
       {
-        "name": "水利",
-        "net": 23.65,
-        "pct": 2.43,
-        "leader": "*ST航图"
+        "name": "融资融券",
+        "net": 521.69,
+        "pct": 1.99,
+        "leader": "嘉立创"
       },
       {
-        "name": "高股息精选",
-        "net": 22.3,
-        "pct": 0.52,
-        "leader": "锦和商管"
+        "name": "深股通",
+        "net": 466.55,
+        "pct": 2.17,
+        "leader": "行云科技"
       },
       {
-        "name": "抽水蓄能",
-        "net": 17.6,
-        "pct": 2.78,
-        "leader": "百利电气"
+        "name": "共封装光学(CPO)",
+        "net": 425.43,
+        "pct": 6.76,
+        "leader": "蘅东光"
       },
       {
-        "name": "同花顺新质50",
-        "net": 17.5,
-        "pct": 0.52,
-        "leader": "奥比中光"
+        "name": "数据中心(AIDC)",
+        "net": 398.18,
+        "pct": 3.63,
+        "leader": "蘅东光"
       },
       {
-        "name": "超超临界发电",
-        "net": 14.45,
-        "pct": 2.55,
-        "leader": "中洲特材"
+        "name": "5G",
+        "net": 396.01,
+        "pct": 4.23,
+        "leader": "欣天科技"
       },
       {
-        "name": "军民融合",
-        "net": 13.92,
-        "pct": 2.1,
-        "leader": "新研股份"
+        "name": "2026中报预增",
+        "net": 346.42,
+        "pct": 2.94,
+        "leader": "行云科技"
       },
       {
-        "name": "海工装备",
-        "net": 12.7,
-        "pct": 2.45,
-        "leader": "哈焊华通"
+        "name": "华为概念",
+        "net": 301.18,
+        "pct": 3.18,
+        "leader": "汉鑫科技"
       },
       {
-        "name": "污水处理",
-        "net": 12.69,
-        "pct": 2.23,
-        "leader": "武汉天源"
+        "name": "汽车电子",
+        "net": 285.41,
+        "pct": 3.65,
+        "leader": "协创数据"
       },
       {
-        "name": "雅下水电概念",
-        "net": 12.35,
-        "pct": 1.67,
-        "leader": "高争民爆"
+        "name": "人民币贬值受益",
+        "net": 273.78,
+        "pct": 2.26,
+        "leader": "蘅东光"
       }
     ],
     "outflow": [
       {
-        "name": "融资融券",
-        "net": -239.87,
-        "pct": 0.78,
-        "leader": "聚仁新材"
+        "name": "证金持股",
+        "net": -160.41,
+        "pct": -0.79,
+        "leader": "三环集团"
       },
       {
-        "name": "芯片概念",
-        "net": -229.42,
-        "pct": -0.42,
-        "leader": "富瀚微"
+        "name": "高股息精选",
+        "net": -153.88,
+        "pct": -1.24,
+        "leader": "美盈森"
       },
       {
-        "name": "2026中报预增",
-        "net": -225.24,
-        "pct": -0.08,
-        "leader": "富瀚微"
+        "name": "同花顺中特估100",
+        "net": -141.08,
+        "pct": -1.16,
+        "leader": "中国科传"
       },
       {
-        "name": "深股通",
-        "net": -150.41,
-        "pct": 1.0,
-        "leader": "富瀚微"
+        "name": "同花顺漂亮100",
+        "net": -72.79,
+        "pct": -0.26,
+        "leader": "药明康德"
       },
       {
-        "name": "存储芯片",
-        "net": -141.55,
-        "pct": -3.15,
-        "leader": "杭州柯林"
+        "name": "跨境支付(CIPS)",
+        "net": -47.77,
+        "pct": 0.83,
+        "leader": "易点天下"
       }
     ]
   }

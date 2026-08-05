@@ -1,8 +1,0 @@
-Mon Jul 20 18:04:22     2026 pre_market MANUAL_RUN_START
-2026-07-21 10:12:35 pre_market FAIL | build_candidate_pool.py TIMEOUT x2 (300s+300s) -> verify gate blocked deploy, site NOT updated
-2026-07-22 09:43:54 pre_market DONE
-2026-07-23 08:55:17 pre_market DONE
-2026-07-23 10:42:58 pre_market DONE
-2026-07-23 10:42:58 pre_market SELF_HEAL: check=1(MORNING_MISSED) -> 自愈成功. 清除卡死09:20竞争进程; 修复build_candidate_pool mootdx无限挂起(加socket 30s超时兜底+SKIP_MOOTDX开关); 手动刷新3个自07-20陈旧的闸门拦截文件(herding_data/main_stock/suspension_alert); 闸门通过后deploy_now --force 部署成功, 站点构建戳20260723103839
-2026-07-24 10:29:38 pre_market DONE
-2026-07-24 10:29:38 pre_market SELF_HEAL: check=1(MORNING_MISSED) -> 自愈成功. 09:20接棒机制掉线于步骤2/9未部署; build_candidate_pool 因外部源逐只拉取慢(~6min)超300s超时=根因; 已放宽该步超时300->600s(batch_update.py); 重跑pre_market(接棒从步骤3复用10:17新鲜候选池total380)exit0; gh-pages 5a60b7fe->8e72ebff, 站点构建戳20260724102634, WebFetch验标题含九宝量化

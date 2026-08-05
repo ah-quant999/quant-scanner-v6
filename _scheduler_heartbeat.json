@@ -124,5 +124,12 @@
     "job": "batch_backup",
     "status": "DONE",
     "detail": ""
+  },
+  {
+    "time": "2026-08-03 21:00:45",
+    "host": "xiaojiu",
+    "job": "batch_backup",
+    "status": "FAILED",
+    "detail": "exit=1 | scope\":\"turn\",\"targets\":[\"D:\\\\stock-scanner-repo\\\\repo-temp\\\\data\\\\concept_history.json\"],\"targetCount\":1}\n\n  ⚠ 重试后仍然超时/失败: enhanced_backup.py\n\n============================================================\n  总计: 2  成功: 1  失败: 1\n  ✗ 以下步骤重试后仍未通过:\n    - enhanced_backup.py\n============================================================\n\n  📝 交接日志已写: xiaojiu backup ✗\n  📄 小九交接文档已更新: HANDOVER_小九_2026-08-03.md"
   }
 ]

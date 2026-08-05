@@ -1,16 +1,10 @@
 {
   "sh": [
     {
-      "date": "5/12",
-      "date_raw": "2026-05-12",
-      "total_shares_bil": 3015.07,
-      "net_subscribe_bil": 0.0
-    },
-    {
       "date": "5/13",
       "date_raw": "2026-05-13",
       "total_shares_bil": 2980.56,
-      "net_subscribe_bil": -34.51
+      "net_subscribe_bil": 0.0
     },
     {
       "date": "5/14",
@@ -67,16 +61,10 @@
       "net_subscribe_bil": -16.6
     },
     {
-      "date": "5/27",
-      "date_raw": "2026-05-27",
-      "total_shares_bil": 2696.59,
-      "net_subscribe_bil": -8.57
-    },
-    {
       "date": "5/28",
       "date_raw": "2026-05-28",
       "total_shares_bil": 2688.69,
-      "net_subscribe_bil": -7.9
+      "net_subscribe_bil": -16.46
     },
     {
       "date": "5/29",
@@ -347,20 +335,20 @@
       "date_raw": "2026-07-31",
       "total_shares_bil": 3230.53,
       "net_subscribe_bil": -20.38
+    },
+    {
+      "date": "8/3",
+      "date_raw": "2026-08-03",
+      "total_shares_bil": 3306.05,
+      "net_subscribe_bil": 75.53
     }
   ],
   "sh_all": [
     {
-      "date": "5/12",
-      "date_raw": "2026-05-12",
-      "total_shares_bil": 19021.91,
-      "net_subscribe_bil": 0.0
-    },
-    {
       "date": "5/13",
       "date_raw": "2026-05-13",
       "total_shares_bil": 18980.34,
-      "net_subscribe_bil": -41.56
+      "net_subscribe_bil": 0.0
     },
     {
       "date": "5/14",
@@ -417,16 +405,10 @@
       "net_subscribe_bil": -29.76
     },
     {
-      "date": "5/27",
-      "date_raw": "2026-05-27",
-      "total_shares_bil": 18630.61,
-      "net_subscribe_bil": -37.22
-    },
-    {
       "date": "5/28",
       "date_raw": "2026-05-28",
       "total_shares_bil": 18570.19,
-      "net_subscribe_bil": -60.42
+      "net_subscribe_bil": -97.64
     },
     {
       "date": "5/29",
@@ -697,7 +679,13 @@
       "date_raw": "2026-07-31",
       "total_shares_bil": 20623.87,
       "net_subscribe_bil": -112.92
+    },
+    {
+      "date": "8/3",
+      "date_raw": "2026-08-03",
+      "total_shares_bil": 20762.26,
+      "net_subscribe_bil": 138.38
     }
   ],
-  "update_time": "2026-08-03 17:59"
+  "update_time": "2026-08-04 15:37"
 }

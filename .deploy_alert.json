@@ -1,7 +1,0 @@
-{
-  "alert": true,
-  "reason": "新鲜度FAIL: 2 项陈旧/失真（扫描 48 文件）; 构建完整性FAIL: 1 个注入块缺失/为空（校验 18 个关键注入块）",
-  "source": "verify_data_vs_website.py --gate",
-  "time": "2026-07-22 15:15:51",
-  "host": "CAT"
-}
